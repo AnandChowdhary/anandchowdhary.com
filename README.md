@@ -1,6 +1,6 @@
 AnandChowdhary.com
 ==================
 
-Here, you will find the source code of my website at http://anandchowdhary.com.
+Now based on essentials.css.
 
 Made with love. Hosted on Github.
