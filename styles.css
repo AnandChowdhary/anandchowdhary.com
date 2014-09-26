@@ -221,7 +221,7 @@ h4 {
 	.folio .row {
 		margin-top: 0;
 	}
-	.folio .caption {
+	.folio .caption, .canvas {
 		margin-bottom: 30px;
 	}
 	.quote .blockquote {
