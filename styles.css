@@ -142,29 +142,6 @@ h4 {
 	margin-top: 30px;
 }
 
-@media (max-width: 992px) {
-	.navbar span.a {
-		display: none;
-	}
-	.navbar span.b {
-		display: inline;
-	}
-}
-@media (max-width: 768px) {
-	.navbar span.b {
-		display: none !important;
-	}
-	.inrow {
-		margin-bottom: 0;
-	}
-	.folio .row {
-		margin-top: 0;
-	}
-	.folio .caption {
-		margin-bottom: 30px;
-	}
-}
-
 .folio img {
 	width: 100%;
 	border-radius: 3px 3px 0 0;
@@ -224,4 +201,30 @@ h4 {
 }
 .hero h1 {
 	font-weight: bold;
+}
+
+@media (max-width: 992px) {
+	.navbar span.a {
+		display: none;
+	}
+	.navbar span.b {
+		display: inline;
+	}
+}
+@media (max-width: 768px) {
+	.navbar span.b {
+		display: none !important;
+	}
+	.inrow {
+		margin-bottom: 0;
+	}
+	.folio .row {
+		margin-top: 0;
+	}
+	.folio .caption {
+		margin-bottom: 30px;
+	}
+	.quote .blockquote {
+		height: 150px;
+	}
 }
