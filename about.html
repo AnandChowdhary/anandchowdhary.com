@@ -15,8 +15,6 @@
 		<link rel="icon" type="image/png" href="img/icon.png">
 		<link rel="apple-touch-icon-precomposed" href="img/icon.png">
 
-		<link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
-
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/skeleton.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -56,9 +54,9 @@
 						<!--<i class="ion-navicon-round"></i>-->
 						<ul>
 							<li><a href="/">Home</a></li>
-							<li class="active"><a href="/about.html">About</a></li>
-							<li><a href="/writing.html">Writing</a></li>
-							<li><a href="/portfolio.html">Portfolio</a></li>
+							<li class="active"><a href="/about">About</a></li>
+							<li><a href="/writing">Writing</a></li>
+							<li><a href="/portfolio">Portfolio</a></li>
 						</ul>
 					</nav>
 
@@ -74,7 +72,7 @@
 
 				<p>Hello.</p>
 				
-				<p>My name is <a href="/about.html">Anand Chowdhary</a>, and I&rsquo;m a user experience developer.</p>
+				<p>My name is <a href="/about">Anand Chowdhary</a>, and I&rsquo;m a user experience developer.</p>
 
 				<p>I craft solutions for startups, which I design using the Creative Cloud, and code front-end in HTML5, CSS3 (Sass) and JavaScript and back-end in PHP and Python using Sublime Text. I&rsquo;m proficient in using tools like jQuery, Twitter Bootstrap, and AngularJS. I primarily use Elementary OS, though I love beta-testing Windows.</p>
 				
@@ -82,7 +80,7 @@
 
 				<div class="hr"></div>
 
-				<p>I love <a href="/writing.html">writing</a> and talking about &ldquo;experience&rdquo; design, which combines what people think and feel when they interact with objects, and uses them as digital or print design principles to deliver the best-possible user experience.</p>
+				<p>I love <a href="/writing">writing</a> and talking about &ldquo;experience&rdquo; design, which combines what people think and feel when they interact with objects, and uses them as digital or print design principles to deliver the best-possible user experience.</p>
 
 				<p>I pen down my thoughts on my <a href="//anand.svbtle.com">blog</a> on the Svbtle network, and I delivered a talk about technology in education at Delhi Technological University recently. I also publish articles on <a href="//boloji.com/index.cfm?md=Content&sd=Writers&WriterID=6">Boloji</a> and <a href="//medium.com/@anandchowdhary">Medium</a>.</p>
 
@@ -93,6 +91,10 @@
 				<p>Class Rebels started with the idea that education shouldn&rsquo;t be restricted to just classrooms &mdash; instead of a professor talking to hundreds of students in one single auditorium, it provides both students and teachers with a place where they can interact with each other using <a href="//classrebels.co/#products">Kaksha</a> and collaboratively learn using the <a href="//classrebels.co/#products">Library</a>. Learn more about Class Rebels <a href="//classrebels.co">here</a>.</p>
 
 				<p>My journey with Class Rebels was an educative one. It exposed me to the startup culture, and also gave me the opportunity to meet and work with some incredibly talented people.</p>
+
+				<div class="hr"></div>
+
+				<p>This site uses no fonts or images. It&rsquo;s written in valid HTML5 and Sass on Sublime Text 3, compiled via Prepros, and is hosted for free by <a href="https://github.com/AnandChowdhary/anandchowdhary.github.io">Github</a>, where you can also find its source code. It&rsquo;s based on <a href="//getskeleton.com/">Skeleton</a> and uses <a href="https://github.com/AnandChowdhary/normalize.css">my version</a> of <a href="//necolas.github.io/normalize.css/">normalize.css</a> by Nicolas Gallagher &amp; Jonathan Neal. It&rsquo;s the perfect example of my love for minimalism and writing.</p>
 
 			</div>
 
@@ -114,6 +116,7 @@
 
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript">
+
 			$(document).ready(function() {
 				$("body").css("opacity", 1);
 				$("body").css("transition", "opacity 0.5s");
@@ -126,6 +129,15 @@
 				}, 500);
 				return false;
 			});
+
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga("create", "UA-39298323-1", "auto");
+			ga("send", "pageview");
+
 		</script>
 
 	</body>
