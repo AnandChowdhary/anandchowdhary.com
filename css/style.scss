@@ -4,7 +4,7 @@ body {
 	opacity: 0;
 	transition: opacity 1s;
 	margin: 3em 0;
-	font-family: serif;
+	font-family: "adobe-text-pro", serif;
 	font-size: 2em;
 	color: #333;
 }
@@ -26,7 +26,7 @@ p a {
 
 header#masthead, footer#colophon {
 	letter-spacing: 1px;
-	font-family: sans-serif;
+	font-family: "proxima-nova", sans-serif;
 	text-align: center;
 	font-size: 75%;
 }
