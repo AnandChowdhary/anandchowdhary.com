@@ -119,7 +119,7 @@ body {
 /* Headings
 ---------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat'; 
+	font-family: 'Montserrat', sans-serif; 
 	font-weight: 400;
 	text-transform: uppercase; 
 	letter-spacing: 0.08em;
@@ -147,7 +147,7 @@ h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6,
 h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6,
 h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6 { margin-top: 10px; }
 
-.alttitle { font-family: 'Josefin Sans'; font-weight: 400; text-transform: none; letter-spacing: 0.04em; }
+.alttitle { font-family: 'Josefin Sans', sans-serif; font-weight: 400; text-transform: none; letter-spacing: 0.04em }
 .alttitle b, .alttitle strong { font-weight: 700; }
 
 /* headers with link */
@@ -208,7 +208,7 @@ input[type=submit] {
 	-khtml-border-radius:0px; 
 	-webkit-border-radius:0px;
 	display: inline-block;
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 20px !important;
@@ -232,7 +232,7 @@ input[type=submit]:hover { background: #0d0d0d;  }
 	
 select {
 	border: 1px solid #d9d9d9 ;
-	font-family: 'Maven Pro';
+	font-family: 'Maven Pro', sans-serif;
 	font-size: 14px;
 	font-weight: 300;
 	height: 44px;
@@ -382,7 +382,7 @@ strong i, b i, dt i, strong em, b em, dt em {
 blockquote {
 	margin: 60px;
 	font-size: 24px; line-height: 32px;
-	font-family: 'Josefin Sans', Georgia;
+	font-family: 'Josefin Sans', Georgi, sans-serifa;
 	font-weight: 300;
 	color: #0d0d0d;
 	font-style: italic;
@@ -589,7 +589,7 @@ body.loading-end .pace { opacity:0!important;filter:alpha(opacity=0)!important;-
 	
 #page-loader .loader {
 	margin-top: 40px;
-	font-family: 'Montserrat'; 
+	font-family: 'Montserrat', sans-serif; 
 	font-weight: 400;
 	text-transform: uppercase; 
 	letter-spacing: 0.1em;
@@ -679,7 +679,7 @@ body.loading-end .pace { opacity:0!important;filter:alpha(opacity=0)!important;-
 	width: 65px;
 	text-align: right;
 	display: inline-block;
-	font-family: 'Maven Pro';
+	font-family: 'Maven Pro', sans-serif;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 30px;										
@@ -759,7 +759,7 @@ nav#main-nav ul > li {
 	
 nav#main-nav ul li > a {
 	display: inline-block;
-	font-family: 'Maven Pro';
+	font-family: 'Maven Pro', sans-serif;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 30px;										
@@ -859,7 +859,7 @@ footer .footer-inner {
 	}
 	
 footer .copyright { 
-	font-family: 'Josefin Sans';
+	font-family: 'Josefin Sans', sans-serif;
 	}
 	
 footer .widget { 
@@ -870,7 +870,7 @@ footer .widget {
 footer #backtotop {
 	text-align: center;
 	font-size: 12px;
-	font-family: "Maven Pro";
+	font-family: "Maven Pro", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
@@ -890,7 +890,7 @@ footer #backtotop {
 footer #backtotop:before {
 	text-align: center;
 	content: "\f126";
-	font-family: "Ionicons";
+	font-family: "Ionicons", sans-serif;
 	font-size: 10px;
 	line-height: 10px;
 	height: 10px;
@@ -967,7 +967,7 @@ footer #backtotop:before {
 #scroll-down {
 	text-align: center;
 	font-size: 12px;
-	font-family: "Maven Pro";
+	font-family: "Maven Pro", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
@@ -986,7 +986,7 @@ footer #backtotop:before {
 #scroll-down:before {
 	text-align: center;
 	content: "\f123";
-	font-family: "Ionicons";
+	font-family: "Ionicons", sans-serif;
 	font-size: 10px;
 	line-height: 10px;
 	height: 10px;
@@ -1123,7 +1123,7 @@ footer #backtotop:before {
 	.wrapper #header-filter .filter-inner, .wrapper #header-share .share-inner { width: 1080px; left: 50%; margin-left: -540px; }
 	
 #menu .open-filter, #menu .open-share {	
-	font-family: 'Maven Pro'; 
+	font-family: 'Maven Pro', sans-serif; 
 	font-weight: 600; 
 	text-transform: uppercase; 
 	letter-spacing: 0.1em;
@@ -1208,7 +1208,7 @@ ul.filter li {
 		
 ul.filter li a {
 	position: relative;
-	font-family: 'Josefin Sans'; 
+	font-family: 'Josefin Sans', sans-serif; 
 	font-weight: 400;
 	font-size: 13px;
 	text-transform: none;
@@ -1248,7 +1248,7 @@ header.hero-invisible #menu .open-filter, header.hero-invisible #menu .open-shar
 	}
 	
 .blog-masonry-entry .blog-content .time {
-	font-family: 'Josefin Sans'; 
+	font-family: 'Josefin Sans', sans-serif; 
 	font-weight: 400; 
 	letter-spacing: 0.04em;
 	background: #0d0d0d;
@@ -1305,11 +1305,11 @@ header.hero-invisible #menu .open-filter, header.hero-invisible #menu .open-shar
 	
 #blog-single .blog-meta .meta-author span, #blog-single .blog-meta .meta-category span {
 	display: block;
-	font-family: "Josefin Sans";
+	font-family: "Josefin Sans", sans-serif;
 	}
 	
 #blog-single .blog-meta .meta-author a, #blog-single .blog-meta .meta-category a {
-	font-family: "Maven Pro";
+	font-family: "Maven Pro", sans-serif;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-size: 12px;
@@ -1486,7 +1486,7 @@ header.hero-invisible #menu .open-filter, header.hero-invisible #menu .open-shar
 	}
 	
 .single-pagination li a { 
-	font-family: 'Maven Pro';
+	font-family: 'Maven Pro', sans-serif;
 	font-weight: 700;
 	font-size: 13px;
 	line-height: 20px;
@@ -1593,7 +1593,7 @@ div .column-section:first-child, .spacer + .column-section { margin-top: 0px; }
 ------------------------------------------------*/
 a.sr-button {
 	display: inline-block;
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 20px !important;
@@ -1631,7 +1631,7 @@ a.sr-button4:hover { background: #ffffff; }
 
 
 .sr-button-text {
-	font-family: 'Maven Pro'; 
+	font-family: 'Maven Pro', sans-serif; 
 	font-weight: 600; 
 	text-transform: uppercase; 
 	letter-spacing: 0.1em;
@@ -1738,7 +1738,7 @@ a.sr-button4:hover { background: #ffffff; }
 	
 .inline-video:before {
 	content: "\f488";
-	font-family: "Ionicons";
+	font-family: "Ionicons", sans-serif;
 	color: #ffffff;
 	font-size: 90px;
 	width: 65px;
@@ -1756,7 +1756,7 @@ a.sr-button4:hover { background: #ffffff; }
 	
 .inline-video:after {
 	content: attr(data-button);
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1781,7 +1781,7 @@ a.sr-button4:hover { background: #ffffff; }
 	
 .inline-video .inline-iframe-container .close-inline-video {
 	content: "\f488";
-	font-family: "Ionicons";
+	font-family: "Ionicons", sans-serif;
 	color: #ffffff;
 	width: 70px;
 	height: 70px; line-height: 70px;
@@ -1801,7 +1801,7 @@ a.sr-button4:hover { background: #ffffff; }
 	
 .inline-video .inline-iframe-container .close-inline-video:before {
 	content: "\f12a";
-	font-family: "Ionicons";
+	font-family: "Ionicons", sans-serif;
 	font-size: 40px;
 	width: 70px;
 	height: 70px;
@@ -2098,7 +2098,7 @@ a.img-hover:hover .hover-caption {
 	
 .toggle-item .toggle-title:after {
 	content: "\f218";
-	font-family: "Ionicons";
+	font-family: "Ionicons", sans-serif;
 	font-size: 14px;
 	line-height: 20px;
 	width: 20px;
