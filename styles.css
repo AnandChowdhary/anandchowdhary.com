@@ -1,7 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
 body {
 	margin: 70px 0;
 	line-height: 1.7;
-	font-family: sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 	color: #222;
 }
 
@@ -104,9 +106,16 @@ a:hover {
 	width: 25%;
 	float: left;
 }
+@media (max-width: 720px) {
+	.fourth {
+		width: 100%;
+		float: none;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+}
 
 footer .grid-container {
-	margin-top: 60px;
 	padding-top: 60px;
 	border-top: 1px solid #eee;
 	line-height: 2;
@@ -115,4 +124,19 @@ footer .grid-container {
 footer h4 {
 	margin: 0;
 	font-size: 100%;
+}
+
+#about {
+	margin-top: 60px;
+}
+
+#logo {
+	text-align: center;
+}
+#logo a {
+	border: none;
+}
+#logo img {
+	max-width: 40px;
+	margin-bottom: 10px;
 }
