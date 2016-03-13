@@ -31,6 +31,9 @@ img {
 	opacity: 0;
 	transition: opacity 0.3s;
 }
+.photos a {
+	color: inherit;
+}
 .photos > div:hover figcaption {
 	opacity: 1;
 }
@@ -39,6 +42,13 @@ img {
 }
 .photos figcaption div:last-child {
 	color: #999;
+}
+
+@media (max-width: 400px) {
+	.photos figcaption {
+		opacity: 1 !important;
+		position: static !important;
+	}
 }
 
 header {
@@ -124,6 +134,13 @@ footer .grid-container {
 footer h4 {
 	margin: 0;
 	font-size: 100%;
+}
+
+footer i {
+	display: inline-block;
+	width: 20px;
+	text-align: center;
+	font-style: normal;
 }
 
 #about {
