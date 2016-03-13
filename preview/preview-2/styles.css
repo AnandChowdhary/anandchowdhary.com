@@ -12,15 +12,12 @@ body {
 img {
 	max-width: 100%;
 }
-
-.photos img {
-	margin-bottom: 15px;
-}
 .photos > div {
 	position: relative;
 }
 .photos figure {
-	margin: 0;
+	margin: 0 0 20px 0;
+	background: #f0f0f0;
 }
 .photos figcaption {
 	position: absolute;
