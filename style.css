@@ -99,6 +99,20 @@ article:not(:last-child) {
 	max-width: 55vw;
 	margin-bottom: 20px;
 }
+#colophon {
+	text-align: center;
+	margin-top: 20px;
+}
+#colophon a {
+	color: inherit;
+	text-decoration: underline;
+}
+#colophon a:hover {
+	color: #555;
+}
+#colophon p > span {
+	margin: 0 10px;
+}
 
 @media (max-width: 992px) {
 	body {
@@ -120,5 +134,11 @@ article:not(:last-child) {
 	}
 	.big {
 		max-width: 100%;
+	}
+	#colophon p > span {
+		margin: 0;
+		display: block;
+		width: 100%;
+		line-height: 2;
 	}
 }
