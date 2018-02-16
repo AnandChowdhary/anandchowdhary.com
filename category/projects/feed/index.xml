@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Projects &#8211; Anand Chowdhary</title>
+	<atom:link href="/category/projects/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Thu, 28 Dec 2017 18:11:34 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.2</generator>
+	<item>
+		<title>FaceMatch</title>
+		<link>/facematch/</link>
+		<pubDate>Tue, 26 Sep 2017 12:20:17 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Projects]]></category>
+		<category><![CDATA[App]]></category>
+		<category><![CDATA[Face Detection]]></category>
+		<category><![CDATA[Hackathon]]></category>
+		<category><![CDATA[Machine Learning]]></category>
+		<category><![CDATA[Mobile]]></category>
+
+		<guid isPermaLink="false">/?p=313</guid>
+		<description><![CDATA[For the Amazon Web Services (AWS) Hackathon at The Future of High Tech, part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon’s grand prize of €1,000 along with VIP tickets for StartupFest Europe.]]></description>
+				<content:encoded><![CDATA[<p>For the Amazon Web Services (AWS) Hackathon at <a href="http://www.thefutureofhightech.com/">The Future of High Tech</a>, part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon&#8217;s grand prize of €1,000 along with VIP tickets for StartupFest Europe.</p>
+<p><a href="/wp-content/uploads/2017/10/FB_IMG_1506591590350-1.jpg"><img class="alignnone size-full wp-image-314" src="/wp-content/uploads/2017/10/FB_IMG_1506591590350-1.jpg" alt="" width="1225" height="817" srcset="/wp-content/uploads/2017/10/FB_IMG_1506591590350-1.jpg 1225w, /wp-content/uploads/2017/10/FB_IMG_1506591590350-1-300x200.jpg 300w, /wp-content/uploads/2017/10/FB_IMG_1506591590350-1-768x512.jpg 768w, /wp-content/uploads/2017/10/FB_IMG_1506591590350-1-1024x683.jpg 1024w" sizes="(max-width: 1225px) 100vw, 1225px" /></a></p>
+<p>The idea is simple — if you enter a large conference or a room full of people, you want to know who you should network with. FaceMatch uses AI to understand faces, and finds their relevant info from their LinkedIn profiles. This means that you can essentially point the phone at someone, get information like their age, gender, expression, designation, and company, along with a link to their LinkedIn profile.</p>
+<p>I also added a second feature for users who are visually impaired or blind. FaceMatch View reads out the information of the people it recognizes, so if you’re partially or completely blind, you can understand who’s around. “Anand Chowdhary is in the frame, and he’s 19 years old, CEO/Product at Oswald Foundation” will be read out, as an example.</p>
+<p>It also uses object and scene detection, so you can just point your camera in the direction you’re walking in, and it will tell you what’s around. “In this scene, there is: road, lamppost, footpath, grass, tree” will be read out to you. For reading out, I used <em>ResponsiveVoice</em>, an instant text-to-speech and speech synthesis library that ensures voice consistency across platforms.</p>
+<p>FaceMatch uses Amazon Rekognition, a service that lets you quickly add sophisticated deep learning-based visual search and image classification to apps. I ended up using Face Comparison, Facial Analysis, and Object and Scene Detection APIs.</p>
+<p>PS: I ended up winning the grand prize of €1,000, along with VIP tickets to the Startup Fest Europe in Amsterdam!</p>
+<p>The code is available on <a href="https://github.com/AnandChowdhary/facematch">GitHub</a>. Here are some slides:</p>
+<p><a href="/wp-content/uploads/2017/10/0001.jpg"><img class="alignnone size-full wp-image-319" src="/wp-content/uploads/2017/10/0001.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0001.jpg 4267w, /wp-content/uploads/2017/10/0001-300x225.jpg 300w, /wp-content/uploads/2017/10/0001-768x576.jpg 768w, /wp-content/uploads/2017/10/0001-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0002.jpg"><img class="alignnone size-full wp-image-320" src="/wp-content/uploads/2017/10/0002.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0002.jpg 4267w, /wp-content/uploads/2017/10/0002-300x225.jpg 300w, /wp-content/uploads/2017/10/0002-768x576.jpg 768w, /wp-content/uploads/2017/10/0002-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0003.jpg"><img class="alignnone size-full wp-image-321" src="/wp-content/uploads/2017/10/0003.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0003.jpg 4267w, /wp-content/uploads/2017/10/0003-300x225.jpg 300w, /wp-content/uploads/2017/10/0003-768x576.jpg 768w, /wp-content/uploads/2017/10/0003-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0004.jpg"><img class="alignnone size-full wp-image-322" src="/wp-content/uploads/2017/10/0004.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0004.jpg 4267w, /wp-content/uploads/2017/10/0004-300x225.jpg 300w, /wp-content/uploads/2017/10/0004-768x576.jpg 768w, /wp-content/uploads/2017/10/0004-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0006.jpg"><img class="alignnone size-full wp-image-324" src="/wp-content/uploads/2017/10/0006.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0006.jpg 4267w, /wp-content/uploads/2017/10/0006-300x225.jpg 300w, /wp-content/uploads/2017/10/0006-768x576.jpg 768w, /wp-content/uploads/2017/10/0006-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0007.jpg"><img class="alignnone size-full wp-image-325" src="/wp-content/uploads/2017/10/0007.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0007.jpg 4267w, /wp-content/uploads/2017/10/0007-300x225.jpg 300w, /wp-content/uploads/2017/10/0007-768x576.jpg 768w, /wp-content/uploads/2017/10/0007-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0008.jpg"><img class="alignnone size-full wp-image-326" src="/wp-content/uploads/2017/10/0008.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0008.jpg 4267w, /wp-content/uploads/2017/10/0008-300x225.jpg 300w, /wp-content/uploads/2017/10/0008-768x576.jpg 768w, /wp-content/uploads/2017/10/0008-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0010.jpg"><img class="alignnone size-full wp-image-328" src="/wp-content/uploads/2017/10/0010.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0010.jpg 4267w, /wp-content/uploads/2017/10/0010-300x225.jpg 300w, /wp-content/uploads/2017/10/0010-768x576.jpg 768w, /wp-content/uploads/2017/10/0010-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+<p><a href="/wp-content/uploads/2017/10/0011.jpg"><img class="alignnone size-full wp-image-329" src="/wp-content/uploads/2017/10/0011.jpg" alt="" width="4267" height="3200" srcset="/wp-content/uploads/2017/10/0011.jpg 4267w, /wp-content/uploads/2017/10/0011-300x225.jpg 300w, /wp-content/uploads/2017/10/0011-768x576.jpg 768w, /wp-content/uploads/2017/10/0011-1024x768.jpg 1024w" sizes="(max-width: 4267px) 100vw, 4267px" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>BharatHacks</title>
+		<link>/bharathacks/</link>
+		<pubDate>Wed, 10 May 2017 03:25:21 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Projects]]></category>
+
+		<guid isPermaLink="false">/?p=178</guid>
+		<description><![CDATA[This June, I'm organizing BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs will come together to build products to make lives better. Organizated in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks will help you take your idea forward, from hacking to raising investment and launching your product in the market.]]></description>
+				<content:encoded><![CDATA[<p>This June, I&#8217;m organizing BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs will come together to build products to make lives better. Organized in collaboration with <a href="https://www.facebook.com/groups/DevCDelhiNCR/" target="_blank" rel="noopener noreferrer">Facebook Developer Circle Delhi-NCR</a>, BharatHacks will help you take your idea forward, from hacking to raising investment and launching your product in the market.</p>
+<p>BharatHacks is free for both entrepreneurs and hackers, to join hands and work towards a better India. From a pool of over 1,000 applicants, we’ve chosen the top 200 to participate at BharatHacks.</p>
+<p>Participants have an opportunity to pitch their ideas to industry-leading investors and startup mentors, including Anil Chhikara, ex-Principal of Jaarvis Accelerator; Bharat Sethi, Forbes 30 Under 30; Paritosh Sharma, Author; and many more. There are prizes worth thousands of dollars.</p>
+<p>I&#8217;ve partnered with some incredible technology companies to make BharatHacks a possibility, including DigitalOcean, which is offering free servers to all participants, the .tech registry that’s providing free domain names to all participants, and IBM’s Global Entrepreneur Program, iSPIRT, the parent organization of IndiaStack (the team behind Aadhaar, UPI, and eKYC APIs). Other partners include Neuron, Digio, HackerEarth, Aadhaar Bridge, .tech, F6S, HackSociety, Melangebox, Bizztor, and more.</p>
+<p><a href="https://bharathacks.com/">Visit the website →</a></p>
+<p><a href="https://bizztor.com/bharathacks/">View the Press Release →</a></p>
+<p><img class="alignnone size-full wp-image-191" src="https://www.accessibility.technology/websites/anand/anandchowdhary.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.13-AM.png" alt="" width="1309" height="799" srcset="/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.13-AM.png 1309w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.13-AM-300x183.png 300w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.13-AM-768x469.png 768w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.13-AM-1024x625.png 1024w" sizes="(max-width: 1309px) 100vw, 1309px" /></p>
+<p><img class="alignnone size-full wp-image-190" src="https://www.accessibility.technology/websites/anand/anandchowdhary.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.21-AM.png" alt="" width="1309" height="799" srcset="/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.21-AM.png 1309w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.21-AM-300x183.png 300w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.21-AM-768x469.png 768w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.21-AM-1024x625.png 1024w" sizes="(max-width: 1309px) 100vw, 1309px" /></p>
+<p><img class="alignnone size-full wp-image-189" src="https://www.accessibility.technology/websites/anand/anandchowdhary.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.33-AM.png" alt="" width="1309" height="799" srcset="/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.33-AM.png 1309w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.33-AM-300x183.png 300w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.33-AM-768x469.png 768w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.33-AM-1024x625.png 1024w" sizes="(max-width: 1309px) 100vw, 1309px" /></p>
+<p><img class="alignnone size-full wp-image-188" src="https://www.accessibility.technology/websites/anand/anandchowdhary.com/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.37-AM.png" alt="" width="1309" height="799" srcset="/wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.37-AM.png 1309w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.37-AM-300x183.png 300w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.37-AM-768x469.png 768w, /wp-content/uploads/2017/06/Screen-Shot-2017-06-12-at-11.40.37-AM-1024x625.png 1024w" sizes="(max-width: 1309px) 100vw, 1309px" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Naari</title>
+		<link>/naari/</link>
+		<pubDate>Sun, 16 Oct 2016 10:25:47 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Projects]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=67</guid>
+		<description><![CDATA[Naari is the end-to-end period healthcare companion—from giving you personalized tampon recommendations using P&#038;G’s survey data and HPE’s machine learning APIs, to getting those products delivered to your doorstep via Amazon. Naari is also a social platform that lets you chat with your doctor, friends, or anonymously in a group to find someone who has previously experienced what you are experiencing and express yourself freely, and get a daily curated feed of women’s health articles and news from leading journals.]]></description>
+				<content:encoded><![CDATA[<p>Naari is the end-to-end period healthcare companion—from giving you personalized tampon recommendations using P&amp;G’s survey data and HPE’s machine learning APIs, to getting those products delivered to your doorstep via Amazon. Naari is also a social platform that lets you chat with your doctor, friends, or anonymously in a group to find someone who has previously experienced what you are experiencing and express yourself freely, and get a daily curated feed of women’s health articles and news from leading journals.</p>
+<p>Winner, AngelHack Lady Problems Delhi 2016 · P&amp;G Sponsor Award</p>
+<p><a href="http://naariapp.org/" target="_blank">Try Naari</a> · <a href="http://www.hackathon.io/71444" target="_blank">Read the intro</a></p>
+<p><img class="alignnone size-full wp-image-69" src="/wp-content/uploads/2017/04/a.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/a.png 960w, /wp-content/uploads/2017/04/a-300x172.png 300w, /wp-content/uploads/2017/04/a-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+<blockquote><p><em>&#8220;Great use of machine learning to drive a benefit for women.&#8221;</em><br />
+<small>&#8212; Erik Hasenoehrl, Research Fellow, Procter &amp; Gamble</small></p></blockquote>
+<p><img class="alignnone size-full wp-image-70" src="/wp-content/uploads/2017/04/b.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/b.png 960w, /wp-content/uploads/2017/04/b-300x172.png 300w, /wp-content/uploads/2017/04/b-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+<p><img class="alignnone size-full wp-image-71" src="/wp-content/uploads/2017/04/b2.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/b2.png 960w, /wp-content/uploads/2017/04/b2-300x172.png 300w, /wp-content/uploads/2017/04/b2-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+<blockquote><p><em>&#8220;Takes care of both health and cultural aspects [of sexual health.]&#8221;<br />
+</em><small>&#8212; Simmi Dhamija, Strategic Initiative &amp; Performance Management Leader, Tech Mahindra</small></p></blockquote>
+<p><img class="alignnone size-full wp-image-72" src="/wp-content/uploads/2017/04/c.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/c.png 960w, /wp-content/uploads/2017/04/c-300x172.png 300w, /wp-content/uploads/2017/04/c-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+<p><img class="alignnone size-full wp-image-73" src="/wp-content/uploads/2017/04/d.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/d.png 960w, /wp-content/uploads/2017/04/d-300x172.png 300w, /wp-content/uploads/2017/04/d-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Oswald for Chrome</title>
+		<link>/oswald-for-chrome/</link>
+		<pubDate>Tue, 12 Jul 2016 10:32:14 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Projects]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=77</guid>
+		<description><![CDATA[Oswald is the revolutionary tool for accessible reading. It works for people with dyslexia, visual impairment, senior citizens, and everyone in between. Oswald automatically corrects the typography, contrast ratios, and other visual elements on a webpage to make reading easier for users with learning disabilities. Users can also customize Oswald’s properties based on their personal preferences.]]></description>
+				<content:encoded><![CDATA[<p>Oswald is the revolutionary tool for accessible reading. It works for people with dyslexia, visual impairment, senior citizens, and everyone in between. Oswald automatically corrects the typography, contrast ratios, and other visual elements on a webpage to make reading easier for users with learning disabilities. Users can also customize Oswald’s properties based on their personal preferences.</p>
+<p>Winner, AngelHack Delhi 2016 · Code4Impact Award</p>
+<p><a href="https://chrome.google.com/webstore/detail/oswald/ibonfikdhfajjmcaoiecaoaomnngamfn" target="_blank">Download Oswald</a> · <a href="http://www.hackathon.io/65152" target="_blank">Read the intro</a></p>
+<p><img class="alignnone size-full wp-image-78" src="/wp-content/uploads/2017/04/a8fca-oswald.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/a8fca-oswald.png 960w, /wp-content/uploads/2017/04/a8fca-oswald-300x172.png 300w, /wp-content/uploads/2017/04/a8fca-oswald-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Baymax</title>
+		<link>/baymax/</link>
+		<pubDate>Mon, 12 Oct 2015 10:34:55 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Projects]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=85</guid>
+		<description><![CDATA[Baymax is your personal healthcare companion. If you’ve stubbed your toe a little, Baymax will tell you how to make the swelling go away and will help you get well by providing a treatment. If that doesn’t work, Baymax will connect you to your doctor and schedule an appointment with her. He’s a companion who’s always there for your health and fitness needs.]]></description>
+				<content:encoded><![CDATA[<p>Baymax is your personal healthcare companion. If you’ve stubbed your toe a little, Baymax will tell you how to make the swelling go away and will help you get well by providing a treatment. If that doesn’t work, Baymax will connect you to your doctor and schedule an appointment with her. He’s a companion who’s always there for your health and fitness needs.</p>
+<p>Runner-up, Shri Tech 2015 Product Design</p>
+<p><a href="https://baymaxapp.cf/" target="_blank">Visit Baymax</a> · <a href="https://medium.com/@anandchowdhary/a-personal-healthcare-companion-who-lives-in-your-phone-1e946bd8553b" target="_blank">Read the article</a></p>
+<p><img class="alignnone size-full wp-image-86" src="/wp-content/uploads/2017/04/58d42-baymax.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/58d42-baymax.png 960w, /wp-content/uploads/2017/04/58d42-baymax-300x172.png 300w, /wp-content/uploads/2017/04/58d42-baymax-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Saga Music</title>
+		<link>/saga/</link>
+		<pubDate>Tue, 17 Feb 2015 10:33:54 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Projects]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=82</guid>
+		<description><![CDATA[Saga is the most beautiful way to connect with music. Download as many song as you like, follow the latest charts, and share your favorite music with your friends, all for free. Saga has over 100,000 downloads.]]></description>
+				<content:encoded><![CDATA[<p>Saga is the most beautiful way to connect with music. Download as many song as you like, follow the latest charts, and share your favorite music with your friends, all for free. Saga has over 100,000 downloads.</p>
+<p><a href="https://anandchowdhary.github.io/saga-music/">Visit Saga Music</a> · <a href="https://github.com/AnandChowdhary/saga-android" target="_blank">View source on Github</a></p>
+<p><img class="alignnone size-full wp-image-83" src="/wp-content/uploads/2017/04/b5677-saga.png" alt="" width="960" height="550" srcset="/wp-content/uploads/2017/04/b5677-saga.png 960w, /wp-content/uploads/2017/04/b5677-saga-300x172.png 300w, /wp-content/uploads/2017/04/b5677-saga-768x440.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

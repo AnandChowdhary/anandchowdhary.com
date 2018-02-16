@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Coffee Time &#8211; Anand Chowdhary</title>
+	<atom:link href="/category/coffee-time/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Thu, 28 Dec 2017 18:11:34 +0000</lastBuildDate>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.2</generator>
+	<item>
+		<title>Hacking UTwente&#8217;s PeoplePages</title>
+		<link>/hacking-utwentes-peoplepages/</link>
+		<pubDate>Sat, 12 Aug 2017 13:03:54 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+		<category><![CDATA[Coffee Time]]></category>
+		<category><![CDATA[Code]]></category>
+		<category><![CDATA[Hacking]]></category>
+		<category><![CDATA[JSON]]></category>
+
+		<guid isPermaLink="false">/?p=289</guid>
+		<description><![CDATA[As a future CreaTe student at the University of Twente, I wanted to get in touch with a particular professor. Their website, PeoplePages, uses a RESTful API for AJAX requests to search for university staff, so I decided to add everyone to my contacts. (Also makes sending LinkedIn requests to everyone much easier.) See how I did it and how they could improve their security, so others can't.]]></description>
+				<content:encoded><![CDATA[<p>As a future CreaTe student at the University of Twente, I wanted to get in touch with a particular professor. Their website, <a href="https://people.utwente.nl/">PeoplePages</a>, uses a RESTful API for AJAX requests to search for university staff, so I decided to add everyone to my contacts. (Also makes sending LinkedIn requests to everyone much easier.)</p>
+<p>I did a query to find all results starting with the letter &#8220;a&#8221; and got a minified JSON response with all data. Fortunately, they have unrestricted access to their endpoints. This is what it looks like when cleaned:</p>
+<pre>GET https://people.utwente.nl/search?query=a</pre>
+<pre>{
+	"data":[
+		{
+			"type":"person",
+			"id":"10000000000XXXX",
+			"name":"John Doe",
+			"jobtitle":"Supporting Staff",
+			"avatar":"https://people.utwente.nl/john.doe/picture.jpg",
+			"profile":"https://people.utwente.nl/john.doe",
+			"organizations":[
+				{
+					"code":"S&amp;B-XXXX",
+					"department":"S&amp;B",
+					"section":"XXXX"
+				}
+			],
+			"locations":[
+				{
+					"description":"Enschede 320",
+					"latitude":52.23979,
+					"longitude":6.850018
+				}
+			],
+			"phones":[
+				{
+					"type":"",
+					"tel":"+3153489XXXX",
+					"prefix":"+3153489",
+					"ext":"XXXX"
+				}
+			],
+			"email":"john.doe@utwente.nl"
+		}
+	]
+}</pre>
+<p>and so on. Since empty searches, space searches, and others weren&#8217;t working, I decided to query each letter of the alphabet and save the JSON result to play with it:</p>
+<pre>wget https://people.utwente.nl/search?query={a..z}</pre>
+<p>I soon realized that this wouldn&#8217;t work because the API restricts the number of results to 50, but this would:</p>
+<pre>wget https://people.utwente.nl/search?query={a..z}{a..z}</pre>
+<p>This goes through every combination in the alphabet: aa, ab, ac . . . zx, zy, zz, and downloads the JSON file. This was enough, but in many combinations, there were no results, so the empty JSON file was exactly 43 bytes. I then got rid of those files:</p>
+<pre>find . -name "*" -size 43c -delete</pre>
+<p>This Bash command finds all files that are of 43 bytes in size and deletes them. Note that if I just filter the size in bytes and query something like <code>-size 43 -delete</code>, it <a href="https://superuser.com/a/644274">interprets it as</a> 43*512 bytes, so the POSIX requirement states &#8220;c&#8221; for bytes.</p>
+<p>Finally I concatenated all the JSON files to one giant 4.9 MB file.</p>
+<pre class="p1"><span class="s1">cat * &gt; contacts.json</span></pre>
+<p>After cleaning the file, removing business contacts, and generally playing with the JSON content, I have a directory of 7527 people including duplicates. Sublime Text can handle this for me, with the simple command: Edit -&gt; Permute Lines -&gt; Unique. I now have 3740 people.</p>
+<p>Then, I clean up by replacing double space with single, change the &#8220;Surname, Firstname&#8221; format to &#8220;Firstname Surname&#8221;, and saved the contacts in a CSV file.</p>
+<p>Simple enough, but I now have the phone numbers, email addresses, and office addresses of all my professors, the Dean, and other important contacts for the university. Simple enough.</p>
+<h3>Security</h3>
+<p>The simple way to prevent this is to have secured API endpoints. There are many ways to do that &#8212; token-based authentication for each user with rate limiting, or even CORS prevention.</p>
+<p><img class="alignnone size-full wp-image-304" src="https://www.accessibility.technology/websites/anand/anandchowdhary.com/wp-content/uploads/2017/08/Screen-Shot-2017-08-12-at-6.32.24-PM.png" alt="" width="1273" height="833" srcset="/wp-content/uploads/2017/08/Screen-Shot-2017-08-12-at-6.32.24-PM.png 1273w, /wp-content/uploads/2017/08/Screen-Shot-2017-08-12-at-6.32.24-PM-300x196.png 300w, /wp-content/uploads/2017/08/Screen-Shot-2017-08-12-at-6.32.24-PM-768x503.png 768w, /wp-content/uploads/2017/08/Screen-Shot-2017-08-12-at-6.32.24-PM-1024x670.png 1024w" sizes="(max-width: 1273px) 100vw, 1273px" /></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Life Update: College</title>
+		<link>/college/</link>
+		<pubDate>Wed, 01 Mar 2017 09:10:17 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+		<category><![CDATA[Coffee Time]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=61</guid>
+		<description><![CDATA[Just a little bit of background about my college "situation": I graduated from highschool in April 2016 and joined the Unitedworld Institute of Design (UID) in Ahmedabad, Gujarat, after working at the Government of Delhi for a month. UID was an excellent college for people who want to study design using the fundamentals of art. I'll push in an update if I decide to join a program.]]></description>
+				<content:encoded><![CDATA[<p>Just a little bit of background about my college &#8220;situation&#8221;: I graduated from highschool in April 2016 and joined the Unitedworld Institute of Design (UID) in Ahmedabad, Gujarat, after working at the Government of Delhi for a month. UID was an excellent college for people who want to study design using the fundamentals of art.</p>
+<p>The problem I faced at UID was that the first year, the Foundation, was really more art and design. Instead of design thinking and languages and designers, it was more about sketching and painting and artists. The way I think design should be taught, really what I feel design is, was very different from their philosophy. So, after two short months, I decided to drop out of UID. I moved back to Delhi and founded Oswald Foundation, the accessibility technology company I&#8217;m leading.</p>
+<p>Oswald went on to become really great, and it mainly started with us winning Startup India Rocks! 2016 and I decided that it&#8217;s worthwhile. This January, I applied to a few universities I liked just to keep my options open, in case I wish to continue my formal education. Even though Oswald is going great, I figured it&#8217;s no harm in applying.</p>
+<h3>Accepted</h3>
+<ol>
+<li>Digital Media at RMIT University</li>
+<li>Digital Media &amp; Visual Communication at HTK Berlin</li>
+<li>Interaction Design at Harbour.Space University (1 year scholarship)</li>
+<li>Interaction Design at The Glasgow School of Art</li>
+<li><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Information Technology&quot;}" data-sheets-userformat="{&quot;2&quot;:2561,&quot;3&quot;:{&quot;1&quot;:0},&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}}">Information Technology with UX at University of Queensland</span></li>
+<li>Digital Media Design at University of Hertfordshire</li>
+<li>Applied Computer Science (Mobile Computing) at Sheridan College</li>
+<li>Interaction Design Arts at University of the Arts London&#8217;s College of Communication</li>
+<li>Interaction Design at California College of the Arts (Creative Achievement scholarship, $80,000)</li>
+<li>Interaction Design at Norwich University of the Arts</li>
+<li>Creative Technology at the University of Twente</li>
+</ol>
+<h3>Rejected</h3>
+<ol>
+<li>Digital and Interaction Design at BTK University, Berlin, because I needed a foundation year to apply for that program. I did not know that.</li>
+</ol>
+<h3>Footnotes</h3>
+<p>University of Twente&#8217;s Creative Technology program is my absolute favorite right now. If I have to choose a course, I would pick this program because it&#8217;s the perfect blend of creativity/design, engineering, and computer science &#8212; everything I love.</p>
+<p>I did not apply to study to the US, except for CCA because it’s been my dream college since I was in sixth grade. I really loved the Interaction Design program at CCA when I was younger, but I see the parallels between UID and CCA in retrospect.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>The Defence for MD5</title>
+		<link>/md5/</link>
+		<pubDate>Sun, 26 Feb 2017 09:07:20 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+		<category><![CDATA[Coffee Time]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=57</guid>
+		<description><![CDATA[A few days ago, I tried to reset my password on PR.com, the press releases website. I entered my email, and they sent me the username and password in plain text. That’s right, in plain text.
+
+The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted “hashed” version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.]]></description>
+				<content:encoded><![CDATA[<p>A few days ago, I tried to reset my password on PR.com, the press releases website. I entered my email, and they sent me the username and password in plain text. That’s right, in plain text.</p>
+<figure id="attachment_52" style="max-width: 1052px" class="wp-caption alignnone"><img class="wp-image-52 size-full" src="/wp-content/uploads/2017/04/Screen-Shot-2017-04-02-at-8.05.54-PM.png" width="1052" height="724" /><figcaption class="wp-caption-text">&#8220;For your security&#8221;</figcaption></figure>
+<p>The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted “hashed” version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.</p>
+<p>For example, if the hash function converts all vowels to “X”, then the hash of “Hello” is “HXllX” and the hash of “Hille” is also “HXIIX”, even though the original strings are definitely distinct. Of course, real world hashing functions are mathematically complex, but collisions are still not that uncommon. This is why the MD5 and <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">more recently</a> SHA-1 hashing algorithms aren’t recommended for security usages, and larger ones such as SHA-256 which don&#8217;t have any proven collisions so far are.</p>
+<p>These two strings have the same MD5 hash:</p>
+<pre>String 1: 4dc968ff0ee35c209572d4777b721587d36fa7b21bdc56b74a3dc0783e7b9518afbfa20<strong style="background: red;">0</strong>a8284bf36e8e4b55b35f427593d849676da0d1<strong style="background: red;">5</strong>55d8360fb5f07fea2
+String 2: 4dc968ff0ee35c209572d4777b721587d36fa7b21bdc56b74a3dc0783e7b9518afbfa20<strong style="background: red;">2</strong>a8284bf36e8e4b55b35f427593d849676da0d1<strong style="background: red;">d</strong>55d8360fb5f07fea2
+Hash:     008ee33a9d58b51cfeb425b0959121c9</pre>
+<p>The next thing step to safe password storage is called salting. Salting is essentially inserting characters in the string before hashing it. “Hello” can become “H1e2l3lo” if you insert “123” after every alternate character. This means that the hashed file is now much more secure because an intruder would have to know the specific salting technique, which is usually based on server timestamp, tokens, or something unguessable.</p>
+<p>Now, even though collisions are common in MD5, it’s still much much better at storing sensitive information than plain text. Since intruders usually just match your hashed file to hashes of common passwords, dictionary words, combinations, etc., if you have a nice, long password, the brute force method becomes inefficient.</p>
+<p>This is why, as long as passwords are lengthy and therefore relatively secure, “outdated” hashing algorithms such as MD5 are also actually not a bad choice if it&#8217;s as simple as <code>md5($string)</code> vs <code>$string</code> when storing the password.  I have a nice long Facebook password, and I’ve decided to make its MD5 hash public to prove my point:</p>
+<pre>cf7dd0b01c061029778c72facdc14451</pre>
+<p>Even though it&#8217;s <em>just</em> MD5, I don&#8217;t think anyone can decrypt it. Not for 573 quadrillion years, at least.</p>
+<p><strong>Footnote: </strong>I&#8217;m not saying that we should use MD5 to sign TLS certificates, that&#8217;s crazy talk. All I&#8217;m saying is that (a) MD5 is better than plain text, and (b) it works for practical purposes, as long as there&#8217;s no sensitive data to be accessed and the user has a long, non-dictionary password.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Tokens for Authentication</title>
+		<link>/tokens/</link>
+		<pubDate>Mon, 13 Feb 2017 08:55:42 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+		<category><![CDATA[Coffee Time]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=49</guid>
+		<description><![CDATA[Something that I've started experimenting recently with is token-based authentication. Since I've been using more JavaScript and less PHP, I figured I can try using tokens in a RESTful API instead of sessions on the server. Instead of using a framework like OAuth (which I highly recommend using), I tried to recreate the token process. This is what I came up with.
+
+This is usually how the process works: A user logs in, and a token is generated. The token is stored on the client (usually in a session, lately also as a local storage object). Then, to call an API, the view also sends the token. The server checks the integrity of the token and returns the relevant response. Each token contains a "private key" of sorts that only the server could've created. JWT does this really well. My way includes a hashed username and timestamp.]]></description>
+				<content:encoded><![CDATA[<p>Something that I&#8217;ve started experimenting recently with is token-based authentication. Since I&#8217;ve been using more JavaScript and less PHP, I figured I can try using tokens in a RESTful API instead of sessions on the server. Instead of using a framework like OAuth (which I highly recommend using), I tried to recreate the token process. Here&#8217;s what I came up with.</p>
+<p>This is usually how the process works: A user logs in, and a token is generated. The token is stored on the client (usually in a session, lately also as a local storage object). Then, to call an API, the view also sends the token. The server checks the integrity of the token and returns the relevant response. Each token contains a &#8220;private key&#8221; of sorts that only the server could&#8217;ve created. JWT does this really well. This my how I did it while playing:</p>
+<p>A hashed version of the user unique key (a primary key like ID or, like I used, username) along with the date of 2 days into the future. In PHP, I wrote it like this:</p>
+<pre>$token = md5($input["username"] . date("Ymd", strtotime("+2 days")) . "secretkey123");</pre>
+<p>In this case, the non-hashed string looks like <code>anand20160216secretkeyq123</code>. I use this particular one because it&#8217;s going to be unique for every user (username) and it has a &#8220;secret&#8221; key. I chose +2 days because of how I&#8217;m checking for integrity:</p>
+<p>When an API request is sent, the username is sent too, and the server knows the date. So we create two strings, username + date 1 day in the future + &#8220;secret&#8221; key, and another with the date 2 days into the future. So if a user logs in at 11:00 pm, the key works for 25 hours, and if a user logs in at 1:00 am, it works for 47 hours. Either way, a key works for at least one day and at most two days. This is good because we don&#8217;t want the key to work for more than a day or two.</p>
+<h2>Why this is bad</h2>
+<p>This is bad because we have no way of killing the token if a session is ended. When a user logs out and logs in again at the same, essentially the same key is generated because it&#8217;s dependent only on the server date. It works as a science experiment, but a fully-developed and tested framework like JWT or OAuth works for real-life projects.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>URL Shortener Length</title>
+		<link>/url-shortener-length/</link>
+		<pubDate>Fri, 25 Nov 2016 09:00:58 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+		<category><![CDATA[Coffee Time]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=53</guid>
+		<description><![CDATA[I made a small URL shortener for Oswald at osw.li in an hour using PHP and MySQL, but I want to learn the MEAN stack, so I thought that this could be a fun starter project. One interesting decision was to decide how many characters the shortened URL’s slug be.
+
+There can be 64 possible characters: A to Z, a to z, 0 to 9, – and _. Even if we make a 3-digit slug, there can be 64^3 = 262,144 possible URLs, which is a big number. The trouble happens with collisions, though. After how many URLs would a pseudorandom generator have repetition? I wrote some JavaScript to find out.]]></description>
+				<content:encoded><![CDATA[<p>I made a small URL shortener for Oswald at <a href="https://osw.li/">osw.li</a> in an hour using PHP and MySQL, but I want to learn the MEAN stack, so I thought that this could be a fun starter project. One interesting decision was to decide how many characters the shortened URL’s slug be.</p>
+<p>There can be 64 possible characters: A to Z, a to z, 0 to 9, – and _. Even if we make a 3-digit slug, there can be 64^3 = 262,144 possible URLs, which is a big number. The trouble happens with collisions, though. After how many URLs would a pseudorandom generator have repetition? I wrote some JavaScript to find out.</p>
+<p>It essentially creates slugs until they’re repeated and returns the number at while repetition happened. It does this 10,000 times and logs the average.</p>
+<pre>function randomString(length) {
+	var result = "", chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-";
+	for (var i = length; i &gt; 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+	return result;
+}
+for (k = 0; k &lt; 5; k++) {
+	var bosarr = [];
+	for (j = 0; j &lt; 10000; j++) {
+		var arr = [];
+		var duplicate = 0;
+		do {
+			var num = randomString(k);
+			var check = 0;
+			for (i = 0; i &lt; arr.length; i++) {
+				if (arr[i] == num) {
+					check++;
+				}
+			}
+			if (check == 0) {
+				arr.push(num);
+			} else {
+				duplicate++;
+			}
+		} while (duplicate &lt;= 0);
+		bosarr.push(arr.length);
+	}
+	var sum = 0;
+	for (i = 0; i &lt; bosarr.length; i++) {
+		sum += parseInt(bosarr[i], 10);
+	}
+	var avg = sum / bosarr.length;
+	console.log("For a " + k + "-digit string, there will be repetition after " + avg + " strings");
+}
+</pre>
+<p>For a 3-character slug, repetition happened at around 640. This means that after around 600 shortened URLs, we would have to re-generate a slug. For a 4-character one, it was around 5,000. And for 5, it was around 40,000.</p>
+<p>Of course, we’ll also check if the slug exists, but to (mostly) avoid it, a 5-character slug makes most sense. 40,000 URLs before we have to ever re-generate. Interesting.</p>
+<section class="entry-content cf"><strong>Footnote:</strong> If the odds are that repetition happens after 40,000 URLs, do we really have to send in a database query every time to check? And if we’re doing that, why not stick to 4-character ones? They’re shorter, and there can be over 16 million possible URLs. I pick 5-character because the probability gets reduced by over 6 times by adding one character, but 4 isn’t too bad if we’re checking anyway.</section>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Machine Learning in Six Lines</title>
+		<link>/machine-learning/</link>
+		<pubDate>Fri, 09 Sep 2016 09:03:40 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+				<category><![CDATA[Blog]]></category>
+		<category><![CDATA[Coffee Time]]></category>
+
+		<guid isPermaLink="false">http://accessibility.co.in/websites/anandchowdhary.com/?p=55</guid>
+		<description><![CDATA[I’ve only very recently started experimenting with Machine Learning, but Python has made is super simple. First, set up an scikit-learn environment (I used Anaconda) and import the decision tree classifier and import tree from sklearn. Compile this python script, and, if there are no errors, we have our environment set up. Now let’s get some data. In the following, we’re using two one-dimensional arrays for features and labels. Consider a phone app where we save the names of contacts I called, corresponding to the time when I called them.]]></description>
+				<content:encoded><![CDATA[<p>I’ve only very recently started experimenting with Machine Learning, but Python has made is super simple. First, set up an <code>scikit-learn</code> environment (I used Anaconda) and import the decision tree classifier.</p>
+<pre>from sklearn import tree</pre>
+<p>And that’s line 1. Compile this python script, and, if there are no errors, we have our environment set up. Now let’s get some data. In the following, we’re using two one-dimensional arrays for features and labels. Consider a phone app where we save the names of contacts I called, corresponding to the time when I called them.</p>
+<pre>features = [[10.00], [10.30], [12.10], [12.55], [14.00], [15.00], [18.00], [18.07], [20.00], [21.00]]
+labels = ['Mom', 'Mom', 'Doctor', 'Doctor', 'Friend', 'Friend', 'Girlfriend', 'Girlfriend', 'Mom', 'Mom']</pre>
+<p>We’ve reached ’til line 3. This list can be populated using the history of your phone app, where labels correspond to features, and we use this information to predict who you might want to call. Let’s set up a classifier, in this case the Decision Tree Classifier, and start predicting after fitting the data.</p>
+<pre>clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features, labels)
+clf.predict([[15.30]])</pre>
+<p>And that’s it. When you execute this script, you’ll get the following output:</p>
+<pre>['Friend']</pre>
+<p>Which is precisely what we were aiming for. Even though we hadn’t explicitly told the computer who we might want to call at 3:00 pm, it recognized the calling pattern to generate this answer. That’s machine learning in six lines.</p>
+<p>This is what a simple application of this could look like. We’ve converted the current time to decimal, and we’ll print who you might want to call right now.</p>
+<pre>from datetime import datetime
+from sklearn import tree
+features = [[10.00], [10.30], [12.10], [12.55], [14.00], [15.00], [18.00], [18.07], [20.00], [21.00]]
+labels = ['Mom', 'Mom', 'Doctor', 'Doctor', 'Friend', 'Friend', 'Girlfriend', 'Girlfriend', 'Mom', 'Mom']
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features, labels)
+time = float("{:%H:%M}".format(datetime.now()).replace(":", "."))
+print clf.predict([[time]])</pre>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>
