@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i');
+
+.navbar {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 960px !important;
+	}
+}
+
+.navbar-brand {
+	font-size: inherit;
+	font-weight: bold;
+}
+
+@media (min-width: 992px) {
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+p {
+	font-size: 1.22rem;
+	line-height: 1.7;
+	font-family: "Gentium Book Basic", serif;
+}

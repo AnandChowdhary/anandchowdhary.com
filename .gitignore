@@ -1,1 +1,5 @@
-img/Thumbs.db
+.bundle
+.cache
+.DS_Store
+.sass-cache
+build/
