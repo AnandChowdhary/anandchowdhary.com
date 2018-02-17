@@ -2,67 +2,69 @@
 title: Anand Chowdhary
 ---
 
-        <section class="about">
-					<div class="row">
-						<div class="col-md-4">
-							<h2 class="h6 mb-3 text-uppercase text-secondary">About</h2>
-						</div>
-						<div class="col-md-8 body-text compact">
-							<p>Hi, I’m Anand Chowdhary, a creative engineer, interaction designer, and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands.</p>
-							<p>These days, I’m working as the CEO of <a href="#">Oswald Labs</a>, an accessibility technology company I founded to bring the next billion users online. I’m also studying Creative Technology at the University of Twente and am a Software Engineering Consultant to <a href="#">El Niño</a>, a digital development studio.</p>
-						</div>
-					</div>
-				</section>
-				<section class="projects">
-					<div class="row">
-						<div class="col-md">
-							<h2 class="h6 mb-3 text-uppercase text-secondary">Recent projects</h2>
-						</div>
-						<div class="col-md text-right">
-							<a href="#">View all &rarr;</a>
-						</div>
-					</div>
-					<div class="row">
-						<% blog.articles.select {|a| a.data[:category] === "projects" }[0...2].each do |article| %>
-						<article class="col-md">
-							<div style="height: 350px; background: #eee"></div>
-							<a href="<%= article.url %>"><p class="mt-3 mb-0"><%= article.title %></p></a>
-							<p class="text-secondary"><%= article.data[:type] %></time> &middot; <time><%= article.date.strftime('%B %Y') %></time></p>
-						</article>
-						<% end %>
-					</div>
-				</section>
-				<section class="blog">
-					<div class="row">
-						<div class="col-md">
-							<h2 class="h6 mb-3 text-uppercase text-secondary">Recent articles</h2>
-						</div>
-						<div class="col-md text-right">
-							<a href="#">View all &rarr;</a>
-						</div>
-					</div>
-					<article>
-						<div class="row">
-							<div class="col-md-4">
-								<p class="mb-0">The Defence for MD5</p>
-								<p class="text-secondary">February 26, 2017</p>
-							</div>
-							<div class="col-md-8 body-text">
-								<p>A few days ago, I tried to reset my password on PR.com, the press releases website. I entered my email, and they sent me the username and password in plain text. That’s right, in plain text.  The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted “hashed” version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.</p>
-								<p><a href="#">Continue reading &rarr;</a></p>
-							</div>
-						</div>
-					</article>
-					<article class="mt-4">
-						<div class="row">
-							<div class="col-md-4">
-								<p class="mb-0">The Defence for MD5</p>
-								<p class="text-secondary">February 26, 2017</p>
-							</div>
-							<div class="col-md-8 body-text">
-								<p>For the Amazon Web Services (AWS) Hackathon at The Future of High Tech, part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon’s grand prize of €1,000 along with VIP tickets for StartupFest Europe.</p>
-								<p><a href="#">Continue reading &rarr;</a></p>
-							</div>
-						</div>
-					</article>
-				</section>
+<section class="about">
+	<div class="row">
+		<div class="col-md-4">
+			<h2 class="h6 mb-3 text-uppercase text-secondary">About</h2>
+		</div>
+		<div class="col-md-8 body-text compact">
+			<p>Hi, I’m Anand Chowdhary, a creative engineer, interaction designer, and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands.</p>
+			<p>These days, I’m working as the CEO of <a href="#">Oswald Labs</a>, an accessibility technology company I founded to bring the next billion users online. I’m also studying Creative Technology at the University of Twente and am a Software Engineering Consultant to <a href="#">El Niño</a>, a digital development studio.</p>
+		</div>
+	</div>
+</section>
+<section class="projects">
+	<div class="row">
+		<div class="col-md">
+			<h2 class="h6 mb-3 text-uppercase text-secondary">Recent projects</h2>
+		</div>
+		<div class="col-md text-right">
+			<a href="#">View all &rarr;</a>
+		</div>
+	</div>
+	<div class="row">
+		<% blog.articles.select {|a| a.data[:category] === "projects" }[0...2].each do |article| %>
+		<a href="<%= article.url %>" class="col-md-6">
+			<article>
+				<%= image_tag article.slug + ".png" %>
+				<p class="mt-3 mb-0"><%= article.title %></p>
+				<p class="text-secondary"><%= article.data[:type] %></time> &middot; <time><%= article.date.strftime('%B %Y') %></time></p>
+			</article>
+		</a>
+		<% end %>
+	</div>
+</section>
+<section class="blog">
+	<div class="row">
+		<div class="col-md">
+			<h2 class="h6 mb-3 text-uppercase text-secondary">Recent articles</h2>
+		</div>
+		<div class="col-md text-right">
+			<a href="#">View all &rarr;</a>
+		</div>
+	</div>
+	<article>
+		<div class="row">
+			<div class="col-md-4">
+				<p class="mb-0">The Defence for MD5</p>
+				<p class="text-secondary">February 26, 2017</p>
+			</div>
+			<div class="col-md-8 body-text">
+				<p>A few days ago, I tried to reset my password on PR.com, the press releases website. I entered my email, and they sent me the username and password in plain text. That’s right, in plain text.  The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted “hashed” version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.</p>
+				<p><a href="#">Continue reading &rarr;</a></p>
+			</div>
+		</div>
+	</article>
+	<article class="mt-4">
+		<div class="row">
+			<div class="col-md-4">
+				<p class="mb-0">The Defence for MD5</p>
+				<p class="text-secondary">February 26, 2017</p>
+			</div>
+			<div class="col-md-8 body-text">
+				<p>For the Amazon Web Services (AWS) Hackathon at The Future of High Tech, part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon’s grand prize of €1,000 along with VIP tickets for StartupFest Europe.</p>
+				<p><a href="#">Continue reading &rarr;</a></p>
+			</div>
+		</div>
+	</article>
+</section>

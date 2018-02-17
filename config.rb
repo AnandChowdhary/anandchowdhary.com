@@ -12,6 +12,8 @@ end
 
 configure :build do
 	activate :asset_hash
+	activate :gzip
+	# activate :imageoptim
 	activate :minify_html
 	activate :minify_css
 	activate :minify_javascript

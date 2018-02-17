@@ -41,6 +41,12 @@ p {
 p a {
 	background: #f6f9fc;
 }
+a:hover {
+	text-decoration: none;
+}
+p a:hover {
+	text-decoration: underline;
+}
 
 .compact {
 	p {
@@ -70,4 +76,8 @@ img {
 
 [aria-current]:not([aria-current="false"]) {
 	font-weight: bold;
+}
+
+.projects .col-md-6:nth-child(2n):not(:last-child) {
+	margin-bottom: 3rem;
 }
