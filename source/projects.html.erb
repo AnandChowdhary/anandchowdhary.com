@@ -1,0 +1,13 @@
+---
+title: Projects
+---
+
+<div class="row">
+	<% blog.articles.select {|a| a.data[:category] === "projects" }[0...2].each do |article| %>
+	<article class="col-md">
+		<div style="height: 350px; background: #eee"></div>
+		<a href="<%= article.url %>"><p class="mt-3 mb-0"><%= article.title %></p></a>
+		<p class="text-secondary"><%= article.data[:type] %></time> &middot; <time><%= article.date.strftime('%B %Y') %></time></p>
+	</article>
+	<% end %>
+</div>

@@ -28,3 +28,46 @@ p {
 	line-height: 1.7;
 	font-family: "Gentium Book Basic", serif;
 }
+
+.body-text p {
+	font-size: 1.1rem;
+}
+
+.blog article + article {
+	border-top: 1px solid #ddd;
+	padding-top: 4rem;
+}
+
+p a {
+	background: #f6f9fc;
+}
+
+.compact {
+	p {
+		margin-bottom: 0;
+	}
+	p + p::first-letter {
+		display: inline-block;
+		margin-left: 2.5rem;
+	}
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+section + section {
+	margin-top: 5rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+.social-nav .nav-item:last-of-type .nav-link {
+	padding-right: 0;
+}
+
+[aria-current]:not([aria-current="false"]) {
+	font-weight: bold;
+}
