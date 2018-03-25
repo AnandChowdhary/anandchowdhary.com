@@ -41,9 +41,16 @@ This is the basic structure I think I should follow.
       - claude 2018
       - wikibility 2017
       - devanagari ligatures 2017
+    - school
+      - keeep
+      - themis.in
+      - minet
+      - impulse
     - hackathons
       - csunite 2018
       - refuserve 2017
+      - capella 2017
+      - ara 2017
       - facematch 2017
       - naari 2016
       - valmiki 2016
@@ -51,9 +58,19 @@ This is the basic structure I think I should follow.
       - internet.org redesign
     - personal
       - bharathacks 2017
-      - saga music 2015
+      - quickie news 2016
+      - precis 2016
+      - saga + rhythmsaga 2015
       - symbol for with
+      - words 2014
       - classrebels 2014
+      - made with love in india 2013
+      - cover 2015
+      - themes
+        - access wp 2017
+        - ascend wp 2015
+        - aptitude 2014
+        - essential.css 2014
   - freelance
     - ecommerce
       - cyankart
