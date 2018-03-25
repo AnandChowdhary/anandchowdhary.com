@@ -1,0 +1,80 @@
+# Structure
+
+This is the basic structure I think I should follow.
+
+```
+- home (summary from everywhere)
+- about (hero image + text + résumé)
+- contact (links + form)
+- press
+  - general interviews
+  - fd 2018 related
+  - oswald bw 2017 related
+  - valmiki 2016 related
+- blog
+  - wordpress backup
+  - medium (publication links)
+  - svbtle (exports)
+  - photoblogs
+    - cities
+      - mumbai
+      - tokyo
+      - enschede
+    - products
+      - apple remote
+- talks
+  - nesst 2018
+  - startup24 2017
+  - hardstart 2017
+  - tedxhaileyroad 2017
+  - facebookdevc 2017
+  - dtu sip launch 2016
+  - hh delhi 2016
+  - jenesys 2014 (event)
+  - dtu codelhi 2014
+- work
+  - projects
+    - university
+      - ibm iot escape room 2018
+      - blueboard 2018
+      - drumpad 2018
+      - claude 2018
+      - wikibility 2017
+      - devanagari ligatures 2017
+    - hackathons
+      - csunite 2018
+      - refuserve 2017
+      - facematch 2017
+      - naari 2016
+      - valmiki 2016
+      - baymax 2016
+      - internet.org redesign
+    - personal
+      - bharathacks 2017
+      - saga music 2015
+      - symbol for with
+      - classrebels 2014
+  - freelance
+    - ecommerce
+      - cyankart
+      - melangebox 2017
+      - sixteeninches
+    - ui/ux
+      - delhi government 2016
+    - branding
+      - crink jewel
+      - firangana
+      - justice adda
+      - hungry owl 2014
+      - the mart 2013
+    - web
+      - drillmaps (+ui/ux) 2018
+      - chaaipani 2017
+      - driffle (+branding) 2017
+      - intolerance tracker
+      - skillstrainer
+  - oswald labs
+    - accelerator 2018
+    - agastya 2017
+    - sharavan 2016
+```
