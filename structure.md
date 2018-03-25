@@ -42,10 +42,10 @@ This is the basic structure I think I should follow.
       - wikibility 2017
       - devanagari ligatures 2017
     - school
-      - keeep
-      - themis.in
+      - keeep 2016
       - minet
       - impulse
+      - themis.in 2011
     - hackathons
       - csunite 2018
       - refuserve 2017
