@@ -84,13 +84,15 @@ This is the basic structure I think I should follow.
       - justice adda
       - hungry owl 2014
       - the mart 2013
-    - web
+      - gsmc 2014
+    - web
       - drillmaps (+ui/ux) 2018
       - chaaipani 2017
       - driffle (+branding) 2017
       - intolerance tracker
       - skillstrainer
-  - oswald labs
+      - pickquick (+branding)
+  - oswald labs
     - accelerator 2018
     - agastya 2017
     - sharavan 2016
