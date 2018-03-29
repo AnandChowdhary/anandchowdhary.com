@@ -7,7 +7,7 @@
 
 @media (min-width: 1200px) {
 	.container {
-		max-width: 960px !important;
+		// max-width: 960px !important;
 	}
 }
 
@@ -23,10 +23,30 @@
 	}
 }
 
-p {
+p, .wolf-item {
 	font-size: 1.22rem;
 	line-height: 1.7;
 	font-family: "Gentium Book Basic", serif;
+}
+.wolf-item a {
+	color: inherit;
+}
+
+.wolf-media-link, .wolf-caption, .portfolio-wolf-item .portfolio-caption a {
+	display: block;
+	transition: 0.3s;
+}
+.wolf-media-link:hover {
+	transform: scale(1.05);
+}
+.portfolio-wolf-item .portfolio-category {
+	font-style: italic;
+}
+.portfolio-wolf-item .portfolio-caption.hovered a {
+	transform: translateX(-20px);
+}
+.portfolio-wolf-item.wright .portfolio-caption.hovered a {
+	transform: translateX(20px);
 }
 
 .body-text p {
@@ -78,6 +98,6 @@ img {
 	font-weight: bold;
 }
 
-.projects .col-md-6:nth-child(2n):not(:last-child) {
+.projects a:not(:last-child) article {
 	margin-bottom: 3rem;
 }

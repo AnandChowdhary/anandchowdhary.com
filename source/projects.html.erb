@@ -3,13 +3,30 @@ title: Projects
 ---
 
 <div class="row">
-	<% blog.articles.select {|a| a.data[:category] === "projects" }.each do |article| %>
-	<a href="<%= article.url %>" class="col-md-6">
-		<article>
-			<%= image_tag article.slug + ".png" %>
-			<p class="mt-3 mb-0"><%= article.title %></p>
-			<p class="text-secondary"><%= article.data[:type] %></time> &middot; <time><%= article.date.strftime('%B %Y') %></time></p>
-		</article>
-	</a>
-	<% end %>
+	<div class="col-md-6">
+		<% blog.articles.select {|a| a.data[:category] === "projects" }.each_with_index do |article, index| %>
+			<% if index % 2 == 0 %>
+				<a href="<%= article.url %>">
+					<article>
+						<%= image_tag article.slug + ".png" %>
+						<p class="mt-3 mb-0"><%= article.title %></p>
+						<p class="text-secondary"><%= article.data[:type] %></time> &middot; <time><%= article.date.strftime('%B %Y') %></time></p>
+					</article>
+				</a>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="col-md-6">
+		<% blog.articles.select {|a| a.data[:category] === "projects" }.each_with_index do |article, index| %>
+			<% if index % 2 != 0 %>
+				<a href="<%= article.url %>">
+					<article>
+						<%= image_tag article.slug + ".png" %>
+						<p class="mt-3 mb-0"><%= article.title %></p>
+						<p class="text-secondary"><%= article.data[:type] %></time> &middot; <time><%= article.date.strftime('%B %Y') %></time></p>
+					</article>
+				</a>
+			<% end %>
+		<% end %>
+	</div>
 </div>

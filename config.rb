@@ -5,8 +5,10 @@ end
 
 activate :aria_current
 
+set :port, 4568
+
 configure :development do
-	activate :livereload, host: "wlan180069.mobiel.utwente.nl"
+	activate :livereload, host: "wlan176202.mobiel.utwente.nl"
 	activate :directory_indexes
 end
 
