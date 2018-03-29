@@ -1,0 +1,42 @@
+baseURL = "https://example.org/"
+defaultContentLanguage = "en"
+enableEmoji = true
+languageCode = "en-us"
+paginate = 4
+pygmentsCodeFences = true
+pygmentsStyle = "native"
+pygmentsUseClasses =  true
+theme = "simplicity"
+title = "Simplicity - Hugo theme"
+[author]
+  gravatarEmail = "test@example.com"
+  homepageText = "Simplicity"
+  name = "Przemysław `eshlox` Kołodziejczyk"
+[params]
+  description = "A blog about everything."
+  disqusShortname = "test"
+  googleAnalytics = ""
+  licence = "[Some Rights Reserved](http://creativecommons.org/licenses/by-sa/4.0/)."
+  adsenseDataAdClient = ""
+  adsenseDataAdSlot = ""
+  addThisId = ""
+[permalinks]
+  posts = "/:year/:month/:day/:slug/"
+[pygmentsOptions]
+  linenos = false
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
+[[menu.pages]]
+  name = "Projects"
+  weight = -100
+  identifier = "projects"
+  url = "/projects/"
+[[menu.pages]]
+  name = "Photos"
+  weight = -90
+  identifier = "photos"
+  url = "/photos/"
