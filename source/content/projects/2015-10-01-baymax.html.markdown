@@ -1,6 +1,0 @@
----
-title: Baymax
-tags: 
-type: Mobile
-category: project
----
