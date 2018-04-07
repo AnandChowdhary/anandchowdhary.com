@@ -10,6 +10,7 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css">
 		<link rel="stylesheet" href="https://use.typekit.net/hmh0qut.css">
+		<link rel="stylesheet" href="css/grid.css">
 		<link rel="stylesheet" href="css/styles.css">
 
 	</head>
@@ -35,23 +36,319 @@
 			<div class="container content">
 				<p>Hi! I'm Anand, a creative technologist and entrepreneur. I work at <a href="#">Oswald Labs</a>, an accessibility technology company building solutions for the next billion users, and study at the <a href="#">University of Twente</a>.</p>
 				<h2 class="subtitle">Most recent projects</h2>
-				<div class="items">
-					<a href="#">
-						<div class="image" style="background-image: url(https://anandchowdhary.com/wp-content/uploads/2017/10/FB_IMG_1506591590350-1.jpg); background-size: cover"></div>
-						<div class="desc">
-							<h3 class="card-title">IBM IoT Escape Room</h3>
-							<p class="meta">April 2018 / Internet of Things</p>
-							<p>My team and I worked with IBM from February to April 2018 to buid a smart escape room using and to educate participants about IoT technology as part of our module project for Living and Working Tomorrow, Creative Technology Year 1.</p>
-						</div>
-					</a>
-					<a href="#">
-						<div class="image" style="background-image: url(https://anandchowdhary.com/wp-content/uploads/2017/10/FB_IMG_1506591590350-1.jpg); background-size: cover"></div>
-						<div class="desc">
-							<h3 class="card-title">CSUnite</h3>
-							<p class="meta">March 2018 / Progressive Web App</p>
-							<p>CSU, the Netherlands' second-largest cleaning service provider, organized their first hackathon in March 2018. Our winning app was an e-training and crowdsourced cleaning platform built.</p>
-						</div>
-					</a>
+				<div class="filters" style="margin-bottom: 1rem">
+					<button data-filter=".grid__col">All</button>
+					<button data-filter=".artificial-intelligence">Artificial Intelligence</button>
+					<button data-filter=".augmented-reality">Augmented Reality</button>
+					<button data-filter=".mobile">Branding</button>
+					<button data-filter=".desktop">Desktop</button>
+					<button data-filter=".event">Event</button>
+					<button data-filter=".hardware">Hardware</button>
+					<button data-filter=".internet-of-things">Internet of Things</button>
+					<button data-filter=".mobile">Mobile</button>
+					<button data-filter=".web">Web</button>
+				</div>
+				<div class="grid items">
+					<div class="grid__col grid__col--1-of-2 internet-of-things hardware">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=IBM+IoT+Escape+Room); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">IBM IoT Escape Room</h3>
+								<p class="meta">April 2018 / Internet of Things</p>
+								<p>My team and I worked with IBM from February to April 2018 to buid a smart escape room using and to educate participants about IoT technology as part of our module project for Living and Working Tomorrow, Creative Technology Year 1.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=DrillMaps); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">DrillMaps</h3>
+								<p class="meta">March 2018 / Website</p>
+								<p>CSU, the Netherlands' second-largest cleaning service provider, organized their first hackathon in March 2018. Our winning app was an e-training and crowdsourced cleaning platform built.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=CSUnite); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">CSUnite</h3>
+								<p class="meta">March 2018 / Progressive Web App</p>
+								<p>CSU, the Netherlands' second-largest cleaning service provider, organized their first hackathon in March 2018. Our winning app was an e-training and crowdsourced cleaning platform built.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 internet-of-things hardware">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Blueboard); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Blueboard</h3>
+								<p class="meta">January 2018 / Internet of Things</p>
+								<p>For a project for the module Living and Working Tomorrow in Creative Technology Year 1, my team and I built Blueboard, a Bluetooth-powered billboard that shows relevant ads and information based on who's walking past it.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 hardware">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Drumpad); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Drumpad</h3>
+								<p class="meta">January 2018 / Hardware</p>
+								<p>For a project for the module Living and Working Tomorrow in Creative Technology Year 1, my team and I built Blueboard, a Bluetooth-powered billboard that shows relevant ads and information based on who's walking past it.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Wikibility); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Wikibility</h3>
+								<p class="meta">January 2018 / Web</p>
+								<p>For a project for the module Living and Working Tomorrow in Creative Technology Year 1, my team and I built Blueboard, a Bluetooth-powered billboard that shows relevant ads and information based on who's walking past it.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Capella); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Capella</h3>
+								<p class="meta">November 2017 / Progressive Web App</p>
+								<p>At Amsterdam Dance Event (ADE)'s annual hackathon, my team and I built the runner-up mobile app, Capella, a platform to discover new friends based on similar music tastes, find friends with location sharing, and gather and analyze event data.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 artificial-intelligence">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Ara); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Ara</h3>
+								<p class="meta">October 2017 / Artificial Intelligence</p>
+								<p>My partner and I worked with SpeakUp, a Dutch business telephony company, to built an AI-based business communication assistant. Ara replies to emails, schedules appointments, and does conversational translation.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 augmented-reality">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=FaceMatch); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">FaceMatch</h3>
+								<p class="meta">September 2017 / Augmented Reality</p>
+								<p>For the Amazon Web Services (AWS) Hackathon at The Future of High Tech, Startup Fest Europe 2017, my partner and I developed FaceMatch, a mobile app that uses deep learning-based face detection to find people (and their LinkedIn profiles) at business events.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 event">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=BharatHacks); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">BharatHacks</h3>
+								<p class="meta">June 2017 / Hackathon</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web branding">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Melangebox); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Melangebox</h3>
+								<p class="meta">2017 / Hybrid mobile app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Naari); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Naari</h3>
+								<p class="meta">2016 / Hybrid mobile app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Oswald+for+Chrome); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Oswald for Chrome</h3>
+								<p class="meta">2016 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 branding web">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Justice+Adda); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Justice Adda</h3>
+								<p class="meta">2016 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 branding">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Firangana); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Firangana</h3>
+								<p class="meta">2016 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Government+of+Delhi); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Government of Delhi</h3>
+								<p class="meta">2016 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 desktop">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Keeep); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Keeep</h3>
+								<p class="meta">2016 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 desktop">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Baymax); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Baymax</h3>
+								<p class="meta">2015 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web branding">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Crink+Jewel); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Crink Jewel</h3>
+								<p class="meta">2015 / Hybrid mobile app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web branding">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=SixteenInches); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">SixteenInches</h3>
+								<p class="meta">2015 / Hybrid mobile app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web branding">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Cyankart); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Cyankart</h3>
+								<p class="meta">2015 / Hybrid mobile app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web branding">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=MINET); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">MINET</h3>
+								<p class="meta">2015 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 desktop">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Internet.org); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Internet.org</h3>
+								<p class="meta">2015 / Internet.org Redesign</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Saga+Music); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Saga Music</h3>
+								<p class="meta">2015 / Cross-platform app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=Hungry+Owl); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Hungry Owl</h3>
+								<p class="meta">2014 / Cross-platform app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=GSMC); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">GSMC</h3>
+								<p class="meta">2014 / Cross-platform app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=ClassRebels); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">ClassRebels</h3>
+								<p class="meta">2014 / Cross-platform app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=MWLII); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">Made with Love in India</h3>
+								<p class="meta">2013 / Cross-platform app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web mobile">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=The+Mart); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">The Mart</h3>
+								<p class="meta">2013 / Cross-platform app</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
+					<div class="grid__col grid__col--1-of-2 web">
+						<a href="#">
+							<div class="image" style="background-image: url(https://via.placeholder.com/800x600?text=The+MIS); background-size: cover"></div>
+							<div class="desc">
+								<h3 class="card-title">The MIS</h3>
+								<p class="meta">2011 / Chrome Extension</p>
+								<p>I organized BharatHacks, a hackathon for solving India-specific problems in New Delhi. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better.</p>
+							</div>
+						</a>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -66,6 +363,23 @@
 				</div>
 			</div>
 		</footer>
+
+		<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+		<script>
+			(function() {
+				var iso = new Isotope(".grid", {
+					itemSelector: ".grid__col",
+					layoutMode: "fitRows"
+				});
+				for (var i = 0; i < document.querySelectorAll("[data-filter]").length; i++) {
+					document.querySelectorAll("[data-filter]")[i].onclick = function() {
+						iso.arrange({
+							filter: this.getAttribute("data-filter")
+						});
+					};
+				}
+			})();
+		</script>
 
 	</body>
 
