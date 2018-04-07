@@ -1,0 +1,55 @@
+body {
+	font-family: "acumin-pro", sans-serif;
+}
+
+.container {
+	padding: 0 1rem;
+}
+
+.content {
+	max-width: 960px;
+	margin: auto;
+}
+
+@media (min-width: 500px) {
+	#masthead {
+		margin: 1.5rem 0;
+		.content {
+			display: flex;
+		}
+		.logo {
+			width: 25%;
+		}
+		nav {
+			width: 75%;
+			ul {
+				display: flex;
+				flex-wrap: nowrap;
+				justify-content: flex-end;
+				padding: 0;
+				list-style: none;
+				li {
+					margin-left: 2rem;
+				}
+			}
+		}
+	}
+	#colophon {
+		.content {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
+
+#colophon {
+	margin-top: 2.5rem;
+	color: #999;
+	a {
+		color: #777;
+	}
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
