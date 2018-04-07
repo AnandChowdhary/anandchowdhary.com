@@ -2,16 +2,18 @@ body {
 	font-family: "acumin-pro", sans-serif;
 }
 
-.container {
-	padding: 0 1rem;
-}
-
 .content {
-	max-width: 960px;
 	margin: auto;
 }
 
+.meta {
+	color: #777;
+}
+
 @media (min-width: 500px) {
+	.content {
+		max-width: 1024px;
+	}
 	#masthead {
 		margin: 1.5rem 0;
 		.content {
@@ -40,14 +42,73 @@ body {
 			justify-content: space-between;
 		}
 	}
+	.items {
+		display: flex;
+		justify-content: space-between;
+		> * {
+			display: block;
+			width: 100%;
+			position: relative;
+			margin-right: 2rem;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+		.desc {
+			opacity: 0;
+			transition: 0.3s;
+			position: absolute;
+			background: rgba(0, 0, 0, 0.85);
+			color: #fff;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+			padding: 3rem;
+			& > * {
+				max-width: 350px;
+			}
+			.meta {
+				color: rgba(255, 255, 255, 0.75);
+			}
+		}
+		> *:hover .desc,
+		> *:focus .desc {
+			opacity: 1;
+		}
+	}
 }
 
 #colophon {
-	margin-top: 2.5rem;
+	margin: 2.5rem 0;
 	color: #999;
 	a {
 		color: #777;
 	}
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+.subtitle {
+	font-size: 1.25rem;
+	font-weight: normal;
+}
+.card-title {
+	font-size: 1.05rem;
+}
+
+.items .image {
+	padding-top: 75%;
+	background-position: center;
+}
+
+.image + .card-title {
+	margin-top: 1rem;
+}
+
+.subtitle + .items,
+.title + .items {
+	margin-top: 1rem;
 }
 
 p:last-child {
