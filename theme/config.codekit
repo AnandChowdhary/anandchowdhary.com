@@ -31,6 +31,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/baymax@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5204,
+		"inputAbbreviatedPath": "\/images\/baymax@0x.png",
+		"outputAbbreviatedPath": "\/images\/baymax@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/baymax@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 47193,
+		"inputAbbreviatedPath": "\/images\/baymax@1x.png",
+		"outputAbbreviatedPath": "\/images\/baymax@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/baymax@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/baymax@2x.png",
+		"outputAbbreviatedPath": "\/images\/baymax@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/bharathacks@0x.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -130,6 +163,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/crinkjewel@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7207,
+		"inputAbbreviatedPath": "\/images\/crinkjewel@0x.png",
+		"outputAbbreviatedPath": "\/images\/crinkjewel@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/crinkjewel@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/crinkjewel@1x.png",
+		"outputAbbreviatedPath": "\/images\/crinkjewel@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/crinkjewel@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/crinkjewel@2x.png",
+		"outputAbbreviatedPath": "\/images\/crinkjewel@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/csunite@0x.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -159,6 +225,39 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/images\/csunite@2x.png",
 		"outputAbbreviatedPath": "\/images\/csunite@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/cyankart@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8706,
+		"inputAbbreviatedPath": "\/images\/cyankart@0x.png",
+		"outputAbbreviatedPath": "\/images\/cyankart@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/cyankart@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/cyankart@1x.png",
+		"outputAbbreviatedPath": "\/images\/cyankart@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/cyankart@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/cyankart@2x.png",
+		"outputAbbreviatedPath": "\/images\/cyankart@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -390,6 +489,39 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/images\/naari@2x.png",
 		"outputAbbreviatedPath": "\/images\/naari@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/sixteeninches@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10443,
+		"inputAbbreviatedPath": "\/images\/sixteeninches@0x.png",
+		"outputAbbreviatedPath": "\/images\/sixteeninches@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/sixteeninches@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 113846,
+		"inputAbbreviatedPath": "\/images\/sixteeninches@1x.png",
+		"outputAbbreviatedPath": "\/images\/sixteeninches@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/sixteeninches@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/sixteeninches@2x.png",
+		"outputAbbreviatedPath": "\/images\/sixteeninches@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
