@@ -31,6 +31,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/bharathacks@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7341,
+		"inputAbbreviatedPath": "\/images\/bharathacks@0x.png",
+		"outputAbbreviatedPath": "\/images\/bharathacks@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/bharathacks@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/bharathacks@1x.png",
+		"outputAbbreviatedPath": "\/images\/bharathacks@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/bharathacks@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/bharathacks@2x.png",
+		"outputAbbreviatedPath": "\/images\/bharathacks@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/blueboard@0x.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -60,6 +93,39 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/images\/blueboard@2x.png",
 		"outputAbbreviatedPath": "\/images\/blueboard@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/capella@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5802,
+		"inputAbbreviatedPath": "\/images\/capella@0x.png",
+		"outputAbbreviatedPath": "\/images\/capella@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/capella@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 63085,
+		"inputAbbreviatedPath": "\/images\/capella@1x.png",
+		"outputAbbreviatedPath": "\/images\/capella@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/capella@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/capella@2x.png",
+		"outputAbbreviatedPath": "\/images\/capella@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -126,6 +192,39 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/images\/drillmaps@2x.png",
 		"outputAbbreviatedPath": "\/images\/drillmaps@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/facematch@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13343,
+		"inputAbbreviatedPath": "\/images\/facematch@0x.png",
+		"outputAbbreviatedPath": "\/images\/facematch@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/facematch@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 376231,
+		"inputAbbreviatedPath": "\/images\/facematch@1x.png",
+		"outputAbbreviatedPath": "\/images\/facematch@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/facematch@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/facematch@2x.png",
+		"outputAbbreviatedPath": "\/images\/facematch@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
