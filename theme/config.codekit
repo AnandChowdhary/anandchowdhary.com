@@ -229,6 +229,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/firangana@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5062,
+		"inputAbbreviatedPath": "\/images\/firangana@0x.png",
+		"outputAbbreviatedPath": "\/images\/firangana@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/firangana@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/firangana@1x.png",
+		"outputAbbreviatedPath": "\/images\/firangana@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/firangana@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/firangana@2x.png",
+		"outputAbbreviatedPath": "\/images\/firangana@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/ibm-iot-escape-room@0x.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -258,6 +291,39 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/images\/ibm-iot-escape-room@2x.png",
 		"outputAbbreviatedPath": "\/images\/ibm-iot-escape-room@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/keeep@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4419,
+		"inputAbbreviatedPath": "\/images\/keeep@0x.png",
+		"outputAbbreviatedPath": "\/images\/keeep@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/keeep@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/keeep@1x.png",
+		"outputAbbreviatedPath": "\/images\/keeep@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/keeep@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/keeep@2x.png",
+		"outputAbbreviatedPath": "\/images\/keeep@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -324,6 +390,39 @@
 		"initialSize": 0,
 		"inputAbbreviatedPath": "\/images\/naari@2x.png",
 		"outputAbbreviatedPath": "\/images\/naari@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/smc@0x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/smc@0x.png",
+		"outputAbbreviatedPath": "\/images\/smc@0x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/smc@1x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48671,
+		"inputAbbreviatedPath": "\/images\/smc@1x.png",
+		"outputAbbreviatedPath": "\/images\/smc@1x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/smc@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/images\/smc@2x.png",
+		"outputAbbreviatedPath": "\/images\/smc@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
