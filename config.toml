@@ -27,7 +27,7 @@ title = "Anand Chowdhary"
   home = ["HTML"]
   page = ["HTML"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS", "Projects"]
+  taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
 [[menu.pages]]
   name = "Projects"

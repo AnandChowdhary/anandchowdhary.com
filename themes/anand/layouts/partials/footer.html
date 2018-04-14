@@ -12,6 +12,10 @@
 				});
 				for (var i = 0; i < document.querySelectorAll("[data-filter]").length; i++) {
 					document.querySelectorAll("[data-filter]")[i].onclick = function() {
+						for (var j = 0; j < document.querySelectorAll("[data-filter]").length; j++) {
+							document.querySelectorAll("[data-filter]")[j].classList.remove("selected");
+						}
+						this.classList.add("selected");
 						iso.arrange({
 							filter: this.getAttribute("data-filter")
 						});

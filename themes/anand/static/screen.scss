@@ -200,15 +200,25 @@ ul.filter {
 	li {
 		display: inline-block;
 		margin-right: 0.5rem;
-		padding: 10px 12px;
-		border-radius: 2rem;
 		line-height: 1;
+		button {
+			font: inherit;
+			background: transparent;
+			border: none;
+			padding: 10px 12px;
+			border-radius: 2rem;
+			&:focus, &:active, &:hover {
+				background-color: whitesmoke;
+				color: #000;
+				outline: none;
+			}
+			&.selected {
+				background-color: #e84393 !important;
+				color: #fff !important;
+			}
+		}
 		&:last-of-type {
 			margin-right: 0;
-		}
-		&.selected {
-			background-color: #e84393;
-			color: #fff;
 		}
 	}
 }

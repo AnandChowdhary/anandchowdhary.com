@@ -3,43 +3,42 @@
 		<h1 class="intro">Anand Chowdhary is a creative technologist and entrepreneur. He is the co-founder and CEO of <a href="https://oswaldlabs.com" target="_blank">Oswald Labs</a>, and studies Creative Technology BSc at the University of Twente.</h1>
 		<section>
 			<ul class="filter">
-				<li class="selected" data-filter=".item">All</li>
-				<li data-filter=".web">Web</li>
-				<li data-filter=".app">Apps</li>
-				<li data-filter=".iot">IoT</li>
-				<li data-filter=".branding">Branding</li>
-				<li data-filter=".hardware">Hardware</li>
-				<li data-filter=".artificial-intelligence">AI/ML</li>
-				<li data-filter=".augmented-reality">VR/AR</li>
-				<li data-filter=".event">Events</li>
+				<li><button class="selected" data-filter=".item">All</button></li>
+				<li><button data-filter=".web">Web</button></li>
+				<li><button data-filter=".app">Apps</button></li>
+				<li><button data-filter=".iot">IoT</button></li>
+				<li><button data-filter=".branding">Branding</button></li>
+				<li><button data-filter=".hardware">Hardware</button></li>
+				<li><button data-filter=".artificial-intelligence">AI/ML</button></li>
+				<li><button data-filter=".augmented-reality">VR/AR</button></li>
+				<li><button data-filter=".event">Events</button></li>
 			</ul>
 			<div class="elements elements-lg">
 				<div class="grid-sizer"></div>
 				<!-- <h2 class="side-title">Recent projects</h2> -->
-				{{ range .Data.Pages }}
-					<article class="item iot">
+				{{ range where .Data.Pages.ByDate "Section" "projects" }}
+					<article class="item {{ .Params.filter }}">
 						<picture>
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
-								data-srcset="/images/ibm-iot-escape-room@1x.png"
+								data-srcset="/images/{{ .Params.imageslug }}@1x.png"
 								media="(max-width: 1024px)" />
 							<source
-								data-srcset="/images/ibm-iot-escape-room@2x.png" />
+								data-srcset="/images/{{ .Params.imageslug }}@2x.png" />
 							<!--[if IE 9]></video><![endif]-->
 							<img
-								src="/images/ibm-iot-escape-room@0x.png"
-								data-src="/images/ibm-iot-escape-room@1x.png"
+								src="/images/{{ .Params.imageslug }}@0x.png"
+								data-src="/images/{{ .Params.imageslug }}@1x.png"
 								class="lazyload"
 								alt="">
 						</picture>
 						<div class="twos">
-							<div><strong>IBM IoT Escape Room</strong> / Internet of Things</div>
+							<div><strong>{{ .Title }}</strong> / {{ .Params.subcategory }}</div>
 							<div>April 2018</div>
 						</div>
-						<p>Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.</p>
+						<p>{{ .Params.intro }}</p>
 					</article>
 				{{ end }}
-				{{ partial "pagination.html" . }}
 			</div>
 		</section>
 	</main>
