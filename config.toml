@@ -6,7 +6,7 @@ paginate = 4
 pygmentsCodeFences = true
 pygmentsStyle = "native"
 pygmentsUseClasses =  true
-theme = "blank"
+theme = "anand"
 title = "Anand Chowdhary"
 [author]
   gravatarEmail = "anandchowdhary@gmail.com"
