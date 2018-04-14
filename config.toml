@@ -14,7 +14,6 @@ title = "Anand Chowdhary"
   name = "Anand Chowhdary"
 [params]
   description = "A blog about everything."
-  disqusShortname = "test"
   googleAnalytics = ""
   licence = "[Some Rights Reserved](http://creativecommons.org/licenses/by-sa/4.0/)."
   adsenseDataAdClient = ""

@@ -1,5 +1,31 @@
-	<footer>
-		<p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
-	</footer>
-</body>
+			<footer id="colophon">
+				<p>&copy; 2008&ndash;2018 Anand Chowdhary</p>
+				<a href="#">Made with <span class="love">&hearts;</span> in India and the Netherlands</a>
+			</footer>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.2/lazysizes.min.js"></script>
+		<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+		<script>
+			(function() {
+				var iso = new Isotope(".elements", {
+					itemSelector: ".elements article"
+				});
+				for (var i = 0; i < document.querySelectorAll("[data-filter]").length; i++) {
+					document.querySelectorAll("[data-filter]")[i].onclick = function() {
+						iso.arrange({
+							filter: this.getAttribute("data-filter")
+						});
+					};
+				}
+				var images = document.querySelectorAll(".elements article img");
+				for (var i = 0; i < images.length; i++) {
+					images[i].onload = function() {
+						var iso = new Isotope(".elements", {
+							itemSelector: ".elements article"
+						});
+					}
+				}
+			})();
+		</script>
+	</body>
 </html>
