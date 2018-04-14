@@ -78,11 +78,7 @@ header#masthead nav ul {
 section {
   position: relative; }
   section .elements {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between; }
+    position: relative; }
     section .elements h2.side-title {
       margin: 0;
       padding: 0;
@@ -92,15 +88,16 @@ section {
       top: 0;
       transform: translate(-100%, -100%) rotate(-90deg);
       transform-origin: bottom right; }
-    section .elements article picture {
-      display: block;
-      padding: 0;
-      margin: 0 0 1rem 0;
-      width: 100%; }
-    section .elements article img {
-      width: 100%; }
+    section .elements article {
+      width: 50%; }
+      section .elements article picture {
+        display: block;
+        padding: 0;
+        margin: 0 0 1rem 0;
+        width: 100%; }
+      section .elements article img {
+        width: 100%; }
     section .elements.elements-lg article {
-      flex: 0 0 50%;
       padding-left: 1rem;
       padding-right: 1rem;
       margin-bottom: 2rem; }
