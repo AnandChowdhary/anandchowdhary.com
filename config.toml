@@ -1,4 +1,4 @@
-baseURL = "https://example.org/"
+baseURL = "https://anandchowdhary.com/"
 defaultContentLanguage = "en"
 enableEmoji = true
 languageCode = "en-us"
@@ -6,12 +6,12 @@ paginate = 4
 pygmentsCodeFences = true
 pygmentsStyle = "native"
 pygmentsUseClasses =  true
-theme = "simplicity"
-title = "Simplicity - Hugo theme"
+theme = "blank"
+title = "Anand Chowdhary"
 [author]
-  gravatarEmail = "test@example.com"
-  homepageText = "Simplicity"
-  name = "Przemysław `eshlox` Kołodziejczyk"
+  gravatarEmail = "anandchowdhary@gmail.com"
+  homepageText = "Anand Chowdhary"
+  name = "Anand Chowhdary"
 [params]
   description = "A blog about everything."
   disqusShortname = "test"
