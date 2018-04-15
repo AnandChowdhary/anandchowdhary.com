@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
-<head>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="dark">
+	<head>
 		<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ .Title }}</title>
-	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/screen.css">
-	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
-	<link rel="stylesheet" href="https://use.typekit.net/hmh0qut.css">
-	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
-	{{ .Hugo.Generator }}
-</head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{ .Title }}</title>
+		{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+		{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/screen.css">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
+		<link rel="stylesheet" href="https://use.typekit.net/hmh0qut.css">
+		{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+		{{ .Hugo.Generator }}
+	</head>
 	<body>
 		<div class="container">
 			<header id="masthead">
 				<a class="logo" href="/">Anand Chowdhary</a>
 				<nav role="navigation">
 					<ul>
+						<li><a href="#">Home</a></li>
 						<li><a class="active" href="#">Projects</a></li>
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">About</a></li>

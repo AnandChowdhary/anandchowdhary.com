@@ -122,6 +122,12 @@ section {
 			transform-origin: bottom right;
 		}
 		article {
+			a {
+				color: inherit;
+				&:hover, &:hover p {
+					color: #000;
+				}
+			}
 			width: 50%;
 			picture {
 				display: block;
@@ -145,6 +151,7 @@ section {
 			}
 			p {
 				font-size: 95%;
+				transition: 0.3s;
 				margin-top: 0.25rem;
 				color: #6f777d;
 			}
@@ -202,6 +209,8 @@ ul.filter {
 		margin-right: 0.5rem;
 		line-height: 1;
 		button {
+			color: #6f777d;
+			transition: 0.3s;
 			font: inherit;
 			background: transparent;
 			border: none;
@@ -225,4 +234,55 @@ ul.filter {
 
 img {
 	max-width: 100%;
+}
+
+.dark {
+	body {
+		background-color: #0f171b;
+		color: rgba(255, 255, 255, 0.75);
+	}
+	a {
+		color: #fff;
+	}
+	h1.intro {
+		color: #9ea2a4;
+	}
+	section {
+		.elements {
+			article {
+				a {
+					&:hover, &:hover p {
+						color: #fff;
+					}
+				}
+			}
+			&.elements-lg {
+				p {
+					color: #6f777d;
+				}
+			}
+		}
+	}
+	header#masthead {
+		a.logo {
+			color: #fff;
+		}
+		nav {
+			ul {
+				li {
+					a {
+						color: rgba(255, 255, 255, 0.75);
+						&:focus, &:hover, &:active, &.active {
+							color: #fff;
+						}
+						svg {
+							g {
+								fill: rgba(255, 255, 255, 0.75);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
