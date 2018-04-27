@@ -22,6 +22,7 @@ body {
 		"Helvetica Neue", sans-serif;
 	margin: 2rem 0;
 	color: #4b555e;
+	line-height: 1.7;
 }
 
 *,
@@ -183,13 +184,13 @@ h1.intro {
 	margin: 0;
 	font-size: 1.25rem;
 	font-weight: 400;
-	max-width: 25em;
+	max-width: 28em;
 	line-height: 1.5;
 	color: #4b555e;
 }
 @media (min-width: 550px) {
 	h1.intro {
-		font-size: 1.6rem;
+		font-size: 1.26rem;
 	}
 }
 
