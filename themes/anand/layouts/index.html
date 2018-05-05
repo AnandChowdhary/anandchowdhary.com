@@ -16,7 +16,7 @@
 			<div class="elements elements-lg">
 				<div class="grid-sizer"></div>
 				<!-- <h2 class="side-title">Recent projects</h2> -->
-				{{ range where .Data.Pages.ByDate "Section" "projects" }}
+				{{ range where .Data.Pages.ByDate "Section" "Projects" }}
 					<article class="item {{ .Params.filter }}">
 						<a href="{{ .Permalink }}">
 							<picture>

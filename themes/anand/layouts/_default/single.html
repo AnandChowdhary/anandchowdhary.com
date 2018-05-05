@@ -2,17 +2,21 @@
 	<main>
 		<article>
 			<h1>{{ .Title }}</h1>
-			<div>Posted on <time>{{ .Date.Format "02-01-2006" }}</time></div>
+			{{ if in .URL "/projects/" }}
+				<div class="meta">
+					<time>{{ .Date.Format "January 2006" }}</time>
+				</div>
+			{{ else }}
+				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
+			{{ end }}
 			<div>
 				{{ .Content }}
 			</div>
-			<div>
-				<ul id="tags">
-					{{ range .Params.tags }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
-					{{ end }}
-				</ul>
-			</div>
+			<footer class="meta">
+				Tags {{ range $i, $e := .Params.tags }}
+				&middot; <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+				{{ end }}
+			</footer>
 		</article>
 	</main>
 {{ partial "sidebar.html" . }}
