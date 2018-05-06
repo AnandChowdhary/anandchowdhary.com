@@ -153,16 +153,11 @@ section {
 			img { width: 100%; }
 		}
 		&.elements-lg {
+			margin: 1.5rem -1rem 0 -1rem;
 			article {
 				padding-left: 1rem;
 				padding-right: 1rem;
 				margin-bottom: 2rem;
-				&:nth-of-type(2n) {
-					padding-right: 0;
-				}
-				&:nth-of-type(2n - 1) {
-					padding-left: 0;
-				}
 			}
 			p {
 				font-size: 95%;
