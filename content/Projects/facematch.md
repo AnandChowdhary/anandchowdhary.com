@@ -1,6 +1,6 @@
 ---
 title: FaceMatch
-subcategory: Web
+subcategory: App
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
 date: 2017-09-23
 tags: ["App", "Artificial Intelligence", "Hackathon", "Augmented Reality"]

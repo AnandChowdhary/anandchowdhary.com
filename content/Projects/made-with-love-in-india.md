@@ -1,9 +1,9 @@
 ---
-title: baymax
+title: Made with Love in India
 subcategory: App
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2015-12-11
-tags: ["App", "Branding", "Hackathon"]
+date: 2014-04-21
+tags: ["Web", "Branding"]
 ---
 
 baymax is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.

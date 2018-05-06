@@ -1,6 +1,6 @@
 ---
 title: SixteenInches
-subcategory: Web
+subcategory: Ecommerce
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
 date: 2015-09-12
 tags: ["App", "Branding", "Web"]

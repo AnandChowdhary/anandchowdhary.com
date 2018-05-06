@@ -2,7 +2,7 @@
 title: Unifiers
 subcategory: Edtech
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2014-01-15
+date: 2014-05-27
 tags: ["Web"]
 ---
 
