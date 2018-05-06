@@ -1,15 +1,24 @@
 ---
-title: baymax
+title: Baymax
 subcategory: App
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
 date: 2015-12-11
+icon: true
 tags: ["App", "Branding", "Hackathon"]
 ---
 
-baymax is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+The idea is pretty simple — like in the movie, we need a personal healthcare companion, someone who can help us medically when we need it to, both by providing the right information to us and helping us get in touch with the right medical professionals.
 
-Users can open the baymax app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. baymax listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+If you’ve stubbed your toe a little, Baymax will tell you how to make the swelling go away and will help you get well by providing a treatment. If that doesn’t work, Baymax will connect you to your doctor and schedule an appointment with her. He’s a companion who’s always there.
 
-This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+[Read the article on Medium &rarr;](https://medium.com/@anandchowdhary/a-personal-healthcare-companion-who-lives-in-your-phone-1e946bd8553b)
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+[View GitHub repo &rarr;](https://github.com/AnandChowdhary/baymax)
+
+<div class="three-images">
+	<div><img alt="" src="/baymax/1.png"></div>
+	<div><img alt="" src="/baymax/3.png"></div>
+	<div><img alt="" src="/baymax/2.png"></div>
+</div>
+
+<footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>

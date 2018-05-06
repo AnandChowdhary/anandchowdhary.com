@@ -6,6 +6,6 @@ date: 2016-01-24
 tags: ["App"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+For my highschool Computer Science project, I built an encryption engine and password manager in C/C++.
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/" target="_blank" rel="noopener noreferrer">Edwin Dertien</a>.</footer>
+[Visit GitHub repo &rarr;](https://github.com/AnandChowdhary/keeep)
