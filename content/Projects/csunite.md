@@ -6,10 +6,22 @@ date: 2018-03-11
 tags: ["Hackathon", "App"]
 ---
 
-BharatHacks is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+I worked with CSU, the Netherlands' second-largest cleaning service provider, during the first weekend of March 2018 in the Philips Stadion in Eindhoven as part of their first hackathon, Bright Future Hack. CSUnite is an app for hyperlocal on-demand cleaning services, along with a built-in training and communication platform for employees.
 
-Users can open the BharatHacks app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. BharatHacks listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+The app was built using Vue.js and Vuetify.js (a material design framework) in 24 hours. It also featured accessibility settings and user ratings.
 
-This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+[View GitHub repo &rarr;](https://github.com/AnandChowdhary/csu)
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+<div class="three-images">
+	<div><img alt="" src="/csunite/learn.png"></div>
+	<div><img alt="" src="/csunite/requests.png"></div>
+	<div><img alt="" src="/csunite/community.png"></div>
+</div>
+<div class="three-images">
+	<div><img alt="" src="/csunite/video.png"></div>
+	<div><img alt="" src="/csunite/profile.png"></div>
+	<div><img alt="" src="/csunite/request.png"></div>
+</div>
+<div class="image scale"><img alt="" src="/csunite/news.png"></div>
+
+<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

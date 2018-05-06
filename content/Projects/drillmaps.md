@@ -2,10 +2,14 @@
 title: DrillMaps
 subcategory: Web
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
-date: 2018-03-12
+date: 2018-03-11
 tags: ["Web", "App"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+In February and March 2018, I worked with DrillMaps, a horizontal directional drilling startup based in Seattle, WA. I designed and developed their new website, along with coherent icons for their products.
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/" target="_blank" rel="noopener noreferrer">Edwin Dertien</a>.</footer>
+The website was built using Vue.js and included Firebase's authentication and real-time database for mapping and visualization. It also integrated with Chargebee and Stripe for billing and subscriptions.
+
+[Visit DrillMaps &rarr;](https://www.drillmaps.com)
+
+<div class="image"><img alt="" src="/drillmaps/1.png"></div>

@@ -1,18 +1,12 @@
 @media (min-width: 700px) {
 	html {
-		font-size: 16px;
+		font-size: 106%;
 	}
 }
 
 @media (min-width: 1200px) {
 	html {
-		font-size: 17px;
-	}
-}
-
-@media (min-width: 1400px) {
-	html {
-		font-size: 18px;
+		font-size: 110%;
 	}
 }
 
@@ -67,6 +61,7 @@ header#masthead,
 footer#colophon {
 	.container {
 		width: 100%;
+		margin-top: -5px;
 	}
 }
 
@@ -207,18 +202,24 @@ h1.intro {
 	color: #4b555e;
 }
 @media (min-width: 550px) {
+	.scale {
+		transform: scale(1.05);
+	}
 	h1 {
 		font-size: 2.5rem;
 	}
 	h1.intro {
 		font-size: 1.26rem;
 	}
-	.two-images {
+	.two-images, .three-images {
 		margin: 3rem 0;
 		display: flex;
 		justify-content: space-between;
 		> * {
 			width: 49%;
+		}
+		&.three-images > * {
+			width: 32%;
 		}
 		+ .two-images {
 			margin-top: -2rem;
@@ -228,6 +229,9 @@ h1.intro {
 
 .two-images + img {
 	margin-top: -2rem;
+}
+img + p {
+	margin-top: 1rem;
 }
 
 p {
@@ -277,10 +281,17 @@ footer {
 	color: #777;
 	a {
 		color: #444;
+		&:focus, &:hover, &:active {
+			color: #000;
+		}
 	}
 	&.meta {
 		margin-top: 1rem;
 	}
+}
+
+.image {
+	margin-top: 2rem;
 }
 
 .dark {
@@ -342,8 +353,8 @@ footer {
 }
 
 main {
-	img + .meta, h1, p, footer {
-		margin-top: 2rem;
+	img + .meta, footer {
+		margin-top: 1rem;
 	}
 	.meta, h1, p, footer {
 		max-width: 600px;
@@ -360,6 +371,6 @@ main {
 		margin-bottom: 0.25rem;
 	}
 	p {
-		margin: 0 auto 2rem auto;
+		margin: 0 auto 1rem auto;
 	}
 }
