@@ -6,6 +6,11 @@ date: 2013-10-11
 tags: ["Branding", "Web"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+I recently participated in an event where I was required to redesign Internet.org's homepage and logo. The content had to remain the same, but the design was to be completely new. The website was required to be responsive, and good in code-quality and aesthetics, without the use of any external code. The logo was marked for creativity and execution. Here’s what I designed in five hours. And why.
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/" target="_blank" rel="noopener noreferrer">Edwin Dertien</a>.</footer>
+[Read the article on Medium &rarr;](https://medium.com/@anandchowdhary/internet-org-redesign-42faa1cf0af)
+
+<div class="two-images">
+	<div><img alt="" src="/internet.org/1.jpg"></div>
+	<div><img alt="" src="/internet.org/2.jpg"></div>
+</div>

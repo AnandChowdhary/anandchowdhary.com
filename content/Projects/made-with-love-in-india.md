@@ -1,15 +1,25 @@
 ---
 title: Made with Love in India
 subcategory: App
-intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
+intro: Platform to celebrate, promote, and build a brand — India. Over 75 organizations use the Made with Love in India badge.
 date: 2014-04-21
+icon: true
 tags: ["Web", "Branding"]
 ---
 
-baymax is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+You see this meticulously made handicraft item which would be the perfect addition to brighten up any living room. You pick it up, admiring the attention to detail when suddenly you spot the Made in India label at the bottom, instantly making the product you were admiring seconds ago feel as cheap as dirt.
 
-Users can open the baymax app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. baymax listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+Why is it that a Made in Italy label makes people feel as if the product had been made in heaven itself? Why does it give the product a sense a class regardless of its quality?
 
-This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+Now, imagine yourself with the beautifully made handicraft once again. You carefully inspect it in your hands when suddenly, you spot a label on the bottom, stating, Made with love, in India. A warm feeling comes over you and a smile plays on your lips. You reach for your wallet and purchase the product.
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+> A small thing — a simple gesture — can brighten up someone’s day and remind them that they should be proud of helping local entrepreneurs who contribute largely to the economy. Take pride in buying and using products made in India; after all, you too are one of India’s many fine products.
+
+Made with Love in India is a platform to celebrate, promote, and build a brand --- India. Over 75 organizations use the Made with Love in India badge and hundreds of users use the platform.
+
+[Visit Made with Love in India &rarr;](https://madewithlove.org.in)
+
+<div class="two-images">
+	<div><img alt="" src="/made-with-love-in-india/1.png"></div>
+	<div><img alt="" src="/made-with-love-in-india/2.png"></div>
+</div>

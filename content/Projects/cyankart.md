@@ -2,10 +2,17 @@
 title: Cyankart
 subcategory: Ecommerce
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
-date: 2014-09-21
+date: 2014-06-21
+icon: true
 tags: ["Web", "Branding", "Ecommerce"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+Cyankart.com is India’s most popular online fashion store for phone cases and apparel items. They were looking to expand their mobile reach and increase conversions, so I was hired to redesign their ecommerce website and provide logistics-related backend solutions. A/B testing, source code minification, image optimization, and responsive cross-platform mobile-first Liquid theme development are just some of the complicated words I used while working with Cyankart to expand their mobile reach and increase conversions.
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/" target="_blank" rel="noopener noreferrer">Edwin Dertien</a>.</footer>
+The biggest challenge was decreasing the load time. I optimized images, minified the code, and decreased the usage of additions libraries and instead wrote vanilla CSS and JavaScript. The most important part was creating user engagement, so A/B testing on both the navigation bar and product layouts was done to ensure that we delivered the best experience. Little changes like the color of the “Buy Now” button made signi cant difference to sale.
+
+<div class="two-images">
+	<div><img alt="" src="/cyankart/1.png"></div>
+	<div><img alt="" src="/cyankart/2.png"></div>
+</div>
+<div class="image"><img alt="" src="/cyankart/a.png"></div>
