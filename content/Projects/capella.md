@@ -2,7 +2,7 @@
 title: capella
 subcategory: App
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2018-01-23
+date: 2017-10-21
 tags: ["App", "Hackathon"]
 ---
 

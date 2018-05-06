@@ -2,7 +2,7 @@
 title: BharatHacks
 subcategory: Hackathon
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2017-07-17
+date: 2017-07-18
 tags: ["Event", "Branding", "Web"]
 ---
 

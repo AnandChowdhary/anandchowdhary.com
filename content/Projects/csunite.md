@@ -2,7 +2,7 @@
 title: CSUnite
 subcategory: App
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2017-07-17
+date: 2018-03-11
 tags: ["Hackathon", "App"]
 ---
 

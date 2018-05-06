@@ -2,7 +2,7 @@
 title: Cyankart
 subcategory: Ecommerce & branding
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
-date: 2018-04-12
+date: 2014-09-21
 tags: ["Web", "Branding", "Ecommerce"]
 ---
 

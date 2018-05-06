@@ -2,7 +2,7 @@
 title: baymax
 subcategory: Hackathon
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2017-07-17
+date: 2015-12-11
 tags: ["App", "Branding", "Hackathon"]
 ---
 

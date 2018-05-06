@@ -2,7 +2,7 @@
 title: Crink Jewel
 subcategory: Ecommerce & branding
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-date: 2014-01-15
+date: 2017-09-10
 tags: ["Branding", "Web"]
 ---
 
