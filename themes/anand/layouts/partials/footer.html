@@ -1,3 +1,4 @@
+			</div>
 		</div>
 		<footer id="colophon">
 			<div class="container">
@@ -6,6 +7,42 @@
 			</div>
 		</footer>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.2/lazysizes.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script> -->
+		<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+		<script>
+			function initMe() {
+				if (document.querySelector(".elements")) {
+					var iso = new Isotope(".elements", {
+						itemSelector: ".elements article"
+					});
+					for (var i = 0; i < document.querySelectorAll("[data-filter]").length; i++) {
+						document.querySelectorAll("[data-filter]")[i].onclick = function() {
+							for (var j = 0; j < document.querySelectorAll("[data-filter]").length; j++) {
+								document.querySelectorAll("[data-filter]")[j].classList.remove("selected");
+							}
+							this.classList.add("selected");
+							iso.arrange({
+								filter: this.getAttribute("data-filter")
+							});
+						};
+					}
+					var images = document.querySelectorAll(".elements article img");
+					for (var i = 0; i < images.length; i++) {
+						images[i].onload = function() {
+							var iso = new Isotope(".elements", {
+								itemSelector: ".elements article"
+							});
+						}
+					}
+				}
+			}
+			(function() {
+				initMe();
+				// Barba.Pjax.start();
+				// Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container) {
+				// 	initMe();
+				// });
+			})();
+		</script>
 	</body>
 </html>

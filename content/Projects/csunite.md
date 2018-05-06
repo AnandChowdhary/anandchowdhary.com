@@ -1,8 +1,9 @@
 ---
 title: CSUnite
 subcategory: App
-intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
+intro: Hyperlocal on-demand cleaning and employee training app for the Netherlands' second-largest cleaning service provider.
 date: 2018-03-11
+icon: true
 tags: ["Hackathon", "App"]
 ---
 

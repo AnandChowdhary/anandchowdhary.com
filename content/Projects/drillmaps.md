@@ -1,7 +1,7 @@
 ---
 title: DrillMaps
 subcategory: Web
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Platform for Seattle-based horizontal directional drilling company built using Vue.js and integrated with Stripe and Firebase.
 date: 2018-03-11
 tags: ["Web", "App"]
 ---

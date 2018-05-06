@@ -44,32 +44,5 @@
 			</div>
 		</section>
 	</main>
-	<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-	<script>
-		(function() {
-			var iso = new Isotope(".elements", {
-				itemSelector: ".elements article"
-			});
-			for (var i = 0; i < document.querySelectorAll("[data-filter]").length; i++) {
-				document.querySelectorAll("[data-filter]")[i].onclick = function() {
-					for (var j = 0; j < document.querySelectorAll("[data-filter]").length; j++) {
-						document.querySelectorAll("[data-filter]")[j].classList.remove("selected");
-					}
-					this.classList.add("selected");
-					iso.arrange({
-						filter: this.getAttribute("data-filter")
-					});
-				};
-			}
-			var images = document.querySelectorAll(".elements article img");
-			for (var i = 0; i < images.length; i++) {
-				images[i].onload = function() {
-					var iso = new Isotope(".elements", {
-						itemSelector: ".elements article"
-					});
-				}
-			}
-		})();
-	</script>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

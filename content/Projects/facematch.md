@@ -1,11 +1,28 @@
 ---
 title: FaceMatch
 subcategory: App
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Face recognition Augmented Reality app for business events, built at the AWS Hackathon for StartupFest Europe.
 date: 2017-09-23
 tags: ["App", "Artificial Intelligence", "Hackathon", "Augmented Reality"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://www.thefutureofhightech.com/), part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon’s grand prize of €1,000 along with VIP tickets for StartupFest Europe.
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/" target="_blank" rel="noopener noreferrer">Edwin Dertien</a>.</footer>
+[View GitHub repo &rarr;](https://github.com/AnandChowdhary/facematch)
+
+<div class="two-images">
+	<div><img alt="" src="/facematch/1.jpg"></div>
+	<div><img alt="" src="/facematch/2.jpg"></div>
+</div>
+
+The idea is simple — if you enter a large conference or a room full of people, you want to know who you should network with. FaceMatch uses AI to understand faces, and finds their relevant info from their LinkedIn profiles. This means that you can essentially point the phone at someone, get information like their age, gender, expression, designation, and company, along with a link to their LinkedIn profile.
+
+I also added a second feature for users who are visually impaired or blind. FaceMatch View reads out the information of the people it recognizes, so if you’re partially or completely blind, you can understand who’s around. “Anand Chowdhary is in the frame, and he’s 19 years old, CEO/Product at Oswald Foundation” will be read out, as an example.
+
+It also uses object and scene detection, so you can just point your camera in the direction you’re walking in, and it will tell you what’s around. “In this scene, there is: road, lamppost, footpath, grass, tree” will be read out to you. For reading out, I used ResponsiveVoice, an instant text-to-speech and speech synthesis library that ensures voice consistency across platforms.
+
+FaceMatch uses Amazon Rekognition, a service that lets you quickly add sophisticated deep learning-based visual search and image classification to apps. I ended up using Face Comparison, Facial Analysis, and Object and Scene Detection APIs.
+
+<div class="image"><img alt="" src="/images/facematch@2x.png"></div>
+
+<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

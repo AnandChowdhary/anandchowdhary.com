@@ -1,7 +1,12 @@
 {{ partial "header.html" . }}
 	<main>
 		<article>
-			<h1>{{ .Title }}</h1>
+			<div class="article-title">
+				{{ if .Params.icon }}
+					<img class="project-icon" alt="{{ .Title }} icon" src="/{{ .Title | urlize }}/icon.png">
+				{{ end }}
+				<h1>{{ .Title }}</h1>
+			</div>
 			{{ if in .URL "/projects/" }}
 				<div class="meta">
 					<time>{{ .Date.Format "January 2006" }}</time>
