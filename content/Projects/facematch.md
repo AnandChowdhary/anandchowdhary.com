@@ -3,6 +3,7 @@ title: FaceMatch
 subcategory: App
 intro: Face recognition Augmented Reality app for business events, built at the AWS Hackathon for StartupFest Europe.
 date: 2017-09-23
+icon: true
 tags: ["App", "Artificial Intelligence", "Hackathon", "Augmented Reality"]
 ---
 

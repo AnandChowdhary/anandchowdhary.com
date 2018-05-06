@@ -3,13 +3,18 @@ title: BharatHacks
 subcategory: Hackathon
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
 date: 2017-07-18
+icon: true
 tags: ["Event", "Branding", "Web"]
 ---
 
-BharatHacks is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+In June 2017, I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make lives better. Organized in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks helped hundreds take their idea forward, from hacking to raising investment and launching their products in the market.
 
-Users can open the BharatHacks app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. BharatHacks listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+BharatHacks was free for both entrepreneurs and hackers, to join hands and work towards a better India. From a pool of over 1,000 applicants, we’ve chosen the top 200 to participate at BharatHacks.
 
-This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+Participants had the opportunity to pitch their ideas to industry-leading investors and startup mentors, including Anil Chhikara, ex-Principal of Jaarvis Accelerator; Bharat Sethi, Forbes 30 Under 30; Paritosh Sharma, Author; and many more. There are prizes worth thousands of dollars.
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+I partnered with some incredible technology companies to make BharatHacks a possibility, including DigitalOcean, which offered free servers to all participants, the .tech registry that’s providing free domain names to all participants, and IBM’s Global Entrepreneur Program, iSPIRT, the parent organization of IndiaStack (the team behind Aadhaar, UPI, and eKYC APIs). Other partners include Neuron, Digio, HackerEarth, Aadhaar Bridge, .tech, F6S, HackSociety, Melangebox, Bizztor, and more.
+
+[Visit BharatHacks &rarr;](https://bharathacks.github.io)
+
+<div class="image"><img alt="" src="/bharathacks/1.png"></div>

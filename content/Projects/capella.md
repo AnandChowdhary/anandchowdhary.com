@@ -23,4 +23,4 @@ Capella is a Bluetooth-powered smart billboard that actually cares about you. Pr
 </div>
 <div class="image"><img alt="" src="/capella/1.jpg"></div>
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+<footer>This project was done in collaboration with Mateo Sadowski 🇺🇸.</footer>
