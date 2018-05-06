@@ -9,13 +9,16 @@ publishdate: 2018-01-24
 tags: ["University", "Internet of Things", "Hardware"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
 
-This was my project for the module "Living and Working Tomorrow", a quarter of Creative Technology BSc's first year focused on working with external clients on solving today's problems using tomorrow's technology.
+Users can open the BlueBoard app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. BlueBoard listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+
+This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
 
 <div class="two-images">
-	<div style="background: #ddd; height: 400px">1</div>
-	<div style="background: #ddd; height: 400px">1</div>
+	<div><img alt="" src="/blueboard/1.jpg"></div>
+	<div><img alt="" src="/blueboard/2.jpg"></div>
 </div>
+<img alt="" src="/blueboard/team.png">
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/">Edwin Dertien</a>.</footer>
+<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>

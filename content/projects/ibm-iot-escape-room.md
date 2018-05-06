@@ -26,4 +26,4 @@ This was my project for the module "Living and Working Tomorrow", a quarter of C
 	<div><img alt="" src="/ibm-iot-escape-room/6.jpg"></div>
 </div>
 
-<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/">Edwin Dertien</a>.</footer>
+<footer>This project was done in collaboration with Babiche Pompe 🇳🇱, Jenneke van Beurden 🇳🇱, Kairtian Tijben 🇳🇱, Laura Maškanceva 🇱🇻, and Rezfan Pawirotaroeno 🇸🇷. It wouldn've have been possible without Manfred Overmeen from IBM and our module coordinator <a href="http://edwindertien.nl/" target="_blank" rel="noopener noreferrer">Edwin Dertien</a>.</footer>
