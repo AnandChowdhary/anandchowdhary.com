@@ -11,6 +11,9 @@
 		<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
 		<script>
 			function initMe() {
+				if (new Date().getHours() > 5) {
+					document.documentElement.classList.add("dark");
+				}
 				if (document.querySelector(".elements")) {
 					var iso = new Isotope(".elements", {
 						itemSelector: ".elements article"

@@ -17,8 +17,8 @@ If you’ve stubbed your toe a little, Baymax will tell you how to make the swel
 
 <div class="three-images">
 	<div><img alt="" src="/baymax/1.png"></div>
-	<div><img alt="" src="/baymax/3.png"></div>
 	<div><img alt="" src="/baymax/2.png"></div>
+	<div><img alt="" src="/baymax/3.png"></div>
 </div>
 
 <footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>
