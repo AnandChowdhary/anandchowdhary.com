@@ -6,8 +6,14 @@ paginate = 4
 pygmentsCodeFences = true
 pygmentsStyle = "native"
 pygmentsUseClasses =  true
+enableRobotsTXT = true
+canonifyURLs = true
 theme = "anand"
 title = "Anand Chowdhary"
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
 [author]
   gravatarEmail = "anandchowdhary@gmail.com"
   homepageText = "Anand Chowdhary"

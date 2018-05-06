@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="dark">
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="https://use.typekit.net/hmh0qut.css">
 		{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
 		{{ .Hugo.Generator }}
+		{{ partial "schema" . }}
 	</head>
 	<body>
 		<header id="masthead">
