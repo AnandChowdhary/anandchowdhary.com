@@ -2,10 +2,7 @@
 title: Blueboard
 subcategory: Internet of Things
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
-imageslug: blueboard
-filter: iot
 date: 2018-01-23
-publishdate: 2018-01-24
 tags: ["University", "Internet of Things", "Hardware"]
 ---
 

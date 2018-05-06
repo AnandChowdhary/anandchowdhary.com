@@ -4,32 +4,32 @@
 		<section>
 			<ul class="filter">
 				<li><button class="selected" data-filter=".item">All</button></li>
-				<li><button data-filter=".web">Web</button></li>
-				<li><button data-filter=".app">Apps</button></li>
-				<li><button data-filter=".iot">IoT</button></li>
-				<li><button data-filter=".branding">Branding</button></li>
-				<li><button data-filter=".hardware">Hardware</button></li>
-				<li><button data-filter=".artificial-intelligence">AI/ML</button></li>
-				<li><button data-filter=".augmented-reality">VR/AR</button></li>
-				<li><button data-filter=".event">Events</button></li>
+				<li><button data-filter=".filter-web">Web</button></li>
+				<li><button data-filter=".filter-app">Apps</button></li>
+				<li><button data-filter=".filter-internet-of-things">IoT</button></li>
+				<li><button data-filter=".filter-branding">Branding</button></li>
+				<li><button data-filter=".filter-hardware">Hardware</button></li>
+				<li><button data-filter=".filter-artificial-intelligence">AI/ML</button></li>
+				<li><button data-filter=".filter-augmented-reality">VR/AR</button></li>
+				<li><button data-filter=".filter-event">Events</button></li>
 			</ul>
 			<div class="elements elements-lg">
 				<div class="grid-sizer"></div>
 				<!-- <h2 class="side-title">Recent projects</h2> -->
-				{{ range where .Data.Pages.ByDate "Section" "Projects" }}
-					<article class="item {{ .Params.filter }}">
+				{{ range where .Data.Pages.ByDate.Reverse "Section" "Projects" }}
+					<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
 						<a href="{{ .Permalink }}">
 							<picture>
 								<!--[if IE 9]><video style="display: none"><![endif]-->
 								<source
-									data-srcset="/images/{{ .Params.imageslug }}@1x.png"
+									data-srcset="/images/{{ .Title | urlize }}@1x.png"
 									media="(max-width: 1024px)" />
 								<source
-									data-srcset="/images/{{ .Params.imageslug }}@2x.png" />
+									data-srcset="/images/{{ .Title | urlize }}@2x.png" />
 								<!--[if IE 9]></video><![endif]-->
 								<img
-									src="/images/{{ .Params.imageslug }}@0x.png"
-									data-src="/images/{{ .Params.imageslug }}@1x.png"
+									src="/images/{{ .Title | urlize }}@0x.png"
+									data-src="/images/{{ .Title | urlize }}@1x.png"
 									class="lazyload"
 									alt="">
 							</picture>
