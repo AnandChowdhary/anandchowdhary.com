@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 	<main>
 		<article>
-			<div class="article-title">
+			<div class="article-title{{ if .Date.IsZero }} page{{ end }}">
 				{{ if .Params.icon }}
 					<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Title | urlize }}/icon.png">
 				{{ end }}
@@ -11,17 +11,17 @@
 				<div class="meta">
 					<time>{{ .Date.Format "January 2006" }}</time>
 				</div>
-			{{ else }}
+			{{ else if not .Date.IsZero }}
 				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
 			{{ end }}
 			<div>
 				{{ .Content }}
 			</div>
-			<footer class="meta">
+			{{ if .Params.tags }}<footer class="meta">
 				Tags {{ range $i, $e := .Params.tags }}
 				&middot; <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
 				{{ end }}
-			</footer>
+			</footer>{{ end }}
 		</article>
 	</main>
 {{ partial "sidebar.html" . }}
