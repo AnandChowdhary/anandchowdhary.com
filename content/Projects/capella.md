@@ -1,13 +1,15 @@
 ---
 title: Capella
 subcategory: App
-intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
+intro: Location-based offline friend discovery and music matching app built for Amsterdam Dance Event in 24 hours.
 date: 2017-10-21
 icon: true
 tags: ["App", "Hackathon"]
 ---
 
-Capella is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+At the Amsterdam Dance Event (ADE)'s hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.
+
+The app was built using HTML5 with a PHP backend integrated with some machine learning and music tagging APIs. The Spotify-inspired dark UI was also developed, along with a beautiful app icon.
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/ade-hack)
 

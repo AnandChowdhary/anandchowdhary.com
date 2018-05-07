@@ -9,7 +9,7 @@ tags: ["App", "Branding", "Hackathon"]
 
 The idea is pretty simple — like in the movie, we need a personal healthcare companion, someone who can help us medically when we need it to, both by providing the right information to us and helping us get in touch with the right medical professionals.
 
-If you’ve stubbed your toe a little, Baymax will tell you how to make the swelling go away and will help you get well by providing a treatment. If that doesn’t work, Baymax will connect you to your doctor and schedule an appointment with her. He’s a companion who’s always there.
+If you've stubbed your toe a little, Baymax will tell you how to make the swelling go away and will help you get well by providing a treatment. If that doesn't work, Baymax will connect you to your doctor and schedule an appointment with her. He's a companion who's always there.
 
 [Read the article on Medium &rarr;](https://medium.com/@anandchowdhary/a-personal-healthcare-companion-who-lives-in-your-phone-1e946bd8553b)
 

@@ -44,7 +44,7 @@ a {
 	text-decoration: none;
 }
 p a[target="_blank"]::after {
-	content: "External";
+	// content: "External";
 }
 
 header#masthead .container,

@@ -14,6 +14,7 @@
 				if (new Date().getHours() > 5) {
 					// document.documentElement.classList.add("dark");
 				}
+				var internal = location.host.replace("www.", ""); internal = new RegExp(internal, "i"); var a = document.getElementsByTagName('a'); for (var i = 0; i < a.length; i++) { var href = a[i].host; if( !internal.test(href) ) { a[i].setAttribute('target', '_blank'); a[i].setAttribute('target', '_blank'); a[i].setAttribute('rel', 'noopener noreferrer'); a[i].setAttribute('href', a[i].getAttribute('href') + "?utm_source=anandchowdhary.com&utm_medium=Anand+Chowdhary's+portfolio"); } }
 				if (document.querySelector(".elements")) {
 					var iso = new Isotope(".elements", {
 						itemSelector: ".elements article"
