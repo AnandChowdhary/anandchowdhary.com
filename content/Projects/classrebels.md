@@ -18,3 +18,13 @@ And that's the dream we're trying to fulfill. Making education not restricted to
 Our mission is to develop our nation's human resource. The way education takes place right now is inefficient, and we're trying to redesign the system from group up. A new definition to how students study. A new paradigm. And in the end, a revolution. We know that the best weapons manufacturer always won the war, and connecting the dots, we understand the importance of education in twenty-first century India. Us, being students ourselves, know the problems faced while trying to get that degree.
 
 However, we do not believe that there is an absence of good teachers and educational content. That's entirely false. The only problem that arises is that there is no way a student can discover an amazing teacher, or a teacher can discover an amazing student, without already having mutual contacts. That's what we're trying to change. A place where students can look for everything they need, from notes to teachers' updates to calendars based on studying schedules. All in one single place we like to call ClassRebels.
+
+<div class="two-images">
+	<div><img alt="" src="/classrebels/1.jpg"></div>
+	<div><img alt="" src="/classrebels/2.png"></div>
+</div>
+<div class="two-images">
+	<div><img alt="" src="/classrebels/4.png"></div>
+	<div><img alt="" src="/classrebels/3.png"></div>
+</div>
+<div class="image scale"><img alt="" src="/classrebels/5.png"></div>

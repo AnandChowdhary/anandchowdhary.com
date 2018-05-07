@@ -1,7 +1,7 @@
 ---
 title: Internet.org
 subcategory: Branding
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Redesigned brand identity of Internet.org for an event in five hours. Made a trustworthy, user-centric brand.
 date: 2013-10-11
 tags: ["Branding", "Web"]
 ---
@@ -13,4 +13,8 @@ I recently participated in an event where I was required to redesign Internet.or
 <div class="two-images">
 	<div><img alt="" src="/internet.org/1.jpg"></div>
 	<div><img alt="" src="/internet.org/2.jpg"></div>
+</div>
+<div class="two-images">
+	<div><img alt="" src="/internet.org/3.png"></div>
+	<div><img alt="" src="/internet.org/4.png"></div>
 </div>
