@@ -11,4 +11,4 @@ In early 2017, Mahendra Singh Raghuwanshi and I co-founded Melangebox, a fashion
 
 [Visit Melangebox &rarr;](https://www.melangebox.com)
 
-<div class="image"><img alt="" src="/melangebox/page.png"></div>
+<div class="image"><img alt="" src="/images/melangebox/page.png"></div>

@@ -14,7 +14,7 @@ The biggest challenge was decreasing the load time. I optimized images, minified
 [Visit Cyankart &rarr;](https://www.cyankart.com)
 
 <div class="two-images">
-	<div><img alt="" src="/cyankart/1.png"></div>
-	<div><img alt="" src="/cyankart/2.png"></div>
+	<div><img alt="" src="/images/cyankart/1.png"></div>
+	<div><img alt="" src="/images/cyankart/2.png"></div>
 </div>
-<div class="image scale"><img alt="" src="/cyankart/a.png"></div>
+<div class="image scale"><img alt="" src="/images/cyankart/a.png"></div>

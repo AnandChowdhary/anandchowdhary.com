@@ -12,4 +12,4 @@ I worked directly under Atishi Marlena, Advisor to the Deputy Chief Minister of 
 
 An SMC (School Management Committee) consist of the Principal, parents, and government representatives, who make sure that their school progresses. This app, SMC Management, is a way to keep track of their progress reports and implementation, and I was responsible for leading the user interface design for the Android app. I adhered to Material Design principals and designed a functional yet simple app.
 
-<div class="image"><img alt="" src="/delhi-government/iterations.png"></div>
+<div class="image"><img alt="" src="/images/delhi-government/iterations.png"></div>

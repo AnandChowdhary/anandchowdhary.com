@@ -13,5 +13,5 @@ I chose red as the primary brand color because it represents power and passion. 
 
 [Visit SixteenInches &rarr;](https://www.sixteeninches.com/)
 
-<div class="image"><img alt="" src="/sixteeninches/1.png"></div>
-<div class="image"><img alt="" src="/sixteeninches/2.png"></div>
+<div class="image"><img alt="" src="/images/sixteeninches/1.png"></div>
+<div class="image"><img alt="" src="/images/sixteeninches/2.png"></div>

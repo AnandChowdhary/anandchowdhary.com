@@ -14,10 +14,37 @@
 				<li><button data-filter=".filter-event">Events</button></li>
 			</ul>
 			<div class="elements elements-lg">
-				<div class="grid-sizer"></div>
 				<!-- <h2 class="side-title">Recent projects</h2> -->
-				{{ range where .Data.Pages.ByDate.Reverse "Section" "Projects" }}
-					<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
+				<div class="left-col">
+					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "Projects" }}
+						<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
+							{{ if modBool $index 2 }}<a href="{{ .Permalink }}">
+								<picture>
+									<!--[if IE 9]><video style="display: none"><![endif]-->
+									<source
+										data-srcset="/images/{{ .Title | urlize }}@1x.png"
+										media="(max-width: 1024px)" />
+									<source
+										data-srcset="/images/{{ .Title | urlize }}@2x.png" />
+									<!--[if IE 9]></video><![endif]-->
+									<img
+										src="/images/{{ .Title | urlize }}@0x.png"
+										data-src="/images/{{ .Title | urlize }}@1x.png"
+										class="lazyload"
+										alt="">
+								</picture>
+								<div class="twos">
+									<div><strong>{{ .Title }}</strong> / {{ .Params.subcategory }}</div>
+									<time>{{ .Date.Format "January 2006" }}</time>
+								</div>
+								<p>{{ .Params.intro }}</p>
+							</a>{{ end }}
+						</article>
+					{{ end }}
+				</div>
+				<div class="right-col">
+					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "Projects" }}
+					{{ if not (modBool $index 2) }}<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
 						<a href="{{ .Permalink }}">
 							<picture>
 								<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -38,9 +65,9 @@
 								<time>{{ .Date.Format "January 2006" }}</time>
 							</div>
 							<p>{{ .Params.intro }}</p>
-						</a>
-					</article>
-				{{ end }}
+						</a>{{ end }}
+					</article>{{ end }}
+				</div>
 			</div>
 		</section>
 	</main>

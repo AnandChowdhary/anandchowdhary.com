@@ -68,12 +68,23 @@ footer#colophon {
 
 header#masthead {
 	font-size: 90%;
+	transition: 0.3s;
+	opacity: 0.75;
+	&:hover, &:active, &:focus {
+		opacity: 1;
+	}
 	padding: 2rem 0;
 	a.logo {
 		color: #4b555e;
 		text-decoration: none;
 		font-weight: bold;
 		font-size: 110%;
+		img {
+			float: left;
+			margin-right: 10px;
+			margin-top: -2px;
+			height: 22px;
+		}
 	}
 	nav {
 		ul {
@@ -121,7 +132,11 @@ header#masthead {
 section {
 	position: relative;
 	.elements {
-		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
 		h2.side-title {
 			margin: 0;
 			padding: 0;
@@ -132,6 +147,15 @@ section {
 			transform: translate(-100%, -100%) rotate(-90deg);
 			transform-origin: bottom right;
 		}
+		.left-col, .right-col {
+			width: 49.5%;
+		}
+		.left-col {
+			float: left;
+		}
+		.right-col {
+			float: right;
+		}
 		article {
 			a {
 				color: inherit;
@@ -139,7 +163,6 @@ section {
 					color: #000;
 				}
 			}
-			width: 50%;
 			picture {
 				display: block;
 				padding: 0;

@@ -8,37 +8,12 @@
 		</footer>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.2/lazysizes.min.js"></script>
 		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script> -->
-		<script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
 		<script>
 			function initMe() {
 				if (new Date().getHours() > 5) {
 					// document.documentElement.classList.add("dark");
 				}
 				var internal = location.host.replace("www.", ""); internal = new RegExp(internal, "i"); var a = document.getElementsByTagName('a'); for (var i = 0; i < a.length; i++) { var href = a[i].host; if( !internal.test(href) ) { a[i].setAttribute('target', '_blank'); a[i].setAttribute('target', '_blank'); a[i].setAttribute('rel', 'noopener noreferrer'); a[i].setAttribute('href', a[i].getAttribute('href') + "?utm_source=anandchowdhary.com&utm_medium=Anand+Chowdhary's+portfolio"); } }
-				if (document.querySelector(".elements")) {
-					var iso = new Isotope(".elements", {
-						itemSelector: ".elements article"
-					});
-					for (var i = 0; i < document.querySelectorAll("[data-filter]").length; i++) {
-						document.querySelectorAll("[data-filter]")[i].onclick = function() {
-							for (var j = 0; j < document.querySelectorAll("[data-filter]").length; j++) {
-								document.querySelectorAll("[data-filter]")[j].classList.remove("selected");
-							}
-							this.classList.add("selected");
-							iso.arrange({
-								filter: this.getAttribute("data-filter")
-							});
-						};
-					}
-					var images = document.querySelectorAll(".elements article img");
-					for (var i = 0; i < images.length; i++) {
-						images[i].onload = function() {
-							var iso = new Isotope(".elements", {
-								itemSelector: ".elements article"
-							});
-						}
-					}
-				}
 			}
 			(function() {
 				initMe();

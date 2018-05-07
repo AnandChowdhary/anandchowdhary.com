@@ -20,20 +20,22 @@ Naari is also a social platform that lets you chat with your doctor, friends, or
 [View GitHub repo &rarr;](https://github.com/OswaldFoundation/naari)
 
 <div class="three-images">
-	<div><img alt="" src="/naari/home.png"></div>
-	<div><img alt="" src="/naari/express.png"></div>
-	<div><img alt="" src="/naari/ml.png"></div>
+	<div><img alt="" src="/images/naari/home.png"></div>
+	<div><img alt="" src="/images/naari/express.png"></div>
+	<div><img alt="" src="/images/naari/ml.png"></div>
 </div>
-<div class="two-images">
-	<div><img alt="" src="/naari/1.png"></div>
-	<div><img alt="" src="/naari/2.png"></div>
-</div>
-<div class="two-images">
-	<div><img alt="" src="/naari/3.png"></div>
-	<div><img alt="" src="/naari/4.png"></div>
-</div>
-<div class="two-images">
-	<div><img alt="" src="/naari/5.png"></div>
+<div class="shadow">
+	<div class="two-images">
+		<div><img alt="" src="/images/naari/1.png"></div>
+		<div><img alt="" src="/images/naari/2.png"></div>
+	</div>
+	<div class="two-images">
+		<div><img alt="" src="/images/naari/3.png"></div>
+		<div><img alt="" src="/images/naari/4.png"></div>
+	</div>
+	<div class="two-images">
+		<div><img alt="" src="/images/naari/5.png"></div>
+	</div>
 </div>
 
 <footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>

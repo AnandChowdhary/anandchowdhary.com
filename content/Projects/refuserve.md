@@ -12,13 +12,13 @@ In November 2017, I worked with Trivago in Düsseldorf on building an app to hel
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/refuserve)
 
 <div class="three-images">
-	<div><img alt="" src="/refuserve/1.png"></div>
-	<div><img alt="" src="/refuserve/2.png"></div>
-	<div><img alt="" src="/refuserve/3.png"></div>
+	<div><img alt="" src="/images/refuserve/1.png"></div>
+	<div><img alt="" src="/images/refuserve/2.png"></div>
+	<div><img alt="" src="/images/refuserve/3.png"></div>
 </div>
 <div class="two-images shadow">
-	<div><img alt="" src="/refuserve/slide1.jpeg"></div>
-	<div><img alt="" src="/refuserve/slide2.jpeg"></div>
+	<div><img alt="" src="/images/refuserve/slide1.jpeg"></div>
+	<div><img alt="" src="/images/refuserve/slide2.jpeg"></div>
 </div>
 
 <iframe class="video-embed" height="600" src="https://www.youtube.com/embed/K-2cs4cFhCk?controls=0&modestbranding=1"> </iframe>

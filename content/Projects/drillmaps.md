@@ -12,4 +12,4 @@ The website was built using Vue.js and included Firebase's authentication and re
 
 [Visit DrillMaps &rarr;](https://www.drillmaps.com)
 
-<div class="image"><img alt="" src="/drillmaps/1.png"></div>
+<div class="image"><img alt="" src="/images/drillmaps/1.png"></div>
