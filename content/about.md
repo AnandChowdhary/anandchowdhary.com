@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: About
 ---
 
 <div class="image">

@@ -409,7 +409,7 @@ main {
 	img + .meta, footer {
 		margin-top: 1rem;
 	}
-	.meta, .article-title, p, footer {
+	.meta, .article-title, p, footer, h2, h3, h4, h5, h6, ul, ol, form {
 		max-width: 600px;
 		margin-left: auto;
 		margin-right: auto;
@@ -465,4 +465,34 @@ figure {
 			color: rgba(0, 0, 0, 0.55);
 		}
 	}
+}
+
+form {
+	margin-top: 2rem;
+	label {
+		margin-bottom: 0.5rem;
+		display: block;
+	}
+	div + div {
+		margin-top: 1rem;
+	}
+}
+input, select, textarea, button {
+	font: inherit;
+	width: 100%;
+	padding: 0.25rem 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+button[type="submit"] {
+	color: #fff;
+	background-color: #3498db;
+	border-color: #2980b9;
+	transition: 0.3s;
+	&:hover, &:active, &:focus {
+		background-color: #2980b9;
+	}
+}
+
+.filter {
+	max-width: 100%;
 }
