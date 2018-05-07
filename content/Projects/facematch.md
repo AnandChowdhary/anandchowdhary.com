@@ -18,9 +18,9 @@ For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://
 
 The idea is simple — if you enter a large conference or a room full of people, you want to know who you should network with. FaceMatch uses AI to understand faces, and finds their relevant info from their LinkedIn profiles. This means that you can essentially point the phone at someone, get information like their age, gender, expression, designation, and company, along with a link to their LinkedIn profile.
 
-I also added a second feature for users who are visually impaired or blind. FaceMatch View reads out the information of the people it recognizes, so if you're partially or completely blind, you can understand who's around. “Anand Chowdhary is in the frame, and he's 19 years old, CEO/Product at Oswald Foundation” will be read out, as an example.
+I also added a second feature for users who are visually impaired or blind. FaceMatch View reads out the information of the people it recognizes, so if you're partially or completely blind, you can understand who's around. 'Anand Chowdhary is in the frame, and he's 19 years old, CEO/Product at Oswald Foundation' will be read out, as an example.
 
-It also uses object and scene detection, so you can just point your camera in the direction you're walking in, and it will tell you what's around. “In this scene, there is: road, lamppost, footpath, grass, tree” will be read out to you. For reading out, I used ResponsiveVoice, an instant text-to-speech and speech synthesis library that ensures voice consistency across platforms.
+It also uses object and scene detection, so you can just point your camera in the direction you're walking in, and it will tell you what's around. 'In this scene, there is: road, lamppost, footpath, grass, tree' will be read out to you. For reading out, I used ResponsiveVoice, an instant text-to-speech and speech synthesis library that ensures voice consistency across platforms.
 
 FaceMatch uses Amazon Rekognition, a service that lets you quickly add sophisticated deep learning-based visual search and image classification to apps. I ended up using Face Comparison, Facial Analysis, and Object and Scene Detection APIs.
 
