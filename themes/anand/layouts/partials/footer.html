@@ -22,15 +22,17 @@
 					}
 				}
 				var elements = document.querySelectorAll("nav[role='navigation'] ul li a");
-				let done = false;
-				for (var i = 1; i < elements.length; i++) {
-					if (location.href.includes(elements[i].getAttribute("href"))) {
-						elements[i].classList.add("active");
-						done = true;
+				if (elements) {
+					let done = false;
+					for (var i = 1; i < elements.length; i++) {
+						if (location.href.includes(elements[i].getAttribute("href"))) {
+							elements[i].classList.add("active");
+							done = true;
+						}
 					}
-				}
-				if (!done) {
-					elements[0].classList.add("active");
+					if (!done) {
+						elements[0].classList.add("active");
+					}
 				}
 				// var items = document.querySelectorAll(".elements article");
 				// var buttons = document.querySelectorAll("[data-filter]");
