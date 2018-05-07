@@ -19,6 +19,7 @@ body {
 		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
 		"Helvetica Neue", sans-serif;
 	margin: 0 0 4rem 0;
+	background-color: whitesmoke;
 	color: #4b555e;
 	line-height: 1.7;
 }
@@ -66,7 +67,6 @@ footer#colophon {
 }
 
 header#masthead {
-	background-color: whitesmoke;
 	padding: 2rem 0;
 	a.logo {
 		color: #4b555e;
@@ -417,4 +417,8 @@ iframe {
 
 .video-embed {
 	width: 100%;
+}
+
+.shadow img {
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 }

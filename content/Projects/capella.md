@@ -23,6 +23,16 @@ The app was built using HTML5 with a PHP backend integrated with some machine le
 	<div><img alt="" src="/capella/emergency.png"></div>
 	<div><img alt="" src="/capella/settings.png"></div>
 </div>
+<div class="shadow">
+	<div class="two-images">
+		<div><img alt="" src="/capella/s1.jpeg"></div>
+		<div><img alt="" src="/capella/s2.jpeg"></div>
+	</div>
+	<div class="two-images">
+		<div><img alt="" src="/capella/s3.jpeg"></div>
+		<div><img alt="" src="/capella/s4.jpeg"></div>
+	</div>
+</div>
 <div class="image"><img alt="" src="/capella/1.jpg"></div>
 
 <footer>This project was done in collaboration with Mateo Sadowski 🇺🇸.</footer>
