@@ -1,5 +1,6 @@
 ---
 title: Contact
+intro: The best way to get in touch with Anand Chowdhary is to drop me a line at mail @ this domain or fill in the form available on this webpage.
 ---
 
 The best way to get in touch with me is to drop me a line at mail @ this domain or fill in the form below.

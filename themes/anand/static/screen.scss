@@ -18,9 +18,11 @@ body {
 	font-family: "acumin-pro", -apple-system, BlinkMacSystemFont,
 		"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
 		"Helvetica Neue", sans-serif;
-	margin: 0 0 4rem 0;
+	margin: 0;
+	padding-bottom: 2rem;
 	background-color: whitesmoke;
 	color: #4b555e;
+	border-top: 4px solid;
 	line-height: 1.7;
 }
 
@@ -51,7 +53,6 @@ p a[target="_blank"]::after {
 header#masthead .container,
 footer#colophon .container,
 .twos {
-	line-height: 1;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -61,6 +62,7 @@ footer#colophon .container,
 header#masthead,
 footer#colophon {
 	.container {
+		line-height: 1;
 		width: 100%;
 		margin-top: -5px;
 	}
@@ -153,15 +155,6 @@ section {
 			transform: translate(-100%, -100%) rotate(-90deg);
 			transform-origin: bottom right;
 		}
-		.left-col, .right-col {
-			width: 49.5%;
-		}
-		.left-col {
-			float: left;
-		}
-		.right-col {
-			float: right;
-		}
 		article {
 			a {
 				color: inherit;
@@ -197,9 +190,28 @@ section {
 	}
 }
 
+.article-title {
+	margin-top: 3rem;
+	line-height: 1;
+	margin-bottom: 0.25rem;
+}
+
+footer#colophon {
+	font-size: 90%;
+	margin-top: 12.5vh;
+	.love {
+		color: #dc3545;
+	}
+}
+
 @media (max-width: 550px) {
 	div.container {
-		margin: 0 1rem;
+		padding: 0 1rem;
+	}
+	footer#colophon {
+		p {
+			margin-bottom: 0.5rem;
+		}
 	}
 	section.elements.elements-lg article {
 		flex: 0 0 100%;
@@ -219,16 +231,10 @@ section {
 	}
 	header#masthead nav ul {
 		margin-top: 1rem;
-		overflow: hidden;
 		width: 100%;
 	}
-}
-
-footer#colophon {
-	font-size: 90%;
-	margin-top: 12.5vh;
-	.love {
-		color: #dc3545;
+	.article-title {
+		margin-top: 1rem;
 	}
 }
 
@@ -241,7 +247,27 @@ h1.intro {
 	line-height: 1.5;
 	color: #4b555e;
 }
+
+.two-images, .three-images {
+	margin: 3rem 0;
+	> div {
+		margin-bottom: 1rem;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+
 @media (min-width: 550px) {
+	.left-col, .right-col {
+		width: 49.5%;
+	}
+	.left-col {
+		float: left;
+	}
+	.right-col {
+		float: right;
+	}
 	.project-icon {
 		width: 78px;
 		margin-right: 25px;
@@ -294,6 +320,8 @@ ul.filter {
 	margin: 0 0 1rem 0;
 	padding: 0;
 	list-style: none;
+	white-space: nowrap;
+	overflow-x: auto;
 	li {
 		display: inline-block;
 		margin-right: 0.5rem;
@@ -426,12 +454,6 @@ main {
 	}
 }
 
-.article-title {
-	margin-top: 3rem;
-	line-height: 1;
-	margin-bottom: 0.25rem;
-}
-
 blockquote {
 	margin-left: 0;
 	margin-right: 0;
@@ -495,4 +517,8 @@ button[type="submit"] {
 
 .filter {
 	max-width: 100%;
+}
+
+.invisible {
+	display: none;
 }

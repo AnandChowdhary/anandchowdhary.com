@@ -1,5 +1,6 @@
 ---
 title: About
+intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CEO of Oswald Labs.
 ---
 
 <div class="image">
