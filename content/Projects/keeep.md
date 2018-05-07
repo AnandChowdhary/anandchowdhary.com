@@ -1,7 +1,7 @@
 ---
 title: Keeep
 subcategory: App
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Encryption engine and password manager in C/C++ built for my highschool Computer Science class.
 date: 2016-01-24
 tags: ["App"]
 ---

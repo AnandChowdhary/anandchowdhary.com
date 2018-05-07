@@ -1,7 +1,7 @@
 ---
 title: SixteenInches
 subcategory: Ecommerce
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Branding and Shopify theme customization for one of the fastest-growing online supplements stores in India.
 date: 2015-09-12
 icon: true
 tags: ["App", "Branding", "Web"]
@@ -14,3 +14,4 @@ I chose red as the primary brand color because it represents power and passion. 
 [Visit SixteenInches &rarr;](https://www.sixteeninches.com/)
 
 <div class="image"><img alt="" src="/sixteeninches/1.png"></div>
+<div class="image"><img alt="" src="/sixteeninches/2.png"></div>

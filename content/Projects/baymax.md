@@ -1,7 +1,7 @@
 ---
 title: Baymax
 subcategory: App
-intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
+intro: End-to-end healthcare companies that diagnoses illnesses and helps your recover, along with scheduling and appointments.
 date: 2015-12-11
 icon: true
 tags: ["App", "Branding", "Hackathon"]

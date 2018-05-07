@@ -19,7 +19,7 @@ Made with Love in India is a platform to celebrate, promote, and build a brand -
 
 [Visit Made with Love in India &rarr;](https://madewithlove.org.in)
 
-<div class="two-images">
+<div class="two-images scale">
 	<div><img alt="" src="/made-with-love-in-india/1.png"></div>
 	<div><img alt="" src="/made-with-love-in-india/2.png"></div>
 </div>

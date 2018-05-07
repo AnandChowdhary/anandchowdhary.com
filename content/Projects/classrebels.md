@@ -1,15 +1,20 @@
 ---
 title: ClassRebels
 subcategory: Startup
-intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
+intro: Education-technology startup trying to break classroom barriers, products include virtual library and collaborative e-classroom.
 date: 2014-01-15
 tags: ["Branding", "Web", "Startup"]
 ---
 
-ClassRebels is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+Unlike all stories, ClassRebels didn't start with the simple idea of making teachers and students connect in a way they've never connected before. It started with an idea to bring about a reform, a change, and a revolution. In India, this change was long needed. The society is evolving, and our education system needs to catch up.
 
-Users can open the ClassRebels app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. ClassRebels listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+We believe that the whole idea of education is taken in the wrong sense. It's become a misconception that studying is only about scrolling through the pages of your textbook the night before your exam. It's not about that. Education is about freedom.
 
-This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+> <span>Education is the most powerful weapon which you can use to change the world.</span>
+> <span>--- <cite>Nelson Mandela</cite></span>
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+And that's the dream we're trying to fulfill. Making education not restricted to classrooms — instead of a professor talking to hundreds of students in one single auditorium—we're providing both students and teachers with a place where they can interact with each other. Where they can study, but with a difference.
+
+Our mission is to develop our nation's human resource. The way education takes place right now is inefficient, and we're trying to redesign the system from group up. A new definition to how students study. A new paradigm. And in the end, a revolution. We know that the best weapons manufacturer always won the war, and connecting the dots, we understand the importance of education in twenty-first century India. Us, being students ourselves, know the problems faced while trying to get that degree.
+
+However, we do not believe that there is an absence of good teachers and educational content. That's entirely false. The only problem that arises is that there is no way a student can discover an amazing teacher, or a teacher can discover an amazing student, without already having mutual contacts. That's what we're trying to change. A place where students can look for everything they need, from notes to teachers' updates to calendars based on studying schedules. All in one single place we like to call ClassRebels.

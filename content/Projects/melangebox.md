@@ -1,7 +1,7 @@
 ---
 title: Melangebox
 subcategory: Ecommerce
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Fashion ecommerce startup delivering high-quality, affordable clothing and accessories internationally.
 date: 2017-01-01
 icon: true
 tags: ["Web", "Branding", "Startup"]

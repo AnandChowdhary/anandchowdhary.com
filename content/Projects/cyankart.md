@@ -1,7 +1,7 @@
 ---
 title: Cyankart
 subcategory: Ecommerce
-intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
+intro: Branding, UI/UX, and A/B-tested Shopify theme development for one of India's most popular online fashion stores.
 date: 2014-06-21
 icon: true
 tags: ["Web", "Branding", "Ecommerce"]
@@ -17,4 +17,4 @@ The biggest challenge was decreasing the load time. I optimized images, minified
 	<div><img alt="" src="/cyankart/1.png"></div>
 	<div><img alt="" src="/cyankart/2.png"></div>
 </div>
-<div class="image"><img alt="" src="/cyankart/a.png"></div>
+<div class="image scale"><img alt="" src="/cyankart/a.png"></div>

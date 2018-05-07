@@ -1,7 +1,7 @@
 ---
 title: Unifiers
 subcategory: Edtech
-intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
+intro: India's first online training platform, built in collaboration with government agencies and large corporates.
 date: 2014-05-27
 tags: ["Web"]
 ---
