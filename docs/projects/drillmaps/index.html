@@ -14,7 +14,6 @@
 		<link rel="stylesheet" href="https://use.typekit.net/hmh0qut.css">
 		
 		<meta name="generator" content="Hugo 0.31.1" />
-		<script type="application/ld+json"></script>
 		<link rel="apple-touch-icon" sizes="180x180" href="https://anandchowdhary.com/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="https://anandchowdhary.com/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="194x194" href="https://anandchowdhary.com/favicon-194x194.png">
@@ -54,8 +53,8 @@
 				},
 				"description": "{ .Site.Params.description }}",
 			}
-			</script>
 			
+			</script>
 		
 	</head>
 	<body>
@@ -64,19 +63,13 @@
 				<div><a class="logo" href="https://anandchowdhary.com/"><img alt="" src="https://anandchowdhary.com/favicon-32x32.png">Anand Chowdhary</a></div>
 				<nav role="navigation">
 					<ul>
-						<li><a href="https://anandchowdhary.com/">Home</a></li>
-						<li><a class="active" href="https://anandchowdhary.com/">Projects</a></li>
-						<li><a href="https://anandchowdhary.com/">Blog</a></li>
-						<li><a href="https://anandchowdhary.com/">About</a></li>
-						<li><a href="https://oswaldlabs.com" target="_blank" rel="noopener noreferrer">
-							Oswald Labs
-							<svg class="newwindow" width="8" height="8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-								<g fill="#000" fill-rule="evenodd">
-									<path d="M0 0v16h16v-5h-2.051v2.949H2.05V2.05H5V0z"></path>
-									<path d="M9 0v2.051h3.503l-4.78 4.78L9.17 8.277l4.78-4.78V7H16V0z"></path>
-								</g>
-							</svg>
-						</a></li>
+						
+						<li><a href="https://anandchowdhary.com/">Projects</a></li>
+						<li><a href="https://anandchowdhary.com/blog/">Blog</a></li>
+						<li><a href="https://anandchowdhary.com/about/">About</a></li>
+						<li><a href="https://anandchowdhary.com/press/">Press</a></li>
+						<li><a href="https://anandchowdhary.com/contact/">Contact</a></li>
+						
 					</ul>
 				</nav>
 			</div>
@@ -127,10 +120,41 @@
 		
 		<script>
 			function initMe() {
-				if (new Date().getHours() > 5) {
-					
+				var internal = location.host.replace("www.", "");
+				internal = new RegExp(internal, "i");
+				var a = document.getElementsByTagName("a");
+				for (var i = 0; i < a.length; i++) {
+					var href = a[i].host;
+					if (!internal.test(href)) {
+						a[i].setAttribute("target", "_blank");
+						a[i].setAttribute("target", "_blank");
+						a[i].setAttribute("rel", "noopener noreferrer");
+					}
 				}
-				var internal = location.host.replace("www.", ""); internal = new RegExp(internal, "i"); var a = document.getElementsByTagName('a'); for (var i = 0; i < a.length; i++) { var href = a[i].host; if( !internal.test(href) ) { a[i].setAttribute('target', '_blank'); a[i].setAttribute('target', '_blank'); a[i].setAttribute('rel', 'noopener noreferrer'); a[i].setAttribute('href', a[i].getAttribute('href') + "?utm_source=anandchowdhary.com&utm_medium=Anand+Chowdhary's+portfolio"); } }
+				var elements = document.querySelectorAll("nav[role='navigation'] ul li a");
+				if (elements) {
+					let done = false;
+					for (var i = 1; i < elements.length; i++) {
+						if (location.href.includes(elements[i].getAttribute("href"))) {
+							elements[i].classList.add("active");
+							done = true;
+						}
+					}
+					if (!done) {
+						elements[0].classList.add("active");
+					}
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 			(function() {
 				initMe();

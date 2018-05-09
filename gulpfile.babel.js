@@ -1,11 +1,19 @@
 import gulp from "gulp";
-import gulpCopy from "gulp-copy";
+import minifyHTML from "gulp-minify-html";
+import runSequence from "run-sequence";
 
-const sourceFiles = ["./public/"];
-const destination = "./docs/";
+gulp.task("default", () => {
+	runSequence("copy", "compress", function() {});
+});
 
-gulp.task("default", () => {});
-
-gulp.task("copy", function() {
+gulp.task("copy", () => {
 	gulp.src("./public/**/*").pipe(gulp.dest("./docs/"));
+});
+
+gulp.task("compress", () => {
+	const opts = { comments: true, spare: true };
+	gulp
+		.src("./docs/**/*.html")
+		.pipe(minifyHTML(opts))
+		.pipe(gulp.dest("./docs/"));
 });
