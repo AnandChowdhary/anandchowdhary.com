@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Industrial Design on Anand Chowdhary</title>
+    <link>https://anandchowdhary.com/tags/industrial-design/</link>
+    <description>Recent content in Industrial Design on Anand Chowdhary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://anandchowdhary.com/tags/industrial-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project Blue</title>
+      <link>https://anandchowdhary.com/projects/project-blue/</link>
+      <pubDate>Tue, 01 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/project-blue/</guid>
+      <description>Project Blue, originally standing for &amp;lsquo;Bottles, Linkages, and their Underlining Ergonomics,&amp;rsquo; is my first (and only) industrial design project in which I conducted a research and redesigned the plastic bottle. I understood that polyethene terephthalate, a plastic resin and the most common type of polyester, is the material which makes the popular &amp;lsquo;PET&amp;rsquo; bottles.
+According to the National Association for PET Container Resources (NAPCOR), the gross water bottle recycling rate was only 38.</description>
+    </item>
+    
+  </channel>
+</rss>

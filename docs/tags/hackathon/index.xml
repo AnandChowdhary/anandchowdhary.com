@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hackathon on Anand Chowdhary</title>
+    <link>https://anandchowdhary.com/tags/hackathon/</link>
+    <description>Recent content in Hackathon on Anand Chowdhary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://anandchowdhary.com/tags/hackathon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSUnite</title>
+      <link>https://anandchowdhary.com/projects/csunite/</link>
+      <pubDate>Sun, 11 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/csunite/</guid>
+      <description>I worked with CSU, the Netherlands&amp;rsquo; second-largest cleaning service provider, during the first weekend of March 2018 in the Philips Stadion in Eindhoven as part of their first hackathon, Bright Future Hack. CSUnite is an app for hyperlocal on-demand cleaning services, along with a built-in training and communication platform for employees.
+The Progressive Web App was built using Vue.js and Vuetify.js (a material design framework) in 24 hours. It also featured accessibility settings and user ratings, and our pitch included concepts of VR training using Google Cardboard and an Apple Watch app.</description>
+    </item>
+    
+    <item>
+      <title>Capella</title>
+      <link>https://anandchowdhary.com/projects/capella/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/capella/</guid>
+      <description>At the Amsterdam Dance Event (ADE)&amp;rsquo;s hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.
+The app was built using HTML5 with a PHP backend integrated with some machine learning and music tagging APIs. The Spotify-inspired dark UI was also developed, along with a beautiful app icon.</description>
+    </item>
+    
+    <item>
+      <title>FaceMatch</title>
+      <link>https://anandchowdhary.com/projects/facematch/</link>
+      <pubDate>Sat, 23 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/facematch/</guid>
+      <description>For the Amazon Web Services (AWS) Hackathon at The Future of High Tech, part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon&amp;rsquo;s grand prize of €1,000 along with VIP tickets for StartupFest Europe.
+View GitHub repo &amp;rarr;
+   The idea is simple — if you enter a large conference or a room full of people, you want to know who you should network with.</description>
+    </item>
+    
+    <item>
+      <title>Naari</title>
+      <link>https://anandchowdhary.com/projects/naari/</link>
+      <pubDate>Sun, 16 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/naari/</guid>
+      <description>Naari (meaning woman in Hindi) is the end-to-end period healthcare companion&amp;mdash;from giving you personalized tampon recommendations using P&amp;amp;G&amp;rsquo;s survey data and HPE&amp;rsquo;s machine learning APIs&amp;mdash;to getting those products delivered to your doorstep via Amazon.
+ Great use of machine learning to drive a benefit for women. &amp;ndash; Erik Hasenoehrl, Research Fellow, Procter &amp;amp; Gamble
+ Naari is also a social platform that lets you chat with your doctor, friends, or anonymously in a group to find someone who has previously experienced what you are experiencing and express yourself freely, and get a daily curated feed of women&amp;rsquo;s health articles and news from leading journals.</description>
+    </item>
+    
+    <item>
+      <title>Baymax</title>
+      <link>https://anandchowdhary.com/projects/baymax/</link>
+      <pubDate>Fri, 11 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/baymax/</guid>
+      <description>The idea is pretty simple — like in the movie, we need a personal healthcare companion, someone who can help us medically when we need it to, both by providing the right information to us and helping us get in touch with the right medical professionals.
+If you&amp;rsquo;ve stubbed your toe a little, Baymax will tell you how to make the swelling go away and will help you get well by providing a treatment.</description>
+    </item>
+    
+  </channel>
+</rss>
