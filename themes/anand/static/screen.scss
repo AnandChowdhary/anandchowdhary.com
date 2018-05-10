@@ -522,3 +522,14 @@ button[type="submit"] {
 .invisible {
 	display: none;
 }
+
+.single.press {
+	img {
+		height: 35px;
+		width: 35px;
+		margin-top: -1px;
+		border-radius: 100px;
+		margin-right: 0.5rem;
+		vertical-align: middle;
+	}
+}

@@ -3,7 +3,7 @@ import minifyHTML from "gulp-minify-html";
 import runSequence from "run-sequence";
 
 gulp.task("default", () => {
-	runSequence("copy", "compress", function() {});
+	runSequence("copy", "compress", "compress", function() {});
 });
 
 gulp.task("copy", () => {
