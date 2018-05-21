@@ -25,6 +25,28 @@
 						{{ end }}
 					</div>
 				</div>
+			{{ else if in .URL "/events/" }}
+				<div class="meta">
+					{{ if .Params.eventDate }}
+						<time>{{ .Params.eventDate }}</time>
+					{{ else }}
+						<time>{{ .Date.Format "January 2006" }}</time>
+					{{ end }}
+					<div class="client-details">
+						{{ if .Params.role }}
+							<div>
+								<div>Role</div>
+								<div>{{ .Params.role }}</div>
+							</div>
+						{{ end }}
+						{{ if .Params.location }}
+							<div>
+								<div>Location</div>
+								<div>{{ .Params.location }}</div>
+							</div>
+						{{ end }}
+					</div>
+				</div>
 			{{ else if not .Date.IsZero }}
 				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
 			{{ end }}
