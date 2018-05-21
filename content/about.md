@@ -12,6 +12,6 @@ intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delh
 
 Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CEO of [Oswald Labs](https://oswaldlabs.com), an award-winning accessibility technology company, and studies Creative Technology BSc at the [University of Twente](https://www.utwente.nl/en/).
 
-He is also a consultant to [El Niño](https://www.elnino.tech), a digital development studio that works with companies like Takeaway and Nedap. Previously, he was an interaction designer at the Government of Delhi, and has worked with startups like Justice Adda (University of Cambridge), Cyankart, Sixteen Inches, and Unifiers. He is currently unavailable for freelance projects.
+He is also a consultant to several startups and digital studios in India and the Netherlands. Previously, he was an interaction designer at the Government of Delhi, Technology Lead at Justice Adda (a University of Cambridge social venture), and consultant to companies like Cyankart, Sixteen Inches, and Unifiers.
 
-CV available upon request.
+He is currently unavailable for freelance projects.

@@ -10,6 +10,20 @@
 			{{ if in .URL "/projects/" }}
 				<div class="meta">
 					<time>{{ .Date.Format "January 2006" }}</time>
+					<div class="client-details">
+						{{ if .Params.client }}
+							<div>
+								<div>Client</div>
+								<div>{{ .Params.client }}</div>
+							</div>
+						{{ end }}
+						{{ if .Params.timeline }}
+							<div>
+								<div>Timeline</div>
+								<div>{{ .Params.timeline }}</div>
+							</div>
+						{{ end }}
+					</div>
 				</div>
 			{{ else if not .Date.IsZero }}
 				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
