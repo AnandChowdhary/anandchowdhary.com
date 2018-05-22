@@ -12,8 +12,8 @@ For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/facematch)
 
 <div class="two-images shadow">
-	<div><img alt="" src="/images/facematch/1.jpg"></div>
-	<div><img alt="" src="/images/facematch/2.jpg"></div>
+	<div><img alt="" src="/images/projects/facematch/1.jpg"></div>
+	<div><img alt="" src="/images/projects/facematch/2.jpg"></div>
 </div>
 
 The idea is simple — if you enter a large conference or a room full of people, you want to know who you should network with. FaceMatch uses AI to understand faces, and finds their relevant info from their LinkedIn profiles. This means that you can essentially point the phone at someone, get information like their age, gender, expression, designation, and company, along with a link to their LinkedIn profile.

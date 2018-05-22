@@ -14,23 +14,23 @@ The app was built using HTML5 with a PHP backend integrated with some machine le
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/ade-hack)
 
 <div class="three-images">
-	<div><img alt="" src="/images/capella/home.png"></div>
-	<div><img alt="" src="/images/capella/taste.png"></div>
-	<div><img alt="" src="/images/capella/location.png"></div>
+	<div><img alt="" src="/images/projects/capella/home.png"></div>
+	<div><img alt="" src="/images/projects/capella/taste.png"></div>
+	<div><img alt="" src="/images/projects/capella/location.png"></div>
 </div>
 <div class="three-images">
-	<div><img alt="" src="/images/capella/people.png"></div>
-	<div><img alt="" src="/images/capella/emergency.png"></div>
-	<div><img alt="" src="/images/capella/settings.png"></div>
+	<div><img alt="" src="/images/projects/capella/people.png"></div>
+	<div><img alt="" src="/images/projects/capella/emergency.png"></div>
+	<div><img alt="" src="/images/projects/capella/settings.png"></div>
 </div>
 <div class="shadow">
 	<div class="two-images">
-		<div><img alt="" src="/images/capella/s1.jpeg"></div>
-		<div><img alt="" src="/images/capella/s2.jpeg"></div>
+		<div><img alt="" src="/images/projects/capella/s1.jpeg"></div>
+		<div><img alt="" src="/images/projects/capella/s2.jpeg"></div>
 	</div>
 	<div class="two-images">
-		<div><img alt="" src="/images/capella/s3.jpeg"></div>
-		<div><img alt="" src="/images/capella/s4.jpeg"></div>
+		<div><img alt="" src="/images/projects/capella/s3.jpeg"></div>
+		<div><img alt="" src="/images/projects/capella/s4.jpeg"></div>
 	</div>
 </div>
 <div class="image"><img alt="" src="/images/capella/1.jpg"></div>

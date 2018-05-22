@@ -11,10 +11,10 @@ I recently participated in an event where I was required to redesign Internet.or
 [Read the article on Medium &rarr;](https://medium.com/@anandchowdhary/internet-org-redesign-42faa1cf0af)
 
 <div class="two-images">
-	<div><img alt="" src="/images/internet.org/1.jpg"></div>
-	<div><img alt="" src="/images/internet.org/2.jpg"></div>
+	<div><img alt="" src="/images/projects/internet.org/1.jpg"></div>
+	<div><img alt="" src="/images/projects/internet.org/2.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/internet.org/3.png"></div>
-	<div><img alt="" src="/images/internet.org/4.png"></div>
+	<div><img alt="" src="/images/projects/internet.org/3.png"></div>
+	<div><img alt="" src="/images/projects/internet.org/4.png"></div>
 </div>

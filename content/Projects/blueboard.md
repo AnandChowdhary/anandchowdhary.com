@@ -11,8 +11,8 @@ BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. 
 Users can open the BlueBoard app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. BlueBoard listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
 
 <div class="two-images">
-	<div><img alt="" src="/images/blueboard/1.jpg"></div>
-	<div><img alt="" src="/images/blueboard/2.jpg"></div>
+	<div><img alt="" src="/images/projects/blueboard/1.jpg"></div>
+	<div><img alt="" src="/images/projects/blueboard/2.jpg"></div>
 </div>
 <img alt="" src="/images/blueboard/team.png">
 

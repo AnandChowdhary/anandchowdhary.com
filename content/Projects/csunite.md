@@ -14,14 +14,14 @@ The Progressive Web App was built using Vue.js and Vuetify.js (a material design
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/csu)
 
 <div class="three-images">
-	<div><img alt="" src="/images/csunite/learn.png"></div>
-	<div><img alt="" src="/images/csunite/requests.png"></div>
-	<div><img alt="" src="/images/csunite/community.png"></div>
+	<div><img alt="" src="/images/projects/csunite/learn.png"></div>
+	<div><img alt="" src="/images/projects/csunite/requests.png"></div>
+	<div><img alt="" src="/images/projects/csunite/community.png"></div>
 </div>
 <div class="three-images">
-	<div><img alt="" src="/images/csunite/video.png"></div>
-	<div><img alt="" src="/images/csunite/profile.png"></div>
-	<div><img alt="" src="/images/csunite/request.png"></div>
+	<div><img alt="" src="/images/projects/csunite/video.png"></div>
+	<div><img alt="" src="/images/projects/csunite/profile.png"></div>
+	<div><img alt="" src="/images/projects/csunite/request.png"></div>
 </div>
 <div class="image scale"><img alt="" src="/images/csunite/news.png"></div>
 

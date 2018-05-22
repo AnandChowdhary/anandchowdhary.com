@@ -20,21 +20,21 @@ Naari is also a social platform that lets you chat with your doctor, friends, or
 [View GitHub repo &rarr;](https://github.com/OswaldFoundation/naari)
 
 <div class="three-images">
-	<div><img alt="" src="/images/naari/home.png"></div>
-	<div><img alt="" src="/images/naari/express.png"></div>
-	<div><img alt="" src="/images/naari/ml.png"></div>
+	<div><img alt="" src="/images/projects/naari/home.png"></div>
+	<div><img alt="" src="/images/projects/naari/express.png"></div>
+	<div><img alt="" src="/images/projects/naari/ml.png"></div>
 </div>
 <div class="shadow">
 	<div class="two-images">
-		<div><img alt="" src="/images/naari/1.png"></div>
-		<div><img alt="" src="/images/naari/2.png"></div>
+		<div><img alt="" src="/images/projects/naari/1.png"></div>
+		<div><img alt="" src="/images/projects/naari/2.png"></div>
 	</div>
 	<div class="two-images">
-		<div><img alt="" src="/images/naari/3.png"></div>
-		<div><img alt="" src="/images/naari/4.png"></div>
+		<div><img alt="" src="/images/projects/naari/3.png"></div>
+		<div><img alt="" src="/images/projects/naari/4.png"></div>
 	</div>
 	<div class="two-images">
-		<div><img alt="" src="/images/naari/5.png"></div>
+		<div><img alt="" src="/images/projects/naari/5.png"></div>
 	</div>
 </div>
 
