@@ -1,7 +1,7 @@
 ---
 title: TEDxHaileyRoad
-date: 2017-11-11
-role: Panelist
+date: 2017-06-17
+role: Speaker
 location: Enschede
 emoji: 🇳🇱
 link: https://www.ted.com/tedx/events/21871

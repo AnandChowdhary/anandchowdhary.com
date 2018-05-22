@@ -3,11 +3,11 @@
 		<div class="article-title page">
 			<h1>{{ .Title }}</h1>
 		</div>
-		{{ range sort .Paginator.Pages }}
+		{{ range sort (.Paginator 50).Pages }}
 		<article class="article-list">
 			<div class="article-title">
 				{{ if .Params.icon }}
-				<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Title | urlize }}/icon.png">
+				<a href="{{ .Permalink }}"><img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Title | urlize }}/icon.png"></a>
 				{{ end }}
 				<h2><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h2>
 			</div>

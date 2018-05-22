@@ -1,13 +1,13 @@
 ---
-title: Startup24
-date: 2017-11-11
-role: Trainer
-location: Enschede
-emoji: 🇳🇱
-link: https://startup24.nl/cities/enschede
-linkType: Website
+title: Tech Charcha by Facebook DevC
+date: 2017-05-07
+role: Panelist
+location: New Delhi
+emoji: 🇮🇳
+link: https://www.facebook.com/events/199095997267944/
+linkType: Event
 icon: true
-color: "#f39c12"
+color: "#4267b2"
 ---
 
 I'll be speaking at the AKEPT-WIEF Social Enterprise Forum in Kuala Lumpur later this year. The event is a collaboration between the higher education and leadership academy AKEPT and the World Islamic Economic Forum Foundation.
