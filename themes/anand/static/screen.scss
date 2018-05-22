@@ -228,6 +228,10 @@ section {
 	margin-top: 3rem;
 	line-height: 1;
 	margin-bottom: 0.25rem;
+	h2 {
+		margin: 0;
+		font-size: 1.75rem;
+	}
 }
 
 footer#colophon {
@@ -482,6 +486,9 @@ main {
 		margin-bottom: 2rem;
 		color: #777;
 	}
+	.article-list .meta {
+		margin-bottom: 1rem;
+	}
 	h1 {
 		margin: 0;
 	}
@@ -575,9 +582,9 @@ button[type="submit"] {
 
 .client-details {
 	margin-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
 	> * {
-		float: left;
-		width: 50%;
 		> div:first-child {
 			font-size: 85%;
 		}

@@ -21,7 +21,7 @@ title = "Anand Chowdhary"
 [params]
   description = "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company."
   googleAnalytics = ""
-  licence = "[Some Rights Reserved](http://creativecommons.org/licenses/by-sa/4.0/)."
+  licence = "All Rights Reserved"
   adsenseDataAdClient = ""
   adsenseDataAdSlot = ""
   addThisId = ""
@@ -35,13 +35,3 @@ title = "Anand Chowdhary"
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
-[[menu.pages]]
-  name = "Projects"
-  weight = -100
-  identifier = "projects"
-  url = "/projects/"
-[[menu.pages]]
-  name = "Photos"
-  weight = -90
-  identifier = "photos"
-  url = "/photos/"

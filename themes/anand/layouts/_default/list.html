@@ -1,30 +1,53 @@
 {{ partial "header.html" . }}
 	<main>
-		<section class="section">
-			<div class="container">
-			{{ range sort .Paginator.Pages }}
-			<article>
-				<div class="subtitle tags is-6 is-pulled-right">
-				{{ if .Params.tags }}
-					{{ partial "tags" .Params.tags }}
-				{{ end }}
-				</div>
-				<h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
-				<h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h1>
-				<div class="content">
-				{{ .Summary | plainify | safeHTML }}
-				{{ if .Truncated }}
-				<a class="button is-link" href="{{ .Permalink }}" style="height:28px">
-					Read more
-					<span class="icon is-small">
-					</span>
-				</a>
-				{{ end }}
-				</div>
-			</article>
-			{{ end }}
+		{{ range sort .Paginator.Pages }}
+		<article class="article-list">
+			<div class="article-title">
+				<h2><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h2>
 			</div>
-		</section>
+			{{ if in .URL "/events/" }}
+				<div class="meta">
+					<div class="client-details">
+						<div>
+							<div>Date</div>
+							<div>
+								{{ if .Params.futureDate }}
+									<time>{{ .Params.futureDate }}</time>
+								{{ else }}
+									<time>{{ .Date.Format "January 1, 2006" }}</time>
+								{{ end }}
+							</div>
+						</div>
+						{{ if .Params.role }}
+							<div>
+								<div>Role</div>
+								<div><a href="/roles/{{ .Params.role | urlize }}">{{ .Params.role }}</a></div>
+							</div>
+						{{ end }}
+						{{ if .Params.location }}
+							<div>
+								<div>Location</div>
+								<div>
+									<a href="/places/{{ .Params.location | urlize }}">
+										{{ .Params.location }}
+										{{ .Params.emoji }}
+									</a>
+								</div>
+							</div>
+						{{ end }}
+					</div>
+				</div>
+			{{ else if not .Date.IsZero }}
+				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
+			{{ end }}
+			<div class="content">
+				<p>{{ .Summary | plainify | safeHTML }}</p>
+				{{ if .Truncated }}
+					<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+				{{ end }}
+			</div>
+		</article>
+		{{ end }}
 	</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}
