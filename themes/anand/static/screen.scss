@@ -267,6 +267,9 @@ footer#colophon {
 		margin-right: 20px;
 		float: left;
 	}
+	.article-list .project-icon {
+		display: none;
+	}
 	header#masthead nav ul {
 		margin-top: 1rem;
 		width: 100%;
@@ -298,6 +301,10 @@ h1.intro {
 	}
 }
 
+.article-list .project-icon {
+	border-radius: 100%;
+}
+
 @media (min-width: 550px) {
 	.left-col, .right-col {
 		width: 49.5%;
@@ -313,6 +320,9 @@ h1.intro {
 		margin-right: 25px;
 		margin-left: -105px;
 		float: left;
+	}
+	.article-list .project-icon {
+		margin-top: -20px;
 	}
 	.scale {
 		transform: scale(1.05);
@@ -495,6 +505,15 @@ main {
 	p {
 		margin: 0 auto 1rem auto;
 	}
+}
+
+.article-list + .article-list::before {
+	content: "";
+	width: 10%;
+	margin: 2.5rem auto 0 auto;
+	display: block;
+	text-align: center;
+	border-top: 1px solid #ddd;
 }
 
 blockquote {

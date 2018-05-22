@@ -1,14 +1,13 @@
 ---
-title: AKEPT-WIEF Social Enterprise Forum
-date: 2018-03-29T10:26:42+02:00
-futureDate: October 22, 2018
+title: Startup24
+date: 2017-11-11
 role: Panelist
-location: Kuala Lumpur
-emoji: 🇲🇾
-link: https://wief.org/wet_event/akept-wief-social-enterprise-forum/
+location: Enschede
+emoji: 🇳🇱
+link: https://startup24.nl/cities/enschede
 linkType: Website
 icon: true
-color: "#27ae60"
+color: "#f39c12"
 ---
 
 I'll be speaking at the AKEPT-WIEF Social Enterprise Forum in Kuala Lumpur later this year. The event is a collaboration between the higher education and leadership academy AKEPT and the World Islamic Economic Forum Foundation.

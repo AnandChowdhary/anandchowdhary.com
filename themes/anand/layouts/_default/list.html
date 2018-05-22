@@ -1,8 +1,14 @@
 {{ partial "header.html" . }}
 	<main>
+		<div class="article-title page">
+			<h1>{{ .Title }}</h1>
+		</div>
 		{{ range sort .Paginator.Pages }}
 		<article class="article-list">
 			<div class="article-title">
+				{{ if .Params.icon }}
+				<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Title | urlize }}/icon.png">
+				{{ end }}
 				<h2><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h2>
 			</div>
 			{{ if in .URL "/events/" }}
@@ -43,7 +49,11 @@
 			<div class="content">
 				<p>{{ .Summary | plainify | safeHTML }}</p>
 				{{ if .Truncated }}
-					<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+					{{ if .Params.color }}
+						<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+					{{ else }}
+						<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+					{{ end }}
 				{{ end }}
 			</div>
 		</article>
