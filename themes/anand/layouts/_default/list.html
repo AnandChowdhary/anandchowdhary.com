@@ -3,13 +3,22 @@
 		<div class="article-title page">
 			<h1>{{ .Title }}</h1>
 		</div>
+		<p class="intro">From time to time, I speak at events about technology, design, and entrepreneurship. For engagements, write to events @ this domain.</p>
 		{{ range sort (.Paginator 50).Pages }}
 		<article class="article-list">
 			<div class="article-title">
 				{{ if .Params.icon }}
-				<a href="{{ .Permalink }}"><img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png"></a>
+					{{ if .Params.alias }}
+						<a href="{{ .Params.alias }}">
+							<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">
+						</a>
+					{{ else }}
+						<a href="{{ .Permalink }}">
+							<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">
+						</a>
+					{{ end }}
 				{{ end }}
-				<h2><a href="{{ .Permalink }}">{{ .Title }}</a>{{ if .Draft }} ::Draft{{ end }}</h2>
+				<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 			</div>
 			{{ if in .URL "/events/" }}
 				<div class="meta">

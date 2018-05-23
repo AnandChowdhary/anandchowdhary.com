@@ -1,5 +1,5 @@
 // @import url("https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i");
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600|IBM+Plex+Serif');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600|IBM+Plex+Serif:400,600');
 @media (min-width: 700px) {
 	html {
 		font-size: 106%;
@@ -33,6 +33,7 @@ body {
 
 h1, h2, h3, h4 {
 	font-family: "IBM Plex Serif", serif;
+	font-weight: 600;
 }
 
 p {
@@ -169,6 +170,10 @@ header#masthead {
 	h1 {
 		margin-bottom: 1rem;
 	}
+	& + p.intro {
+		color: #666;
+		margin-bottom: 5rem;
+	}
 }
 
 section {
@@ -246,6 +251,11 @@ footer#colophon {
 	div.container {
 		padding: 0 1rem;
 	}
+	.client-details {
+		> * + * {
+			margin-top: 1rem;
+		}
+	}
 	footer#colophon {
 		p {
 			margin-bottom: 0.5rem;
@@ -279,6 +289,10 @@ footer#colophon {
 	}
 }
 
+.events .project-icon {
+	border-radius: 100%;
+}
+
 h1.intro {
 	padding: 8vh 0 12.5vh 0;
 	margin: 0;
@@ -305,7 +319,18 @@ h1.intro {
 	border-radius: 100%;
 }
 
+.press a {
+	background-color: transparent;
+	&:hover {
+		background-color: whitesmoke;
+	}
+}
+
 @media (min-width: 550px) {
+	.client-details {
+		display: flex;
+		justify-content: space-between;
+	}
 	.left-col, .right-col {
 		width: 49.5%;
 	}
@@ -483,11 +508,24 @@ footer {
 	}
 }
 
+.social-links {
+	font-size: 150%;
+	margin: 1rem auto;
+	a {
+		margin-right: 0.5rem;
+		display: inline-block;
+		color: #555;
+		&:hover {
+			color: #111;
+		}
+	}
+}
+
 main {
 	img + .meta, footer {
 		margin-top: 1rem;
 	}
-	.meta, .article-title, p, footer, h2, h3, h4, h5, h6, ul, ol, form {
+	.meta, .article-title, p, footer, h2, h3, h4, h5, h6, ul, ol, form, .social-links {
 		max-width: 600px;
 		margin-left: auto;
 		margin-right: auto;
@@ -601,8 +639,6 @@ button[type="submit"] {
 
 .client-details {
 	margin-top: 1.5rem;
-	display: flex;
-	justify-content: space-between;
 	> * {
 		> div:first-child {
 			font-size: 85%;
@@ -610,10 +646,5 @@ button[type="submit"] {
 		> div:last-child {
 			color: #000;
 		}
-	}
-	&::after {
-		content: "";
-		display: block;
-		clear: both;
 	}
 }

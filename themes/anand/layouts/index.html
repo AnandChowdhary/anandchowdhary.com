@@ -16,7 +16,7 @@
 			<div class="elements elements-lg">
 				<!-- <h2 class="side-title">Recent projects</h2> -->
 				<div class="left-col">
-					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "Projects" }}
+					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "projects" }}
 						<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
 							{{ if modBool $index 2 }}<a href="{{ .Permalink }}">
 								<picture>
@@ -43,7 +43,7 @@
 					{{ end }}
 				</div>
 				<div class="right-col">
-					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "Projects" }}
+					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "projects" }}
 					{{ if not (modBool $index 2) }}<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
 						<a href="{{ .Permalink }}">
 							<picture>
