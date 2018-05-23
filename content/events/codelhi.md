@@ -1,9 +1,8 @@
 ---
 title: coDelhi
 date: 2014-03-22
-role: Speaker
-location: New Delhi
-emoji: 🇮🇳
+roles: ["Speaker"]
+places: ["New Delhi"]
 link: https://www.facebook.com/events/469451936489841/
 linkType: Event
 icon: true

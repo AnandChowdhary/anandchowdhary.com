@@ -1,9 +1,8 @@
 ---
 title: TEDxHaileyRoad
 date: 2017-06-17
-role: Speaker
-location: Enschede
-emoji: 🇳🇱
+roles: ["Speaker"]
+places: ["Enschede"]
 link: https://www.ted.com/tedx/events/21871
 icon: true
 color: "#ff0000"

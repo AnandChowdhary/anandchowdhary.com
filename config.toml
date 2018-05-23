@@ -2,7 +2,7 @@ baseURL = "https://anandchowdhary.com/"
 defaultContentLanguage = "en"
 enableEmoji = true
 languageCode = "en-us"
-paginate = 4
+paginate = 10
 pygmentsCodeFences = true
 pygmentsStyle = "native"
 pygmentsUseClasses =  true
@@ -10,6 +10,11 @@ enableRobotsTXT = true
 canonifyURLs = true
 theme = "anand"
 title = "Anand Chowdhary"
+pluralizelisttitles = "false"
+[taxonomies]
+  tags = "tags"
+  roles = "roles"
+  places = "places"
 [sitemap]
   changefreq = "monthly"
   filename = "sitemap.xml"
@@ -17,7 +22,7 @@ title = "Anand Chowdhary"
 [author]
   gravatarEmail = "anandchowdhary@gmail.com"
   homepageText = "Anand Chowdhary"
-  name = "Anand Chowhdary"
+  name = "Anand Chowdhary"
 [params]
   description = "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company."
   googleAnalytics = ""
@@ -26,7 +31,7 @@ title = "Anand Chowdhary"
   adsenseDataAdSlot = ""
   addThisId = ""
 [permalinks]
-  posts = "/:year/:month/:day/:slug/"
+  posts = "/:category/:slug/"
 [pygmentsOptions]
   linenos = false
 [outputs]

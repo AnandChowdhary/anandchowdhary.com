@@ -3,8 +3,10 @@
 		<div class="article-title page">
 			<h1>{{ .Title }}</h1>
 		</div>
-		<p class="intro">From time to time, I speak at events about technology, design, and entrepreneurship. For engagements, write to events @ this domain.</p>
-		{{ range sort (.Paginator 50).Pages }}
+		{{ if eq .Title "Events" }}
+			<p class="intro">From time to time, I speak at events about technology, design, and entrepreneurship. For engagements, write to events @ this domain.</p>
+		{{ end }}
+		{{ range sort .Paginator.Pages }}
 		<article class="article-list">
 			<div class="article-title">
 				{{ if .Params.icon }}
@@ -33,20 +35,27 @@
 								{{ end }}
 							</div>
 						</div>
-						{{ if .Params.role }}
+						{{ if .Params.roles }}
 							<div>
 								<div>Role</div>
-								<div><a href="/roles/{{ .Params.role | urlize }}">{{ .Params.role }}</a></div>
+								<div>
+									{{ range $i, $e := .Params.roles }}
+										<a href="{{ "/roles/" | relLangURL }}{{ . | urlize }}/">
+											{{ . }}
+										</a>
+									{{ end }}
+								</div>
 							</div>
 						{{ end }}
-						{{ if .Params.location }}
+						{{ if .Params.places }}
 							<div>
 								<div>Location</div>
 								<div>
-									<a href="/places/{{ .Params.location | urlize }}">
-										{{ .Params.location }}
-										{{ .Params.emoji }}
-									</a>
+									{{ range $i, $e := .Params.places }}
+										<a href="{{ "/places/" | relLangURL }}{{ . | urlize }}/">
+											{{ . }}
+										</a>
+									{{ end }}
 								</div>
 							</div>
 						{{ end }}

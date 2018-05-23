@@ -33,20 +33,25 @@
 						<time>{{ .Date.Format "January 1, 2006" }}</time>
 					{{ end }}
 					<div class="client-details">
-						{{ if .Params.role }}
+						{{ if .Params.roles }}
 							<div>
 								<div>Role</div>
-								<div><a href="/roles/{{ .Params.role | urlize }}">{{ .Params.role }}</a></div>
+								<div>
+									{{ range $i, $e := .Params.roles }}
+										<a href="{{ "/roles/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+									{{ end }}
+								</div>
 							</div>
 						{{ end }}
-						{{ if .Params.location }}
+						{{ if .Params.places }}
 							<div>
 								<div>Location</div>
 								<div>
-									<a href="/places/{{ .Params.location | urlize }}">
-										{{ .Params.location }}
-										{{ .Params.emoji }}
-									</a>
+									{{ range $i, $e := .Params.places }}
+										<a href="{{ "/places/" | relLangURL }}{{ . | urlize }}/">
+											{{ . }}
+										</a>
+									{{ end }}
 								</div>
 							</div>
 						{{ end }}

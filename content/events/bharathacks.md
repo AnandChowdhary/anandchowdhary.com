@@ -1,9 +1,8 @@
 ---
 title: BharatHacks
 date: 2017-06-17
-role: Speaker
-location: New Delhi
-emoji: 🇮🇳
+roles: ["Speaker"]
+places: ["New Delhi"]
 alias: /projects/bharathacks/
 linkType: Event
 icon: true

@@ -1,9 +1,8 @@
 ---
 title: Hardstart Pitch Training
 date: 2017-10-31
-role: Trainer
-location: Enschede
-emoji: 🇳🇱
+roles: ["Trainer"]
+places: ["Enschede"]
 link: https://www.facebook.com/events/527224840975743/
 linkType: Event
 icon: true

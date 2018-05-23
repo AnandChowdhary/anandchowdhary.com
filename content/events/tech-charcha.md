@@ -1,9 +1,8 @@
 ---
 title: Tech Charcha by Facebook DevC
 date: 2017-05-07
-role: Panelist
-location: New Delhi
-emoji: 🇮🇳
+roles: ["Panelist"]
+places: ["New Delhi"]
 link: https://www.facebook.com/events/199095997267944/
 linkType: Event
 icon: true

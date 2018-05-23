@@ -1,9 +1,8 @@
 ---
 title: SIP Launch (DTU)
 date: 2016-09-16
-role: Speaker
-location: New Delhi
-emoji: 🇮🇳
+roles: ["Speaker"]
+places: ["New Delhi"]
 link: https://www.facebook.com/events/1878224245738991/
 linkType: Event
 icon: true

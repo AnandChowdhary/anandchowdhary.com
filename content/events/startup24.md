@@ -1,9 +1,8 @@
 ---
 title: Startup24
 date: 2017-11-11
-role: Trainer
-location: Enschede
-emoji: 🇳🇱
+roles: ["Trainer"]
+places: ["Enschede"]
 link: https://startup24.nl/cities/enschede
 linkType: Website
 icon: true
