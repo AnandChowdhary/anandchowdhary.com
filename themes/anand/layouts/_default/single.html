@@ -50,6 +50,7 @@
 									{{ range $i, $e := .Params.places }}
 										<a href="{{ "/places/" | relLangURL }}{{ . | urlize }}/">
 											{{ . }}
+											{{ partial "emoji.html" . }}
 										</a>
 									{{ end }}
 								</div>
