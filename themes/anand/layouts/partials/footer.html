@@ -57,6 +57,7 @@
 					},
 					fadeOut: function() {
 						return new Promise(function(resolve) {
+							window.scrollTo(0, 0);
 							resolve();
 						});
 					},
