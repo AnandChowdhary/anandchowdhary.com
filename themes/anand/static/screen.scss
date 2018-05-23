@@ -648,3 +648,17 @@ button[type="submit"] {
 		}
 	}
 }
+
+.place-map iframe {
+	border: none;
+	background: none;
+	width: 100%;
+	height: 300px;
+}
+
+.fade-in { animation: 0.3s fade-in ease forwards; }
+
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}

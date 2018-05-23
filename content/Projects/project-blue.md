@@ -11,7 +11,7 @@ Project Blue, originally standing for 'Bottles, Linkages, and their Underlining 
 According to the National Association for PET Container Resources (NAPCOR), the gross water bottle recycling rate was only 38.6% last year. This means that almost 2 out of 3 bottles are pollution our planet, and I tried to create a better way.
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/project-blue@2x.png"></div>
+	<div><img alt="" src="/images/portfolio/project-blue@2x.png"></div>
 	<div><img alt="" src="/images/projects/project-blue/1.png"></div>
 </div>
 

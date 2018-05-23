@@ -3,6 +3,11 @@
 		<div class="article-title page">
 			<h1>{{ .Title }}</h1>
 		</div>
+		<!-- {{ if in .Permalink "/places/" }}
+			<div class="place-map">
+				<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCuiZevIb1G87KAoLRSECEdWNBQ06JCMjU&q=New Delhi" allowfullscreen></iframe>
+			</div>
+		{{ end }} -->
 		{{ if eq .Title "Events" }}
 			<p class="intro">From time to time, I speak at events about technology, design, and entrepreneurship. For engagements, write to events @ this domain.</p>
 		{{ end }}

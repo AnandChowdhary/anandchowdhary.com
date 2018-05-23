@@ -9,4 +9,4 @@ icon: true
 color: "#347b34"
 ---
 
-I'll be speaking at the AKEPT-WIEF Social Enterprise Forum in Kuala Lumpur later this year. The event is a collaboration between the higher education and leadership academy AKEPT and the World Islamic Economic Forum Foundation.
+I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make the lives of a billion Indians better. I organized in collaboration with Facebook's Developer Circle Delhi-NCR and delivered the introductory keynote.
