@@ -4,7 +4,7 @@ subcategory: App
 intro: Hyperlocal on-demand cleaning and employee training app for the Netherlands' second-largest cleaning service provider.
 date: 2018-03-11
 icon: true
-tags: ["Hackathon", "App"]
+work: ["Hackathon", "App"]
 ---
 
 I worked with CSU, the Netherlands' second-largest cleaning service provider, during the first weekend of March 2018 in the Philips Stadion in Eindhoven as part of their first hackathon, Bright Future Hack. CSUnite is an app for hyperlocal on-demand cleaning services, along with a built-in training and communication platform for employees.

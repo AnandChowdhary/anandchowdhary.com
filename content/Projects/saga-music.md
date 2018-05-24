@@ -4,7 +4,7 @@ subcategory: Web
 intro: Free music downloading and sharing app for Android and the web. Over 100,000 downloads. Shut down in 2016.
 date: 2015-05-31
 icon: true
-tags: ["App", "Branding", "Web"]
+work: ["App", "Branding", "Web"]
 ---
 
 Music has always been an integral part of our lives. Ever since people started using the internet, they've been downloading music and movies. The process became relatively simple with the introduction of Napster in 1999, which led to the development of many such tools. I remember growing up with Limewire and Bearshare. After the discontinuation of these services in after ten long years, downloading music became really complicated again.

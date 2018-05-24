@@ -4,7 +4,7 @@ subcategory: App
 intro: Platform to celebrate, promote, and build a brand — India. Over 75 organizations use the Made with Love in India badge.
 date: 2014-04-21
 icon: true
-tags: ["Web", "Branding"]
+work: ["Web", "Branding"]
 ---
 
 You see this meticulously made handicraft item which would be the perfect addition to brighten up any living room. You pick it up, admiring the attention to detail when suddenly you spot the Made in India label at the bottom, instantly making the product you were admiring seconds ago feel as cheap as dirt.

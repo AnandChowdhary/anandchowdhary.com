@@ -4,7 +4,7 @@ subcategory: App
 intro: End-to-end healthcare companies that diagnoses illnesses and helps your recover, along with scheduling and appointments.
 date: 2015-12-11
 icon: true
-tags: ["App", "Branding", "Hackathon"]
+work: ["App", "Branding", "Hackathon"]
 ---
 
 The idea is pretty simple — like in the movie, we need a personal healthcare companion, someone who can help us medically when we need it to, both by providing the right information to us and helping us get in touch with the right medical professionals.

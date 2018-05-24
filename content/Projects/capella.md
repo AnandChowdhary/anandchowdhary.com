@@ -4,7 +4,7 @@ subcategory: App
 intro: Location-based offline friend discovery and music matching app built for Amsterdam Dance Event in 24 hours.
 date: 2017-10-21
 icon: true
-tags: ["App", "Hackathon"]
+work: ["App", "Hackathon"]
 ---
 
 At the Amsterdam Dance Event (ADE)'s hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.
@@ -33,6 +33,6 @@ The app was built using HTML5 with a PHP backend integrated with some machine le
 		<div><img alt="" src="/images/projects/capella/s4.jpeg"></div>
 	</div>
 </div>
-<div class="image"><img alt="" src="/images/capella/1.jpg"></div>
+<div class="image"><img alt="" src="/images/projects/capella/1.jpg"></div>
 
 <footer>This project was done in collaboration with Mateo Sadowski 🇺🇸.</footer>

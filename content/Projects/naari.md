@@ -4,7 +4,7 @@ subcategory: App
 intro: Period and sexual health companion for women that gives personalized tampon recommendations and access to self-help resources.
 date: 2016-10-16
 icon: true
-tags: ["App", "Artificial Intelligence", "Hackathon"]
+work: ["App", "Artificial Intelligence", "Hackathon"]
 ---
 
 Naari (meaning *woman* in Hindi) is the end-to-end period healthcare companion---from giving you personalized tampon recommendations using P&G's survey data and HPE's machine learning APIs---to getting those products delivered to your doorstep via Amazon.

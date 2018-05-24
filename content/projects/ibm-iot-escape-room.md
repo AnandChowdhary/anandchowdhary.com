@@ -3,7 +3,7 @@ title: IBM IoT Escape Room
 subcategory: Internet of Things
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
 date: 2018-04-12
-tags: ["University", "Internet of Things", "Hardware"]
+work: ["University", "Internet of Things", "Hardware"]
 client: IBM Netherlands
 timeline: 2 months
 ---

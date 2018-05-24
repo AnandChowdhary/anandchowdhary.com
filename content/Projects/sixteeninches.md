@@ -4,7 +4,7 @@ subcategory: Ecommerce
 intro: Branding and Shopify theme customization for one of the fastest-growing online supplements stores in India.
 date: 2015-09-12
 icon: true
-tags: ["App", "Branding", "Web"]
+work: ["App", "Branding", "Web"]
 ---
 
 SixteenInches.com is one of the fastest-growing online supplements store. It was built on a foundation of authenticity and quality-control, both of which currently lack the healthcare industry. I was hired to design the SixteenInches' brand identity, including logo and social media design, and a responsive ecommerce website on the WordPress platform using Woocommerce, to convey their mission.
