@@ -39,6 +39,17 @@
 						elements[0].classList.add("active");
 					}
 				}
+				var postImages = document.querySelectorAll("article p img");
+				if (postImages) {
+					for (var i = 0; i < postImages.length; i++) {
+						var imageUrl = postImages[i].getAttribute("src");
+						var altText = postImages[i].getAttribute("alt");
+						var newElement = document.createElement("div");
+						newElement.classList.add("image");
+						newElement.innerHTML = postImages[i].parentNode.innerHTML;
+						postImages[i].parentNode.parentNode.replaceChild(newElement, postImages[i].parentNode);
+					}
+				}
 				mediumZoom(document.querySelectorAll(".two-images img, .three-images img, .image img"));
 				// var items = document.querySelectorAll(".elements article");
 				// var buttons = document.querySelectorAll("[data-filter]");

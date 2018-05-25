@@ -82,9 +82,15 @@
 			{{ end }}
 			<div class="content">
 				<p>{{ .Summary | plainify | safeHTML }}</p>
-				{{ if .Truncated }}
-					{{ if .Params.color }}
+				{{ if .Params.color }}
+					{{ if .Params.alias }}
+						<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Params.alias }}">Continue reading &rarr;</a></p>
+					{{ else }}
 						<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+					{{ end }}
+				{{ else }}
+					{{ if .Params.alias }}
+						<p><a class="button is-link" href="{{ .Params.alias }}">Continue reading &rarr;</a></p>
 					{{ else }}
 						<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
 					{{ end }}
