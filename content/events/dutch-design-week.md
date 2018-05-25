@@ -4,16 +4,19 @@ date: 2018-03-28T10:26:42+02:00
 futureDate: October 20, 2018
 roles: ["Exhibition"]
 places: ["Eindhoven"]
-link: https://wief.org/wet_event/akept-wief-social-enterprise-forum/
+link: http://www.mindthestep.nl/
 linkType: Website
 icon: true
-color: "#27ae60"
+color: "#19171c"
 ---
 
-I'll be speaking about social entrepreneurship at the AKEPT-WIEF Social Enterprise Forum in Kuala Lumpur later this year. The event is a collaboration between the higher education and leadership academy AKEPT and the World Islamic Economic Forum Foundation.
+I'll be showcasing Oswald Labs' technologies as part of the *Mind the Step* exhibition at the Dutch Design Week 2018 in the Klokgebouw in Eindhoven. The event features design-driven technology and research by the 4TU, the consortium of technical universities in the Netherlands.
 
 <!--more-->
 
-As a panelist on the Plenary Session 5 on "Social Enterprise in Universities", I'll be incredibly humbled by sharing the stage with Talib S. Karim, President, Institute of Business Management (Pakistan); Sharon Feng, Overseas Director of Codemao (China); and Royston Braganza, CEO of Grameen Capital (India).
+This year---supported by the UT's DesignLab---Mind the Step will present projects at the interface of design, research and technology to 70,000 expected visitors in Eindhoven. It specifically focuses on projects that combine design, research and technology with a social application.
 
-The event is scheduled to be held on October 22-23, 2018, at the International Islamic University Malaysia. [Learn more about the event](https://wief.org/wet_event/akept-wief-social-enterprise-forum/) or [get your tickets on Eventbrite](https://www.eventbrite.com/e/akept-wief-social-enterprise-forum-tickets-43152504302).
+With the support of Miriam Iliohan, co-founder of the DesignLab, Oswald Labs will be presenting immersive demos of our technologies. Shravan, the first blind-friendly smartphone OS, will be on display for people to experience what it feels like to be blind and use a smartphone. We will also have a "experience what it feels like to have dyslexia" installation. More information will follow.
+
+
+Dutch Design Week is scheduled to be held from October 20 to 23, 2018. [Learn more about the event](http://www.mindthestep.nl/) or [get your tickets](http://www.ddw.nl/en/page/ddw-tickets-def).

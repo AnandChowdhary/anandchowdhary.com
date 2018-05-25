@@ -11,6 +11,16 @@
 				<div class="meta">
 					<time>{{ .Date.Format "January 2006" }}</time>
 					<div class="client-details">
+						{{ if .Params.work }}
+							<div>
+								<div>Work</div>
+								<div>
+									{{ range $i, $e := .Params.work }}
+										<a href="{{ "/work/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a><br>
+									{{ end }}
+								</div>
+							</div>
+						{{ end }}
 						{{ if .Params.client }}
 							<div>
 								<div>Client</div>

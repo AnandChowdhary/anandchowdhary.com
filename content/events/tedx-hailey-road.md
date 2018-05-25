@@ -2,7 +2,7 @@
 title: TEDxHaileyRoad
 date: 2017-06-17
 roles: ["Speaker"]
-places: ["Enschede"]
+places: ["New Delhi"]
 link: https://www.ted.com/tedx/events/21871
 icon: true
 color: "#ff0000"
