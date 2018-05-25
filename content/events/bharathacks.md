@@ -4,7 +4,7 @@ date: 2017-06-17
 roles: ["Speaker"]
 places: ["New Delhi"]
 alias: /projects/bharathacks/
-linkType: Event
+linkType: Project
 icon: true
 color: "#347b34"
 ---

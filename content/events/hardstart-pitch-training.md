@@ -4,7 +4,7 @@ date: 2017-10-31
 roles: ["Trainer"]
 places: ["Enschede"]
 link: https://www.facebook.com/events/527224840975743/
-linkType: Event
+linkType: Facebook
 icon: true
 color: "#bb2226"
 ---

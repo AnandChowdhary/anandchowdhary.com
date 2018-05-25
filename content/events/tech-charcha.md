@@ -4,7 +4,7 @@ date: 2017-05-07
 roles: ["Panelist"]
 places: ["New Delhi"]
 link: https://www.facebook.com/events/199095997267944/
-linkType: Event
+linkType: Facebook
 icon: true
 color: "#4267b2"
 ---

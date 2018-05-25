@@ -54,7 +54,7 @@ a {
 	color: #000;
 	text-decoration: none;
 }
-article a[target="_blank"] {
+article a[target="_blank"]:not([data-balloon]) {
 	&::after {
 		content: "";
 		width: 15px;
@@ -552,6 +552,9 @@ footer {
 main {
 	img + .meta, footer {
 		margin-top: 1rem;
+	}
+	iframe {
+		margin: 2rem auto;
 	}
 	.meta, .article-title, p, footer, h2, h3, h4, h5, h6, ul, ol, form, .social-links {
 		max-width: 600px;

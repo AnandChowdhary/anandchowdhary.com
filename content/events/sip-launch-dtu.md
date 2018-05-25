@@ -4,7 +4,7 @@ date: 2016-09-16
 roles: ["Speaker"]
 places: ["New Delhi"]
 link: https://www.facebook.com/events/1878224245738991/
-linkType: Event
+linkType: Facebook
 icon: true
 color: "#771e18"
 ---
