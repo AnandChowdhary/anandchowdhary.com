@@ -25,13 +25,23 @@
 						</a>
 					{{ end }}
 				{{ end }}
-				<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				{{ if .Params.alias }}
+					<h2><a href="{{ .Params.alias }}">{{ .Title }}</a></h2>
+				{{ else }}
+					<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+				{{ end }}
 			</div>
 			{{ if in .URL "/events/" }}
 				<div class="meta">
 					<div class="client-details">
 						<div>
-							<div>Date</div>
+							<div>
+								{{ if .Params.futureDate }}
+									Upcoming
+								{{ else }}
+									Date
+								{{ end }}
+							</div>
 							<div>
 								{{ if .Params.futureDate }}
 									<time>{{ .Params.futureDate }}</time>

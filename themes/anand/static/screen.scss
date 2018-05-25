@@ -29,6 +29,7 @@ body {
 	// border-top: 4px solid;
 	line-height: 1.7;
 	font-size: 19px;
+	transition: opacity 0.3s;
 }
 
 h1, h2, h3, h4 {
@@ -658,6 +659,7 @@ button[type="submit"] {
 }
 
 .fade-in { animation: 0.3s fade-in ease forwards; }
+.fade-out { opacity: 0.5; }
 
 @keyframes fade-in {
 	from { opacity: 0; }

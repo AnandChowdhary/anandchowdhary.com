@@ -27,13 +27,7 @@ pluralizelisttitles = "false"
   name = "Anand Chowdhary"
 [params]
   description = "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company."
-  googleAnalytics = ""
   licence = "All Rights Reserved"
-  adsenseDataAdClient = ""
-  adsenseDataAdSlot = ""
-  addThisId = ""
-[permalinks]
-  posts = "/:category/:slug/"
 [pygmentsOptions]
   linenos = false
 [outputs]
