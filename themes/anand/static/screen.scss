@@ -69,14 +69,17 @@ article a[target="_blank"]:not([data-balloon]) {
 		background-repeat: no-repeat;
 	}
 	&:hover::after {
-		opacity: 0.75;
+		opacity: 0.6;
 	}
 }
-p a {
-	color: #2980b9;
+a {
+	color: #2979ff;
 	&:hover {
-		color: #3498db;
+		color: #2962ff;
 	}
+}
+.client-details a, .article-title a {
+	color: inherit;
 }
 
 header#masthead .container,
