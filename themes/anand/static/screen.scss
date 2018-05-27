@@ -303,7 +303,7 @@ h1.intro, h1.intro + p.lead {
 		color: inherit;
 		border-bottom: 3px solid whitesmoke;
 		&:hover {
-			border-color: #ddd;
+			background-color: whitesmoke;
 		}
 	}
 }
@@ -339,6 +339,16 @@ h1.intro + p.lead {
 }
 
 @media (min-width: 550px) {
+	.work-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		article {
+			flex: 0 0 49%;
+			max-width: 49%;
+			margin-bottom: 1%;
+		}
+	}
 	.client-details {
 		display: flex;
 		justify-content: space-between;
@@ -845,12 +855,7 @@ button[data-balloon] {
 
 
 .work-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
 	article {
-		flex: 0 0 49%;
-		max-width: 49%;
 		margin-bottom: 1%;
 		.image {
 			height: 350px;
@@ -876,6 +881,7 @@ button[data-balloon] {
 			font-size: 95%;
 		}
 		a {
+			display: block;
 			color: inherit;
 			&:hover {
 				color: #000;

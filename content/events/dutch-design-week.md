@@ -8,6 +8,7 @@ link: http://www.mindthestep.nl/
 linkType: Website
 icon: true
 color: "#19171c"
+type: content
 ---
 
 I'll be showcasing Oswald Labs' technologies as part of the *Mind the Step* exhibition at the Dutch Design Week 2018 in the Klokgebouw in Eindhoven. The event features design-driven technology and research by the 4TU, the consortium of technical universities in the Netherlands.

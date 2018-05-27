@@ -7,6 +7,7 @@ link: https://www.ted.com/tedx/events/21871
 icon: true
 color: "#ff0000"
 linkType: Website
+type: content
 ---
 
 I'll be speaking at the AKEPT-WIEF Social Enterprise Forum in Kuala Lumpur later this year. The event is a collaboration between the higher education and leadership academy AKEPT and the World Islamic Economic Forum Foundation.

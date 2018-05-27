@@ -6,6 +6,7 @@ places: ["New Delhi"]
 link: https://www.facebook.com/events/1878224245738991/
 linkType: Facebook
 icon: true
+type: content
 color: "#771e18"
 ---
 
