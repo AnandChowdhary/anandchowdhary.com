@@ -890,3 +890,18 @@ button[data-balloon] {
 .home-grid .image {
 	margin-top: 0;
 }
+
+.articles-grid {
+	h2 {
+		line-height: 1;
+		margin-bottom: 0.25rem !important;
+		margin-top: 0 !important;
+	}
+	article {
+		margin-bottom: 2rem;
+	}
+	.light {
+		font-size: 90%;
+		color: #555;
+	}
+}
