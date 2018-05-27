@@ -405,7 +405,7 @@ p {
 }
 
 ul.filter {
-	margin: 0 0 1rem 0;
+	margin: 2rem 0 -0.75rem 0;
 	padding: 0;
 	list-style: none;
 	white-space: nowrap;
@@ -843,3 +843,38 @@ button[data-balloon] {
 /* LiteralNumberOct */ .chroma .mo { color: #40a070 }
 /* Operator */ .chroma .o { color: #666666 }
 /* OperatorWord */ .chroma .ow { color: #007020; font-weight: bold }
+
+
+.work-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	article {
+		flex: 0 0 49%;
+		max-width: 49%;
+		margin-bottom: 1%;
+		.image {
+			height: 350px;
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		h2 {
+			font: inherit;
+			font-weight: bold;
+			font-size: 105%;
+			margin-bottom: 0;
+			margin-top: 1rem;
+			span {
+				font-weight: normal;
+				color: #777;
+			}
+		}
+		a {
+			color: inherit;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+}
