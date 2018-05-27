@@ -29,8 +29,8 @@ body {
 	transition: opacity 0.3s;
 }
 
-h1, h2, h3, h4 {
-	font-family: "IBM Plex Serif", serif;
+h1, h2, h3, h4, p.lead {
+	font-family: "IBM Plex Serif", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 	font-weight: 600;
 }
 
@@ -198,6 +198,7 @@ section {
 			clear: both;
 		}
 		h2.side-title {
+			font: inherit;
 			margin: 0;
 			padding: 0;
 			font-size: 100%;
@@ -221,20 +222,6 @@ section {
 				width: 100%;
 			}
 			img { width: 100%; }
-		}
-		&.elements-lg {
-			margin: 1.5rem -1rem 0 -1rem;
-			article {
-				padding-left: 1rem;
-				padding-right: 1rem;
-				margin-bottom: 2rem;
-			}
-			p {
-				font-size: 95%;
-				transition: 0.3s;
-				margin-top: 0.25rem;
-				color: #6f777d;
-			}
 		}
 	}
 	& + section {
@@ -306,16 +293,28 @@ footer#colophon {
 	border-radius: 100%;
 }
 
-h1.intro {
-	padding: 8vh 0 12.5vh 0;
+h1.intro, h1.intro + p.lead {
 	margin: 0;
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	font-weight: 400;
 	max-width: 500px;
 	line-height: 1.5;
 	a {
-		background-color: whitesmoke;
+		color: inherit;
+		border-bottom: 3px solid whitesmoke;
+		&:hover {
+			border-color: #ddd;
+		}
 	}
+}
+h1.intro {
+	font-weight: 600;
+	line-height: 1.3;
+	padding: 8vh 0 0 0;
+}
+h1.intro + p.lead {
+	padding: 1rem 0 12.5vh 0;
+	font-size: 110%;
 }
 
 .two-images, .three-images {
@@ -369,7 +368,7 @@ h1.intro {
 		font-size: 2.5rem;
 	}
 	h1.intro {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 	}
 	.two-images, .three-images {
 		margin: 3rem 0;
@@ -429,7 +428,7 @@ ul.filter {
 				outline: none;
 			}
 			&.selected {
-				background-color: #e84393 !important;
+				background-color: #1abc9c !important;
 				color: #fff !important;
 			}
 		}
@@ -860,21 +859,34 @@ button[data-balloon] {
 			background-repeat: no-repeat;
 		}
 		h2 {
-			font: inherit;
 			font-weight: bold;
-			font-size: 105%;
+			font-size: 115%;
 			margin-bottom: 0;
 			margin-top: 1rem;
 			span {
+				font-size: 90%;
+				font-family: "IBM Plex Sans", sans-serif;
 				font-weight: normal;
 				color: #777;
 			}
+		}
+		p {
+			color: #555;
+			transition: 0.3s;
+			font-size: 95%;
 		}
 		a {
 			color: inherit;
 			&:hover {
 				color: #000;
+				p {
+					color: #000;
+				}
 			}
 		}
 	}
+}
+
+.home-grid .image {
+	margin-top: 0;
 }

@@ -3,14 +3,14 @@
 		{{ if ((in .URL "/work/") | or (in .URL "/projects")) }}
 			<ul class="filter">
 				<li><a href="/projects/">All</a></li>
-				<li><a href="/work/web">Web</a></li>
-				<li><a href="/work/app">Apps</a></li>
-				<li><a href="/work/internet-of-things">IoT</a></li>
-				<li><a href="/work/branding">Branding</a></li>
-				<li><a href="/work/hardware">Hardware</a></li>
-				<li><a href="/work/artificial-intelligence">AI/ML</a></li>
-				<li><a href="/work/augmented-reality">VR/AR</a></li>
-				<li><a href="/work/event">Events</a></li>
+				<li><a href="/work/web/">Web</a></li>
+				<li><a href="/work/app/">Apps</a></li>
+				<li><a href="/work/internet-of-things/">IoT</a></li>
+				<li><a href="/work/branding/">Branding</a></li>
+				<li><a href="/work/hardware/">Hardware</a></li>
+				<li><a href="/work/artificial-intelligence/">AI/ML</a></li>
+				<li><a href="/work/augmented-reality/">VR/AR</a></li>
+				<li><a href="/work/event/">Events</a></li>
 			</ul>
 			<div class="work-grid">
 				{{ range sort .Paginator.Pages }}

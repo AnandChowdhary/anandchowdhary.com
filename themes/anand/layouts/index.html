@@ -1,72 +1,23 @@
 {{ partial "header.html" . }}
 	<main id="content" aria-live="polite">
-		<h1 class="intro">Anand Chowdhary is a creative technologist and entrepreneur. He is the co-founder and CEO of <a href="https://oswaldlabs.com" target="_blank">Oswald Labs</a>, and studies Creative Technology at the University of Twente.</h1>
+		<h1 class="intro">Anand Chowdhary is a creative technologist and entrepreneur.</h1>
+		<p class="lead">He is the co-founder and CEO of <a href="https://oswaldlabs.com" target="_blank">Oswald Labs</a>, an award-winning accessibility technology company; and studies Creative Technology, an interdisciplinary design and engineering program, at the University of Twente.</p>
 		<section>
-			<ul class="filter">
-				<li><a href="/projects/" class="selected">All</a></li>
-				<li><a href="/work/web">Web</a></li>
-				<li><a href="/work/app">Apps</a></li>
-				<li><a href="/work/internet-of-things">IoT</a></li>
-				<li><a href="/work/branding">Branding</a></li>
-				<li><a href="/work/hardware">Hardware</a></li>
-				<li><a href="/work/artificial-intelligence">AI/ML</a></li>
-				<li><a href="/work/augmented-reality">VR/AR</a></li>
-				<li><a href="/work/event">Events</a></li>
-			</ul>
 			<div class="elements elements-lg">
-				<!-- <h2 class="side-title">Recent projects</h2> -->
-				<div class="left-col">
-					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "projects" }}
-						<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
-							{{ if modBool $index 2 }}<a href="{{ .Permalink }}">
-								<picture>
-									<!--[if IE 9]><video style="display: none"><![endif]-->
-									<source
-										data-srcset="/images/portfolio/{{ .Title | urlize }}@1x.png"
-										media="(max-width: 1024px)" />
-									<source
-										data-srcset="/images/portfolio/{{ .Title | urlize }}@2x.png" />
-									<!--[if IE 9]></video><![endif]-->
-									<img
-										src="/images/portfolio/{{ .Title | urlize }}@0x.png"
-										data-src="/images/portfolio/{{ .Title | urlize }}@1x.png"
-										class="lazyload"
-										alt="">
-								</picture>
-								<div class="twos">
-									<div><strong>{{ .Title }}</strong> / {{ .Params.subcategory }}</div>
-									<time>{{ .Date.Format "January 2006" }}</time>
-								</div>
+				<h2 class="side-title">Recent projects</h2>
+				<div class="work-grid home-grid">
+					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "projects" | first 2 }}
+						<article>
+							<a href="{{ .Permalink }}">
+								<div class="image" style="
+									background-image: url('/images/portfolio/{{ .Title | urlize }}@1x.png');
+									background-color: {{ .Params.bg }}
+								"></div>
+								<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
 								<p>{{ .Params.intro }}</p>
-							</a>{{ end }}
-						</article>
+							</a>
+					</article>
 					{{ end }}
-				</div>
-				<div class="right-col">
-					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "projects" }}
-					{{ if not (modBool $index 2) }}<article class="{{ range .Params.tags }}filter-{{ . | urlize }} {{ end }}item">
-						<a href="{{ .Permalink }}">
-							<picture>
-								<!--[if IE 9]><video style="display: none"><![endif]-->
-								<source
-									data-srcset="/images/portfolio/{{ .Title | urlize }}@1x.png"
-									media="(max-width: 1024px)" />
-								<source
-									data-srcset="/images/portfolio/{{ .Title | urlize }}@2x.png" />
-								<!--[if IE 9]></video><![endif]-->
-								<img
-									src="/images/portfolio/{{ .Title | urlize }}@0x.png"
-									data-src="/images/portfolio/{{ .Title | urlize }}@1x.png"
-									class="lazyload"
-									alt="">
-							</picture>
-							<div class="twos">
-								<div><strong>{{ .Title }}</strong> / {{ .Params.subcategory }}</div>
-								<time>{{ .Date.Format "January 2006" }}</time>
-							</div>
-							<p>{{ .Params.intro }}</p>
-						</a>{{ end }}
-					</article>{{ end }}
 				</div>
 			</div>
 		</section>
