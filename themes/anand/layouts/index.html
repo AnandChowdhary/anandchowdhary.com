@@ -23,13 +23,20 @@
 		</section>
 		<section>
 			<div class="elements elements-lg">
-				<h2 class="side-title">Recent content</h2>
+				<h2 class="side-title">New</h2>
 				<div class="work-grid home-grid articles-grid">
 					{{ range first 6 (where .Data.Pages "Type" "content") }}
 						<article>
 							<a href="{{ .Permalink }}">
 								<h2>{{ .Title }}</h2>
-								<div class="light">{{ .Date.Format "January 1, 2006" }} in {{ .Section | humanize }}</div>
+								<div class="light">
+									{{ if .Params.futureDate }}
+										Upcoming event on {{ .Params.futureDate }}
+									{{ else }}
+										{{ .Date.Format "January 1, 2006" }}
+										in {{ .Section | humanize }}
+									{{ end }}
+								</div>
 							</a>
 						</article>
 					{{ end }}

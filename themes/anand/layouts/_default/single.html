@@ -81,9 +81,13 @@
 				{{ .Content }}
 			</div>
 			{{ if .Params.tags }}<footer class="meta">
-				Tags {{ range $i, $e := .Params.tags }}
-				&middot; <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-				{{ end }}
+				<p>Posted in <a href="{{ "/" | relLangURL }}{{ .Section | urlize }}/">{{ .Section | humanize }}</a></a></p>
+				<p>
+					Tags
+					{{ range $i, $e := .Params.tags }}
+						&middot; <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+					{{ end }}
+				</p>
 			</footer>{{ end }}
 		</article>
 	</main>
