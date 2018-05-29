@@ -1,0 +1,7 @@
+{{ if eq .Title "Events" }}
+<p class="intro">From time to time, I speak at events about technology, design, and entrepreneurship. For engagements, write to events @ this domain.</p>
+{{ else if eq .Title "Press" }}
+<p class="intro">I have been very honored and lucky to be featured in many leading publications. The following is a very infrequently updated list. For press enquiries or interview requests, write to press @ this domain.</p>
+{{ else if in .URL "/state-of-the/" }}
+<p class="intro"><strong>Quick intro: </strong>Inspired from CGP Grey's (semi?)annual lists, I'm planning on doing a "State of the X" series with lists of apps and services I use and podcasts I follow.</p>
+{{ end }}

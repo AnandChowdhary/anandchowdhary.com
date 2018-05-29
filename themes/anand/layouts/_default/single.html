@@ -77,6 +77,7 @@
 			{{ else if not .Date.IsZero }}
 				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
 			{{ end }}
+			{{ partial "intro.html" . }}
 			<div>
 				{{ .Content }}
 			</div>

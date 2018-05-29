@@ -179,13 +179,17 @@ header#masthead {
 	}
 }
 
+p.intro {
+	margin-bottom: 2rem !important;
+	color: #666;
+}
+
 .page {
 	h1 {
 		margin-bottom: 1rem;
 	}
 	& + p.intro {
-		color: #666;
-		margin-bottom: 5rem;
+		margin-bottom: 5rem !important;
 	}
 }
 
