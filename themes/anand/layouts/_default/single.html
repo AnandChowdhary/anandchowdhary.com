@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 	<main>
-		<article class="single {{ .Title | urlize }} {{ .Section }}">
+		<article class="single {{ .Title | urlize }} {{ .Section }} {{ if .Params.type }}{{ .Params.type }}{{ end }}">
 			<div class="article-title{{ if .Date.IsZero }} page{{ end }}">
 				{{ if .Params.icon }}
 					<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">

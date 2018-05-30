@@ -39,7 +39,7 @@ function initMe() {
 		}
 	}
 	var postImages = document.querySelectorAll("article p img");
-	if (postImages) {
+	if (postImages && !document.querySelector(".listicle")) {
 		for (var i = 0; i < postImages.length; i++) {
 			var imageUrl = postImages[i].getAttribute("src");
 			var altText = postImages[i].getAttribute("alt");

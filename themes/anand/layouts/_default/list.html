@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-	<main>
+	<main class="list {{ .Title | urlize }}">
 		{{ if ((in .URL "/work/") | or (in .URL "/projects")) }}
 			<ul class="filter">
 				<li><a href="/projects/">All</a></li>

@@ -62,7 +62,7 @@ article a[target="_blank"]:not([data-balloon]) {
 		display: inline-block;
 		margin-left: 0.25em;
 		opacity: 0.5;
-		background-image: url("https://static.oswaldlabs.com/e80rj23-external.svg");
+		background-image: url("/external.svg");
 		background-position: center right;
 		transition: 0.3s;
 		background-size: 15px 15px;
@@ -276,10 +276,13 @@ footer#colophon {
 			margin-bottom: 2rem;
 		}
 	}
-	.project-icon {
+	.project-icon, h3 img, h4 img, h2 img {
 		height: 55px;
 		margin-right: 20px;
 		float: left;
+	}
+	h3 img, h4 img, h2 img {
+		margin-top: -10px;
 	}
 	.article-list .project-icon {
 		display: none;
@@ -331,10 +334,6 @@ h1.intro + p.lead {
 	}
 }
 
-.article-list .project-icon {
-	border-radius: 100%;
-}
-
 .press a {
 	background-color: transparent;
 	&:hover {
@@ -372,7 +371,23 @@ h1.intro + p.lead {
 		margin-left: -105px;
 		float: left;
 	}
+	h3, h4, h5 {
+		img {
+			width: 78px;
+			margin-right: 25px;
+			margin-left: -105px;
+			float: left;
+		}
+	}
 	.article-list .project-icon {
+		margin-top: -10px;
+	}
+	h3, h3, h4 {
+		img {
+			margin-top: 10px;
+		}
+	}
+	.events.list .project-icon {
 		margin-top: -20px;
 	}
 	.scale {
