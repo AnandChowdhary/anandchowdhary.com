@@ -26,7 +26,7 @@
 				<h2 class="side-title">New</h2>
 				<div class="work-grid home-grid articles-grid">
 					{{ range first 6 (where .Data.Pages "Type" "content") }}
-						<article>
+						<article class="{{ .Section | urlize }}">
 							<a href="{{ .Permalink }}">
 								<h2>{{ .Title }}</h2>
 								<div class="light">

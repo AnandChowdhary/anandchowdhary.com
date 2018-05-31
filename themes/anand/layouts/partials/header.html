@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
 		{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
 		{{ .Hugo.Generator }}
+		<link rel="author" href="https://plus.google.com/+AnandChowdhary0">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
@@ -134,17 +135,17 @@
 				<div><a class="logo" href="/"><img alt="" src="/favicon-32x32.png">Anand Chowdhary</a></div>
 				<nav role="navigation">
 					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="/projects/">Projects</a></li>
-						<li><a href="/blog/">Blog</a></li>
-						<li><a href="/about/">About</a></li>
+						<li><a class="home-link" href="/">Home</a></li>
+						<li><a class="projects-link" href="/projects/">Projects</a></li>
+						<li><a class="blog-link" href="/blog/">Blog</a></li>
+						<li><a class="about-link" href="/about/">About</a></li>
 						<li style="cursor: default">
 							More
 							<ul>
-								<li><a href="/events/">Events</a></li>
-								<li><a href="/open-source/">Open Source</a></li>
-								<li><a href="/press/">Press</a></li>
-								<li><a href="/contact/">Contact</a></li>
+								<li><a class="events-link" href="/events/">Events</a></li>
+								<li><a class="open-source-link" href="/open-source/">Open Source</a></li>
+								<li><a class="press-link" href="/press/">Press</a></li>
+								<li><a class="contact-link" href="/contact/">Contact</a></li>
 							</ul>
 						</li>
 					</ul>

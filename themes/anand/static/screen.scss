@@ -144,6 +144,9 @@ header#masthead {
 				&:hover ul {
 					display: block;
 				}
+				.focusable:focus + ul {
+					display: block;
+				}
 				a {
 					color: inherit;
 					text-decoration: none;
@@ -159,18 +162,6 @@ header#masthead {
 						}
 					}
 				}
-				&:nth-of-type(1) { a:focus, a:hover, a:active, a.active, {
-					box-shadow: 0 3px 0 #e84393;
-				} }
-				&:nth-of-type(2) { a:focus, a:hover, a:active, a.active, {
-					box-shadow: 0 3px 0 #1abc9c;
-				} }
-				&:nth-of-type(3) { a:focus, a:hover, a:active, a.active, {
-					box-shadow: 0 3px 0 #f39c12;
-				} }
-				&:nth-of-type(4) { a:focus, a:hover, a:active, a.active, {
-					box-shadow: 0 3px 0 #00a8ff;
-				} }
 				&:last-of-type {
 					margin-right: 0;
 				}
@@ -922,11 +913,68 @@ button[data-balloon] {
 		margin-bottom: 0.25rem !important;
 		margin-top: 0 !important;
 	}
-	article {
-		margin-bottom: 2rem;
-	}
 	.light {
 		font-size: 90%;
 		color: #555;
+		&::before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			background-color: #aaa;
+			border-radius: 100%;
+			display: inline-block;
+			margin-right: 0.25rem;
+		}
+	}
+	article {
+		margin-bottom: 2rem;
+		&.home .light::before {
+			background-color: #e84393;
+		}
+		&.projects .light::before {
+			background-color: #1abc9c;
+		}
+		&.blog .light::before {
+			background-color: #f39c12;
+		}
+		&.about .light::before {
+			background-color: #3498db;
+		}
+		&.open-source .light::before {
+			background-color: #9b59b6;
+		}
+		&.events .light::before {
+			background-color: #273c75;
+		}
+		&.press .light::before {
+			background-color: #c0392b;
+		}
+		&.contact .light::before {
+			background-color: #080e0a;
+		}
 	}
 }
+header#masthead nav ul li .home-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #e84393;
+} }
+header#masthead nav ul li .projects-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #1abc9c;
+} }
+header#masthead nav ul li .blog-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #f39c12;
+} }
+header#masthead nav ul li .about-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #3498db;
+} }
+header#masthead nav ul li .open-source-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #9b59b6;
+} }
+header#masthead nav ul li .events-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #273c75;
+} }
+header#masthead nav ul li .press-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #c0392b;
+} }
+header#masthead nav ul li .contact-link { &:focus, &:hover, &:active, &.active {
+	box-shadow: 0 3px 0 #080e0a;
+} }
