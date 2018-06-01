@@ -9,8 +9,8 @@
 		<meta name="keywords" content="Anand Chowdhary, Anand, Chowdhary, {{ if .Params.tags }}{{ delimit .Params.tags ", " }}{{ end }}">
 		<meta name="author" content="Anand Chowdhary">
 		<link rel="canonical" href="{{ .Permalink }}">
-		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/screen.css">
-		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/screen.css?v=ejr9hr4031">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css?v=3ejr209u9r" media="print">
 		{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
 		{{ .Hugo.Generator }}
 		<link rel="author" href="https://plus.google.com/+AnandChowdhary0">
@@ -52,50 +52,6 @@
 			"description": "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company.",
 		}
 		</script>
-		<script type="application/ld+json">
-			{ 
-				"@context": "http://schema.org", 
-				"@type": "Person", 
-				"url": "https://anandchowdhary.com", 
-				"name":"Anand Chowdhary",
-				"birthDate":"1997-12-29",
-				"birthPlace":{
-					"@type":"Place",
-					"address":{
-						"@type":"PostalAddress",
-						"addressLocality":"New Delhi,
-						India"
-					}
-				},
-				"worksAt": {
-					"name":"Oswald Labs",
-					"alternateName":"Oswald Foundation",
-					"url":"https://oswaldlabs.com",
-					"logo":"https://static.oswaldlabs.com/oswald-labs-logo.svg",
-					"legalName":"OswaldAble Technology Pvt. Ltd.",
-					"sameAs":[
-						"https://en.wikipedia.org/wiki/Oswald_Labs",
-						"https://www.wikidata.org/wiki/Q27593967",
-						"https://www.facebook.com/OswaldLabs",
-						"https://twitter.com/OswaldLabs",
-						"https://www.instagram.com/OswaldLabs/",
-						"https://plus.google.com/109050675253975445822"
-					]
-				},
-				"email":"ceo@oswaldlabs.com",
-				"gender":"Male",
-				"jobTitle":"Chief Executive Officer",
-				"nationality":"India",
-				"url":"https://oswaldlabs.com/team/anand",
-				"sameAs":[
-					"https://www.wikidata.org/wiki/Q33134612",
-					"https://www.facebook.com/AnandChowdhary",
-					"https://twitter.com/AnandChowdhary",
-					"https://www.instagram.com/AnandChowdhary/",
-					"https://www.linkedin.com/in/AnandChowdhary/"
-				]
-			}
-			</script>
 		{{ end }}
 		{{ if .IsPage }}
 			<script type="application/ld+json">
