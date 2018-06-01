@@ -4,6 +4,7 @@ subcategory: Branding
 intro: Redesigned brand identity of Internet.org for an event in five hours. Made a trustworthy, user-centric brand.
 date: 2013-10-11
 work: ["Branding", "Web"]
+bg: "#ef5c46"
 ---
 
 I recently participated in an event where I was required to redesign Internet.org's homepage and logo. The content had to remain the same, but the design was to be completely new. The website was required to be responsive, and good in code-quality and aesthetics, without the use of any external code. The logo was marked for creativity and execution. Here's what I designed in five hours. And why.

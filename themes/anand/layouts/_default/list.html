@@ -16,10 +16,18 @@
 				{{ range sort .Paginator.Pages }}
 					<article>
 						<a href="{{ .Permalink }}">
-							<div class="image" style="
-								background-image: url('/images/portfolio/{{ .Title | urlize }}@1x.png');
-								background-color: {{ .Params.bg }}
-							"></div>
+							{{ if .Params.style }}
+								<div class="image" style="
+									background-image: url('/images/portfolio/{{ .Title | urlize }}@2x.png');
+									background-size: cover;
+									background-color: {{ .Params.bg }}
+								"></div>
+							{{ else }}
+								<div class="image" style="
+									background-image: url('/images/portfolio/{{ .Title | urlize }}@2x.png');
+									background-color: {{ .Params.bg }}
+								"></div>
+							{{ end }}
 							<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
 							<p>{{ .Params.intro }}</p>
 						</a>
@@ -136,6 +144,7 @@
 			</article>
 			{{ end }}
 		{{ end }}
+		{{ template "_internal/pagination.html" . }}
 	</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

@@ -4,6 +4,7 @@ subcategory: Internet of Things
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
 date: 2018-01-23
 work: ["Internet of Things", "Hardware"]
+style: cover
 ---
 
 BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.

@@ -5,6 +5,7 @@ intro: Platform to celebrate, promote, and build a brand — India. Over 75 orga
 date: 2014-04-21
 icon: true
 work: ["Web", "Branding"]
+bg: "#f10032"
 ---
 
 You see this meticulously made handicraft item which would be the perfect addition to brighten up any living room. You pick it up, admiring the attention to detail when suddenly you spot the Made in India label at the bottom, instantly making the product you were admiring seconds ago feel as cheap as dirt.

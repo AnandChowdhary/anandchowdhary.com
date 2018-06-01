@@ -5,6 +5,7 @@ intro: Branding and mobile-first Shopify website for one of the fastest-growing 
 date: 2017-09-10
 icon: true
 work: ["Branding", "Web"]
+style: cover
 ---
 
 I designed a minimal logo and Shopify ecommerce store for Crink Jewel, a precious jewelry company based in New Delhi, India. I tried to portray elegance, simplicity, and timelessness.

@@ -10,7 +10,7 @@ color: "#19171c"
 type: content
 ---
 
-After being featured by Het Financieele Dagblad (Dutch Financial Times) as one of the Netherlands' 50 most-innovative young entrepreneurs and professionals, I was invited by Enschede-based non-ptofit startup accelerator NESST to deliver the opening keynote for their new season.
+After being featured by Het Financieele Dagblad (Dutch Financial Times) as one of the Netherlands' 50 most-innovative young entrepreneurs and professionals, I was invited by Enschede-based non-profit startup accelerator NESST to deliver the opening keynote for their new season.
 
 <!--more-->
 

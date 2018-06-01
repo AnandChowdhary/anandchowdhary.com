@@ -982,3 +982,42 @@ header#masthead nav ul li .contact-link { &:focus, &:hover, &:active, &.active {
 *:focus {
 	outline: 3px solid rgba(0, 0, 0, 0.25);
 }
+
+ul.pagination {
+	margin: 3rem auto 2rem auto;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	li {
+		display: inline-block;
+		font-size: 125%;
+		margin: 0 0.5rem;
+		&:last-of-type,
+		&:first-of-type {
+			display: none;
+		}
+		&.disabled a {
+			cursor: default;
+			color: inherit;
+			opacity: 0.3;
+		}
+		&.active a {
+			cursor: default;
+			color: inherit;
+			opacity: 0.3;
+		}
+		[aria-label="Next"] {
+			background-color: #2979ff;
+			color: #fff !important;
+		}
+		a {
+			background-color: whitesmoke;
+			width: 3rem;
+			height: 3rem;
+			text-align: center;
+			line-height: 3rem;
+			display: block;
+			border-radius: 100%;
+		}
+	}
+}

@@ -4,6 +4,7 @@ subcategory: Edtech
 intro: India's first online training platform, built in collaboration with government agencies and large corporates.
 date: 2014-05-27
 work: ["Web"]
+bg: "#d7eed0"
 ---
 
 ClassRebels is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.

@@ -4,6 +4,7 @@ subcategory: Industrial Design
 intro: Branding, UI/UX, and A/B-tested Shopify theme development for one of India's most popular online fashion stores.
 date: 2014-07-01
 work: ["Branding", "Industrial Design"]
+style: cover
 ---
 
 Project Blue, originally standing for 'Bottles, Linkages, and their Underlining Ergonomics,' is my first (and only) industrial design project in which I conducted a research and redesigned the plastic bottle. I understood that polyethene terephthalate, a plastic resin and the most common type of polyester, is the material which makes the popular 'PET' bottles.

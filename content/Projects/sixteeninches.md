@@ -4,6 +4,7 @@ subcategory: Ecommerce
 intro: Branding and Shopify theme customization for one of the fastest-growing online supplements stores in India.
 date: 2015-09-12
 icon: true
+bg: "#f30f40"
 work: ["App", "Branding", "Web"]
 ---
 

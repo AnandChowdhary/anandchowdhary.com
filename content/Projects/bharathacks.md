@@ -5,6 +5,7 @@ intro: Hackathon to solve India-specific problems in New Delhi with 200 particip
 date: 2017-07-18
 icon: true
 work: ["Event", "Branding", "Web"]
+bg: "#27577a"
 ---
 
 In June 2017, I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make lives better. Organized in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks helped hundreds take their idea forward, from hacking to raising investment and launching their products in the market.
