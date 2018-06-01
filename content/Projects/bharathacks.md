@@ -4,6 +4,7 @@ subcategory: Hackathon
 intro: Hackathon to solve India-specific problems in New Delhi with 200 participants and tens of thousands of dollars in prizes.
 date: 2017-07-18
 icon: true
+timeline: 3 months
 work: ["Event", "Branding", "Web"]
 bg: "#27577a"
 ---
@@ -20,4 +21,4 @@ I personally organized the event, arranged logistics, delivered the keynote, and
 
 [Visit BharatHacks &rarr;](https://bharathacks.github.io)
 
-<div class="image"><img alt="" src="/images/bharathacks/1.png"></div>
+<div class="image"><img alt="" src="/images/projects/bharathacks/1.png"></div>

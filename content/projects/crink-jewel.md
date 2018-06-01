@@ -2,9 +2,11 @@
 title: Crink Jewel
 subcategory: Ecommerce
 intro: Branding and mobile-first Shopify website for one of the fastest-growing precious jewelry companies.
-date: 2017-09-10
+date: 2015-10-20
 icon: true
 work: ["Branding", "Web"]
+client: Crink Jewel
+timeline: 2 months
 style: cover
 ---
 

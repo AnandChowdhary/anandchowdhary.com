@@ -6,6 +6,7 @@ date: 2016-03-01
 icon: true
 work: ["Branding", "Web", "Startup"]
 style: cover
+timeline: 2 months
 ---
 
 In mid-2016, my girlfriend <a href="https://sukritikapoor.com">Sukriti Kapoor</a> and I conceptualized a fashion brand that combines western clothing with ethnic Indian designs. She worked on fabric and fashion design while I designed the brand identity and website.

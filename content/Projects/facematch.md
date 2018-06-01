@@ -4,7 +4,9 @@ subcategory: App
 intro: Face recognition Augmented Reality app for business events, built at the AWS Hackathon for StartupFest Europe.
 date: 2017-09-23
 icon: true
-work: ["App", "Artificial Intelligence", "Hackathon", "Augmented Reality"]
+work: ["App", "Artificial Intelligence", "Augmented Reality"]
+client: AWS
+timeline: 24 hours
 ---
 
 For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://www.thefutureofhightech.com/), part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon's grand prize of €1,000 along with VIP tickets for StartupFest Europe.
@@ -24,6 +26,6 @@ It also uses object and scene detection, so you can just point your camera in th
 
 FaceMatch uses Amazon Rekognition, a service that lets you quickly add sophisticated deep learning-based visual search and image classification to apps. I ended up using Face Comparison, Facial Analysis, and Object and Scene Detection APIs.
 
-<div class="image"><img alt="" src="/images/facematch@2x.png"></div>
+<div class="image"><img alt="" src="/images/portfolio/facematch@2x.png"></div>
 
 <footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

@@ -496,8 +496,14 @@ footer {
 	margin-top: 2rem;
 	text-align: center;
 	+ p {
-		margin-top: 2rem;
+		margin-top: 4rem;
 	}
+	+ footer {
+		margin-top: 4rem;
+	}
+}
+p + .image {
+	margin-top: 4rem;
 }
 
 .dark {

@@ -5,12 +5,14 @@ intro: Location-based offline friend discovery and music matching app built for 
 date: 2017-10-21
 icon: true
 work: ["App", "Hackathon"]
+client: ADE
+timeline: 24 hours
 bg: "#de2a49"
 ---
 
-At the Amsterdam Dance Event (ADE)'s hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.
+At the Amsterdam Dance Event's hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.
 
-The app was built using HTML5 with a PHP backend integrated with some machine learning and music tagging APIs. The Spotify-inspired dark UI was also developed, along with a beautiful app icon.
+The app was built using HTML5 with a PHP backend integrated with some machine learning and music tagging APIs. The Spotify-inspired dark UI was also designed, along with a beautiful app icon.
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/ade-hack)
 
