@@ -39,4 +39,6 @@ University of Twente's Creative Technology program is my absolute favorite right
 
 I did not apply to study to the US, except for CCA because it’s been my dream college since I was in sixth grade. I really loved the Interaction Design program at CCA when I was younger, but I see the parallels between UID and CCA in retrospect.
 
-**Update** I'm studying at UT.
+## Update
+
+In August 2017, I moved to Enschede, the Netherlands, and started studying Creative Technology at the University of Twente.

@@ -10,10 +10,12 @@ color: "#f39c12"
 type: content
 ---
 
-I'll be speaking at the AKEPT-WIEF Social Enterprise Forum in Kuala Lumpur later this year. The event is a collaboration between the higher education and leadership academy AKEPT and the World Islamic Economic Forum Foundation.
+Startup24 is the flagship startup weekend-like event in the Netherlands which happens in 12 cities simultaneously. I was invited to Startup24 Enschede to do a pitching working for the participants before their final jury pitches, and I was also part of their "midnight jury" for 2-minute pitches at midnight.
 
 <!--more-->
 
-As a panelist on the Plenary Session 5 on "Social Enterprise in Universities", I'll be incredibly humbled by sharing the stage with Talib S. Karim, President, Institute of Business Management (Pakistan); Sharon Feng, Overseas Director of Codemao (China); and Royston Braganza, CEO of Grameen Capital (India).
+During 24 hours, participants formed a team and learn to transform their ideas into a validated concept and present it in a startup pitch. There were also plenty of games, interactive workshops, and experienced coaches. I was extremely grateful to be one of them.
 
-The event is scheduled to be held on October 22-23, 2018, at the International Islamic University Malaysia. [Learn more about the event](https://wief.org/wet_event/akept-wief-social-enterprise-forum/) or [get your tickets on Eventbrite](https://www.eventbrite.com/e/akept-wief-social-enterprise-forum-tickets-43152504302).
+This year, Twente's startup accelerator and ecosystem Novel-T and Saxion University of Applied Sciences in Enschede organized the edition of Startup24 Enschede.
+
+{{< tweet 929336959121657856 >}}
