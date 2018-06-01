@@ -173,6 +173,10 @@ header#masthead {
 p.intro {
 	margin-bottom: 2rem !important;
 	color: #666;
+	+ .intro {
+		margin-top: -4rem;
+		margin-bottom: 4rem;
+	}
 }
 
 .page {
