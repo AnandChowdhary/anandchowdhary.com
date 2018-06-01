@@ -1,16 +1,23 @@
 ---
 title: Unifiers
-subcategory: Edtech
 intro: India's first online training platform, built in collaboration with government agencies and large corporates.
 date: 2014-05-27
 work: ["Web"]
 bg: "#d7eed0"
+client: Unifiers
+timeline: 2 months
 ---
 
-ClassRebels is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.
+For 3 years, I worked part-time as a consultant to Unifiers Social Ventures Pvt. Ltd., a leading social infrastructure company, and worked on a variety of projects.
 
-Users can open the ClassRebels app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. ClassRebels listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
+## SkillsTrainer
 
-This was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+I lead the development on SkillsTrainer, India's first online train-the-trainer platform built in collaboration with government agencies and large corporations. Using SkillsTrainer, people could complete entire skilling programs online, get certified, and find jobs.
 
-<footer>This project was done in collaboration with Hessel Bosma 🇳🇱, Karlijn Wiggers 🇳🇱, Rezfan Pawirotaroeno 🇸🇷, and Wouter Couwenbergh 🇳🇱. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>
+![SkillsTrainer screenshot](/images/portfolio/unifiers@2x.png)
+
+## Nayee Disha
+
+I also designed components for Nayee Disha, a Unifiers project with the United National Development Program (UNDP) along with companies like Pepsico, Airtel, Nestlé, Honda, R&B, and more. The program aims at creating awareness amongst young college girls about the FMCG, Telecom and manufacturing, and retail industries, as well as connect them to the emerging job opportunities in multiple areas such as customer service, marketing, logistics, etc.
+
+Phase 1 of the Nayee Disha Project was launched in August 2016 and completed in October 2016 in which 10,880 women students have undergone the industry awareness workshop and assessment. Of these, 75% and above scorers have been certified by the industry consortium. The partner companies are identifying multiple job and internship openings across cities where the Nayee Disha project is being implemented and shall connect the certified girls to these job openings based on their area of interest and competence.

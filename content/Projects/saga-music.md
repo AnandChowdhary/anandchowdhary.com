@@ -5,6 +5,7 @@ intro: Free music downloading and sharing app for Android and the web. Over 100,
 date: 2015-05-31
 icon: true
 bg: "#00c1d7"
+timeline: 2 months
 work: ["App", "Branding", "Web"]
 ---
 

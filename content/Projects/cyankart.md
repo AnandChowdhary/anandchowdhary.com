@@ -4,7 +4,9 @@ subcategory: Ecommerce
 intro: Branding, UI/UX, and A/B-tested Shopify theme development for one of India's most popular online fashion stores.
 date: 2014-06-21
 icon: true
-work: ["Web", "Branding", "Ecommerce"]
+client: Cyankart
+timeline: 2 months
+work: ["Web", "Branding"]
 ---
 
 Cyankart.com is India's most popular online fashion store for phone cases and apparel items. They were looking to expand their mobile reach and increase conversions, so I was hired to redesign their ecommerce website and provide logistics-related backend solutions. A/B testing, source code minification, image optimization, and responsive cross-platform mobile-first Liquid theme development are just some of the complicated words I used while working with Cyankart to expand their mobile reach and increase conversions.

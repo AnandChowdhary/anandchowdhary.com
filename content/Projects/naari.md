@@ -4,7 +4,7 @@ subcategory: App
 intro: Period and sexual health companion for women that gives personalized tampon recommendations and access to self-help resources.
 date: 2016-10-16
 icon: true
-work: ["App", "Artificial Intelligence", "Hackathon"]
+work: ["App", "Artificial Intelligence"]
 bg: "#217ed0"
 timeline: 24 hours
 client: P&G

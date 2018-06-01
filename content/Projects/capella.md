@@ -4,7 +4,7 @@ subcategory: App
 intro: Location-based offline friend discovery and music matching app built for Amsterdam Dance Event in 24 hours.
 date: 2017-10-21
 icon: true
-work: ["App", "Hackathon"]
+work: ["App"]
 client: ADE
 timeline: 24 hours
 bg: "#de2a49"
