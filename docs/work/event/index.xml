@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event on Anand Chowdhary</title>
+    <link>https://anandchowdhary.com/work/event/</link>
+    <description>Recent content in Event on Anand Chowdhary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://anandchowdhary.com/work/event/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BharatHacks</title>
+      <link>https://anandchowdhary.com/projects/bharathacks/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/bharathacks/</guid>
+      <description>In June 2017, I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make lives better. Organized in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks helped hundreds take their idea forward, from hacking to raising investment and launching their products in the market.
+BharatHacks was free for both entrepreneurs and hackers, to join hands and work towards a better India. From a pool of over 1,000 applicants, we&amp;rsquo;ve chosen the top 200 to participate at BharatHacks.</description>
+    </item>
+    
+  </channel>
+</rss>

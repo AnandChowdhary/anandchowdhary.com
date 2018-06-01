@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Anand Chowdhary</title>
+    <link>https://anandchowdhary.com/work/hardware/</link>
+    <description>Recent content in Hardware on Anand Chowdhary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://anandchowdhary.com/work/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IBM IoT Escape Room</title>
+      <link>https://anandchowdhary.com/projects/ibm-iot-escape-room/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/ibm-iot-escape-room/</guid>
+      <description>From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase&amp;rsquo;s real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+This was my project for the module &amp;ldquo;Living and Working Tomorrow&amp;rdquo;, a quarter of Creative Technology BSc&amp;rsquo;s first year focused on working with external clients on solving today&amp;rsquo;s problems using tomorrow&amp;rsquo;s technology.</description>
+    </item>
+    
+    <item>
+      <title>Blueboard</title>
+      <link>https://anandchowdhary.com/projects/blueboard/</link>
+      <pubDate>Tue, 23 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/blueboard/</guid>
+      <description>&lt;p&gt;BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

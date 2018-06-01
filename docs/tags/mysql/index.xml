@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Anand Chowdhary</title>
+    <link>https://anandchowdhary.com/tags/mysql/</link>
+    <description>Recent content in Mysql on Anand Chowdhary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://anandchowdhary.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Precis</title>
+      <link>https://anandchowdhary.com/open-source/precis/</link>
+      <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/open-source/precis/</guid>
+      <description>&lt;p&gt;Precis is a free and open-source URL shortener which uses PHP and MySQL. It has an admin panel with a RESTful API and collects analytics such as useragent with each click. It works across multiple domains and is super easy to setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
