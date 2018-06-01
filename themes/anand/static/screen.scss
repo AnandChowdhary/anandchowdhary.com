@@ -978,3 +978,7 @@ header#masthead nav ul li .press-link { &:focus, &:hover, &:active, &.active {
 header#masthead nav ul li .contact-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #080e0a;
 } }
+
+*:focus {
+	outline: 3px solid rgba(0, 0, 0, 0.25);
+}
