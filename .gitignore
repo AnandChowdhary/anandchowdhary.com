@@ -1,1 +1,4 @@
-img/Thumbs.db
+public/
+docs/
+.DS_Store
+node_modules

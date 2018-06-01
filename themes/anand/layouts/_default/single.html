@@ -1,0 +1,95 @@
+{{ partial "header.html" . }}
+	<main>
+		<article class="single {{ .Title | urlize }} {{ .Section }} {{ if .Params.type }}{{ .Params.type }}{{ end }}">
+			<div class="article-title{{ if .Date.IsZero }} page{{ end }}">
+				{{ if .Params.icon }}
+					<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">
+				{{ end }}
+				<h1>{{ .Title }}</h1>
+			</div>
+			{{ if in .URL "/projects/" }}
+				<div class="meta">
+					<time>{{ .Date.Format "January 2006" }}</time>
+					<div class="client-details">
+						{{ if .Params.work }}
+							<div>
+								<div>Work</div>
+								<div>
+									{{ range $i, $e := .Params.work }}
+										<a href="{{ "/work/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a><br>
+									{{ end }}
+								</div>
+							</div>
+						{{ end }}
+						{{ if .Params.client }}
+							<div>
+								<div>Client</div>
+								<div>{{ .Params.client }}</div>
+							</div>
+						{{ end }}
+						{{ if .Params.timeline }}
+							<div>
+								<div>Timeline</div>
+								<div>{{ .Params.timeline }}</div>
+							</div>
+						{{ end }}
+					</div>
+				</div>
+			{{ else if in .URL "/events/" }}
+				<div class="meta">
+					{{ if .Params.futureDate }}
+						<time>{{ .Params.futureDate }}</time>
+					{{ else }}
+						<time>{{ .Date.Format "January 2, 2006" }}</time>
+					{{ end }}
+					<div class="client-details">
+						{{ if .Params.roles }}
+							<div>
+								<div>Role</div>
+								<div>
+									{{ range $i, $e := .Params.roles }}
+										<a href="{{ "/roles/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+									{{ end }}
+								</div>
+							</div>
+						{{ end }}
+						{{ if .Params.places }}
+							<div>
+								<div>Location</div>
+								<div>
+									{{ range $i, $e := .Params.places }}
+										<a href="{{ "/places/" | relLangURL }}{{ . | urlize }}/">
+											{{ . }}
+											{{ partial "emoji.html" . }}
+										</a>
+									{{ end }}
+								</div>
+							</div>
+						{{ end }}
+						{{ if .Params.link }}
+							<div>
+								<div>Details</div>
+								<div><a href="{{ .Params.link }}">{{ .Params.linkType }}</a></div>
+							</div>
+						{{ end }}
+					</div>
+				</div>
+			{{ else if not .Date.IsZero }}
+				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
+			{{ end }}
+			{{ partial "intro.html" . }}
+			<div>
+				{{ .Content }}
+			</div>
+			{{ if .Params.tags }}<footer class="meta"><p>
+				<span>Posted in <a href="{{ "/" | relLangURL }}{{ .Section | urlize }}/">{{ .Section | humanize }}</a></span>
+				<span>
+					{{ range $i, $e := .Params.tags }}
+						&middot; <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+					{{ end }}
+				</span>
+			</p></footer>{{ end }}
+		</article>
+	</main>
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}

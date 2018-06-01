@@ -1,0 +1,38 @@
+baseURL = "https://anandchowdhary.com/"
+publishDir = "docs/"
+defaultContentLanguage = "en"
+enableEmoji = true
+languageCode = "en-us"
+paginate = 10
+pygmentsCodeFences = true
+pygmentsStyle = "native"
+pygmentsUseClasses =  true
+enableRobotsTXT = true
+canonifyURLs = true
+theme = "anand"
+title = "Anand Chowdhary"
+pluralizelisttitles = "false"
+[taxonomies]
+  tags = "tags"
+  roles = "roles"
+  places = "places"
+  work = "work"
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+[author]
+  gravatarEmail = "anandchowdhary@gmail.com"
+  homepageText = "Anand Chowdhary"
+  name = "Anand Chowdhary"
+[params]
+  description = "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company."
+  licence = "All Rights Reserved"
+[pygmentsOptions]
+  linenos = false
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]

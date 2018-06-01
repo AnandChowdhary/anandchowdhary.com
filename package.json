@@ -1,0 +1,25 @@
+{
+  "name": "anandchowdhary.com",
+  "version": "1.0.0",
+  "description": "Anand Chowdhary's personal website",
+  "main": "index.js",
+  "repository": "https://github.com/AnandChowdhary/anandchowdhary.github.io",
+  "author": "Anand Chowdhary <anandchowdhary@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start:prettier": "onchange '**/*.js' -- prettier --write {{changed}}"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.0.0-beta.46",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-minify": "^2.1.0",
+    "gulp-minify-html": "^1.0.6",
+    "onchange": "^4.0.0",
+    "prettier": "^1.12.1",
+    "run-sequence": "^2.2.1"
+  }
+}
