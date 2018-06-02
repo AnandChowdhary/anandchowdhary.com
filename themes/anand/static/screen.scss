@@ -186,14 +186,7 @@ section {
 		}
 		h2.side-title {
 			font: inherit;
-			margin: 0;
-			padding: 0;
 			font-size: 100%;
-			position: absolute;
-			left: -20px;
-			top: 0;
-			transform: translate(-100%, -100%) rotate(-90deg);
-			transform-origin: bottom right;
 		}
 		article {
 			a {
@@ -290,7 +283,7 @@ footer#colophon {
 
 h1.intro, h1.intro + p.lead {
 	margin: 0;
-	font-size: 1.35rem;
+	font-size: 1.5rem;
 	font-weight: 400;
 	max-width: 500px;
 	line-height: 1.5;
@@ -330,6 +323,16 @@ h1.intro + p.lead {
 }
 
 @media (min-width: 550px) {
+	section .elements h2.side-title {
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+		position: absolute;
+		left: -20px;
+		top: 0;
+		transform: translate(-100%, -100%) rotate(-90deg);
+		transform-origin: bottom right;
+	}
 	.work-grid {
 		display: flex;
 		flex-wrap: wrap;
