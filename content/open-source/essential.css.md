@@ -10,6 +10,8 @@ essential.css is a beautiful article template in 786 bytes. Just include the sty
 
 <!--more-->
 
+I even convinced my middle-school computers teacher to teach using essential.css in her class as a way of making better-looking webpages without having to learn CSS.
+
 The usage is very simple, you just have to include this link to your webpage:
 
 ```html

@@ -129,18 +129,6 @@ header#masthead {
 				margin-right: 1rem;
 				color: #6f777d;
 				display: inline-block;
-				ul {
-					display: none;
-					position: absolute;
-					padding: 1.5rem 1rem 0 1rem;
-					z-index: 99;
-					margin-left: -1rem;
-					margin-top: -0.5rem;
-					li {
-						display: block;
-						margin-bottom: 1rem;
-					}
-				}
 				&:hover ul {
 					display: block;
 				}
@@ -282,9 +270,14 @@ footer#colophon {
 	.article-list .project-icon {
 		display: none;
 	}
-	header#masthead nav ul {
-		margin-top: 1rem;
+	header#masthead nav {
 		width: 100%;
+		white-space: nowrap;
+		overflow-y: auto;
+		ul {
+			margin-top: 1rem;
+			width: 100%;
+		}
 	}
 	.article-title {
 		margin-top: 1rem;
@@ -411,6 +404,57 @@ h1.intro + p.lead {
 			margin-top: -2rem;
 		}
 	}
+	header#masthead nav ul {
+		.more {
+			position: relative;
+			.list {
+				display: none;
+				position: absolute;
+				z-index: 99;
+				padding-top: 20px;
+				top: 100%;
+				left: 25%;
+				transform: translateX(-50%);
+				text-align: center;
+				li {
+					margin-right: 0;
+					display: block;
+					padding: 0.75rem 1rem;
+					background-color: whitesmoke;
+					min-width: 150px;
+					&:first-of-type {
+						padding-top: 1rem;
+					}
+					&:last-of-type {
+						padding-bottom: 1rem;
+					}
+				}
+				&::before {
+					content: "";
+					position: absolute;
+					left: 50%;
+					margin-left: -5px;
+					top: 10px;
+					width: 0;
+					height: 0;
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-bottom: 10px solid whitesmoke;
+				}
+			}
+			&:hover .list {
+				display: block;
+			}
+			&::before {
+				content: "•••";
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+nav .more {
+	margin-left: 1rem;
 }
 
 .two-images + img {

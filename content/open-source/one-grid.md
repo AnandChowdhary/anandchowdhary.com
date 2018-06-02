@@ -28,7 +28,7 @@ By eliminating rows, we get:
 </div>
 ```
 
-That's the idea behind One, a grid system I designed this evening. It's an idea that grid systems are far too complex, and come with lots of unnecessary bytes. Nobody uses that many classe
+That's the idea behind One, a grid system I designed this evening. It's an idea that grid systems are far too complex, and come with lots of unnecessary bytes. Nobody uses that many classes anyway.
 
 ## How it works
 1. Each container will have its own "fixed" height, i.e., its children will have the same height. It doesn't need to be specified by CSS, it's just constant.
