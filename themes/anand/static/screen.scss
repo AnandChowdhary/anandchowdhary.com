@@ -422,14 +422,14 @@ h1.intro + p.lead {
 				li {
 					margin-right: 0;
 					display: block;
-					padding: 0.75rem 1rem;
+					padding: 0.5rem 1rem;
 					background-color: whitesmoke;
 					min-width: 150px;
 					&:first-of-type {
-						padding-top: 1rem;
+						padding-top: 1.5rem;
 					}
 					&:last-of-type {
-						padding-bottom: 1rem;
+						padding-bottom: 1.5rem;
 					}
 				}
 				&::before {
@@ -994,13 +994,13 @@ button[data-balloon] {
 		&.blog .light::before {
 			background-color: #f39c12;
 		}
-		&.about .light::before {
+		&.events .light::before {
 			background-color: #3498db;
 		}
 		&.open-source .light::before {
 			background-color: #9b59b6;
 		}
-		&.events .light::before {
+		&.about .light::before {
 			background-color: #273c75;
 		}
 		&.press .light::before {
@@ -1020,13 +1020,13 @@ header#masthead nav ul li .projects-link { &:focus, &:hover, &:active, &.active 
 header#masthead nav ul li .blog-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #f39c12;
 } }
-header#masthead nav ul li .about-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .events-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #3498db;
 } }
 header#masthead nav ul li .open-source-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #9b59b6;
 } }
-header#masthead nav ul li .events-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .about-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #273c75;
 } }
 header#masthead nav ul li .press-link { &:focus, &:hover, &:active, &.active {
