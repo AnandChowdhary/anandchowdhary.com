@@ -66,16 +66,15 @@
 						<li><a class="home-link" href="https://anandchowdhary.com/">Home</a></li>
 						<li><a class="projects-link" href="https://anandchowdhary.com/projects/">Projects</a></li>
 						<li><a class="blog-link" href="https://anandchowdhary.com/blog/">Blog</a></li>
-						<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
-						<li style="cursor: default">
-							More
-							<ul>
-								<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
-								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open Source</a></li>
+						<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
+						<span class="more">
+							<span class="list">
+								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open-source</a></li>
+								<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
 								<li><a class="press-link" href="https://anandchowdhary.com/press/">Press</a></li>
 								<li><a class="contact-link" href="https://anandchowdhary.com/contact/">Contact</a></li>
-							</ul>
-						</li>
+							</span>
+						</span>
 					</ul>
 				</nav>
 			</div>
@@ -83,16 +82,16 @@
 		<div id="barba-wrapper">
 			<div class="container barba-container">
 	<main>
-		<article class="single utwente-peoplepages-contact-book blog content">
+		<article itemscope itemtype="http://schema.org/Article" class="single utwente-peoplepages-contact-book blog content">
 			<div class="article-title">
 				
-				<h1>UTwente PeoplePages Contact Book</h1>
+				<h1 itemprop="name">UTwente PeoplePages Contact Book</h1>
 			</div>
 			
-				<div class="meta">Posted on <time>August 12, 2017</time></div>
+				<div class="meta">Posted on <time itemprop="dateCreated">August 12, 2017</time></div>
 			
 			
-			<div>
+			<div itemprop="articleBody">
 				<p>As a future creative technology student at the University of Twente, I wanted to get in touch with a particular professor. Their website, <a href="https://people.utwente.nl/">PeoplePages</a>, uses a RESTful API for AJAX requests to search for university staff, so I decided to add everyone to my contacts using API scraping to save time in the future.</p>
 
 <p></p>
@@ -164,7 +163,7 @@
 				<span>Posted in <a href="https://anandchowdhary.com/blog/">Blog</a></span>
 				<span>
 					
-						&middot; <a href="https://anandchowdhary.com/tags/bash/">Bash</a>
+						&middot; <a itemprop="itemSection" href="https://anandchowdhary.com/tags/bash/">Bash</a>
 					
 				</span>
 			</p></footer>

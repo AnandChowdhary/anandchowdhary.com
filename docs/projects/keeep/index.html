@@ -66,16 +66,15 @@
 						<li><a class="home-link" href="https://anandchowdhary.com/">Home</a></li>
 						<li><a class="projects-link" href="https://anandchowdhary.com/projects/">Projects</a></li>
 						<li><a class="blog-link" href="https://anandchowdhary.com/blog/">Blog</a></li>
-						<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
-						<li style="cursor: default">
-							More
-							<ul>
-								<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
-								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open Source</a></li>
+						<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
+						<span class="more">
+							<span class="list">
+								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open-source</a></li>
+								<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
 								<li><a class="press-link" href="https://anandchowdhary.com/press/">Press</a></li>
 								<li><a class="contact-link" href="https://anandchowdhary.com/contact/">Contact</a></li>
-							</ul>
-						</li>
+							</span>
+						</span>
 					</ul>
 				</nav>
 			</div>
@@ -83,14 +82,14 @@
 		<div id="barba-wrapper">
 			<div class="container barba-container">
 	<main>
-		<article class="single keeep projects ">
+		<article itemscope itemtype="http://schema.org/Article" class="single keeep projects ">
 			<div class="article-title">
 				
-				<h1>Keeep</h1>
+				<h1 itemprop="name">Keeep</h1>
 			</div>
 			
 				<div class="meta">
-					<time>January 2016</time>
+					<time itemprop="dateCreated">January 2016</time>
 					<div class="client-details">
 						
 							<div>
@@ -113,7 +112,7 @@
 				</div>
 			
 			
-			<div>
+			<div itemprop="articleBody">
 				
 
 <p>For my highschool Computer Science project, I built an encryption engine and password manager in C/C++. I wrote a pseudo-encryption algorithm with string manipulation, rotation, and encoding.</p>

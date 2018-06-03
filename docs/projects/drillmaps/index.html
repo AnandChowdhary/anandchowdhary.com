@@ -66,16 +66,15 @@
 						<li><a class="home-link" href="https://anandchowdhary.com/">Home</a></li>
 						<li><a class="projects-link" href="https://anandchowdhary.com/projects/">Projects</a></li>
 						<li><a class="blog-link" href="https://anandchowdhary.com/blog/">Blog</a></li>
-						<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
-						<li style="cursor: default">
-							More
-							<ul>
-								<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
-								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open Source</a></li>
+						<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
+						<span class="more">
+							<span class="list">
+								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open-source</a></li>
+								<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
 								<li><a class="press-link" href="https://anandchowdhary.com/press/">Press</a></li>
 								<li><a class="contact-link" href="https://anandchowdhary.com/contact/">Contact</a></li>
-							</ul>
-						</li>
+							</span>
+						</span>
 					</ul>
 				</nav>
 			</div>
@@ -83,14 +82,14 @@
 		<div id="barba-wrapper">
 			<div class="container barba-container">
 	<main>
-		<article class="single drillmaps projects ">
+		<article itemscope itemtype="http://schema.org/Article" class="single drillmaps projects ">
 			<div class="article-title">
 				
-				<h1>DrillMaps</h1>
+				<h1 itemprop="name">DrillMaps</h1>
 			</div>
 			
 				<div class="meta">
-					<time>March 2018</time>
+					<time itemprop="dateCreated">March 2018</time>
 					<div class="client-details">
 						
 							<div>
@@ -118,7 +117,7 @@
 				</div>
 			
 			
-			<div>
+			<div itemprop="articleBody">
 				<p>In February and March 2018, I worked with DrillMaps, a horizontal directional drilling startup based in Seattle, WA. I designed and developed their new website, along with coherent icons for their products.</p>
 
 <p>The website was built using Vue.js and included Firebase&rsquo;s authentication and real-time database for mapping and visualization. It also integrated with Chargebee and Stripe for billing and subscriptions.</p>

@@ -66,16 +66,15 @@
 						<li><a class="home-link" href="https://anandchowdhary.com/">Home</a></li>
 						<li><a class="projects-link" href="https://anandchowdhary.com/projects/">Projects</a></li>
 						<li><a class="blog-link" href="https://anandchowdhary.com/blog/">Blog</a></li>
-						<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
-						<li style="cursor: default">
-							More
-							<ul>
-								<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
-								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open Source</a></li>
+						<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
+						<span class="more">
+							<span class="list">
+								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open-source</a></li>
+								<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
 								<li><a class="press-link" href="https://anandchowdhary.com/press/">Press</a></li>
 								<li><a class="contact-link" href="https://anandchowdhary.com/contact/">Contact</a></li>
-							</ul>
-						</li>
+							</span>
+						</span>
 					</ul>
 				</nav>
 			</div>
@@ -83,16 +82,16 @@
 		<div id="barba-wrapper">
 			<div class="container barba-container">
 	<main>
-		<article class="single capella projects ">
+		<article itemscope itemtype="http://schema.org/Article" class="single capella projects ">
 			<div class="article-title">
 				
 					<img class="project-icon" alt="Capella icon" src="https://anandchowdhary.com/images/projects/capella/icon.png">
 				
-				<h1>Capella</h1>
+				<h1 itemprop="name">Capella</h1>
 			</div>
 			
 				<div class="meta">
-					<time>October 2017</time>
+					<time itemprop="dateCreated">October 2017</time>
 					<div class="client-details">
 						
 							<div>
@@ -120,7 +119,7 @@
 				</div>
 			
 			
-			<div>
+			<div itemprop="articleBody">
 				<p>At the Amsterdam Dance Event&rsquo;s hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.</p>
 
 <p>The app was built using HTML5 with a PHP backend integrated with some machine learning and music tagging APIs. The Spotify-inspired dark UI was also designed, along with a beautiful app icon.</p>

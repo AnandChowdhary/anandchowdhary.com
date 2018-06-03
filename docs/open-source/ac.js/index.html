@@ -66,16 +66,15 @@
 						<li><a class="home-link" href="https://anandchowdhary.com/">Home</a></li>
 						<li><a class="projects-link" href="https://anandchowdhary.com/projects/">Projects</a></li>
 						<li><a class="blog-link" href="https://anandchowdhary.com/blog/">Blog</a></li>
-						<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
-						<li style="cursor: default">
-							More
-							<ul>
-								<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
-								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open Source</a></li>
+						<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
+						<span class="more">
+							<span class="list">
+								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open-source</a></li>
+								<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
 								<li><a class="press-link" href="https://anandchowdhary.com/press/">Press</a></li>
 								<li><a class="contact-link" href="https://anandchowdhary.com/contact/">Contact</a></li>
-							</ul>
-						</li>
+							</span>
+						</span>
 					</ul>
 				</nav>
 			</div>
@@ -83,18 +82,18 @@
 		<div id="barba-wrapper">
 			<div class="container barba-container">
 	<main>
-		<article class="single ac.js open-source content">
+		<article itemscope itemtype="http://schema.org/Article" class="single ac.js open-source content">
 			<div class="article-title">
 				
 					<img class="project-icon" alt="ac.js icon" src="https://anandchowdhary.com/images/open-source/ac.js/icon.png">
 				
-				<h1>ac.js</h1>
+				<h1 itemprop="name">ac.js</h1>
 			</div>
 			
-				<div class="meta">Posted on <time>October 1, 2012</time></div>
+				<div class="meta">Posted on <time itemprop="dateCreated">October 1, 2012</time></div>
 			
 			
-			<div>
+			<div itemprop="articleBody">
 				<p>At the end of 2012, with increasing support for new JavaScript APIs, I created a super-tiny library for fetching and manipulating DOM elements. The first version was just 696 bytes in size, and the updated second version was 231 bytes gzipped. This was the first public-use JavaScript library I made (honestly, it was barely a library).</p>
 
 <p></p>
@@ -117,7 +116,7 @@
 				<span>Posted in <a href="https://anandchowdhary.com/open-source/">Open source</a></span>
 				<span>
 					
-						&middot; <a href="https://anandchowdhary.com/tags/javascript/">JavaScript</a>
+						&middot; <a itemprop="itemSection" href="https://anandchowdhary.com/tags/javascript/">JavaScript</a>
 					
 				</span>
 			</p></footer>

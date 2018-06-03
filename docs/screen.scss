@@ -129,18 +129,6 @@ header#masthead {
 				margin-right: 1rem;
 				color: #6f777d;
 				display: inline-block;
-				ul {
-					display: none;
-					position: absolute;
-					padding: 1.5rem 1rem 0 1rem;
-					z-index: 99;
-					margin-left: -1rem;
-					margin-top: -0.5rem;
-					li {
-						display: block;
-						margin-bottom: 1rem;
-					}
-				}
 				&:hover ul {
 					display: block;
 				}
@@ -198,14 +186,7 @@ section {
 		}
 		h2.side-title {
 			font: inherit;
-			margin: 0;
-			padding: 0;
 			font-size: 100%;
-			position: absolute;
-			left: -20px;
-			top: 0;
-			transform: translate(-100%, -100%) rotate(-90deg);
-			transform-origin: bottom right;
 		}
 		article {
 			a {
@@ -247,6 +228,9 @@ footer#colophon {
 }
 
 @media (max-width: 550px) {
+	.work-grid article + article {
+		margin-top: 2rem;
+	}
 	div.container {
 		padding: 0 1rem;
 	}
@@ -282,9 +266,14 @@ footer#colophon {
 	.article-list .project-icon {
 		display: none;
 	}
-	header#masthead nav ul {
-		margin-top: 1rem;
+	header#masthead nav {
 		width: 100%;
+		white-space: nowrap;
+		overflow-y: auto;
+		ul {
+			margin-top: 1rem;
+			width: 100%;
+		}
 	}
 	.article-title {
 		margin-top: 1rem;
@@ -297,7 +286,7 @@ footer#colophon {
 
 h1.intro, h1.intro + p.lead {
 	margin: 0;
-	font-size: 1.35rem;
+	font-size: 1.5rem;
 	font-weight: 400;
 	max-width: 500px;
 	line-height: 1.5;
@@ -337,6 +326,16 @@ h1.intro + p.lead {
 }
 
 @media (min-width: 550px) {
+	section .elements h2.side-title {
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+		position: absolute;
+		left: -20px;
+		top: 0;
+		transform: translate(-100%, -100%) rotate(-90deg);
+		transform-origin: bottom right;
+	}
 	.work-grid {
 		display: flex;
 		flex-wrap: wrap;
@@ -411,6 +410,57 @@ h1.intro + p.lead {
 			margin-top: -2rem;
 		}
 	}
+	header#masthead nav ul {
+		.more {
+			position: relative;
+			.list {
+				display: none;
+				position: absolute;
+				z-index: 99;
+				padding-top: 20px;
+				top: 100%;
+				left: 25%;
+				transform: translateX(-50%);
+				text-align: center;
+				li {
+					margin-right: 0;
+					display: block;
+					padding: 0.5rem 1rem;
+					background-color: whitesmoke;
+					min-width: 150px;
+					&:first-of-type {
+						padding-top: 1.5rem;
+					}
+					&:last-of-type {
+						padding-bottom: 1.5rem;
+					}
+				}
+				&::before {
+					content: "";
+					position: absolute;
+					left: 50%;
+					margin-left: -5px;
+					top: 10px;
+					width: 0;
+					height: 0;
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-bottom: 10px solid whitesmoke;
+				}
+			}
+			&:hover .list {
+				display: block;
+			}
+			&::before {
+				content: "•••";
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+nav .more {
+	margin-left: 1rem;
 }
 
 .two-images + img {
@@ -878,7 +928,7 @@ button[data-balloon] {
 	article {
 		margin-bottom: 1%;
 		.image {
-			height: 350px;
+			padding-top: 70%;
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -947,13 +997,13 @@ button[data-balloon] {
 		&.blog .light::before {
 			background-color: #f39c12;
 		}
-		&.about .light::before {
+		&.events .light::before {
 			background-color: #3498db;
 		}
 		&.open-source .light::before {
 			background-color: #9b59b6;
 		}
-		&.events .light::before {
+		&.about .light::before {
 			background-color: #273c75;
 		}
 		&.press .light::before {
@@ -973,13 +1023,13 @@ header#masthead nav ul li .projects-link { &:focus, &:hover, &:active, &.active 
 header#masthead nav ul li .blog-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #f39c12;
 } }
-header#masthead nav ul li .about-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .events-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #3498db;
 } }
 header#masthead nav ul li .open-source-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #9b59b6;
 } }
-header#masthead nav ul li .events-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .about-link { &:focus, &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #273c75;
 } }
 header#masthead nav ul li .press-link { &:focus, &:hover, &:active, &.active {

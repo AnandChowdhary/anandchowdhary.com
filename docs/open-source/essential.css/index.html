@@ -66,16 +66,15 @@
 						<li><a class="home-link" href="https://anandchowdhary.com/">Home</a></li>
 						<li><a class="projects-link" href="https://anandchowdhary.com/projects/">Projects</a></li>
 						<li><a class="blog-link" href="https://anandchowdhary.com/blog/">Blog</a></li>
-						<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
-						<li style="cursor: default">
-							More
-							<ul>
-								<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
-								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open Source</a></li>
+						<li><a class="events-link" href="https://anandchowdhary.com/events/">Events</a></li>
+						<span class="more">
+							<span class="list">
+								<li><a class="open-source-link" href="https://anandchowdhary.com/open-source/">Open-source</a></li>
+								<li><a class="about-link" href="https://anandchowdhary.com/about/">About</a></li>
 								<li><a class="press-link" href="https://anandchowdhary.com/press/">Press</a></li>
 								<li><a class="contact-link" href="https://anandchowdhary.com/contact/">Contact</a></li>
-							</ul>
-						</li>
+							</span>
+						</span>
 					</ul>
 				</nav>
 			</div>
@@ -83,21 +82,23 @@
 		<div id="barba-wrapper">
 			<div class="container barba-container">
 	<main>
-		<article class="single essential.css open-source content">
+		<article itemscope itemtype="http://schema.org/Article" class="single essential.css open-source content">
 			<div class="article-title">
 				
 					<img class="project-icon" alt="essential.css icon" src="https://anandchowdhary.com/images/open-source/essential.css/icon.png">
 				
-				<h1>essential.css</h1>
+				<h1 itemprop="name">essential.css</h1>
 			</div>
 			
-				<div class="meta">Posted on <time>July 8, 2014</time></div>
+				<div class="meta">Posted on <time itemprop="dateCreated">July 8, 2014</time></div>
 			
 			
-			<div>
+			<div itemprop="articleBody">
 				<p>essential.css is a beautiful article template in 786 bytes. Just include the stylesheet link to your webpage and quickly create simple, readable webpages. I made essential.css as a tool to build my personal website and open-sourced it.</p>
 
 <p></p>
+
+<p>I even convinced my middle-school computers teacher to teach using essential.css in her class as a way of making better-looking webpages without having to learn CSS.</p>
 
 <p>The usage is very simple, you just have to include this link to your webpage:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://cdn.rawgit.com/AnandChowdhary/essential.css/master/essential.css&#34;</span><span class="p"></span><span class="p">&gt;</span></code></pre></div>
@@ -114,7 +115,7 @@
 				<span>Posted in <a href="https://anandchowdhary.com/open-source/">Open source</a></span>
 				<span>
 					
-						&middot; <a href="https://anandchowdhary.com/tags/css/">CSS</a>
+						&middot; <a itemprop="itemSection" href="https://anandchowdhary.com/tags/css/">CSS</a>
 					
 				</span>
 			</p></footer>
