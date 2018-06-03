@@ -1,15 +1,15 @@
 {{ partial "header.html" . }}
 	<main>
-		<article class="single {{ .Title | urlize }} {{ .Section }} {{ if .Params.type }}{{ .Params.type }}{{ end }}">
+		<article itemscope itemtype="http://schema.org/Article" class="single {{ .Title | urlize }} {{ .Section }} {{ if .Params.type }}{{ .Params.type }}{{ end }}">
 			<div class="article-title{{ if .Date.IsZero }} page{{ end }}">
 				{{ if .Params.icon }}
 					<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">
 				{{ end }}
-				<h1>{{ .Title }}</h1>
+				<h1 itemprop="name">{{ .Title }}</h1>
 			</div>
 			{{ if in .URL "/projects/" }}
 				<div class="meta">
-					<time>{{ .Date.Format "January 2006" }}</time>
+					<time itemprop="dateCreated">{{ .Date.Format "January 2006" }}</time>
 					<div class="client-details">
 						{{ if .Params.work }}
 							<div>
@@ -38,9 +38,9 @@
 			{{ else if in .URL "/events/" }}
 				<div class="meta">
 					{{ if .Params.futureDate }}
-						<time>{{ .Params.futureDate }}</time>
+						<time itemprop="dateCreated">{{ .Params.futureDate }}</time>
 					{{ else }}
-						<time>{{ .Date.Format "January 2, 2006" }}</time>
+						<time itemprop="dateCreated">{{ .Date.Format "January 2, 2006" }}</time>
 					{{ end }}
 					<div class="client-details">
 						{{ if .Params.roles }}
@@ -75,17 +75,17 @@
 					</div>
 				</div>
 			{{ else if not .Date.IsZero }}
-				<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
+				<div class="meta">Posted on <time itemprop="dateCreated">{{ .Date.Format "January 2, 2006" }}</time></div>
 			{{ end }}
 			{{ partial "intro.html" . }}
-			<div>
+			<div itemprop="articleBody">
 				{{ .Content }}
 			</div>
 			{{ if .Params.tags }}<footer class="meta"><p>
 				<span>Posted in <a href="{{ "/" | relLangURL }}{{ .Section | urlize }}/">{{ .Section | humanize }}</a></span>
 				<span>
 					{{ range $i, $e := .Params.tags }}
-						&middot; <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
+						&middot; <a itemprop="itemSection" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a>
 					{{ end }}
 				</span>
 			</p></footer>{{ end }}

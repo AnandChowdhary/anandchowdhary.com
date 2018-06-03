@@ -228,6 +228,9 @@ footer#colophon {
 }
 
 @media (max-width: 550px) {
+	.work-grid article + article {
+		margin-top: 2rem;
+	}
 	div.container {
 		padding: 0 1rem;
 	}
@@ -925,7 +928,7 @@ button[data-balloon] {
 	article {
 		margin-bottom: 1%;
 		.image {
-			height: 350px;
+			padding-top: 70%;
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
