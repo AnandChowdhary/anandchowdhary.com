@@ -38,6 +38,13 @@
   </url>
   
   <url>
+    <loc>https://anandchowdhary.com/events/dutch-design-week/</loc>
+    <lastmod>2018-03-28T10:26:42+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/projects/csunite/</loc>
     <lastmod>2018-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -393,6 +400,13 @@
   </url>
   
   <url>
+    <loc>https://anandchowdhary.com/places/eindhoven/</loc>
+    <lastmod>2018-03-28T10:26:42+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/places/enschede/</loc>
     <lastmod>2018-03-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -409,6 +423,13 @@
   <url>
     <loc>https://anandchowdhary.com/events/</loc>
     <lastmod>2018-03-29T10:26:42+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://anandchowdhary.com/roles/exhibition/</loc>
+    <lastmod>2018-03-28T10:26:42+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -492,7 +513,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/places/</loc>
-    <lastmod>2018-03-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-28T10:26:42+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -519,7 +540,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/roles/</loc>
-    <lastmod>2018-03-29T10:26:42+02:00</lastmod>
+    <lastmod>2018-03-28T10:26:42+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
