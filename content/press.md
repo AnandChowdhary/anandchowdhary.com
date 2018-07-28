@@ -10,7 +10,7 @@ type: listicle
 
 ![](https://logo.clearbit.com/forbes.com) [Forbes 30 Under 30 Asia](https://www.forbes.com/profile/oswald-labs/) / 2018
 
-![](https://logo.clearbit.com/fd.nl) [FD Persoonlijk 50 Under 30](https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst) / 2018
+![](https://logo.clearbit.com/fd.nl) [FD Persoonlijk 50 Under 35](https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst) / 2018
 
 ## Interviews
 

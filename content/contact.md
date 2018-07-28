@@ -1,11 +1,15 @@
 ---
 title: Contact
-intro: The best way to get in touch with Anand Chowdhary is to drop me a line at mail @ this domain or fill in the form available on this webpage.
+intro: Get in touch with Anand Chowdhary using the contact form.
 ---
 
-To get in touch with me, you can drop me a line at mail @ this domain or fill in the form below.
+To get in touch with me, you can drop me a line at [mail@anandchowdhary.com](mailto:mail@anandchowdhary.com) or fill in the form below.
 
-If you'd like to discuss partnerships with Oswald Labs or need help with a product, the best way is to go to the [support page on Oswald Labs'](https://oswaldlabs.com/contact) website instead of messaging me here.
+If you'd like to discuss partnerships with Oswald Labs or need help with a product, the best way is to go to the [support page on Oswald Labs'](https://oswaldlabs.com/contact) website or write to [yourfriends@oswaldlabs.com](mailto:yourfriends@oswaldlabs.com).
+
+For speaking engagements or interview requests, please write to [events@anandchowdhary.com](mailto:events@anandchowdhary.com).
+
+Please note that I am currently not interested in taking up any freelance projects or consulting work.
 
 Feel free to follow or connect with me on any of the following networks:
 
@@ -20,8 +24,6 @@ Feel free to follow or connect with me on any of the following networks:
 	<a href="https://quora.com/Anand-Chowdhary" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>
 	<a href="https://angel.co/anand-chowdhary" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>
 </div>
-
-Please note that I am currently not interested in freelance projects.
 
 <form action="https://formspree.io/mail@anandchowdhary.com" method="post">
 <div><label for="name">Name</label>

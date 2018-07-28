@@ -266,14 +266,32 @@ footer#colophon {
 	.article-list .project-icon {
 		display: none;
 	}
-	header#masthead nav {
-		width: 100%;
-		white-space: nowrap;
-		overflow-y: auto;
-		overflow-x: visible;
-		ul {
-			margin-top: 1rem;
+	header#masthead {
+		.container {
+			position: relative;
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 4rem;
+				background: linear-gradient(to right, transparent, white);
+			}
+		}
+		nav {
 			width: 100%;
+			white-space: nowrap;
+			overflow-y: auto;
+			overflow-x: visible;
+			ul {
+				margin-top: 1rem;
+				width: 100%;
+				padding-bottom: 1rem;
+				li:last-child {
+					margin-right: 4rem;
+				}
+			}
 		}
 	}
 	.article-title {
@@ -638,6 +656,9 @@ main {
 	}
 	iframe {
 		margin: 2rem auto;
+		display: block;
+		max-width: 100%;
+		overflow: hidden;
 	}
 	.meta, .article-title, p, footer, h2, h3, h4, h5, h6, ul, ol, form, .social-links {
 		max-width: 600px;
