@@ -16,6 +16,8 @@ type: listicle
 
 ![](https://logo.clearbit.com/utoday.nl) [UToday](https://www.utoday.nl/news/64984/ut-student-in-the-top-50-young-entrepreneurs) / 2018
 
+![](https://logo.clearbit.com/utwente.nl) [University of Twente](https://www.facebook.com/utwente/posts/1838358482862203) / 2018
+
 ![](https://logo.clearbit.com/huffpost.com) [HuffPost](https://www.huffingtonpost.in/2016/08/01/two-teenagers-from-delhi-want-to-change-the-web-with-this-readin_a_21442472/) / 2017
 
 ![](https://logo.clearbit.com/yourstory.com) [YourStory](https://yourstory.com/2017/03/just-16-and-18-delhi-teens-web-accessible-dyslexics-visually-impaired/) / 2017
@@ -35,6 +37,8 @@ type: listicle
 ![](https://logo.clearbit.com/timeout.com) [Time Out](https://www.facebook.com/minet.mis/posts/296968877045371) / 2012
 
 ## Features
+
+![](https://logo.clearbit.com/digit.in) [Digit Tech](https://geek.digit.in/2018/03/startups-are-answering-the-accessibility-question/) / 2018
 
 ![](https://logo.clearbit.com/utoday.nl) [UToday (Forbes)](https://www.utoday.nl/news/65256/ut-student-in-forbes-list) / 2018
 
