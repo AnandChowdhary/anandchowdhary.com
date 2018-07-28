@@ -11,13 +11,13 @@
 							<a href="{{ .Permalink }}">
 								{{ if .Params.style }}
 									<div class="image" style="
-										background-image: url('/images/portfolio/{{ .Title | urlize }}@2x.png');
+										background-image: url('{{ .Params.image }}');
 										background-size: cover;
 										background-color: {{ .Params.bg }}
 									"></div>
 								{{ else }}
 									<div class="image" style="
-										background-image: url('/images/portfolio/{{ .Title | urlize }}@2x.png');
+										background-image: url('{{ .Params.image }}');
 										background-color: {{ .Params.bg }}
 									"></div>
 								{{ end }}
