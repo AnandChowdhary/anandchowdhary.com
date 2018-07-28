@@ -7,6 +7,7 @@ icon: true
 work: ["App", "Artificial Intelligence", "Augmented Reality"]
 client: AWS
 timeline: 24 hours
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799281/portfolio/facematch_2x.png
 ---
 
 For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://www.thefutureofhightech.com/), part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon's grand prize of €1,000 along with VIP tickets for StartupFest Europe.

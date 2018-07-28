@@ -7,6 +7,7 @@ icon: true
 bg: "#00c1d7"
 timeline: 2 months
 work: ["App", "Branding", "Web"]
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799285/portfolio/saga-music_2x.png
 ---
 
 Music has always been an integral part of our lives. Ever since people started using the internet, they've been downloading music and movies. The process became relatively simple with the introduction of Napster in 1999, which led to the development of many such tools. I remember growing up with Limewire and Bearshare. After the discontinuation of these services in after ten long years, downloading music became really complicated again.

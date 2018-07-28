@@ -5,6 +5,7 @@ intro: Education-technology startup trying to break classroom barriers, products
 date: 2014-01-15
 work: ["Branding", "Web", "Startup"]
 timeline: 1 year
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799275/portfolio/classrebels_2x.png
 ---
 
 Unlike all stories, ClassRebels didn't start with the simple idea of making teachers and students connect in a way they've never connected before. It started with an idea to bring about a reform, a change, and a revolution. In India, this change was long needed. The society is evolving, and our education system needs to catch up.

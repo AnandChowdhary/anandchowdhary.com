@@ -6,6 +6,7 @@ date: 2017-01-01
 icon: true
 bg: "#0095de"
 work: ["Web", "Branding", "Startup"]
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799290/portfolio/melangebox_2x.png
 ---
 
 In early 2017, Mahendra Singh Raghuwanshi and I co-founded Melangebox, a fashion ecommerce startup. I designed the brand identity and developed a mobile-first Shopify store, and Mahendra handled the production, inventory, and shipping.

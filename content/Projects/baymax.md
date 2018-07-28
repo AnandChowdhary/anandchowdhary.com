@@ -7,6 +7,7 @@ icon: true
 work: ["App", "Branding"]
 bg: "#de9945"
 timeline: 24 hours
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799271/portfolio/baymax_2x.png
 ---
 
 The idea is pretty simple — like in the movie, we need a personal healthcare companion, someone who can help us medically when we need it to, both by providing the right information to us and helping us get in touch with the right medical professionals.

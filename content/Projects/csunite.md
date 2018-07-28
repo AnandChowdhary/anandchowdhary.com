@@ -8,6 +8,7 @@ work: ["App"]
 bg: "#00998e"
 client: CSU
 timeline: 24 hours
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799278/portfolio/csunite_2x.png
 ---
 
 I worked with CSU, the Netherlands' second-largest cleaning service provider, during the first weekend of March 2018 in the Philips Stadion in Eindhoven as part of their first hackathon, Bright Future Hack. CSUnite is an app for hyperlocal on-demand cleaning services, along with a built-in training and communication platform for employees.

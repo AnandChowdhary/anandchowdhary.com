@@ -8,6 +8,7 @@ work: ["Branding", "Web"]
 client: Crink Jewel
 timeline: 2 months
 style: cover
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799289/portfolio/crink-jewel_2x.png
 ---
 
 I designed a minimal logo and Shopify ecommerce store for Crink Jewel, a precious jewelry company based in New Delhi, India. I tried to portray elegance, simplicity, and timelessness.

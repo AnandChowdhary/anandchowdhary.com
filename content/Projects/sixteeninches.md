@@ -8,6 +8,7 @@ bg: "#f30f40"
 work: ["App", "Branding", "Web"]
 timeline: 2 weeks
 client: SixteenInches
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799287/portfolio/sixteeninches_2x.png
 ---
 
 SixteenInches.com is one of the fastest-growing online supplements store. It was built on a foundation of authenticity and quality-control, both of which currently lack the healthcare industry. I was hired to design the SixteenInches' brand identity, including logo and social media design, and a responsive ecommerce website on the WordPress platform using Woocommerce, to convey their mission.

@@ -6,6 +6,7 @@ work: ["Web"]
 bg: "#d7eed0"
 client: Unifiers
 timeline: 2 months
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799289/portfolio/unifiers_2x.png
 ---
 
 For 3 years, I worked part-time as a consultant to Unifiers Social Ventures Pvt. Ltd., a leading social infrastructure company, and worked on a variety of projects.

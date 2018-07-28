@@ -6,6 +6,7 @@ icon: true
 timeline: 24 hours
 work: ["App", "Artificial Intelligence", "Internet of Things"]
 style: cover
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799288/portfolio/wendy_2x.png
 ---
 
 On a weekend in March 2018, I build Wendy, a smartphone-based home security system with real-time face detection and a chatbot interface. Instead of a €200 Nest device, Wendy uses a €30 smartphone mounted as a doorbell.

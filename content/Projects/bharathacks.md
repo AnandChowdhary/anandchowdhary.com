@@ -7,6 +7,7 @@ icon: true
 timeline: 3 months
 work: ["Event", "Branding", "Web"]
 bg: "#27577a"
+image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799275/portfolio/bharathacks_2x.png
 ---
 
 In June 2017, I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make lives better. Organized in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks helped hundreds take their idea forward, from hacking to raising investment and launching their products in the market.
