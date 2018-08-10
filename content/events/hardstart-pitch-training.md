@@ -8,6 +8,7 @@ linkType: Facebook
 icon: true
 color: "#bb2226"
 type: content
+venue: Hardstart
 ---
 
 I developed and conducted a startup pitching workshop for student entrepreneurship organization and incubator Hardstart's flagship pitching event, *Pitch that Bitch*. It was the first time that I conducted a workshop for fellow student entrepreneurs, and it was definitely a very interesting experience.

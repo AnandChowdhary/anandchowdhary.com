@@ -8,6 +8,7 @@ linkType: Website
 icon: true
 color: "#1e2328"
 type: content
+venue: University of Twente
 ---
 
 At the University of Twente's first annual Online Open Day, I spoke about startups, entrepreneurship, and technology at the university, as part of a panel called "Beyond Your Studies," moderated by co-founder and project manager of DesignLab, Miriam Iliohan.

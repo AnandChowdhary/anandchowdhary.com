@@ -8,6 +8,7 @@ linkType: Facebook
 icon: true
 type: content
 color: "#771e18"
+venue: Delhi Technological University
 ---
 
 I was the keynote speaker at the launch of the Startup Internship Portal of Delhi Technological University (DTU), where I did the first public revealing of Oswald Labs' R&D blind-friendly smartphone OS, Shravan and talked about the opportunity of working with startups.

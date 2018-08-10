@@ -8,6 +8,7 @@ linkType: Website
 icon: true
 color: "#f39c12"
 type: content
+venue: Novel-T
 ---
 
 Startup24 is the flagship startup weekend-like event in the Netherlands which happens in 12 cities simultaneously. I was invited to Startup24 Enschede to do a pitching working for the participants before their final jury pitches, and I was also part of their "midnight jury" for 2-minute pitches at midnight.

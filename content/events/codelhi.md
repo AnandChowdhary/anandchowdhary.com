@@ -8,6 +8,7 @@ linkType: Facebook
 icon: true
 color: "#347b34"
 type: content
+venue: Delhi Technological University
 ---
 
 I spoke about education technology and my startup ClassRebels at Co|Delhi, the flagship Android and web development hackathon of Delhi Technological University (DTU). I delivered two talks, one on the first day about edtech and the other about our stack.

@@ -8,6 +8,7 @@ linkType: Facebook
 icon: true
 color: "#4267b2"
 type: content
+venue: 91springboard Okhla
 ---
 
 I was part of a panel discussion on the future of technology by Facebook's Developer Circles Delhi-NCR along with Chinmaya Saxena, Developer Programs Lead, Facebook India; Saransh Kataria, Chapter Lead, Facebook Developer Circle Delhi; and Shubhamoy Chakrabarty, COO at Cloudtub, Inc.
