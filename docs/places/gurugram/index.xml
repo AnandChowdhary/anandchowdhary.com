@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gurugram on Anand Chowdhary</title>
+    <link>https://anandchowdhary.com/places/gurugram/</link>
+    <description>Recent content in Gurugram on Anand Chowdhary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://anandchowdhary.com/places/gurugram/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TEDxHaileyRoad</title>
+      <link>https://anandchowdhary.com/events/tedx-hailey-road/</link>
+      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/events/tedx-hailey-road/</guid>
+      <description>I gave my first TEDx talk at TEDxHaileyRoad in New Delhi in June 2017 on Designing for Inclusion, where I talked about my story in starting Oswald Labs and rethinking today&amp;rsquo;s approach to ignore accessibility and inclusion in design.</description>
+    </item>
+    
+  </channel>
+</rss>

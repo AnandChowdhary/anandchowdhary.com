@@ -1113,3 +1113,14 @@ ul.pagination {
 twitterwidget, iframe {
 	margin: 4rem auto 2rem auto !important;
 }
+
+.inline-svg {
+	vertical-align: middle;
+    height: 1rem;
+	display: inline-block;
+	margin-left: 0.5rem;
+    transform: scale(1.3);
+}
+a .inline-svg {
+	opacity: 0.75;
+}

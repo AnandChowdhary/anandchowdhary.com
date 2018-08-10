@@ -1,6 +1,6 @@
 ---
 title: Dutch Design Week
-date: 2018-07-01
+date: 2018-08-09
 futureDate: October 20, 2018
 roles: ["Exhibition"]
 places: ["Eindhoven"]
