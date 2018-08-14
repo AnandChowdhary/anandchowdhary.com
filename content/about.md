@@ -15,3 +15,6 @@ Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, Indi
 He is also a consultant to several startups and digital studios in India and the Netherlands. Previously, he was an interaction designer at the Government of Delhi, Technology Lead at Justice Adda (a University of Cambridge social venture), and consultant to companies like Cyankart, Sixteen Inches, and Unifiers.
 
 He is currently unavailable for freelance projects.
+
+- [Curriculum vitae](https://www.dropbox.com/s/ksyfiujs5sqy14s/AnandChowdhary_CV_Aug18.pdf) -- August 2018
+- [Portfolio](https://www.dropbox.com/s/eznlsi6336n96f2/AnandChowdhary_Portfolio_Jan17.pdf) -- January 2017

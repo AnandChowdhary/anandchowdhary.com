@@ -1,7 +1,7 @@
 ---
 title: Project Blue
 subcategory: Industrial Design
-intro: Branding, UI/UX, and A/B-tested Shopify theme development for one of India's most popular online fashion stores.
+intro: Plastic bottle industrial redesign project using AutoDesk and SolidWorks for IDII to reduce environmental impact.
 date: 2014-07-01
 work: ["Branding", "Industrial Design"]
 style: cover
