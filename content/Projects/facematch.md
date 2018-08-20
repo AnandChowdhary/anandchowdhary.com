@@ -3,7 +3,7 @@ title: FaceMatch
 subcategory: App
 intro: Face recognition Augmented Reality app for business events, built at the AWS Hackathon for StartupFest Europe.
 date: 2017-09-23
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759872/projects/facematch/icon.png
 work: ["App", "Artificial Intelligence", "Augmented Reality"]
 client: AWS
 timeline: 24 hours
