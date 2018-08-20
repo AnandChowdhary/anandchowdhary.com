@@ -15,7 +15,7 @@ For 3 years, I worked part-time as a consultant to Unifiers Social Ventures Pvt.
 
 I lead the development on SkillsTrainer, India's first online train-the-trainer platform built in collaboration with government agencies and large corporations. Using SkillsTrainer, people could complete entire skilling programs online, get certified, and find jobs.
 
-![SkillsTrainer screenshot](/images/portfolio/unifiers@2x.png)
+![SkillsTrainer screenshot](https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799289/portfolio/unifiers_2x.png)
 
 ## Nayee Disha
 
