@@ -3,7 +3,7 @@ title: SixteenInches
 subcategory: Ecommerce
 intro: Branding and Shopify theme customization for one of the fastest-growing online supplements stores in India.
 date: 2015-09-12
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760380/projects/sixteeninches/icon.png
 bg: "#f30f40"
 work: ["App", "Branding", "Web"]
 timeline: 2 weeks
@@ -18,7 +18,7 @@ I chose red as the primary brand color because it represents power and passion. 
 [Visit SixteenInches &rarr;](https://www.sixteeninches.com/)
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/sixteeninches/2.png"></div>
-	<div><img alt="" src="/images/projects/sixteeninches/3.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760380/projects/sixteeninches/2.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760380/projects/sixteeninches/3.png"></div>
 </div>
-<div class="image"><img alt="" src="/images/projects/sixteeninches/1.png"></div>
+<div class="image"><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760380/projects/sixteeninches/1.png"></div>

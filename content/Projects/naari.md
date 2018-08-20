@@ -3,7 +3,7 @@ title: Naari
 subcategory: App
 intro: Period and sexual health companion for women that gives personalized tampon recommendations and access to self-help resources.
 date: 2016-10-16
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/icon.png
 work: ["App", "Artificial Intelligence"]
 bg: "#217ed0"
 timeline: 24 hours
@@ -24,21 +24,21 @@ Naari is also a social platform that lets you chat with your doctor, friends, or
 [View GitHub repo &rarr;](https://github.com/OswaldFoundation/naari)
 
 <div class="three-images">
-	<div><img alt="" src="/images/projects/naari/home.png"></div>
-	<div><img alt="" src="/images/projects/naari/express.png"></div>
-	<div><img alt="" src="/images/projects/naari/ml.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/home.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/express.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/ml.png"></div>
 </div>
 <div class="shadow">
 	<div class="two-images">
-		<div><img alt="" src="/images/projects/naari/1.png"></div>
-		<div><img alt="" src="/images/projects/naari/2.png"></div>
+		<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/1.png"></div>
+		<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/2.png"></div>
 	</div>
 	<div class="two-images">
-		<div><img alt="" src="/images/projects/naari/3.png"></div>
-		<div><img alt="" src="/images/projects/naari/4.png"></div>
+		<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/3.png"></div>
+		<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/4.png"></div>
 	</div>
 	<div class="two-images">
-		<div><img alt="" src="/images/projects/naari/5.png"></div>
+		<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760223/projects/naari/5.png"></div>
 	</div>
 </div>
 

@@ -3,7 +3,7 @@ title: Saga Music
 subcategory: Web
 intro: Free music downloading and sharing app for Android and the web. Over 100,000 downloads. Shut down in 2016.
 date: 2015-05-31
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/icon.png
 bg: "#00c1d7"
 timeline: 2 months
 work: ["App", "Branding", "Web"]
@@ -23,21 +23,21 @@ As a proof of concept, I made an app for Android and the web, called Saga. Downl
 [View source on Github &rarr;](https://github.com/AnandChowdhary/saga-android)
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/saga-music/2.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/1.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/2.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/1.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/projects/saga-music/4.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/3.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/4.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/3.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/projects/saga-music/5.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/6.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/5.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/6.jpg"></div>
 </div>
 <div class="three-images">
-	<div><img alt="" src="/images/projects/saga-music/7.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/8.png"></div>
-	<div><img alt="" src="/images/projects/saga-music/9.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/7.jpg"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/8.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760356/projects/saga-music/9.png"></div>
 </div>
 
 <footer>This project was done in collaboration with <a href="https://github.com/prempalsingh">Prempal Singh 🇮🇳</a>.</footer>
