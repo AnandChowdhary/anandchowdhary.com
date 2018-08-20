@@ -5,7 +5,7 @@ roles: ["Trainer"]
 places: ["Enschede"]
 link: https://www.facebook.com/events/527224840975743/
 linkType: Facebook
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756801/icons/hardstart.png
 color: "#bb2226"
 type: content
 venue: Hardstart

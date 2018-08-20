@@ -5,7 +5,7 @@ roles: ["Trainer"]
 places: ["Enschede"]
 link: https://startup24.nl/cities/enschede
 linkType: Website
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756961/icons/startup24.png
 color: "#f39c12"
 type: content
 venue: Novel-T

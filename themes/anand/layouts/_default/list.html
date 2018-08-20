@@ -50,11 +50,11 @@
 					{{ if .Params.icon }}
 						{{ if .Params.alias }}
 							<a href="{{ .Params.alias }}">
-								<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">
+								<img class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
 							</a>
 						{{ else }}
 							<a href="{{ .Permalink }}">
-								<img class="project-icon" alt="{{ .Title }} icon" src="/images/{{ .Section }}/{{ .Title | urlize }}/icon.png">
+								<img class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
 							</a>
 						{{ end }}
 					{{ end }}

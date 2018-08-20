@@ -1,12 +1,12 @@
 ---
 title: Dutch Design Week
-date: 2018-08-09
+date: 2018-08-19
 futureDate: October 20, 2018
 roles: ["Exhibition"]
 places: ["Eindhoven"]
 link: http://www.mindthestep.nl/
 linkType: Website
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756784/icons/dutch-design-week.png
 color: "#19171c"
 type: content
 venue: Klokgebouw Cultuurhallen

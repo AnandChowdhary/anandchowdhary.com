@@ -3,7 +3,7 @@ title: Uppload
 date: 2018-04-19
 tags: ["JavaScript"]
 type: content
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757327/icons/uppload.png
 ---
 
 Uppload is an open-source JavaScript file uploader. It has built-in support for drag-and-dropping, image cropping, file previews,  Instagram imports, and more. It works with any HTML form backend and has wrappers for Vue.js, React, and Angular, and presets for Firebase and AWS S3.

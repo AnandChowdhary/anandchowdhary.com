@@ -12,4 +12,4 @@ A collection of quotes I've curated over the years.
 
 > They can&#8217;t eat you!<cite><a href="https://www.bobparsons.com/my-16-rules/">Bob Parsons</a></cite>
 
-> Love is not love which alters when it alteration finds<cite><a href="https://en.wikipedia.org/wiki/Sonnet_116">Shakespeare</a></cite>
+> Love is not love which alters when it alteration finds.<cite><a href="https://en.wikipedia.org/wiki/Sonnet_116">Shakespeare</a></cite>

@@ -5,7 +5,7 @@ roles: ["Speaker"]
 places: ["New Delhi"]
 alias: /projects/bharathacks/
 linkType: Project
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756746/icons/bharathacks.png
 color: "#347b34"
 type: content
 ---

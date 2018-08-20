@@ -5,7 +5,7 @@ roles: ["Speaker"]
 places: ["New Delhi"]
 link: https://www.facebook.com/events/469451936489841/
 linkType: Facebook
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756767/icons/codelhi.png
 color: "#347b34"
 type: content
 venue: Delhi Technological University

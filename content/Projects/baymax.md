@@ -3,7 +3,7 @@ title: Baymax
 subcategory: App
 intro: End-to-end healthcare companies that diagnoses illnesses and helps your recover, along with scheduling and appointments.
 date: 2015-12-11
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758790/projects/baymax/icon.png
 work: ["App", "Branding"]
 bg: "#de9945"
 timeline: 24 hours
@@ -19,9 +19,9 @@ If you've stubbed your toe a little, Baymax will tell you how to make the swelli
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/baymax)
 
 <div class="three-images">
-	<div><img alt="" src="/images/projects/baymax/1.png"></div>
-	<div><img alt="" src="/images/projects/baymax/2.png"></div>
-	<div><img alt="" src="/images/projects/baymax/3.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758790/projects/baymax/1.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758791/projects/baymax/2.png"></div>
+	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758790/projects/baymax/3.png"></div>
 </div>
 
 <footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>

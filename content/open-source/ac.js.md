@@ -3,7 +3,7 @@ title: ac.js
 date: 2012-10-01
 tags: ["JavaScript"]
 type: content
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757025/icons/acjs.png
 ---
 
 At the end of 2012, with increasing support for new JavaScript APIs, I created a super-tiny library for fetching and manipulating DOM elements. The first version was just 696 bytes in size, and the updated second version was 231 bytes gzipped. This was the first public-use JavaScript library I made (honestly, it was barely a library).

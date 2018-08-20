@@ -3,7 +3,7 @@ title: Aptitude
 date: 2014-07-08
 tags: ["CSS"]
 type: content
-icon: true
+icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757047/icons/aptitude.png
 ---
 
 Aptitude is a super-simple theme for one-page articles and projects. It's the next version of essential.css and comes with support for better navigation, icons, and fonts from Typekit. It was created for a page on my website, [Timeless](/timeless/), something I maintain until today.
@@ -20,6 +20,6 @@ The usage is very simple, you just have to include this link to your webpage:
 
 This is what a page looks like with Aptitude:
 
-![Aptitude screenshot](/images/open-source/aptitude/1.jpg)
+![Aptitude screenshot](https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757121/open-source/aptitude.jpg)
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/Aptitude)
