@@ -16,5 +16,5 @@ He is also a consultant to several startups and digital studios in India and the
 
 He is currently unavailable for freelance projects.
 
-- [Curriculum vitae](http://res.cloudinary.com/anand-chowdhary/image/upload/v1534497853/August2018.pdf) -- August 2018
+- [Curriculum vitae](https://res.cloudinary.com/anand-chowdhary/image/upload/v1534497853/August2018.pdf) -- August 2018
 - [Portfolio](https://www.dropbox.com/s/eznlsi6336n96f2/AnandChowdhary_Portfolio_Jan17.pdf) -- January 2017
