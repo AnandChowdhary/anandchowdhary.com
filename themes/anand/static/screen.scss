@@ -34,6 +34,10 @@ h1, h2, h3, h4, p.lead {
 	font-weight: 600;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.25;
+}
+
 *,
 *::before,
 *::after {
@@ -384,7 +388,7 @@ h1.intro + p.lead {
 		margin-left: -105px;
 		float: left;
 	}
-	h3, h4, h5 {
+	h2, h3, h4, h5 {
 		img {
 			width: 78px;
 			margin-right: 25px;

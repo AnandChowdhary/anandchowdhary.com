@@ -4,14 +4,21 @@
   
   <url>
     <loc>https://anandchowdhary.com/events/wief-2018/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://anandchowdhary.com/events/dutch-design-week/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://anandchowdhary.com/events/esummit/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -360,7 +367,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -436,7 +443,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/places/eindhoven/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -457,14 +464,14 @@
   
   <url>
     <loc>https://anandchowdhary.com/events/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://anandchowdhary.com/roles/exhibition/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -505,8 +512,15 @@
   </url>
   
   <url>
+    <loc>https://anandchowdhary.com/places/kanpur/</loc>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/places/kuala-lumpur/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -541,7 +555,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/roles/panelist/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -555,7 +569,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/places/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -582,14 +596,14 @@
   
   <url>
     <loc>https://anandchowdhary.com/roles/</loc>
-    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://anandchowdhary.com/roles/speaker/</loc>
-    <lastmod>2018-08-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

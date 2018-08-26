@@ -33,7 +33,7 @@
 			<div class="elements elements-lg">
 				<h2 class="side-title">New</h2>
 				<div class="work-grid home-grid articles-grid">
-					{{ range first 8 (where .Data.Pages "Type" "content") }}
+					{{ range first 10 (where .Data.Pages "Type" "content") }}
 						<article class="{{ .Section | urlize }}">
 							<a href="{{ .Permalink }}" style="display: inline-block">
 								<h2>{{ .Title }}</h2>

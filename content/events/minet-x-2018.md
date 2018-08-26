@@ -15,7 +15,7 @@ I went back to my alma mater, The Mother's International School, as the keynote 
 
 <!--more-->
 
-Photography by [Sai Raunaq Gosain](https://instagram.com/vellaindian).
+Photos (c) [Sai Raunaq Gosain](https://instagram.com/vellaindian).
 
 <div class="two-images">
 	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/c_scale,w_1080/v1534696102/events/minet-x-2018/IMG_8006.jpg"></div>
