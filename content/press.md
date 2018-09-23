@@ -14,6 +14,8 @@ type: listicle
 
 ## Interviews
 
+![](https://logo.clearbit.com/indianstartupshow.com) [The Indian Startup Show](http://www.indianstartupshow.com) / 2018
+
 ![](https://logo.clearbit.com/utoday.nl) [UToday](https://www.utoday.nl/news/64984/ut-student-in-the-top-50-young-entrepreneurs) / 2018
 
 ![](https://logo.clearbit.com/utwente.nl) [University of Twente](https://www.facebook.com/utwente/posts/1838358482862203) / 2018
