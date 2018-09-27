@@ -33,7 +33,7 @@
 			<div class="elements elements-lg">
 				<h2 class="side-title">New</h2>
 				<div class="work-grid home-grid articles-grid">
-					{{ range first 10 (where .Data.Pages "Type" "content") }}
+					{{ range first 6 (where .Data.Pages "Section" "!=" "events") }}
 						<article class="{{ .Section | urlize }}">
 							<a href="{{ .Permalink }}" style="display: inline-block">
 								<h2>{{ .Title }}</h2>
@@ -43,6 +43,33 @@
 									{{ else }}
 										{{ .Date.Format "January 2, 2006" }}
 										in {{ .Section | humanize }}
+									{{ end }}
+								</div>
+							</a>
+						</article>
+					{{ end }}
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="elements elements-lg">
+				<h2 class="side-title">Events</h2>
+				<div class="work-grid home-grid articles-grid">
+					{{ range first 6 (where .Data.Pages "Section" "events") }}
+						<article class="{{ .Section | urlize }}">
+							<a href="{{ .Permalink }}" style="display: inline-block">
+								<h2>{{ .Title }}</h2>
+								<div class="light">
+									{{ if .Params.futureDate }}
+										{{ .Params.futureDate }}
+									{{ else }}
+										{{ .Date.Format "January 2, 2006" }}
+									{{ end }}
+									{{ if .Params.places }}
+									in
+										{{ range $i, $e := .Params.places }}
+											{{ . }}{{ partial "emoji.html" . }}
+										{{ end }}
 									{{ end }}
 								</div>
 							</a>
