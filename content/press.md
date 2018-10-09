@@ -14,7 +14,7 @@ type: listicle
 
 ## Interviews
 
-![](https://logo.clearbit.com/indianstartupshow.com) [The Indian Startup Show](http://www.indianstartupshow.com) / 2018
+![](https://logo.clearbit.com/indianstartupshow.com) [The Indian Startup Show](http://www.indianstartupshow.com/anand) / 2018
 
 ![](https://logo.clearbit.com/utoday.nl) [UToday](https://www.utoday.nl/news/64984/ut-student-in-the-top-50-young-entrepreneurs) / 2018
 
