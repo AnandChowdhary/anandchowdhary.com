@@ -18,6 +18,8 @@ type: listicle
 
 ![](https://logo.clearbit.com/utoday.nl) [UToday](https://www.utoday.nl/news/64984/ut-student-in-the-top-50-young-entrepreneurs) / 2018
 
+![](https://www.tubantia.nl/static/stub/img/favicon.png) [Tubantia](https://www.tubantia.nl/enschede/ut-student-op-prestigieuze-lijst-van-zakenblad-forbes~ac3dfe7d/) / 2018
+
 ![](https://logo.clearbit.com/utwente.nl) [University of Twente](https://www.facebook.com/utwente/posts/1838358482862203) / 2018
 
 ![](https://logo.clearbit.com/huffpost.com) [HuffPost](https://www.huffingtonpost.in/2016/08/01/two-teenagers-from-delhi-want-to-change-the-web-with-this-readin_a_21442472/) / 2017
