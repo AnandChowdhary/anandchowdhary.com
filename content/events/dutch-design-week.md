@@ -1,7 +1,6 @@
 ---
 title: Dutch Design Week
-date: 2018-09-25
-futureDate: October 20, 2018
+date: 2018-10-20
 roles: ["Exhibition"]
 places: ["Eindhoven"]
 link: http://www.mindthestep.nl/
