@@ -349,6 +349,10 @@ h1.intro + p.lead {
 	}
 }
 
+.hover .list {
+	display: block !important;
+}
+
 @media (min-width: 550px) {
 	section .elements h2.side-title {
 		margin: 0;
@@ -438,6 +442,13 @@ h1.intro + p.lead {
 		.more {
 			display: inline;
 			position: relative;
+			button {
+				width: auto;
+				padding: 0;
+				margin: 0;
+				color: inherit;
+				border: none;
+			}
 			.list {
 				display: none;
 				position: absolute;
@@ -475,10 +486,6 @@ h1.intro + p.lead {
 			}
 			&:hover .list {
 				display: block;
-			}
-			&::before {
-				content: "•••";
-				opacity: 0.5;
 			}
 		}
 	}
@@ -1065,6 +1072,7 @@ header#masthead nav ul li .contact-link { &:focus, &:hover, &:active, &.active {
 
 *:focus {
 	outline: 3px solid #c7ecee;
+	transform: scale(1.01);
 }
 
 ul.pagination {

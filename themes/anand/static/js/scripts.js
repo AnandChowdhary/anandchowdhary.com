@@ -20,7 +20,7 @@ function initMe() {
 		for (var i = 0; i < elements.length; i++) {
 			elements[i].classList.remove("active");
 		}
-		let done = false;
+		var done = false;
 		for (var i = elements.length - 1; i >= 0; i--) {
 			if (location.href.includes(elements[i].getAttribute("href"))) {
 				elements[i].classList.add("active");
@@ -54,7 +54,7 @@ function initMe() {
 		for (var i = 0; i < links.length; i++) {
 			links[i].classList.remove("selected");
 		}
-		let done = false;
+		var done = false;
 		for (var i = links.length - 1; i >= 0; i--) {
 			if (location.href.includes(links[i].getAttribute("href"))) {
 				links[i].classList.add("selected");
@@ -107,4 +107,25 @@ function initMe() {
 	Barba.Dispatcher.on("newPageReady", function(currentStatus, oldStatus, container) {
 		initMe();
 	});
+	document.querySelector(".more-button").addEventListener("focus", function() {
+		document.querySelector("#masthead").classList.add("hover");
+	});
+	var allLinks = document.querySelectorAll("a, button");
+	for (let i = 0; i < allLinks.length; i++) {
+		allLinks[i].addEventListener("blur", function() {
+			setTimeout(function() {
+				var show = false;
+				var links = document.querySelectorAll(".list a");
+				for (var i = 0; i < links.length; i++) {
+					if (document.activeElement === links[i]) show = true;
+				}
+				if (document.activeElement === document.querySelector(".more-button")) show = true;
+				if (show) {
+					document.querySelector("#masthead").classList.add("hover");
+				} else {
+					document.querySelector("#masthead").classList.remove("hover");
+				}
+			}, 100);
+		});
+	}
 })();
