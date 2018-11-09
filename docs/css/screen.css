@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600|IBM+Plex+Serif:400,600");
 @media (min-width: 700px) {
   html {
@@ -287,6 +286,9 @@ h1.intro + p.lead {
   .press a:hover {
     background-color: whitesmoke; }
 
+.hover .list {
+  display: block !important; }
+
 @media (min-width: 550px) {
   section .elements h2.side-title {
     margin: 0;
@@ -384,6 +386,12 @@ h1.intro + p.lead {
   header#masthead nav ul .more {
     display: inline;
     position: relative; }
+    header#masthead nav ul .more button {
+      width: auto;
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      border: none; }
     header#masthead nav ul .more .list {
       display: none;
       position: absolute;
@@ -416,10 +424,7 @@ h1.intro + p.lead {
         border-right: 10px solid transparent;
         border-bottom: 10px solid whitesmoke; }
     header#masthead nav ul .more:hover .list {
-      display: block; }
-    header#masthead nav ul .more::before {
-      content: "•••";
-      opacity: 0.5; } }
+      display: block; } }
 .two-images + img {
   margin-top: -2rem; }
 
@@ -1060,7 +1065,9 @@ header#masthead nav ul li .contact-link:focus, header#masthead nav ul li .contac
   box-shadow: 0 3px 0 #080e0a; }
 
 *:focus {
-  outline: 3px solid #c7ecee; }
+  outline: 3px solid #c7ecee;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01); }
 
 ul.pagination {
   margin: 3rem auto 2rem auto;
