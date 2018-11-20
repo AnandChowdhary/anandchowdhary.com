@@ -13,6 +13,16 @@
 		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css?v=ri4u283091j" media="print">
 		{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
 		{{ .Hugo.Generator }}
+		{{ if .Params.image }}
+		<meta itemprop="image" content="{{ .Params.image }}">
+		<meta property="og:image" content="{{ .Params.image }}">
+		<meta name="twitter:image" content="{{ .Params.image }}">
+		{{ else }}
+		<meta itemprop="image" content="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758311/photos/anand-chowdhary.jpg">
+		<meta property="og:image" content="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758311/photos/anand-chowdhary.jpg">
+		<meta name="twitter:image" content="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758311/photos/anand-chowdhary.jpg">
+		{{ end }}
+		<meta name="twitter:image:src" content="@AnandChowdhary">
 		<link rel="author" href="https://plus.google.com/+AnandChowdhary0">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,7 +34,7 @@
 		<meta name="msapplication-TileColor" content="#00aba9">
 		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
-		<meta name="twitter:card" content="summary">
+		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.intro }}{{ end }}">
 		<meta name="twitter:title" content="{{ .Title }}{{ if .IsHome }}{{ else }} · {{ .Site.Title }}{{ end }}">
 		<meta name="twitter:site" content="@AnandChowdhary">
