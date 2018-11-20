@@ -189,6 +189,9 @@ footer#colophon {
     color: #dc3545; }
 
 @media (max-width: 550px) {
+  .more-button {
+    display: none !important; }
+
   .work-grid article + article {
     margin-top: 2rem; }
 
@@ -1126,5 +1129,4 @@ a .inline-svg {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden; }
-
 /*# sourceMappingURL=screen.css.map */

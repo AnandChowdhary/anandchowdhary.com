@@ -41,6 +41,45 @@
 							</div>
 						{{ end }}
 					</div>
+					<div class="client-details">
+						{{ if .Params.award }}
+						<div>
+							<div>Award</div>
+							<div>
+								{{ if .Params.award_position }}
+								{{ if eq .Params.award_position 1 }}<span>🥇</span>{{ end }}
+								{{ if eq .Params.award_position 2 }}<span>🥈</span>{{ end }}
+								{{ if eq .Params.award_position 3 }}<span>🥉</span>{{ end }}
+								{{end}}
+								<span>{{ .Params.award }}</span>
+							</div>
+						</div>
+						{{ end }}
+						{{ if .Params.places }}
+							<div>
+								<div>City</div>
+								<div>
+									{{ range $i, $e := .Params.places }}
+										<a href="{{ "/places/" | relLangURL }}{{ . | urlize }}/">
+											{{ . }}
+											{{ partial "emoji.html" . }}
+										</a>
+									{{ end }}
+								</div>
+							</div>
+						{{ end }}
+						{{ if .Params.venue }}
+						<div>
+							<div>Venue</div>
+							<div>
+								<span>{{ .Params.venue }}</span>
+								<a title="Google Maps" target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ .Params.venue }}, {{ if .Params.places }}{{ range $i, $e := .Params.places }}{{ . }}{{ end }}{{ end }}">
+									<svg role="img" class="inline-svg" aria-labelledby="locationTitle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 25" version="1.1" x="0px" y="0px"><title id="locationTitle">Google Maps location</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-463.000000, -1280.000000)" fill="#000000"><g transform="translate(40.000000, 1080.000000)"><path d="M423,207 C423,203.422 425.451,200 430,200 C434.549,200 437,203.638 437,207 C437,215.176 430,220 430,220 C430,220 423,214.983 423,207 Z M430,204 C428.343,204 427,205.343 427,207 C427,208.657 428.343,210 430,210 C431.657,210 433,208.657 433,207 C433,205.343 431.657,204 430,204 L430,204 Z"/></g></g></g></svg>
+								</a>
+							</div>
+						</div>
+						{{ end }}
+					</div>
 				</div>
 			{{ else if in .URL "/events/" }}
 				<div class="meta">
