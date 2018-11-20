@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://anandchowdhary.com/projects/clshare/</loc>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/events/wief-2018/</loc>
     <lastmod>2018-10-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -388,21 +395,21 @@
   
   <url>
     <loc>https://anandchowdhary.com/</loc>
-    <lastmod>2018-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://anandchowdhary.com/work/app/</loc>
-    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://anandchowdhary.com/work/artificial-intelligence/</loc>
-    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -560,6 +567,13 @@
   </url>
   
   <url>
+    <loc>https://anandchowdhary.com/places/london/</loc>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/tags/mysql/</loc>
     <lastmod>2016-12-02T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -616,7 +630,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/projects/</loc>
-    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -671,7 +685,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/work/</loc>
-    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

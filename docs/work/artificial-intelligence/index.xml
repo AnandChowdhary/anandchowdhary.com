@@ -6,10 +6,21 @@
     <description>Recent content in Artificial Intelligence on Anand Chowdhary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://anandchowdhary.com/work/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CLShare</title>
+      <link>https://anandchowdhary.com/projects/clshare/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/clshare/</guid>
+      <description>On a Thursday/Friday in November 2018, my team and I built and presented CLShare, an app to help CLS Group with employee engagement. The app was the winner of the CLS Engagement App Challenge in London and uses a combination of an AI chatbot with employee-to-employee communication to foster engagement.
+View GitHub repo &amp;rarr;
+    The product was a progressive web app built using Vue/Nuxt.js powered by Firebase.</description>
+    </item>
     
     <item>
       <title>Wendy</title>

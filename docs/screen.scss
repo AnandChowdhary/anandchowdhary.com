@@ -232,6 +232,9 @@ footer#colophon {
 }
 
 @media (max-width: 550px) {
+	.more-button {
+		display: none !important;
+	}
 	.work-grid article + article {
 		margin-top: 2rem;
 	}
