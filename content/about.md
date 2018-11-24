@@ -5,7 +5,7 @@ intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delh
 
 <div class="image">
 	<figure>
-		<img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758311/photos/anand-chowdhary.jpg">
+		<img alt="" src="/images/photos/anand-chowdhary.jpg">
 		<figcaption>Photo &copy; <a href="https://www.rikkertharink.nl/">Rikkert Harink</a></figcaption>
 	</figure>
 </div>
@@ -16,5 +16,5 @@ He is also a consultant to several startups and digital studios in India and the
 
 He is currently unavailable for freelance projects.
 
-- [Curriculum vitae](https://res.cloudinary.com/anand-chowdhary/image/upload/v1534497853/August2018.pdf) -- August 2018
+- [Curriculum vitae](https://www.dropbox.com/s/ksyfiujs5sqy14s/AnandChowdhary_CV_Aug18.pdf?dl=0) -- August 2018
 - [Portfolio](https://www.dropbox.com/s/eznlsi6336n96f2/AnandChowdhary_Portfolio_Jan17.pdf) -- January 2017
