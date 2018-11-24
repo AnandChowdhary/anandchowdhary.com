@@ -2,14 +2,16 @@ import gulp from "gulp";
 import minifyHTML from "gulp-minify-html";
 import runSequence from "run-sequence";
 import responsive from "gulp-responsive";
+import imagemin from "gulp-imagemin";
+import mozjpeg from "imagemin-mozjpeg";
 
-gulp.task("img", () =>
+gulp.task("images", () =>
 	gulp
-		.src("./public/images/**/*.png")
+		.src("./public/images/**/*.*")
 		.pipe(
 			responsive(
 				{
-					"**/*.png": [
+					"**/*.*": [
 						{
 							width: 32,
 							rename: { suffix: "@32" }
@@ -29,6 +31,10 @@ gulp.task("img", () =>
 						{
 							width: 1200,
 							rename: { suffix: "@1200" }
+						},
+						{
+							width: 1600,
+							rename: { suffix: "@1600" }
 						}
 					]
 				},
@@ -43,7 +49,14 @@ gulp.task("img", () =>
 		.pipe(gulp.dest("./public/images"))
 );
 
-gulp.task("compress", () => {
+gulp.task("compress", () =>
+	gulp
+		.src(["./public/images/**/*.*"])
+		.pipe(imagemin([imagemin.gifsicle(), imagemin.optipng(), imagemin.svgo(), mozjpeg()]))
+		.pipe(gulp.dest("./public/images"))
+);
+
+gulp.task("minify", () => {
 	const opts = { comments: true, spare: true };
 	gulp
 		.src("./public/**/*.html")
@@ -52,5 +65,5 @@ gulp.task("compress", () => {
 });
 
 gulp.task("default", () => {
-	runSequence("img", "compress", function() {});
+	runSequence("images", "minify", function() {});
 });

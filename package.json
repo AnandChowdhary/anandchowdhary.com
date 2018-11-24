@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start:prettier": "onchange '**/*.js' -- prettier --write {{changed}}"
+    "start:prettier": "onchange '**/*.js' -- prettier --write {{changed}}",
+    "build": "rm -r ./public && hugo && gulp"
   },
   "devDependencies": {
     "@babel/register": "^7.0.0-beta.46",
@@ -23,6 +24,8 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "gulp-responsive": "^2.11.0"
+    "gulp-imagemin": "^5.0.3",
+    "gulp-responsive": "^2.11.0",
+    "imagemin-mozjpeg": "^8.0.0"
   }
 }
