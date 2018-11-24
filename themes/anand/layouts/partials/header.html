@@ -24,15 +24,15 @@
 		{{ end }}
 		<meta name="twitter:image:src" content="@AnandChowdhary">
 		<link rel="author" href="https://plus.google.com/+AnandChowdhary0">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}pwa/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}pwa/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="194x194" href="{{ .Site.BaseURL }}pwa/favicon-194x194.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="{{ .Site.BaseURL }}pwa/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}pwa/favicon-16x16.png">
+		<link rel="manifest" href="{{ .Site.BaseURL }}pwa/site.webmanifest">
+		<link rel="mask-icon" href="{{ .Site.BaseURL }}pwa/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#00aba9">
-		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="msapplication-TileImage" content="{{ .Site.BaseURL }}pwa/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.intro }}{{ end }}">
@@ -98,7 +98,7 @@
 	<body>
 		<header id="masthead">
 			<div class="container">
-				<div><a class="logo" href="/"><img alt="" aria-hidden="true" src="/favicon-32x32.png">Anand Chowdhary</a></div>
+				<div><a class="logo" href="/"><img alt="" aria-hidden="true" src="{{ .Site.BaseURL }}pwa/favicon-32x32.png">Anand Chowdhary</a></div>
 				<nav role="navigation">
 					<ul>
 						<li><a class="home-link" href="/">Home</a></li>

@@ -56,7 +56,7 @@ article a[target="_blank"]:not([data-balloon])::after {
   display: inline-block;
   margin-left: 0.25em;
   opacity: 0.5;
-  background-image: url("/external.svg");
+  background-image: url("/pwa/external.svg");
   background-position: center right;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1129,4 +1129,5 @@ a .inline-svg {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden; }
+
 /*# sourceMappingURL=screen.css.map */
