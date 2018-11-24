@@ -21,5 +21,8 @@
     "onchange": "^4.0.0",
     "prettier": "^1.12.1",
     "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "gulp-responsive": "^2.11.0"
   }
 }
