@@ -4,7 +4,7 @@ date: 2017-06-17
 roles: ["Speaker"]
 places: ["Gurugram"]
 link: https://www.ted.com/tedx/events/21871
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757002/icons/tedx.png
+icon: /images/icons/tedx.png
 color: "#ff0000"
 linkType: Website
 type: content

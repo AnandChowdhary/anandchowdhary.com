@@ -5,7 +5,7 @@ roles: ["Speaker"]
 places: ["Enschede"]
 link: https://www.eventbrite.com/e/info-avond-start-up-programma-stichting-nesst-tickets-48331507841?aff=website
 linkType: Eventbrite
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756835/icons/nesst.png
+icon: /images/icons/nesst.png
 color: "#ffb600"
 type: content
 venue: Center for Entrepreneurship Saxion, Ariënsplein

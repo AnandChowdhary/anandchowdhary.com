@@ -5,7 +5,7 @@ roles: ["Exhibition"]
 places: ["Enschede"]
 link: https://2018.gogbot.nl/portfolio/franky/
 linkType: Website
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1536763870/icons/gogbot.png
+icon: /images/icons/gogbot.png
 color: "#000"
 type: content
 ---

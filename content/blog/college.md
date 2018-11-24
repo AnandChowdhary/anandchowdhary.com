@@ -17,21 +17,21 @@ Oswald went on to become really great, and it mainly started with us winning Sta
 
 ## Accepted
 
- - Digital Media at RMIT University
- - Digital Media & Visual Communication at HTK Berlin
- - Interaction Design at Harbour.Space University (1 year scholarship)
- - Interaction Design at The Glasgow School of Art
- - Information Technology with UX at University of Queensland
- - Digital Media Design at University of Hertfordshire
- - Applied Computer Science (Mobile Computing) at Sheridan College
- - Interaction Design Arts at University of the Arts London's College of Communication
- - Interaction Design at California College of the Arts (Creative Achievement scholarship, $80,000)
- - Interaction Design at Norwich University of the Arts
- - Creative Technology at the University of Twente
+- Digital Media at RMIT University
+- Digital Media & Visual Communication at HTK Berlin
+- Interaction Design at Harbour.Space University (1 year scholarship)
+- Interaction Design at The Glasgow School of Art
+- Information Technology with UX at University of Queensland
+- Digital Media Design at University of Hertfordshire
+- Applied Computer Science (Mobile Computing) at Sheridan College
+- Interaction Design Arts at University of the Arts London's College of Communication
+- Interaction Design at California College of the Arts (Creative Achievement scholarship, $80,000)
+- Interaction Design at Norwich University of the Arts
+- Creative Technology at the University of Twente
 
 ## Rejected
 
- - Digital and Interaction Design at BTK University, Berlin, because I needed a foundation year to apply for that program. I did not know that.
+- Digital and Interaction Design at BTK University, Berlin, because I needed a foundation year to apply for that program. I did not know that.
 
 ## Footnotes
 

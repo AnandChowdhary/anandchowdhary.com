@@ -5,7 +5,7 @@ roles: ["Speaker"]
 places: ["Enschede"]
 link: https://www.facebook.com/events/1838806939471157/
 linkType: Facebook
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756835/icons/nesst.png
+icon: /images/icons/nesst.png
 color: "#ffb600"
 type: content
 venue: the cee spot

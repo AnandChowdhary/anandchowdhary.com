@@ -5,7 +5,7 @@ roles: ["Speaker"]
 places: ["New Delhi"]
 link: https://www.facebook.com/events/720130618157178/
 linkType: Facebook
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756538/icons/hackiiitd.png
+icon: /images/icons/hackiiitd.png
 color: "#69e"
 type: content
 venue: Indraprastha Institute of Information Technology

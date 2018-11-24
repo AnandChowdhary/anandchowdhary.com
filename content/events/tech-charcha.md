@@ -5,7 +5,7 @@ roles: ["Panelist"]
 places: ["New Delhi"]
 link: https://www.facebook.com/events/199095997267944/
 linkType: Facebook
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534756979/icons/facebook.png
+icon: /images/icons/facebook.png
 color: "#4267b2"
 type: content
 venue: 91springboard Okhla

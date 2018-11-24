@@ -9,7 +9,7 @@ A few days ago, I tried to reset my password on PR.com, the press releases websi
 
 <!--more-->
 
-![Screenshot of email](https://res.cloudinary.com/anand-chowdhary/image/upload/v1532798814/md5-pr_wav36p.png)
+![Screenshot of email](/images/blog/md5-pr_wav36p.png)
 
 The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted "hashed" version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.
 
