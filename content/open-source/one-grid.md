@@ -3,7 +3,7 @@ title: One Grid
 date: 2015-12-25
 tags: ["CSS"]
 type: content
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757214/icons/one-grid.png
+icon: /images/icons/one-grid.png
 ---
 
 One Grid is the simplest grid system for fixed-height infinite blocks in less than one kilobyte. It's responsive, eliminates unnecessary code, and works with Internet Explorer 8+. One is the most fundamental form of what I believe a grid system should work like.
@@ -43,6 +43,6 @@ That's the idea behind One, a grid system I designed this evening. It's an idea 
 3. It's responsive.
 4. It's just 1 KB.
 
-![One Grid screenshot](https://res.cloudinary.com/anand-chowdhary/image/upload/v1534757236/open-source/one-grid.jpg)
+![One Grid screenshot](/images/open-source/one-grid.jpg)
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/one-grid)
