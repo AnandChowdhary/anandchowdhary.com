@@ -5,7 +5,7 @@ import responsive from "gulp-responsive";
 
 gulp.task("img", () =>
 	gulp
-		.src("./static/images/**/*.png")
+		.src("./public/images/**/*.png")
 		.pipe(
 			responsive(
 				{
@@ -40,15 +40,15 @@ gulp.task("img", () =>
 				}
 			)
 		)
-		.pipe(gulp.dest("./static/images"))
+		.pipe(gulp.dest("./public/images"))
 );
 
 gulp.task("compress", () => {
 	const opts = { comments: true, spare: true };
 	gulp
-		.src("./docs/**/*.html")
+		.src("./public/**/*.html")
 		.pipe(minifyHTML(opts))
-		.pipe(gulp.dest("./docs/"));
+		.pipe(gulp.dest("./public/"));
 });
 
 gulp.task("default", () => {
