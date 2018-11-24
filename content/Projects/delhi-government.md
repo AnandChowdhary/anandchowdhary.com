@@ -7,7 +7,7 @@ work: ["App"]
 bg: "#00a48d"
 timeline: 6 weeks
 client: GNCTD
-image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799276/portfolio/delhi-government_2x.png
+image: /images/portfolio/delhi-government_2x.png
 ---
 
 In April and May, 2016, I worked with a small team at the Government of Delhi's Directorate of Education to try and streamline the process of communication between state schools and the Directorate. Today, if a school principal has a problem, she has to report a grievance, wait for a response, get redirected to the correct department, find someone, address the problem, and it keeps going on and on. We redesigned this process from group up for efficient, two-way communication.
@@ -19,19 +19,19 @@ An SMC (School Management Committee) consist of the Principal, parents, and gove
 <div class="three-images">
 	<div>
 		<figure>
-			<img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759706/projects/delhi-government/1.png">
+			<img alt="" src="/images/projects/delhi-government/1.png">
 			<figcaption>Version 1</figcaption>
 		</figure>
 	</div>
 	<div>
 		<figure>
-			<img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759707/projects/delhi-government/2.png">
+			<img alt="" src="/images/projects/delhi-government/2.png">
 			<figcaption>Version 2</figcaption>
 		</figure>
 	</div>
 	<div>
 		<figure>
-			<img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759705/projects/delhi-government/3.png">
+			<img alt="" src="/images/projects/delhi-government/3.png">
 			<figcaption>Version 3</figcaption>
 		</figure>
 	</div>

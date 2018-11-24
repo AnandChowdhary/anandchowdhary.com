@@ -6,7 +6,7 @@ date: 2016-01-24
 bg: "#8d9ba6"
 work: ["App"]
 timeline: 4 days
-image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799282/portfolio/keeep_2x.png
+image: /images/portfolio/keeep_2x.png
 ---
 
 For my highschool Computer Science project, I built an encryption engine and password manager in C/C++. I wrote a pseudo-encryption algorithm with string manipulation, rotation, and encoding.
@@ -23,17 +23,17 @@ Keeep is a lightweight password management and encryption utility for Windows. I
 4. User can now view all records or add a new record.
 
 <div class="two-images">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/1.jpg"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/2.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/1.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/2.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/3.jpg"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/4.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/3.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/4.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/5.jpg"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/6.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/5.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/6.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760137/projects/keeep/7.jpg"></div>
+	<div><img alt="" src="/images/projects/keeep/7.jpg"></div>
 </div>

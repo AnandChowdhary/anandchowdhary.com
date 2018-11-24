@@ -3,10 +3,10 @@ title: Made with Love in India
 subcategory: App
 intro: Platform to celebrate, promote, and build a brand — India. Over 75 organizations use the Made with Love in India badge.
 date: 2014-04-21
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760166/projects/mwlii/icon.png
+icon: /images/projects/mwlii/icon.png
 work: ["Web", "Branding"]
 bg: "#f10032"
-image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799279/portfolio/made-with-love-in-india_2x.png
+image: /images/portfolio/made-with-love-in-india_2x.png
 ---
 
 You see this meticulously made handicraft item which would be the perfect addition to brighten up any living room. You pick it up, admiring the attention to detail when suddenly you spot the Made in India label at the bottom, instantly making the product you were admiring seconds ago feel as cheap as dirt.
@@ -22,10 +22,10 @@ Made with Love in India is a platform to celebrate, promote, and build a brand -
 [Visit Made with Love in India &rarr;](https://madewithlove.org.in)
 
 <div class="two-images scale">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760166/projects/mwlii/1.png"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760166/projects/mwlii/2.png"></div>
+	<div><img alt="" src="/images/projects/mwlii/1.png"></div>
+	<div><img alt="" src="/images/projects/mwlii/2.png"></div>
 </div>
 <div class="two-images scale">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760166/projects/mwlii/3.png"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534760166/projects/mwlii/4.png"></div>
+	<div><img alt="" src="/images/projects/mwlii/3.png"></div>
+	<div><img alt="" src="/images/projects/mwlii/4.png"></div>
 </div>

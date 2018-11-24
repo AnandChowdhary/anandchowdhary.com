@@ -5,7 +5,7 @@ intro: Education-technology startup trying to break classroom barriers, products
 date: 2014-01-15
 work: ["Branding", "Web", "Startup"]
 timeline: 1 year
-image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799275/portfolio/classrebels_2x.png
+image: /images/portfolio/classrebels_2x.png
 ---
 
 Unlike all stories, ClassRebels didn't start with the simple idea of making teachers and students connect in a way they've never connected before. It started with an idea to bring about a reform, a change, and a revolution. In India, this change was long needed. The society is evolving, and our education system needs to catch up.
@@ -22,11 +22,11 @@ Our mission is to develop our nation's human resource. The way education takes p
 However, we do not believe that there is an absence of good teachers and educational content. That's entirely false. The only problem that arises is that there is no way a student can discover an amazing teacher, or a teacher can discover an amazing student, without already having mutual contacts. That's what we're trying to change. A place where students can look for everything they need, from notes to teachers' updates to calendars based on studying schedules. All in one single place we like to call ClassRebels.
 
 <div class="two-images">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759329/projects/classrebels/1.jpg"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759327/projects/classrebels/2.png"></div>
+	<div><img alt="" src="/images/projects/classrebels/1.jpg"></div>
+	<div><img alt="" src="/images/projects/classrebels/2.png"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759327/projects/classrebels/4.png"></div>
-	<div><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759324/projects/classrebels/3.png"></div>
+	<div><img alt="" src="/images/projects/classrebels/4.png"></div>
+	<div><img alt="" src="/images/projects/classrebels/3.png"></div>
 </div>
-<div class="image scale"><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534759327/projects/classrebels/5.png"></div>
+<div class="image scale"><img alt="" src="/images/projects/classrebels/5.png"></div>

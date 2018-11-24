@@ -3,11 +3,11 @@ title: BharatHacks
 subcategory: Hackathon
 intro: Hackathon to solve India-specific problems in New Delhi with 200 participants and tens of thousands of dollars in prizes.
 date: 2017-07-18
-icon: https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758843/projects/bharathacks/icon.png
+icon: /images/projects/bharathacks/icon.png
 timeline: 3 months
 work: ["Event", "Branding", "Web"]
 bg: "#27577a"
-image: https://res.cloudinary.com/anand-chowdhary/image/upload/v1532799275/portfolio/bharathacks_2x.png
+image: /images/portfolio/bharathacks_2x.png
 ---
 
 In June 2017, I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make lives better. Organized in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks helped hundreds take their idea forward, from hacking to raising investment and launching their products in the market.
@@ -22,4 +22,4 @@ I personally organized the event, arranged logistics, delivered the keynote, and
 
 [Visit BharatHacks &rarr;](https://bharathacks.github.io)
 
-<div class="image"><img alt="" src="https://res.cloudinary.com/anand-chowdhary/image/upload/v1534758845/projects/bharathacks/1.png"></div>
+<div class="image"><img alt="" src="/images/projects/bharathacks/1.png"></div>
