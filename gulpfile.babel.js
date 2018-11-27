@@ -39,7 +39,7 @@ gulp.task("images", () =>
 					]
 				},
 				{
-					silent: true,
+					silent: false,
 					withoutEnlargement: true,
 					skipOnEnlargement: false,
 					errorOnEnlargement: false
