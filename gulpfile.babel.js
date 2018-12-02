@@ -65,5 +65,5 @@ gulp.task("minify", () => {
 });
 
 gulp.task("default", () => {
-	runSequence("images", "minify", function() {});
+	runSequence("minify", function() {});
 });
