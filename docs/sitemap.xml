@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://anandchowdhary.com/projects/aristotle/</loc>
+    <lastmod>2018-11-30T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/projects/clshare/</loc>
     <lastmod>2018-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -395,7 +402,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/</loc>
-    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -409,7 +416,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/work/artificial-intelligence/</loc>
-    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -525,6 +532,13 @@
   </url>
   
   <url>
+    <loc>https://anandchowdhary.com/places/heerlen/</loc>
+    <lastmod>2018-11-30T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://anandchowdhary.com/work/industrial-design/</loc>
     <lastmod>2014-07-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -630,7 +644,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/projects/</loc>
-    <lastmod>2018-11-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -678,7 +692,7 @@
   
   <url>
     <loc>https://anandchowdhary.com/work/web/</loc>
-    <lastmod>2018-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-30T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>

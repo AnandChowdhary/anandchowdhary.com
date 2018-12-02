@@ -6,10 +6,20 @@
     <description>Recent content in Web on Anand Chowdhary</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://anandchowdhary.com/work/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aristotle</title>
+      <link>https://anandchowdhary.com/projects/aristotle/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://anandchowdhary.com/projects/aristotle/</guid>
+      <description>Between November 29 and December 1, 2018, my team and I built and presented Aristotle, an AI-powered e-learning platform for the schools of Limburg. The app was the winner of the Education category at Brighthack in Heerlen.
+For students, it automatically finds the best content from a variety of sources (like Khan Academy, Wikipedia, study material websites, etc.), and offers gamification and quizzes to better understand the syllabus. For teachers, it offers actionable analytics such as per-student performance.</description>
+    </item>
     
     <item>
       <title>DrillMaps</title>

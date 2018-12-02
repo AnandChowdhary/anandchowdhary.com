@@ -10,11 +10,19 @@
 						<article>
 							<a href="{{ .Permalink }}">
 								{{ if .Params.style }}
+									{{ if eq .Params.style "padded" }}
+									<div class="image" style="
+										background-image: url('{{ .Params.image }}');
+										background-size: 90%;
+										background-color: {{ .Params.bg }}
+									"></div>
+									{{ else }}
 									<div class="image" style="
 										background-image: url('{{ .Params.image }}');
 										background-size: cover;
 										background-color: {{ .Params.bg }}
 									"></div>
+									{{ end }}
 								{{ else }}
 									<div class="image" style="
 										background-image: url('{{ .Params.image }}');
