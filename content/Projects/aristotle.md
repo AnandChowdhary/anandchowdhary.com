@@ -45,6 +45,6 @@ The app also included Oswald Labs' accessibility features to make it more usable
 	<div><img alt="" src="/images/projects/aristotle/8.png"></div>
 </div>
 
-<iframe class="video-embed" height="600" src="https://www.youtube.com/embed/223RTMXXtxc?controls=0&modestbranding=1"></iframe>
+<iframe class="video-embed" height="600" src="https://www.youtube.com/embed/223RTMXXtxc"></iframe>
 
 <footer>This project was done in collaboration with Maurits van der Vijgh 🇳🇱 and Alex Imbrea 🇷🇴.</footer>
