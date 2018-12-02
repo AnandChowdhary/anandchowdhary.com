@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start:prettier": "onchange '**/*.js' -- prettier --write {{changed}}",
-    "build": "rm -r ./public && hugo && gulp"
+    "build": "rm -r ./docs && hugo && gulp"
   },
   "devDependencies": {
     "@babel/register": "^7.0.0-beta.46",

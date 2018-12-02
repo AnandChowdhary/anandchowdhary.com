@@ -7,7 +7,7 @@ import mozjpeg from "imagemin-mozjpeg";
 
 gulp.task("images", () =>
 	gulp
-		.src("./public/images/**/*.*")
+		.src("./docs/images/**/*.*")
 		.pipe(
 			responsive(
 				{
@@ -46,22 +46,22 @@ gulp.task("images", () =>
 				}
 			)
 		)
-		.pipe(gulp.dest("./public/images"))
+		.pipe(gulp.dest("./docs/images"))
 );
 
 gulp.task("compress", () =>
 	gulp
-		.src(["./public/images/**/*.*"])
+		.src(["./docs/images/**/*.*"])
 		.pipe(imagemin([imagemin.gifsicle(), imagemin.optipng(), imagemin.svgo(), mozjpeg()]))
-		.pipe(gulp.dest("./public/images"))
+		.pipe(gulp.dest("./docs/images"))
 );
 
 gulp.task("minify", () => {
 	const opts = { comments: true, spare: true };
 	gulp
-		.src("./public/**/*.html")
+		.src("./docs/**/*.html")
 		.pipe(minifyHTML(opts))
-		.pipe(gulp.dest("./public/"));
+		.pipe(gulp.dest("./docs/"));
 });
 
 gulp.task("default", () => {
