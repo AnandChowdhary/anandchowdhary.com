@@ -1,5 +1,9 @@
 <picture>
-	<img src="{{ .Get "src" }}@loading{{ .Get "type" }}" alt="">
+	<img
+		src="{{ .Get "src" }}@loading.{{ .Get "type" }}"
+		data-src="{{ .Get "src" }}.{{ .Get "type" }}"
+		class="lazyload"
+	>
 	<noscript>
 		<img src="{{ .Get "src" }}.{{ .Get "type" }}" alt="">
 	</noscript>

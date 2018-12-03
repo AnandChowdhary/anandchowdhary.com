@@ -9,8 +9,8 @@
 		<meta name="keywords" content="Anand Chowdhary, Anand, Chowdhary, {{ if .Params.tags }}{{ delimit .Params.tags ", " }}{{ end }}">
 		<meta name="author" content="Anand Chowdhary">
 		<link rel="canonical" href="{{ .Permalink }}">
-		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/screen.css?v=ri4u283091j">
-		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css?v=ri4u283091j" media="print">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/screen.css">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
 		{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
 		{{ .Hugo.Generator }}
 		{{ if .Params.image }}

@@ -17,8 +17,9 @@
       <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://anandchowdhary.com/projects/aristotle/</guid>
-      <description>Between November 29 and December 1, 2018, my team and I built and presented Aristotle, an AI-powered e-learning platform for the schools of Limburg. The app was the winner of the Education category at Brighthack in Heerlen.
-For students, it automatically finds the best content from a variety of sources (like Khan Academy, Wikipedia, study material websites, etc.), and offers gamification and quizzes to better understand the syllabus. For teachers, it offers actionable analytics such as per-student performance.</description>
+      <description>The product was a progressive web app built using Vue/Nuxt.js powered by Django and Firebase.
+The app also included Oswald Labs&amp;rsquo; accessibility features to make it more usable for student with dyslexia, visual impairment, and more disabilities, along with a chatbot to answer students&amp;rsquo; frequently asked questions which could be trained by all teachers.
+      The branding and pitch were inspired from CGP Grey&amp;rsquo;s video, Digital Aristotle.</description>
     </item>
     
   </channel>
