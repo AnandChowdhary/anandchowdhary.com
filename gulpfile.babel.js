@@ -68,7 +68,7 @@ gulp.task("init-watch", () => {
 });
 
 gulp.task("build", () => {
-	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo", "minify");
+	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo");
 });
 
 gulp.task("build-preview", () => {
@@ -107,6 +107,7 @@ gulp.task("hugo", cb => {
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
 		if (suppressHugoErrors || code === 0) {
 			browserSync.reload();
+			gulp.start("minify");
 			cb();
 		} else {
 			console.log("hugo command failed.");
@@ -124,6 +125,7 @@ gulp.task("hugo-preview", cb => {
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
 		if (suppressHugoErrors || code === 0) {
 			browserSync.reload();
+			gulp.start("minify");
 			cb();
 		} else {
 			console.log("hugo command failed.");
