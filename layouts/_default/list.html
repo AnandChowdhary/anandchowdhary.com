@@ -1,0 +1,158 @@
+{{ partial "header.html" . }}
+	<main class="list {{ .Title | urlize }}{{ if ((in .URL "/events/") | or (in .URL "/roles") | or (in .URL "/places")) }} events{{ end }}">
+		{{ if ((in .URL "/work/") | or (in .URL "/projects")) }}
+			<ul class="filter">
+				<li><a href="/projects/">All</a></li>
+				<li><a href="/work/web/">Web</a></li>
+				<li><a href="/work/app/">Apps</a></li>
+				<li><a href="/work/internet-of-things/">IoT</a></li>
+				<li><a href="/work/branding/">Branding</a></li>
+				<li><a href="/work/hardware/">Hardware</a></li>
+				<li><a href="/work/artificial-intelligence/">AI/ML</a></li>
+				<li><a href="/work/augmented-reality/">VR/AR</a></li>
+				<li><a href="/work/event/">Events</a></li>
+			</ul>
+			<div class="work-grid">
+				{{ range sort .Paginator.Pages }}
+					<article>
+						<a href="{{ .Permalink }}">
+							{{ if .Params.style }}
+								{{ if eq .Params.style "padded" }}
+								<div class="image" style="
+									background-image: url('{{ .Params.image }}');
+									background-size: 90%;
+									background-color: {{ .Params.bg }}
+								"></div>
+								{{ else }}
+								<div class="image" style="
+									background-image: url('{{ .Params.image }}');
+									background-size: cover;
+									background-color: {{ .Params.bg }}
+								"></div>
+								{{ end }}
+							{{ else }}
+								<div class="image" style="
+									background-image: url('{{ .Params.image }}');
+									background-color: {{ .Params.bg }}
+								"></div>
+							{{ end }}
+							<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
+							<p>{{ .Params.intro }}</p>
+						</a>
+					</article>
+				{{ end }}
+			</div>
+		{{ else }}
+			<div class="article-title page">
+				<h1>{{ .Title }}</h1>
+			</div>
+			<!-- {{ if in .Permalink "/places/" }}
+				<div class="place-map">
+					<iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCuiZevIb1G87KAoLRSECEdWNBQ06JCMjU&q=New Delhi" allowfullscreen></iframe>
+				</div>
+			{{ end }} -->
+			{{ partial "intro.html" . }}
+			{{ range sort .Paginator.Pages }}
+			<article class="article-list">
+				<div class="article-title">
+					{{ if .Params.icon }}
+						{{ if .Params.alias }}
+							<a href="{{ .Params.alias }}">
+								<img class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
+							</a>
+						{{ else }}
+							<a href="{{ .Permalink }}">
+								<img class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
+							</a>
+						{{ end }}
+					{{ end }}
+					{{ if .Params.alias }}
+						<h2><a href="{{ .Params.alias }}">{{ .Title }}</a></h2>
+					{{ else }}
+						<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+					{{ end }}
+				</div>
+				{{ if in .URL "/events/" }}
+					<div class="meta">
+						<div class="client-details">
+							<div>
+								<div>
+									{{ if .Params.futureDate }}
+										Upcoming
+									{{ else }}
+										Date
+									{{ end }}
+								</div>
+								<div>
+									{{ if .Params.futureDate }}
+										<time>{{ .Params.futureDate }}</time>
+									{{ else }}
+										<time>{{ .Date.Format "January 2, 2006" }}</time>
+									{{ end }}
+								</div>
+							</div>
+							{{ if .Params.roles }}
+								<div>
+									<div>Role</div>
+									<div>
+										{{ range $i, $e := .Params.roles }}
+											<a href="{{ "/roles/" | relLangURL }}{{ . | urlize }}/">
+												{{ . }}
+											</a>
+										{{ end }}
+									</div>
+								</div>
+							{{ end }}
+							{{ if .Params.places }}
+								<div>
+									<div>Location</div>
+									<div>
+										{{ range $i, $e := .Params.places }}
+											<a href="{{ "/places/" | relLangURL }}{{ . | urlize }}/">
+												{{ . }}
+												{{ partial "emoji.html" . }}
+											</a>
+										{{ end }}
+									</div>
+								</div>
+							{{ end }}
+						</div>
+					</div>
+				{{ else if not .Date.IsZero }}
+					<div class="meta">Posted on <time>{{ .Date.Format "January 2, 2006" }}</time></div>
+				{{ end }}
+				<div class="content">
+					<p>{{ .Summary | plainify | safeHTML }}</p>
+					{{ if .Params.color }}
+						{{ if .Params.alias }}
+							<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Params.alias }}">
+								{{ if .Params.publisher }}
+									Continue reading on {{ .Params.publisher }}
+								{{ else }}
+									Continue reading
+								{{ end }}
+							</a></p>
+						{{ else }}
+							<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+						{{ end }}
+					{{ else }}
+						{{ if .Params.alias }}
+							<p><a class="button is-link" href="{{ .Params.alias }}">
+								{{ if .Params.publisher }}
+									Continue reading on {{ .Params.publisher }}
+								{{ else }}
+									Continue reading
+								{{ end }}
+							</a></p>
+						{{ else }}
+							<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+						{{ end }}
+					{{ end }}
+				</div>
+			</article>
+			{{ end }}
+		{{ end }}
+		{{ template "_internal/pagination.html" . }}
+	</main>
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}
