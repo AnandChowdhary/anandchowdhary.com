@@ -485,6 +485,7 @@ footer {
 
 .image {
   margin-top: 2rem;
+  display: block;
   text-align: center; }
   .image + p {
     margin-top: 4rem; }

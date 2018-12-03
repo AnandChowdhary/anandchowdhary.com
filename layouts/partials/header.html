@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/print.css" media="print">
 		{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{ end }}
 		{{ .Hugo.Generator }}
+		<link rel="preconnect" href="https://www.google-analytics.com">
+		<link rel="preconnect" href="https://anandchowdhary.com">
 		{{ if .Params.image }}
 		<meta itemprop="image" content="{{ .Params.image }}">
 		<meta property="og:image" content="{{ .Params.image }}">

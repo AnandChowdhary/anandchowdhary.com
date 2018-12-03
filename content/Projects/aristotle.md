@@ -23,12 +23,12 @@ For students, it automatically finds the best content from a variety of sources 
 
 <div class="two-images">
 	{{< img src="/images/projects/aristotle/1" type="png" >}}
-	<div><img alt="" src="/images/projects/aristotle/2.png"></div>
+	{{< img src="/images/projects/aristotle/2" type="png" >}}
 </div>
 
 <div class="two-images" style="margin-top: -4rem">
-	<div><img alt="" src="/images/projects/aristotle/3.png"></div>
-	<div><img alt="" src="/images/projects/aristotle/4.png"></div>
+	{{< img src="/images/projects/aristotle/3" type="png" >}}
+	{{< img src="/images/projects/aristotle/4" type="png" >}}
 </div>
 
 The product was a progressive web app built using Vue/Nuxt.js powered by Django and Firebase.
@@ -36,13 +36,13 @@ The product was a progressive web app built using Vue/Nuxt.js powered by Django 
 The app also included Oswald Labs' accessibility features to make it more usable for student with dyslexia, visual impairment, and more disabilities, along with a chatbot to answer students' frequently asked questions which could be trained by all teachers.
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/aristotle/5.png"></div>
-	<div><img alt="" src="/images/projects/aristotle/6.png"></div>
+	{{< img src="/images/projects/aristotle/5" type="png" >}}
+	{{< img src="/images/projects/aristotle/6" type="png" >}}
 </div>
 
 <div class="two-images" style="margin-top: -4rem">
-	<div><img alt="" src="/images/projects/aristotle/7.png"></div>
-	<div><img alt="" src="/images/projects/aristotle/8.png"></div>
+	{{< img src="/images/projects/aristotle/7" type="png" >}}
+	{{< img src="/images/projects/aristotle/8" type="png" >}}
 </div>
 
 The branding and pitch were inspired from CGP Grey's video, [Digital Aristotle](https://www.youtube.com/watch?v=7vsCAM17O-M).

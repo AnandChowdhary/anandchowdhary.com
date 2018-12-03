@@ -19,9 +19,9 @@ If you've stubbed your toe a little, Baymax will tell you how to make the swelli
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/baymax)
 
 <div class="three-images">
-	<div><img alt="" src="/images/projects/baymax/1.png"></div>
-	<div><img alt="" src="/images/projects/baymax/2.png"></div>
-	<div><img alt="" src="/images/projects/baymax/3.png"></div>
+	{{< img src="/images/projects/baymax/1" type="png" >}}
+	{{< img src="/images/projects/baymax/2" type="png" >}}
+	{{< img src="/images/projects/baymax/3" type="png" >}}
 </div>
 
 <footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>
