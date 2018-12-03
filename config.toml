@@ -9,7 +9,6 @@ pygmentsStyle = "native"
 pygmentsUseClasses =  true
 enableRobotsTXT = true
 canonifyURLs = true
-theme = "anand"
 title = "Anand Chowdhary"
 pluralizelisttitles = "false"
 [taxonomies]
