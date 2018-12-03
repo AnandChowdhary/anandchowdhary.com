@@ -57,7 +57,7 @@ gulp.task("init-watch", () => {
 	suppressHugoErrors = true;
 	browserSync.init({
 		server: {
-			baseDir: "public"
+			baseDir: "docs"
 		},
 		open: false
 	});
@@ -152,13 +152,13 @@ gulp.task("sass", () => {
 gulp.task("uncss", () => {
 	const plugins = [
 		uncss({
-			html: ["public/**/*.html"]
+			html: ["docs/**/*.html"]
 		})
 	];
 	return gulp
-		.src(["public/css/*.css"])
+		.src(["docs/css/*.css"])
 		.pipe(postcss(plugins))
-		.pipe(gulp.dest("public"));
+		.pipe(gulp.dest("docs"));
 });
 
 gulp.task("js-watch", ["js"], cb => {
@@ -185,9 +185,9 @@ gulp.task("fonts", () => {
 gulp.task("minify", () => {
 	const opts = { comments: true, spare: true };
 	gulp
-		.src("./public/**/*.html")
+		.src("./docs/**/*.html")
 		.pipe(minifyHTML(opts))
-		.pipe(gulp.dest("./public/"));
+		.pipe(gulp.dest("./docs/"));
 });
 
 gulp.task("images", () => {
@@ -204,7 +204,7 @@ gulp.task("cms-delete", () => {
 });
 
 gulp.task("pub-delete", () => {
-	return del(["public/**", "!public", "functions/**", "!functions"], {
+	return del(["docs/**", "!docs", "functions/**", "!functions"], {
 		// dryRun: true,
 		dot: true
 	}).then(paths => {

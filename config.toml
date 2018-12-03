@@ -1,5 +1,5 @@
-baseURL = "/"
-publishDir = "public/"
+baseURL = "https://anandchowdhary.com/"
+publishDir = "docs/"
 defaultContentLanguage = "en"
 enableEmoji = true
 languageCode = "en-us"
