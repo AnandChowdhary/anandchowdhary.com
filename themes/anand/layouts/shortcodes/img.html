@@ -1,0 +1,6 @@
+<picture>
+	<img src="{{ .Get "src" }}@loading{{ .Get "type" }}" alt="">
+	<noscript>
+		<img src="{{ .Get "src" }}.{{ .Get "type" }}" alt="">
+	</noscript>
+</picture>
