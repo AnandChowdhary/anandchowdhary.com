@@ -3,6 +3,7 @@
 import gulp from "gulp";
 import del from "del";
 import runSequence from "run-sequence";
+import minifyHTML from "gulp-minify-html";
 import gulpLoadPlugins from "gulp-load-plugins";
 import { spawn } from "child_process";
 import tildeImporter from "node-sass-tilde-importer";
@@ -67,7 +68,7 @@ gulp.task("init-watch", () => {
 });
 
 gulp.task("build", () => {
-	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo");
+	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo", "minify");
 });
 
 gulp.task("build-preview", () => {
@@ -179,6 +180,14 @@ gulp.task("js", () => {
 
 gulp.task("fonts", () => {
 	return gulp.src("src/fonts/**/*.{woff,woff2}").pipe(gulp.dest("static/fonts"));
+});
+
+gulp.task("minify", () => {
+	const opts = { comments: true, spare: true };
+	gulp
+		.src("./public/**/*.html")
+		.pipe(minifyHTML(opts))
+		.pipe(gulp.dest("./public/"));
 });
 
 gulp.task("images", () => {
