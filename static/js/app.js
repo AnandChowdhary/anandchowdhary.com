@@ -1153,6 +1153,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 
 function initMe() {
+  alert("Hello!");
   var internal = location.host.replace("www.", "");
   internal = new RegExp(internal, "i");
   var a = document.getElementsByTagName("a");
