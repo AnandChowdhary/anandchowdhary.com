@@ -10,6 +10,7 @@ import tildeImporter from "node-sass-tilde-importer";
 import postcss from "gulp-postcss";
 import uncss from "postcss-uncss";
 import fs from "fs";
+import responsive from "gulp-responsive";
 
 const $ = gulpLoadPlugins();
 const browserSync = require("browser-sync").create();
@@ -107,7 +108,7 @@ gulp.task("hugo", cb => {
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
 		if (suppressHugoErrors || code === 0) {
 			browserSync.reload();
-			gulp.start("minify");
+			gulp.start("minify", "images-responsive");
 			cb();
 		} else {
 			console.log("hugo command failed.");
@@ -190,6 +191,25 @@ gulp.task("minify", () => {
 		.src("./docs/**/*.html")
 		.pipe(minifyHTML(opts))
 		.pipe(gulp.dest("./docs/"));
+});
+
+gulp.task("images-responsive", () => {
+	return gulp
+		.src("./docs/images/**/*.*")
+		.pipe(responsive({
+			"**/*.*": [
+				{
+					width: 24,
+					rename: { suffix: "@loading" }
+				}
+			]
+		}, {
+			silent: false,
+			withoutEnlargement: true,
+			skipOnEnlargement: false,
+			errorOnEnlargement: false
+		}))
+		.pipe(gulp.dest("docs/images"));
 });
 
 gulp.task("images", () => {
