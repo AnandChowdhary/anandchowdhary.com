@@ -1,69 +1,208 @@
+"use strict";
+
 import gulp from "gulp";
-import minifyHTML from "gulp-minify-html";
+import del from "del";
 import runSequence from "run-sequence";
-import responsive from "gulp-responsive";
-import imagemin from "gulp-imagemin";
-import mozjpeg from "imagemin-mozjpeg";
+import gulpLoadPlugins from "gulp-load-plugins";
+import { spawn } from "child_process";
+import tildeImporter from "node-sass-tilde-importer";
+import postcss from "gulp-postcss";
+import uncss from "postcss-uncss";
+import fs from "fs";
 
-gulp.task("images", () =>
-	gulp
-		.src("./docs/images/**/*.*")
-		.pipe(
-			responsive(
-				{
-					"**/*.*": [
-						{
-							width: 32,
-							rename: { suffix: "@32" }
-						},
-						{
-							width: 300,
-							rename: { suffix: "@300" }
-						},
-						{
-							width: 600,
-							rename: { suffix: "@600" }
-						},
-						{
-							width: 900,
-							rename: { suffix: "@900" }
-						},
-						{
-							width: 1200,
-							rename: { suffix: "@1200" }
-						},
-						{
-							width: 1600,
-							rename: { suffix: "@1600" }
-						}
-					]
-				},
-				{
-					silent: false,
-					withoutEnlargement: true,
-					skipOnEnlargement: false,
-					errorOnEnlargement: false
-				}
-			)
-		)
-		.pipe(gulp.dest("./docs/images"))
-);
+const $ = gulpLoadPlugins();
+const browserSync = require("browser-sync").create();
+const isProduction = process.env.NODE_ENV === "production";
 
-gulp.task("compress", () =>
-	gulp
-		.src(["./docs/images/**/*.*"])
-		.pipe(imagemin([imagemin.gifsicle(), imagemin.optipng(), imagemin.svgo(), mozjpeg()]))
-		.pipe(gulp.dest("./docs/images"))
-);
+const onError = err => {
+	console.log(err);
+};
 
-gulp.task("minify", () => {
-	const opts = { comments: true, spare: true };
-	gulp
-		.src("./docs/**/*.html")
-		.pipe(minifyHTML(opts))
-		.pipe(gulp.dest("./docs/"));
+let suppressHugoErrors = false;
+
+// --
+
+gulp.task("server", ["build"], () => {
+	gulp.start("init-watch");
+	$.watch(
+		[
+			"archetypes/**/*",
+			"data/**/*",
+			"content/**/*",
+			"layouts/**/*",
+			"static/**/*",
+			"config.toml"
+		],
+		() => gulp.start("hugo")
+	);
 });
 
-gulp.task("default", () => {
-	runSequence("minify", function() {});
+gulp.task("server:with-drafts", ["build-preview"], () => {
+	gulp.start("init-watch");
+	$.watch(
+		[
+			"archetypes/**/*",
+			"data/**/*",
+			"content/**/*",
+			"layouts/**/*",
+			"static/**/*",
+			"config.toml"
+		],
+		() => gulp.start("hugo-preview")
+	);
+});
+
+gulp.task("init-watch", () => {
+	suppressHugoErrors = true;
+	browserSync.init({
+		server: {
+			baseDir: "public"
+		},
+		open: false
+	});
+	$.watch("src/sass/**/*.scss", () => gulp.start("sass"));
+	$.watch("src/js/**/*.js", () => gulp.start("js-watch"));
+	$.watch("src/images/**/*", () => gulp.start("images"));
+	$.watch("src/lambda/**/*", () => gulp.start("build-functions"));
+});
+
+gulp.task("build", () => {
+	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo");
+});
+
+gulp.task("build-preview", () => {
+	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo-preview");
+});
+
+gulp.task("build-functions", cb => {
+	fs.readdir("./src/lambda", (err, files) => {
+		if (err) {
+			cb(err);
+		}
+		if (!files.filter(file => file.endsWith(".js")).length) {
+			console.log("No Netlify functions.");
+			cb();
+			return;
+		}
+		return spawn("netlify-lambda", ["build", "src/lambda"], { stdio: "inherit" }).on(
+			"close",
+			code => {
+				if (code === 0) {
+					cb();
+				} else {
+					console.log("netlify-lambda failed.");
+					cb("netlify-lambda failed.");
+				}
+			}
+		);
+	});
+});
+
+gulp.task("hugo", cb => {
+	let baseUrl =
+		process.env.NODE_ENV === "production" ? process.env.URL : process.env.DEPLOY_PRIME_URL;
+	let args = baseUrl ? ["-b", baseUrl] : [];
+
+	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
+		if (suppressHugoErrors || code === 0) {
+			browserSync.reload();
+			cb();
+		} else {
+			console.log("hugo command failed.");
+			cb("hugo command failed.");
+		}
+	});
+});
+
+gulp.task("hugo-preview", cb => {
+	let args = ["--buildDrafts", "--buildFuture"];
+	if (process.env.DEPLOY_PRIME_URL) {
+		args.push("-b");
+		args.push(process.env.DEPLOY_PRIME_URL);
+	}
+	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
+		if (suppressHugoErrors || code === 0) {
+			browserSync.reload();
+			cb();
+		} else {
+			console.log("hugo command failed.");
+			cb("hugo command failed.");
+		}
+	});
+});
+
+// --
+
+gulp.task("sass", () => {
+	return gulp
+		.src(["src/sass/**/*.scss"])
+		.pipe($.plumber({ errorHandler: onError }))
+		.pipe($.print())
+		.pipe($.if(!isProduction, $.sassLint()))
+		.pipe($.if(!isProduction, $.sassLint.format()))
+		.pipe($.sass({ precision: 5, importer: tildeImporter }))
+		.pipe($.autoprefixer(["ie >= 8", "last 2 versions"]))
+		.pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
+		.pipe($.size({ gzip: true, showFiles: true }))
+		.pipe(gulp.dest("static/css"))
+		.pipe(browserSync.stream());
+});
+
+gulp.task("uncss", () => {
+	const plugins = [
+		uncss({
+			html: ["public/**/*.html"]
+		})
+	];
+	return gulp
+		.src(["public/css/*.css"])
+		.pipe(postcss(plugins))
+		.pipe(gulp.dest("public"));
+});
+
+gulp.task("js-watch", ["js"], cb => {
+	browserSync.reload();
+	cb();
+});
+
+gulp.task("js", () => {
+	return gulp
+		.src(["src/js/**/*.js"])
+		.pipe($.plumber({ errorHandler: onError }))
+		.pipe($.print())
+		.pipe($.babel())
+		.pipe($.concat("app.js"))
+		.pipe($.if(isProduction, $.uglify()))
+		.pipe($.size({ gzip: true, showFiles: true }))
+		.pipe(gulp.dest("static/js"));
+});
+
+gulp.task("fonts", () => {
+	return gulp.src("src/fonts/**/*.{woff,woff2}").pipe(gulp.dest("static/fonts"));
+});
+
+gulp.task("images", () => {
+	return gulp
+		.src("src/images/**/*.{png,jpg,jpeg,gif,svg,webp,ico}")
+		.pipe($.newer("static/images"))
+		.pipe($.print())
+		.pipe($.imagemin())
+		.pipe(gulp.dest("static/images"));
+});
+
+gulp.task("cms-delete", () => {
+	return del(["static/admin"], { dot: true });
+});
+
+gulp.task("pub-delete", () => {
+	return del(["public/**", "!public", "functions/**", "!functions"], {
+		// dryRun: true,
+		dot: true
+	}).then(paths => {
+		console.log(
+			"Files and folders deleted:\n",
+			paths.join("\n"),
+			"\nTotal Files Deleted: " + paths.length + "\n"
+		);
+	});
 });
