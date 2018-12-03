@@ -34,7 +34,7 @@ gulp.task("server", ["build"], () => {
 			"static/**/*",
 			"config.toml"
 		],
-		() => gulp.start("hugo-local")
+		() => gulp.start("hugo")
 	);
 });
 
@@ -102,22 +102,6 @@ gulp.task("build-functions", cb => {
 gulp.task("hugo", cb => {
 	let baseUrl =
 		process.env.NODE_ENV === "production" ? process.env.URL : process.env.DEPLOY_PRIME_URL;
-	let args = baseUrl ? ["-b", baseUrl] : [];
-
-	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
-		if (suppressHugoErrors || code === 0) {
-			browserSync.reload();
-			gulp.start("minify");
-			cb();
-		} else {
-			console.log("hugo command failed.");
-			cb("hugo command failed.");
-		}
-	});
-});
-
-gulp.task("hugo-local", cb => {
-	let baseUrl = "/";
 	let args = baseUrl ? ["-b", baseUrl] : [];
 
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {

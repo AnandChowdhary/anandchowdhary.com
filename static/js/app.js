@@ -1153,15 +1153,17 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 
 function initMe() {
-  alert("Hello!");
   var internal = location.host.replace("www.", "");
   internal = new RegExp(internal, "i");
+  var local = "anandchowdhary.com";
+  local = new RegExp(local, "i");
   var a = document.getElementsByTagName("a");
 
   for (var i = 0; i < a.length; i++) {
     var href = a[i].host;
 
-    if (!internal.test(href)) {
+    if (!internal.test(href) && !local.test(href)) {
+      if (location.hostname === "localhost") a[i].setAttribute("href", a[i].getAttribute("href").replace("https://anandchowdhary.com", ""));
       a[i].setAttribute("target", "_blank");
       a[i].setAttribute("aria-label", a[i].innerText + " (external link)");
       a[i].setAttribute("rel", "noopener noreferrer");
