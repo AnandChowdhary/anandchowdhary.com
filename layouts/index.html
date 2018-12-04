@@ -30,7 +30,7 @@
 									"></div>
 								{{ end }}
 								<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
-								<p>{{ .Params.intro }}</p>
+								{{ .Params.intro | markdownify }}
 							</a>
 					</article>
 					{{ end }}
