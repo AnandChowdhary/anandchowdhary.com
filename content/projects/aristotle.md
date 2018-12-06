@@ -9,6 +9,8 @@ client: Provincie Limburg
 bg: "#eee"
 style: padded
 image: /images/projects/aristotle/2.png
+img_src: /images/projects/aristotle/2
+img_type: png
 places: ["Heerlen"]
 venue: Brightlands Campus
 award: €12,500

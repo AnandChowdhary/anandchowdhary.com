@@ -1153,7 +1153,7 @@ a .inline-svg {
   width: 1px !important;
   overflow: hidden; }
 
-img.lazyload {
+.lazyload {
   width: 100%;
   -webkit-filter: blur(20px);
           filter: blur(20px);
