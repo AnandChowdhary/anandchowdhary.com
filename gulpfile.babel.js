@@ -143,7 +143,7 @@ gulp.task("sass", () => {
 		.pipe($.plumber({ errorHandler: onError }))
 		.pipe($.print())
 		.pipe($.if(!isProduction, $.sassLint()))
-		.pipe($.if(!isProduction, $.sassLint.format()))
+		// .pipe($.if(!isProduction, $.sassLint.format()))
 		.pipe($.sass({ precision: 5, importer: tildeImporter }))
 		.pipe($.autoprefixer(["ie >= 8", "last 2 versions"]))
 		.pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
