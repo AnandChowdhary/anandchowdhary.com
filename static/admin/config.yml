@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: repo
+  repo: AnandChowdhary/anandchowdhary.com
   branch: master
   
 media_folder: "static/uploads"
