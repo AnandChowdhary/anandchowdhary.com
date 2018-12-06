@@ -216,6 +216,7 @@ footer#colophon {
       margin-bottom: 2rem; }
   .project-icon, h3 img, h4 img, h2 img {
     height: 55px;
+    width: auto !important;
     margin-right: 20px;
     float: left; }
   h3 img, h4 img, h2 img {
@@ -331,6 +332,7 @@ h1.intro + p.lead {
     float: right; }
   .project-icon {
     width: 78px;
+    width: auto !important;
     margin-right: 25px;
     margin-left: -105px;
     float: left; }
