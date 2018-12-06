@@ -201,6 +201,22 @@ gulp.task("images-responsive", () => {
 				{
 					width: 24,
 					rename: { suffix: "@loading" }
+				},
+				{
+					width: 300,
+					rename: { suffix: "@300" }
+				},
+				{
+					width: 600,
+					rename: { suffix: "@600" }
+				},
+				{
+					width: 900,
+					rename: { suffix: "@900" }
+				},
+				{
+					width: 1200,
+					rename: { suffix: "@1200" }
 				}
 			]
 		}, {
