@@ -19,9 +19,9 @@ On a Thursday/Friday in November 2018, my team and I built and presented CLShare
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/cls-innovation)
 
 <div class="three-images">
-	<div><img alt="" src="/images/projects/clshare/1.png"></div>
-	<div><img alt="" src="/images/projects/clshare/2.png"></div>
-	<div><img alt="" src="/images/projects/clshare/3.png"></div>
+	{{< img src="/images/projects/clshare/1" type="png" >}}
+	{{< img src="/images/projects/clshare/2" type="png" >}}
+	{{< img src="/images/projects/clshare/3" type="png" >}}
 </div>
 
 The product was a progressive web app built using Vue/Nuxt.js powered by Firebase. Employers and HR staff could visualize emotions of their employees' conversations using sentimental analysis (without sharing the contents of said chats) and also receive anonymous feedback.
@@ -29,14 +29,14 @@ The product was a progressive web app built using Vue/Nuxt.js powered by Firebas
 The app also included Oswald Labs' accessibility features to make it more usable for users with dyslexia, visual impairment, and more disabilities, along with Ara's AI-powered meeting scheduling features.
 
 <div class="three-images" style="padding-top: 2rem">
-	<div><img alt="" src="/images/projects/clshare/4.png"></div>
-	<div><img alt="" src="/images/projects/clshare/5.png"></div>
-	<div><img alt="" src="/images/projects/clshare/6.png"></div>
+	{{< img src="/images/projects/clshare/4" type="png" >}}
+	{{< img src="/images/projects/clshare/5" type="png" >}}
+	{{< img src="/images/projects/clshare/6" type="png" >}}
 </div>
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/clshare/IMG_1169.jpg"></div>
-	<div><img alt="" src="/images/projects/clshare/IMG_1195.jpg"></div>
+	{{< img src="/images/projects/clshare/IMG_1169" type="jpg" caption="Initial pitch" >}}
+	{{< img src="/images/projects/clshare/IMG_1195" type="jpg" caption="Award ceremony" >}}
 </div>
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR9P4UnwfCiXlVVZRZSDyHX0c4mLeTx7d26iSD8yJ0BQmZU0Z4yPUKQPr5M6PcmEAKAY350yWEaC-w6/embed?start=false&loop=true&delayms=3000" frameborder="0" width="1440" height="650" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

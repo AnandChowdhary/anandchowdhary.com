@@ -1,8 +1,11 @@
-<picture class="image">
-	<img
-		src="{{ .Get "src" }}@loading.{{ .Get "type" }}"
-		data-src="{{ .Get "src" }}.{{ .Get "type" }}"
-		class="lazyload"
-		alt="{{ .Get "alt" }}"
-	>
-</picture>
+<figure>
+	<picture class="image">
+		<img
+			src="{{ .Get "src" }}@loading.{{ .Get "type" }}"
+			data-src="{{ .Get "src" }}.{{ .Get "type" }}"
+			class="lazyload"
+			alt="{{ .Get "alt" }}"
+		>
+	</picture>
+	{{ if .Get "caption" }}<figcaption>{{ .Get "caption" }}</figcaption>{{ end }}
+</figure>

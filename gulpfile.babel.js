@@ -101,7 +101,8 @@ gulp.task("build-functions", cb => {
 });
 
 gulp.task("hugo", cb => {
-	let baseUrl = "https://anandchowdhary.com";
+	let baseUrl =
+		process.env.NODE_ENV === "production" ? "https://anandchowdhary.com" : "/";
 	let args = baseUrl ? ["-b", baseUrl] : [];
 
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
@@ -118,9 +119,9 @@ gulp.task("hugo", cb => {
 
 gulp.task("hugo-preview", cb => {
 	let args = ["--buildDrafts", "--buildFuture"];
-	if (process.env.DEPLOY_PRIME_URL) {
+	if ("/") {
 		args.push("-b");
-		args.push(process.env.DEPLOY_PRIME_URL);
+		args.push("/");
 	}
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
 		if (suppressHugoErrors || code === 0) {
