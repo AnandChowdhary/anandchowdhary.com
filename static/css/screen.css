@@ -488,7 +488,48 @@ footer {
 .image {
   margin-top: 2rem;
   display: block;
-  text-align: center; }
+  position: relative;
+  text-align: center;
+  overflow: hidden; }
+  .image .real-image {
+    position: absolute;
+    left: 0;
+    top: 0; }
+    .image .real-image.is-padded {
+      width: 90%;
+      left: 5%;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .image .real-image.is-full-width {
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      -o-object-fit: cover;
+         object-fit: cover;
+      height: 100%;
+      width: 100%; }
+    .image .real-image.is-centered-height {
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      -o-object-fit: cover;
+         object-fit: cover;
+      height: 100%; }
+    .image .real-image.is-centered-width {
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      -o-object-fit: cover;
+         object-fit: cover;
+      width: 100%; }
   .image + p {
     margin-top: 4rem; }
   .image + footer {

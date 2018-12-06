@@ -6,6 +6,7 @@ date: 2014-04-21
 icon: /images/projects/mwlii/icon.png
 work: ["Web", "Branding"]
 bg: "#f10032"
+style: padded
 img_src: /images/portfolio/made-with-love-in-india_2x
 img_type: png
 ---

@@ -81,7 +81,7 @@ function initMe() {
     }
   }
 
-  mediumZoom(document.querySelectorAll(".two-images img, .three-images img, .image img")); // var items = document.querySelectorAll(".elements article");
+  mediumZoom(document.querySelectorAll(".two-images img, .three-images img, .image img:not(.real-image)")); // var items = document.querySelectorAll(".elements article");
   // var buttons = document.querySelectorAll("[data-filter]");
   // for (var i = 0; i < buttons.length; i++) {
   // 	buttons[i].addEventListener("click", function() {

@@ -582,7 +582,42 @@ footer {
 .image {
 	margin-top: 2rem;
 	display: block;
+	position: relative;
 	text-align: center;
+	overflow: hidden;
+	.real-image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		&.is-padded {
+			width: 90%;
+			left: 5%;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&.is-full-width {
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+		&.is-centered-height {
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+			height: 100%;
+		}
+		&.is-centered-width {
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+			width: 100%;
+		}
+	}
 	+ p {
 		margin-top: 4rem;
 	}

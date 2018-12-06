@@ -7,6 +7,7 @@ work: ["Branding", "Web"]
 icon: /images/projects/justice-adda/icon.png
 bg: "#e4e4e4"
 client: Justice Adda
+style: padded
 timeline: 14 months
 img_src: /images/portfolio/justice-adda_2x
 img_type: png

@@ -6,6 +6,7 @@ work: ["Web"]
 bg: "#d7eed0"
 client: Unifiers
 timeline: 2 months
+style: padded
 img_src: /images/portfolio/unifiers_2x
 img_type: png
 ---

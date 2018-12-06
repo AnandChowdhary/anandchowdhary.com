@@ -7,6 +7,7 @@ icon: /images/projects/sixteeninches/icon.png
 bg: "#f30f40"
 work: ["App", "Branding", "Web"]
 timeline: 2 weeks
+style: padded
 client: SixteenInches
 img_src: /images/portfolio/sixteeninches_2x
 img_type: png

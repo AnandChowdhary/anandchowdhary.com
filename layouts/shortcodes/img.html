@@ -2,7 +2,9 @@
 	<picture class="image">
 		<img
 			src="{{ .Get "src" }}@loading.{{ .Get "type" }}"
+			data-sizes="auto"
 			data-src="{{ .Get "src" }}.{{ .Get "type" }}"
+			data-srcset="{{ .Get "src" }}@300.{{ .Get "type" }} 300w, {{ .Get "src" }}@600.{{ .Get "type" }} 600w, {{ .Get "src" }}@900.{{ .Get "type" }} 900w, {{ .Get "src" }}@1200.{{ .Get "type" }} 1200w"
 			class="lazyload"
 			alt="{{ .Get "alt" }}"
 		>

@@ -5,6 +5,7 @@ intro: Redesigned brand identity of Internet.org for an event in five hours. Mad
 date: 2013-10-11
 work: ["Branding", "Web"]
 bg: "#ef5c46"
+style: padded
 img_src: /images/portfolio/internet.org_2x
 img_type: png
 ---

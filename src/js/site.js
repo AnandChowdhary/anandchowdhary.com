@@ -63,7 +63,7 @@ function initMe() {
 			links[0].classList.add("selected");
 		}
 	}
-	mediumZoom(document.querySelectorAll(".two-images img, .three-images img, .image img"));
+	mediumZoom(document.querySelectorAll(".two-images img, .three-images img, .image img:not(.real-image)"));
 	// var items = document.querySelectorAll(".elements article");
 	// var buttons = document.querySelectorAll("[data-filter]");
 	// for (var i = 0; i < buttons.length; i++) {
