@@ -24,7 +24,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "array" }
+      - { label: "Tags", name: "tags", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "open-source"
     label: "Open source"
@@ -35,5 +35,5 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Icon", name: "icon", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "array" }
+      - { label: "Tags", name: "tags", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
