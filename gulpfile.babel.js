@@ -10,6 +10,7 @@ import tildeImporter from "node-sass-tilde-importer";
 import postcss from "gulp-postcss";
 import uncss from "postcss-uncss";
 import fs from "fs";
+import webp from "gulp-webp";
 import responsive from "gulp-responsive";
 
 const $ = gulpLoadPlugins();
@@ -193,7 +194,14 @@ gulp.task("minify", () => {
 		.pipe(gulp.dest("./docs/"));
 });
 
-gulp.task("images-responsive", () => {
+gulp.task("images-webp", () => {
+	return gulp
+		.src("./docs/images/**/*.*")
+		.pipe(webp())
+		.pipe(gulp.dest("docs/images"));
+});
+
+gulp.task("images-responsive", ["images-webp"], () => {
 	return gulp
 		.src("./docs/images/**/*.*")
 		.pipe(responsive({

@@ -1506,7 +1506,7 @@ bin-version@^1.0.0:
   dependencies:
     find-versions "^1.0.0"
 
-bin-wrapper@^3.0.0:
+bin-wrapper@^3.0.0, bin-wrapper@^3.0.1:
   version "3.0.2"
   resolved "http://registry.npmjs.org/bin-wrapper/-/bin-wrapper-3.0.2.tgz#67d3306262e4b1a5f2f88ee23464f6a655677aeb"
   dependencies:
@@ -2474,6 +2474,14 @@ currently-unhandled@^0.4.1:
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
   dependencies:
     array-find-index "^1.0.1"
+
+cwebp-bin@^3.1.0:
+  version "3.2.0"
+  resolved "http://registry.npmjs.org/cwebp-bin/-/cwebp-bin-3.2.0.tgz#ae02df453d8c15341b1d8d499a5226bcf3bf4a6f"
+  dependencies:
+    bin-build "^2.0.0"
+    bin-wrapper "^3.0.1"
+    logalot "^2.0.0"
 
 d@1:
   version "1.0.0"
@@ -4255,6 +4263,14 @@ gulp-watch@^4.3.11:
     vinyl "^1.2.0"
     vinyl-file "^2.0.0"
 
+gulp-webp@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-webp/-/gulp-webp-3.0.0.tgz#6def3e5e4da369af57adb76df6c696d86339da13"
+  dependencies:
+    imagemin-webp "^3.0.1"
+    modify-error-event "^1.0.0"
+    plugin-error "^0.1.2"
+
 gulp@^3.9.1:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-3.9.1.tgz#571ce45928dd40af6514fc4011866016c13845b4"
@@ -4525,6 +4541,15 @@ imagemin-svgo@^6.0.0:
     is-svg "^2.0.0"
     svgo "^1.0.0"
 
+imagemin-webp@^3.0.1:
+  version "3.1.1"
+  resolved "http://registry.npmjs.org/imagemin-webp/-/imagemin-webp-3.1.1.tgz#6b7a5fe06f0c786b9ac5754036c060c09f997ad7"
+  dependencies:
+    cwebp-bin "^3.1.0"
+    is-cwebp-readable "^1.0.0"
+    replace-ext "^0.0.1"
+    through2 "^2.0.0"
+
 imagemin@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-5.3.1.tgz#f19c2eee1e71ba6c6558c515f9fc96680189a6d4"
@@ -4705,6 +4730,12 @@ is-bzip2@^1.0.0:
 is-callable@^1.1.3, is-callable@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.4.tgz#1e1adf219e1eeb684d691f9d6a05ff0d30a24d75"
+
+is-cwebp-readable@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-cwebp-readable/-/is-cwebp-readable-1.0.3.tgz#9a8fde2bed77f3417ae9371258c58e2ec3285118"
+  dependencies:
+    file-type "^3.1.0"
 
 is-data-descriptor@^0.1.4:
   version "0.1.4"
@@ -5780,6 +5811,16 @@ mixin-deep@^1.2.0:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+modify-error-event@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/modify-error-event/-/modify-error-event-1.0.0.tgz#3677c76a77164b9d81502180d5f5f9db262f1c7e"
+  dependencies:
+    modify-event "^1.0.0"
+
+modify-event@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/modify-event/-/modify-event-1.0.1.tgz#ea1314e13ff6e79389f20ad74192f621de658ad6"
 
 ms@2.0.0:
   version "2.0.0"
@@ -7207,7 +7248,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-replace-ext@0.0.1:
+replace-ext@0.0.1, replace-ext@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 

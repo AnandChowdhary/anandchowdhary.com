@@ -1195,3 +1195,9 @@ a .inline-svg {
 	filter: blur(20px);
 	transform: scale(0.9);
 }
+
+.no-js {
+	.lazyload, .lazyloading, .lazyloaded {
+		display: none !important;
+	}
+}

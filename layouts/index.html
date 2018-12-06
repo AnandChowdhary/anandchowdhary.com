@@ -20,6 +20,7 @@
 											class="real-image is-padded lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
+										<noscript><img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
 									</div>
 									{{ else if eq .Params.style "width" }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
@@ -31,6 +32,7 @@
 											class="real-image is-centered-width lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
+										<noscript><img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
 									</div>
 									{{ else }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
@@ -42,6 +44,7 @@
 											class="real-image is-full-width lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
+										<noscript><img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
 									</div>
 									{{ end }}
 								{{ else }}
@@ -54,12 +57,13 @@
 											class="real-image is-centered-height lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
+										<noscript><img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
 									</div>
 								{{ end }}
 								<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
 								{{ .Params.intro | markdownify }}
 							</a>
-					</article>
+						</article>
 					{{ end }}
 				</div>
 			</div>

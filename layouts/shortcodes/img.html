@@ -8,6 +8,9 @@
 			class="lazyload"
 			alt="{{ .Get "alt" }}"
 		>
+		<noscript>
+			<img alt="{{ .Get "alt" }}" src="{{ .Get "src" }}.{{ .Get "type" }}">
+		</noscript>
 	</picture>
 	{{ if .Get "caption" }}<figcaption>{{ .Get "caption" }}</figcaption>{{ end }}
 </figure>

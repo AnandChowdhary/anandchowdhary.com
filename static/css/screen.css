@@ -1201,3 +1201,6 @@ a .inline-svg {
   -webkit-transform: scale(0.9);
       -ms-transform: scale(0.9);
           transform: scale(0.9); }
+
+.no-js .lazyload, .no-js .lazyloading, .no-js .lazyloaded {
+  display: none !important; }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="no-js">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -100,6 +100,7 @@
 			{{ end }}
 			</script>
 		{{ end }}
+		<script>document.documentElement.classList.remove("no-js")</script>
 	</head>
 	<body>
 		<header id="masthead">
