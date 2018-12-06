@@ -3,8 +3,8 @@ backend:
   repo: AnandChowdhary/anandchowdhary.com
   branch: master
   
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "static/images"
+public_folder: "/images"
 collections:
   
   - name: "page"
