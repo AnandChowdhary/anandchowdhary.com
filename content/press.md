@@ -6,11 +6,11 @@ type: listicle
 
 ## Honors
 
-![](https://logo.clearbit.com/thenextweb.com) [The Next Web T500](https://thenextweb.com/conference/t500) / 2018
-
 ![](https://logo.clearbit.com/forbes.com) [Forbes 30 Under 30 Asia](https://www.forbes.com/profile/oswald-labs/) / 2018
 
 ![](https://logo.clearbit.com/fd.nl) [FD Persoonlijk 50 Under 35](https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst) / 2018
+
+![](https://logo.clearbit.com/thenextweb.com) [The Next Web T500](https://thenextweb.com/conference/t500) / 2018
 
 ## Interviews
 
@@ -38,7 +38,7 @@ type: listicle
 
 ![](https://logo.clearbit.com/youthkiawaaz.com) [Humans of Entrepreneurship](https://web.archive.org/web/20170728120913/http://humansofentrepreneurship.com/anand-chaudhary-necessity-leading-innovation/) / 2016
 
-![](https://logo.clearbit.com/theeducationtree.com) [The Education Tree](https://www.facebook.com/theeducationtree/photos/a.997200647003369.1073741866.427682870621819/1011451428911624/?type=3) / 2015
+![](https://logo.clearbit.com/facebook.com) [The Education Tree](https://www.facebook.com/theeducationtree/photos/a.997200647003369.1073741866.427682870621819/1011451428911624/?type=3) / 2015
 
 ![](https://logo.clearbit.com/timeout.com) [Time Out](https://www.facebook.com/minet.mis/posts/296968877045371) / 2012
 
