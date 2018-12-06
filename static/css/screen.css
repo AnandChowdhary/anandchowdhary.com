@@ -68,7 +68,7 @@ article a[target="_blank"]:not([data-balloon]):hover::after {
   opacity: 0.6; }
 
 a {
-  color: #2979ff; }
+  color: #1e6cef; }
   a:hover {
     color: #2962ff; }
 
@@ -451,7 +451,7 @@ ul.filter {
         color: #000;
         outline: none; }
       ul.filter li button.selected, ul.filter li a.selected {
-        background-color: #1abc9c !important;
+        background-color: #0e7d68 !important;
         color: #fff !important; }
     ul.filter li:last-of-type {
       margin-right: 0; }
@@ -1152,20 +1152,22 @@ ul.pagination {
       opacity: 0.3; }
     ul.pagination li.active a {
       cursor: default;
-      color: inherit;
-      opacity: 0.3; }
+      color: #555;
+      background-color: #eee; }
     ul.pagination li a {
-      background-color: whitesmoke;
+      border: 0.25rem solid #eee;
       width: 3rem;
       height: 3rem;
       text-align: center;
-      line-height: 3rem;
+      line-height: 2.5rem;
       display: block;
       border-radius: 100%; }
       ul.pagination li a:hover, ul.pagination li a:focus, ul.pagination li a:active {
         background-color: #ddd; }
     ul.pagination li [aria-label="Next"] {
-      background-color: #2979ff;
+      background-color: #1e6cef;
+      border: none;
+      line-height: 3rem;
       color: #fff !important; }
       ul.pagination li [aria-label="Next"]:hover, ul.pagination li [aria-label="Next"]:focus, ul.pagination li [aria-label="Next"]:active {
         background-color: #0e84b5; }
