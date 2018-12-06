@@ -134,7 +134,7 @@
 					</div>
 				</div>
 			{{ else if not .Date.IsZero }}
-				<div class="meta"><span>Posted on </span><time itemprop="dateCreated">{{ .Date.Format "January 2, 2006" }}</time></div>
+				<div class="meta"><span>Posted on&nbsp;</span><a href="{{ .Permalink }}"><time itemprop="dateCreated">{{ .Date.Format "January 2, 2006" }}</time></a></div>
 			{{ end }}
 			{{ partial "intro.html" . }}
 			<div itemprop="articleBody">

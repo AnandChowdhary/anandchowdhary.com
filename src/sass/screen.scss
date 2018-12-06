@@ -681,6 +681,9 @@ main {
 	.meta {
 		margin-bottom: 2rem;
 		color: #595959;
+		a {
+			color: inherit;
+		}
 	}
 	.article-list .meta {
 		margin-bottom: 1rem;

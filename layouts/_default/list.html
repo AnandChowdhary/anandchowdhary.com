@@ -119,7 +119,7 @@
 						</div>
 					</div>
 				{{ else if not .Date.IsZero }}
-					<div class="meta"><span>Posted on </span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+					<div class="meta"><span>Posted on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
 				{{ end }}
 				<div class="content">
 					<p>{{ .Summary | plainify | safeHTML }}</p>

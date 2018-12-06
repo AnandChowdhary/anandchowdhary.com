@@ -554,6 +554,8 @@ main .meta, main .article-title, main p, main footer, main h2, main h3, main h4,
 main .meta {
   margin-bottom: 2rem;
   color: #595959; }
+  main .meta a {
+    color: inherit; }
 
 main .article-list .meta {
   margin-bottom: 1rem; }
