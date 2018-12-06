@@ -18,13 +18,15 @@ I went back to my alma mater, The Mother's International School, as the keynote 
 Photos (c) [Sai Raunaq Gosain](https://instagram.com/vellaindian).
 
 <div class="two-images">
-	<div><img alt="" src="/images/events/minet-x-2018/IMG_8006.jpg"></div>
-	<div><img alt="" src="/images/events/minet-x-2018/IMG_7988.jpg"></div>
+	{{< img src="/images/events/minet-x-2018/IMG_8006" type="jpg" >}}
+	{{< img src="/images/events/minet-x-2018/IMG_7988" type="jpg" >}}
 </div>
 <div class="two-images">
 	<div>
-		<img alt="" src="/images/events/minet-x-2018/IMG_8045.jpg" style="margin-bottom: 1rem">
-		<img alt="" src="/images/events/minet-x-2018/IMG_7997.jpg">
+		{{< img src="/images/events/minet-x-2018/IMG_8045" type="jpg" >}}
+		{{< img src="/images/events/minet-x-2018/IMG_7997" type="jpg" >}}
 	</div>
-	<div><img alt="" src="/images/events/minet-x-2018/IMG_7995.jpg"></div>
+	<div>
+		{{< img src="/images/events/minet-x-2018/IMG_7995" type="jpg" >}}
+	</div>
 </div>

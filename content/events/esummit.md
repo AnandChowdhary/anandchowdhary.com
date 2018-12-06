@@ -20,11 +20,11 @@ eSummit was organized by the entrepreneurship cell of Indian Institute of Techno
 Photos (c) E-Cell, IIT Kanpur
 
 <div class="two-images">
-	<div><img alt="" src="/images/events/esummit/1.jpg"></div>
-	<div><img alt="" src="/images/events/esummit/2.jpg"></div>
+	{{< img src="/images/events/esummit/1" type="jpg" >}}
+	{{< img src="/images/events/esummit/2" type="jpg" >}}
 </div>
 
 <div class="two-images">
-	<div><img alt="" src="/images/events/esummit/3.jpg"></div>
-	<div><img alt="" src="/images/events/esummit/4.jpg"></div>
+	{{< img src="/images/events/esummit/3" type="jpg" >}}
+	{{< img src="/images/events/esummit/4" type="jpg" >}}
 </div>

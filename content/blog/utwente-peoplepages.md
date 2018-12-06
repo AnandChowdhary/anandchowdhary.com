@@ -89,6 +89,6 @@ I now have the phone numbers, email addresses, and office addresses of all my pr
 
 The simple way to prevent this is to have secured API endpoints. There are many ways to do that — token-based authentication for each user with rate limiting, or even CORS prevention.
 
-![Screenshot of Google Search results for "secure api endpoints"](/images/blog/secure-endpoints_ddwwmr.png)
+{{< img alt="Screenshot of Google Search results for 'secure api endpoints'" src="/images/blog/secure-endpoints_ddwwmr" type="png" >}}
 
 **Update May 2018:** Since then, the university has updated their endpoints. You cannot access them by barebones HTTP now. The new endpoints also seem to have some form of CORS protection.

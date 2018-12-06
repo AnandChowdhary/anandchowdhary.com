@@ -13,9 +13,9 @@ Precis is a free and open-source URL shortener which uses PHP and MySQL. It has 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/precis)
 
 <div class="two-images">
-	<div><img alt="" src="/images/open-source/precis1.png"></div>
-	<div><img alt="" src="/images/open-source/precis2.png"></div>
+	{{< img src="/images/open-source/precis1" type="png" >}}
+	{{< img src="/images/open-source/precis2" type="png" >}}
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/open-source/precis3.png"></div>
+	{{< img src="/images/open-source/precis3" type="png" >}}
 </div>

@@ -1,0 +1,10 @@
+<h3 id="{{ .Get "text" | urlize }}">
+	<img
+		src="{{ .Get "src" }}.{{ .Get "type" }}"
+		alt="{{ .Get "alt" }}"
+	>
+	<noscript>
+		<img alt="{{ .Get "alt" }}" src="{{ .Get "src" }}.{{ .Get "type" }}">
+	</noscript>
+	{{ if .Get "text" }}<span>{{ .Get "text" }}</span>{{ end }}
+</h3>

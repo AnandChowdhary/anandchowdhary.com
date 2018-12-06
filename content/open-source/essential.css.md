@@ -21,8 +21,8 @@ The usage is very simple, you just have to include this link to your webpage:
 This is what a page looks like with essential.css:
 
 <div class="two-images">
-	<div><img alt="" src="/images/open-source/essential1.png"></div>
-	<div><img alt="" src="/images/open-source/essential2.png"></div>
+	{{< img src="/images/open-source/essential1" type="png" >}}
+	{{< img src="/images/open-source/essential2" type="png" >}}
 </div>
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/essential.css)

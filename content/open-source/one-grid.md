@@ -43,6 +43,6 @@ That's the idea behind One, a grid system I designed this evening. It's an idea 
 3. It's responsive.
 4. It's just 1 KB.
 
-![One Grid screenshot](/images/open-source/one-grid.jpg)
-
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/one-grid)
+
+{{< img alt="One Grid screenshot" src="/images/open-source/one-grid" type="jpg" >}}

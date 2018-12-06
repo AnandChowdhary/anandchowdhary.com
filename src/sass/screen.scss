@@ -262,7 +262,7 @@ footer#colophon {
 			margin-bottom: 2rem;
 		}
 	}
-	.project-icon, h3 img, h4 img, h2 img {
+	.project-icon, h3 img, h4 img, h2 img, h3 img.lazyload {
 		height: 55px;
 		width: auto !important;
 		margin-right: 20px;
@@ -411,7 +411,7 @@ h1.intro + p.lead {
 	}
 	h3, h3, h4 {
 		img {
-			margin-top: 10px;
+			margin-top: 5px;
 		}
 	}
 	.events.list .project-icon {

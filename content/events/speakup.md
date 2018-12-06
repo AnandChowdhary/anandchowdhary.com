@@ -16,11 +16,11 @@ In September 2018, SpeakUp, an Enschede-based VoIP and cloud telephony company, 
 Photos © Masterphoto/SpeakUp
 
 <div class="two-images">
-	<div><img alt="" src="/images/events/speakup/5baa7959cb226_MASTERPHOTO_NL-20-09-18_042.jpg"></div>
-	<div><img alt="" src="/images/events/speakup/5baa79763d49f_MASTERPHOTO_NL-20-09-18_102.jpg"></div>
+	{{< img src="/images/events/speakup/5baa7959cb226_MASTERPHOTO_NL-20-09-18_042" type="jpg" >}}
+	{{< img src="/images/events/speakup/5baa79763d49f_MASTERPHOTO_NL-20-09-18_102" type="jpg" >}}
 </div>
 
 <div class="two-images">
-	<div><img alt="" src="/images/events/speakup/5baa797ed3317_MASTERPHOTO_NL-20-09-18_121.jpg"></div>
-	<div><img alt="" src="/images/events/speakup/5baa795ec8ec7_MASTERPHOTO_NL-20-09-18_053.jpg"></div>
+	{{< img src="/images/events/speakup/5baa797ed3317_MASTERPHOTO_NL-20-09-18_121" type="jpg" >}}
+	{{< img src="/images/events/speakup/5baa795ec8ec7_MASTERPHOTO_NL-20-09-18_053" type="jpg" >}}
 </div>
