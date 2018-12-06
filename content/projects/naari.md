@@ -8,7 +8,8 @@ work: ["App", "Artificial Intelligence"]
 bg: "#217ed0"
 timeline: 24 hours
 client: P&G
-image: /images/portfolio/naari_2x.png
+img_src: /images/portfolio/naari_2x
+img_type: png
 ---
 
 Naari (meaning *woman* in Hindi) is the end-to-end period healthcare companion---from giving you personalized tampon recommendations using P&G's survey data and HPE's machine learning APIs---to getting those products delivered to your doorstep via Amazon.

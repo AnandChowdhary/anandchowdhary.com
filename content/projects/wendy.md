@@ -6,7 +6,8 @@ icon: /images/projects/wendy/icon.png
 timeline: 24 hours
 work: ["App", "Artificial Intelligence", "Internet of Things"]
 style: cover
-image: /images/portfolio/wendy_2x.png
+img_src: /images/portfolio/wendy_2x
+img_type: png
 ---
 
 On a weekend in March 2018, I build Wendy, a smartphone-based home security system with real-time face detection and a chatbot interface. Instead of a €200 Nest device, Wendy uses a €30 smartphone mounted as a doorbell.

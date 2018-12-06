@@ -7,7 +7,6 @@ timeline: 36 hours
 work: ["App", "Artificial Intelligence"]
 style: cover
 client: CLS Group
-image: /images/projects/clshare/cover.png
 img_src: /images/projects/clshare/cover
 img_type: png
 places: ["London"]

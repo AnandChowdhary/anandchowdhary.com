@@ -6,7 +6,8 @@ date: 2018-01-23
 work: ["Internet of Things", "Hardware"]
 style: cover
 timeline: 2 months
-image: /images/portfolio/blueboard_2x.png
+img_src: /images/portfolio/blueboard_2x
+img_type: png
 ---
 
 BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.

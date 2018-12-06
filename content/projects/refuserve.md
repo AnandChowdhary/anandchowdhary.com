@@ -8,7 +8,8 @@ client: Trivago
 timeline: 24 hours
 work: ["App", "Artificial Intelligence"]
 bg: "#0097a8"
-image: /images/portfolio/refuserve_2x.png
+img_src: /images/portfolio/refuserve_2x
+img_type: png
 ---
 
 In November 2017, I worked with Trivago in Düsseldorf on building an app to help refugees find jobs in Europe. RefuServe is a chatbot app that helps you develop your skills by recommending videos and translating them in your native language, along with automatically generating resumes for you in multiple languages. No matter where you're from, RefuServe will help you find a job in Europe.

@@ -7,7 +7,8 @@ work: ["Web"]
 bg: "#009cff"
 timeline: 6 weeks
 client: Drill Maps, Inc.
-image: /images/portfolio/drillmaps_2x.png
+img_src: /images/portfolio/drillmaps_2x
+img_type: png
 ---
 
 In February and March 2018, I worked with DrillMaps, a horizontal directional drilling startup based in Seattle, WA. I designed and developed their new website, along with coherent icons for their products.

@@ -8,7 +8,8 @@ bg: "#f30f40"
 work: ["App", "Branding", "Web"]
 timeline: 2 weeks
 client: SixteenInches
-image: /images/portfolio/sixteeninches_2x.png
+img_src: /images/portfolio/sixteeninches_2x
+img_type: png
 ---
 
 SixteenInches.com is one of the fastest-growing online supplements store. It was built on a foundation of authenticity and quality-control, both of which currently lack the healthcare industry. I was hired to design the SixteenInches' brand identity, including logo and social media design, and a responsive ecommerce website on the WordPress platform using Woocommerce, to convey their mission.

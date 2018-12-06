@@ -7,7 +7,8 @@ work: ["Internet of Things", "Hardware"]
 client: IBM Netherlands
 timeline: 2 months
 style: cover
-image: /images/portfolio/ibm-iot-escape-room_2x.png
+img_src: /images/portfolio/ibm-iot-escape-room_2x
+img_type: png
 ---
 
 From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.

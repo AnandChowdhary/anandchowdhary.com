@@ -15,7 +15,11 @@
 		{{ .Hugo.Generator }}
 		<link rel="preconnect" href="https://www.google-analytics.com">
 		<link rel="preconnect" href="https://anandchowdhary.com">
-		{{ if .Params.image }}
+		{{ if .Params.img_src }}
+		<meta itemprop="image" content="{{ .Params.img_src }}.{{ .Params.img_type }}">
+		<meta property="og:image" content="{{ .Params.img_src }}.{{ .Params.img_type }}">
+		<meta name="twitter:image" content="{{ .Params.img_src }}.{{ .Params.img_type }}">
+		{{ else if .Params.image }}
 		<meta itemprop="image" content="{{ .Params.image }}">
 		<meta property="og:image" content="{{ .Params.image }}">
 		<meta name="twitter:image" content="{{ .Params.image }}">

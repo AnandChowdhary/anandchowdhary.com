@@ -6,7 +6,8 @@ date: 2016-01-24
 bg: "#8d9ba6"
 work: ["App"]
 timeline: 4 days
-image: /images/portfolio/keeep_2x.png
+img_src: /images/portfolio/keeep_2x
+img_type: png
 ---
 
 For my highschool Computer Science project, I built an encryption engine and password manager in C/C++. I wrote a pseudo-encryption algorithm with string manipulation, rotation, and encoding.

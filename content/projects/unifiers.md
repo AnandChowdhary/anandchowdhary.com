@@ -6,7 +6,8 @@ work: ["Web"]
 bg: "#d7eed0"
 client: Unifiers
 timeline: 2 months
-image: /images/portfolio/unifiers_2x.png
+img_src: /images/portfolio/unifiers_2x
+img_type: png
 ---
 
 For 3 years, I worked part-time as a consultant to Unifiers Social Ventures Pvt. Ltd., a leading social infrastructure company, and worked on a variety of projects.

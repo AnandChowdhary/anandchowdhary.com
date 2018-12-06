@@ -7,7 +7,8 @@ work: ["App"]
 bg: "#00a48d"
 timeline: 6 weeks
 client: GNCTD
-image: /images/portfolio/delhi-government_2x.png
+img_src: /images/portfolio/delhi-government_2x
+img_type: png
 ---
 
 In April and May, 2016, I worked with a small team at the Government of Delhi's Directorate of Education to try and streamline the process of communication between state schools and the Directorate. Today, if a school principal has a problem, she has to report a grievance, wait for a response, get redirected to the correct department, find someone, address the problem, and it keeps going on and on. We redesigned this process from group up for efficient, two-way communication.
