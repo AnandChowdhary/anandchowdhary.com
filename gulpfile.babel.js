@@ -58,7 +58,7 @@ gulp.task("init-watch", () => {
 	suppressHugoErrors = true;
 	browserSync.init({
 		server: {
-			baseDir: "docs"
+			baseDir: "dist"
 		},
 		open: false
 	});
@@ -155,13 +155,13 @@ gulp.task("sass", () => {
 gulp.task("uncss", () => {
 	const plugins = [
 		uncss({
-			html: ["docs/**/*.html"]
+			html: ["dist/**/*.html"]
 		})
 	];
 	return gulp
-		.src(["docs/css/*.css"])
+		.src(["dist/css/*.css"])
 		.pipe(postcss(plugins))
-		.pipe(gulp.dest("docs"));
+		.pipe(gulp.dest("dist"));
 });
 
 gulp.task("js-watch", ["js"], cb => {
@@ -188,14 +188,14 @@ gulp.task("fonts", () => {
 gulp.task("minify", () => {
 	const opts = { comments: true, spare: true };
 	gulp
-		.src("./docs/**/*.html")
+		.src("./dist/**/*.html")
 		.pipe(minifyHTML(opts))
-		.pipe(gulp.dest("./docs/"));
+		.pipe(gulp.dest("./dist/"));
 });
 
 gulp.task("images-responsive", () => {
 	return gulp
-		.src("./docs/images/**/*.*")
+		.src("./dist/images/**/*.*")
 		.pipe(responsive({
 			"**/*.*": [
 				{
@@ -209,7 +209,7 @@ gulp.task("images-responsive", () => {
 			skipOnEnlargement: false,
 			errorOnEnlargement: false
 		}))
-		.pipe(gulp.dest("docs/images"));
+		.pipe(gulp.dest("dist/images"));
 });
 
 gulp.task("images", () => {
@@ -226,7 +226,7 @@ gulp.task("cms-delete", () => {
 });
 
 gulp.task("pub-delete", () => {
-	return del(["docs/**", "!docs", "functions/**", "!functions"], {
+	return del(["dist/**", "!dist", "functions/**", "!functions"], {
 		// dryRun: true,
 		dot: true
 	}).then(paths => {
