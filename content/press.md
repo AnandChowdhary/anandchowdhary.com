@@ -14,6 +14,8 @@ type: listicle
 
 ## Interviews
 
+![](https://overcast.fm/art?s=d784a904443c5ce0506265a2d996853f3bc257011a4c40d5aa21c310a045f336&w=840&u=https%3A%2F%2Fstorage.buzzsprout.com%2Fvariants%2F2cHoxfv2CMp4LUFCdvhfoRYz%2F8d66eb17bb7d02ca4856ab443a78f2148cafbb129f58a3c81282007c6fe24ff2%3F.jpg) [Ready or Not](https://overcast.fm/+Oa3ivwUlI) / 2018
+
 ![](https://logo.clearbit.com/indianstartupshow.com) [The Indian Startup Show](http://www.indianstartupshow.com/anand) / 2018
 
 ![](https://logo.clearbit.com/utoday.nl) [UToday](https://www.utoday.nl/news/64984/ut-student-in-the-top-50-young-entrepreneurs) / 2018
