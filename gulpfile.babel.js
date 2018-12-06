@@ -101,8 +101,7 @@ gulp.task("build-functions", cb => {
 });
 
 gulp.task("hugo", cb => {
-	let baseUrl =
-		process.env.NODE_ENV === "production" ? process.env.URL : process.env.DEPLOY_PRIME_URL;
+	let baseUrl = "https://anandchowdhary.com";
 	let args = baseUrl ? ["-b", baseUrl] : [];
 
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
