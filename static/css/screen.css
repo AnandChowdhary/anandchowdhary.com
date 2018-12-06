@@ -331,8 +331,8 @@ h1.intro + p.lead {
   .right-col {
     float: right; }
   .project-icon {
-    width: 78px;
-    width: auto !important;
+    width: 78px !important;
+    height: auto !important;
     margin-right: 25px;
     margin-left: -105px;
     float: left; }
