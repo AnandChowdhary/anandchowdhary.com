@@ -61,13 +61,13 @@ wget https://people.utwente.nl/search?query={a..z}
 
 I soon realized that this wouldn't work because the API restricts the number of results to 50, but this would: 
 
-```bash
+```sh
 wget https://people.utwente.nl/search?query={a..z}{a..z}
 ```
 
 This goes through every combination in the alphabet: aa, ab, ac . . . zx, zy, zz, and downloads the JSON file. This was enough, but in many combinations like xx, xz, etc., there were no results, so the empty JSON file was exactly 43 bytes with just the JSON structure. I then got rid of those files: 
 
-```bash
+```sh
 find . -name "*" -size 43c -delete
 ```
 
@@ -75,7 +75,7 @@ This Bash command finds all files that are of 43 bytes in size and deletes them.
 
 Finally I concatenated all the JSON files to one giant 4.9 MB file.
 
-```bash
+```sh
 cat * > contacts.json
 ```
 
