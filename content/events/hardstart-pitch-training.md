@@ -16,5 +16,3 @@ I developed and conducted a startup pitching workshop for student entrepreneursh
 <!--more-->
 
 Since then, I've done the same pitch training for Twente-based accelerator Novel-T's Startup24 Enschede event and for Enschede-based non-profit accelerator NESST, but it was Hardstart who first asked me to consider the workshop format instead of a traditional talk.
-
-{{< speakerdeck b310362afd6d4b00be7ca6165c6e9fde >}}

@@ -24,5 +24,3 @@ Which translates to roughly:
 > The new season of Nesst starts on March 7, and you are invited! Anand Chowdhary, known for his position in the top 50 young entrepreneurs in the Netherlands, comes to share his wisdom, along with the first step in Phase 1 'ideation', where we help you from idea to company. Want to be there? Entry is free and we look forward to seeing you there.
 
 Since then, I've also been part of NESST's season 3 as a jury member, pitch trainer, and advisor. I've been working closely with startups and helping them primarily with technology scaling and business development.
-
-{{< speakerdeck b50aec8b5edc4948a6bf18286a5930d7 >}}
