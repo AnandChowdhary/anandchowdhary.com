@@ -103,7 +103,7 @@ gulp.task("build-functions", cb => {
 
 gulp.task("hugo", cb => {
 	let baseUrl =
-		process.env.NODE_ENV === "production" ? "https://anandchowdhary.com" : "/";
+		process.env.NODE_ENV === "production" ? "https://anandchowdhary.com/" : "/";
 	let args = baseUrl ? ["-b", baseUrl] : [];
 
 	return spawn("hugo", args, { stdio: "inherit" }).on("close", code => {
