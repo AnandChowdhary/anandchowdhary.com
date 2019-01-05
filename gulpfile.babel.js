@@ -196,16 +196,16 @@ gulp.task("minify", () => {
 
 gulp.task("images-webp", () => {
 	return gulp
-		.src("./docs/images/**/*.*")
+		.src("./docs/images/**/*.{png,jpg,jpeg,gif}")
 		.pipe(webp())
 		.pipe(gulp.dest("docs/images"));
 });
 
 gulp.task("images-responsive", ["images-webp"], () => {
 	return gulp
-		.src("./docs/images/**/*.*")
+		.src("./docs/images/**/*.{png,jpg,jpeg,webp}")
 		.pipe(responsive({
-			"**/*.*": [
+			"**/*.{png,jpg,jpeg,webp}": [
 				{
 					width: 24,
 					rename: { suffix: "@loading" }
