@@ -50,6 +50,7 @@ function initMe() {
 
   if (postImages && !document.querySelector(".listicle")) {
     for (var i = 0; i < postImages.length; i++) {
+      if (postImages[i].classList.contains("no-zoom")) break;
       var imageUrl = postImages[i].getAttribute("src");
       var altText = postImages[i].getAttribute("alt");
       var newElement = document.createElement("div");

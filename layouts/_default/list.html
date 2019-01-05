@@ -150,6 +150,11 @@
 				{{ end }}
 				<div class="content">
 					<p>{{ .Summary | plainify | safeHTML }}</p>
+					{{ if eq .Section "open-source" }}
+						<p>
+							<img class="no-zoom" alt="License" src="https://img.shields.io/github/license/anandchowdhary/hello-bar.svg">
+						</p>
+					{{ end }}
 					{{ if .Params.color }}
 						{{ if .Params.alias }}
 							<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Params.alias }}">
