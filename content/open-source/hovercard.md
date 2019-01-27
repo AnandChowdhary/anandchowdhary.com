@@ -4,6 +4,8 @@ date: 2018-12-04
 tags: ["JavaScript"]
 type: content
 icon: /images/open-source/hovercard/icon.png
+github: AnandChowdhary/hovercard
+npm: hovercard
 ---
 
 Hovercard is a JS plugin to add Wikipedia summary cards to your website. It's easy, informative, and frontend-only. It supports all Wikipedia languages and many configurations.

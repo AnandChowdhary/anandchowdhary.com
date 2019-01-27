@@ -35,7 +35,7 @@ function initMe() {
 			elements[0].classList.add("active");
 		}
 	}
-	var postImages = document.querySelectorAll("article p img");
+	var postImages = document.querySelectorAll("article p img:not(.no-zoom)");
 	if (postImages && !document.querySelector(".listicle")) {
 		for (var i = 0; i < postImages.length; i++) {
 			var imageUrl = postImages[i].getAttribute("src");

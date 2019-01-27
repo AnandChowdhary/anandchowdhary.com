@@ -46,7 +46,7 @@ function initMe() {
     }
   }
 
-  var postImages = document.querySelectorAll("article p img");
+  var postImages = document.querySelectorAll("article p img:not(.no-zoom)");
 
   if (postImages && !document.querySelector(".listicle")) {
     for (var i = 0; i < postImages.length; i++) {

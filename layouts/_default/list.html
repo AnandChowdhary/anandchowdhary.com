@@ -146,14 +146,23 @@
 						</div>
 					</div>
 				{{ else if not .Date.IsZero }}
-					<div class="meta"><span>Posted on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+					<div class="meta"><span>{{ if eq .Section "open-source" }}Created{{ else }}Posted{{ end }} on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
 				{{ end }}
 				<div class="content">
 					<p>{{ .Summary | plainify | safeHTML }}</p>
 					{{ if eq .Section "open-source" }}
-						<p>
-							<img class="no-zoom" alt="License" src="https://img.shields.io/github/license/anandchowdhary/hello-bar.svg">
-						</p>
+					<p class="sheilds">
+						{{ if .Params.github }}
+							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img class="no-zoom" alt="Open-source license" src="https://img.shields.io/github/license/{{ .Params.github }}.svg"></a>
+							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img class="no-zoom" alt="Number of GitHub issues" src="https://img.shields.io/github/issues/{{ .Params.github }}.svg"></a>
+						{{ end }}
+						{{ if .Params.npm }}
+							<a class="no-external" href="https://www.npmjs.com/package/{{ .Params.npm }}"><img class="no-zoom" alt="Number of NPM downloads" src="https://img.shields.io/npm/dm/{{ .Params.npm }}.svg"></a>
+						{{ end }}
+						{{ if .Params.github }}
+							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img class="no-zoom" alt="Number of GitHub stars" src="https://img.shields.io/github/stars/{{ .Params.github }}.svg?label=Stars&style=social"></a>
+						{{ end }}
+					</p>
 					{{ end }}
 					{{ if .Params.color }}
 						{{ if .Params.alias }}

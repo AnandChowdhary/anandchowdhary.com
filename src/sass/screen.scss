@@ -58,7 +58,7 @@ a {
 	color: #000;
 	text-decoration: none;
 }
-article a[target="_blank"]:not([data-balloon]) {
+article a[target="_blank"]:not([data-balloon]):not(.no-external) {
 	&::after {
 		content: "";
 		width: 15px;

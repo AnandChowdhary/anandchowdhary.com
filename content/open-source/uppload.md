@@ -4,6 +4,8 @@ date: 2018-04-19
 tags: ["JavaScript"]
 type: content
 icon: /images/icons/uppload.png
+github: elninotech/uppload
+npm: uppload
 ---
 
 Uppload is an open-source JavaScript file uploader. It has built-in support for drag-and-dropping, image cropping, file previews,  Instagram imports, and more. It works with any HTML form backend and has wrappers for Vue.js, React, and Angular, and presets for Firebase and AWS S3.

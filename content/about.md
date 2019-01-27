@@ -6,13 +6,15 @@ intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delh
 <div class="image">
 	<figure>
 		<img alt="" src="/images/photos/anand-chowdhary.jpg">
-		<figcaption>Photo &copy; <a href="https://www.rikkertharink.nl/">Rikkert Harink</a></figcaption>
+		<figcaption>Photo &copy; <a href="https://www.rikkertharink.nl/?utm_source=anandchowdhary&utm_medium=anand-website&utm_campaign=about-photo">Rikkert Harink</a></figcaption>
 	</figure>
 </div>
 
-Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CEO of [Oswald Labs](https://oswaldlabs.com), an award-winning accessibility technology company, and studies Creative Technology BSc at the [University of Twente](https://www.utwente.nl/en/).
+Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CEO of [Oswald Labs](https://oswaldlabs.com/?utm_source=anandchowdhary&utm_medium=anand-website&utm_campaign=about-link), an award-winning accessibility technology company, and studies Creative Technology BSc at the [University of Twente](https://www.utwente.nl/en/?utm_source=anandchowdhary&utm_medium=anand-website&utm_campaign=about-link).
 
-He is also a consultant to several startups and digital studios in India and the Netherlands. Previously, he was an interaction designer at the Government of Delhi, Technology Lead at Justice Adda (a University of Cambridge social venture), and consultant to companies like Cyankart, Sixteen Inches, and Unifiers.
+He is also a consultant and advisor to several startups and studios in India and the Netherlands. Previously, he has worked with organizations like the Government of Delhi, Justice Adda (a University of Cambridge social venture), IBM, Cyankart, and Unifiers.
+
+He has been [featured](/press/) in Forbes 30 Under 30 Asia 2018, Het Financieele Dagblad (Dutch Financial Times)'s list of 50 most-innovative entrepreneurs and professional under 35 in the Netherlands, and in publications such as The Next Web, HuffPost, Hindustan Times, and Time Out magazine.
 
 He is currently unavailable for freelance projects.
 
