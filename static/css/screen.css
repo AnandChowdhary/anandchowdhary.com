@@ -10,6 +10,16 @@
 ::selection {
   background-color: #c7ecee; }
 
+:focus {
+  outline: 3px dashed #3498db;
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
+  opacity: 1; }
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none; }
+
 body {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
@@ -103,7 +113,7 @@ header#masthead {
   transition: 0.3s;
   opacity: 0.75;
   padding: 2rem 0; }
-  header#masthead:hover, header#masthead:active, header#masthead:focus {
+  header#masthead:hover, header#masthead:active {
     opacity: 1; }
   header#masthead a.logo {
     color: #4b555e;
@@ -132,7 +142,7 @@ header#masthead {
         text-decoration: none;
         -webkit-box-shadow: 0 3px 0 transparent;
                 box-shadow: 0 3px 0 transparent; }
-        header#masthead nav ul li a:focus, header#masthead nav ul li a:hover, header#masthead nav ul li a:active, header#masthead nav ul li a.active {
+        header#masthead nav ul li a:hover, header#masthead nav ul li a:active, header#masthead nav ul li a.active {
           color: #4b555e;
           -webkit-box-shadow: 0 3px 0 #ddd;
                   box-shadow: 0 3px 0 #ddd; }
@@ -446,7 +456,7 @@ ul.filter {
       border: none;
       padding: 10px 12px;
       border-radius: 2rem; }
-      ul.filter li button:focus, ul.filter li button:active, ul.filter li button:hover, ul.filter li a:focus, ul.filter li a:active, ul.filter li a:hover {
+      ul.filter li button:active, ul.filter li button:hover, ul.filter li a:active, ul.filter li a:hover {
         background-color: whitesmoke;
         color: #000;
         outline: none; }
@@ -480,7 +490,7 @@ footer {
   color: #595959; }
   footer a {
     color: #444; }
-    footer a:focus, footer a:hover, footer a:active {
+    footer a:hover, footer a:active {
       color: #000; }
   footer.meta {
     margin-top: 1rem; }
@@ -565,7 +575,7 @@ p + .image {
     color: #fff; }
   .dark header#masthead nav ul li a {
     color: rgba(255, 255, 255, 0.75); }
-    .dark header#masthead nav ul li a:focus, .dark header#masthead nav ul li a:hover, .dark header#masthead nav ul li a:active, .dark header#masthead nav ul li a.active {
+    .dark header#masthead nav ul li a:hover, .dark header#masthead nav ul li a:active, .dark header#masthead nav ul li a.active {
       color: #fff; }
     .dark header#masthead nav ul li a svg g {
       fill: rgba(255, 255, 255, 0.75); }
@@ -668,7 +678,7 @@ button[type="submit"] {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-weight: bold; }
-  button[type="submit"]:hover, button[type="submit"]:active, button[type="submit"]:focus {
+  button[type="submit"]:hover, button[type="submit"]:active {
     background-color: #2980b9; }
 
 .filter {
@@ -1097,43 +1107,37 @@ button[data-balloon] {
   .articles-grid article.contact .light::before {
     background-color: #080e0a; }
 
-header#masthead nav ul li .home-link:focus, header#masthead nav ul li .home-link:hover, header#masthead nav ul li .home-link:active, header#masthead nav ul li .home-link.active {
+header#masthead nav ul li .home-link:hover, header#masthead nav ul li .home-link:active, header#masthead nav ul li .home-link.active {
   -webkit-box-shadow: 0 3px 0 #e84393;
           box-shadow: 0 3px 0 #e84393; }
 
-header#masthead nav ul li .projects-link:focus, header#masthead nav ul li .projects-link:hover, header#masthead nav ul li .projects-link:active, header#masthead nav ul li .projects-link.active {
+header#masthead nav ul li .projects-link:hover, header#masthead nav ul li .projects-link:active, header#masthead nav ul li .projects-link.active {
   -webkit-box-shadow: 0 3px 0 #1abc9c;
           box-shadow: 0 3px 0 #1abc9c; }
 
-header#masthead nav ul li .blog-link:focus, header#masthead nav ul li .blog-link:hover, header#masthead nav ul li .blog-link:active, header#masthead nav ul li .blog-link.active {
+header#masthead nav ul li .blog-link:hover, header#masthead nav ul li .blog-link:active, header#masthead nav ul li .blog-link.active {
   -webkit-box-shadow: 0 3px 0 #f39c12;
           box-shadow: 0 3px 0 #f39c12; }
 
-header#masthead nav ul li .events-link:focus, header#masthead nav ul li .events-link:hover, header#masthead nav ul li .events-link:active, header#masthead nav ul li .events-link.active {
+header#masthead nav ul li .events-link:hover, header#masthead nav ul li .events-link:active, header#masthead nav ul li .events-link.active {
   -webkit-box-shadow: 0 3px 0 #3498db;
           box-shadow: 0 3px 0 #3498db; }
 
-header#masthead nav ul li .open-source-link:focus, header#masthead nav ul li .open-source-link:hover, header#masthead nav ul li .open-source-link:active, header#masthead nav ul li .open-source-link.active {
+header#masthead nav ul li .open-source-link:hover, header#masthead nav ul li .open-source-link:active, header#masthead nav ul li .open-source-link.active {
   -webkit-box-shadow: 0 3px 0 #9b59b6;
           box-shadow: 0 3px 0 #9b59b6; }
 
-header#masthead nav ul li .about-link:focus, header#masthead nav ul li .about-link:hover, header#masthead nav ul li .about-link:active, header#masthead nav ul li .about-link.active {
+header#masthead nav ul li .about-link:hover, header#masthead nav ul li .about-link:active, header#masthead nav ul li .about-link.active {
   -webkit-box-shadow: 0 3px 0 #273c75;
           box-shadow: 0 3px 0 #273c75; }
 
-header#masthead nav ul li .press-link:focus, header#masthead nav ul li .press-link:hover, header#masthead nav ul li .press-link:active, header#masthead nav ul li .press-link.active {
+header#masthead nav ul li .press-link:hover, header#masthead nav ul li .press-link:active, header#masthead nav ul li .press-link.active {
   -webkit-box-shadow: 0 3px 0 #c0392b;
           box-shadow: 0 3px 0 #c0392b; }
 
-header#masthead nav ul li .contact-link:focus, header#masthead nav ul li .contact-link:hover, header#masthead nav ul li .contact-link:active, header#masthead nav ul li .contact-link.active {
+header#masthead nav ul li .contact-link:hover, header#masthead nav ul li .contact-link:active, header#masthead nav ul li .contact-link.active {
   -webkit-box-shadow: 0 3px 0 #080e0a;
           box-shadow: 0 3px 0 #080e0a; }
-
-*:focus {
-  outline: 3px solid #c7ecee;
-  -webkit-transform: scale(1.01);
-      -ms-transform: scale(1.01);
-          transform: scale(1.01); }
 
 ul.pagination {
   margin: 3rem auto 2rem auto;
@@ -1162,14 +1166,14 @@ ul.pagination {
       line-height: 2.5rem;
       display: block;
       border-radius: 100%; }
-      ul.pagination li a:hover, ul.pagination li a:focus, ul.pagination li a:active {
+      ul.pagination li a:hover, ul.pagination li a:active {
         background-color: #ddd; }
     ul.pagination li [aria-label="Next"] {
       background-color: #1e6cef;
       border: none;
       line-height: 3rem;
       color: #fff !important; }
-      ul.pagination li [aria-label="Next"]:hover, ul.pagination li [aria-label="Next"]:focus, ul.pagination li [aria-label="Next"]:active {
+      ul.pagination li [aria-label="Next"]:hover, ul.pagination li [aria-label="Next"]:active {
         background-color: #0e84b5; }
 
 twitterwidget, iframe {

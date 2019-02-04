@@ -1,4 +1,3 @@
-// @import url("https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i");
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600|IBM+Plex+Serif:400,600');
 @media (min-width: 700px) {
 	html {
@@ -14,6 +13,15 @@
 
 ::selection {
 	background-color: #c7ecee;
+}
+
+:focus {
+	outline: 3px dashed #3498db;
+	transform: scale(1.01);
+	opacity: 1;
+}
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
 }
 
 body {
@@ -108,7 +116,7 @@ header#masthead {
 	font-size: 90%;
 	transition: 0.3s;
 	opacity: 0.75;
-	&:hover, &:active, &:focus {
+	&:hover, &:active {
 		opacity: 1;
 	}
 	padding: 2rem 0;
@@ -143,7 +151,7 @@ header#masthead {
 					color: inherit;
 					text-decoration: none;
 					box-shadow: 0 3px 0 transparent;
-					&:focus, &:hover, &:active, &.active {
+					&:hover, &:active, &.active {
 						color: #4b555e;
 						box-shadow: 0 3px 0 #ddd;
 					}
@@ -529,7 +537,7 @@ ul.filter {
 			border: none;
 			padding: 10px 12px;
 			border-radius: 2rem;
-			&:focus, &:active, &:hover {
+			&:active, &:hover {
 				background-color: whitesmoke;
 				color: #000;
 				outline: none;
@@ -570,7 +578,7 @@ footer {
 	color: #595959;
 	a {
 		color: #444;
-		&:focus, &:hover, &:active {
+		&:hover, &:active {
 			color: #000;
 		}
 	}
@@ -672,7 +680,7 @@ p + .image {
 				li {
 					a {
 						color: rgba(255, 255, 255, 0.75);
-						&:focus, &:hover, &:active, &.active {
+						&:hover, &:active, &.active {
 							color: #fff;
 						}
 						svg {
@@ -802,7 +810,7 @@ button[type="submit"] {
 	border: none;
 	transition: 0.3s;
 	font-weight: bold;
-	&:hover, &:active, &:focus {
+	&:hover, &:active {
 		background-color: #2980b9;
 	}
 }
@@ -1090,35 +1098,30 @@ button[data-balloon] {
 		}
 	}
 }
-header#masthead nav ul li .home-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .home-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #e84393;
 } }
-header#masthead nav ul li .projects-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .projects-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #1abc9c;
 } }
-header#masthead nav ul li .blog-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .blog-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #f39c12;
 } }
-header#masthead nav ul li .events-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .events-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #3498db;
 } }
-header#masthead nav ul li .open-source-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .open-source-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #9b59b6;
 } }
-header#masthead nav ul li .about-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .about-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #273c75;
 } }
-header#masthead nav ul li .press-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .press-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #c0392b;
 } }
-header#masthead nav ul li .contact-link { &:focus, &:hover, &:active, &.active {
+header#masthead nav ul li .contact-link { &:hover, &:active, &.active {
 	box-shadow: 0 3px 0 #080e0a;
 } }
-
-*:focus {
-	outline: 3px solid #c7ecee;
-	transform: scale(1.01);
-}
 
 ul.pagination {
 	margin: 3rem auto 2rem auto;
@@ -1145,7 +1148,7 @@ ul.pagination {
 		}
 		a {
 			border: 0.25rem solid #eee;
-			&:hover, &:focus, &:active {
+			&:hover, &:active {
 				background-color: #ddd;
 			}
 			width: 3rem;
@@ -1159,7 +1162,7 @@ ul.pagination {
 			background-color: #1e6cef;
 			border: none;
 			line-height: 3rem;
-			&:hover, &:focus, &:active {
+			&:hover, &:active {
 				background-color: #0e84b5;
 			}
 			color: #fff !important;
