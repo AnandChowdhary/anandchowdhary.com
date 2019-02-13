@@ -34,5 +34,7 @@ Feel free to follow or connect with me on any of the following networks:
 <textarea rows="5" id="message" name="message" placeholder="Enter your message" required></textarea></div>
 <p><button type="submit">Send</button></form>
 
+My PGP public key is [7D6F AE75 75E7 E5FF 0E02 AFB8 EA7D 4DE8 A84D 8046](/files/public-key.asc).
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
