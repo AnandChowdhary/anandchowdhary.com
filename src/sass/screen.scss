@@ -228,6 +228,9 @@ section {
 	h2 {
 		margin: 0;
 		font-size: 1.75rem;
+		&.coffee-time-heading {
+			font-size: 1.5rem;
+		}
 	}
 }
 
@@ -729,6 +732,10 @@ main {
 		a {
 			color: inherit;
 		}
+		&.coffee-time-meta {
+			font-size: 85%;
+			margin-top: 0.5rem;
+		}
 	}
 	.article-list .meta {
 		margin-bottom: 1rem;
@@ -1205,4 +1212,15 @@ a .inline-svg {
 	.lazyload, .lazyloading, .lazyloaded {
 		display: none !important;
 	}
+}
+
+.coffee-time-tag {
+	margin-right: 0.5rem;
+	background-color: yellow;
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.2rem;
+	text-transform: uppercase;
+	font-size: 90%;
+	margin-top: 0.5rem;
+	line-height: 1;
 }

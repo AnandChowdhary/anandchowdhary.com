@@ -6,4 +6,8 @@
 <p class="intro">I love to create open-source projects to scratch my own itch and try to keep all non-proprietary code freely available. I have over a hundred repositories on GitHub and have been active since 2011.</p>
 {{ else if in .URL "/state-of-the/" }}
 <p class="intro">The State of the X series are lists about apps and services I use and content I consume. Inspired by CGP Grey.</p>
+{{ else if in .URL "/tags/coffee-time/" }}
+<p class="intro">Coffee Time are a series of (tiny) blog posts. Quick ideas, no more than 15 minutes. Time for coffee.</p>
+{{ else if in .Params.tags "Coffee Time" }}
+<p class="intro">Coffee Time are a series of (tiny) blog posts. Quick ideas, no more than 15 minutes. Time for coffee.</p>
 {{ end }}

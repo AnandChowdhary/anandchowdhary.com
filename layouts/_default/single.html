@@ -147,7 +147,11 @@
 					</div>
 				</div>
 			{{ else if not .Date.IsZero }}
-				<div class="meta"><span>Posted on&nbsp;</span><a href="{{ .Permalink }}"><time itemprop="dateCreated">{{ .Date.Format "January 2, 2006" }}</time></a></div>
+				{{ if in .Params.tags "Coffee Time" }}
+					<div class="meta coffee-time-meta"><a href="/tags/coffee-time/" class="coffee-time-tag">Coffee Time</a><span>{{ if eq .Section "open-source" }}Created{{ else }}Posted{{ end }} on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+				{{ else }}
+					<div class="meta"><span>{{ if eq .Section "open-source" }}Created{{ else }}Posted{{ end }} on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+				{{ end }}
 			{{ end }}
 			{{ partial "intro.html" . }}
 			<div itemprop="articleBody">

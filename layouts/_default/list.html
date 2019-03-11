@@ -84,7 +84,11 @@
 					{{ if .Params.alias }}
 						<h2><a href="{{ .Params.alias }}">{{ .Title }}</a></h2>
 					{{ else }}
-						<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+						{{ if in .Params.tags "Coffee Time" }}
+							<h2 class="coffee-time-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+						{{ else }}
+							<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+						{{ end }}
 					{{ end }}
 				</div>
 				{{ if in .URL "/events/" }}
@@ -134,10 +138,16 @@
 						</div>
 					</div>
 				{{ else if not .Date.IsZero }}
-					<div class="meta"><span>{{ if eq .Section "open-source" }}Created{{ else }}Posted{{ end }} on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+					{{ if in .Params.tags "Coffee Time" }}
+						<div class="meta coffee-time-meta"><a href="/tags/coffee-time/" class="coffee-time-tag">Coffee Time</a><span>{{ if eq .Section "open-source" }}Created{{ else }}Posted{{ end }} on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+					{{ else }}
+						<div class="meta"><span>{{ if eq .Section "open-source" }}Created{{ else }}Posted{{ end }} on&nbsp;</span><time>{{ .Date.Format "January 2, 2006" }}</time></div>
+					{{ end }}
 				{{ end }}
 				<div class="content">
-					<p>{{ .Summary | plainify | safeHTML }}</p>
+					{{ if in .Params.tags "Coffee Time" }}{{ else }}
+						<p>{{ .Summary | plainify | safeHTML }}</p>
+					{{ end }}
 					{{ if eq .Section "open-source" }}
 					<p class="sheilds">
 						{{ if .Params.github }}
@@ -152,29 +162,31 @@
 						{{ end }}
 					</p>
 					{{ end }}
-					{{ if .Params.color }}
-						{{ if .Params.alias }}
-							<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Params.alias }}">
-								{{ if .Params.publisher }}
-									Continue reading on {{ .Params.publisher }}
-								{{ else }}
-									Continue reading
-								{{ end }}
-							</a></p>
+					{{ if in .Params.tags "Coffee Time" }}{{ else }}
+						{{ if .Params.color }}
+							{{ if .Params.alias }}
+								<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Params.alias }}">
+									{{ if .Params.publisher }}
+										Continue reading on {{ .Params.publisher }}
+									{{ else }}
+										Continue reading
+									{{ end }}
+								</a></p>
+							{{ else }}
+								<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+							{{ end }}
 						{{ else }}
-							<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
-						{{ end }}
-					{{ else }}
-						{{ if .Params.alias }}
-							<p><a class="button is-link" href="{{ .Params.alias }}">
-								{{ if .Params.publisher }}
-									Continue reading on {{ .Params.publisher }}
-								{{ else }}
-									Continue reading
-								{{ end }}
-							</a></p>
-						{{ else }}
-							<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+							{{ if .Params.alias }}
+								<p><a class="button is-link" href="{{ .Params.alias }}">
+									{{ if .Params.publisher }}
+										Continue reading on {{ .Params.publisher }}
+									{{ else }}
+										Continue reading
+									{{ end }}
+								</a></p>
+							{{ else }}
+								<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+							{{ end }}
 						{{ end }}
 					{{ end }}
 				</div>
