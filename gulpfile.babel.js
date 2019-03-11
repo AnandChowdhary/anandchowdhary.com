@@ -70,7 +70,7 @@ gulp.task("init-watch", () => {
 });
 
 gulp.task("build", () => {
-	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo", "images-responsive");
+	runSequence("pub-delete", ["sass", "js", "fonts", "images", "build-functions"], "hugo");
 });
 
 gulp.task("build-preview", () => {

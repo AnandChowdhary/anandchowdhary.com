@@ -4,7 +4,7 @@
 		<p class="lead">He is the co-founder and CEO of <a href="https://oswaldlabs.com/?utm_source=anandchowdhary&utm_medium=anand-website&utm_campaign=hero-link" target="_blank">Oswald Labs</a>, an award-winning accessibility technology company; and studies Creative Technology, an interdisciplinary design and engineering program, at the University of Twente.</p>
 		<section>
 			<div class="elements elements-lg">
-				<h2 class="side-title">Recent projects</h2>
+				<h2 class="side-title">Projects</h2>
 				<div class="work-grid home-grid">
 					{{ range $index, $element:= where .Data.Pages.ByDate.Reverse "Section" "projects" | first 2 }}
 						<article>
@@ -12,7 +12,8 @@
 								{{ if .Params.style }}
 									{{ if eq .Params.style "padded" }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
-										<img
+										<img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+										<!-- <img
 											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
 											data-sizes="auto"
 											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
@@ -20,11 +21,12 @@
 											class="real-image is-padded lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
-										<noscript><img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
+										<noscript><img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 									{{ else if eq .Params.style "width" }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
-										<img
+										<img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+										<!-- <img
 											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
 											data-sizes="auto"
 											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
@@ -32,11 +34,12 @@
 											class="real-image is-centered-width lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
-										<noscript><img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
+										<noscript><img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 									{{ else }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
-										<img
+										<img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+										<!-- <img
 											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
 											data-sizes="auto"
 											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
@@ -44,12 +47,13 @@
 											class="real-image is-full-width lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
-										<noscript><img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
+										<noscript><img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 									{{ end }}
 								{{ else }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
-										<img
+										<img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+										<!-- <img
 											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
 											data-sizes="auto"
 											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
@@ -57,7 +61,7 @@
 											class="real-image is-centered-height lazyload"
 											alt="Graphic for {{ .Params.title }}"
 										>
-										<noscript><img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript>
+										<noscript><img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 								{{ end }}
 								<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
@@ -72,7 +76,7 @@
 			<div class="elements elements-lg">
 				<h2 class="side-title">New</h2>
 				<div class="work-grid home-grid articles-grid">
-					{{ range first 6 (where .Data.Pages "Section" "!=" "events") }}
+					{{ range first 10 (where .Data.Pages "Section" "!=" "events") }}
 						<article class="{{ .Section | urlize }}">
 							<a href="{{ .Permalink }}" style="display: inline-block">
 								<h2>{{ .Title }}</h2>
@@ -94,7 +98,7 @@
 			<div class="elements elements-lg">
 				<h2 class="side-title">Events</h2>
 				<div class="work-grid home-grid articles-grid">
-					{{ range first 6 (where .Data.Pages "Section" "events") }}
+					{{ range first 4 (where .Data.Pages "Section" "events") }}
 						<article class="{{ .Section | urlize }}">
 							<a href="{{ .Permalink }}" style="display: inline-block">
 								<h2>{{ .Title }}</h2>
