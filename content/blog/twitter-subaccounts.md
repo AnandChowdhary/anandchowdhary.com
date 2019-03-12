@@ -9,6 +9,7 @@ I think Twitter should have a concept of sub-accounts. It's not smart to create 
 However, I also have several other projects, like Made with Love in India, a [platform](https://madewithlove.org.in) to showcase Indian-made startups, which has [its own Twitter](https://twitter.com/mwlii) account. However, I can't keep scaling this for every new project (I refrain from saying "startup", but what I mean is "super-early startup idea which still needs some social media presence").
 
 The solution: **Twitter Subaccounts**. I, @AnandChowdhary, can have sub-accounts, like this:
+
 - Main account: twitter.com/AnandChowdhary
 - Subaccount about [GitWriter](https://github.com/AnandChowdhary/gitwriter): twitter.com/AnandChowdhary/gitwriter
 - Subaccount about whatever: twitter.com/AnandChowdhary/whatever
