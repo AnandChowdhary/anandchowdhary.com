@@ -1225,3 +1225,6 @@ a .inline-svg {
   font-size: 90%;
   margin-top: 0.5rem;
   line-height: 1; }
+
+.article--coffee + .article--coffee::before {
+  display: none; }

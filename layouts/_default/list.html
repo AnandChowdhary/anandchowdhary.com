@@ -68,7 +68,7 @@
 			{{ end }} -->
 			{{ partial "intro.html" . }}
 			{{ range sort .Paginator.Pages }}
-			<article class="article-list">
+			<article class="article-list {{ if in .Params.tags "Coffee Time" }}article--coffee{{ else }}article--longform{{ end }}">
 				<div class="article-title">
 					{{ if .Params.icon }}
 						{{ if .Params.alias }}

@@ -1,0 +1,21 @@
+[build]
+	command = "yarn build"
+	publish = "docs"
+
+[build.environment]
+	HUGO_VERSION = "0.47.1"
+
+[context.production.environment]
+	HUGO_ENV = "production"
+	NODE_ENV = "production"
+
+[context.deploy-preview]
+	command = "yarn build:preview"
+
+[[redirects]]
+  from = "/blog/google-docs-github/"
+  to = "/blog/coffee-time/google-docs-github/"
+
+[[redirects]]
+  from = "/blog/twitter-subaccounts/"
+  to = "/blog/coffee-time/twitter-subaccounts/"
