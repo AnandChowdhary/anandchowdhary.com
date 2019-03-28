@@ -36,7 +36,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-print": "^2.0.1",
-    "gulp-responsive": "^2.11.0",
+    "gulp-responsive": "^2.13.0",
     "gulp-sass": "^4.0.1",
     "gulp-sass-lint": "^1.4.0",
     "gulp-size": "^2.1.0",
