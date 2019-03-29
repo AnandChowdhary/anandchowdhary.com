@@ -40,7 +40,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sass-lint": "^1.4.0",
     "gulp-size": "^2.1.0",
-    "gulp-uglify": "^3.0.1",
+    "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
     "gulp-webp": "^3.0.0",
     "netlify-lambda": "^0.4.0",
