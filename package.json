@@ -42,7 +42,7 @@
     "gulp-size": "^2.1.0",
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
-    "gulp-webp": "^3.0.0",
+    "gulp-webp": "^4.0.0",
     "netlify-lambda": "^0.4.0",
     "node-sass-tilde-importer": "^1.0.2",
     "postcss-uncss": "^0.16.1",
