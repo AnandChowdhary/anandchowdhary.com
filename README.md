@@ -8,4 +8,6 @@ My personal website has changed numerous times over the past decade. The current
 
 ## License
 
-MIT
+- Code: MIT
+- Text: CC-BY-SA 4.0
+- Assets and images: Proprietary (trademark law and copyright as applicable)
