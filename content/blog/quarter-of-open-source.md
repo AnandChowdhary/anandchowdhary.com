@@ -15,7 +15,7 @@ The number of contributions I've made on GitHub has increased by over 20x in the
 
 ### 2015
 
-In 2015, I made slightly more than contributions. These were mostly on my own projects, like my personal website, [Made with Love in India](/projects/made-with-love-in-india/), and [Saga Music](/projects/saga-music/). This is still less than 2014 (when I made a few projects centered around CSS and WordPress), but it's still something.
+In 2015, I made slightly more than 100 contributions. These were mostly on my own projects, like my personal website, [Made with Love in India](/projects/made-with-love-in-india/), and [Saga Music](/projects/saga-music/). This is still less than 2014 (when I made a few projects centered around CSS and WordPress), but it's still something.
 
 {{< img text="Contributions in 2015" src="/images/blog/quarter-of-open-source/2015" type="png" >}}
 
