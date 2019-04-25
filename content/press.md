@@ -10,7 +10,7 @@ type: listicle
 
 ![](https://logo.clearbit.com/fd.nl) [FD Persoonlijk 50 Under 35](https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst) / 2018
 
-![](https://logo.clearbit.com/thenextweb.com) [The Next Web T500](https://thenextweb.com/conference/t500) / 2018
+![](https://logo.clearbit.com/thenextweb.com) [The Next Web T500](https://thenextweb.com/conference/t500) / 2018 and 2019
 
 ## Interviews
 
