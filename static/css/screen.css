@@ -7,6 +7,9 @@
   html {
     font-size: 110%; } }
 
+::-moz-selection {
+  background-color: #c7ecee; }
+
 ::selection {
   background-color: #c7ecee; }
 
@@ -204,6 +207,8 @@ footer#colophon {
   margin-top: 12.5vh; }
   footer#colophon .love {
     color: #dc3545; }
+  footer#colophon .left-links a {
+    margin-right: 1.5rem; }
 
 @media (max-width: 550px) {
   .more-button {
@@ -214,8 +219,12 @@ footer#colophon {
     padding: 0 1rem; }
   .client-details > * + * {
     margin-top: 1rem; }
-  footer#colophon p {
-    margin-bottom: 1rem; }
+  footer#colophon {
+    text-align: center; }
+    footer#colophon p {
+      margin-bottom: 1.5rem; }
+    footer#colophon .left-links {
+      margin-bottom: 1.5rem; }
   section.elements.elements-lg article {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
