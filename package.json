@@ -55,7 +55,7 @@
     ]
   },
   "devDependencies": {
-    "onchange": "^5.1.2",
+    "onchange": "^6.0.0",
     "prettier": "^1.17.1"
   }
 }
