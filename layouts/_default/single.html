@@ -60,9 +60,9 @@
 							<div>Award</div>
 							<div>
 								{{ if .Params.award_position }}
-								{{ if eq .Params.award_position 1 }}<span>🥇</span>{{ end }}
-								{{ if eq .Params.award_position 2 }}<span>🥈</span>{{ end }}
-								{{ if eq .Params.award_position 3 }}<span>🥉</span>{{ end }}
+								{{ if eq .Params.award_position 1 }}<span aria-label="First" title="First">🥇</span>{{ end }}
+								{{ if eq .Params.award_position 2 }}<span aria-label="Second" title="Second">🥈</span>{{ end }}
+								{{ if eq .Params.award_position 3 }}<span aria-label="Third" title="Third">🥉</span>{{ end }}
 								{{end}}
 								<span>{{ .Params.award }}</span>
 							</div>
