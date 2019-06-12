@@ -280,6 +280,9 @@ footer#colophon {
 			margin-bottom: 2rem;
 		}
 	}
+	.img-heading {
+		margin-top: 2.5rem;
+	}
 	.project-icon, h3 img, h4 img, h2 img, h3 img.lazyload {
 		height: 55px;
 		width: auto !important;
@@ -376,6 +379,9 @@ h1.intro + p.lead {
 }
 
 @media (min-width: 550px) {
+	.img-heading {
+		margin-bottom: 0.75rem;
+	}
 	section .elements h2.side-title {
 		margin: 0;
 		padding: 0;
@@ -422,6 +428,7 @@ h1.intro + p.lead {
 			margin-right: 25px;
 			margin-left: -105px;
 			float: left;
+			filter: drop-shadow(0 0.15rem 0.15rem rgba(0, 0, 0, 0.1));
 		}
 	}
 	.article-list .project-icon {
