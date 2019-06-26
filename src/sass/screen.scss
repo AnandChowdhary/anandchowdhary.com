@@ -1242,3 +1242,8 @@ a .inline-svg {
 .article--coffee + .article--coffee::before {
 	display: none;
 }
+
+.role-link + .role-link::before {
+	content: ",";
+	padding-left: 0.5rem;
+}

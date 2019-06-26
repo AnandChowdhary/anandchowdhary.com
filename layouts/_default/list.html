@@ -115,7 +115,7 @@
 									<div>Role</div>
 									<div>
 										{{ range $i, $e := .Params.roles }}
-											<a href="{{ "/roles/" | relLangURL }}{{ . | urlize }}/">
+											<a class="role-link" href="{{ "/roles/" | relLangURL }}{{ . | urlize }}/">
 												{{ . }}
 											</a>
 										{{ end }}
