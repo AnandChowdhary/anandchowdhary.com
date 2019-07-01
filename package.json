@@ -45,9 +45,9 @@
     "gulp-webp": "^4.0.0",
     "netlify-lambda": "^1.4.13",
     "node-sass-tilde-importer": "^1.0.2",
-    "postcss-uncss": "^0.16.1",
+    "postcss-uncss": "^0.17.0",
     "run-sequence": "^2.0.0",
-    "uncss": "^0.16.2"
+    "uncss": "^0.17.0"
   },
   "babel": {
     "presets": [
