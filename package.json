@@ -18,7 +18,7 @@
     "prettier": "onchange 'src/**/*.{js,vue,scss}' -- prettier --write {{changed}}"
   },
   "dependencies": {
-    "@babel/core": "^7.5.4",
+    "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
     "browser-sync": "^2.26.7",
