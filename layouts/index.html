@@ -64,7 +64,7 @@
 										<noscript><img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 								{{ end }}
-								<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
+								<h2>{{ .Title }}<span class="date-time-pl">{{ .Date.Format "January 2006" }}</span></h2>
 								{{ .Params.intro | markdownify }}
 							</a>
 						</article>

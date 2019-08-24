@@ -11,6 +11,7 @@
 				<li><a href="/work/artificial-intelligence/">AI/ML</a></li>
 				<li><a href="/work/augmented-reality/">VR/AR</a></li>
 				<li><a href="/work/event/">Events</a></li>
+				<li><a href="/work/industrial-design/">Industrial</a></li>
 			</ul>
 			<div class="work-grid">
 				{{ range sort .Paginator.Pages }}
@@ -51,7 +52,7 @@
 									>
 								</div>
 							{{ end }}
-							<h2>{{ .Title }}<span> &middot; {{ .Date.Format "January 2006" }}</span></h2>
+							<h2>{{ .Title }}<span class="date-time-pl">{{ .Date.Format "January 2006" }}</span></h2>
 							{{ .Params.intro | markdownify }}
 						</a>
 					</article>

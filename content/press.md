@@ -4,13 +4,15 @@ intro: I have been very honored and lucky to be featured in many leading publica
 type: listicle
 ---
 
-## Honors
+## Lists
 
 ![](https://logo.clearbit.com/forbes.com) [Forbes 30 Under 30 Asia](https://www.forbes.com/profile/oswald-labs/) / 2018
 
 ![](https://logo.clearbit.com/fd.nl) [FD Persoonlijk 50 Under 35](https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst) / 2018
 
 ![](https://logo.clearbit.com/thenextweb.com) [The Next Web T500](https://thenextweb.com/conference/t500) / 2018 and 2019
+
+![](https://logo.clearbit.com/yourstory.com) [YourStory 21 Under 21](https://yourstory.com/2018/08/21-under-21-meet-the-young-entrepreneurs-who-are-changing-the-world-one-startup-at-a-time) / 2018
 
 ## Podcasts & TV
 
