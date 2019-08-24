@@ -5,6 +5,7 @@
 			<div class="article-title{{ if .Date.IsZero }} page{{ end }}">
 				{{ if .Params.icon }}
 					<img
+						loading="lazy"
 						class="project-icon"
 						alt="{{ .Title }} icon"
 						src="{{ .Params.icon }}"

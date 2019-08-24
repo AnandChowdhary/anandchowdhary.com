@@ -34,11 +34,11 @@
 					{{ if .Params.icon }}
 						{{ if .Params.alias }}
 							<a href="{{ .Params.alias }}">
-								<img class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
+								<img loading="lazy" class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
 							</a>
 						{{ else }}
 							<a href="{{ .Permalink }}">
-								<img class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
+								<img loading="lazy" class="project-icon" alt="{{ .Title }} icon" src="{{ .Params.icon }}">
 							</a>
 						{{ end }}
 					{{ end }}
@@ -112,14 +112,14 @@
 					{{ if eq .Section "open-source" }}
 					<p class="sheilds">
 						{{ if .Params.github }}
-							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img class="no-zoom" alt="Open-source license" src="https://img.shields.io/github/license/{{ .Params.github }}.svg"></a>
-							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img class="no-zoom" alt="Number of GitHub issues" src="https://img.shields.io/github/issues/{{ .Params.github }}.svg"></a>
+							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img loading="lazy" class="no-zoom" alt="Open-source license" src="https://img.shields.io/github/license/{{ .Params.github }}.svg"></a>
+							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img loading="lazy" class="no-zoom" alt="Number of GitHub issues" src="https://img.shields.io/github/issues/{{ .Params.github }}.svg"></a>
 						{{ end }}
 						{{ if .Params.npm }}
-							<a class="no-external" href="https://www.npmjs.com/package/{{ .Params.npm }}"><img class="no-zoom" alt="Number of NPM downloads" src="https://img.shields.io/npm/dm/{{ .Params.npm }}.svg"></a>
+							<a class="no-external" href="https://www.npmjs.com/package/{{ .Params.npm }}"><img loading="lazy" class="no-zoom" alt="Number of NPM downloads" src="https://img.shields.io/npm/dm/{{ .Params.npm }}.svg"></a>
 						{{ end }}
 						{{ if .Params.github }}
-							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img class="no-zoom" alt="Number of GitHub stars" src="https://img.shields.io/github/stars/{{ .Params.github }}.svg?color=brightgreen&style=flat"></a>
+							<a class="no-external" href="https://github.com/{{ .Params.github }}"><img loading="lazy" class="no-zoom" alt="Number of GitHub stars" src="https://img.shields.io/github/stars/{{ .Params.github }}.svg?color=brightgreen&style=flat"></a>
 						{{ end }}
 					</p>
 					{{ end }}

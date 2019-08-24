@@ -1,6 +1,6 @@
 <figure>
 	<picture class="image">
-		<img alt="{{ .Get "alt" }}" src="{{ .Get "src" }}.{{ .Get "type" }}">
+		<img loading="lazy" alt="{{ .Get "alt" }}" src="{{ .Get "src" }}.{{ .Get "type" }}">
 	</picture>
 	{{ if .Get "caption" }}<figcaption>{{ .Get "caption" }}</figcaption>{{ end }}
 </figure>
