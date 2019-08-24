@@ -17,9 +17,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
     - uses: peaceiris/actions-hugo@v0.57.2
       run: |
+        sudo apt-get install hugo
         npm install
         npm run build --if-present
         npm test
