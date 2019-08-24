@@ -13,55 +13,19 @@
 									{{ if eq .Params.style "padded" }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
 										<img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
-										<!-- <img
-											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
-											data-sizes="auto"
-											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
-											data-srcset="{{ .Params.img_src }}@300.{{ .Params.img_type }} 300w, {{ .Params.img_src }}@600.{{ .Params.img_type }} 600w, {{ .Params.img_src }}@900.{{ .Params.img_type }} 900w, {{ .Params.img_src }}@1200.{{ .Params.img_type }} 1200w"
-											class="real-image is-padded lazyload"
-											alt="Graphic for {{ .Params.title }}"
-										>
-										<noscript><img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 									{{ else if eq .Params.style "width" }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
 										<img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
-										<!-- <img
-											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
-											data-sizes="auto"
-											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
-											data-srcset="{{ .Params.img_src }}@300.{{ .Params.img_type }} 300w, {{ .Params.img_src }}@600.{{ .Params.img_type }} 600w, {{ .Params.img_src }}@900.{{ .Params.img_type }} 900w, {{ .Params.img_src }}@1200.{{ .Params.img_type }} 1200w"
-											class="real-image is-centered-width lazyload"
-											alt="Graphic for {{ .Params.title }}"
-										>
-										<noscript><img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 									{{ else }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
 										<img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
-										<!-- <img
-											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
-											data-sizes="auto"
-											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
-											data-srcset="{{ .Params.img_src }}@300.{{ .Params.img_type }} 300w, {{ .Params.img_src }}@600.{{ .Params.img_type }} 600w, {{ .Params.img_src }}@900.{{ .Params.img_type }} 900w, {{ .Params.img_src }}@1200.{{ .Params.img_type }} 1200w"
-											class="real-image is-full-width lazyload"
-											alt="Graphic for {{ .Params.title }}"
-										>
-										<noscript><img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 									{{ end }}
 								{{ else }}
 									<div class="image" style="background-color: {{ .Params.bg }}">
 										<img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
-										<!-- <img
-											src="{{ .Params.img_src }}@loading.{{ .Params.img_type }}"
-											data-sizes="auto"
-											data-src="{{ .Params.img_src }}.{{ .Params.img_type }}"
-											data-srcset="{{ .Params.img_src }}@300.{{ .Params.img_type }} 300w, {{ .Params.img_src }}@600.{{ .Params.img_type }} 600w, {{ .Params.img_src }}@900.{{ .Params.img_type }} 900w, {{ .Params.img_src }}@1200.{{ .Params.img_type }} 1200w"
-											class="real-image is-centered-height lazyload"
-											alt="Graphic for {{ .Params.title }}"
-										>
-										<noscript><img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}"></noscript> -->
 									</div>
 								{{ end }}
 								<h2>{{ .Title }}<span class="date-time-pl">{{ .Date.Format "January 2006" }}</span></h2>

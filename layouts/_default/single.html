@@ -4,20 +4,11 @@
 			<link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
 			<div class="article-title{{ if .Date.IsZero }} page{{ end }}">
 				{{ if .Params.icon }}
-					{{ if in .Params.icon ".png" }}
-						<img
-							class="project-icon lazyload"
-							alt="{{ .Title }} icon"
-							data-src="{{ .Params.icon }}"
-							src="{{ substr .Params.icon 0 -4 }}@loading.png"
-						>
-					{{ else }}
-						<img
-							class="project-icon"
-							alt="{{ .Title }} icon"
-							src="{{ .Params.icon }}"
-						>
-					{{ end }}
+					<img
+						class="project-icon"
+						alt="{{ .Title }} icon"
+						src="{{ .Params.icon }}"
+					>
 				{{ end }}
 				<h1 itemprop="headline">{{ .Title }}</h1>
 			</div>

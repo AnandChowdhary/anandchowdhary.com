@@ -201,11 +201,5 @@ gulp.task("pub-delete", () => {
 	return del(["docs/**", "!docs", "functions/**", "!functions"], {
 		// dryRun: true,
 		dot: true
-	}).then(paths => {
-		console.log(
-			"Files and folders deleted:\n",
-			paths.join("\n"),
-			"\nTotal Files Deleted: " + paths.length + "\n"
-		);
 	});
 });
