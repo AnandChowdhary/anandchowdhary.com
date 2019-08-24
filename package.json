@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "gulp build && npm run algolia",
+    "build": "gulp build",
     "build:preview": "gulp build-preview",
     "start": "npm run server",
     "server": "gulp server",
