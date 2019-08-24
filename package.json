@@ -8,14 +8,15 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp build && npm run algolia",
     "build:preview": "gulp build-preview",
     "start": "npm run server",
     "server": "gulp server",
     "serve": "gulp server",
     "server:with-drafts": "gulp server:with-drafts",
     "cms:delete": "gulp cms-delete",
-    "prettier": "onchange 'src/**/*.{js,vue,scss}' -- prettier --write {{changed}}"
+    "prettier": "onchange 'src/**/*.{js,vue,scss}' -- prettier --write {{changed}}",
+    "algolia": "node scripts/algolia.js"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -55,7 +56,13 @@
     ]
   },
   "devDependencies": {
+    "algoliasearch": "^3.33.0",
+    "dotenv": "^8.1.0",
+    "front-matter": "^3.0.2",
+    "markdown-it": "^9.1.0",
     "onchange": "^6.0.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "recursive-readdir": "^2.2.2",
+    "slugify": "^1.3.4"
   }
 }
