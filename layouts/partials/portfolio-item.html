@@ -1,0 +1,25 @@
+<article>
+	<a href="{{ .Permalink }}">
+		{{ if .Params.style }}
+			{{ if eq .Params.style "padded" }}
+			<div class="image" style="background-color: {{ .Params.bg }}">
+				<img class="real-image is-padded" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+			</div>
+			{{ else if eq .Params.style "width" }}
+			<div class="image" style="background-color: {{ .Params.bg }}">
+				<img class="real-image is-centered-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+			</div>
+			{{ else }}
+			<div class="image" style="background-color: {{ .Params.bg }}">
+				<img class="real-image is-full-width" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+			</div>
+			{{ end }}
+		{{ else }}
+			<div class="image" style="background-color: {{ .Params.bg }}">
+				<img class="real-image is-centered-height" alt="Graphic for {{ .Params.title }}" src="{{ .Params.img_src }}.{{ .Params.img_type }}">
+			</div>
+		{{ end }}
+		<h2>{{ .Title }}<span class="date-time-pl">{{ .Date.Format "January 2006" }}</span></h2>
+		{{ .Params.intro | markdownify }}
+	</a>
+</article>
