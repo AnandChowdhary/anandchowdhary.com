@@ -3,7 +3,7 @@ title: DrillMaps
 subcategory: Web
 intro: Platform for Seattle-based horizontal directional drilling company built using Vue.js and integrated with Stripe and Firebase.
 date: 2018-03-11
-work: ["Web"]
+work: ["Web", "Branding"]
 bg: "#009cff"
 timeline: 6 weeks
 client: Drill Maps, Inc.
@@ -18,3 +18,18 @@ The website was built using Vue.js and included Firebase's authentication and re
 [Visit DrillMaps &rarr;](https://www.drillmaps.com)
 
 <div class="image"><img alt="" src="/images/projects/drillmaps/1.png"></div>
+
+A few months later, I also did a complete brand redesign, including a new logo, type, and media:
+
+<div style="max-width: 400px; margin: 3rem auto 0 auto">
+  {{< img src="/images/projects/drillmaps/logo" type="png" >}}
+</div>
+
+<div class="two-images">
+	{{< img src="/images/projects/drillmaps/2" type="png" >}}
+	{{< img src="/images/projects/drillmaps/3" type="png" >}}
+</div>
+<div class="two-images">
+	{{< img src="/images/projects/drillmaps/4" type="png" >}}
+	{{< img src="/images/projects/drillmaps/5" type="png" >}}
+</div>
