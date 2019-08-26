@@ -577,7 +577,6 @@ img {
 
 pre {
 	tab-size: 4;
-	background: whitesmoke;
 	padding: 1rem;
 	font-size: 85%;
 	line-height: 1.4;
@@ -587,9 +586,13 @@ pre {
 }
 
 p code {
-	background: whitesmoke;
 	font-size: 85%;
 	padding: 5px;
+}
+
+p code, pre {
+	background: whitesmoke;
+	color: black;
 }
 
 footer {
