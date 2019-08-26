@@ -48,7 +48,7 @@
     "node-sass-tilde-importer": "^1.0.2",
     "postcss-uncss": "^0.17.0",
     "run-sequence": "^2.0.0",
-    "uncss": "^0.17.0"
+    "uncss": "^0.17.1"
   },
   "babel": {
     "presets": [
