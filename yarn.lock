@@ -10439,10 +10439,10 @@ unc-path-regex@^0.1.2:
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
   integrity sha1-5z3T17DXxe2G+6xrCufYxqadUPo=
 
-uncss@^0.17.1:
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/uncss/-/uncss-0.17.1.tgz#3b24e846342358e1cd518fe8d7623b1e98fa53ec"
-  integrity sha512-5VPNHrEGgx+B5RMyNWtlT0EmDqfjsSr91wS1oebhZ2gI3ja2+BgKNjBfZrX9nuAu+TEFCxO3C6crS+d3g0ZaCw==
+uncss@^0.17.2:
+  version "0.17.2"
+  resolved "https://registry.yarnpkg.com/uncss/-/uncss-0.17.2.tgz#fac1c2429be72108e8a47437c647d58cf9ea66f1"
+  integrity sha512-hu2HquwDItuGDem4YsJROdAD8SknmWtM24zwhQax6J1se8tPjV1cnwPKhtjodzBaUhaL8Zb3hlGdZ2WAUpbAOg==
   dependencies:
     commander "^2.20.0"
     glob "^7.1.4"
