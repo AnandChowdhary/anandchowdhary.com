@@ -1,5 +1,5 @@
 ---
-title: MINET X 2018
+title: MINET X 2019
 date: 2019-08-21
 roles: ["Panelist"]
 places: ["New Delhi"]
