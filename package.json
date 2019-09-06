@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
