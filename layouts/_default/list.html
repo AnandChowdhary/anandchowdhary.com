@@ -134,7 +134,11 @@
 									{{ end }}
 								</a></p>
 							{{ else }}
-								<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+								{{ if .Params.futureDate }}
+									<p><a target="_blank" style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Params.link }}">Get your ticket to {{ .Params.title }}</a></p>
+								{{ else }}
+									<p><a style="color: {{ .Params.color }}; background: none" class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+								{{ end }}
 							{{ end }}
 						{{ else }}
 							{{ if .Params.alias }}
@@ -146,7 +150,11 @@
 									{{ end }}
 								</a></p>
 							{{ else }}
-								<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+								{{ if .Params.futureDate }}
+									<p><a target="_blank" class="button is-link" href="{{ .Params.link }}">Get your ticket to {{ .Params.title }}</a></p>
+								{{ else }}
+									<p><a class="button is-link" href="{{ .Permalink }}">Continue reading &rarr;</a></p>
+								{{ end }}
 							{{ end }}
 						{{ end }}
 					{{ end }}

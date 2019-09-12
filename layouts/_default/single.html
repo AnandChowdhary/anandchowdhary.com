@@ -89,7 +89,7 @@
 			{{ else if in .URL "/events/" }}
 				<div class="meta">
 					{{ if .Params.futureDate }}
-						<time itemprop="dateCreated">{{ .Params.futureDate }}</time>
+						<strong style="margin-right: 0.5rem">Upcoming</strong><time itemprop="dateCreated">{{ .Params.futureDate }}</time>
 					{{ else }}
 						<time itemprop="dateCreated">{{ .Date.Format "January 2, 2006" }}</time>
 					{{ end }}

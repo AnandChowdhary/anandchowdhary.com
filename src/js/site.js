@@ -8,7 +8,9 @@ function initMe() {
 		var href = a[i].host;
 		if (!internal.test(href) && !local.test(href)) {
 			a[i].setAttribute("target", "_blank");
-			a[i].setAttribute("aria-label", a[i].innerText + " (external link)");
+			a[i].setAttribute("aria-label", (a[i].innerText || a[i].getAttribute("aria-label") || (
+				(document.getElementById(a[i].getAttribute("aria-labelledby")) ? document.getElementById(a[i].getAttribute("aria-labelledby")).innerText : "")
+			)) + " (external link)");
 			a[i].setAttribute("rel", "noopener noreferrer");
 		}
 	}
