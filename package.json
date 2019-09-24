@@ -19,7 +19,7 @@
     "algolia": "node scripts/algolia.js"
   },
   "dependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/register": "^7.6.0",
     "browser-sync": "^2.26.7",
