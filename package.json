@@ -56,7 +56,7 @@
     ]
   },
   "devDependencies": {
-    "algoliasearch": "^3.34.0",
+    "algoliasearch": "^3.35.0",
     "dotenv": "^8.1.0",
     "front-matter": "^3.0.2",
     "markdown-it": "^10.0.0",
