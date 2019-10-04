@@ -19,6 +19,12 @@ I showcased Shravan Apps by Oswald Labs as part of the *Mind the Step* exhibitio
 
 This year, Mind the Step has 6 main topics — Innovative materials, Design for debate, Health and well being, Home and leisure, The new mobility, and Improving professional environment. Oswald Labs is collaborating with the DesignLab University of Twente and researchers from Electrical Engineering, Mathematics & Computer Science (EEMCS), University of Twente and Eindhoven University of Technology to present their end-to-end accessible smartphone, Shravan at Mind the Step at the Dutch Design Week this year.
 
-With the support of Miriam Iliohan, co-founder of the DesignLab, Oswald Labs presented immersive demos of our accessible smartphone software, Shravan. More information will follow.
+With the support of Miriam Iliohan, co-founder of the DesignLab, Oswald Labs presented immersive demos of our accessible smartphone apps:
+
+1. Augmenta11y: Dyslexia-friendly augmented reality reading app, powered by Agastya
+2. Visib11y: Blind-friendly reading, navigation, and utility app
+3. Live Subtitles: Real-time conversational captions app for the hearing impaired
+4. Wikibility: Disabled-friendly Wikipedia reference app, powered by Agastya
+5. Reader: Disabled-friendly news and weather app, powered by Agastya
 
 Dutch Design Week was held October 20 to 23, 2018. [Learn more about the event](http://www.mindthestep.nl/) or [get your tickets](http://www.ddw.nl/en/page/ddw-tickets-def).

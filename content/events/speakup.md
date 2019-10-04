@@ -1,5 +1,5 @@
 ---
-title: SpeakUp
+title: Speakup
 date: 2018-09-20
 roles: ["Speaker"]
 places: ["Enschede"]
@@ -11,7 +11,11 @@ type: content
 venue: De Museumfabriek
 ---
 
-In September 2018, SpeakUp, an Enschede-based VoIP and cloud telephony company, celebrated its 15th birthday. At the Speakup Partner & Jubileum Event, I was one of the presenters to showcase their upcoming projects into spaces like AI and mobile.
+In September 2018, Speakup, an Enschede-based VoIP and cloud telephony company, celebrated its 15th birthday. At the Speakup Partner & Jubileum Event, I was one of the presenters to showcase their upcoming projects into spaces like AI and mobile.
+
+<!--more-->
+
+I gave a demo of Ara, an AI-powered assistant for work, which raised its seed round from Speakup.
 
 Photos © Masterphoto/SpeakUp
 
