@@ -18,5 +18,6 @@ He has been [featured](/press/) in Forbes 30 Under 30 Asia 2018, Het Financieele
 
 He is currently unavailable for freelance projects.
 
+- [Résumé](https://www.dropbox.com/s/18jw3binirgc8rq/AnandChowdhary_Sep2019_Resume.pdf?dl=0) -- October 2019
 - [Curriculum vitae](https://www.dropbox.com/s/ksyfiujs5sqy14s/AnandChowdhary_CV_Aug18.pdf?dl=0) -- August 2018
 - [Portfolio](https://www.dropbox.com/s/eznlsi6336n96f2/AnandChowdhary_Portfolio_Jan17.pdf) -- January 2017
