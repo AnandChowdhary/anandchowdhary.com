@@ -61,7 +61,7 @@
     "front-matter": "^3.0.2",
     "markdown-it": "^10.0.0",
     "onchange": "^6.1.0",
-    "prettier": "^1.19.0",
+    "prettier": "^1.19.1",
     "recursive-readdir": "^2.2.2",
     "slugify": "^1.3.6"
   }
