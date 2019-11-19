@@ -1,6 +1,6 @@
 ---
 title: Contact
-intro: Get in touch with Anand Chowdhary using the contact form.
+layout: page.njk
 ---
 
 To get in touch with me, you can drop me a line at [mail@anandchowdhary.com](mailto:mail@anandchowdhary.com) or fill in the form below.

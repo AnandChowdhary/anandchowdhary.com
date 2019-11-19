@@ -1,6 +1,6 @@
 ---
 title: Everything
-intro: This is a list of everything.
+layout: page.njk
 ---
 
 ## 2018
