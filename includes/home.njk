@@ -1,0 +1,38 @@
+{% include "head.njk" %}
+<main id="content">
+  <div class="container-large">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+    <section class="projects">
+      <h1>Projects</h1>
+      <div>
+        {% for project in collections.projects | reverse %}
+          {% if loop.index <= 2 %}
+            {% include "project-item.njk" %}
+          {% endif %} 
+        {% endfor %}
+      </div>
+    </section>
+    <section class="blog home-items">
+      <h1>Blog</h1>
+      <div>
+        {% for post in collections.blog | reverse %}
+          {% if loop.index <= 4 %}
+            {% include "home-item.njk" %}
+          {% endif %} 
+        {% endfor %}
+      </div>
+    </section>
+    <section class="events home-items">
+      <h1>Events</h1>
+      <div>
+        {% for post in collections.events | reverse %}
+          {% if loop.index <= 4 %}
+            {% include "home-item.njk" %}
+          {% endif %} 
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</main>
+{% include "footer.njk" %}

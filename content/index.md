@@ -1,5 +1,5 @@
 ---
-layout: page.njk
+layout: home.njk
 ---
 
 # Anand Chowdhary is a creative technologist and entrepreneur.

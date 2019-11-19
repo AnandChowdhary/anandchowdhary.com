@@ -12,9 +12,11 @@ pagination:
     <h1>{{ title }}</h1>
     {{ content | safe }}
     <section class="projects">
-      {% for project in pagination %}
-        {% include "project-item.njk" %}
-      {% endfor %}
+      <div>
+        {% for project in pagination %}
+          {% include "project-item.njk" %}
+        {% endfor %}
+      </div>
     </section>
     {% if pagination.pageLinks.length > 1 %}
     <nav class="pagination">
