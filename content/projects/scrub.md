@@ -11,7 +11,7 @@ bg: "#145efb"
 style: padded
 img_src: /images/projects/scrub/image
 img_type: png
-places: ["Paris"]
+places: paris
 venue: Expo Porte de Versailles
 award: €5,000
 award_position: 1

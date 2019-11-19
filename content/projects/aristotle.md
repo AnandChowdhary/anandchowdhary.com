@@ -11,7 +11,7 @@ bg: "#aaa"
 style: padded
 img_src: /images/projects/aristotle/2
 img_type: png
-places: ["Heerlen"]
+places: heerlen
 venue: Brightlands Campus
 award: €12,500
 award_position: 1

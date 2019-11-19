@@ -10,7 +10,7 @@ style: cover
 client: CLS Group
 img_src: /images/projects/clshare/cover
 img_type: png
-places: ["London"]
+places: london
 venue: LABS Holborn
 award: £10,000
 award_position: 1

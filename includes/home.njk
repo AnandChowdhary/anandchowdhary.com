@@ -30,7 +30,7 @@
       <div>
         {% for post in collections.events | reverse %}
           {% if loop.index <= 4 %}
-            {% include "home-item.njk" %}
+            {% include "home-event.njk" %}
           {% endif %} 
         {% endfor %}
       </div>
