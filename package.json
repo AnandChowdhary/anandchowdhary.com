@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve",
+    "serve": "eleventy --serve & gulp watch",
     "gulp": "gulp"
   },
   "devDependencies": {
