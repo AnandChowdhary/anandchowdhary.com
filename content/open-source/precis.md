@@ -1,8 +1,9 @@
 ---
 title: Precis
 date: 2016-12-02
-tags: ["PHP", "MySQL"]
-type: content
+tags:
+	- open-source
+	- php
 icon: /images/icons/precis.png
 ---
 

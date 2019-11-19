@@ -1,8 +1,9 @@
 ---
 title: Hello-bar
 date: 2019-01-05
-tags: ["JavaScript"]
-type: content
+tags:
+	- open-source
+	- javascript
 icon: /images/open-source/hello-bar/icon.svg
 github: AnandChowdhary/hello-bar
 npm: hello-bar

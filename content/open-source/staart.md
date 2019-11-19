@@ -1,8 +1,9 @@
 ---
 title: Staart
 date: 2019-08-16
-tags: ["JavaScript", "TypeScript"]
-type: content
+tags:
+	- open-source
+	- javascript
 icon: /images/icons/staart.png
 github: o15y/staart
 ---

@@ -1,8 +1,9 @@
 ---
 title: ac.js
 date: 2012-10-01
-tags: ["JavaScript"]
-type: content
+tags:
+	- open-source
+	- javascript
 icon: /images/icons/acjs.png
 ---
 

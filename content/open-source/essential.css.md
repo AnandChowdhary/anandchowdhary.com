@@ -1,8 +1,9 @@
 ---
 title: essential.css
 date: 2014-07-08
-tags: ["CSS"]
-type: content
+tags:
+	- open-source
+	- css
 icon: /images/icons/essential.png
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: One Grid
 date: 2015-12-25
-tags: ["CSS"]
-type: content
+tags:
+	- open-source
+	- css
 icon: /images/icons/one-grid.png
 ---
 
