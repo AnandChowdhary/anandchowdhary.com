@@ -1,7 +1,9 @@
 ---
 title: Twitter Subaccounts
 date: 2019-03-12T19:02:42+01:00
-tags: ["Coffee Time"]
+tags:
+  - blog
+  - coffee-time
 ---
 
 I think Twitter should have a concept of sub-accounts. It's not smart to create a Twitter account for every small project, but it's often a necessity for support or a social media presence. In my case, I have a [Twitter account](https://twitter.com/AnandChowdhary), and so does [Oswald Labs](https://twitter.com/OswaldLabs) (which makes complete sense since it's a company and I'm just a small part of it).

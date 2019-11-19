@@ -1,7 +1,9 @@
 ---
 title: Google Docs + GitHub
 date: 2019-03-11T18:44:38+01:00
-tags: ["Coffee Time"]
+tags:
+  - blog
+  - coffee-time
 ---
 
 When I first started using Google Docs, my favorite feature was "smart" autosaving. "Smart" because it's not just an interval, but also based on content changes. Today, almost all popular web-based text editors have both autosaving (WordPress, Medium, etc.) and rich text formatting (think \[f]CKEditor and TinyMCE a decade ago).

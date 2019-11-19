@@ -1,7 +1,9 @@
 ---
 title: Package Manager Standardization
 date: 2019-03-15T19:54:59+01:00
-tags: ["Coffee Time"]
+tags:
+  - blog
+  - coffee-time
 ---
 
 Matt Turnbull has a great article titled [Why Are You Still Using Yarn in 2018?](https://iamturns.com/yarn-vs-npm-2018/) which makes the argument that newer versions of NPM are just as fast as Yarn and switching to NPM might actually have some benefits (I'm still a Yarn user).

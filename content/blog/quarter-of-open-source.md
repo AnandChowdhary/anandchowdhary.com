@@ -1,6 +1,7 @@
 ---
 title: Quarter of Open Source
 date: 2019-04-04T11:01:23+01:00
+tags: blog
 ---
 
 The first quarter of 2019 was very interesting for me. It was the first time I did a lot of open-source work as a way to scratch my own itch. Every time I thought I needed a specific tool which I couldn't find, I built and open-sourced it.

@@ -1,8 +1,7 @@
 ---
 title: "Life Update: College"
 date: 2017-03-01
-tags: blog, Life
-type: content
+tags: blog
 ---
 
 Just a little bit of background about my college "situation". How I went from design school in India to back to New Delhi to the University of Twente in the Netherlands. I wrote this post in March 2017 and updated it in December 2017.

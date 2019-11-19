@@ -1,7 +1,9 @@
 ---
 title: New Google Play Badges
 date: 2019-08-31T17:35:38+05:30
-tags: ["Coffee Time"]
+tags:
+  - blog
+  - coffee-time
 ---
 
 When you're advertising your smartphone app, perhaps the first thing you show off are platform badges. They're the easiest and most familiar way to tell users where they can find your app. All major platforms, Apple's App Store, Google Play, and Microsoft Store have official badges which are somewhat consistent with each other.
