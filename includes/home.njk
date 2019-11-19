@@ -26,11 +26,21 @@
       </div>
     </section>
     <section class="home-items events">
-      <h1>Events</h1>
+      <h1>Speaking</h1>
       <div>
         {% for post in collections.events | reverse %}
           {% if loop.index <= 4 %}
             {% include "home-event.njk" %}
+          {% endif %} 
+        {% endfor %}
+      </div>
+    </section>
+    <section class="home-items travel">
+      <h1>Travel</h1>
+      <div>
+        {% for post in travel %}
+          {% if loop.index <= 7 %}
+            {% include "home-travel.njk" %}
           {% endif %} 
         {% endfor %}
       </div>

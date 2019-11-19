@@ -136,6 +136,10 @@ nav.pagination {
     color: rgba(100, 100, 100, 0.6);
   }
 
+  .meta {
+    margin-top: 0.5rem;
+  }
+
   a {
     display: block;
     color: inherit;
@@ -175,5 +179,42 @@ main#content > .container-large {
     top: 0;
     transform: translate(-100%,-100%) rotate(-90deg);
     transform-origin: bottom right;
+  }
+
+  + .home-items {
+    margin-top: 4rem;
+  }
+}
+
+footer#colophon {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.travel > div {
+  article {
+    flex: 1 0 0;
+    text-align: center;
+  }
+  picture ~ div:last-child {
+   margin-top: 0.5rem;
+   font-size: 90%;
+  }
+  $image-width: 50%;
+  picture {
+    width: $image-width;
+    margin: 0 auto 1rem auto;
+    line-height: 1;
+    display: block;
+    border: 0.125rem solid rgba(100, 100, 100, 1);
+    padding: 0.25rem;
+    border-radius: 100%;
+    img {
+      vertical-align: top;
+      border-radius: 100%;
+      background-color: rgba(100, 100, 100, 0.5);
+      width: 100%;
+    }
   }
 }

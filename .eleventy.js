@@ -1,4 +1,5 @@
 module.exports = (eleventyConfig) => {
+  eleventyConfig.addNunjucksFilter("encodeURIComponent", value => encodeURIComponent(value));
   eleventyConfig.addNunjucksFilter("place", value => {
     switch (value) {
       case "san-francisco-bay-area":
