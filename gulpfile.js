@@ -6,42 +6,48 @@ var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 var cleanCSS = require("gulp-clean-css");
 var del = require("del");
- 
+
 var paths = {
   styles: {
     src: "styles/**/*.scss",
-    dest: "assets/styles/"
+    dest: "public/assets/styles/"
   },
   scripts: {
     src: "scripts/**/*.js",
-    dest: "assets/scripts/"
+    dest: "public/assets/scripts/"
   }
 };
 
 function clean() {
-  return del([ "assets" ]);
+  return del(["public/assets"]);
 }
 
 function styles() {
-  return gulp.src(paths.styles.src)
-    .pipe(sass())
-    .pipe(cleanCSS())
-    // pass in options to the stream
-    .pipe(rename({
-      basename: "main",
-      suffix: ".min"
-    }))
-    .pipe(gulp.dest(paths.styles.dest));
+  return (
+    gulp
+      .src(paths.styles.src)
+      .pipe(sass())
+      .pipe(cleanCSS())
+      // pass in options to the stream
+      .pipe(
+        rename({
+          basename: "main",
+          suffix: ".min"
+        })
+      )
+      .pipe(gulp.dest(paths.styles.dest))
+  );
 }
 
 function scripts() {
-  return gulp.src(paths.scripts.src, { sourcemaps: true })
+  return gulp
+    .src(paths.scripts.src, { sourcemaps: true })
     .pipe(babel())
     .pipe(uglify())
     .pipe(concat("main.min.js"))
     .pipe(gulp.dest(paths.scripts.dest));
 }
- 
+
 function watch() {
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.styles.src, styles);
