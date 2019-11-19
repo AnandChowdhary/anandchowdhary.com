@@ -1,0 +1,10 @@
+<article>
+  <a href="{{ project.url | url }}">
+    <div class="image">Image</div>
+    <div>
+      <h2>{{ project.data.title }}</h2>
+      <time>{{ project.data.date.toUTCString() }}</time>
+    </div>
+    <p>{{ project.data.intro }}</p>
+  </a>
+</article>
