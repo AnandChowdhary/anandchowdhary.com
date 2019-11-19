@@ -1,5 +1,10 @@
 <article>
   <a href="{{ post.url | url }}">
     <h2>{{ post.data.title }}</h2>
+    <time>{{ post.data.date.toLocaleDateString("en-US", {
+      day: "numeric",
+      month: "short",
+      year : "numeric"
+    }) }}</time>
   </a>
 </article>

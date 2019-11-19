@@ -28,7 +28,7 @@ function styles() {
       .src(paths.styles.src)
       .pipe(sass())
       .pipe(cleanCSS())
-      // pass in options to the stream
+      .pipe(concat("main.min.css"))
       .pipe(
         rename({
           basename: "main",

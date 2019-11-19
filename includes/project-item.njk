@@ -3,7 +3,11 @@
     <div class="image">Image</div>
     <div>
       <h2>{{ project.data.title }}</h2>
-      <time>{{ project.data.date.toUTCString() }}</time>
+      <time>{{ project.data.date.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year : "numeric"
+      }) }}</time>
     </div>
     <p>{{ project.data.intro }}</p>
   </a>

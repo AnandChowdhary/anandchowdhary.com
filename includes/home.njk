@@ -1,9 +1,11 @@
 {% include "head.njk" %}
 <main id="content">
   <div class="container-large">
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
-    <section class="projects">
+    <div class="hero">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+    <section class="home-items projects">
       <h1>Projects</h1>
       <div>
         {% for project in collections.projects | reverse %}
@@ -13,7 +15,7 @@
         {% endfor %}
       </div>
     </section>
-    <section class="blog home-items">
+    <section class="home-items blog">
       <h1>Blog</h1>
       <div>
         {% for post in collections.blog | reverse %}
@@ -23,7 +25,7 @@
         {% endfor %}
       </div>
     </section>
-    <section class="events home-items">
+    <section class="home-items events">
       <h1>Events</h1>
       <div>
         {% for post in collections.events | reverse %}
