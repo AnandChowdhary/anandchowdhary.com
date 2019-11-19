@@ -1,14 +1,14 @@
 ---
 title: Hardstart Pitch Training
 date: 2017-10-31
-roles: ["Trainer"]
-places: ["Enschede"]
+roles: trainer
+places: enschede
 link: https://www.facebook.com/events/527224840975743/
 linkType: Facebook
 icon: /images/icons/hardstart.png
 color: "#bb2226"
-type: content
 venue: Hardstart
+tags: events
 ---
 
 I developed and conducted a startup pitching workshop for student entrepreneurship organization and incubator Hardstart's flagship pitching event, *Pitch that Bitch*. It was the first time that I conducted a workshop for fellow student entrepreneurs, and it was definitely a very interesting experience.

@@ -1,14 +1,14 @@
 ---
 title: eSummit
 date: 2018-08-25
-roles: ["Speaker"]
-places: ["Kanpur"]
+roles: speaker
+places: kanpur
 link: https://ecelliitk.org/esummit18/
 linkType: Website
 icon: /images/events/esummit/icon.png
 color: "#69e"
-type: content
 venue: Indian Institute of Technology
+tags: events
 ---
 
 At IIT Kanpur's flagship entrepreneurship event, eSummit 2018, I was invited to speak about my journey, lessons, and upcoming opportunities in technology. I was part of the Forbes 30 Under 30 session which featured entrepreneurs from this year's list sharing their experiences before a Q&A session.

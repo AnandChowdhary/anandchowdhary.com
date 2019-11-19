@@ -1,14 +1,14 @@
 ---
 title: Startup24
 date: 2017-11-11
-roles: ["Trainer"]
-places: ["Enschede"]
+roles: trainer
+places: enschede
 link: https://startup24.nl/cities/enschede
 linkType: Website
 icon: /images/icons/startup24.png
 color: "#f39c12"
-type: content
 venue: Novel-T
+tags: events
 ---
 
 Startup24 is the flagship startup weekend-like event in the Netherlands which happens in 12 cities simultaneously. I was invited to Startup24 Enschede to do a pitching working for the participants before their final jury pitches, and I was also part of their "midnight jury" for 2-minute pitches at midnight.

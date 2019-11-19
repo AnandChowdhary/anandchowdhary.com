@@ -1,5 +1,6 @@
 ---
 title: Speaking
+layout: events.njk
 ---
 
-This is speaking
+This is speaking and events

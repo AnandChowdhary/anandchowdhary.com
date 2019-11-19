@@ -1,14 +1,14 @@
 ---
 title: SIP Launch (DTU)
 date: 2016-09-16
-roles: ["Speaker"]
-places: ["New Delhi"]
+roles: speaker
+places: new-delhi
 link: https://www.facebook.com/events/1878224245738991/
 linkType: Facebook
 icon: /images/icons/dtu.png
-type: content
 color: "#771e18"
 venue: Delhi Technological University
+tags: events
 ---
 
 I was the keynote speaker at the launch of the Startup Internship Portal of Delhi Technological University (DTU), where I did the first public revealing of Oswald Labs' R&D blind-friendly smartphone OS, Shravan and talked about the opportunity of working with startups.

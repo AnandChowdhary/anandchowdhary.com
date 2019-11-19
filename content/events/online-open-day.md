@@ -1,14 +1,14 @@
 ---
 title: Online Open Day
 date: 2018-05-16
-roles: ["Panelist"]
-places: ["Enschede"]
+roles: panelist
+places: enschede
 link: https://www.utwente.nl/en/online-open-day/
 linkType: Website
 icon: /images/events/online-open-day/icon.png
 color: "#1e2328"
-type: content
 venue: University of Twente
+tags: events
 ---
 
 At the University of Twente's first annual Online Open Day, I spoke about startups, entrepreneurship, and technology at the university, as part of a panel called "Beyond Your Studies," moderated by co-founder and project manager of DesignLab, Miriam Iliohan.

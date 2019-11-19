@@ -1,14 +1,14 @@
 ---
 title: Tech Charcha by Facebook DevC
 date: 2017-05-07
-roles: ["Panelist"]
-places: ["New Delhi"]
+roles: panelist
+places: new-delhi
 link: https://www.facebook.com/events/199095997267944/
 linkType: Facebook
 icon: /images/icons/facebook.png
 color: "#4267b2"
-type: content
 venue: 91springboard Okhla
+tags: events
 ---
 
 I was part of a panel discussion on the future of technology by Facebook's Developer Circles Delhi-NCR along with Chinmaya Saxena, Developer Programs Lead, Facebook India; Saransh Kataria, Chapter Lead, Facebook Developer Circle Delhi; and Shubhamoy Chakrabarty, COO at Cloudtub, Inc.

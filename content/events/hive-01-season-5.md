@@ -1,14 +1,16 @@
 ---
 title: Hive 01 Season 5
 date: 2019-06-12
-roles: ["Panelist", "Speaker"]
-places: ["Enschede"]
+roles:
+  - panelist
+  - speaker
+places: enschede
 link: https://www.facebook.com/events/397841724394878/
 linkType: Facebook
 icon: /images/events/hive-01/icon.png
 color: "#3a4693"
-type: content
 venue: U Parkhotel
+tags: events
 ---
 
 In June 2019, Hive 01 Enschede (formerly NESST Twente) organized the Dragon's Den pitching event for startups. I was one of the five Dragons and we awarded three prizes.

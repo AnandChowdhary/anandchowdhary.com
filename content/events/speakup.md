@@ -1,14 +1,14 @@
 ---
 title: Speakup
 date: 2018-09-20
-roles: ["Speaker"]
-places: ["Enschede"]
+roles: speaker
+places: enschede
 link: https://www.eventbrite.nl/e/registratie-speakup-partner-jubileum-event-het-heft-in-handen-47815646887
 linkType: Eventbrite
 icon: /images/events/speakup/icon.png
 color: "#e67f41"
-type: content
 venue: De Museumfabriek
+tags: events
 ---
 
 In September 2018, Speakup, an Enschede-based VoIP and cloud telephony company, celebrated its 15th birthday. At the Speakup Partner & Jubileum Event, I was one of the presenters to showcase their upcoming projects into spaces like AI and mobile.
