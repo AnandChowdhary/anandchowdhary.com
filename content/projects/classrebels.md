@@ -24,11 +24,11 @@ Our mission is to develop our nation's human resource. The way education takes p
 However, we do not believe that there is an absence of good teachers and educational content. That's entirely false. The only problem that arises is that there is no way a student can discover an amazing teacher, or a teacher can discover an amazing student, without already having mutual contacts. That's what we're trying to change. A place where students can look for everything they need, from notes to teachers' updates to calendars based on studying schedules. All in one single place we like to call ClassRebels.
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/classrebels/1.jpg"></div>
-	<div><img alt="" src="/images/projects/classrebels/2.png"></div>
+  <div><img alt="" src="/images/projects/classrebels/1.jpg"></div>
+  <div><img alt="" src="/images/projects/classrebels/2.png"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/projects/classrebels/4.png"></div>
-	<div><img alt="" src="/images/projects/classrebels/3.png"></div>
+  <div><img alt="" src="/images/projects/classrebels/4.png"></div>
+  <div><img alt="" src="/images/projects/classrebels/3.png"></div>
 </div>
 <div class="image scale"><img alt="" src="/images/projects/classrebels/5.png"></div>

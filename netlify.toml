@@ -1,16 +1,16 @@
 [build]
-	command = "yarn build"
-	publish = "docs"
+  command = "yarn build"
+  publish = "docs"
 
 [build.environment]
-	HUGO_VERSION = "0.52"
+  HUGO_VERSION = "0.52"
 
 [context.production.environment]
-	HUGO_ENV = "production"
-	NODE_ENV = "production"
+  HUGO_ENV = "production"
+  NODE_ENV = "production"
 
 [context.deploy-preview]
-	command = "yarn build:preview"
+  command = "yarn build:preview"
 
 [[redirects]]
   from = "/blog/google-docs-github/"

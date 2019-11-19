@@ -2,8 +2,8 @@
 title: Hovercard
 date: 2018-12-04
 tags:
-	- open-source
-	- javascript
+  - open-source
+  - javascript
 icon: /images/open-source/hovercard/icon.png
 github: AnandChowdhary/hovercard
 npm: hovercard

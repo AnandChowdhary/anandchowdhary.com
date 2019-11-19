@@ -25,10 +25,10 @@ Made with Love in India is a platform to celebrate, promote, and build a brand -
 [Visit Made with Love in India &rarr;](https://madewithlove.org.in)
 
 <div class="two-images scale">
-	<div><img alt="" src="/images/projects/mwlii/1.png"></div>
-	<div><img alt="" src="/images/projects/mwlii/2.png"></div>
+  <div><img alt="" src="/images/projects/mwlii/1.png"></div>
+  <div><img alt="" src="/images/projects/mwlii/2.png"></div>
 </div>
 <div class="two-images scale">
-	<div><img alt="" src="/images/projects/mwlii/3.png"></div>
-	<div><img alt="" src="/images/projects/mwlii/4.png"></div>
+  <div><img alt="" src="/images/projects/mwlii/3.png"></div>
+  <div><img alt="" src="/images/projects/mwlii/4.png"></div>
 </div>

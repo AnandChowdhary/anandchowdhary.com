@@ -2,8 +2,8 @@
 title: ac.js
 date: 2012-10-01
 tags:
-	- open-source
-	- javascript
+  - open-source
+  - javascript
 icon: /images/icons/acjs.png
 ---
 
@@ -18,10 +18,10 @@ Using ac.js, you can do something like this:
 ```js
 var element = $("nav#navbar");
 $(element, "mouseover", function() {
-	$(function() {
-		// This will be logged after 1 second
-		console.log("You hovered over the navbar!");
-	}, 1000);
+  $(function() {
+    // This will be logged after 1 second
+    console.log("You hovered over the navbar!");
+  }, 1000);
 });
 ```
 

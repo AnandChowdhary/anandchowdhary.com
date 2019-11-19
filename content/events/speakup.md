@@ -20,11 +20,11 @@ I gave a demo of Ara, an AI-powered assistant for work, which raised its seed ro
 Photos © Masterphoto/SpeakUp
 
 <div class="two-images">
-	{{< img src="/images/events/speakup/5baa7959cb226_MASTERPHOTO_NL-20-09-18_042" type="jpg" >}}
-	{{< img src="/images/events/speakup/5baa79763d49f_MASTERPHOTO_NL-20-09-18_102" type="jpg" >}}
+  {{< img src="/images/events/speakup/5baa7959cb226_MASTERPHOTO_NL-20-09-18_042" type="jpg" >}}
+  {{< img src="/images/events/speakup/5baa79763d49f_MASTERPHOTO_NL-20-09-18_102" type="jpg" >}}
 </div>
 
 <div class="two-images">
-	{{< img src="/images/events/speakup/5baa797ed3317_MASTERPHOTO_NL-20-09-18_121" type="jpg" >}}
-	{{< img src="/images/events/speakup/5baa795ec8ec7_MASTERPHOTO_NL-20-09-18_053" type="jpg" >}}
+  {{< img src="/images/events/speakup/5baa797ed3317_MASTERPHOTO_NL-20-09-18_121" type="jpg" >}}
+  {{< img src="/images/events/speakup/5baa795ec8ec7_MASTERPHOTO_NL-20-09-18_053" type="jpg" >}}
 </div>

@@ -24,13 +24,13 @@ Our winning product was a Scrum/Agile platform to mitigate errors. The workflow 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/scrub)
 
 <div class="two-images">
-	{{< img src="/images/projects/scrub/1" type="png" >}}
-	{{< img src="/images/projects/scrub/2" type="png" >}}
+  {{< img src="/images/projects/scrub/1" type="png" >}}
+  {{< img src="/images/projects/scrub/2" type="png" >}}
 </div>
 
 <div class="two-images">
-	{{< img src="/images/projects/scrub/3" type="png" >}}
-	{{< img src="/images/projects/scrub/4" type="png" >}}
+  {{< img src="/images/projects/scrub/3" type="png" >}}
+  {{< img src="/images/projects/scrub/4" type="png" >}}
 </div>
 
 The product was a Corvid web app built using their components and custom frontend and backend JavaScript. It also integrated with several Corvid features, like comments, repeaters, and more.

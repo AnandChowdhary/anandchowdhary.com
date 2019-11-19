@@ -2,8 +2,8 @@
 title: Uppload
 date: 2018-04-19
 tags:
-	- open-source
-	- javascript
+  - open-source
+  - javascript
 icon: /images/icons/uppload.png
 github: elninotech/uppload
 npm: uppload

@@ -14,15 +14,15 @@ Please note that I am currently not interested in taking up any freelance projec
 Feel free to follow or connect with me on any of the following networks:
 
 <div class="social-links">
-	<a href="https://linkedin.com/in/AnandChowdhary" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>
-	<a href="https://facebook.com/AnandChowdhary" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>
-	<a href="https://github.com/AnandChowdhary" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>
-	<a href="https://instagram.com/anandchowdhary" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>
-	<a href="https://twitter.com/AnandChowdhary" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>
-	<a href="https://medium.com/@AnandChowdhary" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>
-	<a href="https://dribbble.com/anandchowdhary" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>
-	<a href="https://quora.com/Anand-Chowdhary" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>
-	<a href="https://angel.co/anand-chowdhary" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>
+  <a href="https://linkedin.com/in/AnandChowdhary" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>
+  <a href="https://facebook.com/AnandChowdhary" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>
+  <a href="https://github.com/AnandChowdhary" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>
+  <a href="https://instagram.com/anandchowdhary" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/AnandChowdhary" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>
+  <a href="https://medium.com/@AnandChowdhary" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>
+  <a href="https://dribbble.com/anandchowdhary" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>
+  <a href="https://quora.com/Anand-Chowdhary" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>
+  <a href="https://angel.co/anand-chowdhary" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>
 </div>
 
 <form action="https://formspree.io/mail@anandchowdhary.com" method="post">

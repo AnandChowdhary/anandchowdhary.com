@@ -27,10 +27,10 @@ A few months later, I also did a complete brand redesign, including a new logo, 
 </div>
 
 <div class="two-images">
-	{{< img src="/images/projects/drillmaps/2" type="png" >}}
-	{{< img src="/images/projects/drillmaps/3" type="png" >}}
+  {{< img src="/images/projects/drillmaps/2" type="png" >}}
+  {{< img src="/images/projects/drillmaps/3" type="png" >}}
 </div>
 <div class="two-images">
-	{{< img src="/images/projects/drillmaps/4" type="png" >}}
-	{{< img src="/images/projects/drillmaps/5" type="png" >}}
+  {{< img src="/images/projects/drillmaps/4" type="png" >}}
+  {{< img src="/images/projects/drillmaps/5" type="png" >}}
 </div>

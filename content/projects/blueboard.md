@@ -18,8 +18,8 @@ BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. 
 Users can open the BlueBoard app and set their preferences by assigning points from 0 to 10 to everything you they like — from technology and fashion to food and the weather. BlueBoard listens to the app and securely transfers their preference data. It then understands their preferences and shows them the best, most relevant advertisements from multiple sources. With multiple users, it finds their common intersts and shows what works for everyone.
 
 <div class="two-images">
-	{{< img src="/images/projects/blueboard/1" type="jpg" >}}
-	{{< img src="/images/projects/blueboard/2" type="jpg" >}}
+  {{< img src="/images/projects/blueboard/1" type="jpg" >}}
+  {{< img src="/images/projects/blueboard/2" type="jpg" >}}
 </div>
 
 BlueBoard was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.

@@ -2,8 +2,8 @@
 title: essential.css
 date: 2014-07-08
 tags:
-	- open-source
-	- css
+  - open-source
+  - css
 icon: /images/icons/essential.png
 ---
 
@@ -22,8 +22,8 @@ The usage is very simple, you just have to include this link to your webpage:
 This is what a page looks like with essential.css:
 
 <div class="two-images">
-	{{< img src="/images/open-source/essential1" type="png" >}}
-	{{< img src="/images/open-source/essential2" type="png" >}}
+  {{< img src="/images/open-source/essential1" type="png" >}}
+  {{< img src="/images/open-source/essential2" type="png" >}}
 </div>
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/essential.css)

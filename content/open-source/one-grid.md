@@ -2,8 +2,8 @@
 title: One Grid
 date: 2015-12-25
 tags:
-	- open-source
-	- css
+  - open-source
+  - css
 icon: /images/icons/one-grid.png
 ---
 
@@ -20,12 +20,12 @@ By eliminating rows, we get:
 
 ```html
 <div class="container">
-	<div class="one">1</div>
-	<div class="one half">1/2</div>
-	<div class="one half">1/2</div>
-	<div class="one third">1/3</div>
-	<div class="one third">1/3</div>
-	<div class="one third">1/3</div>
+  <div class="one">1</div>
+  <div class="one half">1/2</div>
+  <div class="one half">1/2</div>
+  <div class="one third">1/3</div>
+  <div class="one third">1/3</div>
+  <div class="one third">1/3</div>
 </div>
 ```
 

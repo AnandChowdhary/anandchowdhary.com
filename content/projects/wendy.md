@@ -18,22 +18,22 @@ As soon as someone approaches your door, Wendy checks their face against your tr
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/wendy)
 
 <div class="three-images">
-	<div><img alt="" src="/images/projects/wendy/1.png"></div>
-	<div><img alt="" src="/images/projects/wendy/2.png"></div>
-	<div><img alt="" src="/images/projects/wendy/3.png"></div>
+  <div><img alt="" src="/images/projects/wendy/1.png"></div>
+  <div><img alt="" src="/images/projects/wendy/2.png"></div>
+  <div><img alt="" src="/images/projects/wendy/3.png"></div>
 </div>
 <div class="three-images">
-	<div><img alt="" src="/images/projects/wendy/4.png"></div>
-	<div><img alt="" src="/images/projects/wendy/5.png"></div>
-	<div><img alt="" src="/images/projects/wendy/6.png"></div>
+  <div><img alt="" src="/images/projects/wendy/4.png"></div>
+  <div><img alt="" src="/images/projects/wendy/5.png"></div>
+  <div><img alt="" src="/images/projects/wendy/6.png"></div>
 </div>
 <div class="two-images shadow">
-	<div><img alt="" src="/images/projects/wendy/slide-1.png"></div>
-	<div><img alt="" src="/images/projects/wendy/slide-2.png"></div>
+  <div><img alt="" src="/images/projects/wendy/slide-1.png"></div>
+  <div><img alt="" src="/images/projects/wendy/slide-2.png"></div>
 </div>
 <div class="two-images shadow">
-	<div><img alt="" src="/images/projects/wendy/slide-3.png"></div>
-	<div><img alt="" src="/images/projects/wendy/slide-4.png"></div>
+  <div><img alt="" src="/images/projects/wendy/slide-3.png"></div>
+  <div><img alt="" src="/images/projects/wendy/slide-4.png"></div>
 </div>
 
 <footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

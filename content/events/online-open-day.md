@@ -16,8 +16,8 @@ At the University of Twente's first annual Online Open Day, I spoke about startu
 <!--more-->
 
 <div class="two-images">
-	{{< img alt="Screenshot of Online Open Day, close up of Anand Chowdhary" src="/images/events/online-open-day/screen1" type="png" >}}
-	{{< img alt="Screenshot of Online Open Day, 5 panelists" src="/images/events/online-open-day/screen2" type="png" >}}
+  {{< img alt="Screenshot of Online Open Day, close up of Anand Chowdhary" src="/images/events/online-open-day/screen1" type="png" >}}
+  {{< img alt="Screenshot of Online Open Day, 5 panelists" src="/images/events/online-open-day/screen2" type="png" >}}
 </div>
 
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FUT.Greece%2Fphotos%2Fa.398112256929151.96158.121044044635975%2F1950504521689909%2F%3Ftype%3D3&width=500" width="500" height="689" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>

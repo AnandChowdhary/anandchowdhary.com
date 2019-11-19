@@ -16,39 +16,39 @@ GET https://people.utwente.nl/search?query=a
 
 ```json
 {
-	"data": [
-		{
-			"type": "person",
-			"id": "10000000000XXXX",
-			"name": "John Doe",
-			"jobtitle": "Supporting Staff",
-			"avatar": "https://people.utwente.nl/john.doe/picture.jpg",
-			"profile": "https://people.utwente.nl/john.doe",
-			"organizations": [
-				{
-					"code": "S&B-XXXX",
-					"department": "S&B",
-					"section": "XXXX"
-				}
-			],
-			"locations": [
-				{
-					"description": "Enschede 320",
-					"latitude": 52.23979,
-					"longitude": 6.850018
-				}
-			],
-			"phones": [
-				{
-					"type": "",
-					"tel": "+3153489XXXX",
-					"prefix": "+3153489",
-					"ext": "XXXX"
-				}
-			],
-			"email": "john.doe@utwente.nl"
-		}
-	]
+  "data": [
+    {
+      "type": "person",
+      "id": "10000000000XXXX",
+      "name": "John Doe",
+      "jobtitle": "Supporting Staff",
+      "avatar": "https://people.utwente.nl/john.doe/picture.jpg",
+      "profile": "https://people.utwente.nl/john.doe",
+      "organizations": [
+        {
+          "code": "S&B-XXXX",
+          "department": "S&B",
+          "section": "XXXX"
+        }
+      ],
+      "locations": [
+        {
+          "description": "Enschede 320",
+          "latitude": 52.23979,
+          "longitude": 6.850018
+        }
+      ],
+      "phones": [
+        {
+          "type": "",
+          "tel": "+3153489XXXX",
+          "prefix": "+3153489",
+          "ext": "XXXX"
+        }
+      ],
+      "email": "john.doe@utwente.nl"
+    }
+  ]
 }
 ```
 
