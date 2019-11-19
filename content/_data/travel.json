@@ -1,34 +1,34 @@
 [
   {
     "name": "San Francisco",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "New York",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "Boston",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "Amsterdam",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "Paris",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "Kuala Lumpur",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "Eindhoven",
-    "time": "December 2019"
+    "date": "December 2019"
   },
   {
     "name": "Tokyo",
-    "time": "December 2014"
+    "date": "December 2014"
   }
 ]
