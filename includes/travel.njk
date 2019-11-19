@@ -1,0 +1,29 @@
+---
+pagination:
+  data: travel
+  size: 10
+  reverse: true
+  alias: pagination
+---
+
+{% include "head.njk" %}
+<main id="content">
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  <section class="travels">
+    {% for post in pagination %}
+      {% include "home-travel.njk" %}
+    {% endfor %}
+  </section>
+  {% if pagination.pageLinks.length > 1 %}
+  <nav class="pagination">
+    {% if pagination.previousPageLink %}
+      <a class="pagination__item" href="{{ pagination.previousPageHref | url }}">Previous</a>
+    {% endif %}
+    {% if pagination.nextPageLink %}
+      <a class="pagination__item" href="{{ pagination.nextPageHref | url }}">Next</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</main>
+{% include "footer.njk" %}

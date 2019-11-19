@@ -193,9 +193,12 @@ footer#colophon {
 }
 
 .travel > div {
+  flex-wrap: nowrap;
+  overflow-x: auto;
   article {
-    flex: 1 0 0;
+    flex: 0 0 auto;
     text-align: center;
+    width: 10rem;
   }
   picture ~ div:last-child {
    margin-top: 0.5rem;
@@ -203,6 +206,7 @@ footer#colophon {
   }
   $image-width: 50%;
   picture {
+    overflow: hidden;
     width: $image-width;
     margin: 0 auto 1rem auto;
     line-height: 1;
@@ -215,6 +219,35 @@ footer#colophon {
       border-radius: 100%;
       background-color: rgba(100, 100, 100, 0.5);
       width: 100%;
+    }
+  }
+}
+
+.travels {
+  article {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    picture {
+      overflow: hidden;
+      width: 3rem;
+      line-height: 1;
+      display: block;
+      border: 0.125rem solid rgba(100, 100, 100, 1);
+      padding: 0.25rem;
+      margin-right: 1.5rem;
+      border-radius: 100%;
+      img {
+        vertical-align: top;
+        border-radius: 100%;
+        background-color: rgba(100, 100, 100, 0.5);
+        width: 100%;
+      }
+    }
+    time {
+      color: rgba(100, 100, 100, 0.6);
+      margin-left: 1rem;
+      display: inline-block;
     }
   }
 }

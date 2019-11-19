@@ -39,9 +39,7 @@
       <h1>Travel</h1>
       <div>
         {% for post in travel %}
-          {% if loop.index <= 7 %}
-            {% include "home-travel.njk" %}
-          {% endif %} 
+          {% include "home-travel.njk" %}
         {% endfor %}
       </div>
     </section>
