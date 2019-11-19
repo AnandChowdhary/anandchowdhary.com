@@ -1,5 +1,6 @@
 ---
 title: Justice Adda
+tags: projects
 subcategory: Startup
 intro: Branding and web design for Cambridge Social Ventures (University of Cambridge) startup trying to break barriers in justice.
 date: 2014-08-24

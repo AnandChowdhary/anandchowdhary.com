@@ -1,5 +1,6 @@
 ---
 title: Scrub
+tags: projects
 intro: Scrum/Agile error mitigation platform with StackOverflow integration powered by open-source bug tracker
 date: 2019-05-18
 icon: /images/projects/scrub/icon.png

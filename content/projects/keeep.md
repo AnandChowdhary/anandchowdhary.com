@@ -1,5 +1,6 @@
 ---
 title: Keeep
+tags: projects
 subcategory: App
 intro: Encryption engine and password manager in C/C++ built for my highschool Computer Science class.
 date: 2016-01-24

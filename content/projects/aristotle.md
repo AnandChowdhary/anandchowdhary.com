@@ -1,5 +1,6 @@
 ---
 title: Aristotle
+tags: projects
 intro: E-learning platform for Limburg's schools with personalized content recommendations and actionable analytics
 date: 2018-11-30
 icon: /images/projects/aristotle/icon.png

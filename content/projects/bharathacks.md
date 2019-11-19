@@ -1,5 +1,6 @@
 ---
 title: BharatHacks
+tags: projects
 subcategory: Hackathon
 intro: Hackathon to solve India-specific problems in New Delhi with 200 participants and tens of thousands of dollars in prizes.
 date: 2017-07-18

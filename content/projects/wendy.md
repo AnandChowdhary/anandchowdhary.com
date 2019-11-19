@@ -1,5 +1,6 @@
 ---
 title: Wendy
+tags: projects
 intro: Smartphone-based home security system with face detection, AI chatbot, and real-time notifications
 date: 2018-05-27
 icon: /images/projects/wendy/icon.png

@@ -1,5 +1,6 @@
 ---
 title: CSUnite
+tags: projects
 subcategory: App
 intro: Hyperlocal on-demand cleaning and employee training app for the Netherlands' second-largest cleaning service provider.
 date: 2018-03-11

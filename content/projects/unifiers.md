@@ -1,5 +1,6 @@
 ---
 title: Unifiers
+tags: projects
 intro: India's first online training platform, built in collaboration with government agencies and large corporates.
 date: 2014-05-27
 work: ["Web"]

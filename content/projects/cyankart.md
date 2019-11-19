@@ -1,5 +1,6 @@
 ---
 title: Cyankart
+tags: projects
 subcategory: Ecommerce
 intro: Branding, UI/UX, and A/B-tested Shopify theme development for one of India's most popular online fashion stores.
 date: 2014-06-21

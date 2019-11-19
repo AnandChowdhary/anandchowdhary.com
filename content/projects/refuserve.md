@@ -1,5 +1,6 @@
 ---
 title: RefuServe
+tags: projects
 subcategory: App
 intro: Elearning platform, job recommendation engine, and resume generator chatbot for Trivago in 24 hours.
 date: 2017-11-19

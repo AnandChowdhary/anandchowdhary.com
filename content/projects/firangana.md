@@ -1,5 +1,6 @@
 ---
 title: Firangana
+tags: projects
 subcategory: Ecommerce
 intro: Branding and web design for fashion brand that combines western clothing with ethnic Indian designs.
 date: 2016-03-01

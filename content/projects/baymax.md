@@ -1,5 +1,6 @@
 ---
 title: Baymax
+tags: projects
 subcategory: App
 intro: End-to-end healthcare companies that diagnoses illnesses and helps your recover, along with scheduling and appointments.
 date: 2015-12-11

@@ -1,5 +1,6 @@
 ---
 title: Melangebox
+tags: projects
 subcategory: Ecommerce
 intro: Fashion ecommerce startup delivering high-quality, affordable clothing and accessories internationally.
 date: 2017-01-01

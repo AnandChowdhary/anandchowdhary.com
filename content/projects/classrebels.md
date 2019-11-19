@@ -1,5 +1,6 @@
 ---
 title: ClassRebels
+tags: projects
 subcategory: Startup
 intro: Education-technology startup trying to break classroom barriers, products include virtual library and collaborative e-classroom.
 date: 2014-01-15

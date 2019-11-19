@@ -1,5 +1,6 @@
 ---
 title: Naari
+tags: projects
 subcategory: App
 intro: Period and sexual health companion for women that gives personalized tampon recommendations and access to self-help resources.
 date: 2016-10-16

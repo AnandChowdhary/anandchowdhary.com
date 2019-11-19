@@ -1,5 +1,6 @@
 ---
 title: Internet.org
+tags: projects
 subcategory: Branding
 intro: Redesigned brand identity of Internet.org for an event in five hours. Made a trustworthy, user-centric brand.
 date: 2013-10-11

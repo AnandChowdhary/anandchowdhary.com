@@ -1,5 +1,6 @@
 ---
 title: SixteenInches
+tags: projects
 subcategory: Ecommerce
 intro: Branding and Shopify theme customization for one of the fastest-growing online supplements stores in India.
 date: 2015-09-12

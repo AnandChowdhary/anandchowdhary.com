@@ -1,5 +1,6 @@
 ---
 title: CLShare
+tags: projects
 intro: AI-powered employee engagement and chat platform with HR automation and analytics for CLS Group
 date: 2018-11-17
 icon: /images/projects/clshare/icon.png

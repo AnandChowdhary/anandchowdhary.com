@@ -1,5 +1,6 @@
 ---
 title: Made with Love in India
+tags: projects
 subcategory: App
 intro: Platform to celebrate, promote, and build a brand — India. Over 75 organizations use the Made with Love in India badge.
 date: 2014-04-21
