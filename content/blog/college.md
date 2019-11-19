@@ -1,7 +1,7 @@
 ---
 title: "Life Update: College"
 date: 2017-03-01
-tags: ["Life"]
+tags: blog, Life
 type: content
 ---
 
