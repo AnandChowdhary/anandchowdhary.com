@@ -6,3 +6,4 @@ node_modules
 cloudinary/
 static/css/
 static/js/
+_site/
