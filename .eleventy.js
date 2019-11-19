@@ -1,6 +1,7 @@
 module.exports = {
   dir: {
     input: "content",
-    output: "public"
+    output: "public",
+    includes: "../includes"
   }
 };
