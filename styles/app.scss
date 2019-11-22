@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-size: 115%;
-  background-color: #000;
-  color: rgba(255, 255, 255, 0.9);
+  // background-color: #000;
+  // color: rgba(255, 255, 255, 0.9);
 }
 
 p {
@@ -120,6 +120,9 @@ nav.pagination {
   article {
     width: (50 - ($gutter / 2));
     margin-bottom: ($gutter * 2);
+    > a > span {
+      display: block;
+    }
   }
 
   h2 {
@@ -133,7 +136,7 @@ nav.pagination {
   }
 
   time, .meta {
-    color: rgba(100, 100, 100, 0.6);
+    color: rgba(100, 100, 100, 0.75);
   }
 
   .meta {

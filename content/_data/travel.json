@@ -1,34 +1,34 @@
 [
-  {
-    "name": "San Francisco",
-    "date": "December 2019"
-  },
-  {
-    "name": "New York",
-    "date": "December 2019"
-  },
-  {
-    "name": "Boston",
-    "date": "December 2019"
-  },
-  {
-    "name": "Amsterdam",
-    "date": "December 2019"
-  },
-  {
-    "name": "Paris",
-    "date": "December 2019"
-  },
-  {
-    "name": "Kuala Lumpur",
-    "date": "December 2019"
-  },
-  {
-    "name": "Eindhoven",
-    "date": "December 2019"
-  },
-  {
-    "name": "Tokyo",
-    "date": "December 2014"
-  }
+  { "city": "Boston", "country": "US", "date": "December 2019" },
+  { "city": "San Francisco", "country": "US", "date": "September 2019" },
+  { "city": "New York", "country": "US", "date": "September 2019" },
+  { "city": "Los Angeles", "country": "US", "date": "September 2019" },
+  { "city": "Maastricht", "country": "NL", "date": "June 2019" },
+  { "city": "The Hague", "country": "NL", "date": "October 2018" },
+  { "city": "London", "country": "GB", "date": "October 2018" },
+  { "city": "Kuala Lumpur", "country": "MY", "date": "October 2018" },
+  { "city": "Heerlen", "country": "NL", "date": "October 2018" },
+  { "city": "Eindhoven", "country": "NL", "date": "October 2018" },
+  { "city": "Kanpur", "country": "IN", "date": "August 2018" },
+  { "city": "Toulouse", "country": "FR", "date": "July 2018" },
+  { "city": "Zaandam", "country": "NL", "date": "June 2018" },
+  { "city": "Volendam", "country": "NL", "date": "June 2018" },
+  { "city": "Rotterdam", "country": "NL", "date": "June 2018" },
+  { "city": "Paris", "country": "FR", "date": "June 2018" },
+  { "city": "Münster", "country": "DE", "date": "June 2018" },
+  { "city": "Cologne", "country": "DE", "date": "June 2018" },
+  { "city": "Bruges", "country": "BE", "date": "June 2018" },
+  { "city": "Hanover", "country": "DE", "date": "April 2018" },
+  { "city": "Amsterdam", "country": "NL", "date": "October 2017" },
+  { "city": "Arnhem", "country": "NL", "date": "September 2017" },
+  { "city": "Bangalore", "country": "IN", "date": "October 2016" },
+  { "city": "Indore", "country": "IN", "date": "September 2016" },
+  { "city": "Ahmedabad", "country": "IN", "date": "July 2016" },
+  { "city": "Mumbai", "country": "IN", "date": "April 2016" },
+  { "city": "Pathankot", "country": "IN", "date": "July 2015" },
+  { "city": "Amritsar", "country": "IN", "date": "July 2015" },
+  { "city": "Chandigarh", "country": "IN", "date": "January 2015" },
+  { "city": "Tokyo", "country": "JP", "date": "December 2014" },
+  { "city": "Bangkok", "country": "TH", "date": "June 2011" },
+  { "city": "Manila", "country": "PH", "date": "May 2011" }
 ]
