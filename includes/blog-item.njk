@@ -1,4 +1,5 @@
 <article>
   <h2>{{ post.data.title }}</h2>
+  {% excerpt post %}
   <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
 </article>
