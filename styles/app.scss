@@ -320,3 +320,20 @@ footer#colophon {
     }
   }
 }
+
+.events-item {
+  margin-top: 2.5rem;
+  h2 {
+    font-size: 120%;
+  }
+  .meta {
+    margin-top: 0.5rem;
+  }
+  .location, .meta {
+    display: flex;
+    justify-content: space-between;
+    > div {
+      flex: 1 0 0;
+    }
+  }
+}

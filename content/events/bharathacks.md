@@ -2,6 +2,7 @@
 title: BharatHacks
 date: 2017-06-17
 roles: speaker
+venue: 91springboard Noida
 places: new-delhi
 alias: /projects/bharathacks/
 linkType: Project

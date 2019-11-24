@@ -1,4 +1,17 @@
-<article>
-  <h2>{{ post.data.title }}</h2>
-  <p><a href="{{ post.url | url }}">Continue event &rarr;</a></p>
+<article class="events-item">
+  <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+  <div class="location">
+    <div>{{ post.data.venue }}</div>
+    <div>{{ post.data.places | place }}</div>
+  </div>
+  <div class="meta">
+    <div>
+      <time>{{ post.data.date.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year : "numeric"
+      }) }}</time>
+    </div>
+    <div><a href="{{ post.url | url }}">Continue reading &rarr;</a></div>
+  </div>
 </article>

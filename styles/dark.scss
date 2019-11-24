@@ -2,6 +2,10 @@
   background-color: #000;
   color: #eee;
 
+  a {
+    color: lightsalmon;
+  }
+
   .travel::after {
     background: linear-gradient(to right, transparent, #000);
   }

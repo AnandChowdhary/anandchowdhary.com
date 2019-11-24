@@ -3,4 +3,4 @@ title: Speaking
 layout: events.njk
 ---
 
-This is speaking and events
+From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship. 
