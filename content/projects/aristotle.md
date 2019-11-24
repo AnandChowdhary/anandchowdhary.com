@@ -28,7 +28,7 @@ For students, it automatically finds the best content from a variety of sources 
   {{< img src="/images/projects/aristotle/2" type="png" >}}
 </div>
 
-<div class="two-images" style="margin-top: -4rem">
+<div class="two-images">
   {{< img src="/images/projects/aristotle/3" type="png" >}}
   {{< img src="/images/projects/aristotle/4" type="png" >}}
 </div>
@@ -42,7 +42,7 @@ The app also included Oswald Labs' accessibility features to make it more usable
   {{< img src="/images/projects/aristotle/6" type="png" >}}
 </div>
 
-<div class="two-images" style="margin-top: -4rem">
+<div class="two-images">
   {{< img src="/images/projects/aristotle/7" type="png" >}}
   {{< img src="/images/projects/aristotle/8" type="png" >}}
 </div>

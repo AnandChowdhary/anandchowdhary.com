@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} · Anand Chowdhary</title>
+    {% if title %}
+      <title>{{ title }} · Anand Chowdhary</title>
+    {% else %}
+      <title>Anand Chowdhary</title>
+    {% endif %}
     <link rel="stylesheet" href="/assets/styles/main.min.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|IBM+Plex+Serif:400&display=swap" rel="stylesheet">
   </head>
