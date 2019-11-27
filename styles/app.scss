@@ -205,8 +205,24 @@ nav.pagination {
 .projects > div {
   .image {
     background-color: rgba(100, 100, 100, 0.5);
-    padding: 1rem;
+    padding-top: 66%;
     margin-bottom: 1.25rem;
+    position: relative;
+    .image-front {
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+    }
+    &.image-padded .image-front {
+      background-size: contain;
+      left: 1rem; right: 1rem;
+      top: 1rem; bottom: 1rem;
+    }
+    &.image-cover .image-front {
+      top: 0; bottom: 0;
+      right: 0; left: 0;
+      background-size: cover;
+    }
   }
 
   p {

@@ -1,7 +1,10 @@
 <article>
   <a href="{{ project.url | url }}">
-    <div class="image">
-      <img alt="" src="{{ project.data.img_src }}.{{ project.data.img_type }}">
+    <div aria-hidden="true" class="image image-{{ project.data.style }}" style="background-color: {{ project.data.bg }}">
+      <div
+        class="image-front"
+        style="background-image: url('{{ project.data.img_src }}.{{ project.data.img_type }}')"
+      ></div>
     </div>
     <div>
       <h2>{{ project.data.title }}</h2>
