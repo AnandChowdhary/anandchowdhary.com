@@ -8,6 +8,7 @@ work: ["Branding", "Web", "Startup"]
 timeline: 1 year
 img_src: /images/portfolio/classrebels_2x
 img_type: png
+style: cover
 ---
 
 Unlike all stories, ClassRebels didn't start with the simple idea of making teachers and students connect in a way they've never connected before. It started with an idea to bring about a reform, a change, and a revolution. In India, this change was long needed. The society is evolving, and our education system needs to catch up.

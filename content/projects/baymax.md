@@ -10,6 +10,7 @@ bg: "#de9945"
 timeline: 24 hours
 img_src: /images/portfolio/baymax_2x
 img_type: png
+style: padded
 ---
 
 The idea is pretty simple — like in the movie, we need a personal healthcare companion, someone who can help us medically when we need it to, both by providing the right information to us and helping us get in touch with the right medical professionals.
