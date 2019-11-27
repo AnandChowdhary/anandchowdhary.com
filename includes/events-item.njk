@@ -1,17 +1,20 @@
 <article class="events-item">
-  <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-  <div class="location">
-    <div>{{ post.data.venue }}</div>
-    <div>{{ post.data.places | place }}</div>
-  </div>
-  <div class="meta">
-    <div>
-      <time>{{ post.data.date.toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "short",
-        year : "numeric"
-      }) }}</time>
+  <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center={{ post.data.venue | encodeURIComponent}}%20{{ post.data.places | encodeURIComponent}}&zoom=15&size=300x300&maptype=roadmap&key=AIzaSyA3uCY4MNoJIcuGAASLvqTdXeSA_j87skY')"></div>
+  <div class="content">
+    <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+    <div class="location">
+      <div>{{ post.data.venue }}</div>
+      <div><a href="#">{{ post.data.places | place }}</a></div>
     </div>
-    <div><a href="{{ post.url | url }}">Continue reading &rarr;</a></div>
+    <div class="meta">
+      <div>
+        <time>{{ post.data.date.toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "short",
+          year : "numeric"
+        }) }}</time>
+      </div>
+      <div><a href="{{ post.url | url }}">Continue reading &rarr;</a></div>
+    </div>
   </div>
 </article>

@@ -323,7 +323,21 @@ footer#colophon {
 
 .events-item {
   margin-top: 2.5rem;
+  display: flex;
+  .map {
+    background-color: gray;
+    width: 10rem;
+    height: 10rem;
+    margin-right: 2.5rem;
+  }
+  .content {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   h2 {
+    margin-top: 0;
     font-size: 120%;
   }
   .meta {
@@ -331,9 +345,18 @@ footer#colophon {
   }
   .location, .meta {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;;
     > div {
       flex: 1 0 0;
     }
+  }
+}
+
+.speaking main#content {
+  h1, p {
+    max-width: 600px;
+  }
+  > * {
+    max-width: 800px;
   }
 }
