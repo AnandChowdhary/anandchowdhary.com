@@ -14,9 +14,6 @@ p {
 a {
   color: #1e3799;
   // text-underline-position: under;
-  &:hover {
-    opacity: 0.75;
-  }
 }
 
 header#masthead,
@@ -146,6 +143,43 @@ main#content {
     margin-bottom: 0.75rem;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    border: none;
+    max-width: 100%;
+    margin: 2.5rem 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .two-images,
+  .three-images {
+    width: 100%;
+    max-width: none;
+    display: flex;
+  }
+
+  p + div {
+    margin-top: 5rem;
+  }
+
+  .two-images {
+    > *:first-child {
+      margin-right: 1.25rem;
+    }
+    > *:last-child {
+      margin-right: 1.25rem;
+    }
+  }
+
+  .three-images {
+    > *:nth-child(2) {
+      margin: 0 1.25rem;
     }
   }
 }
