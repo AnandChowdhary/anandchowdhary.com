@@ -432,15 +432,15 @@ footer#colophon {
 
 .events-item {
   margin-top: 2.5rem;
-  display: flex;
-  .map {
-    background-color: gray;
-    width: 10rem;
-    height: 10rem;
-    margin-right: 2.5rem;
-  }
+  // display: flex;
+  // .map {
+  //   background-color: gray;
+  //   width: 10rem;
+  //   height: 10rem;
+  //   margin-right: 2.5rem;
+  // }
   .content {
-    flex: 1 0 0;
+    // flex: 1 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -452,6 +452,9 @@ footer#colophon {
   .meta {
     margin-top: 0.5rem;
   }
+  .location div:last-child {
+    text-align: right;
+  }
   .location, .meta {
     display: flex;
     justify-content: space-between;
@@ -462,12 +465,12 @@ footer#colophon {
 }
 
 .speaking main#content {
-  h1, p {
-    max-width: 600px;
-  }
-  > * {
-    max-width: 800px;
-  }
+  // h1, p {
+  //   max-width: 600px;
+  // }
+  // > * {
+  //   max-width: 800px;
+  // }
 }
 
 .posts {

@@ -3,13 +3,7 @@ title: Contact
 layout: page.njk
 ---
 
-To get in touch with me, you can drop me a line at [mail@anandchowdhary.com](mailto:mail@anandchowdhary.com) or fill in the form below.
-
-If you'd like to discuss partnerships with Oswald Labs or need help with a product, the best way is to go to the [support page on Oswald Labs'](https://oswaldlabs.com/contact) website or write to [yourfriends@oswaldlabs.com](mailto:yourfriends@oswaldlabs.com).
-
-For speaking engagements or interview requests, please write to [events@anandchowdhary.com](mailto:events@anandchowdhary.com).
-
-Please note that I am currently not interested in taking up any freelance projects or consulting work.
+To get in touch with me, fill in the form below. You can also [download my PGP public key](/files/public-key.asc) and drop me a line at [mail@anandchowdhary.com](mailto:mail@anandchowdhary.com).
 
 Feel free to follow or connect with me on any of the following networks:
 
@@ -25,7 +19,38 @@ Feel free to follow or connect with me on any of the following networks:
   <a href="https://angel.co/anand-chowdhary" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>
 </div>
 
+<p>I want to get in touch with you for&hellip;</p>
 <form action="https://formspree.io/mail@anandchowdhary.com" method="post">
+<div>
+  <div>
+    <input name="category" type="radio" id="categorySpeaking">
+    <label for="categorySpeaking">Speaking at an event</label>
+  </div>
+  <div>
+    <input name="category" type="radio" id="categoryInterview">
+    <label for="categoryInterview">Interview or press request</label>
+  </div>
+  <div>
+    <input name="category" type="radio" id="categoryWork">
+    <label for="categoryWork">Freelance or consultancy work</label>
+  </div>
+  <div>
+    <input name="category" type="radio" id="categoryPartnership">
+    <label for="categoryPartnership">Exploring partnerships with Oswald Labs</label>
+  </div>
+  <div>
+    <input name="category" type="radio" id="categorySupport">
+    <label for="categorySupport">Support with an Oswald Labs product</label>
+  </div>
+  <div>
+    <input name="category" type="radio" id="categoryOpenSource">
+    <label for="categoryOpenSource">Support with an open-source library</label>
+  </div>
+  <div>
+    <input name="category" type="radio" id="categoryOther" checked>
+    <label for="categoryOther">Something else</label>
+  </div>
+</div>
 <div><label for="name">Name</label>
 <input id="name" name="name" type="text" placeholder="Enter your full name" required></div>
 <div><label for="email">Email</label>
@@ -34,6 +59,6 @@ Feel free to follow or connect with me on any of the following networks:
 <textarea rows="5" id="message" name="message" placeholder="Enter your message" required></textarea></div>
 <p><button type="submit">Send</button>
 </form>
-<p style="margin-top: 2rem">My PGP public key is <a href="/files/public-key.asc" target="_blank">7D6F AE75 75E7 E5FF 0E02 AFB8 EA7D 4DE8 A84D 8046</a>.</p>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
