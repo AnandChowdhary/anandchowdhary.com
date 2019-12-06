@@ -24,14 +24,14 @@ The website was built using Vue.js and included Firebase's authentication and re
 A few months later, I also did a complete brand redesign, including a new logo, type, and media:
 
 <div style="max-width: 400px; margin: 3rem auto 0 auto">
-  {{< img src="/images/projects/drillmaps/logo" type="png" >}}
+  <img alt="" src="/images/projects/drillmaps/logo.png">
 </div>
 
 <div class="two-images">
-  {{< img src="/images/projects/drillmaps/2" type="png" >}}
-  {{< img src="/images/projects/drillmaps/3" type="png" >}}
+  <img alt="" src="/images/projects/drillmaps/2.png">
+  <img alt="" src="/images/projects/drillmaps/3.png">
 </div>
 <div class="two-images">
-  {{< img src="/images/projects/drillmaps/4" type="png" >}}
-  {{< img src="/images/projects/drillmaps/5" type="png" >}}
+  <img alt="" src="/images/projects/drillmaps/4.png">
+  <img alt="" src="/images/projects/drillmaps/5.png">
 </div>

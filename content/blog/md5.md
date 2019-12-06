@@ -8,7 +8,7 @@ A few days ago, I tried to reset my password on PR.com, the press releases websi
 
 <!--more-->
 
-{{< img alt="Screenshot of email" src="/images/blog/md5-pr_wav36p" type="png" >}}
+{{< img alt="Screenshot of email" src="/images/blog/md5-pr_wav36p.png">
 
 The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted "hashed" version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.
 

@@ -21,6 +21,6 @@ The usage is very simple, you just have to include this link to your webpage:
 
 This is what a page looks like with Aptitude:
 
-{{< img alt="Aptitude screenshot" src="/images/open-source/aptitude" type="jpg" >}}
+{{< img alt="Aptitude screenshot" src="/images/open-source/aptitude.jpg">
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/Aptitude)

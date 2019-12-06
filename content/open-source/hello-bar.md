@@ -13,6 +13,6 @@ Hello-bar is a great way to capture leads, announce a sale or discount, and more
 
 <!--more-->
 
-{{< img alt="Screenshot of Hello-bar in action" src="/images/open-source/hello-bar/screenshot" type="png" >}}
+{{< img alt="Screenshot of Hello-bar in action" src="/images/open-source/hello-bar/screenshot.png">
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/hello-bar)

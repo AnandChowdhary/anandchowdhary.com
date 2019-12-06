@@ -46,4 +46,4 @@ That's the idea behind One, a grid system I designed this evening. It's an idea 
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/one-grid)
 
-{{< img alt="One Grid screenshot" src="/images/open-source/one-grid" type="jpg" >}}
+{{< img alt="One Grid screenshot" src="/images/open-source/one-grid.jpg">
