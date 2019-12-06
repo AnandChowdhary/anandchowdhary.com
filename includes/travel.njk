@@ -15,12 +15,12 @@ pagination:
     {% endfor %}
   </section>
   {% if pagination.pageLinks.length > 1 %}
-  <nav class="pagination">
+  <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
     {% if pagination.previousPageLink %}
-      <a class="pagination__item" href="{{ pagination.previousPageHref | url }}">Previous</a>
+      <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}">Previous</a>
     {% endif %}
     {% if pagination.nextPageLink %}
-      <a class="pagination__item" href="{{ pagination.nextPageHref | url }}">Next</a>
+      <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}">Next</a>
     {% endif %}
   </nav>
   {% endif %}

@@ -194,6 +194,14 @@ figure {
 nav.pagination {
   display: flex;
   justify-content: space-between;
+  &.pagination--has-next:not(.pagination--has-prev) {
+    justify-content: flex-end;
+  }
+  .pagination-item {
+    &.pagination-item--next {
+      align-self: flex-end;
+    }
+  }
 }
 
 .home-items > div,
@@ -408,5 +416,11 @@ footer#colophon {
   }
   > * {
     max-width: 800px;
+  }
+}
+
+.posts {
+  article {
+    margin-bottom: 2.5rem;
   }
 }
