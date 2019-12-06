@@ -11,9 +11,25 @@ p {
   }
 }
 
+.sr-only {
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  opacity: 0;
+}
+
 a {
   color: #1e3799;
   // text-underline-position: under;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem blue;
+  }
 }
 
 header#masthead,
@@ -38,6 +54,7 @@ header#masthead {
     flex-direction: column;
     top: 0;
     right: 0;
+    z-index: 1000;
     transform: translateX(32.5%);
     a {
       white-space: nowrap;
@@ -193,13 +210,47 @@ figure {
 
 nav.pagination {
   display: flex;
+  line-height: 1;
   justify-content: space-between;
   &.pagination--has-next:not(.pagination--has-prev) {
     justify-content: flex-end;
   }
   .pagination-item {
+    &::before, &::after {
+      background-color: #333;
+      width: 5rem;
+      height: 5rem;
+      vertical-align: middle;
+      line-height: 5rem;
+      border-radius: 100%;
+      text-align: center;
+      font-size: 200%;
+      display: inline-block;
+    }
+    &.pagination-item--prev::before {
+      content: "<";
+      margin-right: 2rem;
+    }
     &.pagination-item--next {
       align-self: flex-end;
+      &::after {
+        margin-left: 2rem;
+        content: ">";
+      }
+    }
+    &:hover {
+      &::before, &::after {
+        transform: scale(1.05);
+      }
+    }
+    &:focus {
+      box-shadow: none;
+      span {
+        box-shadow: 0 0 0 0.2rem blue;
+      }
+      &::before, &::after {
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -403,7 +454,7 @@ footer#colophon {
   }
   .location, .meta {
     display: flex;
-    justify-content: space-between;;
+    justify-content: space-between;
     > div {
       flex: 1 0 0;
     }
