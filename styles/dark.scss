@@ -9,4 +9,8 @@
   .travel::after {
     background: linear-gradient(to right, transparent, #000);
   }
+
+  ::selection {
+    background-color: rgba(#f1c40f, 0.25);
+  }
 }
