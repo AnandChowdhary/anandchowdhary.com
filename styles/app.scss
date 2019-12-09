@@ -478,3 +478,12 @@ footer#colophon {
     margin-bottom: 2.5rem;
   }
 }
+
+blockquote {
+  padding-left: 1.5rem;
+  box-sizing: border-box;
+  border-left: 2px solid #eee;
+  > p {
+    font-style: italic;
+  }
+}
