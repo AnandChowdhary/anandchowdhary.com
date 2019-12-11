@@ -23,7 +23,7 @@ The website was built using Vue.js and included Firebase's authentication and re
 
 A few months later, I also did a complete brand redesign, including a new logo, type, and media:
 
-<div style="max-width: 400px; margin: 3rem auto 0 auto">
+<div class="image" style="max-width: 400px; margin: 5rem auto 10rem auto">
   <img alt="" src="/images/projects/drillmaps/logo.png">
 </div>
 

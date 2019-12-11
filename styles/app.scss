@@ -11,7 +11,7 @@ body {
   font-size: 115%;
 }
 
-p {
+p, ul, ol {
   line-height: 1.7;
   margin: 0 0 1rem 0;
   &:last-child {
@@ -183,37 +183,40 @@ main#content {
   }
 
   .two-images,
-  .three-images {
+  .three-images,
+  .image {
+    line-height: 1;
     width: 100%;
     max-width: none;
     display: flex;
     justify-content: space-between;
+    &.shadow > * {
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+    }
   }
 
   .two-images,
   .three-images,
+  .image,
   iframe {
     margin: 5rem 0;
     + .two-images,
-    .three-images,
-    iframe {
-      margin-top: -5rem;
+    + .three-images,
+    + .image,
+    + iframe {
+      margin-top: -4rem;
     }
   }
 
   .two-images {
-    + * {
-      margin-top: 2rem;
-    }
     > * {
       width: 49.25%;
-      box-sizing: border-box;
     }
   }
 
   .three-images {
-    > *:nth-child(2) {
-      margin: 0 1.25rem;
+    > * {
+      width: 32.25%;
     }
   }
 }
@@ -313,22 +316,22 @@ nav.pagination {
 }
 
 .projects > div {
-  .image {
+  .project-image {
     background-color: rgba(100, 100, 100, 0.5);
     padding-top: 66%;
     margin-bottom: 1.25rem;
     position: relative;
-    .image-front {
+    .project-image-front {
       background-repeat: no-repeat;
       background-position: center center;
       position: absolute;
     }
-    &.image-padded .image-front {
+    &.project-image-padded .project-image-front {
       background-size: contain;
       left: 1rem; right: 1rem;
       top: 1rem; bottom: 1rem;
     }
-    &.image-cover .image-front {
+    &.project-image-cover .project-image-front {
       top: 0; bottom: 0;
       right: 0; left: 0;
       background-size: cover;
@@ -547,4 +550,9 @@ blockquote {
   margin-left: -6.5rem;
   border-radius: 100%;
   // margin-bottom: -2rem;
+}
+
+figcaption {
+  margin-top: 1.5rem;
+  opacity: 0.75;
 }

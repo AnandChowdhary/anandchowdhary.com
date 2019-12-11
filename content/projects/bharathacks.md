@@ -25,4 +25,4 @@ I personally organized the event, arranged logistics, delivered the keynote, and
 
 [Visit BharatHacks &rarr;](https://bharathacks.github.io)
 
-<img alt="" src="/images/projects/bharathacks/1.png">
+<div class="image"><img alt="" src="/images/projects/bharathacks/1.png"></div>

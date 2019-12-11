@@ -24,8 +24,8 @@ In November 2017, I worked with Trivago in Düsseldorf on building an app to hel
   <div><img alt="" src="/images/projects/refuserve/3.png"></div>
 </div>
 <div class="two-images shadow">
-  <div><img alt="" src="/images/projects/refuserve/slide1.jpeg"></div>
-  <div><img alt="" src="/images/projects/refuserve/slide2.jpeg"></div>
+  <div><img alt="" src="/images/projects/refuserve/slide1.jpg"></div>
+  <div><img alt="" src="/images/projects/refuserve/slide2.jpg"></div>
 </div>
 
 <iframe class="video-embed" height="600" src="https://www.youtube.com/embed/K-2cs4cFhCk?controls=0&modestbranding=1"> </iframe>

@@ -30,15 +30,13 @@ The app was built using HTML5 with a PHP backend integrated with some machine le
   <div><img alt="" src="/images/projects/capella/emergency.png"></div>
   <div><img alt="" src="/images/projects/capella/settings.png"></div>
 </div>
-<div class="shadow">
-  <div class="two-images">
-    <div><img alt="" src="/images/projects/capella/s1.jpg"></div>
-    <div><img alt="" src="/images/projects/capella/s2.jpg"></div>
-  </div>
-  <div class="two-images">
-    <div><img alt="" src="/images/projects/capella/s3.jpg"></div>
-    <div><img alt="" src="/images/projects/capella/s4.jpg"></div>
-  </div>
+<div class="two-images shadow">
+  <div><img alt="" src="/images/projects/capella/s1.jpg"></div>
+  <div><img alt="" src="/images/projects/capella/s2.jpg"></div>
+</div>
+<div class="two-images shadow">
+  <div><img alt="" src="/images/projects/capella/s3.jpg"></div>
+  <div><img alt="" src="/images/projects/capella/s4.jpg"></div>
 </div>
 <div class="image"><img alt="" src="/images/projects/capella/1.jpg"></div>
 

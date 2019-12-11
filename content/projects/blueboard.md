@@ -26,6 +26,6 @@ BlueBoard was my project for the module "Smart Environments", a quarter of Creat
 
 BlueBoard used a custom-built Android app written in Java, along with an Arduino program that would send the JSON data object via serial communication to Processing. Processing would compute and display the relevant information on the screen.
 
-<img alt="" src="/images/projects/blueboard/team.png">
+<div class="image"><img alt="" src="/images/projects/blueboard/team.png"></div>
 
 <footer>This project was done in collaboration with <a href="https://portfolio.cr.utwente.nl/student/hesselbosma/">Hessel Bosma 🇳🇱</a>, <a href="https://portfolio.cr.utwente.nl/student/kmw/">Karlijn Wiggers 🇳🇱</a>, <a href="https://portfolio.cr.utwente.nl/student/pawirotaroenorzg/">Rezfan Pawirotaroeno 🇸🇷</a>, and <a href="https://portfolio.cr.utwente.nl/student/wcouwenbergh/">Wouter Couwenbergh 🇳🇱</a>. It wouldn've have been possible without our module coordinator <a href="http://wwwhome.ewi.utwente.nl/~scholten/" target="_blank" rel="noopener noreferrer">Hans Scholten</a>.</footer>

@@ -30,7 +30,7 @@ The product was a progressive web app built using Vue/Nuxt.js powered by Firebas
 
 The app also included Oswald Labs' accessibility features to make it more usable for users with dyslexia, visual impairment, and more disabilities, along with Ara's AI-powered meeting scheduling features.
 
-<div class="three-images" style="padding-top: 2rem">
+<div class="three-images">
   <img alt="" src="/images/projects/clshare/4.png">
   <img alt="" src="/images/projects/clshare/5.png">
   <img alt="" src="/images/projects/clshare/6.png">
