@@ -1,3 +1,11 @@
+$colorHome: #e84393;
+$colorProjects: #0984e3;
+$colorBlog: #00b894;
+$colorEvents: #eb4d4b;
+// $colorEvents: #4834d4;
+$colorTravel: #f9ca24;
+// $colorOpenSource: #f9ca24;
+
 body {
   margin: 0;
   font-size: 115%;
@@ -179,18 +187,27 @@ main#content {
     width: 100%;
     max-width: none;
     display: flex;
+    justify-content: space-between;
   }
 
-  p + div {
-    margin-top: 5rem;
+  .two-images,
+  .three-images,
+  iframe {
+    margin: 5rem 0;
+    + .two-images,
+    .three-images,
+    iframe {
+      margin-top: -5rem;
+    }
   }
 
   .two-images {
-    > *:first-child {
-      margin-right: 1.25rem;
+    + * {
+      margin-top: 2rem;
     }
-    > *:last-child {
-      margin-right: 1.25rem;
+    > * {
+      width: 49.25%;
+      box-sizing: border-box;
     }
   }
 
@@ -343,6 +360,20 @@ main#content > .container-large {
     top: 0;
     transform: translate(-100%,-100%) rotate(-90deg);
     transform-origin: bottom right;
+    border-bottom: 0.25rem solid;
+  }
+
+  &.projects h1 {
+    border-color: $colorProjects;
+  }
+  &.blog h1 {
+    border-color: $colorBlog;
+  }
+  &.events h1 {
+    border-color: $colorEvents;
+  }
+  &.travel h1 {
+    border-color: $colorTravel;
   }
 
   + .home-items {
@@ -506,4 +537,14 @@ blockquote {
     vertical-align: middle;
     margin-right: 1rem;
   }
+}
+
+.item-icon {
+  width: 5rem;
+  height: 5rem;
+  vertical-align: middle;
+  margin-right: 1.5rem;
+  margin-left: -6.5rem;
+  border-radius: 100%;
+  // margin-bottom: -2rem;
 }

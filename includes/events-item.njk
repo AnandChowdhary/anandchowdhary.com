@@ -1,7 +1,12 @@
 <article class="events-item">
   {# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center={{ post.data.venue | encodeURIComponent}}%20{{ post.data.places | encodeURIComponent}}&zoom=15&size=300x300&maptype=roadmap&key=AIzaSyA3uCY4MNoJIcuGAASLvqTdXeSA_j87skY')"></div> #}
   <div class="content">
-    <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+    <h2>
+      <img class="item-icon" alt="" src="{{ post.data.icon }}">
+      <a href="{{ post.url | url }}">
+        <span>{{ post.data.title }}</span>
+      </a>
+    </h2>
     <div class="location">
       <div>{{ post.data.venue }}</div>
       <div><a href="#">{{ post.data.places | place }}</a></div>
