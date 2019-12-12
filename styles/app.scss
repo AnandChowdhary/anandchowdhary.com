@@ -11,7 +11,7 @@ body {
   font-size: 115%;
 }
 
-p, ul, ol {
+p, ul, ol, footer {
   line-height: 1.7;
   margin: 0 0 1rem 0;
   &:last-child {
@@ -32,11 +32,11 @@ p, ul, ol {
 }
 
 a {
-  color: #1e3799;
+  color: #0652DD;
   // text-underline-position: under;
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem blue;
+    box-shadow: 0 0 0 0.2rem #0652DD;
   }
 }
 
@@ -218,6 +218,10 @@ main#content {
     > * {
       width: 32.25%;
     }
+  }
+
+  footer:last-child {
+    margin-bottom: 7.5rem;
   }
 }
 
@@ -575,7 +579,7 @@ figcaption {
   }
 }
 
-.projects {
+.projects, .apps, .web, .iot, .branding {
   p {
     max-width: 500px;
     // margin-bottom: 2.5rem;
@@ -597,5 +601,11 @@ figcaption {
         color: #fff;
       }
     }
+  }
+}
+
+.projects:not(.index) main#content {
+  h1 {
+    margin-top: 5rem;
   }
 }

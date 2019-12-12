@@ -1,6 +1,7 @@
 module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter("encodeURIComponent", value => encodeURIComponent(value));
   eleventyConfig.addNunjucksFilter("slugify", value => (value || "").toLowerCase().replace(/^\s+|\s+$/g, "").trim().replace(/ /g, "-"));
+  eleventyConfig.addNunjucksFilter("classify", value => (value || "").replace("./content/", "").replace(/\//g, " ").replace(".md", ""));
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
   eleventyConfig.addNunjucksFilter("place", value => {
     switch (value) {
