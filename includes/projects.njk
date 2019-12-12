@@ -8,9 +8,21 @@ pagination:
 
 {% include "head.njk" %}
 <main id="content">
-  <div class="container-large">
+  <div class="container-large small-p">
     <h1>{{ title }}</h1>
     {{ content | safe }}
+    <nav class="filter-nav">
+      <a class="active" href="/projects/">All</a>
+      <a href="/projects/web">Web</a>
+      <a href="/projects/apps">Apps</a>
+      <a href="/projects/iot">IoT</a>
+      <a href="/projects/branding">Branding</a>
+      <a href="/projects/hardware">Hardware</a>
+      <a href="/projects/artificial-intelligence">AI/ML</a>
+      <a href="/projects/augmented-reality">VR/AR</a>
+      <a href="/projects/events">Events</a>
+      <a href="/projects/industrial">Industrial</a>
+    </nav>
     <section class="projects">
       <div>
         {% for project in pagination %}

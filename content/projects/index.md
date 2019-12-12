@@ -3,4 +3,4 @@ title: Projects
 layout: projects.njk
 ---
 
-I am projects
+As a creative technologist and entrepreneur, I love building products that solve problems.

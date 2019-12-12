@@ -556,3 +556,46 @@ figcaption {
   margin-top: 1.5rem;
   opacity: 0.75;
 }
+
+.project-intro {
+  dl {
+    margin: 2.5rem 0;
+    display: flex;
+    > span {
+      flex: 1 0 0;
+    }
+  }
+  dt {
+    opacity: 0.75;
+    font-size: 90%;
+    margin-bottom: 0.25rem;
+  }
+  dd {
+    margin: 0;
+  }
+}
+
+.projects {
+  p {
+    max-width: 500px;
+    // margin-bottom: 2.5rem;
+  }
+  nav.filter-nav {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a {
+      background-color: whitesmoke;
+      color: inherit;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      &.active {
+        background-color: $colorProjects;
+        color: #fff;
+      }
+    }
+  }
+}
