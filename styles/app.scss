@@ -99,6 +99,7 @@ header#masthead {
       }
       + a {
         background-color: #333;
+        color: #fff;
         width: 10rem;
         padding: 0.5rem 0;
         &:hover {
@@ -119,8 +120,20 @@ header#masthead {
     transition: 0.3s;
 
     &.active {
-      font-weight: bold;
+      // font-weight: bold;
       box-shadow: inset 0 0.25rem 0;
+      &[href="/"] {
+        color: $colorHome;
+      }
+      &[href="/projects/"] {
+        color: $colorProjects;
+      }
+      &[href="/blog/"] {
+        color: $colorBlog;
+      }
+      &[href="/events/"] {
+        color: $colorEvents;
+      }
     }
 
     &:hover {
@@ -249,6 +262,7 @@ nav.pagination {
     &::before, &::after {
       background-color: #333;
       width: 5rem;
+      color: #fff;
       height: 5rem;
       vertical-align: middle;
       line-height: 5rem;
@@ -400,20 +414,7 @@ footer#colophon {
   text-align: center;
 }
 
-.travel::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 5rem;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: linear-gradient(to right, transparent, #fff);
-}
 .travel > div {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  position: relative;
   article {
     flex: 0 0 auto;
     text-align: center;
@@ -496,15 +497,15 @@ footer#colophon {
   .meta {
     margin-top: 0.5rem;
   }
+  .location {
+    margin-top: -2rem;
+  }
   .location div:last-child {
     text-align: right;
   }
   .location, .meta {
     display: flex;
     justify-content: space-between;
-    > div {
-      flex: 1 0 0;
-    }
   }
 }
 
@@ -558,6 +559,7 @@ blockquote {
   vertical-align: middle;
   margin-right: 1.5rem;
   margin-left: -6.5rem;
+  transform: translateY(0.5rem);
   border-radius: 100%;
   // margin-bottom: -2rem;
 }
@@ -659,13 +661,28 @@ main#content .project-intro {
   }
 }
 
-main#content pre {
+pre, code {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 1rem;
   background-color: whitesmoke;
+  border-radius: 0.2rem;
+}
+
+code {
+  padding: 0.25rem 0.5rem;
+  margin: 0 0.1rem;
+}
+
+main#content pre {
   overflow-x: auto;
   padding: 1rem;
   margin: 3rem auto;
+  white-space: pre;
   + pre {
     margin-top: -2rem;
+  }
+  code {
+    padding: 0;
   }
 }
 

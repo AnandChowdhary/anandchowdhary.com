@@ -2,6 +2,7 @@
 title: GOGBOT
 date: 2018-09-06
 roles: exhibition
+venue: Oude Markt
 places: enschede
 link: https://2018.gogbot.nl/portfolio/franky/
 linkType: Website

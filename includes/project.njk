@@ -1,6 +1,6 @@
 {% include "head.njk" %}
 <main id="content">
-  <h1><img alt="" class="item-icon" src="https://d33wubrfki0l68.cloudfront.net/4d93e3f08e7e63f1dd77111560e5bd65d33e86d6/eb88f/images/projects/scrub/icon.png"><span>{{ title }}</span></h1>
+  <h1>{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
   <div>
     <time>{{ date.toLocaleDateString("en-US", {
       month: "short",

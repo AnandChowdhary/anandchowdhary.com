@@ -2,22 +2,21 @@
   {# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center={{ post.data.venue | encodeURIComponent}}%20{{ post.data.places | encodeURIComponent}}&zoom=15&size=300x300&maptype=roadmap&key=AIzaSyA3uCY4MNoJIcuGAASLvqTdXeSA_j87skY')"></div> #}
   <div class="content">
     <h2>
-      <img class="item-icon" alt="" src="{{ post.data.icon }}">
-      <a href="{{ post.url | url }}">
-        <span>{{ post.data.title }}</span>
-      </a>
+      <img class="item-icon" alt="" src="{{ post.data.icon }}"><a href="{{ post.url | url }}"><span>{{ post.data.title }}</span></a>
     </h2>
     <div class="location">
       <div>{{ post.data.venue }}</div>
-      <div><a href="#">{{ post.data.places | place }}</a></div>
+      <div><a href="/travel/{{ post.data.places }}">{{ post.data.places | place }}</a></div>
     </div>
     <div class="meta">
       <div>
-        <time>{{ post.data.date.toLocaleDateString("en-US", {
-          day: "numeric",
-          month: "short",
-          year : "numeric"
-        }) }}</time>
+        <a href="{{ post.url | url }}">
+          <time>{{ post.data.date.toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year : "numeric"
+          }) }}</time>
+        </a>
       </div>
       {# <div><a href="{{ post.url | url }}">Continue reading &rarr;</a></div> #}
     </div>

@@ -14,7 +14,7 @@ module.exports = (eleventyConfig) => {
       case "kanpur":
         return "🇮🇳 Kanpur";
       case "enschede":
-        return "🇺🇸 Enschede";
+        return "🇳🇱 Enschede";
       case "kuala-lumpur":
         return "🇲🇾 Kuala Lumpur";
       case "gurugram":
