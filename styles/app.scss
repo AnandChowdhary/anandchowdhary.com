@@ -225,6 +225,10 @@ main#content {
     opacity: 0.75;
     text-align: center;
   }
+
+  h1:first-child {
+    margin-top: 5rem;
+  }
 }
 
 figure {
@@ -254,14 +258,14 @@ nav.pagination {
       display: inline-block;
     }
     &.pagination-item--prev::before {
-      content: "<";
+      content: "←";
       margin-right: 2rem;
     }
     &.pagination-item--next {
       align-self: flex-end;
       &::after {
         margin-left: 2rem;
-        content: ">";
+        content: "→";
       }
     }
     &:hover {
@@ -622,4 +626,52 @@ main#content .project-intro {
       margin-top: -2rem;
     }
   }
+}
+
+.blog article {
+  margin-top: 5rem;
+  a {
+    text-decoration: none;
+  }
+  h2 + div {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    opacity: 0.75;
+    display: block;
+  }
+  &.coffee-time {
+    h2 {
+      font-size: 150%;
+      + div {
+        margin-top: -0.75rem;
+      }
+    }
+    .tag {
+      background-color: yellow;
+      color: inherit;
+      line-height: 1;
+      font-size: 80%;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.2rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+main#content pre {
+  background-color: whitesmoke;
+  overflow-x: auto;
+  padding: 1rem;
+  margin: 3rem auto;
+  + pre {
+    margin-top: -2rem;
+  }
+}
+
+h1 {
+  font-size: 225%;
+}
+h2 {
+  font-size: 175%;
 }

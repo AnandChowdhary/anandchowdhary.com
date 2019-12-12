@@ -17,7 +17,11 @@
       </span>
       {% if client %}<span>
         <dt>Client</dt>
+        {% if client_link %}
+        <dd><a href="{{ client_link }}">{{ client }}</a></dd>
+        {% else %}
         <dd>{{ client }}</dd>
+        {% endif %}
       </span>{% endif %}
       {% if timeline %}<span>
         <dt>Timeline</dt>
@@ -31,11 +35,11 @@
       </span>{% endif %}
       {% if places %}<span>
         <dt>City</dt>
-        <dd>{{ places | place }}</dd>
+        <dd><a href="/travel/{{ places }}">{{ places | place }}</a></dd>
       </span>{% endif %}
       {% if venue %}<span>
         <dt>Venue</dt>
-        <dd>{{ venue }}</dd>
+        <dd><a href="https://www.google.com/maps/search/?api=1&query={{ venue | encodeURIComponent }},%20{{ places | encodeURIComponent }}">{{ venue }}</a></dd>
       </span>{% endif %}
     </dl>{% endif %}
   </div>

@@ -7,6 +7,7 @@ icon: /images/projects/aristotle/icon.png
 timeline: 48 hours
 work: ["Web", "Artificial Intelligence"]
 client: Provincie Limburg
+client_link: https://www.limburg.nl
 bg: "#aaa"
 style: padded
 img_src: /images/projects/aristotle/2
