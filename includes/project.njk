@@ -1,7 +1,44 @@
 {% include "head.njk" %}
 <main id="content">
-  <h2>PRJECT</h2>
-  <h1>{{ title }}</h1>
+  <h1><img alt="" class="item-icon" src="https://d33wubrfki0l68.cloudfront.net/4d93e3f08e7e63f1dd77111560e5bd65d33e86d6/eb88f/images/projects/scrub/icon.png"><span>{{ title }}</span></h1>
+  <div>
+    <time>{{ date.toLocaleDateString("en-US", {
+      month: "short",
+      year : "numeric"
+    }) }}</time>
+  </div>
+  <div class="project-intro">
+    <dl>
+      <span>
+        <dt>Work</dt>
+        {% for tag in work %}
+        <dd>{{ tag }}</dd>
+        {% endfor %}
+      </span>
+      {% if client %}<span>
+        <dt>Client</dt>
+        <dd>{{ client }}</dd>
+      </span>{% endif %}
+      {% if timeline %}<span>
+        <dt>Timeline</dt>
+        <dd>{{ timeline }}</dd>
+      </span>{% endif %}
+    </dl>
+    {% if award or places or venue %}<dl>
+      {% if award %}<span>
+        <dt>Award</dt>
+        <dd>{{ award_position }} {{ award }}</dd>
+      </span>{% endif %}
+      {% if places %}<span>
+        <dt>City</dt>
+        <dd>{{ places | place }}</dd>
+      </span>{% endif %}
+      {% if venue %}<span>
+        <dt>Venue</dt>
+        <dd>{{ venue }}</dd>
+      </span>{% endif %}
+    </dl>{% endif %}
+  </div>
   {{ content | safe }}
 </main>
 {% include "footer.njk" %}

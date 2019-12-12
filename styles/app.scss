@@ -222,6 +222,8 @@ main#content {
 
   footer:last-child {
     margin-bottom: 7.5rem;
+    opacity: 0.75;
+    text-align: center;
   }
 }
 
@@ -561,21 +563,30 @@ figcaption {
   opacity: 0.75;
 }
 
-.project-intro {
+main#content .project-intro {
+  margin: 5rem auto;
+  line-height: 1;
   dl {
-    margin: 2.5rem 0;
+    margin: 0;
     display: flex;
+    justify-content: space-between;
     > span {
       flex: 1 0 0;
+    }
+    + dl {
+      margin-top: 2.5rem;
     }
   }
   dt {
     opacity: 0.75;
     font-size: 90%;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
   }
   dd {
     margin: 0;
+    + dd {
+      margin-top: 0.75rem;
+    }
   }
 }
 
@@ -585,7 +596,7 @@ figcaption {
     // margin-bottom: 2.5rem;
   }
   nav.filter-nav {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -607,5 +618,8 @@ figcaption {
 .projects:not(.index) main#content {
   h1 {
     margin-top: 5rem;
+    + div {
+      margin-top: -2rem;
+    }
   }
 }

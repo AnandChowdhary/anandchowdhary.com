@@ -1,15 +1,15 @@
 <nav>
   <a{% if page.url == "/" %} class="active"{% endif %} href="/">Home</a>
-  <a{% if page.url == "/projects/" %} class="active"{% endif %} href="/projects/">Projects</a>
-  <a{% if page.url == "/blog/" %} class="active"{% endif %} href="/blog/">Blog</a>
-  <a{% if page.url == "/events/" %} class="active"{% endif %} href="/events/">Speaking</a>
+  <a{% if "/projects/" in page.url %} class="active"{% endif %} href="/projects/">Projects</a>
+  <a{% if "/blog/" in page.url %} class="active"{% endif %} href="/blog/">Blog</a>
+  <a{% if "/events/" in page.url %} class="active"{% endif %} href="/events/">Speaking</a>
   <div id="more">
     <a href="#"><span>&times;</span></a>
-    <a{% if page.url == "/open-source/" %} class="active"{% endif %} href="/open-source/">Open-source</a>
-    <a{% if page.url == "/about/" %} class="active"{% endif %} href="/about/">About</a>
-    <a{% if page.url == "/press/" %} class="active"{% endif %} href="/press/">Press</a>
-    <a{% if page.url == "/travel/" %} class="active"{% endif %} href="/travel/">Travel</a>
-    <a{% if page.url == "/contact/" %} class="active"{% endif %} href="/contact/">Contact</a>
+    <a{% if "/open-source/" in page.url %} class="active"{% endif %} href="/open-source/">Open-source</a>
+    <a{% if "/about/" in page.url %} class="active"{% endif %} href="/about/">About</a>
+    <a{% if "/press/" in page.url %} class="active"{% endif %} href="/press/">Press</a>
+    <a{% if "/travel/" in page.url %} class="active"{% endif %} href="/travel/">Travel</a>
+    <a{% if "/contact/" in page.url %} class="active"{% endif %} href="/contact/">Contact</a>
   </div>
   <a href="#more">&middot; &middot; &middot;</a>
 </nav>
