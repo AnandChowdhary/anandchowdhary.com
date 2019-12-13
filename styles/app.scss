@@ -334,7 +334,6 @@ nav.pagination {
   h2 {
     font-size: 120%;
     margin: 0 1rem 0.5rem 0;
-    font-weight: bold;
   }
 
   h2, time {
@@ -401,23 +400,46 @@ main#content .home-items {
     font: inherit;
     position: absolute;
     left: -20px;
+    line-height: 1;
     top: 0;
     transform: translate(-100%,-100%) rotate(-90deg);
     transform-origin: bottom right;
-    // border-bottom: 0.25rem solid;
+    &::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: #aaa;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+      border-radius: 100%;
+      margin-top: -0.25rem;
+      display: inline-block;
+    }
   }
 
   &.projects h1 {
     border-color: $colorProjects;
+    &::before {
+      background-color: $colorProjects;
+    }
   }
   &.blog h1 {
     border-color: $colorBlog;
+    &::before {
+      background-color: $colorBlog;
+    }
   }
   &.events h1 {
     border-color: $colorEvents;
+    &::before {
+      background-color: $colorEvents;
+    }
   }
   &.travel h1 {
     border-color: $colorTravel;
+    &::before {
+      background-color: $colorTravel;
+    }
   }
 
   + .home-items {
@@ -785,7 +807,12 @@ h2 {
 
 main#content .project-item {
   position: relative;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   .project-item-icon {
+    transition: 0.3s;
     position: absolute;
     height: 5rem;
     width: 5rem;
@@ -795,12 +822,14 @@ main#content .project-item {
     filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.3));
   }
   .project-image {
+    transition: 0.3s;
     border-radius: 0.2rem;
   }
   a:focus {
     box-shadow: none;
     .project-item-icon {
       transform: scale(1.1);
+      filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
     }
     .project-image {
       box-shadow: 0 0 0 0.2rem #0652DD;

@@ -4,13 +4,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6,
-.hero {
+.hero p {
   line-height: 1.3;
-  font-family: "IBM Plex Serif";
+  font-family: "Domine", "IBM Plex Serif", serif;
 }
 
 .hero h1 {
@@ -18,6 +18,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero p {
-  line-height: 1.5;
-  font-size: 110%;
+  line-height: 1.6;
+  font-size: 100%;
 }
