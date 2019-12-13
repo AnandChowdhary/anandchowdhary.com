@@ -859,9 +859,6 @@ main#content .project-item {
   margin-right: 0.1em;
   opacity: 0.5;
 }
-.external-link {
-  white-space: nowrap;
-}
 .external-link span:last-child, .sr-only {
   position: fixed;
   z-index: -1;
@@ -874,4 +871,46 @@ main#content .project-item {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+main#content {
+  .blog-posts, .blog-title {
+    .l {
+      flex: 0.6 0 0;
+      > div {
+        position: sticky;
+        top: 1.5rem;
+      }
+    }
+    .r {
+      flex: 1 0 0;
+    }
+  }
+  .blog-title {
+    margin-bottom: 0;
+    display: flex;
+    h1 {
+      margin-bottom: 0;
+      margin-top: 2.5rem;
+      + p {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .blog-posts, .pagination, .blog-title {
+    max-width: 960px;
+  }
+  .blog-posts article {
+    display: flex;
+    h2 {
+      font-size: 120%;
+      margin-bottom: 1.5rem;
+      a {
+        color: inherit;
+      }
+      + div {
+        font-size: 90%;
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-{% if "coffee-time" in post.data.tags %}
+{# {% if "coffee-time" in post.data.tags %}
 <article class="coffee-time">
   <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
   <div>
@@ -10,15 +10,21 @@
     }) }}</time>
   </div>
 </article>
-{% else %}
+{% else %} #}
 <article>
-  <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-  <div>Posted on <time>{{ post.data.date.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "short",
-    year : "numeric"
-  }) }}</time></div>
-  {% excerpt post %}
-  <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
+  <div class="l">
+    <div>
+      <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+      <div>Posted on <time>{{ post.data.date.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year : "numeric"
+      }) }}</time></div>
+    </div>
+  </div>
+  <div class="r">
+    {% excerpt post %}
+    <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
+  </div>
 </article>
-{% endif %}
+{# {% endif %} #}
