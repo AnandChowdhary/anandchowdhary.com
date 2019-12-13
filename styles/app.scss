@@ -237,6 +237,14 @@ main#content {
       margin-top: -4rem;
     }
   }
+  h1, h2, h3, h4 {
+    + .two-images,
+    + .three-images,
+    + .image,
+    + iframe {
+      margin-top: 0;
+    }
+  }
 
   .two-images {
     > * {
@@ -265,6 +273,7 @@ figure {
   margin: 0;
   figcaption {
     text-align: center;
+    font-size: 90%;
   }
 }
 
@@ -394,6 +403,10 @@ main#content > .container-large {
 
 main#content .home-items {
   position: relative;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   h1 {
     margin: 0;
     padding: 0;
@@ -412,7 +425,7 @@ main#content .home-items {
       vertical-align: middle;
       margin-right: 0.5rem;
       border-radius: 100%;
-      margin-top: -0.25rem;
+      margin-top: -0.2rem;
       display: inline-block;
     }
   }
@@ -807,10 +820,6 @@ h2 {
 
 main#content .project-item {
   position: relative;
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
   .project-item-icon {
     transition: 0.3s;
     position: absolute;
