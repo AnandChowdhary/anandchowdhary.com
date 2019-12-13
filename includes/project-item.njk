@@ -7,6 +7,7 @@
       ></div>
     </div>
     <div>
+      {% if project.data.icon %}<img class="project-item-icon" alt="" src="{{ project.data.icon }}">{% endif %}
       <h2>{{ project.data.title }}</h2>
       <time>{{ project.data.date.toLocaleDateString("en-US", {
         day: "numeric",

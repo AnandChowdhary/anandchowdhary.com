@@ -783,10 +783,28 @@ h2 {
   }
 }
 
-.project-item a:focus {
-  box-shadow: none;
+main#content .project-item {
+  position: relative;
+  .project-item-icon {
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    margin-top: -3.8rem;
+    right: 1.5rem;
+    border-radius: 0.2rem;
+    filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.3));
+  }
   .project-image {
-    box-shadow: 0 0 0 0.2rem #0652DD;
+    border-radius: 0.2rem;
+  }
+  a:focus {
+    box-shadow: none;
+    .project-item-icon {
+      transform: scale(1.1);
+    }
+    .project-image {
+      box-shadow: 0 0 0 0.2rem #0652DD;
+    }
   }
 }
 
