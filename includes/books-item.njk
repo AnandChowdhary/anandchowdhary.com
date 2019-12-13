@@ -1,0 +1,13 @@
+<article class="books-item">
+  <a href="/books/{{ book.name | slugify }}">
+    <div class="content">
+      <picture class="book-image">
+        <img src="https://tse2.mm.bing.net/th?q={{ book.name | encodeURIComponent }}%20{{ book.author | encodeURIComponent }}&w=100&h=150&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
+      </picture>
+      <div>
+        <h2>{{ book.name }}</h2>
+        <div>{{ book.author }}</div>
+      </div>
+    </div>
+  </a>
+</article>
