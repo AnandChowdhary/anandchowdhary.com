@@ -6,6 +6,8 @@ $colorEvents: #eb4d4b;
 $colorTravel: #f9ca24;
 // $colorOpenSource: #f9ca24;
 
+$colorLight: #5a6fbb;
+
 body {
   margin: 0;
   font-size: 115%;
@@ -138,6 +140,18 @@ header#masthead {
 
     &:hover {
       box-shadow: inset 0 0.25rem 0 #aaa;
+      &[href="/"] {
+        box-shadow: inset 0 0.25rem 0 $colorHome;
+      }
+      &[href="/projects/"] {
+        box-shadow: inset 0 0.25rem 0 $colorProjects;
+      }
+      &[href="/blog/"] {
+        box-shadow: inset 0 0.25rem 0 $colorBlog;
+      }
+      &[href="/events/"] {
+        box-shadow: inset 0 0.25rem 0 $colorEvents;
+      }
     }
   }
 
@@ -235,7 +249,7 @@ main#content {
 
   footer:last-child {
     margin-bottom: 7.5rem;
-    opacity: 0.75;
+    color: $colorLight;
     text-align: center;
   }
 
@@ -376,7 +390,7 @@ main#content > .container-large {
   margin: 5rem 0;
 }
 
-.home-items {
+main#content .home-items {
   position: relative;
   h1 {
     margin: 0;
@@ -387,7 +401,7 @@ main#content > .container-large {
     top: 0;
     transform: translate(-100%,-100%) rotate(-90deg);
     transform-origin: bottom right;
-    border-bottom: 0.25rem solid;
+    // border-bottom: 0.25rem solid;
   }
 
   &.projects h1 {
@@ -410,8 +424,17 @@ main#content > .container-large {
 
 footer#colophon {
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  nav {
+    a:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
 }
 
 .travel > div {
@@ -566,7 +589,7 @@ blockquote {
 
 figcaption {
   margin-top: 1.5rem;
-  opacity: 0.75;
+  color: $colorLight;
 }
 
 main#content .project-intro {
@@ -584,7 +607,7 @@ main#content .project-intro {
     }
   }
   dt {
-    opacity: 0.75;
+    color: $colorLight;
     font-size: 90%;
     margin-bottom: 0.75rem;
   }
@@ -603,7 +626,7 @@ main#content .project-intro {
   }
   nav.filter-nav {
     margin-top: 1rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -627,10 +650,13 @@ main#content .project-intro {
     + div {
       margin-top: -2rem;
     }
+    &.has-no-icon + div {
+      margin-top: 0;
+    }
   }
 }
 
-.blog article {
+.blog:not(.home-items) article {
   margin-top: 5rem;
   a {
     text-decoration: none;
@@ -638,7 +664,7 @@ main#content .project-intro {
   h2 + div {
     margin-top: -1rem;
     margin-bottom: 2rem;
-    opacity: 0.75;
+    color: $colorLight;
     display: block;
   }
   &.coffee-time {
@@ -744,5 +770,12 @@ h2 {
         width: 100%;
       }
     }
+  }
+}
+
+.project-item a:focus {
+  box-shadow: none;
+  .project-image {
+    box-shadow: 0 0 0 0.2rem #0652DD;
   }
 }
