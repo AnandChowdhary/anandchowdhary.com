@@ -2,7 +2,7 @@
   <a href="/videos/{{ video.name | slugify }}">
     <div class="content">
       <picture class="video-image">
-        <img src="https://tse2.mm.bing.net/th?q={{ video.name | encodeURIComponent }}%20{{ video.author | encodeURIComponent }}%20cover&w=100&h=150&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
+        <img src="https://tse2.mm.bing.net/th?q={{ video.name | urlencode }}%20{{ video.author | urlencode }}%20cover&w=100&h=150&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
       </picture>
       <div>
         <h2>{{ video.name }}</h2>

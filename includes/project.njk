@@ -39,7 +39,7 @@
       </span>{% endif %}
       {% if venue %}<span>
         <dt>Venue</dt>
-        <dd><a href="https://www.google.com/maps/search/?api=1&query={{ venue | encodeURIComponent }},%20{{ places | encodeURIComponent }}">{{ venue }}</a></dd>
+        <dd><a href="https://www.google.com/maps/search/?api=1&query={{ venue | urlencode }},%20{{ places | urlencode }}">{{ venue }}</a></dd>
       </span>{% endif %}
     </dl>{% endif %}
   </div>
