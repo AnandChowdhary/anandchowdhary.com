@@ -942,6 +942,7 @@ main#content .videos-item {
     }
   }
   .rating {
+    line-height: 1;
     margin-top: 0.5rem;
   }
   .book-image,
@@ -969,5 +970,12 @@ main#content .videos-item {
     transform: scale(1.25);
     position: absolute;
     background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+.star {
+  height: 1.5rem;
+  &.half-star + .half-star {
+    margin-left: -0.35rem;
   }
 }
