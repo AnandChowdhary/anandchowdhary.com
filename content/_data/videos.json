@@ -1,5 +1,5 @@
 [
-  { "name": "Permanent Record", "author": "Edward Snowden" },
-  { "name": "The Subtle Art of Not Giving a F*ck", "author": "Mark Manson" },
-  { "name": "The Lean Startup", "author": "Eric Ries" }
+  { "name": "Women Who Code Cloud 2019", "date": "2019-09-28", "city": "san-francisco-bay-area", "url": "https://www.facebook.com/AnandChowdhary/videos/2896608857033963/" },
+  { "name": "Aristotle by Oswald Labs", "date": "2018-12-01", "city": "heerlen", "url": "https://www.youtube.com/watch?v=223RTMXXtxc", "img": "https://img.youtube.com/vi/223RTMXXtxc/mqdefault.jpg" },
+  { "name": "Startup India Rocks!", "date": "2017-02-02", "city": "bangalore", "url": "https://www.youtube.com/watch?v=wxbEd0lo4vY", "img": "https://img.youtube.com/vi/wxbEd0lo4vY/mqdefault.jpg" }
 ]

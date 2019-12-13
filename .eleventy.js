@@ -1,6 +1,12 @@
 module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter("slugify", value => (value || "").toLowerCase().replace(/^\s+|\s+$/g, "").trim().replace(/ /g, "-"));
   eleventyConfig.addNunjucksFilter("classify", value => (value || "").replace("./content/", "").replace(/\//g, " ").replace(".md", ""));
+  eleventyConfig.addNunjucksFilter("iconify", value => `<span class="url-icon" style="background-image: url('https://logo.clearbit.com/${value.replace(/https?:\/\//, "").replace("www.", "").split("/")[0]}')"></span>`);
+  eleventyConfig.addNunjucksFilter("datetime", value => `<time datetime="${new Date(value).toISOString()}">${new Date(value).toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "short",
+    year : "numeric"
+  })}</time>`);
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
   eleventyConfig.addNunjucksFilter("place", value => {
     switch (value) {
@@ -10,6 +16,8 @@ module.exports = (eleventyConfig) => {
         return "🇮🇳 New Delhi";
       case "eindhoven":
         return "🇳🇱 Eindhoven";
+      case "bangalore":
+        return "🇮🇳 Bangalore";
       case "kanpur":
         return "🇮🇳 Kanpur";
       case "enschede":

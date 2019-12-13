@@ -928,6 +928,9 @@ main#content .videos-item {
   h2 {
     font-size: 125%;
     margin-bottom: 0.5rem;
+    + div {
+      color: $colorLight;
+    }
   }
   a {
     display: block;
@@ -978,4 +981,54 @@ main#content .videos-item {
   &.half-star + .half-star {
     margin-left: -0.35rem;
   }
+}
+
+.videos main#content section {
+  max-width: 900px;
+  .videos-item {
+    &:first-child {
+      margin-top: 4rem;
+    }
+    span:nth-child(2) {
+      margin: 0 1rem;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .video-image {
+      background-color: #aaa;
+      border-radius: 0.2rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      flex: 0.5 0 0;
+      height: 10rem;
+      display: block;
+      box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.15);
+      svg {
+        width: 2.5rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-45%, -50%);
+        z-index: 1;
+        filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.25));
+      }
+    }
+  }
+}
+
+.url-icon {
+  border: 1px solid #ddd;
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background-color: #aaa;
+  background-position: center center;
+  vertical-align: middle;
+  line-height: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
 }
