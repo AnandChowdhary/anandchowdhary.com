@@ -1,16 +1,17 @@
 <nav>
-  <a{% if page.url == "/" %} class="active"{% endif %} href="/">Home</a>
-  <a{% if "/projects/" in page.url %} class="active"{% endif %} href="/projects/">Projects</a>
-  <a{% if "/blog/" in page.url %} class="active"{% endif %} href="/blog/">Blog</a>
-  <a{% if "/events/" in page.url %} class="active"{% endif %} href="/events/">Speaking</a>
+  <a{% if page.url == "/" %} class="active"{% endif %} href="/"><span>Home</span></a>
+  <a{% if "/projects/" in page.url %} class="active"{% endif %} href="/projects/"><span>Projects</span></a>
+  <a{% if "/blog/" in page.url %} class="active"{% endif %} href="/blog/"><span>Blog</span></a>
+  <a{% if "/events/" in page.url %} class="active"{% endif %} href="/events/"><span>Speaking</span></a>
   <div id="more">
-    <a href="#"><span>&times;</span></a>
-    <a{% if "/open-source/" in page.url %} class="active"{% endif %} href="/open-source/">Open-source</a>
-    <a{% if "/about/" in page.url %} class="active"{% endif %} href="/about/">About</a>
-    <a{% if "/press/" in page.url %} class="active"{% endif %} href="/press/">Press</a>
-    <a{% if "/travel/" in page.url %} class="active"{% endif %} href="/travel/">Travel</a>
-    <a{% if "/books/" in page.url %} class="active"{% endif %} href="/books/">Books</a>
-    <a{% if "/contact/" in page.url %} class="active"{% endif %} href="/contact/">Contact</a>
+    <a href="#" aria-label="Close"><span><span>&times;</span></span></a>
+    <a{% if "/open-source/" in page.url %} class="active"{% endif %} href="/open-source/"><span>Open-source</span></a>
+    <a{% if "/about/" in page.url %} class="active"{% endif %} href="/about/"><span>About</span></a>
+    <a{% if "/press/" in page.url %} class="active"{% endif %} href="/press/"><span>Press</span></a>
+    <a{% if "/travel/" in page.url %} class="active"{% endif %} href="/travel/"><span>Travel</span></a>
+    <a{% if "/books/" in page.url %} class="active"{% endif %} href="/books/"><span>Books</span></a>
+    <a{% if "/videos/" in page.url %} class="active"{% endif %} href="/videos/"><span>Videos</span></a>
+    <a{% if "/contact/" in page.url %} class="active"{% endif %} href="/contact/"><span>Contact</span></a>
   </div>
-  <a href="#more">&middot; &middot; &middot;</a>
+  <a href="#more" aria-label="More"><span>&bullet; &bullet; &bullet;</span></a>
 </nav>

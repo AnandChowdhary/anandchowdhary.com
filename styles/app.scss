@@ -7,6 +7,8 @@ $colorTravel: #f9ca24;
 // $colorOpenSource: #f9ca24;
 
 $colorLight: #004bab;
+$linkColor: #0652dd;
+$focusRingColor: #0652dd;
 
 body {
   margin: 0;
@@ -37,11 +39,10 @@ p, ul, ol, footer {
 }
 
 a {
-  color: #0652DD;
-  // text-underline-position: under;
+  color: $linkColor;
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem #0652DD;
+    box-shadow: 0 0 0 0.2rem $focusRingColor;
   }
 }
 
@@ -72,6 +73,13 @@ header#masthead {
     a {
       white-space: nowrap;
       text-align: center;
+      &.active {
+        box-shadow: none;
+        font-weight: bold;
+        span {
+          opacity: 0.5;
+        }
+      }
       &:hover {
         box-shadow: none;
       }
@@ -141,7 +149,7 @@ header#masthead {
       }
     }
 
-    &:hover {
+    &:hover, &:focus {
       box-shadow: inset 0 0.25rem 0 #aaa;
       &[href="/"] {
         box-shadow: inset 0 0.25rem 0 $colorHome;
@@ -155,6 +163,10 @@ header#masthead {
       &[href="/events/"] {
         box-shadow: inset 0 0.25rem 0 $colorEvents;
       }
+    }
+
+    &:focus span {
+      box-shadow: 0 0 0 0.2rem $focusRingColor;
     }
   }
 
@@ -836,7 +848,7 @@ main#content .project-item {
       filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
     }
     .project-image {
-      box-shadow: 0 0 0 0.2rem #0652DD;
+      box-shadow: 0 0 0 0.2rem $focusRingColor;
     }
   }
 }
@@ -910,7 +922,8 @@ main#content {
   }
 }
 
-main#content .books-item {
+main#content .books-item,
+main#content .videos-item {
   margin-top: 2rem;
   h2 {
     font-size: 125%;
@@ -931,32 +944,30 @@ main#content .books-item {
   .rating {
     margin-top: 0.5rem;
   }
-  .book-image {
+  .book-image,
+  .video-image {
     line-height: 1;
     margin-right: 2rem;
     perspective: 50rem;
     transform-style: preserve-3d;
     position: relative;
-    &::before {
-      content: "";
-      width: 1rem;
-      height: 1rem;
-      bottom: -0.5rem;
-      left: 0;
-      width: 100%;
-      border-radius: 100%;
-      filter: blur(0.4rem);
-      transform: scale(1.25);
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.25);
-    }
     img {
+      position: relative;
+      z-index: 1;
       width: 5rem;
-      border: 0.1rem solid rgba(0, 0, 0, 0.1);
-      // transform-origin: 0% 100%;
-      // transform-style: preserve-3d;
-      // transform: rotateY(-30deg);
-      // border-left: 0.25rem solid rgba(0, 0, 0, 0.1);
     }
+  }
+  .book-image::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    border-radius: 100%;
+    filter: blur(0.4rem);
+    transform: scale(1.25);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.25);
   }
 }
