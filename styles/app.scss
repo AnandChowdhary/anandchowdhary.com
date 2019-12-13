@@ -6,11 +6,14 @@ $colorEvents: #eb4d4b;
 $colorTravel: #f9ca24;
 // $colorOpenSource: #f9ca24;
 
-$colorLight: #5a6fbb;
+$colorLight: #004bab;
 
 body {
   margin: 0;
   font-size: 115%;
+  overflow-wrap: break-word;
+  font-feature-settings: "kern" 1,"liga" 1,"dlig" 1;
+  font-kerning: normal;
 }
 
 p, ul, ol, footer {
@@ -582,9 +585,15 @@ blockquote {
   vertical-align: middle;
   margin-right: 1.5rem;
   margin-left: -6.5rem;
-  transform: translateY(0.5rem);
+  transform: translateY(0.65rem);
   border-radius: 100%;
   // margin-bottom: -2rem;
+}
+
+.projects, .project-item {
+  .item-icon {
+    border-radius: 0;
+  }
 }
 
 figcaption {
@@ -595,13 +604,14 @@ figcaption {
 main#content .project-intro {
   margin: 5rem auto;
   line-height: 1;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   dl {
     margin: 0;
     display: flex;
     justify-content: space-between;
-    > span {
-      flex: 1 0 0;
-    }
     + dl {
       margin-top: 2.5rem;
     }
@@ -651,7 +661,7 @@ main#content .project-intro {
       margin-top: -2rem;
     }
     &.has-no-icon + div {
-      margin-top: 0;
+      margin-top: -0.5rem;
     }
   }
 }
@@ -792,6 +802,9 @@ h2 {
   margin-left: 0.25em;
   margin-right: 0.1em;
   opacity: 0.5;
+}
+.external-link {
+  white-space: nowrap;
 }
 .external-link span:last-child, .sr-only {
   position: fixed;

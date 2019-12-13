@@ -65,9 +65,18 @@ function isExternal(url) {
 }
 
 var allLinks = document.querySelectorAll("a");
+var utmParams = "utm_source=anandchowdhary.com&utm_medium=website&utm_campaign=" + encodeURIComponent(document.body.className);
 for (let i = 0; allLinks.length > i; i++) {
   var link = allLinks[i];
-  if (isExternal(link.getAttribute("href"))) {
+  var linkHref = link.getAttribute("href");
+  if (isExternal(linkHref)) {
+    if (linkHref.indexOf("utm_source") === -1) {
+      if (linkHref.indexOf("?") > -1) {
+        link.setAttribute("href", linkHref + "&" + utmParams);
+      } else {
+        link.setAttribute("href", linkHref + "?" + utmParams);
+      }
+    }
     link.classList.add("external-link");
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener noreferrer");
