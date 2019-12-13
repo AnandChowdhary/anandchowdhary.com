@@ -184,7 +184,7 @@ header#masthead #more:target {
 
 main#content {
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 5rem auto 7.5rem auto;
 
   > * {
     max-width: 600px;
@@ -259,13 +259,8 @@ main#content {
   }
 
   footer:last-child {
-    margin-bottom: 7.5rem;
     color: $colorLight;
     text-align: center;
-  }
-
-  h1:first-child {
-    margin-top: 5rem;
   }
 }
 
@@ -932,6 +927,9 @@ main#content .books-item {
         flex: 1 0 0;
       }
     }
+  }
+  .rating {
+    margin-top: 0.5rem;
   }
   .book-image {
     line-height: 1;
