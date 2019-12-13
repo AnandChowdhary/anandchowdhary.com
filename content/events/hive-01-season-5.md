@@ -19,4 +19,4 @@ In June 2019, Hive 01 Enschede (formerly NESST Twente) organized the Dragon's De
 
 Previously in the season, I was also a mentor for startups and keynote speaker during the opening night.
 
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHive01Enschede%2Fposts%2F1873163166159985&width=500" width="500" height="764" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHive01Enschede%2Fposts%2F1873163166159985&width=500" width="500" height="764" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" loading="lazy"></iframe>

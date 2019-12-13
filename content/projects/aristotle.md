@@ -50,6 +50,6 @@ The app also included Oswald Labs' accessibility features to make it more usable
 
 The branding and pitch were inspired from CGP Grey's video, [Digital Aristotle](https://www.youtube.com/watch?v=7vsCAM17O-M).
 
-<iframe class="video-embed" height="600" src="https://www.youtube.com/embed/223RTMXXtxc"></iframe>
+<iframe class="video-embed" height="600" src="https://www.youtube.com/embed/223RTMXXtxc" loading="lazy"></iframe>
 
 <footer>This project was done in collaboration with <a href="http://vandervijgh.it">Maurits van der Vijgh 🇳🇱</a> and <a href="https://aleximbrea.com">Alex Imbrea 🇷🇴</a>.</footer>

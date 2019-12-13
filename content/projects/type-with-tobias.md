@@ -11,7 +11,12 @@ img_type: png
 award_position: 1
 ---
 
+From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event features iconic designer Tobias Frere-Jones, Type with Tobias.
+
 <img class="image" alt="" src="/images/projects/type-with-tobias/0.png">
+
+Because there were very few high-resolution photos of Tobias, I used this vectorized image style with bright colors.
+
 <img class="image" alt="" src="/images/projects/type-with-tobias/1.png">
 <img class="image" alt="" src="/images/projects/type-with-tobias/2.png">
 <img class="image" alt="" src="/images/projects/type-with-tobias/3.png">
