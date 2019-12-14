@@ -1,4 +1,6 @@
-<article>
-  <h2>{{ post.data.title }}</h2>
+<article class="open-source-item">
+  <h2>
+    <img class="item-icon" alt="" src="{{ post.data.icon }}"><a href="{{ post.url | url }}"><span>{{ post.data.title }}</span></a>
+  </h2>
   <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
 </article>

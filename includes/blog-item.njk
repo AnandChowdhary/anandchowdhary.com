@@ -1,30 +1,23 @@
-{# {% if "coffee-time" in post.data.tags %}
-<article class="coffee-time">
-  <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-  <div>
-    <a href="#" class="tag">Coffee time</a>
-    <time>{{ post.data.date.toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "short",
-      year : "numeric"
-    }) }}</time>
-  </div>
-</article>
-{% else %} #}
 <article>
   <div class="l">
     <div>
-      <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+      <h2><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
       <div>Posted on <time>{{ post.data.date.toLocaleDateString("en-US", {
         day: "numeric",
         month: "short",
         year : "numeric"
       }) }}</time></div>
+      {% if "coffee-time" in post.data.tags %}
+      <a href="/blog/coffee-time/" class="tag">Coffee time</a>
+      {% endif %}
     </div>
   </div>
   <div class="r">
     {% excerpt post %}
+    {% if post.data.alias %}
+    <p><a href="{{ post.data.alias | url }}">Continue reading on {{ post.data.publisher }}</a></p>
+    {% else %}
     <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
+    {% endif %}
   </div>
 </article>
-{# {% endif %} #}

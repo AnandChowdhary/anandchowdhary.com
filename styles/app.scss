@@ -8,7 +8,7 @@ $colorTravel: #f9ca24;
 
 $colorLight: #004bab;
 $linkColor: #0652dd;
-$focusRingColor: #0652dd;
+$focusRingColor: #70a1ff;
 
 body {
   margin: 0;
@@ -40,8 +40,10 @@ p, ul, ol, footer {
 
 a {
   color: $linkColor;
+  transition: 0.3s;
   &:focus {
     outline: none;
+    border-radius: 0.2rem;
     box-shadow: 0 0 0 0.2rem $focusRingColor;
   }
 }
@@ -435,6 +437,9 @@ main#content .home-items {
       margin-top: -0.2rem;
       display: inline-block;
     }
+    a:focus {
+      box-shadow: 0 0 0 0.2rem $focusRingColor !important;
+    }
   }
 
   &.projects h1 {
@@ -455,10 +460,22 @@ main#content .home-items {
       background-color: $colorEvents;
     }
   }
-  &.travel h1 {
-    border-color: $colorTravel;
-    &::before {
-      background-color: $colorTravel;
+  &.travel {
+    h1 {
+      border-color: $colorTravel;
+      &::before {
+        background-color: $colorTravel;
+      }
+    }
+    picture {
+      transition: 0.3s;
+    }
+    a:focus {
+      box-shadow: none;
+      picture {
+        transform: scale(1.05);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
+      }
     }
   }
 
@@ -632,7 +649,8 @@ blockquote {
   // margin-bottom: -2rem;
 }
 
-.projects, .project-item {
+.projects, .project-item,
+.open-source, .open-source-item {
   .item-icon {
     border-radius: 0;
   }
@@ -719,23 +737,15 @@ main#content .project-intro {
     color: $colorLight;
     display: block;
   }
-  &.coffee-time {
-    h2 {
-      font-size: 150%;
-      + div {
-        margin-top: -0.75rem;
-      }
-    }
-    .tag {
-      background-color: yellow;
-      color: inherit;
-      line-height: 1;
-      font-size: 80%;
-      text-transform: uppercase;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.2rem;
-      margin-right: 0.5rem;
-    }
+  .tag {
+    background-color: yellow;
+    color: inherit;
+    line-height: 1;
+    font-size: 80%;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.2rem;
+    margin-right: 0.5rem;
   }
 }
 
@@ -787,6 +797,16 @@ h2 {
     color: inherit;
     text-decoration: none;
     display: block;
+    &:focus {
+      box-shadow: none;
+      .map {
+        box-shadow: 0 0 0 0.2rem $focusRingColor;
+      }
+      picture {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-0.5rem) scale(1.1);
+      }
+    }
   }
   .map {
     background-color: #aaa;
@@ -795,6 +815,7 @@ h2 {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    transition: 0.3s;
   }
   .content {
     width: 90%;
@@ -803,7 +824,8 @@ h2 {
     display: flex;
     align-items: flex-end;
     h2 {
-      margin: 0;
+      margin-bottom: 0.5rem;
+      font-size: 125%;
     }
     picture {
       overflow: hidden;
@@ -813,6 +835,7 @@ h2 {
       display: block;
       border: 0.125rem solid rgba(100, 100, 100, 1);
       padding: 0.25rem;
+      transition: 0.3s;
       margin-right: 1.5rem;
       border-radius: 100%;
       img {
@@ -943,6 +966,25 @@ main#content .videos-item {
         flex: 1 0 0;
       }
     }
+    &:focus {
+      box-shadow: none;
+      .book-image img {
+        box-shadow: 0 0 0 0.2rem $focusRingColor;
+        transform: scale(1.05);
+      }
+      .video-image {
+        transform: scale(1.03);
+        box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor !important;
+      }
+      .book-image{
+        transform: translateY(-0.5rem);
+        &::before {
+          transform: scale(1.5);
+          bottom: -1rem;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
   }
   .rating {
     line-height: 1;
@@ -955,10 +997,14 @@ main#content .videos-item {
     perspective: 50rem;
     transform-style: preserve-3d;
     position: relative;
+    transition: 0.3s;
+    border-radius: 0.2rem;
     img {
       position: relative;
+      border-radius: 0.2rem;
       z-index: 1;
       width: 5rem;
+      transition: 0.3s;
     }
   }
   .book-image::before {
@@ -972,6 +1018,7 @@ main#content .videos-item {
     filter: blur(0.4rem);
     transform: scale(1.25);
     position: absolute;
+    transition: 0.3s;
     background-color: rgba(0, 0, 0, 0.25);
   }
 }
