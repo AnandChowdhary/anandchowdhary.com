@@ -1,4 +1,5 @@
 [
+  { "city": "Washington DC", "country": "US", "date": "December 2019" },
   { "city": "Boston", "country": "US", "date": "December 2019" },
   { "city": "San Francisco", "country": "US", "date": "September 2019" },
   { "city": "New York", "country": "US", "date": "September 2019" },
