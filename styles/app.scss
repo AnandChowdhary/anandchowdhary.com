@@ -167,8 +167,12 @@ header#masthead {
       }
     }
 
+    span {
+      transition: 0.3s;
+    }
     &:focus span {
       box-shadow: 0 0 0 0.2rem $focusRingColor;
+      border-radius: 0.2rem;
     }
   }
 
@@ -181,10 +185,26 @@ header#masthead {
     align-items: center;
     font-weight: bold;
     font-size: 110%;
+    &:focus {
+      box-shadow: none;
+    }
+    span {
+      transition: 0.3s;
+    }
+    &:focus {
+      span {
+        box-shadow: 0 0 0 0.2rem $focusRingColor;
+        border-radius: 0.2rem;
+      }
+      svg {
+        transform: scale(1.2);
+      }
+    }
 
     svg {
       height: 1.5rem;
       margin-right: 1rem;
+      transition: 0.3s;
     }
   }
 }
@@ -739,7 +759,7 @@ main#content .project-intro {
   }
   .tag {
     background-color: yellow;
-    color: inherit;
+    color: #000;
     line-height: 1;
     font-size: 80%;
     text-transform: uppercase;
