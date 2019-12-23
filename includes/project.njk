@@ -44,5 +44,8 @@
     </dl>{% endif %}
   </div>
   {{ content | safe }}
+  {% if collaborators %}
+  <footer>This project was done in collaboration with {{ collaborators.join(", ") }}.</footer>
+  {% endif %}
 </main>
 {% include "footer.njk" %}

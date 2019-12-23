@@ -1120,11 +1120,27 @@ main#content .videos-item {
       + .three-images,
       + .image,
       + iframe {
-        margin-top: -2.5rem;
+        margin-top: -3rem;
       }
     }
     .project-intro {
       margin: 3rem auto;
+      dl {
+        display: block;
+      }
+      dl + dl, span + span {
+        margin-top: 1.5rem;
+        display: block;
+      }
+    }
+    .two-images, .three-images {
+      display: block;
+      > * {
+        width: 100%;
+      }
+    }
+    iframe.video-embed {
+      height: 15rem;
     }
   }
   header#masthead {
@@ -1147,14 +1163,6 @@ main#content .videos-item {
         white-space: nowrap;
       }
     }
-  }
-  main#content .project-intro dl {
-    display: block;
-  }
-  main#content .project-intro dl + dl,
-  main#content .project-intro span + span {
-    margin-top: 1.5rem;
-    display: block;
   }
   .projects:not(.index) main#content,
   .blog:not(.home-items) article {

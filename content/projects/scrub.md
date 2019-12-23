@@ -15,6 +15,7 @@ places: paris
 venue: Expo Porte de Versailles
 award: €5,000
 award_position: 1
+collaborators: ["alex-imbrea", "mohit-ahuja"]
 ---
 
 During the third weekend of May, my team and I participated in the [TechCrunch Hackathon](https://techcrunch.com/events/techcrunch-hackathon-at-vivatech-2019/) at Vivatech 2019 in the Corvid by Wix category. The challenge was to build a developer productivity tool using Wix's new platform.
@@ -36,5 +37,3 @@ Our winning product was a Scrum/Agile platform to mitigate errors. The workflow 
 The product was a Corvid web app built using their components and custom frontend and backend JavaScript. It also integrated with several Corvid features, like comments, repeaters, and more.
 
 <iframe class="video-embed" src="https://docs.google.com/presentation/d/e/2PACX-1vRrAJA8AZv2lYvynRQvDFFWZxySYQJ6AsLpUUKsyRJWeu77674Zs10ZkuQldbe6f-IvFxSwvAku8K56/embed?start=false&loop=true&delayms=3000" height="600" allowfullscreen="true" loading="lazy"></iframe>
-
-<footer>This project was done in collaboration with <a href="https://aleximbrea.com">Alex Imbrea 🇷🇴</a> and Mohit Ahuja 🇮🇳.</footer>
