@@ -1,13 +1,32 @@
 {% include "head.njk" %}
 <main id="content">
-  <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
-  <div>
-    <time>{{ date.toLocaleDateString("en-US", {
-      month: "short",
-      year : "numeric"
-    }) }}</time>
+  <div class="f">
+    <div>
+      <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
+      <div>
+        <time>{{ date.toLocaleDateString("en-US", {
+          month: "short",
+          year : "numeric"
+        }) }}</time>
+      </div>
+    </div>
+    {% if award or award_position %}<div><div class="award{% if award_position %} award--{{ award_position }}{% endif %}">
+      {% if award_position %}
+        {% if award_position === 1 %}
+          <span class="award-position">1st prize</span>
+        {% elif award_position === 2 %}
+          <span class="award-position">1st prize</span>
+        {% elif award_position === 3 %}
+          <span class="award-position">1st prize</span>
+        {% else %}
+          <span>{{ award_position }}</span>
+        {% endif %}
+      {% endif %}
+      <span>{{ award }}</span>
+    </div></div>{% endif %}
   </div>
-  <div class="project-intro">
+  <a class="show-project-details" href="#details">Show project details</a>
+  <div class="project-intro" id="details">
     <dl>
       <span>
         <dt>Work</dt>
@@ -15,6 +34,20 @@
         <dd>{{ tag }}</dd>
         {% endfor %}
       </span>
+      <span>
+        <dt>Stack</dt>
+        {% for tag in stack %}
+        <dd>{{ tag }}</dd>
+        {% endfor %}
+      </span>
+      <span>
+        <dt>Collaborators</dt>
+        {% for tag in collaborators %}
+        <dd>{{ tag }}</dd>
+        {% endfor %}
+      </span>
+    </dl>
+    {% if timeline or client or places %}<dl>
       {% if client %}<span>
         <dt>Client</dt>
         {% if client_link %}
@@ -27,22 +60,13 @@
         <dt>Timeline</dt>
         <dd>{{ timeline }}</dd>
       </span>{% endif %}
-    </dl>
-    {% if award or places or venue %}<dl>
-      {% if award %}<span>
-        <dt>Award</dt>
-        <dd>{{ award_position }} {{ award }}</dd>
-      </span>{% endif %}
       {% if places %}<span>
         <dt>City</dt>
         <dd><a href="/travel/{{ places }}">{{ places | place }}</a></dd>
       </span>{% endif %}
-      {% if venue %}<span>
-        <dt>Venue</dt>
-        <dd><a href="https://www.google.com/maps/search/?api=1&query={{ venue | urlencode }},%20{{ places | urlencode }}">{{ venue }}</a></dd>
-      </span>{% endif %}
     </dl>{% endif %}
   </div>
+  <a class="hide-project-details" href="#">Hide project details</a>
   {{ content | safe }}
   {% if collaborators %}
   <footer>This project was done in collaboration with {{ collaborators.join(", ") }}.</footer>

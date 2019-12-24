@@ -632,7 +632,9 @@ main#content .project-intro {
   dl {
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    > * {
+      flex: 1 0 0;
+    }
     + dl {
       margin-top: 2.5rem;
     }
@@ -677,9 +679,8 @@ main#content .project-intro {
 
 .projects:not(.index) main#content {
   h1 {
-    margin-top: 5rem;
     + div {
-      margin-top: -2rem;
+      margin-top: -2.75rem;
     }
     &.has-no-icon + div {
       margin-top: -0.5rem;
@@ -699,7 +700,7 @@ main#content .project-intro {
     display: block;
   }
   .tag {
-    background-color: yellow;
+    background-color: #f1c40f;
     color: #000;
     line-height: 1;
     font-size: 80%;
@@ -1027,6 +1028,28 @@ main#content .videos-item {
   }
 }
 
+main#content .show-project-details,
+main#content .hide-project-details {
+  display: none;
+  background-color: whitesmoke;
+  color: inherit;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 80%;
+  margin: 2.5rem auto;
+}
+
+.f {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .url-icon {
   border: 1px solid #ddd;
   width: 2rem;
@@ -1039,6 +1062,24 @@ main#content .videos-item {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 100%;
+}
+
+.award {
+  display: inline-block;
+  background-color: #f9ca24;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.2rem;
+  line-height: 1;
+  .award-position {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80%;
+    vertical-align: middle;
+    margin-top: -0.1rem;
+    margin-right: 0.5rem;
+    opacity: 0.8;
+    display: inline-block;
+  }
 }
 
 @media (min-width: 500px) {
@@ -1123,6 +1164,17 @@ main#content .videos-item {
         margin-top: -3rem;
       }
     }
+    .show-project-details,
+    .hide-project-details {
+      display: block;
+    }
+    .show-project-details + #details,
+    .show-project-details + #details + .hide-project-details {
+      display: none;
+    }
+    #details:target, #details:target + .hide-project-details {
+      display: block;
+    }
     .project-intro {
       margin: 3rem auto;
       dl {
@@ -1141,6 +1193,12 @@ main#content .videos-item {
     }
     iframe.video-embed {
       height: 15rem;
+    }
+  }
+  .f {
+    display: block;
+    > *:not(:first-child) {
+      margin-top: 2.5rem;
     }
   }
   header#masthead {
@@ -1163,6 +1221,10 @@ main#content .videos-item {
         white-space: nowrap;
       }
     }
+  }
+  h1.has-icon,
+  h1.has-icon + div {
+    margin-left: 6.5rem;
   }
   .projects:not(.index) main#content,
   .blog:not(.home-items) article {
