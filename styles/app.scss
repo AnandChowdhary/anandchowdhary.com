@@ -431,6 +431,9 @@ main#content .home-items {
     picture {
       transition: 0.3s;
     }
+    article {
+      margin: 0;
+    }
     a:focus {
       box-shadow: none;
       picture {
@@ -446,7 +449,6 @@ main#content .home-items {
 }
 
 footer#colophon {
-  margin-top: 4rem;
   margin-bottom: 1rem;
   text-align: center;
   a {
@@ -465,11 +467,8 @@ footer#colophon {
     flex: 0 0 auto;
     text-align: center;
     width: 10rem;
-    &:last-of-type {
-      padding-right: 2.5rem;
-    }
   }
-  picture ~ div:last-child {
+  picture + div > div:last-child {
    margin-top: 0.5rem;
    font-size: 90%;
   }
@@ -1230,6 +1229,52 @@ main#content .hide-project-details {
   .blog:not(.home-items) article {
     h1 {
       margin-top: 0;
+    }
+  }
+  .home-items > div, .projects > div {
+    display: block;
+    article {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 0;
+      &:not(:last-of-type) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  main#content .project-item .project-item-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-top: -2.5rem;
+    right: 1rem;
+  }
+  main#content .home-items h1 {
+    transform: none;
+    position: relative;
+    margin-bottom: 1.5rem;
+    left: 0;
+  }
+  .home-items.travel > div article {
+    &:nth-child(5), &:nth-child(6) {
+      display: none;
+    }
+    a {
+      align-items: center;
+      text-align: left;
+      display: flex;
+      picture {
+        margin: 0 1.5rem 0 0;
+        width: 3rem;
+      }
+    }
+  }
+  .home-items.blog article {
+    h2 {
+      margin: 0;
+    }
+    time {
+      display: block;
+      margin-top: 0.5rem;
     }
   }
 }

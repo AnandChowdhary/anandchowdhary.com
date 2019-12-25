@@ -27,26 +27,26 @@
   </div>
   <a class="show-project-details" href="#details">Show project details</a>
   <div class="project-intro" id="details">
-    <dl>
-      <span>
+    {% if work or stack or collaborators %}<dl>
+      {% if work %}<span>
         <dt>Work</dt>
         {% for tag in work %}
         <dd>{{ tag }}</dd>
         {% endfor %}
-      </span>
-      <span>
+      </span>{% endif %}
+      {% if stack %}<span>
         <dt>Stack</dt>
         {% for tag in stack %}
         <dd>{{ tag }}</dd>
         {% endfor %}
-      </span>
-      <span>
+      </span>{% endif %}
+      {% if collaborators %}<span>
         <dt>Collaborators</dt>
         {% for tag in collaborators %}
         <dd>{{ tag }}</dd>
         {% endfor %}
-      </span>
-    </dl>
+      </span>{% endif %}
+    </dl>{% endif %}
     {% if timeline or client or places %}<dl>
       {% if client %}<span>
         <dt>Client</dt>
@@ -68,8 +68,5 @@
   </div>
   <a class="hide-project-details" href="#">Hide project details</a>
   {{ content | safe }}
-  {% if collaborators %}
-  <footer>This project was done in collaboration with {{ collaborators.join(", ") }}.</footer>
-  {% endif %}
 </main>
 {% include "footer.njk" %}

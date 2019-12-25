@@ -3,7 +3,9 @@
     <picture>
       <img src="https://tse2.mm.bing.net/th?q={{ post.city | urlencode }}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
     </picture>
-    <div>{{ post.city }}</div>
-    <div><time>{{ post.date }}</time></div>
+    <div>
+      <div>{{ post.city }}</div>
+      <div><time>{{ post.date }}</time></div>
+    </div>
   </a>
 </article>
