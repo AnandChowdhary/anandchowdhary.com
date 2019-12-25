@@ -1,0 +1,7 @@
+{% include "head.njk" %}
+<main id="content">
+  <h1>{{ title }}</h1>
+  <p>Posted on {{ date | datetime | safe }} in {{ tags }}</p>
+  {{ content | safe }}
+</main>
+{% include "footer.njk" %}

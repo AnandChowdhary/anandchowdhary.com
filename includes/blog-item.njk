@@ -19,7 +19,7 @@
   <div class="r">
     {% excerpt post %}
     {% if post.data.alias %}
-    <p><a href="{{ post.data.alias | url }}">Continue reading on {{ post.data.publisher }}</a></p>
+    <p><a href="{{ post.data.alias | url }}">{{ post.data.alias | iconify | safe }}Continue reading on {{ post.data.publisher }}</a></p>
     {% else %}
     <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
     {% endif %}
