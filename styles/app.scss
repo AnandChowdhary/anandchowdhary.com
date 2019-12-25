@@ -907,9 +907,6 @@ main#content {
   }
   .blog-posts article {
     display: flex;
-    .url-icon {
-      margin-right: 1rem;
-    }
     h2 {
       font-size: 120%;
       margin-bottom: 1.5rem;
@@ -920,6 +917,12 @@ main#content {
         font-size: 90%;
       }
     }
+  }
+}
+
+.blog {
+  .url-icon {
+    margin-right: 1rem;
   }
 }
 

@@ -3,5 +3,8 @@
   <h1>{{ title }}</h1>
   <p>Posted on {{ date | datetime | safe }} in {{ tags }}</p>
   {{ content | safe }}
+  {% if alias %}
+  <p><a href="{{ alias | url }}">{{ alias | iconify | safe }}Continue reading on {{ publisher }}</a></p>
+  {% endif %}
 </main>
 {% include "footer.njk" %}
