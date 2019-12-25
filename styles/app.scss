@@ -651,7 +651,7 @@ main#content .project-intro {
   }
 }
 
-.projects, .apps, .web, .iot, .branding {
+.projects {
   p {
     max-width: 500px;
     // margin-bottom: 2.5rem;
@@ -699,12 +699,13 @@ main#content .project-intro {
     display: block;
   }
   .tag {
+    display: inline-block;
     background-color: #f1c40f;
     color: #000;
     line-height: 1;
     font-size: 80%;
     text-transform: uppercase;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem;
     border-radius: 0.2rem;
     margin-right: 0.5rem;
   }
@@ -1254,9 +1255,12 @@ main#content .hide-project-details {
     margin-bottom: 1.5rem;
     left: 0;
   }
-  .home-items.travel > div article {
+  main#content .home-items.travel > div article {
     &:nth-child(5), &:nth-child(6) {
       display: none;
+    }
+    &:not(:nth-child(4)) {
+      margin-bottom: 1rem;
     }
     a {
       align-items: center;
@@ -1275,6 +1279,34 @@ main#content .hide-project-details {
     time {
       display: block;
       margin-top: 0.5rem;
+    }
+  }
+  main#content .blog-posts article,
+  main#content .blog-title {
+    display: block;
+  }
+  .blog:not(.home-items) article {
+    h2+div {
+      margin-bottom: 0;
+    }
+    .tag {
+      margin-top: 0.75rem;
+    }
+    .r {
+      margin-top: 1rem;
+    }
+  }
+  .projects nav.filter-nav {
+    margin-bottom: 3rem;
+    a {
+      margin-bottom: 1rem;
+    }
+  }
+  footer#colophon {
+    display: block;
+    margin-bottom: 2rem;
+    nav {
+      margin-bottom: 1rem;
     }
   }
 }

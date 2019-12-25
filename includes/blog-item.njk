@@ -1,7 +1,11 @@
 <article>
   <div class="l">
     <div>
+      {% if post.data.alias %}
       <h2><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
+      {% else %}
+      <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+      {% endif %}
       <div>Posted on <time>{{ post.data.date.toLocaleDateString("en-US", {
         day: "numeric",
         month: "short",
