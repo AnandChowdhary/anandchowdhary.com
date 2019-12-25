@@ -726,10 +726,10 @@ code {
 main#content pre {
   overflow-x: auto;
   padding: 1rem;
-  margin: 3rem auto;
+  margin: 1.5rem auto;
   white-space: pre;
   + pre {
-    margin-top: -2rem;
+    margin-top: -1rem;
   }
   code {
     padding: 0;
@@ -863,6 +863,12 @@ main#content .project-item {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.blog img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 main#content {

@@ -13,7 +13,7 @@ Hovercard is a JS plugin to add Wikipedia summary cards to your website. It's ea
 
 <!--more-->
 
-{{< img alt="Screenshot of Hovercard in action" src="/images/open-source/hovercard/screenshot.png">
+<div class="image"><img alt="Screenshot of Hovercard in action" src="/images/open-source/hovercard/screenshot.png"></div>
 
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/hovercard)
 

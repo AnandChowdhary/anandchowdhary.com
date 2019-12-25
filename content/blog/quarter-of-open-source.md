@@ -12,37 +12,37 @@ The first quarter of 2019 was very interesting for me. It was the first time I d
 
 The number of contributions I've made on GitHub has increased by over 20x in the past few years.
 
-{{< img text="Graph of contributions" src="/images/blog/quarter-of-open-source/contributions.png">
+<div class="image"><img alt="Graph of contributions" src="/images/blog/quarter-of-open-source/contributions.png"></div>
 
 ### 2015
 
 In 2015, I made slightly more than 100 contributions. These were mostly on my own projects, like my personal website, [Made with Love in India](/projects/made-with-love-in-india/), and [Saga Music](/projects/saga-music/). This is still less than 2014 (when I made a few projects centered around CSS and WordPress), but it's still something.
 
-{{< img text="Contributions in 2015" src="/images/blog/quarter-of-open-source/2015.png">
+<div class="image"><img alt="Contributions in 2015" src="/images/blog/quarter-of-open-source/2015.png"></div>
 
 ### 2016
 
 2016 was better, with more than twice the number of contributions. This is also when I founded Oswald Labs, so some of that work went into building our websites and first open-source extension.
 
-{{< img text="Contributions in 2016" src="/images/blog/quarter-of-open-source/2016.png">
+<div class="image"><img alt="Contributions in 2016" src="/images/blog/quarter-of-open-source/2016.png"></div>
 
 ### 2017
 
 2017 was even better with 465 contributions. In the first half of the year, I was working full-time on Oswald Labs (along with some freelance projects), and moved to Enschede in the second half. I also participated in (and won!) two hackathons, whose projects I also open-sourced. Oswald Labs mostly worked on GitLab, so there are (scattered) contributions here and there.
 
-{{< img text="Contributions in 2017" src="/images/blog/quarter-of-open-source/2017.png">
+<div class="image"><img alt="Contributions in 2017" src="/images/blog/quarter-of-open-source/2017.png"></div>
 
 ### 2018
 
 Last year is when there was a substantial, 6x increase in my open-source work. With over 2,500 contributions, this was the first time I was in four-figures, and my work was mostly on personal projects and a few libraries.
 
-{{< img text="Contributions in 2018" src="/images/blog/quarter-of-open-source/2018.png">
+<div class="image"><img alt="Contributions in 2018" src="/images/blog/quarter-of-open-source/2018.png"></div>
 
 ### 2019
 
 Finally, as of the first quarter of this year, I already have over 1,500 contributions. These are split around both Oswald Labs and my personal projects, and I also made a [system](https://github.com/AnandChowdhary/anand-services) to count my GitLab commits. At this rate, I should hit 5,000 this year (thought I don't know how long I can keep this rate up).
 
-{{< img text="Contributions in 2019" src="/images/blog/quarter-of-open-source/2019.png">
+<div class="image"><img alt="Contributions in 2019" src="/images/blog/quarter-of-open-source/2019.png"></div>
 
 ## Projects
 

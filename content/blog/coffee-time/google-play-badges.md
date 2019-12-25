@@ -18,6 +18,6 @@ For now, I'll only look at the two major smartphone platforms, Android and iOS/i
 
 That's why I think that the "Get it on Google Play" badge should be changed to showcase the Android icon, not the Google Play icon. **The distribution system is irrelevant, the platform is what matters.**
 
-{{< img alt="Proposed badges" src="/images/blog/google-play-badges/badge-proposal.png">
+![Proposed badges](/images/blog/google-play-badges/badge-proposal.png)
 
 Similar icons can also be made using the Google Play Music, Movies, and Books icons.
