@@ -1,11 +1,4 @@
 module.exports = eleventyConfig => {
-  eleventyConfig.addNunjucksFilter("slugify", value =>
-    (value || "")
-      .toLowerCase()
-      .replace(/^\s+|\s+$/g, "")
-      .trim()
-      .replace(/ /g, "-")
-  );
   eleventyConfig.addNunjucksFilter("classify", value =>
     (value || "")
       .replace("./content/", "")

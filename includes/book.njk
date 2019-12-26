@@ -3,11 +3,12 @@ pagination:
   data: books
   size: 1
   alias: book
-permalink: books/{{ book.name | slugify }}/index.html
+permalink: books/{{ book.name | slug }}/index.html
 ---
 
 {% include "head.njk" %}
 <main id="content">
   <h1>{{ book.name }}</h1>
+  {{ book.name | slug }}
 </main>
 {% include "footer.njk" %}

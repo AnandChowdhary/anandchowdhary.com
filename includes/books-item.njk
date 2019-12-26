@@ -1,5 +1,5 @@
 <article class="books-item">
-  <a href="/books/{{ book.name | slugify }}">
+  <a href="/books/{{ book.name | slug }}">
     <div class="content">
       <picture class="book-image">
         <img src="https://tse2.mm.bing.net/th?q={{ book.name | urlencode }}%20{{ book.author | urlencode }}%20cover&w=100&h=150&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
