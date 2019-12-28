@@ -12,6 +12,9 @@ bg: "#de2a49"
 img_src: /images/portfolio/capella_2x
 img_type: png
 style: padded
+award_position: 2
+stack: ["JavaScript", "PHP"]
+collaborators: ["mateo-sadowski"]
 ---
 
 At the Amsterdam Dance Event's hackathon in October 2017, I built Capella in 24 hours, a Progressive Web App that lets you find your friends in concerts using location sharing. You can also make new friends based on similar music taste and discover venue heat-maps.

@@ -5,10 +5,13 @@ intro: Smartphone-based home security system with face detection, AI chatbot, an
 date: 2018-05-27
 icon: /images/projects/wendy/icon.png
 timeline: 24 hours
-work: ["App", "Artificial Intelligence", "Internet of Things"]
+work: ["App", "AI", "Internet of Things"]
 style: cover
 img_src: /images/portfolio/wendy_2x
 img_type: png
+stack: ["JavaScript", "Python"]
+tools: ["Vue.js", "Firebase", "Azure Vision"]
+collaborators: ["mohit-ahuja"]
 ---
 
 On a weekend in March 2018, I build Wendy, a smartphone-based home security system with real-time face detection and a chatbot interface. Instead of a €200 Nest device, Wendy uses a €30 smartphone mounted as a doorbell.

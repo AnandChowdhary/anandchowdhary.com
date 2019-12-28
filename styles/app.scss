@@ -655,7 +655,7 @@ figcaption {
 }
 
 main#content .project-intro {
-  margin: 5rem auto;
+  margin: 2.5rem auto 5rem auto;
   line-height: 1;
   a {
     color: inherit;
@@ -664,8 +664,11 @@ main#content .project-intro {
   dl {
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     > * {
-      flex: 1 0 0;
+      margin-top: 2.5rem;
+      width: 30%;
     }
     + dl {
       margin-top: 2.5rem;
@@ -1151,15 +1154,24 @@ main#content .hide-project-details {
   padding: 0.5rem 0.75rem;
   border-radius: 0.2rem;
   line-height: 1;
+  &.award--2 {
+    background-color: silver;
+  }
+  &.award--3 {
+    background-color: brown;
+    color: #fff;
+  }
   .award-position {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 80%;
     vertical-align: middle;
     margin-top: -0.1rem;
-    margin-right: 0.5rem;
     opacity: 0.8;
     display: inline-block;
+    + span {
+      margin-left: 0.5rem;
+    }
   }
 }
 

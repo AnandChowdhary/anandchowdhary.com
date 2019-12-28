@@ -15,19 +15,27 @@
         {% if award_position === 1 %}
           <span class="award-position">1st prize</span>
         {% elif award_position === 2 %}
-          <span class="award-position">1st prize</span>
+          <span class="award-position">2nd prize</span>
         {% elif award_position === 3 %}
-          <span class="award-position">1st prize</span>
+          <span class="award-position">3rd prize</span>
         {% else %}
           <span>{{ award_position }}</span>
         {% endif %}
       {% endif %}
-      <span>{{ award }}</span>
+      {% if award %}<span>{{ award }}</span>{% endif %}
     </div></div>{% endif %}
   </div>
   <a class="show-project-details" href="#details">Show project details</a>
   <div class="project-intro" id="details">
-    {% if work or stack or collaborators %}<dl>
+    <dl>
+      {% if client %}<span>
+        <dt>Client</dt>
+        {% if client_link %}
+        <dd><a href="{{ client_link }}">{{ client }}</a></dd>
+        {% else %}
+        <dd>{{ client }}</dd>
+        {% endif %}
+      </span>{% endif %}
       {% if work %}<span>
         <dt>Work</dt>
         {% for tag in work %}
@@ -40,21 +48,17 @@
         <dd>{{ tag }}</dd>
         {% endfor %}
       </span>{% endif %}
+      {% if tools %}<span>
+        <dt>Tools</dt>
+        {% for tag in tools %}
+        <dd>{{ tag }}</dd>
+        {% endfor %}
+      </span>{% endif %}
       {% if collaborators %}<span>
         <dt>Collaborators</dt>
         {% for tag in collaborators %}
         <dd>{{ tag }}</dd>
         {% endfor %}
-      </span>{% endif %}
-    </dl>{% endif %}
-    {% if timeline or client or places %}<dl>
-      {% if client %}<span>
-        <dt>Client</dt>
-        {% if client_link %}
-        <dd><a href="{{ client_link }}">{{ client }}</a></dd>
-        {% else %}
-        <dd>{{ client }}</dd>
-        {% endif %}
       </span>{% endif %}
       {% if timeline %}<span>
         <dt>Timeline</dt>
@@ -64,7 +68,7 @@
         <dt>City</dt>
         <dd><a href="/travel/{{ places }}">{{ places | place }}</a></dd>
       </span>{% endif %}
-    </dl>{% endif %}
+    </dl>
   </div>
   <a class="hide-project-details" href="#">Hide project details</a>
   {{ content | safe }}

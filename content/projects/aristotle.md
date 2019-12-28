@@ -5,7 +5,7 @@ intro: E-learning platform for Limburg's schools with personalized content recom
 date: 2018-11-30
 icon: /images/projects/aristotle/icon.png
 timeline: 48 hours
-work: ["Web", "Artificial Intelligence"]
+work: ["Web", "AI"]
 client: Provincie Limburg
 client_link: https://www.limburg.nl
 bg: "#aaa"
@@ -16,6 +16,9 @@ places: heerlen
 venue: Brightlands Campus
 award: €12,500
 award_position: 1
+stack: ["JavaScript", "Python"]
+tools: ["Vue.js", "Django", "Firebase"]
+collaborators: ["alex-imbrea", "maurits-van-der-vijgh"]
 ---
 
 Between November 29 and December 1, 2018, my team and I built and presented Aristotle, an AI-powered e-learning platform for the schools of Limburg. The app was the winner of the *Education* category at [Brighthack](http://brighthack.eu) in Heerlen.
