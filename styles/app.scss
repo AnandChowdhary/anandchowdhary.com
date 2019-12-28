@@ -58,6 +58,22 @@ footer#colophon {
   justify-content: space-between;
 }
 
+main#content .breadcrumbs {
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  a {
+    text-decoration: none;
+    &:last-child {
+      display: none;
+    }
+    &::after {
+      content: "›";
+      margin: 0 0.75rem;
+      pointer-events: none;
+    }
+  }
+}
+
 header#masthead {
   nav, #more {
     display: flex;
@@ -371,6 +387,12 @@ main#content > .container-large {
   margin: 5rem 0;
 }
 
+.books main#content .author {
+  font-size: 110%;
+  margin-top: -1.25rem;
+  margin-bottom: 2rem;
+}
+
 main#content .home-items {
   position: relative;
   a {
@@ -518,6 +540,10 @@ footer#colophon {
       display: inline-block;
     }
   }
+}
+
+.content {
+  position: relative;
 }
 
 .events-item {
@@ -879,6 +905,42 @@ main#content .project-item {
 }
 
 main#content {
+  .book-image,
+  .video-image {
+    line-height: 1;
+    margin-right: 2rem;
+    perspective: 50rem;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: 0.3s;
+    border-radius: 0.2rem;
+    img {
+      position: relative;
+      border-radius: 0.2rem;
+      z-index: 1;
+      width: 5rem;
+      transition: 0.3s;
+    }
+    &.book-image-lg {
+      position: absolute;
+      left: -7rem;
+      top: -0.25rem;
+    }
+  }
+  .book-image::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    border-radius: 100%;
+    filter: blur(0.4rem);
+    transform: scale(1.25);
+    position: absolute;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
   .blog-posts, .blog-title {
     .l {
       flex: 0.6 0 0;
@@ -970,37 +1032,6 @@ main#content .videos-item {
   .rating {
     line-height: 1;
     margin-top: 0.5rem;
-  }
-  .book-image,
-  .video-image {
-    line-height: 1;
-    margin-right: 2rem;
-    perspective: 50rem;
-    transform-style: preserve-3d;
-    position: relative;
-    transition: 0.3s;
-    border-radius: 0.2rem;
-    img {
-      position: relative;
-      border-radius: 0.2rem;
-      z-index: 1;
-      width: 5rem;
-      transition: 0.3s;
-    }
-  }
-  .book-image::before {
-    content: "";
-    width: 1rem;
-    height: 1rem;
-    bottom: -0.5rem;
-    left: 0;
-    width: 100%;
-    border-radius: 100%;
-    filter: blur(0.4rem);
-    transform: scale(1.25);
-    position: absolute;
-    transition: 0.3s;
-    background-color: rgba(0, 0, 0, 0.25);
   }
 }
 

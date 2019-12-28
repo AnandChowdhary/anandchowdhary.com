@@ -1,3 +1,12 @@
+const axios = require("axios");
+const { setupCache } = require("axios-cache-adapter");
+const cache = setupCache({
+  maxAge: 86400
+});
+const api = axios.create({
+  adapter: cache.adapter
+});
+
 module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter("classify", value =>
     (value || "")
@@ -28,7 +37,12 @@ module.exports = eleventyConfig => {
   );
   eleventyConfig.addNunjucksAsyncShortcode(
     "wiki",
-    async value => value + "Anand"
+    async value => {
+      try {
+        return (await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value)}`)).data
+      } catch (error) {}
+      return;
+    }
   );
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
   eleventyConfig.addNunjucksFilter("place", value => {
