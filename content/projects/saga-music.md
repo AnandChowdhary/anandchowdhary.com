@@ -5,6 +5,7 @@ subcategory: Web
 intro: Free music downloading and sharing app for Android and the web. Over 100,000 downloads. Shut down in 2016.
 date: 2015-05-31
 icon: /images/projects/saga-music/icon.png
+icon_bg: true
 bg: "#00c1d7"
 timeline: 2 months
 work: ["App", "Branding", "Web"]

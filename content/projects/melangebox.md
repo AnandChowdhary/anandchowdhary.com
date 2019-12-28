@@ -5,6 +5,7 @@ subcategory: Ecommerce
 intro: Fashion ecommerce startup delivering high-quality, affordable clothing and accessories internationally.
 date: 2017-01-01
 icon: /images/projects/melangebox/icon.png
+icon_bg: true
 bg: "#0095de"
 work: ["Web", "Branding", "Startup"]
 img_src: /images/portfolio/melangebox_2x

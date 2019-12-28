@@ -5,6 +5,7 @@ subcategory: App
 intro: Platform to celebrate, promote, and build a brand — India. Over 75 organizations use the Made with Love in India badge.
 date: 2014-04-21
 icon: /images/projects/mwlii/icon.png
+icon_bg: true
 work: ["Web", "Branding"]
 bg: "#f10032"
 style: padded

@@ -5,6 +5,7 @@ subcategory: App
 intro: Face recognition Augmented Reality app for business events, built at the AWS Hackathon for StartupFest Europe.
 date: 2017-09-23
 icon: /images/projects/facematch/icon.png
+icon_bg: true
 work: ["App", "Artificial Intelligence", "Augmented Reality"]
 client: AWS
 timeline: 24 hours

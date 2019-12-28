@@ -855,12 +855,28 @@ main#content .project-item {
   .project-item-icon {
     transition: 0.3s;
     position: absolute;
-    height: 5rem;
-    width: 5rem;
     margin-top: -3.8rem;
     right: 1.5rem;
-    border-radius: 0.2rem;
-    filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.3));
+    img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 0.2rem;
+      filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.3));
+    }
+    &.project-item-icon-box {
+      background-color: #fff;
+      border-radius: 100%;
+      width: 5rem;
+      text-align: center;
+      height: 5rem;
+      box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+      img {
+        margin-top: 1rem;
+        width: 3rem;
+        height: 3rem;
+        filter: none;
+      }
+    }
   }
   .project-image {
     transition: 0.3s;
@@ -870,7 +886,15 @@ main#content .project-item {
     box-shadow: none;
     .project-item-icon {
       transform: scale(1.1);
-      filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
+      img {
+        filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
+      }
+      &.project-item-icon-box {
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+        img {
+          filter: none;
+        }
+      }
     }
     .project-image {
       box-shadow: 0 0 0 0.2rem $focusRingColor;
@@ -1301,10 +1325,21 @@ main#content .hide-project-details {
     }
   }
   main#content .project-item .project-item-icon {
-    width: 3rem;
-    height: 3rem;
     margin-top: -2.5rem;
     right: 1rem;
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+    &.project-item-icon-box {
+      width: 3rem;
+      height: 3rem;
+      img {
+        margin-top: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
   main#content .home-items h1 {
     transform: none;
