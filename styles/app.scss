@@ -689,24 +689,31 @@ main#content .project-intro {
     max-width: 500px;
     // margin-bottom: 2.5rem;
   }
-  nav.filter-nav {
-    margin-top: 1rem;
-    margin-bottom: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    a {
-      background-color: whitesmoke;
-      color: inherit;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 2rem;
-      &.active {
-        background-color: $colorProjects;
-        color: #fff;
-      }
+}
+
+nav.filter-nav {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  a {
+    background-color: whitesmoke;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    &.active {
+      background-color: $colorProjects;
+      color: #fff;
     }
   }
+}
+
+.blog nav.filter-nav {
+  margin-bottom: 0;
 }
 
 .projects:not(.index) main#content {

@@ -13,6 +13,14 @@ pagination:
     <div class="r">
       <h1>{{ title }}</h1>
       {{ content | safe }}
+      <nav class="filter-nav">
+        <a class="active" href="/blog/">All</a>
+        <a href="/blog/coffee-time/">Coffee Time</a>
+        <a href="/blog/state-of-the/">State of the X</a>
+        <a href="/blog/code/">Code</a>
+        <a href="/blog/design/">Design</a>
+        <a href="/blog/other/">Other</a>
+      </nav>
     </div>
   </div>
   <section class="blog-posts">

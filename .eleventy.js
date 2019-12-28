@@ -39,9 +39,9 @@ module.exports = eleventyConfig => {
     "wiki",
     async value => {
       try {
-        return (await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value)}`)).data
+        return `<p>${(await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value)}`)).data} <a href="#">Wikipedia</a></p>`;
       } catch (error) {}
-      return;
+      return "";
     }
   );
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
