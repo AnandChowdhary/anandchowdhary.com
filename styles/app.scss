@@ -264,11 +264,22 @@ figure {
 }
 
 nav.pagination {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   line-height: 1;
   justify-content: space-between;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   &.pagination--has-next:not(.pagination--has-prev) {
     justify-content: flex-end;
+  }
+  span {
+    transition: 0.3s;
   }
   .pagination-item {
     &::before, &::after {
@@ -280,6 +291,7 @@ nav.pagination {
       line-height: 5rem;
       border-radius: 100%;
       text-align: center;
+      transition: 0.3s;
       font-size: 200%;
       display: inline-block;
     }
@@ -302,10 +314,12 @@ nav.pagination {
     &:focus {
       box-shadow: none;
       span {
-        box-shadow: 0 0 0 0.2rem blue;
+        box-shadow: 0 0 0 0.2rem $focusRingColor;
+        border-radius: 0.2rem;
       }
       &::before, &::after {
         transform: scale(1.1);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
       }
     }
   }
@@ -357,6 +371,7 @@ nav.pagination {
     margin-bottom: 1.25rem;
     position: relative;
     .project-image-front {
+      border-radius: 0.2rem;
       background-repeat: no-repeat;
       background-position: center center;
       position: absolute;
