@@ -13,6 +13,8 @@ img_type: png
 style: padded
 stack: ["JavaScript"]
 tools: ["Vue.js", "Node.js", "Stripe", "Firebase"]
+icon: /images/projects/drillmaps/icon.png
+icon_bg: true
 ---
 
 In February and March 2018, I worked with DrillMaps, a horizontal directional drilling startup based in Seattle, WA. I designed and developed their new website, along with coherent icons for their products.

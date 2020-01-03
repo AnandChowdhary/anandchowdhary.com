@@ -14,8 +14,7 @@
       {% endif %}
       <h2>{{ project.data.title }}</h2>
       <time>{{ project.data.date.toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "short",
+        month: "long",
         year : "numeric"
       }) }}</time>
     </div>
