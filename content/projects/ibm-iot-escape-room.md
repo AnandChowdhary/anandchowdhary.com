@@ -1,10 +1,10 @@
 ---
 title: IBM IoT Escape Room
 tags: projects
-subcategory: Internet of Things
+subcategory: IoT
 intro: Educational escape room built using IoT technology and a real-time database with IBM for a module project in April 2018.
 date: 2018-04-12
-work: ["Internet of Things", "Hardware"]
+work: ["IoT", "Hardware"]
 client: IBM Netherlands
 timeline: 2 months
 style: cover
@@ -14,7 +14,7 @@ stack: ["JavaScript"]
 tools: ["Firebase", "Node.js", "Vue.js"]
 ---
 
-From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the Internet of Things. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
+From February to April 2018, my project group and I worked with IBM on building an escape room using—and to teach players about—the IoT. Using Wemoses and Ardiuos as the basic building blocks, combined with Firebase's real-time database and a custom-built Vue.js app, we built a proof-of-concept with five connected puzzles.
 
 This was my project for the module "Living and Working Tomorrow", a quarter of Creative Technology BSc's first year focused on working with external clients on solving today's problems using tomorrow's technology.
 

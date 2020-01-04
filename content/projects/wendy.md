@@ -5,7 +5,7 @@ intro: Smartphone-based home security system with face detection, AI chatbot, an
 date: 2018-05-27
 icon: /images/projects/wendy/icon.png
 timeline: 24 hours
-work: ["App", "AI", "Internet of Things"]
+work: ["App", "AI", "IoT"]
 style: cover
 img_src: /images/portfolio/wendy_2x
 img_type: png

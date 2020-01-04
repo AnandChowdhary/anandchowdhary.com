@@ -1,10 +1,10 @@
 ---
 title: Blueboard
 tags: projects
-subcategory: Internet of Things
+subcategory: IoT
 intro: Bluetooth-powered smart billboard that shows relevant advertisements and information based on who's passing by it.
 date: 2018-01-23
-work: ["Internet of Things", "Hardware"]
+work: ["IoT", "Hardware"]
 style: cover
 timeline: 2 months
 img_src: /images/portfolio/blueboard_2x
@@ -24,7 +24,7 @@ Users can open the BlueBoard app and set their preferences by assigning points f
   <img alt="" src="/images/projects/blueboard/2.jpg">
 </div>
 
-BlueBoard was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the Internet of Things.
+BlueBoard was my project for the module "Smart Environments", a quarter of Creative Technology BSc's first year focused on ubitiquous computing and the IoT.
 
 BlueBoard used a custom-built Android app written in Java, along with an Arduino program that would send the JSON data object via serial communication to Processing. Processing would compute and display the relevant information on the screen.
 

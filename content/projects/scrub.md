@@ -6,7 +6,8 @@ date: 2019-05-18
 icon: /images/projects/scrub/icon.png
 timeline: 36 hours
 work: ["Web"]
-stack: ["TypeScript", "Wix Corvid"]
+stack: ["TypeScript"]
+tools: ["Wix Corvid"]
 client: Corvid by Wix
 bg: "#145efb"
 style: padded

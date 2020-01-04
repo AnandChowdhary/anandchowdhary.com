@@ -6,7 +6,7 @@ intro: Face recognition Augmented Reality app for business events, built at the 
 date: 2017-09-23
 icon: /images/projects/facematch/icon.png
 icon_bg: true
-work: ["App", "AI", "Augmented Reality"]
+work: ["App", "AI", "VR/AR"]
 client: AWS
 timeline: 24 hours
 img_src: /images/portfolio/facematch_2x

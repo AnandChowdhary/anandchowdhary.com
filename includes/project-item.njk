@@ -30,6 +30,11 @@
           <span class="stack">{{ tag }}</span>
         {% endfor %}
       {% endif %}
+      {% if project.data.tools %}
+        {% for tag in project.data.tools %}
+          <span class="tools">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
     </div>
   </a>
 </article>
