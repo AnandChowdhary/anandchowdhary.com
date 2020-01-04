@@ -18,6 +18,10 @@ body {
   font-kerning: normal;
 }
 
+::selection {
+  background-color: #ffdf6e;
+}
+
 p, ul, ol, footer {
   line-height: 1.7;
   margin: 0 0 1rem 0;
