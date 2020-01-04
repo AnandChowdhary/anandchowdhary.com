@@ -33,6 +33,9 @@ function infiniteScroll() {
             var newPagination = htmlDoc.querySelector("main#content nav.pagination");
             var currentPagination = document.querySelector("main#content nav.pagination");
             if (currentPagination && newPagination) {
+              var previousLinkNewPagination = htmlDoc.querySelector("a.pagination-item--prev");
+              if (previousLinkNewPagination)
+                previousLinkNewPagination.parentNode.removeChild(previousLinkNewPagination);
               currentPagination.innerHTML = newPagination.innerHTML;
               currentPagination.className = newPagination.className;
               if (!newPagination.querySelectorAll("a.pagination-item--next").length)
