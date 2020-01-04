@@ -10,6 +10,8 @@ style: cover
 timeline: 2 months
 img_src: /images/portfolio/firangana_2x
 img_type: png
+stack: ["PHP"]
+tools: ["Photoshop", "WordPress", "Woocommerce"]
 ---
 
 In mid-2016, my girlfriend <a href="https://sukritikapoor.com">Sukriti Kapoor</a> and I conceptualized a fashion brand that combines western clothing with ethnic Indian designs. She worked on fabric and fashion design while I designed the brand identity and website.

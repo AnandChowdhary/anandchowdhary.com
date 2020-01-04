@@ -11,6 +11,7 @@ bg: "#f10032"
 style: padded
 img_src: /images/portfolio/made-with-love-in-india_2x
 img_type: png
+stack: ["PHP"]
 ---
 
 You see this meticulously made handicraft item which would be the perfect addition to brighten up any living room. You pick it up, admiring the attention to detail when suddenly you spot the Made in India label at the bottom, instantly making the product you were admiring seconds ago feel as cheap as dirt.

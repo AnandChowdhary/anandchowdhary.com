@@ -1459,3 +1459,17 @@ main#content .hide-project-details {
     margin-right: 1rem;
   }
 }
+
+.project-tags {
+line-height: 1;
+  span {
+    background-color: whitesmoke;
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.25rem;
+    font-size: 90%;
+    border-radius: 1rem;
+    &.stack {
+      background-color: #fff9cf;
+    }
+  }
+}

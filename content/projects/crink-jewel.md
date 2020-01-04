@@ -12,6 +12,7 @@ timeline: 2 months
 style: cover
 img_src: /images/portfolio/crink-jewel_2x
 img_type: png
+tools: ["Photoshop", "Illustrator"]
 ---
 
 I designed a minimal logo and Shopify ecommerce store for Crink Jewel, a precious jewelry company based in New Delhi, India. I tried to portray elegance, simplicity, and timelessness.

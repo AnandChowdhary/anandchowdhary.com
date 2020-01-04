@@ -19,5 +19,17 @@
       }) }}</time>
     </div>
     <p>{{ project.data.intro }}</p>
+    <div class="project-tags">
+      {% if project.data.work %}
+        {% for tag in project.data.work %}
+          <span>{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+      {% if project.data.stack %}
+        {% for tag in project.data.stack %}
+          <span class="stack">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
   </a>
 </article>

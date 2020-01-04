@@ -4,12 +4,13 @@ tags: projects
 intro: Redesigned brand identity of PickQuick for an event in five hours. Made a trustworthy, user-centric brand.
 date: 2013-10-11
 work: ["Web", "Branding"]
-stack: ["PHP"]
 collaborators: ["shivam-soon", "akshat-srivastava"]
 bg: "#ef5c46"
 style: padded
 img_src: /images/portfolio/internet.org_2x
 img_type: png
+stack: ["PHP"]
+tools: ["Photoshop", "Illustrator"]
 ---
 
 My first "real" co-foundership experience was when a student of the National Instutite of Technology (NIT) Calicut, Shivam Soon, reached out to me with the idea of building a platform where students can buy, sell, and trade old books. He saw a great opportunity to formalize the exchange process of expensive university textbooks.

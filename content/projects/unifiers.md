@@ -10,6 +10,7 @@ timeline: 2 months
 style: padded
 img_src: /images/portfolio/unifiers_2x
 img_type: png
+stack: ["PHP", "JavaScript"]
 ---
 
 For 3 years, I worked part-time as a consultant to Unifiers Social Ventures Pvt. Ltd., a leading social infrastructure company, and worked on a variety of projects.

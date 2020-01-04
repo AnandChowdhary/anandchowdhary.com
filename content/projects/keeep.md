@@ -10,6 +10,7 @@ timeline: 4 days
 img_src: /images/portfolio/keeep_2x
 img_type: png
 style: padded
+stack: ["C++"]
 ---
 
 For my highschool Computer Science project, I built an encryption engine and password manager in C/C++. I wrote a pseudo-encryption algorithm with string manipulation, rotation, and encoding.

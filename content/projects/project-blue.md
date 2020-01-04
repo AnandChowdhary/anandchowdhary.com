@@ -10,6 +10,7 @@ timeline: 1 month
 client: IDII
 img_src: /images/portfolio/project-blue_2x
 img_type: png
+tools: ["Autodesk", "SolidWorks", "Photoshop"]
 ---
 
 Project Blue, originally standing for 'Bottles, Linkages, and their Underlining Ergonomics,' is my first (and only) industrial design project in which I conducted a research and redesigned the plastic bottle. I understood that polyethene terephthalate, a plastic resin and the most common type of polyester, is the material which makes the popular 'PET' bottles.

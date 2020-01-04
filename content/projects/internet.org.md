@@ -10,6 +10,7 @@ style: padded
 img_src: /images/portfolio/internet.org_2x
 img_type: png
 icon: /images/projects/internetorg/icon.png
+tools: ["Photoshop", "Illustrator"]
 ---
 
 I recently participated in an event where I was required to redesign Internet.org's homepage and logo. The content had to remain the same, but the design was to be completely new. The website was required to be responsive, and good in code-quality and aesthetics, without the use of any external code. The logo was marked for creativity and execution. Here's what I designed in five hours. And why.

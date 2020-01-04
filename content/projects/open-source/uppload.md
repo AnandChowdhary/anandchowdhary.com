@@ -1,15 +1,16 @@
 ---
 title: Uppload
 tags: projects
-intro: Open source JavaScript image uploading widget with 30+ plugins written in TypeScript
+intro: Open source JavaScript file uploading widget with 30+ plugins to select and edit photos
 date: 2020-01-01
 work: ["Web", "Open source"]
 bg: "#f05d5e"
-style: padded
-img_src: /images/projects/open-source/uppload/1
+style: cover
+img_src: /images/projects/open-source/uppload/cover
 img_type: png
 icon: /images/projects/open-source/uppload/icon.png
 icon_bg: true
+stack: ["TypeScript"]
 ---
 
 Here is some text
@@ -28,3 +29,5 @@ Here is some text
   <img alt="" src="/images/projects/open-source/uppload/5.png">
   <img alt="" src="/images/projects/open-source/uppload/6.png">
 </div>
+
+<div class="image"><img alt="" src="/images/projects/open-source/uppload/cover.png"></div>

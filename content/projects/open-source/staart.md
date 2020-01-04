@@ -10,6 +10,7 @@ img_src: /images/projects/open-source/staart/cover
 img_type: png
 icon: /images/projects/staart/icon.png
 icon_bg: true
+stack: ["TypeScript"]
 ---
 
 Here is some text

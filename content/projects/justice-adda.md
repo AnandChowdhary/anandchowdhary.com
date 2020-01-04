@@ -12,6 +12,7 @@ style: padded
 timeline: 14 months
 img_src: /images/portfolio/justice-adda_2x
 img_type: png
+tools: ["WordPress", "InDesign"]
 ---
 
 From late 2014 to early 2016, I worked as the Technology Lead at Justice Adda, a startup part of Cambridge Social Ventures in the Judge Business School, University of Cambridge. I designed their early website and webapps like Intolerance Tracker. I also worked on their branding, and this is a small Paul Rand-inspired magazine I designed to showcase the new brand.

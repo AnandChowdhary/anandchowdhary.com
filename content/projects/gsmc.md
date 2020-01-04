@@ -9,6 +9,7 @@ bg: "#ef5c46"
 style: padded
 img_src: /images/portfolio/internet.org_2x
 img_type: png
+tools: ["Photoshop", "Illustrator"]
 ---
 
 My first "real" co-foundership experience was when a student of the National Instutite of Technology (NIT) Calicut, Shivam Soon, reached out to me with the idea of building a platform where students can buy, sell, and trade old books. He saw a great opportunity to formalize the exchange process of expensive university textbooks.
