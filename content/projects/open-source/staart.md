@@ -11,6 +11,7 @@ img_type: png
 icon: /images/projects/staart/icon.png
 icon_bg: true
 stack: ["TypeScript"]
+tools: ["Node.js", "Vue.js", "Stripe", "AWS"]
 ---
 
 Here is some text

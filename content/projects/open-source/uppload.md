@@ -6,6 +6,7 @@ date: 2020-01-01
 work: ["Web", "Open source"]
 bg: "#f05d5e"
 style: cover
+client: El Niño
 img_src: /images/projects/open-source/uppload/cover
 img_type: png
 icon: /images/projects/open-source/uppload/icon.png

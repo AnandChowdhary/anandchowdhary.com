@@ -2,10 +2,39 @@
   command = "yarn build"
   publish = "public"
 
+# Coffee time redirects
 [[redirects]]
   from = "/blog/google-docs-github/"
   to = "/blog/coffee-time/google-docs-github/"
-
 [[redirects]]
   from = "/blog/twitter-subaccounts/"
   to = "/blog/coffee-time/twitter-subaccounts/"
+
+# Older site's open-source articles
+[[redirects]]
+  from = "/open-source/staart/"
+  to = "/projects/open-source/staart/"
+[[redirects]]
+  from = "/open-source/hello-bar/"
+  to = "https://github.com/AnandChowdhary/hello-bar"
+[[redirects]]
+  from = "/open-source/hovercard/"
+  to = "https://github.com/AnandChowdhary/hovercard"
+[[redirects]]
+  from = "/open-source/uppload/"
+  to = "https://github.com/AnandChowdhary/uppload"
+[[redirects]]
+  from = "/open-source/precis/"
+  to = "https://github.com/AnandChowdhary/precis"
+[[redirects]]
+  from = "/open-source/one-grid/"
+  to = "https://github.com/AnandChowdhary/one-grid"
+[[redirects]]
+  from = "/open-source/essential.css/"
+  to = "https://github.com/AnandChowdhary/essential.css"
+[[redirects]]
+  from = "/open-source/aptitude/"
+  to = "https://github.com/AnandChowdhary/aptitude"
+[[redirects]]
+  from = "/open-source/ac.js/"
+  to = "https://github.com/AnandChowdhary/ac.js"
