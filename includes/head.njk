@@ -10,7 +10,7 @@
     {% endif %}
     <link rel="stylesheet" href="/assets/styles/main.min.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|Domine:400&display=swap" rel="stylesheet">
-    <script>!window.matchMedia("(prefers-color-scheme: dark)")&&"dark"!==localStorage.getItem("theme")||"light"===localStorage.getItem("theme")||document.documentElement.className="dark";</script>
+    <script>!window.matchMedia("(prefers-color-scheme: dark)")&&"dark"!==localStorage.getItem("theme")||"light"===localStorage.getItem("theme")||document.documentElement.classList.add("dark");</script>
   </head>
   <body class="{{ page.inputPath | classify }}">
     {% include "header.njk" %}
