@@ -1479,3 +1479,22 @@ line-height: 1;
     }
   }
 }
+
+.img-heading img {
+  width: 5rem;
+  filter: drop-shadow(0 .15rem .15rem rgba(0,0,0,.1));
+}
+.img-heading {
+  img {
+    margin-right: 1rem;
+    margin-left: -7rem;
+    float: left;
+    vertical-align: middle;
+  }
+}
+@media (max-width: 500px) {
+  .img-heading img {
+    margin: -0.1rem 1rem 0 0 !important;
+    width: 2rem;
+  }
+}
