@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@babel/core": "^7.7.7",
+    "@babel/core": "^7.8.0",
     "axios": "^0.19.1",
     "axios-cache-adapter": "^2.5.0",
     "del": "^5.1.0",
