@@ -8,6 +8,17 @@ const api = axios.create({
 });
 
 module.exports = eleventyConfig => {
+  eleventyConfig.addNunjucksFilter("titleify", value =>
+    (value || "")
+      .replace(/-/g, " ")
+      .replace(/\//g, " ")
+      .toLowerCase()
+      .split(" ")
+      .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(" ")
+      .replace(/ The/g, " the")
+      .replace(/ Of/g, " of")
+  );
   eleventyConfig.addNunjucksFilter("classify", value =>
     (value || "")
       .replace("./content/", "")

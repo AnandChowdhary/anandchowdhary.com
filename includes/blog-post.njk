@@ -1,7 +1,26 @@
 {% include "head.njk" %}
 <main id="content">
   <h1>{{ title }}</h1>
-  <p>Posted on {{ date | datetime | safe }} in {{ tags }}</p>
+  <a class="show-project-details" href="#details">Show blog post details</a>
+  <div class="project-intro" id="details">
+    <dl>
+      {% if date %}<span>
+        <dt>Posted</dt>
+        <dd>{{ date | datetime | safe }}</dd>
+      </span>{% endif %}
+      {% if tags %}<span>
+        <dt>Tags</dt>
+        {% for tag in tags %}{% if tag !== "blog" %}
+        {% if tag === "state-of-the" %}
+        <dd><a href="/blog/{{ tag }}/">State of the X</a></dd>
+        {% else %}
+        <dd><a href="/blog/{{ tag }}/">{{ tag | titleify }}</a></dd>
+        {% endif %}
+        {% endif %}{% endfor %}
+      </span>{% endif %}
+    </dl>
+  </div>
+  <a class="hide-project-details" href="#">Hide blog post details</a>
   {{ content | safe }}
   {% if alias %}
   <p><a href="{{ alias | url }}">{{ alias | iconify | safe }}Continue reading on {{ publisher }}</a></p>

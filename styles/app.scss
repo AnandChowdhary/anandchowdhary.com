@@ -520,7 +520,7 @@ footer#colophon {
     margin: 0 auto 1rem auto;
     line-height: 1;
     display: block;
-    border: 0.125rem solid rgba(100, 100, 100, 1);
+    border: 0.125rem solid $colorTravel;
     padding: 0.25rem;
     border-radius: 100%;
     img {
@@ -542,7 +542,7 @@ footer#colophon {
       width: 3rem;
       line-height: 1;
       display: block;
-      border: 0.125rem solid rgba(100, 100, 100, 1);
+      border: 0.125rem solid $colorTravel;
       padding: 0.25rem;
       margin-right: 1.5rem;
       border-radius: 100%;
@@ -857,7 +857,7 @@ h2 {
       width: 7.5rem;
       line-height: 1;
       display: block;
-      border: 0.125rem solid rgba(100, 100, 100, 1);
+      border: 0.125rem solid $colorTravel;
       padding: 0.25rem;
       transition: 0.3s;
       margin-right: 1.5rem;
@@ -909,10 +909,10 @@ main#content .project-item {
     .project-item-icon {
       transform: scale(1.1);
       img {
-        filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
+        filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
       }
       &.project-item-icon-box {
-        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
         img {
           filter: none;
         }
