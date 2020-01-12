@@ -189,6 +189,12 @@ main#content {
     }
   }
 
+  h2, h3, h4 {
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+  }
+
   ul li {
     margin-bottom: 0.75rem;
     &:last-child {
