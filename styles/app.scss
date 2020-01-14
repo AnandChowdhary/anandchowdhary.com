@@ -615,7 +615,7 @@ footer#colophon {
 }
 
 .events main#content {
-  a {
+  a:not(.continue) {
     color: inherit;
     text-decoration: none;
   }
@@ -693,7 +693,7 @@ main#content .project-intro {
     justify-content: space-between;
     > * {
       margin-top: 2.5rem;
-      width: 30%;
+      min-width: 30%;
     }
     + dl {
       margin-top: 2.5rem;
@@ -744,14 +744,12 @@ nav.filter-nav {
   margin-bottom: 0;
 }
 
-.projects:not(.index) main#content {
-  h1 {
-    + div {
-      margin-top: -2.75rem;
-    }
-    &.has-no-icon + div {
-      margin-top: -0.5rem;
-    }
+main#content h1 {
+  &.has-icon + div {
+    margin-top: -2.5rem;
+  }
+  &.has-no-icon + div {
+    margin-top: -1.25rem;
   }
 }
 

@@ -1,9 +1,7 @@
 ---
 title: Hive 01 Season 5
 date: 2019-06-12
-roles:
-  - panelist
-  - speaker
+roles: speaker
 places: enschede
 link: https://www.facebook.com/events/397841724394878/
 linkType: Facebook

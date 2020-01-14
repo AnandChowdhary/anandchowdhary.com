@@ -35,7 +35,7 @@ const getWorkArchive = async (allItems, category, value) => {
   <section class="projects">
     <div>
   `;
-  const items = allItems.filter(item => (item.data[category] || []).includes(value));
+  const items = allItems.filter(item => (item.data[category] || []).includes(value)).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   items.forEach(project => {
     result += `<article class="project-item">
       <a href="${project.url}">
@@ -145,7 +145,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksAsyncShortcode(
     "blogTagArchive",
     async value => {
-      const items = allItems.filter(item => (item.data.tags || []).includes(value));
+      const items = allItems.filter(item => (item.data.tags || []).includes(value)).sort((a, b) => a.date.getTime() - b.date.getTime());
       try {
         let result = `<div class="blog-title">
         <div class="l"></div>
