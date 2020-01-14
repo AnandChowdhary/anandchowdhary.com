@@ -9,7 +9,11 @@ const api = axios.create({
   adapter: cache.adapter
 });
 
-const cityData = readJsonSync(join(__dirname, ".cache", "city-data.json"));
+let cityData = {};
+
+try {
+  cityData = readJsonSync(join(__dirname, ".cache", "city-data.json"));
+} catch (error) {};
 
 const trim = (s, mask) => {
   while (~mask.indexOf(s[0]))
