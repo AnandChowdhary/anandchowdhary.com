@@ -1,0 +1,14 @@
+---
+pagination:
+  data: eventRolesTags
+  size: 1
+  alias: eventRolesTags
+addAllPagesToCollections: true
+permalink: /events/roles/{{ eventRolesTags | slug }}/
+---
+
+{% include "head.njk" %}
+<main id="content">
+  {% eventRolesTagsArchive eventRolesTags %}
+</main>
+{% include "footer.njk" %}

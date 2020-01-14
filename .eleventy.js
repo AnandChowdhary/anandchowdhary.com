@@ -142,6 +142,45 @@ module.exports = (eleventyConfig) => {
     "toolsTagsArchive",
     async value => getWorkArchive(allItems, "tools", value));
 
+    eleventyConfig.addNunjucksAsyncShortcode(
+      "eventRolesTagsArchive",
+      async value => {
+        const items = allItems.filter(item => (item.data.roles || []).includes(value)).sort((a, b) => a.date.getTime() - b.date.getTime());
+        let result = `
+          <h1>Events ${value}</h1>
+          <section class="posts">
+            ${items.map(post => `
+              <article class="events-item">
+                <div class="content">
+                <h2>
+                  <a href="${post.url}">
+                    <img class="item-icon" alt="" src="${ post.data.icon }"><span>${ post.data.title }</span>
+                  </a>
+                </h2>
+                <div class="location">
+                  <div>${post.data.venue}</div>
+                  <div><a href="/travel/${post.data.places}">${ post.data.places }</a></div>
+                </div>
+                <div class="meta">
+                  <div>
+                    <a href="${post.url}">
+                      <time>${ post.data.date.toLocaleDateString("en-US", {
+                        day: "numeric",
+                        month: "short",
+                        year : "numeric"
+                      }) }</time>
+                    </a>
+                  </div>
+                  <div><a class="continue" href="${post.url}">Continue reading &rarr;</a></div>
+                </div>
+              </div>
+              </article>
+            `).join("")}
+          </section>
+        `;
+        return result;
+      });
+
   eleventyConfig.addNunjucksAsyncShortcode(
     "blogTagArchive",
     async value => {
