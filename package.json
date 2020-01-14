@@ -15,12 +15,15 @@
     "axios": "^0.19.1",
     "axios-cache-adapter": "^2.5.0",
     "del": "^5.1.0",
+    "front-matter": "^3.1.0",
+    "fs-extra": "^8.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "recursive-readdir": "^2.2.2"
   }
 }
