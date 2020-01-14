@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { setupCache } = require("axios-cache-adapter");
 const { join } = require("path");
-const { readJSON, readdir } = require("fs-extra");
+const { readJSON, mkdirp, readFile, writeFile, readdir, exists } = require("fs-extra");
 const cache = setupCache({
   maxAge: 86400
 });
@@ -17,7 +17,52 @@ const trim = (s, mask) => {
   return s;
 }
 
-const getInstagramStories = async city => {
+const getWikiSummary = async value => {
+  try {
+    const cachePath = join(__dirname, ".cache", "wiki", `${value}.txt`);
+    if (await exists(cachePath))
+    return (await readFile(cachePath)).toString();
+    const data = `<p>${(await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value.replace(/-/g, "_"))}`)).data} <a href="https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(value.replace(/-/g, "_"))}">Text from Wikipedia</a></p>`;
+    await mkdirp(join(cachePath, ".."));
+    await writeFile(cachePath, data);
+    return data;
+  } catch (error) {}
+  return "";
+}
+
+const getEventsSummaryCity = async (allItems, value) => {
+  let result = "";
+  const items = allItems.filter(item => (item.data.tags || []).includes("events") && (item.data.places || []).includes(value)).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  if (items.length) {
+    result += `
+      <h2>Events</h2>
+      ${items.map(post => `
+        <article>
+          <h3>${post.data.title}</h3>
+        </article>
+      `).join("")}
+    `;
+  }
+  return result;
+};
+
+const getProjectsSummaryCity = async (allItems, value) => {
+  let result = "";
+  const items = allItems.filter(item => (item.data.tags || []).includes("projects") && (item.data.places || []).includes(value)).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  if (items.length) {
+    result += `
+      <h2>Projects</h2>
+      ${items.map(post => `
+        <article>
+          <h3>${post.data.title}</h3>
+        </article>
+      `).join("")}
+    `;
+  }
+  return result;
+};
+
+const getCityArchivePageData = async (allItems, city) => {
   let result = "";
   try {
     let images = "";
@@ -30,9 +75,13 @@ const getInstagramStories = async city => {
       }
     });
     if (images) result = `
+      <h2>About</h2>
+      <p>${await getWikiSummary(city)}</p>
       <h2>Highlights</h2>
-      <p>These highlighted stories from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a></p>
+      <p>These highlighted stories from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
       <div class="highlighted-stories">${images}</div>
+      ${await getEventsSummaryCity(allItems, city)}
+      ${await getProjectsSummaryCity(allItems, city)}
     `;
   } catch (error) {}
   return result;
@@ -205,21 +254,13 @@ module.exports = (eleventyConfig) => {
       eleventyConfig.addNunjucksAsyncShortcode(
         "citiesArchive",
         async value => {
-          const items = allItems.filter(item => (item.data.places || []).includes(value)).sort((a, b) => a.date.getTime() - b.date.getTime());
           let result = `
           <nav class="breadcrumbs">
             <a href="/cities/">Cities</a>
             <a href="/cities/${value}/">${value}</a>
           </nav>
             <h1>${value}</h1>
-            ${await getInstagramStories(value)}
-            <section class="posts">
-              ${items.map(post => `
-                <article class="events-item">
-                  ${post.data.title}
-                </article>
-              `).join("")}
-            </section>
+            ${await getCityArchivePageData(allItems, value)}
           `;
           return result;
         });

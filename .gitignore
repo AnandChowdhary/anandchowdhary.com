@@ -9,6 +9,7 @@ static/js/
 _site/
 
 life-data/
+.cache/
 
 content/_data/highlights.json
 content/_data/workTags.json
