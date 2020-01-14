@@ -180,6 +180,23 @@ module.exports = (eleventyConfig) => {
         `;
         return result;
       });
+  
+      eleventyConfig.addNunjucksAsyncShortcode(
+        "citiesArchive",
+        async value => {
+          const items = allItems.filter(item => (item.data.places || []).includes(value)).sort((a, b) => a.date.getTime() - b.date.getTime());
+          let result = `
+            <h1>${value}</h1>
+            <section class="posts">
+              ${items.map(post => `
+                <article class="events-item">
+                  ${post.data.title}
+                </article>
+              `).join("")}
+            </section>
+          `;
+          return result;
+        });
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "blogTagArchive",
