@@ -17,6 +17,64 @@ const trim = (s, mask) => {
   return s;
 }
 
+const getWorkArchive = async (allItems, category, value) => {
+  let result = `<div class="container-large small-p">
+  <h1>${value}</h1>
+  <nav class="filter-nav">
+    <a href="/projects/">All</a>
+    <a${value === "Web" ? ` class="active"` : ""} href="/projects/web">Web</a>
+    <a${value === "App" ? ` class="active"` : ""} href="/projects/app">Apps</a>
+    <a${value === "Branding" ? ` class="active"` : ""} href="/projects/branding">Branding</a>
+    <a${value === "AI" ? ` class="active"` : ""} href="/projects/ai">AI/ML</a>
+    <a${value === "IoT" ? ` class="active"` : ""} href="/projects/iot">IoT</a>
+    <a${value === "VR/AR" ? ` class="active"` : ""} href="/projects/vrar">VR/AR</a>
+    <a${value === "Oswald Labs" ? ` class="active"` : ""} href="/projects/oswald-labs/">Oswald Labs</a>
+    <a${value === "Open source" ? ` class="active"` : ""} href="/projects/open-source/">Open source</a>
+    <a${value === "Hackathon" ? ` class="active"` : ""} href="/projects/hackathon">Hackathons</a>
+  </nav>
+  <section class="projects">
+    <div>
+  `;
+  const items = allItems.filter(item => (item.data[category] || []).includes(value));
+  items.forEach(project => {
+    result += `<article class="project-item">
+      <a href="${project.url}">
+        <div aria-hidden="true" class="project-image project-image-${project.data.style}" style="background-color: ${project.data.bg}">
+          <div
+            class="project-image-front"
+            style="background-image: url('${project.data.img_src}.${project.data.img_type}')"
+          ></div>
+        </div>
+        <div>
+          ${project.data.icon ? `
+          <div class="project-item-icon${project.data.icon_bg ? " project-item-icon-box" : ""}">
+            <img alt="" src="${project.data.icon}">
+          </div>
+          ` : ""}
+          <h2>${project.data.title}</h2>
+          <time>${ project.data.date.toLocaleDateString("en-US", {
+            month: "long",
+            year : "numeric"
+          }) }</time>
+        </div>
+        <p>${project.data.intro}</p>
+        <div class="project-tags">
+          ${project.data.work ? `
+            ${project.data.work.map(tag => `<span>${tag}</span>`).join("")}
+          ` : ""}
+          ${project.data.stack ? `
+            ${project.data.stack.map(tag => `<span class="stack">${tag}</span>`).join("")}
+          ` : ""}
+          ${project.data.tools ? `
+            ${project.data.tools.map(tag => `<span class="tools">${tag}</span>`).join("")}
+          ` : ""}
+        </div>
+      </a>
+    </article>`;
+  });
+  return `${result}</div></section></div>`;
+};
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter("titleify", value =>
     (value || "")
@@ -70,65 +128,17 @@ module.exports = (eleventyConfig) => {
     allItems = collection.getAll();
     return allItems;
   });
+
   eleventyConfig.addNunjucksAsyncShortcode(
     "workTagsArchive",
-    async value => {
-      let result = `<div class="container-large small-p">
-      <h1>${value}</h1>
-      <nav class="filter-nav">
-        <a href="/projects/">All</a>
-        <a${value === "Web" ? ` class="active"` : ""} href="/projects/web">Web</a>
-        <a${value === "App" ? ` class="active"` : ""} href="/projects/app">Apps</a>
-        <a${value === "Branding" ? ` class="active"` : ""} href="/projects/branding">Branding</a>
-        <a${value === "AI" ? ` class="active"` : ""} href="/projects/ai">AI/ML</a>
-        <a${value === "IoT" ? ` class="active"` : ""} href="/projects/iot">IoT</a>
-        <a${value === "VR/AR" ? ` class="active"` : ""} href="/projects/vrar">VR/AR</a>
-        <a${value === "Oswald Labs" ? ` class="active"` : ""} href="/projects/oswald-labs/">Oswald Labs</a>
-        <a${value === "Open source" ? ` class="active"` : ""} href="/projects/open-source/">Open source</a>
-        <a${value === "Hackathon" ? ` class="active"` : ""} href="/projects/hackathon">Hackathons</a>
-      </nav>
-      <section class="projects">
-        <div>
-      `;
-      const items = allItems.filter(item => (item.data.work || []).includes(value));
-      items.forEach(project => {
-        result += `<article class="project-item">
-          <a href="${project.url}">
-            <div aria-hidden="true" class="project-image project-image-${project.data.style}" style="background-color: ${project.data.bg}">
-              <div
-                class="project-image-front"
-                style="background-image: url('${project.data.img_src}.${project.data.img_type}')"
-              ></div>
-            </div>
-            <div>
-              ${project.data.icon ? `
-              <div class="project-item-icon${project.data.icon_bg ? " project-item-icon-box" : ""}">
-                <img alt="" src="${project.data.icon}">
-              </div>
-              ` : ""}
-              <h2>${project.data.title}</h2>
-              <time>${ project.data.date.toLocaleDateString("en-US", {
-                month: "long",
-                year : "numeric"
-              }) }</time>
-            </div>
-            <p>${project.data.intro}</p>
-            <div class="project-tags">
-              ${project.data.work ? `
-                ${project.data.work.map(tag => `<span>${tag}</span>`).join("")}
-              ` : ""}
-              ${project.data.stack ? `
-                ${project.data.stack.map(tag => `<span class="stack">${tag}</span>`).join("")}
-              ` : ""}
-              ${project.data.tools ? `
-                ${project.data.tools.map(tag => `<span class="tools">${tag}</span>`).join("")}
-              ` : ""}
-            </div>
-          </a>
-        </article>`;
-      });
-      return `${result}</div></section></div>`;
-    });
+    async value => getWorkArchive(allItems, "work", value));
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "stackTagsArchive",
+    async value => getWorkArchive(allItems, "stack", value));
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "toolsTagsArchive",
+    async value => getWorkArchive(allItems, "tools", value));
+
   eleventyConfig.addNunjucksAsyncShortcode(
     "blogTagArchive",
     async value => {

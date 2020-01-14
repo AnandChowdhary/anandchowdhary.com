@@ -1,0 +1,14 @@
+---
+pagination:
+  data: stackTags
+  size: 1
+  alias: stackTags
+addAllPagesToCollections: true
+permalink: /projects/stack/{{ stackTags | slug }}/
+---
+
+{% include "head.njk" %}
+<main id="content">
+  {% stackTagsArchive stackTags %}
+</main>
+{% include "footer.njk" %}

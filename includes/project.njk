@@ -39,19 +39,19 @@
       {% if work %}<span>
         <dt>Work</dt>
         {% for tag in work %}
-        <dd>{{ tag }}</dd>
+        <dd><a href="/projects/{{ tag | slug }}">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if stack %}<span>
         <dt>Stack</dt>
         {% for tag in stack %}
-        <dd>{{ tag }}</dd>
+        <dd><a href="/projects/stack/{{ tag | slug }}">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if tools %}<span>
         <dt>Tools</dt>
         {% for tag in tools %}
-        <dd>{{ tag }}</dd>
+        <dd><a href="/projects/tools/{{ tag | slug }}">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if collaborators %}<span>
