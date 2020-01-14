@@ -1,13 +1,14 @@
 <article class="travel-item">
-  <a href="/cities/{{ post.city | slug }}">
-    <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center={{ post.city | urlencode}}&zoom=14&size=500x200&maptype=roadmap&key=AIzaSyA3uCY4MNoJIcuGAASLvqTdXeSA_j87skY')"></div>
+  <a href="/cities/{{ post }}">
+    {# <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center={{ post.city | urlencode}}&zoom=14&size=500x200&maptype=roadmap&key=AIzaSyA3uCY4MNoJIcuGAASLvqTdXeSA_j87skY')"></div> #}
     <div class="content">
-      <picture>
+      {# <picture>
         <img src="https://tse2.mm.bing.net/th?q={{ post.city | urlencode }}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
-      </picture>
+      </picture> #}
       <div>
-        <h2>{{ post.city }}</h2>
-        <div><time>{{ post.date }}</time></div>
+        <h2>{{ post }}</h2>
+        {# <h2>{{ post.city }}</h2>
+        <div><time>{{ post.date }}</time></div> #}
       </div>
     </div>
   </a>
