@@ -61,7 +61,7 @@ const getEventCard = (post, h3 = false) =>
     </${h3 ? "h3" : "h2"}>
     <div class="location">
       <div>${post.data.venue}</div>
-      <div><a href="/cities/${post.data.places}">${ getCityEmojiTitle(post.data.places) }</a></div>
+      <div><a href="/places/${post.data.places}">${ getCityEmojiTitle(post.data.places) }</a></div>
     </div>
     <div class="meta">
       <div>
@@ -294,8 +294,8 @@ module.exports = (eleventyConfig) => {
         async value => {
           let result = `
           <nav class="breadcrumbs">
-            <a href="/cities/">Cities</a>
-            <a href="/cities/${value}/">${value}</a>
+            <a href="/places/">Travel</a>
+            <a href="/places/${value}/">${value}</a>
           </nav>
           ${await getCityArchivePageData(allItems, value)}`;
           return result;
@@ -359,7 +359,7 @@ module.exports = (eleventyConfig) => {
             const item = file[key];
           const slug = trim(item.meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-");
           result += `<article>
-          <a href="/cities/${slug}">
+          <a href="/places/${slug}">
             <picture>
               <img src="/images/highlights/${slug}/cover.jpg" alt="" loading="lazy">
             </picture>

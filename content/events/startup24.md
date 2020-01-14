@@ -3,7 +3,7 @@ title: Startup24
 date: 2017-11-11
 roles: trainer
 places: enschede
-link: https://startup24.nl/cities/enschede
+link: https://startup24.nl/places/enschede
 linkType: Website
 icon: /images/icons/startup24.png
 color: "#f39c12"
