@@ -36,7 +36,7 @@ const trim = (s, mask) => {
     const file = await download(highlight.meta.cover);
     await writeFile(join(directory, "cover.jpg"), file);
     for await (const image of highlight.data) {
-      await wait(1000);
+      await wait(100);
       console.log("Downloading", image.images[0].url);
       const img = await download(image.images[0].url);
       await writeFile(join(directory, `${image.id}.jpg`), img);

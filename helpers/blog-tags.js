@@ -45,6 +45,7 @@ const generateProjectTags = async () => {
   const work = new Set();
   const stack = new Set();
   const tools = new Set();
+  const collaborators = new Set();
   const contentFiles = await recursiveReaddir(
     join(__dirname, "..", "content", "projects")
   );
@@ -54,13 +55,16 @@ const generateProjectTags = async () => {
     ([fileAttributes.work].flat() || []).forEach(tag => work.add(tag));
     ([fileAttributes.stack].flat() || []).forEach(tag => stack.add(tag));
     ([fileAttributes.tools].flat() || []).forEach(tag => tools.add(tag));
+    ([fileAttributes.collaborators].flat() || []).forEach(tag => collaborators.add(tag));
   }
   const workTags = Array.from(work).filter(i => i);
   const stackTags = Array.from(stack).filter(i => i);
   const toolsTags = Array.from(tools).filter(i => i);
+  const collaboratorsTags = Array.from(collaborators).filter(i => i);
   await writeJson(join(__dirname, "..", "content", "_data", "workTags.json"), workTags);
   await writeJson(join(__dirname, "..", "content", "_data", "stackTags.json"), stackTags);
   await writeJson(join(__dirname, "..", "content", "_data", "toolsTags.json"), toolsTags);
+  await writeJson(join(__dirname, "..", "content", "_data", "collaboratorsTags.json"), collaboratorsTags);
 };
 
 const generatePlacesTags = async () => {

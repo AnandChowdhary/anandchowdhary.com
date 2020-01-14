@@ -136,6 +136,9 @@ module.exports = (eleventyConfig) => {
     "stackTagsArchive",
     async value => getWorkArchive(allItems, "stack", value));
   eleventyConfig.addNunjucksAsyncShortcode(
+    "collaboratorsTagsArchive",
+    async value => getWorkArchive(allItems, "collaborators", value));
+  eleventyConfig.addNunjucksAsyncShortcode(
     "toolsTagsArchive",
     async value => getWorkArchive(allItems, "tools", value));
 
@@ -194,7 +197,6 @@ module.exports = (eleventyConfig) => {
         const file = await readJSON(join(__dirname, "content", "_data", "highlights.json"));
         let result = "";
         Object.keys(file).forEach(key => {
-          console.log(key);
             const item = file[key];
           const slug = trim(item.meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-");
           result += `<article>

@@ -57,7 +57,7 @@
       {% if collaborators %}<span>
         <dt>Collaborators</dt>
         {% for tag in collaborators %}
-        <dd>{{ tag }}</dd>
+        <dd><a href="/projects/collaborators/{{ tag }}">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if timeline %}<span>
