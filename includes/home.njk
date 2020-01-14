@@ -38,11 +38,7 @@
     <section class="home-items travel">
       <h1><a href="/travel/">Travel</a></h1>
       <div>
-        {% for post in travel %}
-          {% if loop.index <= 6 %}
-            {% include "home-travel.njk" %}
-          {% endif %} 
-        {% endfor %}
+        {% highlights %}
       </div>
     </section>
   </div>

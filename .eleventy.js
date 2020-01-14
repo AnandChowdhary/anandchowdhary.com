@@ -1,11 +1,21 @@
 const axios = require("axios");
 const { setupCache } = require("axios-cache-adapter");
+const { join } = require("path");
+const { readJSON } = require("fs-extra");
 const cache = setupCache({
   maxAge: 86400
 });
 const api = axios.create({
   adapter: cache.adapter
 });
+
+const trim = (s, mask) => {
+  while (~mask.indexOf(s[0]))
+    s = s.slice(1);
+  while (~mask.indexOf(s[s.length - 1]))
+    s = s.slice(0, -1);
+  return s;
+}
 
 module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter("titleify", value =>
@@ -51,6 +61,36 @@ module.exports = eleventyConfig => {
     async value => {
       try {
         return `<p>${(await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value)}`)).data} <a href="#">Wikipedia</a></p>`;
+      } catch (error) {}
+      return "";
+    }
+  );
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "highlights",
+    async () => {
+      try {
+        const file = await readJSON(join(__dirname, "content", "_data", "highlights.json"));
+        let result = "";
+        Object.keys(file).forEach(key => {
+          console.log(key);
+            const item = file[key];
+          const slug = trim(item.meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-");
+          result += `<article>
+          <a href="/travel/${slug}">
+            <picture>
+              <img src="/images/highlights/${slug}/cover.jpg" alt="" loading="lazy">
+            </picture>
+            <div>
+              <div>${item.meta.title}</div>
+              <div><time datetime="${item.data[0].date}">${new Date(item.data[0].date).toLocaleDateString("en-US", {
+                month: "long",
+                year: "numeric"
+              })}</time></div>
+            </div>
+          </a>
+        </article>`;
+        });
+        return result;
       } catch (error) {}
       return "";
     }

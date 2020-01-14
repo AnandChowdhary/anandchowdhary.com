@@ -1385,11 +1385,9 @@ main#content .hide-project-details {
     left: 0;
   }
   main#content .home-items.travel > div article {
+    margin-bottom: 1rem;
     &:nth-child(5), &:nth-child(6) {
       display: none;
-    }
-    &:not(:nth-child(4)) {
-      margin-bottom: 1rem;
     }
     a {
       align-items: center;
@@ -1503,4 +1501,10 @@ line-height: 1;
     margin: -0.1rem 1rem 0 0 !important;
     width: 2rem;
   }
+}
+
+main#content .home-items.travel > div {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
 }
