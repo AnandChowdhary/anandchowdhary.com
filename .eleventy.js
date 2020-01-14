@@ -17,6 +17,18 @@ const trim = (s, mask) => {
   return s;
 }
 
+const titleify = value =>
+  (value || "")
+    .replace(/-/g, " ")
+    .replace(/\//g, " ")
+    .toLowerCase()
+    .split(" ")
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(" ")
+    .replace(/ The/g, " the")
+    .replace(/ Of/g, " of")
+    .replace("Sf", "SF");
+
 const getEventCard = (post, h3 = false) =>
   `<article class="events-item">
     <div class="content">
@@ -27,7 +39,7 @@ const getEventCard = (post, h3 = false) =>
     </${h3 ? "h3" : "h2"}>
     <div class="location">
       <div>${post.data.venue}</div>
-      <div><a href="/cities/${post.data.places}">${ post.data.places }</a></div>
+      <div><a href="/cities/${post.data.places}">${ titleify(post.data.places) }</a></div>
     </div>
     <div class="meta">
       <div>
@@ -99,7 +111,7 @@ const getEventsSummaryCity = async (allItems, value) => {
   if (items.length) {
     result += `
       <h2>Events</h2>
-      <p>This is a list of events I've spoken at in ${value}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
+      <p>This is a list of events I've spoken at in ${titleify(value)}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
       <section class="events">
         <div>${items.map(post => getEventCard(post, true)).join("")}</div>
       </section>
@@ -114,7 +126,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
   if (items.length) {
     result += `
       <h2>Projects</h2>
-      <p>These are projects I've worked on in ${value}. If you want to see more projects, visit the <a href="/projects/">Projects page</a>.</p>
+      <p>These are projects I've worked on in ${titleify(value)}. If you want to see more projects, visit the <a href="/projects/">Projects page</a>.</p>
       <section class="projects">
         <div>${items.map(post => getProjectCard(post)).join("")}</div>
       </section>
@@ -124,9 +136,16 @@ const getProjectsSummaryCity = async (allItems, value) => {
 };
 
 const getCityArchivePageData = async (allItems, city) => {
-  let result = "";
+  let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(city)}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
   try {
-    let images = "";
+    const files = await readFile(join(__dirname, "..", "life-data", "highlights", city, "cover.jpg"));
+    image = `/images/highlights/${city}/cover.jpg`;
+  } catch (error) {}
+  let result = `
+    <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(city)}</span></h1>
+  `;
+  let images = "";
+  try {
     const files = await readdir(join(__dirname, "..", "life-data", "highlights", city));
     files.forEach(file => {
       if (file !== "cover.jpg") {
@@ -135,16 +154,20 @@ const getCityArchivePageData = async (allItems, city) => {
         `; 
       }
     });
-    if (images) result = `
-      <h2>About</h2>
-      <p>${await getWikiSummary(city)}</p>
-      <h2>Highlights</h2>
-      <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
-      <div class="highlighted-stories">${images}</div>
-      ${await getEventsSummaryCity(allItems, city)}
-      ${await getProjectsSummaryCity(allItems, city)}
-    `;
   } catch (error) {}
+  result += `
+    <h2>About</h2>
+    <p>${await getWikiSummary(city)}</p>
+  `;
+  if (images) result += `
+    <h2>Highlights</h2>
+    <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
+    <div class="highlighted-stories">${images}</div>
+  `;
+  result += `
+    ${await getEventsSummaryCity(allItems, city)}
+    ${await getProjectsSummaryCity(allItems, city)}
+  `;
   return result;
 };
 
@@ -174,17 +197,7 @@ const getWorkArchive = async (allItems, category, value) => {
 };
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addNunjucksFilter("titleify", value =>
-    (value || "")
-      .replace(/-/g, " ")
-      .replace(/\//g, " ")
-      .toLowerCase()
-      .split(" ")
-      .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-      .join(" ")
-      .replace(/ The/g, " the")
-      .replace(/ Of/g, " of")
-  );
+  eleventyConfig.addNunjucksFilter("titleify", titleify);
   eleventyConfig.addNunjucksFilter("classify", value =>
     (value || "")
       .replace("./content/", "")
@@ -261,9 +274,7 @@ module.exports = (eleventyConfig) => {
             <a href="/cities/">Cities</a>
             <a href="/cities/${value}/">${value}</a>
           </nav>
-            <h1>${value}</h1>
-            ${await getCityArchivePageData(allItems, value)}
-          `;
+          ${await getCityArchivePageData(allItems, value)}`;
           return result;
         });
 
