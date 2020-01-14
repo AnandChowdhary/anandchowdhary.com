@@ -7,3 +7,4 @@ cloudinary/
 static/css/
 static/js/
 _site/
+content/_data/highlights.json
