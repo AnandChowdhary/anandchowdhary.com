@@ -1,5 +1,5 @@
 [build]
-  command = "node helpers/story-highlights.js && node helpers/blog-tags.js && yarn build"
+  command = "yarn build-site"
   publish = "public"
 
 # Coffee time redirects

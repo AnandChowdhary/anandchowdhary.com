@@ -5,6 +5,7 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
+    "build-site": "node helpers/blog-tags.js && yarn build",
     "build": "eleventy && gulp",
     "serve": "npm run build && eleventy --serve & gulp watch",
     "gulp": "gulp"
