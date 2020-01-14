@@ -80,7 +80,7 @@ const generatePlacesTags = async () => {
     }
   }
   const highlights = await readJSON(
-    join(__dirname, "..", "content", "_data", "highlights.json")
+    join(__dirname, "..", "life-data", "instagram-highlights.json")
   );
   Object.keys(highlights).forEach(key => {
     places.add(trim(highlights[key].meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-"));
