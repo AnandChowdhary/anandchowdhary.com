@@ -18,7 +18,7 @@ permalink: books/{{ book.name | slug }}/index.html
     </nav>
     <h1>{{ book.name }}</h1>
     <div class="author serif">{{ book.author }}</div>
-    {% wiki book.name + " " + book.author %}
+    {# {% wiki book.name + " " + book.author %} #}
     <div class="rating" aria-label="{{ book.rating }} stars out of 5">
       {% if ".5" in book.rating | string %}
         {% for i in range(1, book.rating) %}
