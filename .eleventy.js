@@ -17,6 +17,69 @@ const trim = (s, mask) => {
   return s;
 }
 
+const getEventCard = (post, h3 = false) =>
+  `<article class="events-item">
+    <div class="content">
+    <${h3 ? "h3" : "h2"}>
+      <a href="${post.url}">
+        <img class="item-icon" alt="" src="${ post.data.icon }"><span>${ post.data.title }</span>
+      </a>
+    </${h3 ? "h3" : "h2"}>
+    <div class="location">
+      <div>${post.data.venue}</div>
+      <div><a href="/cities/${post.data.places}">${ post.data.places }</a></div>
+    </div>
+    <div class="meta">
+      <div>
+        <a href="${post.url}">
+          <time>${ post.data.date.toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year : "numeric"
+          }) }</time>
+        </a>
+      </div>
+      <div><a class="continue" href="${post.url}">Continue reading &rarr;</a></div>
+    </div>
+    </div>
+  </article>`;
+
+const getProjectCard = project =>
+  `<article class="project-item">
+    <a href="${project.url}">
+      <div aria-hidden="true" class="project-image project-image-${project.data.style}" style="background-color: ${project.data.bg}">
+        <div
+          class="project-image-front"
+          style="background-image: url('${project.data.img_src}.${project.data.img_type}')"
+        ></div>
+      </div>
+      <div>
+        ${project.data.icon ? `
+        <div class="project-item-icon${project.data.icon_bg ? " project-item-icon-box" : ""}">
+          <img alt="" src="${project.data.icon}">
+        </div>
+        ` : ""}
+        <h2>${project.data.title}</h2>
+        <time>${ project.data.date.toLocaleDateString("en-US", {
+          month: "long",
+          year : "numeric"
+        }) }</time>
+      </div>
+      <p>${project.data.intro}</p>
+      <div class="project-tags">
+        ${project.data.work ? `
+          ${project.data.work.map(tag => `<span>${tag}</span>`).join("")}
+        ` : ""}
+        ${project.data.stack ? `
+          ${project.data.stack.map(tag => `<span class="stack">${tag}</span>`).join("")}
+        ` : ""}
+        ${project.data.tools ? `
+          ${project.data.tools.map(tag => `<span class="tools">${tag}</span>`).join("")}
+        ` : ""}
+      </div>
+    </a>
+  </article>`;
+
 const getWikiSummary = async value => {
   try {
     const cachePath = join(__dirname, ".cache", "wiki", `${value}.txt`);
@@ -36,11 +99,10 @@ const getEventsSummaryCity = async (allItems, value) => {
   if (items.length) {
     result += `
       <h2>Events</h2>
-      ${items.map(post => `
-        <article>
-          <h3>${post.data.title}</h3>
-        </article>
-      `).join("")}
+      <p>This is a list of events I've spoken at in ${value}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
+      <section class="events">
+        <div>${items.map(post => getEventCard(post, true)).join("")}</div>
+      </section>
     `;
   }
   return result;
@@ -52,11 +114,10 @@ const getProjectsSummaryCity = async (allItems, value) => {
   if (items.length) {
     result += `
       <h2>Projects</h2>
-      ${items.map(post => `
-        <article>
-          <h3>${post.data.title}</h3>
-        </article>
-      `).join("")}
+      <p>These are projects I've worked on in ${value}. If you want to see more projects, visit the <a href="/projects/">Projects page</a>.</p>
+      <section class="projects">
+        <div>${items.map(post => getProjectCard(post)).join("")}</div>
+      </section>
     `;
   }
   return result;
@@ -78,7 +139,7 @@ const getCityArchivePageData = async (allItems, city) => {
       <h2>About</h2>
       <p>${await getWikiSummary(city)}</p>
       <h2>Highlights</h2>
-      <p>These highlighted stories from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
+      <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
       <div class="highlighted-stories">${images}</div>
       ${await getEventsSummaryCity(allItems, city)}
       ${await getProjectsSummaryCity(allItems, city)}
@@ -107,40 +168,7 @@ const getWorkArchive = async (allItems, category, value) => {
   `;
   const items = allItems.filter(item => (item.data[category] || []).includes(value)).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   items.forEach(project => {
-    result += `<article class="project-item">
-      <a href="${project.url}">
-        <div aria-hidden="true" class="project-image project-image-${project.data.style}" style="background-color: ${project.data.bg}">
-          <div
-            class="project-image-front"
-            style="background-image: url('${project.data.img_src}.${project.data.img_type}')"
-          ></div>
-        </div>
-        <div>
-          ${project.data.icon ? `
-          <div class="project-item-icon${project.data.icon_bg ? " project-item-icon-box" : ""}">
-            <img alt="" src="${project.data.icon}">
-          </div>
-          ` : ""}
-          <h2>${project.data.title}</h2>
-          <time>${ project.data.date.toLocaleDateString("en-US", {
-            month: "long",
-            year : "numeric"
-          }) }</time>
-        </div>
-        <p>${project.data.intro}</p>
-        <div class="project-tags">
-          ${project.data.work ? `
-            ${project.data.work.map(tag => `<span>${tag}</span>`).join("")}
-          ` : ""}
-          ${project.data.stack ? `
-            ${project.data.stack.map(tag => `<span class="stack">${tag}</span>`).join("")}
-          ` : ""}
-          ${project.data.tools ? `
-            ${project.data.tools.map(tag => `<span class="tools">${tag}</span>`).join("")}
-          ` : ""}
-        </div>
-      </a>
-    </article>`;
+    result += `${getProjectCard(project)}`;
   });
   return `${result}</div></section></div>`;
 };
@@ -219,33 +247,7 @@ module.exports = (eleventyConfig) => {
         let result = `
           <h1>Events ${value}</h1>
           <section class="posts">
-            ${items.map(post => `
-              <article class="events-item">
-                <div class="content">
-                <h2>
-                  <a href="${post.url}">
-                    <img class="item-icon" alt="" src="${ post.data.icon }"><span>${ post.data.title }</span>
-                  </a>
-                </h2>
-                <div class="location">
-                  <div>${post.data.venue}</div>
-                  <div><a href="/cities/${post.data.places}">${ post.data.places }</a></div>
-                </div>
-                <div class="meta">
-                  <div>
-                    <a href="${post.url}">
-                      <time>${ post.data.date.toLocaleDateString("en-US", {
-                        day: "numeric",
-                        month: "short",
-                        year : "numeric"
-                      }) }</time>
-                    </a>
-                  </div>
-                  <div><a class="continue" href="${post.url}">Continue reading &rarr;</a></div>
-                </div>
-              </div>
-              </article>
-            `).join("")}
+            ${items.map(post => getEventCard(post)).join("")}
           </section>
         `;
         return result;

@@ -595,7 +595,7 @@ footer#colophon {
       transform: scale(1.05) translateY(.65rem);
     }
   }
-  h2 {
+  h2, h3 {
     margin-top: 0;
     font-size: 120%;
   }
@@ -614,7 +614,7 @@ footer#colophon {
   }
 }
 
-.events main#content {
+.events {
   a:not(.continue) {
     color: inherit;
     text-decoration: none;
@@ -1442,12 +1442,14 @@ main#content .hide-project-details {
       text-align: inherit;
       margin-top: 0.5rem;
     }
-    h2 a {
-      display: flex;
-      margin-bottom: 1.5rem;
-      &:focus {
-        img {
-          transform: scale(1.05) translateY(-0.33rem);
+    h2, h3 {
+      a {
+        display: flex;
+        margin-bottom: 1.5rem;
+        &:focus {
+          img {
+            transform: scale(1.05) translateY(-0.33rem);
+          }
         }
       }
     }
@@ -1518,5 +1520,17 @@ main#content .highlighted-stories {
   img {
     height: 100vh;
     border-radius: 0.2rem;
+  }
+}
+main#content section.projects {
+  max-width: 100%;
+}
+
+.cities.single main#content {
+  h2 {
+    margin-top: 5rem;
+  }
+  .projects {
+    margin-top: 2.5rem;
   }
 }
