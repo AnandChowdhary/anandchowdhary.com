@@ -1509,3 +1509,13 @@ main#content .home-items.travel > div {
 main#content .home-items.blog .project-tags {
   margin-top: 0.75rem;
 }
+
+main#content .highlighted-stories {
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  img {
+    height: 100vh;
+    border-radius: 0.2rem;
+  }
+}

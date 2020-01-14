@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { setupCache } = require("axios-cache-adapter");
 const { join } = require("path");
-const { readJSON } = require("fs-extra");
+const { readJSON, readdir } = require("fs-extra");
 const cache = setupCache({
   maxAge: 86400
 });
@@ -16,6 +16,27 @@ const trim = (s, mask) => {
     s = s.slice(0, -1);
   return s;
 }
+
+const getInstagramStories = async city => {
+  let result = "";
+  try {
+    let images = "";
+    const files = await readdir(join(__dirname, "..", "life-data", "highlights", city));
+    files.forEach(file => {
+      if (file !== "cover.jpg") {
+        images += `
+          <img alt="" src="/images/highlights/${city}/${file}">
+        `; 
+      }
+    });
+    if (images) result = `
+      <h2>Highlights</h2>
+      <p>These highlighted stories from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a></p>
+      <div class="highlighted-stories">${images}</div>
+    `;
+  } catch (error) {}
+  return result;
+};
 
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">
@@ -186,7 +207,12 @@ module.exports = (eleventyConfig) => {
         async value => {
           const items = allItems.filter(item => (item.data.places || []).includes(value)).sort((a, b) => a.date.getTime() - b.date.getTime());
           let result = `
+          <nav class="breadcrumbs">
+            <a href="/cities/">Cities</a>
+            <a href="/cities/${value}/">${value}</a>
+          </nav>
             <h1>${value}</h1>
+            ${await getInstagramStories(value)}
             <section class="posts">
               ${items.map(post => `
                 <article class="events-item">
@@ -250,7 +276,7 @@ module.exports = (eleventyConfig) => {
     "highlights",
     async () => {
       try {
-        const file = await readJSON(join(__dirname, "content", "_data", "highlights.json"));
+        const file = await readJSON(join(__dirname, "life-data", "instagram-highlights.json"));
         let result = "";
         Object.keys(file).forEach(key => {
             const item = file[key];
