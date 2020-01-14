@@ -82,7 +82,7 @@ const generatePlacesTags = async () => {
     places.add(trim(highlights[key].meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-"));
   });
   const placesData = Array.from(places).filter(i => i);
-  await writeJson(join(__dirname, "..", "content", "_data", "places.json"), placesData);
+  await writeJson(join(__dirname, "..", "content", "_data", "cities.json"), placesData);
 };
 
 
