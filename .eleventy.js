@@ -1,13 +1,15 @@
 const axios = require("axios");
 const { setupCache } = require("axios-cache-adapter");
 const { join } = require("path");
-const { readJSON, mkdirp, readFile, writeFile, readdir, exists } = require("fs-extra");
+const { readJSON, readJsonSync, mkdirp, readFile, writeFile, readdir, exists } = require("fs-extra");
 const cache = setupCache({
   maxAge: 86400
 });
 const api = axios.create({
   adapter: cache.adapter
 });
+
+const cityData = readJsonSync(join(__dirname, ".cache", "city-data.json"));
 
 const trim = (s, mask) => {
   while (~mask.indexOf(s[0]))
@@ -29,6 +31,26 @@ const titleify = value =>
     .replace(/ Of/g, " of")
     .replace("Sf", "SF");
 
+const getCityEmoji = city => {
+  if (cityData[city])
+    return cityData[city].emoji;
+  return "";
+}
+
+const getCityCountry = city => {
+  if (cityData[city])
+    return `<div>${cityData[city].emoji} ${cityData[city].country}</div>`;
+  return "";
+}
+
+const getCityEmojiTitle = city => {
+  let result = "";
+  if (getCityEmoji(city))
+    result += `${getCityEmoji(city)} `;
+  result += titleify(city);
+  return result;
+}
+
 const getEventCard = (post, h3 = false) =>
   `<article class="events-item">
     <div class="content">
@@ -39,7 +61,7 @@ const getEventCard = (post, h3 = false) =>
     </${h3 ? "h3" : "h2"}>
     <div class="location">
       <div>${post.data.venue}</div>
-      <div><a href="/cities/${post.data.places}">${ titleify(post.data.places) }</a></div>
+      <div><a href="/cities/${post.data.places}">${ getCityEmojiTitle(post.data.places) }</a></div>
     </div>
     <div class="meta">
       <div>
@@ -143,6 +165,7 @@ const getCityArchivePageData = async (allItems, city) => {
   } catch (error) {}
   let result = `
     <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(city)}</span></h1>
+    ${getCityCountry(city)}
   `;
   let images = "";
   try {
@@ -356,34 +379,7 @@ module.exports = (eleventyConfig) => {
     }
   );
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
-  eleventyConfig.addNunjucksFilter("place", value => {
-    switch (value) {
-      case "sf-bay-area":
-        return "🇺🇸 San Francisco Bay Area";
-      case "new-delhi":
-        return "🇮🇳 New Delhi";
-      case "eindhoven":
-        return "🇳🇱 Eindhoven";
-      case "bangalore":
-        return "🇮🇳 Bangalore";
-      case "kanpur":
-        return "🇮🇳 Kanpur";
-      case "enschede":
-        return "🇳🇱 Enschede";
-      case "kuala-lumpur":
-        return "🇲🇾 Kuala Lumpur";
-      case "gurugram":
-        return "🇮🇳 Gurugram";
-      case "heerlen":
-        return "🇳🇱 Heerlen";
-      case "london":
-        return "🇬🇧 London";
-      case "paris":
-        return "🇫🇷 Paris";
-      default:
-        return value;
-    }
-  });
+  eleventyConfig.addNunjucksFilter("place", value => getCityEmojiTitle(value));
   return {
     dir: {
       input: "content",
