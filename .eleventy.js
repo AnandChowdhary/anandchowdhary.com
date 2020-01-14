@@ -98,7 +98,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
   eleventyConfig.addNunjucksFilter("place", value => {
     switch (value) {
-      case "san-francisco-bay-area":
+      case "sf-bay-area":
         return "🇺🇸 San Francisco Bay Area";
       case "new-delhi":
         return "🇮🇳 New Delhi";

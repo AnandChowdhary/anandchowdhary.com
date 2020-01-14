@@ -2,7 +2,7 @@
 title: Women Who Code Cloud 2019
 date: 2019-09-29
 roles: speaker
-places: san-francisco-bay-area
+places: sf-bay-area
 link: https://www.eventbrite.com/e/women-who-code-cloud-2019-tickets-63307073160
 linkType: EventBrite
 icon: /images/icons/women-who-code.png

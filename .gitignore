@@ -7,4 +7,11 @@ cloudinary/
 static/css/
 static/js/
 _site/
+
 content/_data/highlights.json
+content/_data/workTags.json
+content/_data/stackTags.json
+content/_data/blogTags.json
+content/_data/toolsTags.json
+content/_data/eventRolesTags.json
+content/_data/places.json

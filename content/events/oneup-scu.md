@@ -2,7 +2,7 @@
 title: OneUp SCU
 date: 2019-10-21
 roles: speaker
-places: san-francisco-bay-area
+places: sf-bay-area
 link: https://www.instagram.com/p/B33Q5uAHITT/
 linkType: Instagram
 icon: /images/icons/oneup.png
