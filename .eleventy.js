@@ -159,7 +159,7 @@ module.exports = (eleventyConfig) => {
                 </h2>
                 <div class="location">
                   <div>${post.data.venue}</div>
-                  <div><a href="/travel/${post.data.places}">${ post.data.places }</a></div>
+                  <div><a href="/cities/${post.data.places}">${ post.data.places }</a></div>
                 </div>
                 <div class="meta">
                   <div>
@@ -239,7 +239,7 @@ module.exports = (eleventyConfig) => {
             const item = file[key];
           const slug = trim(item.meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-");
           result += `<article>
-          <a href="/travel/${slug}">
+          <a href="/cities/${slug}">
             <picture>
               <img src="/images/highlights/${slug}/cover.jpg" alt="" loading="lazy">
             </picture>
