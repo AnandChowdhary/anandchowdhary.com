@@ -8,6 +8,8 @@ static/css/
 static/js/
 _site/
 
+life-data/
+
 content/_data/highlights.json
 content/_data/workTags.json
 content/_data/stackTags.json
