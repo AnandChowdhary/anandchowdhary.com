@@ -1,38 +1,14 @@
 ---
 pagination:
-  data: collections
+  data: blogTags
   size: 1
-  alias: tag
-  filter:
-    - all
-    - blog
-    - events
-    - projects
+  alias: blogTags
 addAllPagesToCollections: true
-permalink: /blog/{{ tag }}/
+permalink: /blog/{{ blogTags }}/
 ---
 
-{% set taglist = collections[ tag ] %}
 {% include "head.njk" %}
 <main id="content">
-  <div class="blog-title">
-    <div class="l"></div>
-    <div class="r">
-      <h1>{{ title }}</h1>
-      {{ content | safe }}
-      <nav class="filter-nav">
-        <a{% if "/blog/" === page.url %} class="active"{% endif %} href="/blog/">All</a>
-        <a{% if "/blog/coffee-time/" in page.url %} class="active"{% endif %} href="/blog/coffee-time/">Coffee Time</a>
-        <a{% if "/blog/state-of-the/" in page.url %} class="active"{% endif %} href="/blog/state-of-the/">State of the X</a>
-        <a{% if "/blog/code/" in page.url %} class="active"{% endif %} href="/blog/code/">Code</a>
-        <a{% if "/blog/design/" in page.url %} class="active"{% endif %} href="/blog/design/">Design</a>
-      </nav>
-    </div>
-  </div>
-  <section class="blog-posts">
-    {% for post in taglist | reverse %}
-      {% include "blog-item.njk" %}
-    {% endfor %}
-  </section>
+  {% blogTagArchive blogTags %}
 </main>
 {% include "footer.njk" %}

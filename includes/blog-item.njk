@@ -11,9 +11,11 @@
         month: "short",
         year : "numeric"
       }) }}</time></div>
-      {% if "coffee-time" in post.data.tags %}
-      <a href="/blog/coffee-time/" class="tag">Coffee time</a>
-      {% endif %}
+      {% for tag in post.data.tags %}
+        {% if tag !== "blog" %}
+          <a class="tag" href="/blog/{{ tag }}">{{ tag }}</a>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
   <div class="r">

@@ -1,7 +1,9 @@
 ---
 title: Zomato for Android Redesign
 date: 2017-04-11
-tags: blog
+tags:
+  - blog
+  - design
 alias: https://medium.com/@anandchowdhary/zomato-for-android-redesign-6ced8b220544
 publisher: Medium
 ---

@@ -19,7 +19,9 @@ const generateBlogTags = async () => {
   for await (const file of contentFiles) {
     const fileContents = (await readFile(file)).toString();
     const fileAttributes = frontMatter(fileContents).attributes;
-    ([fileAttributes.tags].flat() || []).forEach(tag => tags.add(tag));
+    ([fileAttributes.tags].flat() || []).forEach(tag => {
+      if (tag !== "blog") tags.add(tag);
+    });
   }
   const blogTags = Array.from(tags).filter(i => i);
   await writeJson(join(__dirname, "..", "content", "_data", "blogTags.json"), blogTags);

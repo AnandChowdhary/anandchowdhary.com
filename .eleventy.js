@@ -17,7 +17,7 @@ const trim = (s, mask) => {
   return s;
 }
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter("titleify", value =>
     (value || "")
       .replace(/-/g, " ")
@@ -61,6 +61,59 @@ module.exports = eleventyConfig => {
     async value => {
       try {
         return `<p>${(await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value)}`)).data} <a href="#">Wikipedia</a></p>`;
+      } catch (error) {}
+      return "";
+    }
+  );
+  var allItems;
+  eleventyConfig.addCollection("allMyContent", function(collection) {
+    allItems = collection.getAll();
+    return allItems;
+  });
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "blogTagArchive",
+    async value => {
+      const items = allItems.filter(item => (item.data.tags || []).includes(value));
+      try {
+        let result = `<div class="blog-title">
+        <div class="l"></div>
+        <div class="r">
+          <h1>Blog</h1>
+          <nav class="filter-nav">
+            <a href="/blog/">All</a>
+            <a${value === "coffee-time" ? ` class="active"` : ""} href="/blog/coffee-time/">Coffee Time</a>
+            <a${value.includes("state-of-the") ? ` class="active"` : ""} href="/blog/state-of-the/">State of the X</a>
+            <a${value === "code" ? ` class="active"` : ""} href="/blog/code/">Code</a>
+            <a${value === "design" ? ` class="active"` : ""} href="/blog/design/">Design</a>
+          </nav>
+        </div>
+      </div><section class="blog-posts">`;
+        items.forEach(item => {
+          result += `<article>
+            <div class="l">
+              ${item.data.alias ?
+                `<h2><a href="${item.data.alias}">${item.data.title}</a></h2>` :
+                `<h2><a href="${item.url}">${item.data.title}</a></h2>`
+              }
+              <div>Posted on <time>${item.data.date.toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "short",
+                year : "numeric"
+              })}</time></div>
+              ${item.data.tags.filter(i => i !== "blog").map(tag => `
+                <a class="tag" href="/blog/${tag}">${tag}</a>
+              `).join("")}
+            </div>
+            <div class="r">
+              ${extractExcerpt(item)}
+              ${item.data.alias ?
+                `<p><a href="${item.data.alias}">Continue reading on ${item.data.publisher}</a></p>` :
+                `<p><a href="${item.url}">Continue reading &rarr;</a></p>`
+              }
+            </div>
+          </article>`;
+        });
+        return `${result}</section>`;
       } catch (error) {}
       return "";
     }
