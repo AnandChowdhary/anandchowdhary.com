@@ -28,3 +28,7 @@ From September to December 2019, I studied Typography at Santa Clara University 
   <img src="/images/projects/oswald-labs/agastya/settings.png" alt="Screenshot of podcasts">
   <img src="/images/projects/oswald-labs/agastya/whitelabelled.png" alt="Screenshot of stats">
 </div>
+
+From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+
+<div class="image"><img alt="" src="/images/projects/oswald-labs/agastya/cover.png"></div>
