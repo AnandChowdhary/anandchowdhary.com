@@ -1,4 +1,5 @@
 const { mkdirp, readFile, writeFile, readdir, exists } = require("fs-extra");
+const { join } = require("path");
 const { titleify } = require("./utils");
 const { getCityCountry } = require("./cities");
 const { api } = require("./api");
@@ -6,7 +7,7 @@ const { getEventCard, getProjectCard } = require("./cards");
 
 const getWikiSummary = async value => {
   try {
-    const cachePath = join(__dirname, ".cache", "wiki", `${value}.txt`);
+    const cachePath = join(__dirname, "..", ".cache", "wiki", `${value}.txt`);
     if (await exists(cachePath))
     return (await readFile(cachePath)).toString();
     const data = `<p>${(await api.get(`https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(value.replace(/-/g, "_"))}`)).data} <a href="https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(value.replace(/-/g, "_"))}">Text from Wikipedia</a></p>`;
@@ -50,7 +51,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
 const getCityArchivePageData = async (allItems, city) => {
   let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(city)}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
   try {
-    const files = await readFile(join(__dirname, "life-data", "highlights", city, "cover.jpg"));
+    const files = await readFile(join(__dirname, "..", "life-data", "highlights", city, "cover.jpg"));
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
   let result = `
@@ -59,7 +60,7 @@ const getCityArchivePageData = async (allItems, city) => {
   `;
   let images = "";
   try {
-    const files = await readdir(join(__dirname, "life-data", "highlights", city));
+    const files = await readdir(join(__dirname, "..", "life-data", "highlights", city));
     files.forEach(file => {
       if (file !== "cover.jpg") {
         images += `
