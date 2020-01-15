@@ -9,7 +9,7 @@ pagination:
 <main id="content">
   <h1>{{ title }}</h1>
   {{ content | safe }}
-  <section>
+  <section class="cities-list">
     {% for item in pagination %}
       {% travelPageItem item %}
     {% endfor %}

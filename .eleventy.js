@@ -91,7 +91,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksAsyncShortcode(
     "travelPageItem",
     async value => {
-      return await getTravelPageItem(value);
+      return await getTravelPageItem(allItems, value);
     });
 
   eleventyConfig.addNunjucksAsyncShortcode(

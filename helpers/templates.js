@@ -1,6 +1,6 @@
-const { mkdirp, readFile, writeFile, readdir, exists } = require("fs-extra");
+const { mkdirp, readFile, writeFile, readJson, readdir, exists } = require("fs-extra");
 const { join } = require("path");
-const { titleify } = require("./utils");
+const { trim, titleify } = require("./utils");
 const { getCityCountry } = require("./cities");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
@@ -112,7 +112,37 @@ const getWorkArchive = async (allItems, category, value) => {
   return `${result}</div></section></div>`;
 };
 
-const getTravelPageItem = async city => {
+const getTravelTime = async (allItems, city) => {
+  const data = await readJson(join(__dirname, "..", "life-data", "instagram-highlights.json"));
+  let item;
+  Object.keys(data).forEach(key => {
+    const highlight = data[key];
+    const slug = trim(highlight.meta.title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, ""), "-");
+    if (slug === city) item = highlight;
+  });
+  if (item) {
+    const date = item.data[0].date;
+    return `<time datetime="${new Date(date).toISOString()}">${new Date(
+      date
+    ).toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric"
+    })}</time>`;
+  }
+  const items = allItems.filter(item => (item.data.places || []).includes(city));
+  if (items.length) {
+    const date = items[0].date;
+    return `<time datetime="${new Date(date).toISOString()}">${new Date(
+      date
+    ).toLocaleDateString("en-US", {
+      month: "long",
+      year: "numeric"
+    })}</time>`;
+  }
+  return "";
+};
+
+const getTravelPageItem = async (allItems, city) => {
   let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(city)}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
   try {
     const files = await readFile(join(__dirname, "..", "life-data", "highlights", city, "cover.jpg"));
@@ -123,7 +153,7 @@ const getTravelPageItem = async city => {
       <h2 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(city)}</span></h2>
       <div class="f">
         ${getCityCountry(city)}
-        <div>Time</div>
+        <div>${await getTravelTime(allItems, city)}</div>
       </div>
     </a></article>
   `;

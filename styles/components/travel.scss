@@ -1,6 +1,10 @@
 @import "../variables";
 
-.places main#content {
+.places .events-item h3 {
+  margin-bottom: 0;
+}
+
+.places main#content .cities-list {
   article a {
     display: block;
     margin-top: 2.5rem;
@@ -18,7 +22,6 @@
     }
   }
   img {
-    margin-top: -0.75rem;
     transition: 0.3s;
   }
 }
