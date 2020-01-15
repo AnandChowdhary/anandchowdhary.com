@@ -276,8 +276,7 @@
     margin: -0.1rem 1rem 0 0 !important;
     width: 2rem;
   }
-  main#content h1.has-icon + div,
-  .places.single main#content h1.has-icon + div {
-    margin-top: -1rem;
+  main#content h1.has-icon + div {
+    margin-top: 0;
   }
 }
