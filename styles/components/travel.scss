@@ -1,5 +1,28 @@
 @import "../variables";
 
+.places main#content {
+  article a {
+    display: block;
+    margin-top: 2.5rem;
+    color: inherit;
+    text-decoration: none;
+    &:focus {
+      img {
+        transform: scale(1.03) translateY(-0.05rem);
+        box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
+      }
+    }
+    h2 {
+      font-size: 120%;
+      margin-bottom: 0;
+    }
+  }
+  img {
+    margin-top: -0.75rem;
+    transition: 0.3s;
+  }
+}
+
 .travel > div {
   article {
     flex: 0 0 auto;
@@ -26,45 +49,6 @@
       background-color: rgba(100, 100, 100, 0.5);
       width: 100%;
     }
-  }
-}
-
-.travels {
-  article {
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    picture {
-      overflow: hidden;
-      width: 3rem;
-      line-height: 1;
-      display: block;
-      border: 0.125rem solid $colorTravel;
-      padding: 0.25rem;
-      margin-right: 1.5rem;
-      border-radius: 100%;
-      img {
-        vertical-align: top;
-        border-radius: 100%;
-        background-color: rgba(100, 100, 100, 0.5);
-        width: 100%;
-      }
-    }
-    time {
-      color: rgba(100, 100, 100, 0.6);
-      margin-left: 1rem;
-      display: inline-block;
-    }
-  }
-}
-
-.travel main#content section {
-  max-width: 100%;
-  justify-content: space-between;
-  display: flex;
-  flex-wrap: wrap;
-  article {
-    width: 48%;
   }
 }
 

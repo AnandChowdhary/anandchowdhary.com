@@ -4,7 +4,7 @@ const { trim, titleify } = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
 const { api } = require("./helpers/api");
 const { getEventCard } = require("./helpers/cards");
-const { getCityArchivePageData, getWorkArchive } = require("./helpers/templates");
+const { getTravelPageItem, getCityArchivePageData, getWorkArchive } = require("./helpers/templates");
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addNunjucksFilter("titleify", titleify);
@@ -87,6 +87,12 @@ module.exports = (eleventyConfig) => {
           ${await getCityArchivePageData(allItems, value)}`;
           return result;
         });
+
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "travelPageItem",
+    async value => {
+      return await getTravelPageItem(value);
+    });
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "blogTagArchive",

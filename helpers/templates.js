@@ -112,4 +112,21 @@ const getWorkArchive = async (allItems, category, value) => {
   return `${result}</div></section></div>`;
 };
 
-module.exports = { getWikiSummary, getEventsSummaryCity, getProjectsSummaryCity, getCityArchivePageData, getWorkArchive };
+const getTravelPageItem = async city => {
+  let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(city)}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
+  try {
+    const files = await readFile(join(__dirname, "..", "life-data", "highlights", city, "cover.jpg"));
+    image = `/images/highlights/${city}/cover.jpg`;
+  } catch (error) {}
+  return `
+    <article><a href="/places/${city}">
+      <h2 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(city)}</span></h2>
+      <div class="f">
+        ${getCityCountry(city)}
+        <div>Time</div>
+      </div>
+    </a></article>
+  `;
+}
+
+module.exports = { getWikiSummary, getTravelPageItem, getEventsSummaryCity, getProjectsSummaryCity, getCityArchivePageData, getWorkArchive };

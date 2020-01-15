@@ -10,8 +10,8 @@ pagination:
   <h1>{{ title }}</h1>
   {{ content | safe }}
   <section>
-    {% for post in pagination %}
-      {% include "travel-item.njk" %}
+    {% for item in pagination %}
+      {% travelPageItem item %}
     {% endfor %}
   </section>
   {% if pagination.pageLinks.length > 1 %}
