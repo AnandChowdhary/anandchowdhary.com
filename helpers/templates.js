@@ -55,8 +55,10 @@ const getCityArchivePageData = async (allItems, city) => {
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
   let result = `
-    <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(city)}</span></h1>
-    ${getCityCountry(city)}
+    <div class="content">
+      <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(city)}</span></h1>
+      ${getCityCountry(city)}
+    </div>
   `;
   let images = "";
   try {

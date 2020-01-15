@@ -120,11 +120,16 @@ main#content > .container-large {
 }
 
 main#content h1 {
-  &.has-icon + div {
-    margin-top: -2.5rem;
+  &.has-icon {
+    margin-bottom: 0;
+    + div {
+      margin-top: -1rem;
+    }
   }
-  &.has-no-icon + div {
-    margin-top: -1.25rem;
+  &.has-no-icon {
+    + div {
+      margin-top: -1.25rem;
+    }
   }
 }
 
