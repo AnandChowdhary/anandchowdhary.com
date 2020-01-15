@@ -39,25 +39,25 @@
       {% if work %}<span>
         <dt>Work</dt>
         {% for tag in work %}
-        <dd><a href="/projects/{{ tag | slug }}">{{ tag }}</a></dd>
+        <dd><a href="/projects/{{ tag | slug }}/">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if stack %}<span>
         <dt>Stack</dt>
         {% for tag in stack %}
-        <dd><a href="/projects/stack/{{ tag | slug }}">{{ tag }}</a></dd>
+        <dd><a href="/projects/stack/{{ tag | slug }}/">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if tools %}<span>
         <dt>Tools</dt>
         {% for tag in tools %}
-        <dd><a href="/projects/tools/{{ tag | slug }}">{{ tag }}</a></dd>
+        <dd><a href="/projects/tools/{{ tag | slug }}/">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if collaborators %}<span>
         <dt>Collaborators</dt>
         {% for tag in collaborators %}
-        <dd><a href="/projects/collaborators/{{ tag }}">{{ tag }}</a></dd>
+        <dd><a href="/projects/collaborators/{{ tag }}/">{{ tag }}</a></dd>
         {% endfor %}
       </span>{% endif %}
       {% if timeline %}<span>
@@ -66,7 +66,7 @@
       </span>{% endif %}
       {% if places %}<span>
         <dt>City</dt>
-        <dd><a href="/places/{{ places }}">{{ places | place }}</a></dd>
+        <dd><a href="/places/{{ places }}/">{{ places | place }}</a></dd>
       </span>{% endif %}
     </dl>
   </div>

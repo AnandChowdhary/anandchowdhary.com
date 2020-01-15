@@ -122,10 +122,7 @@ main#content > .container-large {
 
 main#content h1 {
   &.has-icon {
-    margin-bottom: 0;
-    + div {
-      // margin-top: -1.5rem;
-    }
+    margin-bottom: 0.5rem;
     span {
       display: block;
     }

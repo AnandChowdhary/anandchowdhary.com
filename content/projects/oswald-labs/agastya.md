@@ -4,9 +4,9 @@ tags: projects
 intro: End-to-end web accessibility plugin with disabled-friendly features and legibility customizations
 date: 2017-08-25
 work: ["Web", "Oswald Labs"]
-bg: "#e4a100"
-style: padded
-img_src: /images/projects/type-with-tobias/3
+bg: "skyblue"
+style: cover
+img_src: /images/projects/oswald-labs/agastya/cover
 img_type: png
 icon: /images/projects/oswald-labs/agastya/icon.png
 stack: ["TypeScript"]
@@ -14,3 +14,17 @@ tools: ["Node.js", "Vue.js"]
 ---
 
 From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+
+<div class="three-images shadow">
+  <img src="/images/projects/oswald-labs/agastya/home.png" alt="Screenshot of podcasts">
+  <img src="/images/projects/oswald-labs/agastya/customize.png" alt="Screenshot of podcasts">
+  <img src="/images/projects/oswald-labs/agastya/chatbot.png" alt="Screenshot of stats">
+</div>
+
+From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+
+<div class="three-images shadow">
+  <img src="/images/projects/oswald-labs/agastya/modes.png" alt="Screenshot of podcasts">
+  <img src="/images/projects/oswald-labs/agastya/settings.png" alt="Screenshot of podcasts">
+  <img src="/images/projects/oswald-labs/agastya/whitelabelled.png" alt="Screenshot of stats">
+</div>
