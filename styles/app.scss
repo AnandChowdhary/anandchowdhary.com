@@ -200,11 +200,11 @@ main#content .hide-project-details {
   border-radius: 100%;
 }
 
-.img-heading img {
+.blog .img-heading img {
   width: 5rem;
   filter: drop-shadow(0 .15rem .15rem rgba(0,0,0,.1));
 }
-.img-heading {
+.blog .img-heading {
   img {
     margin-right: 1rem;
     margin-left: -7rem;
@@ -215,4 +215,21 @@ main#content .hide-project-details {
 
 main#content .home-items.blog .project-tags {
   margin-top: 0.75rem;
+}
+
+.horizontal-scroller {
+  position: relative;
+  .scroll-buttons {
+    button {
+      z-index: 1;
+      top: 0;
+      position: absolute;
+      &:first-of-type {
+        left: 0;
+      }
+      &:last-of-type {
+        right: 0;
+      }
+    }
+  }
 }

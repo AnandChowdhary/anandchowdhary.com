@@ -78,7 +78,7 @@ const getCityArchivePageData = async (allItems, city) => {
   if (images) result += `
     <h2>Highlights</h2>
     <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
-    <div class="highlighted-stories">${images}</div>
+    <div class="horizontal-scroller container-large"><div class="highlighted-stories">${images}</div></div>
   `;
   result += `
     ${await getEventsSummaryCity(allItems, city)}
