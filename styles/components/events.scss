@@ -1,0 +1,49 @@
+.events-item {
+  margin-top: 2.5rem;
+  // display: flex;
+  // .map {
+  //   background-color: gray;
+  //   width: 10rem;
+  //   height: 10rem;
+  //   margin-right: 2.5rem;
+  // }
+  .content {
+    // flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  img {
+    transition: 0.3s;
+  }
+  a:focus {
+    img {
+      box-shadow: 0 0 0 0.2rem $focusRingColor;
+      transform: scale(1.05) translateY(.65rem);
+    }
+  }
+  h2, h3 {
+    margin-top: 0;
+    font-size: 120%;
+  }
+  .meta {
+    margin-top: 0.5rem;
+  }
+  .location {
+    margin-top: -2rem;
+  }
+  .location div:last-child {
+    text-align: right;
+  }
+  .location, .meta {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.events {
+  a:not(.continue) {
+    color: inherit;
+    text-decoration: none;
+  }
+}

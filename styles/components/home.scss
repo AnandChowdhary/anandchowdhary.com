@@ -1,0 +1,76 @@
+main#content .home-items {
+  position: relative;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  h1 {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    position: absolute;
+    left: -20px;
+    line-height: 1;
+    top: 0;
+    transform: translate(-100%,-100%) rotate(-90deg);
+    transform-origin: bottom right;
+    &::before {
+      content: "";
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: #aaa;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+      border-radius: 100%;
+      margin-top: -0.2rem;
+      display: inline-block;
+    }
+    a:focus {
+      box-shadow: 0 0 0 0.2rem $focusRingColor !important;
+    }
+  }
+
+  &.projects h1 {
+    border-color: $colorProjects;
+    &::before {
+      background-color: $colorProjects;
+    }
+  }
+  &.blog h1 {
+    border-color: $colorBlog;
+    &::before {
+      background-color: $colorBlog;
+    }
+  }
+  &.events h1 {
+    border-color: $colorEvents;
+    &::before {
+      background-color: $colorEvents;
+    }
+  }
+  &.travel {
+    h1 {
+      border-color: $colorTravel;
+      &::before {
+        background-color: $colorTravel;
+      }
+    }
+    picture {
+      transition: 0.3s;
+    }
+    article {
+      margin: 0;
+    }
+    a:focus {
+      box-shadow: none;
+      picture {
+        transform: scale(1.05);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
+      }
+    }
+  }
+
+  + .home-items {
+    margin-top: 4rem;
+  }
+}

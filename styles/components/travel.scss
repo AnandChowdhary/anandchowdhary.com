@@ -1,0 +1,142 @@
+.travel > div {
+  article {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 10rem;
+  }
+  picture + div > div:last-child {
+   margin-top: 0.5rem;
+   font-size: 90%;
+  }
+  $image-width: 50%;
+  picture {
+    overflow: hidden;
+    width: $image-width;
+    margin: 0 auto 1rem auto;
+    line-height: 1;
+    display: block;
+    border: 0.125rem solid $colorTravel;
+    padding: 0.25rem;
+    border-radius: 100%;
+    img {
+      vertical-align: top;
+      border-radius: 100%;
+      background-color: rgba(100, 100, 100, 0.5);
+      width: 100%;
+    }
+  }
+}
+
+.travels {
+  article {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    picture {
+      overflow: hidden;
+      width: 3rem;
+      line-height: 1;
+      display: block;
+      border: 0.125rem solid $colorTravel;
+      padding: 0.25rem;
+      margin-right: 1.5rem;
+      border-radius: 100%;
+      img {
+        vertical-align: top;
+        border-radius: 100%;
+        background-color: rgba(100, 100, 100, 0.5);
+        width: 100%;
+      }
+    }
+    time {
+      color: rgba(100, 100, 100, 0.6);
+      margin-left: 1rem;
+      display: inline-block;
+    }
+  }
+}
+
+.travel main#content section {
+  max-width: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  article {
+    width: 48%;
+  }
+}
+
+.travel-item {
+  margin-top: 2.5rem;
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    &:focus {
+      box-shadow: none;
+      .map {
+        box-shadow: 0 0 0 0.2rem $focusRingColor;
+      }
+      picture {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        transform: translateY(-0.5rem) scale(1.1);
+      }
+    }
+  }
+  .map {
+    background-color: #aaa;
+    height: 10rem;
+    border-radius: 0.2rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+  }
+  .content {
+    width: 90%;
+    margin: -4rem auto 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 125%;
+    }
+    picture {
+      overflow: hidden;
+      background-color: #fff;
+      width: 7.5rem;
+      line-height: 1;
+      display: block;
+      border: 0.125rem solid $colorTravel;
+      padding: 0.25rem;
+      transition: 0.3s;
+      margin-right: 1.5rem;
+      border-radius: 100%;
+      img {
+        vertical-align: top;
+        border-radius: 100%;
+        background-color: rgba(100, 100, 100, 0.5);
+        width: 100%;
+      }
+    }
+  }
+}
+
+main#content .home-items.travel > div {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.places.single main#content {
+  h2 {
+    margin-top: 5rem;
+  }
+  h1.has-icon + div {
+    margin-top: -2rem;
+  }
+  .projects {
+    margin-top: 2.5rem;
+  }
+}

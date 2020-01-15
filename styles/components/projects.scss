@@ -1,0 +1,210 @@
+.projects > div {
+  .project-image {
+    background-color: rgba(100, 100, 100, 0.5);
+    padding-top: 66%;
+    margin-bottom: 1.25rem;
+    position: relative;
+    .project-image-front {
+      border-radius: 0.2rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+    }
+    &.project-image-padded .project-image-front {
+      background-size: contain;
+      left: 1rem; right: 1rem;
+      top: 1rem; bottom: 1rem;
+    }
+    &.project-image-cover .project-image-front {
+      top: 0; bottom: 0;
+      right: 0; left: 0;
+      background-size: cover;
+    }
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
+}
+
+.projects, .project-item,
+.open-source, .open-source-item {
+  .item-icon {
+    border-radius: 0;
+  }
+}
+
+main#content .project-intro {
+  margin: 2.5rem auto 5rem auto;
+  line-height: 1;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  dl {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > * {
+      margin-top: 2.5rem;
+      min-width: 30%;
+    }
+    + dl {
+      margin-top: 2.5rem;
+    }
+  }
+  dt {
+    color: $colorLight;
+    font-size: 90%;
+    margin-bottom: 0.75rem;
+  }
+  dd {
+    margin: 0;
+    + dd {
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+.projects {
+  p {
+    max-width: 500px;
+    // margin-bottom: 2.5rem;
+  }
+}
+
+nav.filter-nav {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  a {
+    background-color: whitesmoke;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    &.active {
+      background-color: $colorProjects;
+      color: #fff;
+    }
+  }
+}
+
+main#content .project-item {
+  position: relative;
+  .project-item-icon {
+    transition: 0.3s;
+    position: absolute;
+    margin-top: -3.8rem;
+    right: 1.5rem;
+    img {
+      height: 5rem;
+      width: 5rem;
+      border-radius: 0.2rem;
+      filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.3));
+    }
+    &.project-item-icon-box {
+      background-color: #fff;
+      border-radius: 100%;
+      width: 5rem;
+      text-align: center;
+      height: 5rem;
+      box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+      img {
+        margin-top: 1rem;
+        width: 3rem;
+        height: 3rem;
+        filter: none;
+      }
+    }
+  }
+  .project-image {
+    transition: 0.3s;
+    border-radius: 0.2rem;
+  }
+  a:focus {
+    box-shadow: none;
+    .project-item-icon {
+      transform: scale(1.1);
+      img {
+        filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
+      }
+      &.project-item-icon-box {
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+        img {
+          filter: none;
+        }
+      }
+    }
+    .project-image {
+      box-shadow: 0 0 0 0.2rem $focusRingColor;
+    }
+  }
+}
+
+.award {
+  display: inline-block;
+  background-color: #f9ca24;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.2rem;
+  line-height: 1;
+  &.award--2 {
+    background-color: silver;
+  }
+  &.award--3 {
+    background-color: brown;
+    color: #fff;
+  }
+  .award-position {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80%;
+    vertical-align: middle;
+    margin-top: -0.1rem;
+    opacity: 0.8;
+    display: inline-block;
+    + span {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.project-tags {
+line-height: 1;
+  span {
+    background-color: whitesmoke;
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.25rem;
+    font-size: 90%;
+    border-radius: 1rem;
+    &.stack {
+      background-color: #fff9cf;
+    }
+    &.tools {
+      background-color: #def4ff;
+    }
+    &:nth-child(5) ~ span {
+      display: none;
+    }
+  }
+}
+
+main#content .highlighted-stories {
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  margin-top: 2.5rem;
+  img {
+    height: 100vh;
+    border-radius: 0.2rem;
+  }
+}
+
+main#content section.projects {
+  max-width: 100%;
+}

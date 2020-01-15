@@ -1,0 +1,98 @@
+header#masthead {
+  nav, #more {
+    display: flex;
+  }
+  a[href="#more"] {
+    transition: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  nav a {
+    padding: 1.5rem 1rem;
+    transition: 0.3s;
+
+    &.active {
+      // font-weight: bold;
+      box-shadow: inset 0 0.25rem 0;
+      &[href="/"] {
+        color: $colorHome;
+      }
+      &[href="/projects/"] {
+        color: $colorProjects;
+      }
+      &[href="/blog/"] {
+        color: $colorBlog;
+      }
+      &[href="/events/"] {
+        color: $colorEvents;
+      }
+    }
+
+    &:hover, &:focus {
+      box-shadow: inset 0 0.25rem 0 #aaa;
+      &[href="/"] {
+        box-shadow: inset 0 0.25rem 0 $colorHome;
+      }
+      &[href="/projects/"] {
+        box-shadow: inset 0 0.25rem 0 $colorProjects;
+      }
+      &[href="/blog/"] {
+        box-shadow: inset 0 0.25rem 0 $colorBlog;
+      }
+      &[href="/events/"] {
+        box-shadow: inset 0 0.25rem 0 $colorEvents;
+      }
+    }
+
+    span {
+      transition: 0.3s;
+    }
+    &:focus span {
+      box-shadow: 0 0 0 0.2rem $focusRingColor;
+      border-radius: 0.2rem;
+    }
+  }
+
+  #more {
+    display: none;
+  }
+
+  a.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 110%;
+    &:focus {
+      box-shadow: none;
+    }
+    span {
+      transition: 0.3s;
+    }
+    &:focus {
+      span {
+        box-shadow: 0 0 0 0.2rem $focusRingColor;
+        border-radius: 0.2rem;
+      }
+      svg {
+        transform: scale(1.2);
+      }
+    }
+
+    svg {
+      height: 1.5rem;
+      margin-right: 1rem;
+      transition: 0.3s;
+    }
+  }
+}
+
+header#masthead #more:target {
+  display: flex;
+  + a[href="#more"] {
+    visibility: hidden;
+  }
+}
