@@ -129,8 +129,15 @@ main#content .project-item {
     transition: 0.3s;
     border-radius: 0.2rem;
   }
+  h2 {
+    transition: 0.3s;
+    border-radius: 0.2rem;
+  }
   a:focus {
     box-shadow: none;
+    .project-image, h2 {
+      box-shadow: 0 0 0 0.2rem $focusRingColor;
+    }
     .project-item-icon {
       transform: scale(1.1);
       img {
@@ -142,9 +149,6 @@ main#content .project-item {
           filter: none;
         }
       }
-    }
-    .project-image {
-      box-shadow: 0 0 0 0.2rem $focusRingColor;
     }
   }
 }

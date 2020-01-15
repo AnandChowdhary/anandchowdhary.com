@@ -51,7 +51,14 @@ main#content .home-items {
     }
   }
   &.travel {
+    > div {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding-top: 1rem;
+    }
     h1 {
+      top: 1rem;
       border-color: $colorTravel;
       &::before {
         background-color: $colorTravel;
@@ -74,5 +81,8 @@ main#content .home-items {
 
   + .home-items {
     margin-top: 4rem;
+    &.travel {
+      margin-top: 3rem;
+    }
   }
 }
