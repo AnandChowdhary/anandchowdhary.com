@@ -164,7 +164,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
 const getCityArchivePageData = async (allItems, city) => {
   let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(city)}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
   try {
-    const files = await readFile(join(__dirname, "..", "life-data", "highlights", city, "cover.jpg"));
+    const files = await readFile(join(__dirname, "life-data", "highlights", city, "cover.jpg"));
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
   let result = `
@@ -173,7 +173,7 @@ const getCityArchivePageData = async (allItems, city) => {
   `;
   let images = "";
   try {
-    const files = await readdir(join(__dirname, "..", "life-data", "highlights", city));
+    const files = await readdir(join(__dirname, "life-data", "highlights", city));
     files.forEach(file => {
       if (file !== "cover.jpg") {
         images += `
