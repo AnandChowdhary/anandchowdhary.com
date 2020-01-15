@@ -5,7 +5,7 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
-    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && yarn build",
+    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && yarn build && node helpers/sitemap.js",
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
     "build": "node helpers/blog-tags.js && eleventy && gulp && yarn copy-highlights",
     "serve": "npm run build && eleventy --serve & gulp watch",
