@@ -77,8 +77,12 @@ function ready() {
     var id = `page_${i}`;
     var nextPrev = `
       <div class="scroll-buttons">
-        <button data-prev="${id}">Previous</button>
-        <button data-next="${id}">Next</button>
+        <button data-prev="${id}">
+          <span class="sr-only">Scroll left</span>
+        </button>
+        <button data-next="${id}">
+          <span class="sr-only">Scroll right</span>
+        </button>
       </div>
     `;
     var scrollBy = scroller.getBoundingClientRect().width;
@@ -110,6 +114,16 @@ function ready() {
     if (next) {
       next.addEventListener("click", function() {
         var left = scroller.scrollLeft + scrollBy;
+        scroller.scrollTo({
+          top: 0,
+          left,
+          behavior: "smooth"
+        });
+      });
+    }
+    if (prev) {
+      prev.addEventListener("click", function() {
+        var left = scroller.scrollLeft - scrollBy;
         scroller.scrollTo({
           top: 0,
           left,

@@ -51,7 +51,14 @@ main#content .home-items {
     }
   }
   &.travel {
-    > div {
+    .horizontal-scroller {
+      display: block;
+    }
+    .scroll-buttons button {
+      transform: scale(0.75);
+    }
+    .home-highlights {
+      display: flex;
       flex-wrap: nowrap;
       overflow-x: auto;
       overflow-y: visible;
