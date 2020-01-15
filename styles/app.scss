@@ -111,10 +111,11 @@ main#content > .container-large {
 .item-icon {
   width: 5rem;
   height: 5rem;
-  vertical-align: middle;
+  vertical-align: top;
+  float: left;
   margin-right: 1.5rem;
   margin-left: -6.5rem;
-  transform: translateY(0.65rem);
+  transform: translateY(0.25rem);
   border-radius: 100%;
   // margin-bottom: -2rem;
 }
@@ -123,7 +124,10 @@ main#content h1 {
   &.has-icon {
     margin-bottom: 0;
     + div {
-      margin-top: -1rem;
+      // margin-top: -1.5rem;
+    }
+    span {
+      display: block;
     }
   }
   &.has-no-icon {
