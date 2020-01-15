@@ -132,5 +132,6 @@ function ready() {
       });
     }
   }
+  mediumZoom(document.querySelectorAll(".two-images img, .three-images img, .image img:not(.real-image)"));
 }
 ready();
