@@ -58,7 +58,9 @@ function isExternal(url) {
 }
 
 var allLinks = document.querySelectorAll("a");
-var utmParams = "utm_source=anandchowdhary.com&utm_medium=website&utm_campaign=" + encodeURIComponent(document.body.className);
+var utmParams =
+  "utm_source=anandchowdhary.com&utm_medium=website&utm_campaign=" +
+  encodeURIComponent(document.body.className);
 for (let i = 0; allLinks.length > i; i++) {
   var link = allLinks[i];
   var linkHref = link.getAttribute("href");

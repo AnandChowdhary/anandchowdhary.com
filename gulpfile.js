@@ -27,20 +27,18 @@ function clean() {
 }
 
 function styles() {
-  return (
-    gulp
-      .src(paths.styles.src)
-      .pipe(sass())
-      .pipe(cleanCSS())
-      .pipe(concat("main.min.css"))
-      .pipe(
-        rename({
-          basename: "main",
-          suffix: ".min"
-        })
-      )
-      .pipe(gulp.dest(paths.styles.dest))
-  );
+  return gulp
+    .src(paths.styles.src)
+    .pipe(sass())
+    .pipe(cleanCSS())
+    .pipe(concat("main.min.css"))
+    .pipe(
+      rename({
+        basename: "main",
+        suffix: ".min"
+      })
+    )
+    .pipe(gulp.dest(paths.styles.dest));
 }
 
 function scripts() {
@@ -53,9 +51,7 @@ function scripts() {
 }
 
 function static() {
-  return gulp
-    .src(paths.static.src)
-    .pipe(gulp.dest(paths.static.dest));
+  return gulp.src(paths.static.src).pipe(gulp.dest(paths.static.dest));
 }
 
 function watch() {
