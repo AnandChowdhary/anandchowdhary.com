@@ -214,3 +214,11 @@ main#content .highlighted-stories {
 main#content section.projects {
   max-width: 100%;
 }
+
+.collaborator-profiles {
+  margin-bottom: 2rem;
+  a {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+}

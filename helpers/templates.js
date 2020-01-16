@@ -48,6 +48,35 @@ const getProjectsSummaryCity = async (allItems, value) => {
   return result;
 };
 
+const getDescription = async (type, key, k, noTag = false) => {
+  if (!key) return "";
+  try {
+    const data = await readJson(join(__dirname, "..", "content", "_data", "descriptions.json"));
+    if (key && typeof data[type][key] === "string") return `<p>${data[type][key]}</p>`;
+    if (key && k && typeof data[type][key][k] === "string") return noTag ? data[type][key][k] : `<p>${data[type][key][k]}</p>`;
+  } catch (error) {}
+  return "";
+}
+
+const getCollaboratorSocialProfiles = async name => {
+  try {
+    const data = await readJson(join(__dirname, "..", "content", "_data", "descriptions.json"));
+    const profiles = data.collaborators[name];
+    let result = "<div class='collaborator-profiles'>";
+    if (profiles.facebook)
+      result += `<a href="https://www.facebook.com/${profiles.facebook}">Facebook</a>`;
+    if (profiles.twitter)
+      result += `<a href="https://twitter.com/${profiles.twitter}">Twitter</a>`;
+    if (profiles.linkedin)
+      result += `<a href="https://www.linkedin.com/in/${profiles.linkedin}">LinkedIn</a>`;
+    if (profiles.github)
+      result += `<a href="https://github.com/${profiles.github}">GitHub</a>`;
+    result += "</div>";
+    return result;
+  } catch (error) {}
+  return "";
+}
+
 const getCityArchivePageData = async (allItems, city) => {
   let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(city)}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
   try {
@@ -74,6 +103,7 @@ const getCityArchivePageData = async (allItems, city) => {
   result += `
     <h2>About</h2>
     <p>${await getWikiSummary(city)}</p>
+    ${await getDescription("places", city)}
   `;
   if (images) result += `
     <h2>Highlights</h2>
@@ -89,8 +119,11 @@ const getCityArchivePageData = async (allItems, city) => {
 
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">
-  <h1>${value}</h1>
-  <nav class="filter-nav">
+  <h1>${await getDescription("collaborators", value, "flag", true)} ${await getDescription("collaborators", value, "name", true) || titleify(value)}</h1>
+  ${category === "collaborators" ? `
+    ${await getDescription("collaborators", value, "intro")}
+    ${await getCollaboratorSocialProfiles(value)}
+  ` : `<nav class="filter-nav">
     <a href="/projects/">All</a>
     <a${value === "Web" ? ` class="active"` : ""} href="/projects/web">Web</a>
     <a${value === "App" ? ` class="active"` : ""} href="/projects/app">Apps</a>
@@ -101,7 +134,7 @@ const getWorkArchive = async (allItems, category, value) => {
     <a${value === "Oswald Labs" ? ` class="active"` : ""} href="/projects/oswald-labs/">Oswald Labs</a>
     <a${value === "Open source" ? ` class="active"` : ""} href="/projects/open-source/">Open source</a>
     <a${value === "Hackathon" ? ` class="active"` : ""} href="/projects/hackathon">Hackathons</a>
-  </nav>
+  </nav>`}
   <section class="projects">
     <div>
   `;
@@ -159,4 +192,4 @@ const getTravelPageItem = async (allItems, city) => {
   `;
 }
 
-module.exports = { getWikiSummary, getTravelPageItem, getEventsSummaryCity, getProjectsSummaryCity, getCityArchivePageData, getWorkArchive };
+module.exports = { getWikiSummary, getTravelPageItem, getEventsSummaryCity, getDescription, getProjectsSummaryCity, getCityArchivePageData, getWorkArchive };
