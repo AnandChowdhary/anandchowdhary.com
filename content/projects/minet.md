@@ -1,15 +1,16 @@
 ---
-title: Global School of Media Crafting
+title: MINET
 tags: projects
-intro: Redesigned brand identity of PickQuick for an event in five hours. Made a trustworthy, user-centric brand.
-date: 2013-10-11
-work: ["Branding"]
+intro: Branding, website, event management for highschool technology club and annual festival.
+date: 2015-08-27
+work: ["Web", "Branding"]
 collaborators: ["akshat-srivastava"]
-bg: "#9d2e2c"
+bg: "#6699ee"
 style: padded
 img_src: /images/portfolio/internet.org_2x
 img_type: png
-tools: ["Photoshop", "Illustrator"]
+stack: ["PHP"]
+tools: ["Photoshop"]
 ---
 
 My first "real" co-foundership experience was when a student of the National Instutite of Technology (NIT) Calicut, Shivam Soon, reached out to me with the idea of building a platform where students can buy, sell, and trade old books. He saw a great opportunity to formalize the exchange process of expensive university textbooks.

@@ -16,7 +16,7 @@ award: £10,000
 award_position: 1
 stack: ["JavaScript"]
 tools: ["Vue.js", "Dialogflow"]
-collaborators: ["alex-imbrea", "jarco-van-roest"]
+collaborators: ["alex-imbrea"]
 ---
 
 On a Thursday/Friday in November 2018, my team and I built and presented CLShare, an app to help CLS Group with employee engagement. The app was the winner of the [CLS Engagement App Challenge](https://clsinnovation.bemyapp.com/) in London and uses a combination of an AI chatbot with employee-to-employee communication to foster engagement.

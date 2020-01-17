@@ -201,6 +201,7 @@ const getWorkArchive = async (allItems, category, value) => {
       ? `
     ${await getDescription("collaborators", value, "intro")}
     ${await getCollaboratorSocialProfiles(value)}
+    <p>Projects we worked on together include:</p>
   `
       : `<nav class="filter-nav">
     <a href="/projects/">All</a>
