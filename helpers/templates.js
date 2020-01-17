@@ -213,31 +213,49 @@ const getProjectNavbar = value =>
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">
   <nav class="breadcrumbs">
-    <a href="/projects/">Projects</a>
-    <a href="/projects/collaborators/">Collaborators</a>
-    <a href="/projects/collaborators/${value}">${(await getDescription("collaborators", value, "name", true)) ||
+    <a href="/projects/">Projects</a>`
+  
+  if (category === "work")
+    result += `<a href="/projects/${value}">${(await getDescription(category, value, "name", true)) ||
     titleify(value)}</a>
-  </nav>
-  ${await getCollaboratorProfilePictureUrl(value)}
-  <h1>${await getDescription(
-    "collaborators",
-    value,
-    "flag",
-    true
-  )} ${(await getDescription("collaborators", value, "name", true)) ||
-    titleify(value)}</h1>
-  ${
-    category === "collaborators"
-      ? `
-    ${await getDescription("collaborators", value, "intro")}
-    ${await getCollaboratorSocialProfiles(value)}
-    <p>Projects we worked on together include:</p>
-  `
-      : getProjectNavbar(value)
+    </nav>`;
+  else
+    result += `<a href="/projects/${category}/">${titleify(category)}</a>
+    <a href="/projects/${category}/${value}">${(await getDescription(category, value, "name", true)) ||
+    titleify(value)}</a>
+    </nav>`;
+
+  const TITLE = (await getDescription(category, value.toLowerCase(), "name", true)) || titleify(value);
+
+  if (category === "collaborators") {
+    result += `${await getCollaboratorProfilePictureUrl(value)}
+    <h1>${await getDescription(
+      "collaborators",
+      value,
+      "flag",
+      true
+    )} ${(await getDescription(category, value.toLowerCase(), "name", true)) ||
+      titleify(value)}</h1>`;
+  } else {
+    let image = "";
+    try {
+      image = await getDescription(category, value.toLowerCase(), "icon", true);
+    } catch (error) {}
+    if (image) result += `<img class="colla-pic" alt="" src="${image}">`;
+    result += `<h1>${TITLE}</h1>`;
   }
-  <section class="projects">
-    <div>
-  `;
+
+  result += `${await getDescription(category, value.toLowerCase(), "intro")}`;
+
+  if (category === "collaborators")
+    result += `${await getCollaboratorSocialProfiles(value)}
+      <p>Projects we worked on together include:</p>`;
+  
+  if (category === "work") result += getProjectNavbar(value);
+  if (category === "tools") result += `<p>Projects built using ${TITLE}:</p>`;
+  if (category === "stack") result += `<p>Projects built with ${TITLE}:</p>`;
+
+  result += `<section class="projects"><div>`;
   const items = allItems
     .filter(item => (item.data[category] || []).includes(value))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
