@@ -159,5 +159,20 @@ function ready() {
       ".two-images img, .three-images img, .image img:not(.real-image)"
     )
   );
+
+  // Contact page
+  var inputs = document.querySelectorAll("input[name='category']");
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("change", () => {
+      var value = "categoryOther";
+      for (var j = 0; j < inputs.length; j++)
+        if (inputs[j].checked)
+          value = inputs[j].getAttribute("id");
+      var responses = document.querySelectorAll(".response");
+      for (var i = 0; i < responses.length; i++)
+        responses[i].setAttribute("hidden", "hidden");
+      document.querySelector(".response.response-" + value).removeAttribute("hidden", "hidden");
+    });
+  }
 }
 ready();
