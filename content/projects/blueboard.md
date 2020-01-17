@@ -9,6 +9,8 @@ style: cover
 timeline: 2 months
 img_src: /images/portfolio/blueboard_2x
 img_type: png
+icon: /images/projects/blueboard/icon.png
+icon_bg: true
 stack: ["C++", "Java"]
 tools: ["Processing", "Arduino"]
 ---

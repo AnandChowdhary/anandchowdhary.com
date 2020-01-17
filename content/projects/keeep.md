@@ -11,6 +11,7 @@ img_src: /images/portfolio/keeep_2x
 img_type: png
 style: padded
 stack: ["C++"]
+icon: /images/projects/keeep/icon.png
 ---
 
 For my highschool Computer Science project, I built an encryption engine and password manager in C/C++. I wrote a pseudo-encryption algorithm with string manipulation, rotation, and encoding.
@@ -40,4 +41,7 @@ Keeep is a lightweight password management and encryption utility for Windows. I
 </div>
 <div class="two-images">
   <div><img alt="" src="/images/projects/keeep/7.jpg"></div>
+</div>
+<div class="images">
+  <img alt="" src="/images/portfolio/keeep_2x.png">
 </div>

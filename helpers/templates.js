@@ -211,17 +211,12 @@ const getProjectNavbar = value =>
   </nav>`;
 
 const getWorkArchive = async (allItems, category, value) => {
-  let result = `<div class="container-large small-p">
-  <nav class="breadcrumbs">
-    <a href="/projects/">Projects</a>`
-  
-  if (category === "work")
-    result += `<a href="/projects/${value}">${(await getDescription(category, value, "name", true)) ||
-    titleify(value)}</a>
-    </nav>`;
-  else
-    result += `<a href="/projects/${category}/">${titleify(category)}</a>
-    <a href="/projects/${category}/${value}">${(await getDescription(category, value, "name", true)) ||
+  let result = `<div class="container-large small-p">`
+
+  if (category !== "work")
+    result += `<nav class="breadcrumbs">
+    <a href="/projects/">Projects</a><a href="/projects/${category}/">${titleify(category)}</a>
+    <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(category, value, "name", true)) ||
     titleify(value)}</a>
     </nav>`;
 
@@ -242,8 +237,10 @@ const getWorkArchive = async (allItems, category, value) => {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
     } catch (error) {}
     image = image || `https://tse2.mm.bing.net/th?q=${encodeURIComponent(value)}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
-    result += `<img class="colla-pic" alt="" src="${image}"><h1>${TITLE}</h1>`;
+    result += `<img class="colla-pic" alt="" src="${image}">`;
   }
+
+  result += `<h1>${TITLE}</h1>`;
 
   const intro = await getDescription(category, value.toLowerCase(), "intro");
   if (intro)
