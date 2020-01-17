@@ -299,8 +299,14 @@
     padding: 1.5rem;
   }
   img.colla-pic {
-    margin: 1rem auto;
+    margin: 2rem 0 1.5rem 0;
     display: block;
     float: none;
+  }
+  main#content .collaborators-list a {
+    img.colla-pic {
+      display: inline-block;
+      margin: 0 1rem 0 0;
+    }
   }
 }

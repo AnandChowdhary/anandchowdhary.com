@@ -307,5 +307,6 @@ module.exports = {
   getDescription,
   getProjectsSummaryCity,
   getCityArchivePageData,
-  getWorkArchive
+  getWorkArchive,
+  getCollaboratorProfilePictureUrl
 };

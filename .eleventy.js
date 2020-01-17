@@ -8,7 +8,8 @@ const {
   getTravelPageItem,
   getCityArchivePageData,
   getWorkArchive,
-  getDescription
+  getDescription,
+  getCollaboratorProfilePictureUrl
 } = require("./helpers/templates");
 
 module.exports = eleventyConfig => {
@@ -101,14 +102,41 @@ module.exports = eleventyConfig => {
   });
 
   eleventyConfig.addNunjucksAsyncShortcode(
+    "collaboratorProfilePicture",
+    async value => {
+      try {
+        return await getCollaboratorProfilePictureUrl(value);
+      } catch (error) {
+        return "";
+      }
+    }
+  );
+
+  eleventyConfig.addNunjucksAsyncShortcode(
     "collaboratorName",
-    async value =>
-      `${await getDescription(
-        "collaborators",
-        value,
-        "flag",
-        true
-      )} ${await getDescription("collaborators", value, "name", true)}`
+    async value => {
+      try {
+        let result = "";
+        if (await getDescription(
+          "collaborators",
+          value,
+          "flag",
+          true
+        ))
+          result += `<span class="flag">${await getDescription(
+            "collaborators",
+            value,
+            "flag",
+            true
+          )}</span>`;
+        if (await getDescription("collaborators", value, "name", true))
+          result += ` <span>${await getDescription("collaborators", value, "name", true)}</span>`;
+        if (result.trim()) return result;
+        return titleify(value);
+      } catch (error) {
+        return titleify(value);
+      }
+    }
   );
 
   eleventyConfig.addNunjucksAsyncShortcode("travelPageItem", async value => {

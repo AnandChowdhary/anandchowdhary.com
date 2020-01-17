@@ -11,7 +11,12 @@ pagination:
   {{ content | safe }}
   <section class="collaborators-list">
     {% for item in pagination %}
-      {{ item }}
+      <article>
+        <a href="/projects/collaborators/{{ item }}">
+          {% collaboratorProfilePicture item %}
+          {% collaboratorName item %}
+        </a>
+      </article>
     {% endfor %}
   </section>
   {% if pagination.pageLinks.length > 1 %}
