@@ -180,6 +180,36 @@ const getCityArchivePageData = async (allItems, city) => {
   return result;
 };
 
+const getProjectNavbar = value =>
+  `<nav class="filter-nav">
+    <a${value === "all" ? ` class="active"` : ""} href="/projects/">All</a>
+    <a${value === "Web" ? ` class="active"` : ""} href="/projects/web">Web</a>
+    <a${value === "App" ? ` class="active"` : ""} href="/projects/app">Apps</a>
+    <a${
+      value === "Branding" ? ` class="active"` : ""
+    } href="/projects/branding">Branding</a>
+    <a${value === "AI" ? ` class="active"` : ""} href="/projects/ai">AI/ML</a>
+    <a${value === "IoT" ? ` class="active"` : ""} href="/projects/iot">IoT</a>
+    <a${
+      value === "VR/AR" ? ` class="active"` : ""
+    } href="/projects/vrar">VR/AR</a>
+    <a${
+      value === "Oswald Labs" ? ` class="active"` : ""
+    } href="/projects/oswald-labs/">Oswald Labs</a>
+    <a${
+      value === "Open source" ? ` class="active"` : ""
+    } href="/projects/open-source/">Open source</a>
+    <a${
+      value === "Collaborators" ? ` class="active"` : ""
+    } href="/projects/collaborators/">Collaborators</a>
+    <a${
+      value === "Collaborators" ? ` class="active"` : ""
+    } href="/projects/stack/">Stack</a>
+    <a${
+      value === "Collaborators" ? ` class="active"` : ""
+    } href="/projects/tools/">Tools</a>
+  </nav>`;
+
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">
   <nav class="breadcrumbs">
@@ -203,28 +233,7 @@ const getWorkArchive = async (allItems, category, value) => {
     ${await getCollaboratorSocialProfiles(value)}
     <p>Projects we worked on together include:</p>
   `
-      : `<nav class="filter-nav">
-    <a href="/projects/">All</a>
-    <a${value === "Web" ? ` class="active"` : ""} href="/projects/web">Web</a>
-    <a${value === "App" ? ` class="active"` : ""} href="/projects/app">Apps</a>
-    <a${
-      value === "Branding" ? ` class="active"` : ""
-    } href="/projects/branding">Branding</a>
-    <a${value === "AI" ? ` class="active"` : ""} href="/projects/ai">AI/ML</a>
-    <a${value === "IoT" ? ` class="active"` : ""} href="/projects/iot">IoT</a>
-    <a${
-      value === "VR/AR" ? ` class="active"` : ""
-    } href="/projects/vrar">VR/AR</a>
-    <a${
-      value === "Oswald Labs" ? ` class="active"` : ""
-    } href="/projects/oswald-labs/">Oswald Labs</a>
-    <a${
-      value === "Open source" ? ` class="active"` : ""
-    } href="/projects/open-source/">Open source</a>
-    <a${
-      value === "Hackathon" ? ` class="active"` : ""
-    } href="/projects/hackathon">Hackathons</a>
-  </nav>`
+      : getProjectNavbar(value)
   }
   <section class="projects">
     <div>
@@ -309,5 +318,6 @@ module.exports = {
   getProjectsSummaryCity,
   getCityArchivePageData,
   getWorkArchive,
-  getCollaboratorProfilePictureUrl
+  getCollaboratorProfilePictureUrl,
+  getProjectNavbar
 };

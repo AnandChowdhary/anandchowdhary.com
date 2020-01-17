@@ -11,18 +11,7 @@ pagination:
   <div class="container-large small-p">
     <h1>{{ title }}</h1>
     {{ content | safe }}
-    <nav class="filter-nav">
-      <a class="active" href="/projects/">All</a>
-      <a href="/projects/web">Web</a>
-      <a href="/projects/app">Apps</a>
-      <a href="/projects/branding">Branding</a>
-      <a href="/projects/ai">AI/ML</a>
-      <a href="/projects/iot">IoT</a>
-      <a href="/projects/vrar">VR/AR</a>
-      <a href="/projects/oswald-labs/">Oswald Labs</a>
-      <a href="/projects/open-source/">Open source</a>
-      <a href="/projects/hackathons">Hackathons</a>
-    </nav>
+    {% getProjectNavbar "all" %}
     <section class="projects">
       <div>
         {% for project in pagination %}

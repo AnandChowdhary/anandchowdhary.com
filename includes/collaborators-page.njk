@@ -7,6 +7,10 @@ pagination:
 
 {% include "head.njk" %}
 <main id="content">
+  <nav class="breadcrumbs">
+    <a href="/projects/">Projects</a>
+    <a href="/projects/collaborators/">{{ title }}</a>
+  </nav>
   <h1>{{ title }}</h1>
   {{ content | safe }}
   <section class="collaborators-list">
