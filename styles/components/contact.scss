@@ -33,3 +33,11 @@
   margin-bottom: 0.5rem;
   display: inline-block;
 }
+
+.social-links a {
+  font-size: 150%;
+  margin-right: 0.75rem;
+  &::after {
+    display: none;
+  }
+}

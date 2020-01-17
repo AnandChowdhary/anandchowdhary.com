@@ -100,16 +100,18 @@ const getCollaboratorSocialProfiles = async name => {
       join(__dirname, "..", "content", "_data", "descriptions.json")
     );
     const profiles = data.collaborators[name];
-    let result = "<div class='collaborator-profiles'>";
-    if (profiles.facebook)
-      result += `<a href="https://www.facebook.com/${profiles.facebook}">Facebook</a>`;
-    if (profiles.twitter)
-      result += `<a href="https://twitter.com/${profiles.twitter}">Twitter</a>`;
-    if (profiles.linkedin)
-      result += `<a href="https://www.linkedin.com/in/${profiles.linkedin}">LinkedIn</a>`;
-    if (profiles.github)
-      result += `<a href="https://github.com/${profiles.github}">GitHub</a>`;
-    result += "</div>";
+    let result = "<div class='collaborator-profiles social-links'>";
+    if (profiles.twitter) result += `<a href="${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`
+    if (profiles.linkedin) result += `<a href="${profiles.linkedin}" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>`
+    if (profiles.github) result += `<a href="${profiles.github}" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>`
+    if (profiles.instagram) result += `<a href="${profiles.instagram}" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>`
+    if (profiles.facebook) result += `<a href="${profiles.facebook}" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>`
+    if (profiles.medium) result += `<a href="${profiles.medium}" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>`
+    if (profiles.dribbble) result += `<a href="${profiles.dribbble}" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>`
+    if (profiles.quora) result += `<a href="${profiles.quora}" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>`
+    if (profiles.angellist) result += `<a href="${profiles.angellist}" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>`
+    result += `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous"></div>`;
     return result;
   } catch (error) {}
   return "";

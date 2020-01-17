@@ -6,8 +6,8 @@ layout: page.njk
 To get in touch with me, fill in the form below. Alternately, you can send an email to [mail@anandchowdhary.com](mailto:mail@anandchowdhary.com). I'm also on:
 
 <div class="social-links">
-  <a href="https://linkedin.com/in/AnandChowdhary" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>
   <a href="https://twitter.com/AnandChowdhary" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>
+  <a href="https://linkedin.com/in/AnandChowdhary" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>
   <a href="https://github.com/AnandChowdhary" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>
   <a href="https://instagram.com/anandchowdhary" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>
   <a href="https://facebook.com/AnandChowdhary" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>
