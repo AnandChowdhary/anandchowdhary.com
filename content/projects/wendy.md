@@ -38,5 +38,3 @@ As soon as someone approaches your door, Wendy checks their face against your tr
   <div><img alt="" src="/images/projects/wendy/slide-3.png"></div>
   <div><img alt="" src="/images/projects/wendy/slide-4.png"></div>
 </div>
-
-<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

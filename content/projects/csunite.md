@@ -40,5 +40,3 @@ The Progressive Web App was built using Vue.js and Vuetify.js (a material design
   <div><img alt="" src="/images/projects/csunite/slide-2.png"></div>
 </div>
 <div class="image scale"><img alt="" src="/images/projects/csunite/news.png"></div>
-
-<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

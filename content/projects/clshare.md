@@ -45,5 +45,3 @@ The app also included Oswald Labs' accessibility features to make it more usable
 </div>
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR9P4UnwfCiXlVVZRZSDyHX0c4mLeTx7d26iSD8yJ0BQmZU0Z4yPUKQPr5M6PcmEAKAY350yWEaC-w6/embed?start=false&loop=true&delayms=3000" frameborder="0" width="1440" height="650" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" loading="lazy"></iframe>
-
-<footer>This project was done in collaboration with Jarco van Roest 🇳🇱 and Alex Imbrea 🇷🇴.</footer>

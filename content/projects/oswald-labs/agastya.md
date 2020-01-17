@@ -11,6 +11,7 @@ img_type: png
 icon: /images/projects/oswald-labs/agastya/icon.png
 stack: ["TypeScript"]
 tools: ["Node.js", "Vue.js"]
+collaborators: ["mahendra-singh-raghuwanshi"]
 ---
 
 From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.

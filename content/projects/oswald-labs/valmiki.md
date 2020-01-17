@@ -10,6 +10,7 @@ img_src: /images/projects/oswald-labs/valmiki/cover
 img_type: png
 icon: /images/projects/oswald-labs/valmiki/icon.png
 stack: ["JavaScript"]
+collaborators: ["nishant-gadihoke"]
 tools: ["Chrome"]
 ---
 

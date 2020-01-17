@@ -12,6 +12,7 @@ client: P&G
 img_src: /images/portfolio/naari_2x
 img_type: png
 style: padded
+collaborators: ["nishant-gadihoke"]
 stack: ["JavaScript"]
 ---
 
@@ -43,5 +44,3 @@ Naari is also a social platform that lets you chat with your doctor, friends, or
 <div class="two-images shadow">
   <div><img alt="" src="/images/projects/naari/5.png"></div>
 </div>
-
-<footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>

@@ -32,5 +32,3 @@ In November 2017, I worked with Trivago in Düsseldorf on building an app to hel
 </div>
 
 <iframe class="video-embed" height="600" src="https://www.youtube.com/embed/K-2cs4cFhCk?controls=0&modestbranding=1"> </iframe>
-
-<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

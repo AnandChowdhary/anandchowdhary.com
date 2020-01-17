@@ -45,5 +45,3 @@ As a proof of concept, I made an app for Android and the web, called Saga. Downl
   <div><img alt="" src="/images/projects/saga-music/8.png"></div>
   <div><img alt="" src="/images/projects/saga-music/9.png"></div>
 </div>
-
-<footer>This project was done in collaboration with <a href="https://github.com/prempalsingh">Prempal Singh 🇮🇳</a>.</footer>

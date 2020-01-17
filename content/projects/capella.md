@@ -42,5 +42,3 @@ The app was built using HTML5 with a PHP backend integrated with some machine le
   <div><img alt="" src="/images/projects/capella/s4.jpg"></div>
 </div>
 <div class="image"><img alt="" src="/images/projects/capella/1.jpg"></div>
-
-<footer>This project was done in collaboration with Mateo Sadowski 🇺🇸.</footer>

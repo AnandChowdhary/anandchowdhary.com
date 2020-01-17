@@ -11,6 +11,7 @@ timeline: 24 hours
 img_src: /images/portfolio/baymax_2x
 img_type: png
 style: padded
+collaborators: ["nishant-gadihoke"]
 tools: ["Photoshop"]
 ---
 
@@ -27,5 +28,3 @@ If you've stubbed your toe a little, Baymax will tell you how to make the swelli
   <img alt="" src="/images/projects/baymax/2.png">
   <img alt="" src="/images/projects/baymax/3.png">
 </div>
-
-<footer>This project was done in collaboration with <a href="https://nishantgadihoke.com">Nishant Gadihoke 🇮🇳</a>.</footer>

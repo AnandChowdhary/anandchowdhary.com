@@ -37,5 +37,3 @@ It also uses object and scene detection, so you can just point your camera in th
 FaceMatch uses Amazon Rekognition, a service that lets you quickly add sophisticated deep learning-based visual search and image classification to apps. I ended up using Face Comparison, Facial Analysis, and Object and Scene Detection APIs.
 
 <div class="image"><img alt="" src="/images/portfolio/facematch_2x.png"></div>
-
-<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>
