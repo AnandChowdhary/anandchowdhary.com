@@ -236,16 +236,20 @@ const getWorkArchive = async (allItems, category, value) => {
       true
     )} ${(await getDescription(category, value.toLowerCase(), "name", true)) ||
       titleify(value)}</h1>`;
-  } else {
+  } else if (category !== "work") {
     let image = "";
     try {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
     } catch (error) {}
-    if (image) result += `<img class="colla-pic" alt="" src="${image}">`;
-    result += `<h1>${TITLE}</h1>`;
+    image = image || `https://tse2.mm.bing.net/th?q=${encodeURIComponent(value)}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
+    result += `<img class="colla-pic" alt="" src="${image}"><h1>${TITLE}</h1>`;
   }
 
-  result += `${await getDescription(category, value.toLowerCase(), "intro")}`;
+  const intro = await getDescription(category, value.toLowerCase(), "intro");
+  if (intro)
+    result += intro;
+  else if (category !== "work")
+    result += await getWikiSummary(value);
 
   if (category === "collaborators")
     result += `${await getCollaboratorSocialProfiles(value)}

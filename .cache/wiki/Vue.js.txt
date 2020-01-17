@@ -1,0 +1,1 @@
+<p>Vue. js (commonly referred to as Vue; pronounced , like "view") is an open-source Model–view–viewmodel JavaScript framework for building user interfaces and single-page applications. <a href="https://en.wikipedia.org/wiki/Special:Search?search=Vue.js">Text from Wikipedia</a></p>

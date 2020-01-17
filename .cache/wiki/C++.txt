@@ -1,0 +1,1 @@
+<p>C++ () is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes". <a href="https://en.wikipedia.org/wiki/Special:Search?search=C%2B%2B">Text from Wikipedia</a></p>
