@@ -94,6 +94,20 @@ const getDescription = async (type, key, k, noTag = false) => {
   return "";
 };
 
+const getCollaboratorProfilePictureUrl = async user => {
+  try {
+    const data = await readJson(
+      join(__dirname, "..", "content", "_data", "descriptions.json")
+    );
+    const profiles = data.collaborators[user];
+    if (profiles.github) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
+    if (profiles.twitter) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/twitter/${profiles.twitter}">`;
+    if (profiles.instagram) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/instagram/${profiles.instagram}">`;
+    if (profiles.facebook) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/facebook/${profiles.facebook}">`;
+  } catch (error) {}
+  return "";
+};
+
 const getCollaboratorSocialProfiles = async name => {
   try {
     const data = await readJson(
@@ -101,15 +115,15 @@ const getCollaboratorSocialProfiles = async name => {
     );
     const profiles = data.collaborators[name];
     let result = "<div class='collaborator-profiles social-links'>";
-    if (profiles.twitter) result += `<a href="${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`
-    if (profiles.linkedin) result += `<a href="${profiles.linkedin}" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>`
-    if (profiles.github) result += `<a href="${profiles.github}" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>`
-    if (profiles.instagram) result += `<a href="${profiles.instagram}" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>`
-    if (profiles.facebook) result += `<a href="${profiles.facebook}" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>`
-    if (profiles.medium) result += `<a href="${profiles.medium}" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>`
-    if (profiles.dribbble) result += `<a href="${profiles.dribbble}" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>`
-    if (profiles.quora) result += `<a href="${profiles.quora}" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>`
-    if (profiles.angellist) result += `<a href="${profiles.angellist}" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>`
+    if (profiles.twitter) result += `<a href="https://twitter.com/${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`
+    if (profiles.linkedin) result += `<a href="https://www.linkedin.com/in/${profiles.linkedin}" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>`
+    if (profiles.github) result += `<a href="https://github.com/${profiles.github}" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>`
+    if (profiles.instagram) result += `<a href="https://www.instagram.com/${profiles.instagram}" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>`
+    if (profiles.facebook) result += `<a href="https://www.facebook.com/${profiles.facebook}" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>`
+    if (profiles.medium) result += `<a href="https://medium.com/${profiles.medium}" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>`
+    if (profiles.dribbble) result += `<a href="https://dribbble.com/${profiles.dribbble}" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>`
+    if (profiles.quora) result += `<a href="https://www.quora.com/${profiles.quora}" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>`
+    if (profiles.angellist) result += `<a href="https://angel.co/${profiles.angellist}" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>`
     result += `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous"></div>`;
     return result;
@@ -168,6 +182,13 @@ const getCityArchivePageData = async (allItems, city) => {
 
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">
+  <nav class="breadcrumbs">
+    <a href="/projects/">Projects</a>
+    <a href="/projects/collaborators/">Collaborators</a>
+    <a href="/projects/collaborators/${value}">${(await getDescription("collaborators", value, "name", true)) ||
+    titleify(value)}</a>
+  </nav>
+  ${await getCollaboratorProfilePictureUrl(value)}
   <h1>${await getDescription(
     "collaborators",
     value,
