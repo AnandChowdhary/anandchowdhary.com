@@ -240,7 +240,7 @@ const getWorkArchive = async (allItems, category, value) => {
     result += `<img class="colla-pic" alt="" src="${image}">`;
   }
 
-  result += `<h1>${TITLE}</h1>`;
+  if (category !== "collaborators") result += `<h1>${TITLE}</h1>`;
 
   const intro = await getDescription(category, value.toLowerCase(), "intro");
   if (intro)
