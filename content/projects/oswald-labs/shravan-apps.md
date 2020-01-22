@@ -3,7 +3,7 @@ title: Shravan Apps
 tags: projects
 intro: Suite of free smartphone apps for people with disabilities like dyslexia, blindness, and deafness
 date: 2018-10-18
-work: ["Web", "Oswald Labs"]
+work: ["Web", "oswald-labs"]
 bg: "#c82333"
 style: cover
 img_src: /images/projects/oswald-labs/shravan/cover

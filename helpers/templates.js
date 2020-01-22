@@ -194,7 +194,7 @@ const getProjectNavbar = value =>
       value === "VR/AR" ? ` class="active"` : ""
     } href="/projects/vrar">VR/AR</a>
     <a${
-      value === "Oswald Labs" ? ` class="active"` : ""
+      value === "oswald-labs" ? ` class="active"` : ""
     } href="/projects/oswald-labs/">Oswald Labs</a>
     <a${
       value === "Open source" ? ` class="active"` : ""

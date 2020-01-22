@@ -6,6 +6,11 @@
     "sf-bay-area": "I lived in the Bay Area (specifically, East Bay) while studying at Santa Clara University in late 2019, as part of the Global Engineering Education Exchange.",
     "gurugram": "Since Gurgaon is in the outskirts of Delhi, I've been there countless times; Delhi-NCR is essentially one large city."
   },
+  "work": {
+    "oswald-labs": {
+      "intro": "Oswald Labs is an award-winning accessibility technology company that I co-founded in August 2016."
+    }
+  },
   "collaborators": {
     "alex-imbrea": {
       "name": "Alex Imbrea",
