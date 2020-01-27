@@ -7,7 +7,7 @@
   "scripts": {
     "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && yarn build && node helpers/sitemap.js",
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
-    "build": "node helpers/blog-tags.js && eleventy && gulp && yarn copy-highlights",
+    "build": "node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && yarn copy-highlights",
     "serve": "npm run gulp && eleventy --serve & gulp watch",
     "gulp": "gulp"
   },
@@ -26,6 +26,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
+    "js-yaml": "^3.13.1",
     "recursive-readdir": "^2.2.2"
   },
   "dependencies": {
