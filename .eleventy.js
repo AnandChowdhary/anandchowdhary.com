@@ -45,7 +45,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter(
     "datetimetime",
     value =>
-      `<time class="time-ago" datetime="${new Date(value).toISOString()}">${new Date(
+      `<time class="time-ago" datetime="${new Date(value).toISOString()}">on ${new Date(
         value
       ).toLocaleDateString("en-US", {
         timeZone: "UTC",

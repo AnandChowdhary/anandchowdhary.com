@@ -7,7 +7,7 @@
   </nav>
   <h1>{{ title }}</h1>
   {{ content | safe }}
-  <p>This data was last updated on {{ emails.lastUpdated | datetimetime | safe }} in <a href="https://github.com/AnandChowdhary/life-data/blob/master/emails.yml">life-data/emails</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/gmail.ts">services/gmail</a>, both available on GitHub.</p>
+  <p>This data was last updated {{ emails.lastUpdated | datetimetime | safe }} in <a href="https://github.com/AnandChowdhary/life-data/blob/master/emails.yml">life-data/emails</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/gmail.ts">services/gmail</a>, both available on GitHub.</p>
   <div class="data-summary">
     <div>
       <div>{{ emails.sentLastWeek }}</div>
