@@ -15,3 +15,19 @@
     display: none;
   }
 }
+
+main#content .data-summary {
+  display: flex;
+  background-color: whitesmoke;
+  margin: 2.5rem auto;
+  padding: 2.5rem;
+  border-radius: 0.2rem;
+  justify-content: space-between;
+  > div {
+    flex: 1 0 0;
+  }
+  > div > div:first-child {
+    font-size: 150%;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -23,9 +23,15 @@ const pocketCasts = async () => {
   await writeJson(join(CONTENT_DATA_DIR, "pocketCastsHistory.json"), pocketCastsHistory);
 }
 
+const wakatime = async () => {
+  const programming = safeLoad(await readFile(join(LIFE_DATA_DIR, "development.yml"), "utf8"));
+  await writeJson(join(CONTENT_DATA_DIR, "programming.json"), programming);
+}
+
 const lifeDataUtilities = async () => {
   await spotify();
   await pocketCasts();
+  await wakatime();
 }
 
 lifeDataUtilities();

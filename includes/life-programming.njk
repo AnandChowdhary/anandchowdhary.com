@@ -1,0 +1,32 @@
+{% include "head.njk" %}
+<main id="content">
+  <nav class="breadcrumbs">
+    <a href="/life/">Life</a>
+    <a href="/life/programming/">Programming</a>
+  </nav>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  <div class="data-summary">
+    <div>
+      <div>{{ programming.totalText }}</div>
+      <div>Total this week</div>
+    </div>
+    <div>
+      <div>{{ programming.dailyAverageText }}</div>
+      <div>Daily average</div>
+    </div>
+  </div>
+  <section class="collaborators-list languages-list">
+    <h2>Top languages</h2>
+    {% for item in programming.languages %}
+      <article>
+        <a href="#">
+          <img class="colla-pic" alt="" src="https://tse2.mm.bing.net/th?q={{ item.name | urlencode }}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate">
+          <span>{{ item.name }}</span>
+          <span class="flag">{{ item.text }}</span>
+        </a>
+      </article>
+    {% endfor %}
+  </section>
+</main>
+{% include "footer.njk" %}
