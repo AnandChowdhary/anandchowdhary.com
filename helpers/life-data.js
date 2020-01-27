@@ -28,10 +28,16 @@ const wakatime = async () => {
   await writeJson(join(CONTENT_DATA_DIR, "programming.json"), programming);
 }
 
+const gmail = async () => {
+  const emails = safeLoad(await readFile(join(LIFE_DATA_DIR, "emails.yml"), "utf8"));
+  await writeJson(join(CONTENT_DATA_DIR, "emails.json"), emails);
+}
+
 const lifeDataUtilities = async () => {
   await spotify();
   await pocketCasts();
   await wakatime();
+  await gmail();
 }
 
 lifeDataUtilities();
