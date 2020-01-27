@@ -1,6 +1,7 @@
 const { readFile, writeJson } = require("fs-extra");
 const { join } = require("path");
 const { safeLoad } = require("js-yaml");
+const axios = require("axios");
 
 const LIFE_DATA_DIR = join(__dirname, "..", "life-data");
 const CONTENT_DATA_DIR = join(__dirname, "..", "content", "_data");
@@ -33,7 +34,21 @@ const gmail = async () => {
   await writeJson(join(CONTENT_DATA_DIR, "emails.json"), emails);
 }
 
+const lastUpdated = async () => {
+  const lifeDataLastUpdated = {};
+  for await (const file of [
+    "development.yml",
+    "podcasts.yml",
+    "podcast-history.yml",
+    "emails.yml",
+    "top-artists.yml"
+  ])
+    lifeDataLastUpdated[file] = (await axios.get(`https://api.github.com/repos/AnandChowdhary/life-data/commits?path=${file}`)).data[0];
+  await writeJson(join(CONTENT_DATA_DIR, "lifeDataLastUpdated.json"), lifeDataLastUpdated);
+}
+
 const lifeDataUtilities = async () => {
+  await lastUpdated();
   await spotify();
   await pocketCasts();
   await wakatime();
