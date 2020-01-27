@@ -76,7 +76,7 @@ main#content .project-intro {
   }
 }
 
-nav.filter-nav {
+nav.filter-nav, nav.categories-nav {
   margin-top: 1rem;
   margin-bottom: 3rem;
   display: flex;
@@ -256,3 +256,8 @@ main#content section.projects {
     transform: translateY(-50%);
   }
 }
+
+// .categories-nav {
+//   margin-top: -3rem;
+//   margin-bottom: 3rem;
+// }

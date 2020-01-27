@@ -193,6 +193,7 @@ const getProjectNavbar = value =>
     <a${
       value === "VR/AR" ? ` class="active"` : ""
     } href="/projects/vrar">VR/AR</a>
+  </nav><nav class="categories-nav">
     <a${
       value === "oswald-labs" ? ` class="active"` : ""
     } href="/projects/oswald-labs/">Oswald Labs</a>
@@ -208,7 +209,7 @@ const getProjectNavbar = value =>
     <a${
       value === "Collaborators" ? ` class="active"` : ""
     } href="/projects/tools/">Tools</a>
-  </nav>`;
+  </div>`;
 
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">`
