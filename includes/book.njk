@@ -3,7 +3,7 @@ pagination:
   data: books
   size: 1
   alias: book
-permalink: books/{{ book.name | slug }}/index.html
+permalink: /life/reading/{{ book.name | slug }}/index.html
 ---
 
 {% include "head.njk" %}
@@ -13,8 +13,9 @@ permalink: books/{{ book.name | slug }}/index.html
       <img src="https://tse2.mm.bing.net/th?q={{ book.name | urlencode }}%20{{ book.author | urlencode }}%20cover&w=100&h=150&p=0&dpr=2&adlt=moderate&c=1" alt="" loading="lazy">
     </picture>
     <nav class="breadcrumbs">
-      <a href="/books/">Books</a>
-      <a href="/books/{{ book.name | slug }}/">{{ book.name }}</a>
+      <a href="/life/">Life</a>
+      <a href="/life/reading/">Reading</a>
+      <a href="/life/reading/{{ book.name | slug }}/">{{ book.name }}</a>
     </nav>
     <h1>{{ book.name }}</h1>
     <div class="author serif">{{ book.author }}</div>
