@@ -93,3 +93,17 @@ main#content .home-items {
     }
   }
 }
+
+.hero-container {
+  max-width: 100%;
+  background-color: #f4edff;
+  padding: 7.5rem 0;
+  > .container-large {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+.hero {
+  max-width: 500px;
+}
