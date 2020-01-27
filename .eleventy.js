@@ -95,8 +95,9 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksAsyncShortcode("citiesArchive", async value => {
     let result = `
           <nav class="breadcrumbs">
-            <a href="/places/">Travel</a>
-            <a href="/places/${value}/">${value}</a>
+            <a href="/life/">Life</a>
+            <a href="/life/travel/">Travel</a>
+            <a href="/life/travel/${value}/">${value}</a>
           </nav>
           ${await getCityArchivePageData(allItems, value)}`;
     return result;
@@ -236,7 +237,7 @@ module.exports = eleventyConfig => {
           "-"
         );
         result += `<article>
-          <a href="/places/${slug}">
+          <a href="/life/travel/${slug}">
             <picture>
               <img src="/images/highlights/${slug}/cover.jpg" alt="" loading="lazy">
             </picture>

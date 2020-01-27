@@ -12,7 +12,7 @@ const getEventCard = (post, h3 = false) =>
     </${h3 ? "h3" : "h2"}>
     <div class="location">
       <div>${post.data.venue}</div>
-      <div><a href="/places/${post.data.places}">${getCityEmojiTitle(
+      <div><a href="/life/travel/${post.data.places}">${getCityEmojiTitle(
     post.data.places
   )}</a></div>
     </div>

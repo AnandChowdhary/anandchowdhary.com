@@ -318,7 +318,7 @@ const getTravelPageItem = async (allItems, city) => {
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
   return `
-    <article><a href="/places/${city}">
+    <article><a href="/life/travel/${city}">
       <h2 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
     city
   )}</span></h2>
