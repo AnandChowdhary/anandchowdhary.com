@@ -1,0 +1,21 @@
+{% include "head.njk" %}
+<main id="content">
+  <nav class="breadcrumbs">
+    <a href="/life/">Life</a>
+    <a href="/life/work/">Work</a>
+    <a href="/life/work/emails/">Emails</a>
+  </nav>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  <div class="data-summary">
+    <div>
+      <div>{{ emails.sentLastWeek }}</div>
+      <div>sentLastWeek</div>
+    </div>
+    <div>
+      <div>{{ emails.receivedLastWeek }}</div>
+      <div>receivedLastWeek</div>
+    </div>
+  </div>
+</main>
+{% include "footer.njk" %}
