@@ -191,6 +191,6 @@ function ready() {
 
   // Time ago
   var timers = document.querySelectorAll(".time-ago");
-  window.timeago.render(timers);
+  if (timers.length && window.timeago) window.timeago.render(timers);
 }
 ready();

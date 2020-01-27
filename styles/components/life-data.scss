@@ -1,3 +1,5 @@
+@import "../variables";
+
 .collaborators-list.podcasts-list a {
   padding: 0;
   display: flex;
@@ -29,5 +31,46 @@ main#content .data-summary {
   > div > div:first-child {
     font-size: 150%;
     margin-bottom: 0.5rem;
+  }
+}
+
+main#content .life-categories {
+  margin: 2rem auto 0 auto;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  li {
+    margin-bottom: 0;
+  }
+  a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    line-height: 1;
+    color: inherit;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    &:focus {
+      box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.2), 0 0 0 0.2rem $focusRingColor;
+      transform: translateY(-0.25rem);
+    }
+    &:hover {
+      border-radius: 0.2rem;
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+  }
+  li:first-child a {
+    border-radius: 0.2rem 0.2rem 0 0;
+    &:focus { border-radius: 0.2rem; }
+  }
+  li:last-child a {
+    border-bottom: none;
+    border-radius: 0 0 0.2rem 0.2rem;
+    &:focus { border-radius: 0.2rem; }
+  }
+  .emoji {
+    font-size: 200%;
+    vertical-align: middle;
+    margin-right: 1rem;
   }
 }
