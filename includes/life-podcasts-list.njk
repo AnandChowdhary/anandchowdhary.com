@@ -19,8 +19,10 @@ pagination:
       <article>
         <a href="{{ item.url }}">
           <img class="colla-pic" alt="" src="https://tse2.mm.bing.net/th?q={{ item.title | urlencode }}+podcast+cover&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate">
-          <span>{{ item.title }}</span>
-          {# <span class="flag">{{ item.genres[0] | capitalize }}</span> #}
+          <div>
+            <div>{{ item.title }}</div>
+            <div>{{ item.author }}</div>
+          </div>
         </a>
       </article>
     {% endfor %}
