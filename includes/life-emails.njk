@@ -7,14 +7,33 @@
   </nav>
   <h1>{{ title }}</h1>
   {{ content | safe }}
+  <p>This data was last updated on {{ emails.lastUpdated | datetimetime | safe }} in <a href="https://github.com/AnandChowdhary/life-data/blob/master/emails.yml">life-data/emails</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/gmail.ts">services/gmail</a>, both available on GitHub.</p>
   <div class="data-summary">
     <div>
       <div>{{ emails.sentLastWeek }}</div>
-      <div>sentLastWeek</div>
+      <div>Sent this week</div>
     </div>
     <div>
       <div>{{ emails.receivedLastWeek }}</div>
-      <div>receivedLastWeek</div>
+      <div>Received this week</div>
+    </div>
+    <div>
+      <div>{{ ((emails.sentLastWeek / emails.receivedLastWeek) * 100) | round(2) }}%</div>
+      <div>Reply ratio</div>
+    </div>
+  </div>
+  <div class="data-summary">
+    <div>
+      <div>{{ emails.sentToday }}</div>
+      <div>Sent today</div>
+    </div>
+    <div>
+      <div>{{ emails.receivedToday }}</div>
+      <div>Received today</div>
+    </div>
+    <div>
+      <div>{{ ((emails.sentToday / emails.receivedToday) * 100) | round(2) }}%</div>
+      <div>Reply ratio</div>
     </div>
   </div>
 </main>

@@ -42,6 +42,20 @@ module.exports = eleventyConfig => {
         year: "numeric"
       })}</time>`
   );
+  eleventyConfig.addNunjucksFilter(
+    "datetimetime",
+    value =>
+      `<time class="time-ago" datetime="${new Date(value).toISOString()}">${new Date(
+        value
+      ).toLocaleDateString("en-US", {
+        timeZone: "UTC",
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      })} UTC</time>`
+  );
   eleventyConfig.addNunjucksAsyncShortcode("wiki", async value => {
     try {
       return `<p>${

@@ -188,5 +188,9 @@ function ready() {
     }, 50);
     updateAge();
   }
+
+  // Time ago
+  var timers = document.querySelectorAll(".time-ago");
+  window.timeago.render(timers);
 }
 ready();
