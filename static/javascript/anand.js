@@ -174,5 +174,19 @@ function ready() {
       document.querySelector(".response.response-" + value).removeAttribute("hidden", "hidden");
     });
   }
+
+  // Life page
+  var age = document.querySelector(".age");
+  var birthday = new Date(1997, 11, 29).getTime();
+  function updateAge() {
+    var now = new Date().getTime();
+    if (age) age.innerHTML = ((now - birthday) / 31556952000).toFixed(10);
+  }
+  if (age) {
+    setInterval(() => {
+      if (age) updateAge();
+    }, 50);
+    updateAge();
+  }
 }
 ready();
