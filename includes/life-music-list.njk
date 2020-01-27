@@ -1,0 +1,39 @@
+---
+pagination:
+  data: longTermArtists
+  size: 10
+  alias: pagination
+---
+
+{% include "head.njk" %}
+<main id="content">
+  <nav class="breadcrumbs">
+    <a href="/life/">Life</a>
+    <a href="/life/listening/">Listening</a>
+    <a href="/life/listening/music/">Music</a>
+  </nav>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  <section class="collaborators-list music-list">
+    {% for item in pagination %}
+      <article>
+        <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
+          <img class="colla-pic" alt="" src="{{ item.images[1].url }}">
+          <span>{{ item.name }}</span>
+          <span class="flag">{{ item.genres[0] | capitalize }}</span>
+        </a>
+      </article>
+    {% endfor %}
+  </section>
+  {% if pagination.pageLinks.length > 1 %}
+  <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
+    {% if pagination.previousPageLink %}
+      <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+    {% endif %}
+    {% if pagination.nextPageLink %}
+      <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</main>
+{% include "footer.njk" %}

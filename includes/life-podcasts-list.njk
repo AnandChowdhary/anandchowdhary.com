@@ -1,0 +1,39 @@
+---
+pagination:
+  data: pocketCastsPodcasts
+  size: 10
+  alias: pagination
+---
+
+{% include "head.njk" %}
+<main id="content">
+  <nav class="breadcrumbs">
+    <a href="/life/">Life</a>
+    <a href="/life/listening/">Listening</a>
+    <a href="/life/listening/podcasts/">Podcasts</a>
+  </nav>
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  <section class="collaborators-list podcasts-list">
+    {% for item in pagination %}
+      <article>
+        <a href="{{ item.url }}">
+          <img class="colla-pic" alt="" src="https://tse2.mm.bing.net/th?q={{ item.title | urlencode }}+podcast+cover&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate">
+          <span>{{ item.title }}</span>
+          {# <span class="flag">{{ item.genres[0] | capitalize }}</span> #}
+        </a>
+      </article>
+    {% endfor %}
+  </section>
+  {% if pagination.pageLinks.length > 1 %}
+  <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
+    {% if pagination.previousPageLink %}
+      <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+    {% endif %}
+    {% if pagination.nextPageLink %}
+      <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</main>
+{% include "footer.njk" %}
