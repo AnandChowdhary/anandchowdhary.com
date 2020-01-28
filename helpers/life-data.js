@@ -26,6 +26,7 @@ const pocketCasts = async () => {
 
 const wakatime = async () => {
   const programming = safeLoad(await readFile(join(LIFE_DATA_DIR, "development.yml"), "utf8"));
+  programming.languages = programming.languages.filter(lang => lang.text !== "0 secs");
   await writeJson(join(CONTENT_DATA_DIR, "programming.json"), programming);
 }
 
