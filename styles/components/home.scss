@@ -124,3 +124,46 @@ main#content .home-items.links {
     }
   }
 }
+
+.home-items > div,
+.projects > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  $gutter: 2%;
+  article {
+    width: (50 - ($gutter / 2));
+    margin-bottom: ($gutter * 2);
+    > a > span {
+      display: block;
+    }
+  }
+
+  h2 {
+    font-size: 120%;
+    margin: 0 1rem 0.5rem 0;
+  }
+
+  h2, time {
+    display: inline;
+  }
+
+  time, .meta {
+    color: rgba(100, 100, 100, 0.75);
+  }
+
+  .meta {
+    margin-top: 0.25rem;
+  }
+
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+main#content .home-items.blog .project-tags {
+  margin-top: 0.75rem;
+}
