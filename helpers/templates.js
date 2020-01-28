@@ -133,13 +133,14 @@ const getCollaboratorSocialProfiles = async name => {
 };
 
 const getCityArchivePageData = async (allItems, city) => {
-  let image = getBingImageUrl(`${city}/100/100`);
+  let image = "default";
   try {
     const files = await readFile(
       join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
     );
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
+  if (image === "default") image = getBingImageUrl(`${city}/100/100`);
   let result = `
     <div class="content">
       <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
@@ -307,13 +308,14 @@ const getTravelTime = async (allItems, city) => {
 };
 
 const getTravelPageItem = async (allItems, city) => {
-  let image = getBingImageUrl(`${city}/100/100`);
+  let image = "default";
   try {
     const files = await readFile(
       join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
     );
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
+  if (image === "default") image = getBingImageUrl(`${city}/100/100`);
   return `
     <article><a href="/life/travel/${city}">
       <h2 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
