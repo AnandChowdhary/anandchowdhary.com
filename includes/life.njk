@@ -1,44 +1,50 @@
 {% include "head.njk" %}
 <main id="content">
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-  <ul class="link-list life-categories">
-    <li>
-      <a href="/life/travel/">
-        <span class="emoji" aria-hidden="true">🛩</span>
-        <span>Travel</span>
-      </a>
-    </li>
-    <li>
-      <a href="/life/work/programming/">
-        <span class="emoji" aria-hidden="true">💻</span>
-        <span>Work › Programming</span>
-      </a>
-    </li>
-    <li>
-      <a href="/life/work/emails/">
-        <span class="emoji" aria-hidden="true">📨</span>
-        <span>Work › Emails</span>
-      </a>
-    </li>
-    <li>
-      <a href="/life/listening/podcasts/">
-        <span class="emoji" aria-hidden="true">🎙️</span>
-        <span>Listening › Podcasts</span>
-      </a>
-    </li>
-    <li>
-      <a href="/life/listening/music/">
-        <span class="emoji" aria-hidden="true">🎧</span>
-        <span>Listening › Music</span>
-      </a>
-    </li>
-    <li>
-      <a href="/life/reading/">
-        <span class="emoji" aria-hidden="true">📖</span>
-        <span>Reading</span>
-      </a>
-    </li>
-  </ul>
+  <header class="intro s">
+    <div>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </header>
+  <div class="container-outer">
+    <ul class="link-list life-categories">
+      <li>
+        <a href="/life/travel/">
+          <span class="emoji" aria-hidden="true">🛩</span>
+          <span>Travel</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/work/programming/">
+          <span class="emoji" aria-hidden="true">💻</span>
+          <span>Work › Programming</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/work/emails/">
+          <span class="emoji" aria-hidden="true">📨</span>
+          <span>Work › Emails</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/listening/podcasts/">
+          <span class="emoji" aria-hidden="true">🎙️</span>
+          <span>Listening › Podcasts</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/listening/music/">
+          <span class="emoji" aria-hidden="true">🎧</span>
+          <span>Listening › Music</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/reading/">
+          <span class="emoji" aria-hidden="true">📖</span>
+          <span>Reading</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </main>
 {% include "footer.njk" %}

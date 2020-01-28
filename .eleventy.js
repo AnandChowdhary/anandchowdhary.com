@@ -97,10 +97,16 @@ module.exports = eleventyConfig => {
         .filter(item => (item.data.roles || []).includes(value))
         .sort((a, b) => a.date.getTime() - b.date.getTime());
       let result = `
-          <h1>Events ${value}</h1>
-          <section class="posts">
-            ${items.map(post => getEventCard(post)).join("")}
-          </section>
+          <header class="intro s">
+            <div>
+              <h1>Events ${value}</h1>
+            </div>
+          </header>
+          <div class="container-outer">
+            <section class="posts">
+              ${items.map(post => getEventCard(post)).join("")}
+            </section>
+          </div>
         `;
       return result;
     }

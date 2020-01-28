@@ -93,9 +93,42 @@ header#masthead #more:target {
 .index header#masthead nav a.active span {
   border-bottom-color: $colorHome;
 }
+
 .projects .intro {
   background-color: lighten($color: $colorProjects, $amount: 48);
 }
 .projects header#masthead nav a.active span {
   border-bottom-color: $colorProjects;
+}
+
+.blog .intro {
+  background-color: lighten($color: $colorBlog, $amount: 70);
+  nav.filter-nav a.active {
+    background-color: $colorBlog;
+  }
+}
+.blog article {
+  a, h2 + div {
+    color: $colorBlog;
+  }
+}
+.blog header#masthead nav a.active span {
+  border-bottom-color: $colorBlog;
+}
+
+.life .intro {
+  background-color: lighten($color: $colorLife, $amount: 25);
+}
+.life header#masthead nav a.active span {
+  border-bottom-color: $colorLife;
+}
+
+.events .intro {
+  background-color: lighten($color: $colorEvents, $amount: 50);
+}
+.events header#masthead nav a.active span {
+  border-bottom-color: $colorEvents;
+}
+.events a, .project-intro dt {
+  color: $colorEvents;
 }
