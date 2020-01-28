@@ -1,5 +1,5 @@
 ---
-title: Books
+title: Reading
 layout: books.njk
 ---
 
