@@ -1,6 +1,47 @@
 [
-  { "name": "Forbes 30 Under 30 at Santa Clara University", "date": "2019-10-28", "city": "sf-bay-area", "url": "https://www.youtube.com/watch?v=zSX-yDAjUXk", "img": "https://img.youtube.com/vi/zSX-yDAjUXk/mqdefault.jpg" },
-  { "name": "Women Who Code Cloud 2019", "date": "2019-09-28", "city": "sf-bay-area", "url": "https://www.facebook.com/AnandChowdhary/videos/2896608857033963/" },
-  { "name": "Aristotle by Oswald Labs", "date": "2018-12-01", "city": "heerlen", "url": "https://www.youtube.com/watch?v=223RTMXXtxc", "img": "https://img.youtube.com/vi/223RTMXXtxc/mqdefault.jpg" },
-  { "name": "Startup India Rocks!", "date": "2017-02-02", "city": "bangalore", "url": "https://www.youtube.com/watch?v=wxbEd0lo4vY", "img": "https://img.youtube.com/vi/wxbEd0lo4vY/mqdefault.jpg" }
+  {
+    "name": "Forbes 30 Under 30 at Santa Clara University",
+    "date": "2019-10-28",
+    "city": "sf-bay-area",
+    "url": "https://www.youtube.com/watch?v=zSX-yDAjUXk",
+    "img": "https://img.youtube.com/vi/zSX-yDAjUXk/mqdefault.jpg",
+    "copyright": "Christian Yang / OneUp"
+  },
+  {
+    "name": "Women Who Code Cloud 2019",
+    "date": "2019-09-28",
+    "city": "sf-bay-area",
+    "url": "https://www.facebook.com/AnandChowdhary/videos/2896608857033963/",
+    "copyright": "Anand Chowdhary"
+  },
+  {
+    "name": "The best entrepreneurs in the UT (De beste ondernemers van de UT)",
+    "date": "2019-06-20",
+    "city": "enschede",
+    "url": "https://www.rtvoost.nl/media/137176/De-beste-ondernemers-van-de-UT",
+    "copyright": "RTV Oost"
+  },
+  {
+    "name": "Aristotle by Oswald Labs",
+    "date": "2018-12-01",
+    "city": "heerlen",
+    "url": "https://www.youtube.com/watch?v=223RTMXXtxc",
+    "img": "https://img.youtube.com/vi/223RTMXXtxc/mqdefault.jpg",
+    "copyright": "Oswald Labs"
+  },
+  {
+    "name": "In conversation with Anand Chowdhury",
+    "date": "2018-02-10",
+    "city": "enschede",
+    "url": "https://www.facebook.com/UT.india/videos/vb.131267240259912/1537384432981512/?type=2&theater",
+    "copyright": "University of Twente"
+  },
+  {
+    "name": "Interview with Anand Chowdhary, CEO, Oswald Foundation",
+    "date": "2017-02-02",
+    "city": "bangalore",
+    "url": "https://www.youtube.com/watch?v=wxbEd0lo4vY",
+    "img": "https://img.youtube.com/vi/wxbEd0lo4vY/mqdefault.jpg",
+    "copyright": "Startup India Rocks!"
+  }
 ]

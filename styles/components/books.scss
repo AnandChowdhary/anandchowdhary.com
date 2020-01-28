@@ -104,6 +104,9 @@ main#content .videos-item {
     display: block;
     color: inherit;
     text-decoration: none;
+    &::after {
+      display: none;
+    }
     .content {
       display: flex;
       align-items: center;
