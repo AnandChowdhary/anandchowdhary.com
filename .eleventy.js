@@ -4,6 +4,7 @@ const { trim, titleify } = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
 const { api } = require("./helpers/api");
 const { getEventCard } = require("./helpers/cards");
+const { getBingImageUrl } = require("./helpers/images");
 const {
   getTravelPageItem,
   getCityArchivePageData,
@@ -14,6 +15,7 @@ const {
 } = require("./helpers/templates");
 
 module.exports = eleventyConfig => {
+  eleventyConfig.addNunjucksFilter("bingImageUrl", getBingImageUrl);
   eleventyConfig.addNunjucksFilter("titleify", titleify);
   eleventyConfig.addNunjucksFilter("classify", value =>
     (value || "")

@@ -27,7 +27,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "js-yaml": "^3.13.1",
-    "recursive-readdir": "^2.2.2"
+    "recursive-readdir": "^2.2.2",
+    "slugify": "^1.3.6"
   },
   "dependencies": {
     "download": "^7.1.0"
