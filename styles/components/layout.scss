@@ -1,3 +1,5 @@
+@import "../variables";
+
 .item-icon {
   width: 5rem;
   height: 5rem;
@@ -10,7 +12,7 @@
   // margin-bottom: -2rem;
 }
 
-main#content h1 {
+main h1 {
   &.has-icon {
     margin-bottom: 0.5rem;
     span {

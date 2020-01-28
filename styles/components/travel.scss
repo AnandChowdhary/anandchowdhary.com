@@ -4,7 +4,7 @@
   margin-bottom: 0;
 }
 
-.travel main#content .cities-list {
+.travel .cities-list {
   article a {
     display: block;
     margin-top: 2.5rem;
@@ -112,7 +112,7 @@
   }
 }
 
-.travel.single main#content {
+.travel.single {
   h2 {
     margin-top: 5rem;
   }

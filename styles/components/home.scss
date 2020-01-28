@@ -1,6 +1,6 @@
 @import "../variables";
 
-main#content .home-items {
+.home-items {
   position: relative;
   a {
     color: inherit;
@@ -108,7 +108,7 @@ main#content .home-items {
   max-width: 500px;
 }
 
-main#content .home-items.links {
+.home-items.links {
   > div > div {
     flex: 1 0 0;
   }
@@ -164,6 +164,6 @@ main#content .home-items.links {
   }
 }
 
-main#content .home-items.blog .project-tags {
+.home-items.blog .project-tags {
   margin-top: 0.75rem;
 }

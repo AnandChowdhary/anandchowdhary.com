@@ -36,7 +36,7 @@
   }
 }
 
-main#content .project-intro {
+.project-intro {
   margin: 2.5rem auto 5rem auto;
   line-height: 1;
   a {
@@ -97,7 +97,7 @@ nav.filter-nav, nav.categories-nav {
   }
 }
 
-main#content .project-item {
+.project-item {
   position: relative;
   .project-item-icon {
     transition: 0.3s;
@@ -200,7 +200,7 @@ line-height: 1;
   }
 }
 
-main#content .highlighted-stories {
+.highlighted-stories {
   overflow-x: auto;
   white-space: nowrap;
   max-width: 100%;
@@ -211,7 +211,7 @@ main#content .highlighted-stories {
   }
 }
 
-main#content section.projects {
+section.projects {
   max-width: 100%;
 }
 

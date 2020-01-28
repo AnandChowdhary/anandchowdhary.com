@@ -60,18 +60,19 @@
       }
     }
   }
-  .places main#content article a img {
+  .places article a img {
     margin-top: -0.75rem;
   }
 }
 
 @media (max-width: 500px) {
-  main#content {
+  main {
     margin: 2.5rem auto 3.5rem auto;
     > * {
       width: 90%;
     }
-    .two-images,
+  }
+  .two-images,
     .three-images,
     .image,
     iframe {
@@ -113,7 +114,6 @@
     iframe.video-embed {
       height: 15rem;
     }
-  }
   .f {
     display: block;
     > *:not(:first-child) {
@@ -141,7 +141,7 @@
       }
     }
   }
-  .projects:not(.index) main#content,
+  .projects:not(.index),
   .blog:not(.home-items) article {
     h1 {
       margin-top: 0;
@@ -172,7 +172,7 @@
       }
     }
   }
-  main#content .project-item .project-item-icon {
+  .project-item .project-item-icon {
     margin-top: -2.5rem;
     right: 1rem;
     img {
@@ -189,13 +189,13 @@
       }
     }
   }
-  main#content .home-items h1 {
+  .home-items h1 {
     transform: none;
     position: relative;
     margin-bottom: 1.5rem;
     left: 0;
   }
-  // main#content .home-items.travel > div article {
+  // .home-items.travel > div article {
   //   margin-bottom: 1rem;
   //   &:nth-child(5), &:nth-child(6) {
   //     display: none;
@@ -219,8 +219,8 @@
       margin-top: 0.5rem;
     }
   }
-  main#content .blog-posts article,
-  main#content .blog-title {
+  .blog-posts article,
+  .blog-title {
     display: block;
   }
   .blog:not(.home-items) article {
@@ -278,13 +278,13 @@
     margin: -0.1rem 1.5rem 0 0 !important;
     width: 2rem;
   }
-  main#content h1.has-icon + div {
+  h1.has-icon + div {
     margin-top: 0;
   }
-  .places main#content article a .f > :not(:first-child) {
+  .places article a .f > :not(:first-child) {
     margin-top: 0.5rem;
   }
-  .places main#content .events-item h3 {
+  .places .events-item h3 {
     margin-bottom: 1rem;
   }
   .events-item h2 {
@@ -298,7 +298,7 @@
     margin-right: -5%;
     padding: 1.5rem;
   }
-  .projects main#content .breadcrumbs + img {
+  .projects .breadcrumbs + img {
     margin: 2rem 0 1.5rem 0;
     display: block;
     float: none;

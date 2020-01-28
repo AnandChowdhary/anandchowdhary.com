@@ -48,7 +48,7 @@ footer#colophon {
   justify-content: space-between;
 }
 
-main#content > .container-large {
+.container-large {
   max-width: 100%;
   position: relative;
 }
@@ -57,8 +57,8 @@ main#content > .container-large {
   position: relative;
 }
 
-main#content .show-project-details,
-main#content .hide-project-details {
+.show-project-details,
+.hide-project-details {
   display: none;
   background-color: whitesmoke;
   color: inherit;
