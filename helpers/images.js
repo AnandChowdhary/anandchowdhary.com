@@ -9,16 +9,18 @@ const getBingImageUrl = args => {
   const query = argArr[0];
   const width = argArr.length >= 2 ? argArr[1] : 210;
   const height = argArr.length >= 3 ? argArr[2] : 210;
+  console.log("Bing image", query, width, height);
+
   const DIR = join(__dirname, "..", ".cache", "bing-images");
   ensureDirSync(DIR);
-  const IMAGE = join(DIR, `${slugify(query)}.jpg`);
+  const IMAGE = join(DIR, `${slugify(query)}-${width}x${height}.jpg`);
   const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(query)}&w=${width}&h=${height}&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
 
   if (existsSync(IMAGE))
     return IMAGE;
   
   try {
-    download(BING).pipe(fs.createWriteStream(DIR));
+    download(BING).pipe(fs.createWriteStream(IMAGE));
       return IMAGE;
   } catch (error) {}
   return BING;

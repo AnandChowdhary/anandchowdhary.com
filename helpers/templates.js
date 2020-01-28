@@ -133,7 +133,7 @@ const getCollaboratorSocialProfiles = async name => {
 };
 
 const getCityArchivePageData = async (allItems, city) => {
-  let image = getBingImageUrl(city, 100, 100);
+  let image = getBingImageUrl(`${city}/100/100`);
   try {
     const files = await readFile(
       join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
@@ -236,7 +236,7 @@ const getWorkArchive = async (allItems, category, value) => {
     try {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
     } catch (error) {}
-    image = image || getBingImageUrl(value, 70, 70);
+    image = image || getBingImageUrl(`${value}/70/70`);
     result += `<img class="colla-pic" alt="" src="${image}">`;
   }
 
@@ -307,7 +307,7 @@ const getTravelTime = async (allItems, city) => {
 };
 
 const getTravelPageItem = async (allItems, city) => {
-  let image = getBingImageUrl(city, 100, 100);
+  let image = getBingImageUrl(`${city}/100/100`);
   try {
     const files = await readFile(
       join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
