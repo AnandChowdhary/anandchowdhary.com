@@ -85,6 +85,9 @@ header#masthead #more:target {
   &.s > div {
     max-width: 600px;
   }
+  h1:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .index header#masthead nav a.active span {

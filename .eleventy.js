@@ -186,7 +186,7 @@ module.exports = eleventyConfig => {
       .filter(item => (item.data.tags || []).includes(value))
       .sort((a, b) => a.date.getTime() - b.date.getTime());
     try {
-      let result = `<div class="blog-title">
+      let result = `<header class="intro"><div class="blog-title">
         <div class="l"></div>
         <div class="r">
           <h1>Blog</h1>
@@ -206,7 +206,7 @@ module.exports = eleventyConfig => {
             } href="/blog/design/">Design</a>
           </nav>
         </div>
-      </div><section class="blog-posts">`;
+      </div></header><div class="container m"><section class="blog-posts">`;
       items.forEach(item => {
         result += `<article>
             <div class="l">
@@ -242,7 +242,7 @@ module.exports = eleventyConfig => {
             </div>
           </article>`;
       });
-      return `${result}</section>`;
+      return `${result}</section></div>`;
     } catch (error) {}
     return "";
   });

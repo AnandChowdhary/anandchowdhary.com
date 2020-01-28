@@ -57,16 +57,10 @@
 .blog-title {
   margin-bottom: 0;
   display: flex;
-  h1 {
-    margin-bottom: 0;
-    margin-top: 2.5rem;
-    + p {
-      margin-top: 1rem;
-    }
-  }
 }
-.blog-posts, .pagination, .blog-title {
+.blog-posts, .pagination, .intro > .blog-title {
   max-width: 960px;
+  margin: auto;
 }
 .blog-posts article {
   display: flex;
