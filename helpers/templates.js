@@ -101,10 +101,10 @@ const getCollaboratorProfilePictureUrl = async user => {
       join(__dirname, "..", "content", "_data", "descriptions.json")
     );
     const profiles = data.collaborators[user];
-    if (profiles.github) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
-    if (profiles.twitter) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/twitter/${profiles.twitter}">`;
-    if (profiles.instagram) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/instagram/${profiles.instagram}">`;
-    if (profiles.facebook) return `<img class="colla-pic" alt="" src="https://unavatar.now.sh/facebook/${profiles.facebook}">`;
+    if (profiles.github) return `<img alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
+    if (profiles.twitter) return `<img alt="" src="https://unavatar.now.sh/twitter/${profiles.twitter}">`;
+    if (profiles.instagram) return `<img alt="" src="https://unavatar.now.sh/instagram/${profiles.instagram}">`;
+    if (profiles.facebook) return `<img alt="" src="https://unavatar.now.sh/facebook/${profiles.facebook}">`;
   } catch (error) {}
   return "";
 };
@@ -238,7 +238,7 @@ const getWorkArchive = async (allItems, category, value) => {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
     } catch (error) {}
     image = image || getBingImageUrl(`${value} icon/70/70`);
-    result += `<img class="colla-pic" alt="" src="${image}">`;
+    result += `<img alt="" src="${image}">`;
   }
 
   if (category !== "collaborators") result += `<h1>${TITLE}</h1>`;

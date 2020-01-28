@@ -230,25 +230,6 @@ main#content section.projects {
 }
 
 .collaborators-list a {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  line-height: 1;
-  color: inherit;
-  position: relative;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  border-radius: 0.2rem;
-  margin-top: 2rem;
-  &:focus {
-    box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.2), 0 0 0 0.2rem $focusRingColor;
-    transform: translateY(-0.25rem);
-  }
-  img.colla-pic {
-    height: 2.5rem;
-    float: none;
-    vertical-align: middle;
-    margin-right: 1rem;
-  }
   span.flag {
     position: absolute;
     right: 1rem;

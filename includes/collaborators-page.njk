@@ -13,7 +13,7 @@ pagination:
   </nav>
   <h1>{{ title }}</h1>
   {{ content | safe }}
-  <section class="collaborators-list">
+  <section class="link-list collaborators-list">
     {% for item in pagination %}
       <article>
         <a href="/projects/collaborators/{{ item }}">
