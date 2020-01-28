@@ -122,6 +122,9 @@ header#masthead #more:target {
 .life header#masthead nav a.active span {
   border-bottom-color: $colorLife;
 }
+.life a, .life .project-intro dt {
+  color: darken($color: $colorLife, $amount: 10);
+}
 
 .events .intro {
   background-color: lighten($color: $colorEvents, $amount: 50);
