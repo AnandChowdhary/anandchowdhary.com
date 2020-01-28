@@ -242,3 +242,9 @@ main#content section.projects {
 //   margin-top: -3rem;
 //   margin-bottom: 3rem;
 // }
+
+.projects .breadcrumbs + img {
+  float: right;
+  height: 7.5rem;
+  border-radius: 0.2rem;
+}
