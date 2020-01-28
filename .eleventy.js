@@ -10,6 +10,7 @@ const {
   getCityArchivePageData,
   getWorkArchive,
   getDescription,
+  getProjectsSelector,
   getCollaboratorProfilePictureUrl,
   getProjectNavbar
 } = require("./helpers/templates");
@@ -121,6 +122,17 @@ module.exports = eleventyConfig => {
     async value => {
       try {
         return await getCollaboratorProfilePictureUrl(value);
+      } catch (error) {
+        return "";
+      }
+    }
+  );
+
+  eleventyConfig.addNunjucksShortcode(
+    "getProjectsSelector",
+    value => {
+      try {
+        return getProjectsSelector(value);
       } catch (error) {
         return "";
       }

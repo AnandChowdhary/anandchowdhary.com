@@ -9,7 +9,8 @@ pagination:
 {% include "head.njk" %}
 <main id="content">
   <div class="container-large small-p">
-    <h1>{{ title }}</h1>
+    <h1 class="sr-only">{{ title }}</h1>
+    {% getProjectsSelector "all" %}
     {{ content | safe }}
     {% getProjectNavbar "all" %}
     <section class="projects">

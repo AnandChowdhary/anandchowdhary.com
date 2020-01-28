@@ -181,19 +181,7 @@ const getCityArchivePageData = async (allItems, city) => {
 };
 
 const getProjectNavbar = value =>
-  `<select class="filter-select" onchange="window.location.href = this.value">
-    <option${value === "all" ? ` selected` : ""} value="/projects/">All</option>
-    <option${value === "Web" ? ` selected` : ""} value="/projects/web">Web</option>
-    <option${value === "App" ? ` selected` : ""} value="/projects/app">Apps</option>
-    <option${
-      value === "Branding" ? ` selected` : ""
-    } value="/projects/branding">Branding</option>
-    <option${value === "AI" ? ` selected` : ""} value="/projects/ai">AI/ML</option>
-    <option${value === "IoT" ? ` selected` : ""} value="/projects/iot">IoT</option>
-    <option${
-      value === "VR/AR" ? ` selected` : ""
-    } value="/projects/vrar">VR/AR</option>
-  </select><nav class="categories-nav">
+  `<nav class="categories-nav">
     <a${
       value === "oswald-labs" ? ` class="active"` : ""
     } href="/projects/oswald-labs/">Oswald Labs</a>
@@ -211,8 +199,22 @@ const getProjectNavbar = value =>
     } href="/projects/tools/">Tools</a>
   </nav>`;
 
+const getProjectsSelector = value =>
+  `<select class="filter-select" onchange="window.location.href = this.value">
+    <option${value === "all" ? ` selected` : ""} value="/projects/">All</option>
+    <option${value === "Web" ? ` selected` : ""} value="/projects/web">Web</option>
+    <option${value === "App" ? ` selected` : ""} value="/projects/app">Apps</option>
+    <option${
+      value === "Branding" ? ` selected` : ""
+    } value="/projects/branding">Branding</option>
+    <option${value === "AI" ? ` selected` : ""} value="/projects/ai">AI/ML</option>
+    <option${value === "IoT" ? ` selected` : ""} value="/projects/iot">IoT</option>
+  </select>`;
+
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">`
+
+  const TITLE = (await getDescription(category, value.toLowerCase(), "name", true)) || titleify(value);
 
   if (category !== "work")
     result += `<nav class="breadcrumbs">
@@ -220,8 +222,9 @@ const getWorkArchive = async (allItems, category, value) => {
     <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(category, value, "name", true)) ||
     titleify(value)}</a>
     </nav>`;
-
-  const TITLE = (await getDescription(category, value.toLowerCase(), "name", true)) || titleify(value);
+  else if (["oswald-labs", "open-source"].includes(value)) result += `<nav class="breadcrumbs">
+  <a href="/projects/">Projects</a><a href="/projects/${category}/">${TITLE}</a>
+  </nav>`;
 
   if (category === "collaborators") {
     result += `${await getCollaboratorProfilePictureUrl(value)}
@@ -232,7 +235,11 @@ const getWorkArchive = async (allItems, category, value) => {
       true
     )} ${(await getDescription(category, value.toLowerCase(), "name", true)) ||
       titleify(value)}</h1>`;
-  } else if (category !== "work") {
+  } else if (category === "work" && !["oswald-labs", "open-source"].includes(value)) {
+    result += `<h1 class="sr-only">${TITLE}</h1>`;
+    result += getProjectsSelector(value);
+    result += getProjectNavbar(value);
+  } else {
     let image = "";
     try {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
@@ -240,8 +247,7 @@ const getWorkArchive = async (allItems, category, value) => {
     image = image || getBingImageUrl(`${value} icon/70/70`);
     result += `<img alt="" src="${image}">`;
   }
-
-  if (category !== "collaborators") result += `<h1>${TITLE}</h1>`;
+  if (category !== "collaborators" && !result.includes("</h1>")) result += `<h1>${TITLE}</h1>`;
 
   const intro = await getDescription(category, value.toLowerCase(), "intro");
   if (intro)
@@ -253,7 +259,6 @@ const getWorkArchive = async (allItems, category, value) => {
     result += `${await getCollaboratorSocialProfiles(value)}
       <p>Projects we worked on together include:</p>`;
   
-  if (category === "work") result += getProjectNavbar(value);
   if (category === "tools") result += `<p>Projects built using ${TITLE}:</p>`;
   if (category === "stack") result += `<p>Projects built with ${TITLE}:</p>`;
 
@@ -338,5 +343,6 @@ module.exports = {
   getCityArchivePageData,
   getWorkArchive,
   getCollaboratorProfilePictureUrl,
-  getProjectNavbar
+  getProjectNavbar,
+  getProjectsSelector
 };
