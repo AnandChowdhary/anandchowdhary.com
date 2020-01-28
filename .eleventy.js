@@ -4,7 +4,7 @@ const { trim, titleify } = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
 const { api } = require("./helpers/api");
 const { getEventCard } = require("./helpers/cards");
-const { getBingImageUrl } = require("./helpers/images");
+const { getBingImageUrl, getDomainIcon } = require("./helpers/images");
 const {
   getTravelPageItem,
   getCityArchivePageData,
@@ -26,12 +26,10 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter(
     "iconify",
     value =>
-      `<span class="url-icon" style="background-image: url('https://logo.clearbit.com/${
-        value
-          .replace(/https?:\/\//, "")
-          .replace("www.", "")
-          .split("/")[0]
-      }')"></span>`
+      `<span class="url-icon" style="background-image: url('${getDomainIcon(value
+        .replace(/https?:\/\//, "")
+        .replace("www.", "")
+        .split("/")[0])}')"></span>`
   );
   eleventyConfig.addNunjucksFilter(
     "datetime",

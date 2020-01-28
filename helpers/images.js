@@ -18,7 +18,7 @@ const getBingImageUrl = args => {
   })}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);
   const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(query)}&w=${width}&h=${height}&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
-  const URL = `/images/cache/bing/${SLUG}`;
+  const URL = `/images/cache/thumbnails/${SLUG}`;
 
   if (existsSync(IMAGE))
     return URL;
@@ -30,4 +30,24 @@ const getBingImageUrl = args => {
   return BING;
 }
 
-module.exports = { getBingImageUrl };
+const getDomainIcon = domain => {
+  const DIR = join(__dirname, "..", ".cache", "images", "domains");
+  ensureDirSync(DIR);
+  const SLUG = `${slugify(domain, {
+    lower: true
+  })}.png`;
+  const IMAGE = join(DIR, SLUG);
+  const CLEARBIT = `https://logo.clearbit.com/${domain}`;
+  const URL = `/images/cache/domains/${SLUG}`;
+
+  if (existsSync(IMAGE))
+    return URL;
+  
+  try {
+    download(CLEARBIT, DIR, { filename: SLUG });
+    return URL;
+  } catch (error) {}
+  return CLEARBIT;
+}
+
+module.exports = { getBingImageUrl, getDomainIcon };
