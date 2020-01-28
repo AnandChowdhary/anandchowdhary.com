@@ -80,7 +80,6 @@ nav.filter-nav, nav.categories-nav {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   a {
     background-color: #fff;
     color: inherit;
@@ -88,7 +87,7 @@ nav.filter-nav, nav.categories-nav {
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     margin-right: 1rem;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     &.active {
       background-color: $colorProjects;
       color: #fff;
@@ -225,11 +224,6 @@ section.projects {
     transform: translateY(-50%);
   }
 }
-
-// .categories-nav {
-//   margin-top: -3rem;
-//   margin-bottom: 3rem;
-// }
 
 .projects .breadcrumbs + img {
   float: right;

@@ -102,14 +102,14 @@ header#masthead #more:target {
 }
 
 .blog .intro {
-  background-color: lighten($color: $colorBlog, $amount: 70);
+  background-color: lighten($color: $colorBlog, $amount: 55);
   nav.filter-nav a.active {
     background-color: $colorBlog;
   }
 }
-.blog article {
-  a, h2 + div {
-    color: $colorBlog;
+.blog {
+  a, h2 + div, .project-intro dt {
+    color: darken($color: $colorBlog, $amount: 20);
   }
 }
 .blog header#masthead nav a.active span {
@@ -117,7 +117,7 @@ header#masthead #more:target {
 }
 
 .life .intro {
-  background-color: lighten($color: $colorLife, $amount: 25);
+  background-color: lighten($color: $colorLife, $amount: 43);
 }
 .life header#masthead nav a.active span {
   border-bottom-color: $colorLife;
@@ -129,6 +129,6 @@ header#masthead #more:target {
 .events header#masthead nav a.active span {
   border-bottom-color: $colorEvents;
 }
-.events a, .project-intro dt {
-  color: $colorEvents;
+.events a, .events .project-intro dt {
+  color: darken($color: $colorEvents, $amount: 10);
 }

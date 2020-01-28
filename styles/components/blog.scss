@@ -36,7 +36,7 @@ figcaption {
   }
   .tag {
     display: inline-block;
-    background-color: #f1c40f;
+    background-color: lighten($color: $colorBlog, $amount: 40);
     color: #000;
     line-height: 1;
     font-size: 80%;
