@@ -181,19 +181,19 @@ const getCityArchivePageData = async (allItems, city) => {
 };
 
 const getProjectNavbar = value =>
-  `<nav class="filter-nav">
-    <a${value === "all" ? ` class="active"` : ""} href="/projects/">All</a>
-    <a${value === "Web" ? ` class="active"` : ""} href="/projects/web">Web</a>
-    <a${value === "App" ? ` class="active"` : ""} href="/projects/app">Apps</a>
-    <a${
-      value === "Branding" ? ` class="active"` : ""
-    } href="/projects/branding">Branding</a>
-    <a${value === "AI" ? ` class="active"` : ""} href="/projects/ai">AI/ML</a>
-    <a${value === "IoT" ? ` class="active"` : ""} href="/projects/iot">IoT</a>
-    <a${
-      value === "VR/AR" ? ` class="active"` : ""
-    } href="/projects/vrar">VR/AR</a>
-  </nav><nav class="categories-nav">
+  `<select class="filter-select" onchange="window.location.href = this.value">
+    <option${value === "all" ? ` selected` : ""} value="/projects/">All</option>
+    <option${value === "Web" ? ` selected` : ""} value="/projects/web">Web</option>
+    <option${value === "App" ? ` selected` : ""} value="/projects/app">Apps</option>
+    <option${
+      value === "Branding" ? ` selected` : ""
+    } value="/projects/branding">Branding</option>
+    <option${value === "AI" ? ` selected` : ""} value="/projects/ai">AI/ML</option>
+    <option${value === "IoT" ? ` selected` : ""} value="/projects/iot">IoT</option>
+    <option${
+      value === "VR/AR" ? ` selected` : ""
+    } value="/projects/vrar">VR/AR</option>
+  </select><nav class="categories-nav">
     <a${
       value === "oswald-labs" ? ` class="active"` : ""
     } href="/projects/oswald-labs/">Oswald Labs</a>
@@ -209,7 +209,7 @@ const getProjectNavbar = value =>
     <a${
       value === "Collaborators" ? ` class="active"` : ""
     } href="/projects/tools/">Tools</a>
-  </div>`;
+  </nav>`;
 
 const getWorkArchive = async (allItems, category, value) => {
   let result = `<div class="container-large small-p">`
