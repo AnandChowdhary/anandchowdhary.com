@@ -1,0 +1,20 @@
+{% include "head.njk" %}
+<main id="content">
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+  <h2>Lists</h2>
+  <section class="link-list press-list">
+    {% for item in press.lists %}
+      <article>
+        <a href="{{ item.url }}">
+          {# <img class="colla-pic" alt="" src="{{ item.title + ' podcast cover' | bingImageUrl }}"> #}
+          <div class="f">
+            <div>{{ item.name }}</div>
+            <div>{{ item.date }}</div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </section>
+</main>
+{% include "footer.njk" %}

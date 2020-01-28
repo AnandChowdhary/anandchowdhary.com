@@ -15,6 +15,7 @@ const {
 } = require("./helpers/templates");
 
 module.exports = eleventyConfig => {
+  eleventyConfig.addNunjucksFilter("domainIcon", getDomainIcon);
   eleventyConfig.addNunjucksFilter("bingImageUrl", getBingImageUrl);
   eleventyConfig.addNunjucksFilter("titleify", titleify);
   eleventyConfig.addNunjucksFilter("classify", value =>
