@@ -12,7 +12,6 @@ style: padded
 client: SixteenInches
 img_src: /images/portfolio/sixteeninches_2x
 img_type: png
-stack: ["Liquid"]
 tools: ["Shopify", "Photoshop", "Illustrator"]
 ---
 

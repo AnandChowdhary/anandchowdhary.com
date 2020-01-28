@@ -11,7 +11,6 @@ work: ["Web", "Branding", "Startup"]
 img_src: /images/portfolio/melangebox_2x
 img_type: png
 style: padded
-stack: ["Liquid"]
 tools: ["Shopify", "Illustrator"]
 collaborators: ["mahendra-singh-raghuwanshi"]
 ---

@@ -11,7 +11,6 @@ bg: "#27577a"
 style: padded
 img_src: /images/portfolio/bharathacks_2x
 img_type: png
-stack: ["HTML"]
 ---
 
 In June 2017, I organized BharatHacks, a hackathon for solving India-specific problems. Programmers, designers, engineers, and entrepreneurs came together to build products to make lives better. Organized in collaboration with Facebook Developer Circle Delhi-NCR, BharatHacks helped hundreds take their idea forward, from hacking to raising investment and launching their products in the market.

@@ -11,7 +11,6 @@ work: ["Web", "Branding"]
 img_src: /images/portfolio/cyankart_2x
 img_type: png
 style: cover
-stack: ["Liquid"]
 tools: ["Shopify", "Photoshop"]
 ---
 
