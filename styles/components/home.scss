@@ -96,7 +96,7 @@
 
 .hero-container {
   max-width: 100%;
-  background-color: #f4edff;
+  background-color: lighten($color: $linkColor, $amount: 42.5);
   padding: 7.5rem 0;
   > .container-large {
     max-width: 1100px;

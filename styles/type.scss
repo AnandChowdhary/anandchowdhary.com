@@ -38,3 +38,6 @@ h2 {
   font-size: 175%;
 }
 
+[aria-label][data-balloon-pos]:after {
+  font: inherit !important;
+}
