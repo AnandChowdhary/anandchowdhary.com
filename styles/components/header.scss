@@ -82,13 +82,16 @@ header#masthead #more:target {
     max-width: 1100px;
     margin: auto;
   }
+  &.s > div {
+    max-width: 600px;
+  }
 }
 
 .index header#masthead nav a.active span {
   border-bottom-color: $colorHome;
 }
 .projects .intro {
-  background-color: lighten($color: $colorProjects, $amount: 47);
+  background-color: lighten($color: $colorProjects, $amount: 48);
 }
 .projects header#masthead nav a.active span {
   border-bottom-color: $colorProjects;
