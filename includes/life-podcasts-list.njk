@@ -20,14 +20,14 @@ pagination:
     </div>
   </header>
   <div class="container-outer">
-    <section class="link-list podcasts-list">
+    <section class="link-list podcasts-list nr">
       {% for item in pagination %}
         <article>
           <a href="{{ item.url }}">
             <div class="f">
               <img alt="" src="{{ (item.title + ' podcast cover') | bingImageUrl }}">
-              <div class="f ff">
-                <div>{{ item.title }}</div>
+              <div class="ff">
+                <h2>{{ item.title }}</h2>
                 <div>{{ item.author }}</div>
               </div>
             </div>

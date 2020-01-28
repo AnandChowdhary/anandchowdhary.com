@@ -2,7 +2,6 @@ const { join } = require("path");
 const { readJSON } = require("fs-extra");
 const { trim, titleify, getDomainFromUrl } = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
-const { api } = require("./helpers/api");
 const { getEventCard } = require("./helpers/cards");
 const { getBingImageUrl, getDomainIcon } = require("./helpers/images");
 const {
@@ -12,7 +11,8 @@ const {
   getDescription,
   getProjectsSelector,
   getCollaboratorProfilePictureUrl,
-  getProjectNavbar
+  getProjectNavbar,
+  getWikiSummary
 } = require("./helpers/templates");
 
 module.exports = eleventyConfig => {
@@ -58,15 +58,7 @@ module.exports = eleventyConfig => {
   );
   eleventyConfig.addNunjucksAsyncShortcode("wiki", async value => {
     try {
-      return `<p>${
-        (
-          await api.get(
-            `https://services.anandchowdhary.now.sh/api/wikipedia-summary?q=${encodeURIComponent(
-              value
-            )}`
-          )
-        ).data
-      } <a href="#">Wikipedia</a></p>`;
+      return await getWikiSummary(value);
     } catch (error) {}
     return "";
   });

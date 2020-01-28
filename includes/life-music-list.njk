@@ -26,8 +26,8 @@ pagination:
           <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
             <div class="f">
               <img alt="" src="{{ item.images[1].url }}">
-              <div class="f ff">
-                <div>{{ item.name }}</div>
+              <div class="ff">
+                <h2>{{ item.name }}</h2>
                 <div>{{ item.genres[0] | capitalize }}</div>
               </div>
             </div>
