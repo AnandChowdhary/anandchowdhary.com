@@ -5,10 +5,11 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
-    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && yarn build && node helpers/sitemap.js",
+    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && npm run build && node helpers/sitemap.js",
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
-    "copy-cache-images": "mkdirp public/images/cache && cp -r .cache/images public/images/cache",
-    "build": "node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && yarn copy-highlights",
+    "compress-images": "imagemin .cache/images/thumbnails/* --out-dir=.cache/images/thumbnails",
+    "copy-cache-images": "npm run compress-images && mkdirp public/images/cache && cp -r .cache/images/* public/images/cache",
+    "build": "node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && npm run copy-highlights",
     "serve": "npm run gulp && eleventy --serve & gulp watch",
     "gulp": "gulp"
   },
@@ -27,6 +28,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
+    "imagemin-cli": "^5.1.0",
     "js-yaml": "^3.13.1",
     "recursive-readdir": "^2.2.2",
     "slugify": "^1.3.6"

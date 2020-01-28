@@ -10,9 +10,12 @@ const getBingImageUrl = args => {
   const width = argArr.length >= 2 ? argArr[1] : 210;
   const height = argArr.length >= 3 ? argArr[2] : 210;
 
-  const DIR = join(__dirname, "..", ".cache", "images", "bing");
+  const DIR = join(__dirname, "..", ".cache", "images", "thumbnails");
   ensureDirSync(DIR);
-  const SLUG = `${slugify(query)}-${width}x${height}.jpg`;
+  const SLUG = `${slugify(query, {
+    lower: true,
+    remove: /[*+~.()'"!:@]/g
+  })}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);
   const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(query)}&w=${width}&h=${height}&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
   const URL = `/images/cache/bing/${SLUG}`;
