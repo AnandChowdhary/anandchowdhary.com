@@ -19,7 +19,7 @@ pagination:
     {% for item in pagination %}
       <article>
         <a href="{{ item.url }}">
-          <img class="colla-pic" alt="" src="{{ item.title + ' podcast cover' | bingImageUrl }}">
+          <img class="colla-pic" alt="" src="{{ (item.title + ' podcast cover') | bingImageUrl }}">
           <div>
             <div>{{ item.title }}</div>
             <div>{{ item.author }}</div>

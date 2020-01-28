@@ -23,7 +23,7 @@
     {% for item in programming.languages %}
       <article>
         <a href="#">
-          <img class="colla-pic" alt="" src="{{ item.name + ' icon/70/70' | bingImageUrl }}">
+          <img class="colla-pic" alt="" src="{{ (item.name + ' icon/70/70') | bingImageUrl }}">
           <span>{{ item.name }}</span>
           <span class="flag">{{ item.text }}</span>
         </a>
