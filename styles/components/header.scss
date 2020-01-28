@@ -23,17 +23,13 @@ header#masthead {
     }
 
     &:hover span {
-      border-bottom-color: #aaa;
+      border-bottom-color: #ccc;
     }
 
     &.active span {
+      border-bottom-color: #333;
       font-weight: bold;
-      border-bottom-color: blue;
     }
-    // &:focus span {
-    //   box-shadow: 0 0 0 0.2rem $focusRingColor;
-    //   border-radius: 0.2rem;
-    // }
   }
 
   #more {
@@ -88,6 +84,12 @@ header#masthead #more:target {
   }
 }
 
+.index header#masthead nav a.active span {
+  border-bottom-color: $colorHome;
+}
 .projects .intro {
-  background-color: lighten($color: red, $amount: 47);
+  background-color: lighten($color: $colorProjects, $amount: 47);
+}
+.projects header#masthead nav a.active span {
+  border-bottom-color: $colorProjects;
 }
