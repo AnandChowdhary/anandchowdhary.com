@@ -113,13 +113,7 @@ module.exports = eleventyConfig => {
   );
 
   eleventyConfig.addNunjucksAsyncShortcode("citiesArchive", async value => {
-    let result = `
-          <nav class="breadcrumbs">
-            <a href="/life/">Life</a>
-            <a href="/life/travel/">Travel</a>
-            <a href="/life/travel/${value}/">${value}</a>
-          </nav>
-          ${await getCityArchivePageData(allItems, value)}`;
+    let result = `${await getCityArchivePageData(allItems, value)}`;
     return result;
   });
 

@@ -142,12 +142,21 @@ const getCityArchivePageData = async (allItems, city) => {
   } catch (error) {}
   if (image === "default") image = getBingImageUrl(`${city}/100/100`);
   let result = `
-    <div class="content">
-      <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
-    city
-  )}</span></h1>
-      ${getCityCountry(city)}
+    <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/travel/">Travel</a>
+        <a href="/life/travel/${city}/">${titleify(city)}</a>
+      </nav>
+      <div class="content">
+          <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
+        city
+      )}</span></h1>
+          ${getCityCountry(city)}
+        </div>
     </div>
+    </header><div class="container-outer">
   `;
   let images = "";
   try {
@@ -170,14 +179,14 @@ const getCityArchivePageData = async (allItems, city) => {
   if (images)
     result += `
     <h2>Highlights</h2>
-    <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p>
-    <div class="horizontal-scroller container-large"><div class="highlighted-stories">${images}</div></div>
+    <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p></div>
+    <div class="horizontal-scroller container"><div class="highlighted-stories">${images}</div></div><div class="container-outer">
   `;
   result += `
     ${await getEventsSummaryCity(allItems, city)}
     ${await getProjectsSummaryCity(allItems, city)}
   `;
-  return result;
+  return `${result}</div>`;
 };
 
 const getProjectNavbar = value =>
