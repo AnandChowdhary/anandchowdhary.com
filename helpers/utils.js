@@ -16,4 +16,9 @@ const titleify = value =>
     .replace(/ Of/g, " of")
     .replace("Sf", "SF");
 
-module.exports = { trim, titleify };
+const getDomainFromUrl = value => value
+        .replace(/https?:\/\//, "")
+        .replace("www.", "")
+        .split("/")[0];
+
+module.exports = { trim, titleify, getDomainFromUrl };

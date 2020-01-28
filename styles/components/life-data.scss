@@ -42,6 +42,9 @@ main#content .link-list {
   li {
     margin-bottom: 0;
   }
+  .url-icon {
+    margin-right: 1rem;
+  }
   a {
     display: block;
     padding: 1rem;
@@ -76,4 +79,8 @@ main#content .link-list {
     vertical-align: middle;
     margin-right: 1rem;
   }
+}
+
+.ff {
+  flex: 1 0 0;
 }

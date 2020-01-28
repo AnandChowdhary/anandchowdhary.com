@@ -1,6 +1,6 @@
 const { join } = require("path");
 const { readJSON } = require("fs-extra");
-const { trim, titleify } = require("./helpers/utils");
+const { trim, titleify, getDomainFromUrl } = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
 const { api } = require("./helpers/api");
 const { getEventCard } = require("./helpers/cards");
@@ -17,6 +17,7 @@ const {
 module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter("domainIcon", getDomainIcon);
   eleventyConfig.addNunjucksFilter("bingImageUrl", getBingImageUrl);
+  eleventyConfig.addNunjucksFilter("domainFromUrl", getDomainFromUrl);
   eleventyConfig.addNunjucksFilter("titleify", titleify);
   eleventyConfig.addNunjucksFilter("classify", value =>
     (value || "")
@@ -27,10 +28,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter(
     "iconify",
     value =>
-      `<span class="url-icon" style="background-image: url('${getDomainIcon(value
-        .replace(/https?:\/\//, "")
-        .replace("www.", "")
-        .split("/")[0])}')"></span>`
+      `<span class="url-icon" style="background-image: url('${getDomainIcon(getDomainFromUrl(value))}')"></span>`
   );
   eleventyConfig.addNunjucksFilter(
     "datetime",
