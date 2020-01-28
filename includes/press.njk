@@ -1,30 +1,36 @@
 {% include "head.njk" %}
 <main id="content">
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-  <h2>Lists</h2>
-  <section class="link-list press-list">
-    {% for item in press.lists %}
-      {% include "press-item.njk" %}
-    {% endfor %}
-  </section>
-  <h2>Podcasts and TV</h2>
-  <section class="link-list press-list">
-    {% for item in press["podcasts-tv"] %}
-      {% include "press-item.njk" %}
-    {% endfor %}
-  </section>
-  <h2>Interviews</h2>
-  <section class="link-list press-list">
-    {% for item in press.interviews %}
-      {% include "press-item.njk" %}
-    {% endfor %}
-  </section>
-  <h2>Features</h2>
-  <section class="link-list press-list">
-    {% for item in press.features %}
-      {% include "press-item.njk" %}
-    {% endfor %}
-  </section>
+  <header class="intro s">
+    <div>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    <div>
+  </header>
+  <div class="container-outer">
+    <h2>Lists</h2>
+    <section class="link-list press-list">
+      {% for item in press.lists %}
+        {% include "press-item.njk" %}
+      {% endfor %}
+    </section>
+    <h2>Podcasts and TV</h2>
+    <section class="link-list press-list">
+      {% for item in press["podcasts-tv"] %}
+        {% include "press-item.njk" %}
+      {% endfor %}
+    </section>
+    <h2>Interviews</h2>
+    <section class="link-list press-list">
+      {% for item in press.interviews %}
+        {% include "press-item.njk" %}
+      {% endfor %}
+    </section>
+    <h2>Features</h2>
+    <section class="link-list press-list">
+      {% for item in press.features %}
+        {% include "press-item.njk" %}
+      {% endfor %}
+    </section>
+  </div>
 </main>
 {% include "footer.njk" %}
