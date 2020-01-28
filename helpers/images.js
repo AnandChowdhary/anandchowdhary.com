@@ -10,7 +10,7 @@ const getBingImageUrl = args => {
   const width = argArr.length >= 2 ? argArr[1] : 210;
   const height = argArr.length >= 3 ? argArr[2] : 210;
 
-  const DIR = join(__dirname, "..", ".cache", "bing-images");
+  const DIR = join(__dirname, "..", ".cache", "images", "bing");
   ensureDirSync(DIR);
   const SLUG = `${slugify(query)}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);

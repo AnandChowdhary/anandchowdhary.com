@@ -7,6 +7,7 @@
   "scripts": {
     "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && yarn build && node helpers/sitemap.js",
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
+    "copy-cache-images": "mkdirp public/images/cache && cp -r .cache/images public/images/cache",
     "build": "node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && yarn copy-highlights",
     "serve": "npm run gulp && eleventy --serve & gulp watch",
     "gulp": "gulp"
