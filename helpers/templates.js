@@ -200,8 +200,8 @@ const getProjectNavbar = value =>
   </nav>`;
 
 const getProjectsSelector = value =>
-  `<select class="filter-select" onchange="window.location.href = this.value">
-    <option${value === "all" ? ` selected` : ""} value="/projects/">All</option>
+  `<select class="filter-select serif" onchange="window.location.href = this.value">
+    <option${value === "all" ? ` selected` : ""} value="/projects/">All projects</option>
     <option${value === "Web" ? ` selected` : ""} value="/projects/web">Web</option>
     <option${value === "App" ? ` selected` : ""} value="/projects/app">Apps</option>
     <option${
@@ -222,7 +222,7 @@ const getWorkArchive = async (allItems, category, value) => {
     <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(category, value, "name", true)) ||
     titleify(value)}</a>
     </nav>`;
-  else if (["oswald-labs", "open-source"].includes(value)) result += `<nav class="breadcrumbs">
+  else if (["oswald-labs", "Open source"].includes(value)) result += `<nav class="breadcrumbs">
   <a href="/projects/">Projects</a><a href="/projects/${category}/">${TITLE}</a>
   </nav>`;
 
@@ -235,7 +235,7 @@ const getWorkArchive = async (allItems, category, value) => {
       true
     )} ${(await getDescription(category, value.toLowerCase(), "name", true)) ||
       titleify(value)}</h1>`;
-  } else if (category === "work" && !["oswald-labs", "open-source"].includes(value)) {
+  } else if (category === "work" && !["oswald-labs", "Open source"].includes(value)) {
     result += `<h1 class="sr-only">${TITLE}</h1>`;
     result += getProjectsSelector(value);
     result += getProjectNavbar(value);

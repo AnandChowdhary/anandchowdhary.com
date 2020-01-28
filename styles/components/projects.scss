@@ -250,6 +250,10 @@ main#content section.projects {
 }
 
 .filter-select {
-  font: inherit;
-  font-size: 110%;
+  font-size: 225%;
+  appearance: none;
+  padding: 1rem;
+  background: none;
+  border: none;
+  margin-bottom: 1rem;
 }
