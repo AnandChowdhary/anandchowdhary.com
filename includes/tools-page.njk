@@ -17,7 +17,7 @@ pagination:
     {% for item in pagination %}
       <article>
         <a href="/projects/tools/{{ item | slug }}">
-          <img class="colla-pic" alt="" src="https://tse2.mm.bing.net/th?q={{ item | urlencode }}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate">
+          <img class="colla-pic" alt="" src="{{ item.name + " icon/70/70" | bingImageUrl }}">
           <span>{{ item }}</span>
         </a>
       </article>

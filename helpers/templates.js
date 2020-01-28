@@ -8,7 +8,8 @@ const {
 } = require("fs-extra");
 const { join } = require("path");
 const { trim, titleify } = require("./utils");
-const { getCityCountry } = require("./cities");
+const { getCityCountry } = require("./cities")
+const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
 
@@ -132,9 +133,7 @@ const getCollaboratorSocialProfiles = async name => {
 };
 
 const getCityArchivePageData = async (allItems, city) => {
-  let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
-    city
-  )}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
+  let image = getBingImageUrl(city, 100, 100);
   try {
     const files = await readFile(
       join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
@@ -237,7 +236,7 @@ const getWorkArchive = async (allItems, category, value) => {
     try {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
     } catch (error) {}
-    image = image || `https://tse2.mm.bing.net/th?q=${encodeURIComponent(value)}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
+    image = image || getBingImageUrl(value, 70, 70);
     result += `<img class="colla-pic" alt="" src="${image}">`;
   }
 
@@ -308,9 +307,7 @@ const getTravelTime = async (allItems, city) => {
 };
 
 const getTravelPageItem = async (allItems, city) => {
-  let image = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
-    city
-  )}&w=100&h=100&p=0&dpr=2&adlt=moderate&c=1`;
+  let image = getBingImageUrl(city, 100, 100);
   try {
     const files = await readFile(
       join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
