@@ -22,7 +22,11 @@
   <section class="link-list languages-list">
     {% for item in programming.languages %}
       <article>
-        <a href="#">
+        {% if item.name in stackTags %}
+        <a href="/projects/stack/{{ item.name | slug }}" class="a">
+        {% else %}
+        <span class="a">
+        {% endif %}
           <div class="f">
             <img alt="" src="{{ (item.name + ' icon/70/70') | bingImageUrl }}">
             <div class="f ff">
@@ -30,7 +34,11 @@
               <div>{{ item.text }}</div>
             </div>
           </div>
+        {% if item.name in stackTags %}
         </a>
+        {% else %}
+        </span>
+        {% endif %}
       </article>
     {% endfor %}
   </section>

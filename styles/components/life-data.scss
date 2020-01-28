@@ -45,7 +45,8 @@ main#content .link-list {
   .url-icon {
     margin-right: 1rem;
   }
-  a {
+  a,
+  .a {
     display: block;
     padding: 1rem;
     text-decoration: none;
@@ -65,11 +66,13 @@ main#content .link-list {
       display: none;
     }
   }
-  li:first-child a {
+  li:first-child a,
+  li:first-child .a {
     border-radius: 0.2rem 0.2rem 0 0;
     &:focus { border-radius: 0.2rem; }
   }
-  li:last-child a {
+  li:last-child a,
+  li:last-child .a {
     border-bottom: none;
     border-radius: 0 0 0.2rem 0.2rem;
     &:focus { border-radius: 0.2rem; }
