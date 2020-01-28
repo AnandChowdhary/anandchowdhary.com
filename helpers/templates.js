@@ -237,7 +237,7 @@ const getWorkArchive = async (allItems, category, value) => {
     try {
       image = await getDescription(category, value.toLowerCase(), "icon", true);
     } catch (error) {}
-    image = image || getBingImageUrl(`${value}/70/70`);
+    image = image || getBingImageUrl(`${value} icon/70/70`);
     result += `<img class="colla-pic" alt="" src="${image}">`;
   }
 
