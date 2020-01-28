@@ -1,24 +1,30 @@
 {% include "head.njk" %}
 <main id="content">
-  <nav class="breadcrumbs">
-    <a href="/life/">Life</a>
-    <a href="/life/work/">Work</a>
-  </nav>
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-  <ul class="link-list life-categories">
-    <li>
-      <a href="/life/work/programming/">
-        <span class="emoji" aria-hidden="true">💻</span>
-        <span>Programming</span>
-      </a>
-    </li>
-    <li>
-      <a href="/life/work/emails/">
-        <span class="emoji" aria-hidden="true">📨</span>
-        <span>Emails</span>
-      </a>
-    </li>
-  </ul>
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/work/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </header>
+  <div class="container-outer">
+    <ul class="link-list life-categories">
+      <li>
+        <a href="/life/work/programming/">
+          <span class="emoji" aria-hidden="true">💻</span>
+          <span>Programming</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/work/emails/">
+          <span class="emoji" aria-hidden="true">📨</span>
+          <span>Emails</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </main>
 {% include "footer.njk" %}

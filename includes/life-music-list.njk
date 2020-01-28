@@ -7,38 +7,44 @@ pagination:
 
 {% include "head.njk" %}
 <main id="content">
-  <nav class="breadcrumbs">
-    <a href="/life/">Life</a>
-    <a href="/life/listening/">Listening</a>
-    <a href="/life/listening/music/">Music</a>
-  </nav>
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-  <p>This data was last updated {{ lifeDataLastUpdated["top-artists.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['top-artists.yml'].html_url }}">{{ lifeDataLastUpdated["top-artists.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/top-artists.yml">top-artists.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/spotify.ts">Spotify</a> on GitHub.</p>
-  <section class="link-list music-list">
-    {% for item in pagination %}
-      <article>
-        <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
-          <div class="f">
-            <img alt="" src="{{ item.images[1].url }}">
-            <div class="f ff">
-              <div>{{ item.name }}</div>
-              <div>{{ item.genres[0] | capitalize }}</div>
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/listening/">Listening</a>
+        <a href="/life/listening/music/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+      <p>This data was last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a> on GitHub.</p>
+    </div>
+  </header>
+  <div class="container-outer">
+    <section class="link-list music-list">
+      {% for item in pagination %}
+        <article>
+          <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
+            <div class="f">
+              <img alt="" src="{{ item.images[1].url }}">
+              <div class="f ff">
+                <div>{{ item.name }}</div>
+                <div>{{ item.genres[0] | capitalize }}</div>
+              </div>
             </div>
-          </div>
-        </a>
-      </article>
-    {% endfor %}
-  </section>
-  {% if pagination.pageLinks.length > 1 %}
-  <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
-    {% if pagination.previousPageLink %}
-      <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+          </a>
+        </article>
+      {% endfor %}
+    </section>
+    {% if pagination.pageLinks.length > 1 %}
+    <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
+      {% if pagination.previousPageLink %}
+        <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+      {% endif %}
+      {% if pagination.nextPageLink %}
+        <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
+      {% endif %}
+    </nav>
     {% endif %}
-    {% if pagination.nextPageLink %}
-      <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
-    {% endif %}
-  </nav>
-  {% endif %}
+  </div>
 </main>
 {% include "footer.njk" %}

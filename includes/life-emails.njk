@@ -1,39 +1,46 @@
 {% include "head.njk" %}
+{% include "head.njk" %}
 <main id="content">
-  <nav class="breadcrumbs">
-    <a href="/life/">Life</a>
-    <a href="/life/work/">Work</a>
-    <a href="/life/work/emails/">Emails</a>
-  </nav>
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
-  <p>This data was last updated {{ lifeDataLastUpdated["emails.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['emails.yml'].html_url }}">{{ lifeDataLastUpdated["emails.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/emails.yml">emails.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/gmail.ts">Gmail</a> on GitHub.</p>
-  <div class="data-summary">
+  <header class="intro s">
     <div>
-      <div>{{ emails.sentLastWeek }}</div>
-      <div>Sent this week</div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/work/">Work</a>
+        <a href="/life/work/emails/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+      <p>This data was last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a> on GitHub.</p>
     </div>
-    <div>
-      <div>{{ emails.receivedLastWeek }}</div>
-      <div>Received this week</div>
+  </header>
+  <div class="container-outer">
+    <div class="data-summary">
+      <div>
+        <div>{{ emails.sentLastWeek }}</div>
+        <div>Sent this week</div>
+      </div>
+      <div>
+        <div>{{ emails.receivedLastWeek }}</div>
+        <div>Received this week</div>
+      </div>
+      <div>
+        <div>{{ ((emails.sentLastWeek / emails.receivedLastWeek) * 100) | round(2) }}%</div>
+        <div>Reply ratio</div>
+      </div>
     </div>
-    <div>
-      <div>{{ ((emails.sentLastWeek / emails.receivedLastWeek) * 100) | round(2) }}%</div>
-      <div>Reply ratio</div>
-    </div>
-  </div>
-  <div class="data-summary">
-    <div>
-      <div>{{ emails.sentToday }}</div>
-      <div>Sent today</div>
-    </div>
-    <div>
-      <div>{{ emails.receivedToday }}</div>
-      <div>Received today</div>
-    </div>
-    <div>
-      <div>{{ ((emails.sentToday / emails.receivedToday) * 100) | round(2) }}%</div>
-      <div>Reply ratio</div>
+    <div class="data-summary">
+      <div>
+        <div>{{ emails.sentToday }}</div>
+        <div>Sent today</div>
+      </div>
+      <div>
+        <div>{{ emails.receivedToday }}</div>
+        <div>Received today</div>
+      </div>
+      <div>
+        <div>{{ ((emails.sentToday / emails.receivedToday) * 100) | round(2) }}%</div>
+        <div>Reply ratio</div>
+      </div>
     </div>
   </div>
 </main>
