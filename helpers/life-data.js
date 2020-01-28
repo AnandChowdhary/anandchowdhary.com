@@ -1,4 +1,4 @@
-const { readFile, writeJson } = require("fs-extra");
+const { readFile, writeJson, exists } = require("fs-extra");
 const { join } = require("path");
 const { safeLoad } = require("js-yaml");
 const axios = require("axios");
@@ -37,6 +37,7 @@ const gmail = async () => {
 
 const lastUpdated = async () => {
   const lifeDataLastUpdated = {};
+  if (await exists(join(CONTENT_DATA_DIR, "lifeDataLastUpdated.json"))) return;
   for await (const file of [
     "development.yml",
     "podcasts.yml",
