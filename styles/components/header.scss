@@ -17,46 +17,23 @@ header#masthead {
     padding: 1.5rem 1rem;
     transition: 0.3s;
 
-    &.active {
-      // font-weight: bold;
-      box-shadow: inset 0 0.25rem 0;
-      &[href="/"] {
-        color: $colorHome;
-      }
-      &[href="/projects/"] {
-        color: $colorProjects;
-      }
-      &[href="/blog/"] {
-        color: $colorBlog;
-      }
-      &[href="/events/"] {
-        color: $colorEvents;
-      }
-    }
-
-    &:hover, &:focus {
-      box-shadow: inset 0 0.25rem 0 #aaa;
-      &[href="/"] {
-        box-shadow: inset 0 0.25rem 0 $colorHome;
-      }
-      &[href="/projects/"] {
-        box-shadow: inset 0 0.25rem 0 $colorProjects;
-      }
-      &[href="/blog/"] {
-        box-shadow: inset 0 0.25rem 0 $colorBlog;
-      }
-      &[href="/events/"] {
-        box-shadow: inset 0 0.25rem 0 $colorEvents;
-      }
-    }
-
     span {
       transition: 0.3s;
+      border-bottom: 0.2rem solid transparent;
     }
-    &:focus span {
-      box-shadow: 0 0 0 0.2rem $focusRingColor;
-      border-radius: 0.2rem;
+
+    &:hover span {
+      border-bottom-color: #aaa;
     }
+
+    &.active span {
+      font-weight: bold;
+      border-bottom-color: blue;
+    }
+    // &:focus span {
+    //   box-shadow: 0 0 0 0.2rem $focusRingColor;
+    //   border-radius: 0.2rem;
+    // }
   }
 
   #more {
