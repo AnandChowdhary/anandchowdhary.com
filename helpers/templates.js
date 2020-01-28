@@ -212,7 +212,7 @@ const getProjectsSelector = value =>
   </select>`;
 
 const getWorkArchive = async (allItems, category, value) => {
-  let result = `<div class="container-large small-p">`
+  let result = `<header class="intro"><div>`
 
   const TITLE = (await getDescription(category, value.toLowerCase(), "name", true)) || titleify(value);
 
@@ -256,9 +256,11 @@ const getWorkArchive = async (allItems, category, value) => {
     result += await getWikiSummary(value);
 
   if (category === "collaborators")
-    result += `${await getCollaboratorSocialProfiles(value)}
-      <p>Projects we worked on together include:</p>`;
+    result += `${await getCollaboratorSocialProfiles(value)}`;
   
+  result += `</div></header><div class="container-outer">`
+  
+  if (category === "collaborators") result += `<p>Projects we worked on together include:</p>`;
   if (category === "tools") result += `<p>Projects built using ${TITLE}:</p>`;
   if (category === "stack") result += `<p>Projects built with ${TITLE}:</p>`;
 

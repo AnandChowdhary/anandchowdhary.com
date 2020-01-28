@@ -1,5 +1,10 @@
 @import "../variables";
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .item-icon {
   width: 5rem;
   height: 5rem;

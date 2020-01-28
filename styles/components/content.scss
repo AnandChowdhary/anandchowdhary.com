@@ -1,6 +1,6 @@
 @import "../variables";
 
-main {
+.container-outer {
   max-width: 1100px;
   margin: 5rem auto 7.5rem auto;
 
@@ -90,6 +90,10 @@ main {
     text-align: center;
   }
 }
+
+// header + .container-outer {
+//   margin-top: 0;
+// }
 
 figure {
   margin: 0;
