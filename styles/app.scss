@@ -81,11 +81,15 @@ footer#colophon {
   display: inline-block;
   background-color: #aaa;
   background-position: center center;
+  margin-right: 1rem;
   vertical-align: middle;
   line-height: 1;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 100%;
+  &.l {
+    
+  }
 }
 
 .blog .img-heading img {
