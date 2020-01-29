@@ -9,7 +9,7 @@
       </nav>
       <h1>{{ title }}</h1>
       {{ content | safe }}
-      <p>This data was last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a> on GitHub.</p>
+      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a> on GitHub.</p>
     </div>
   </header>
   <div class="container-outer">
