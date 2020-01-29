@@ -14,7 +14,7 @@
         <h2>{{ video.name }}</h2>
         <p>{{ video.copyright }}</p>
         <div>
-          <span>{{ video.url | iconify | safe }}</span>
+          {{ video.url | iconify | safe }}
           <span>{{ video.city | place }}</span>
           <span>{{ video.date | datetime | safe }}</span>
           <span>{{ video.duration }}</span>

@@ -226,13 +226,22 @@ section.projects {
 
 .filter-select {
   font-size: 225%;
-  appearance: none;
-  padding: 0;
-  background: none;
+  padding: 0 2.4rem 0 0;
   border: none;
   margin-bottom: 1rem;
   margin-left: -0.25rem;
   line-height: 1;
+  appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 15L0 0h30z' fill='%23888' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 1.5rem 0.75rem;
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 .projects header.intro p {
