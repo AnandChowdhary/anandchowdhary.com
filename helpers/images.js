@@ -24,7 +24,9 @@ const getBingImageUrl = args => {
     return URL;
   
   try {
-    download(BING, DIR, { filename: SLUG });
+    download(BING, DIR, { filename: SLUG })
+    .then(() => {})
+    .catch(() => console.log("Unable to download image", query));
     return URL;
   } catch (error) {}
   return BING;
@@ -44,7 +46,9 @@ const getDomainIcon = domain => {
     return URL;
   
   try {
-    download(CLEARBIT, DIR, { filename: SLUG });
+    download(CLEARBIT, DIR, { filename: SLUG })
+      .then(() => {})
+      .catch(() => console.log("Unable to download image", domain));;
     return URL;
   } catch (error) {}
   return CLEARBIT;

@@ -31,7 +31,9 @@ const getWikiSummary = async value => {
     await mkdirp(join(cachePath, ".."));
     await writeFile(cachePath, data);
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log("Couldn't get Wikipedia summary", value);
+  }
   return "";
 };
 
