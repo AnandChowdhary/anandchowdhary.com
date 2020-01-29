@@ -4,7 +4,7 @@
     "date": "2019-10-28",
     "city": "sf-bay-area",
     "url": "https://www.youtube.com/watch?v=zSX-yDAjUXk",
-    "img": "https://img.youtube.com/vi/zSX-yDAjUXk/mqdefault.jpg",
+    "img": "/images/videos/oneup.png",
     "copyright": "Christian Yang / OneUp"
   },
   {
@@ -12,6 +12,7 @@
     "date": "2019-09-28",
     "city": "sf-bay-area",
     "url": "https://www.facebook.com/AnandChowdhary/videos/2896608857033963/",
+    "img": "/images/videos/wwcode.png",
     "copyright": "Anand Chowdhary"
   },
   {
@@ -19,6 +20,7 @@
     "date": "2019-06-20",
     "city": "enschede",
     "url": "https://www.rtvoost.nl/media/137176/De-beste-ondernemers-van-de-UT",
+    "img": "/images/videos/rtvoost.png",
     "copyright": "RTV Oost"
   },
   {
@@ -26,7 +28,7 @@
     "date": "2018-12-01",
     "city": "heerlen",
     "url": "https://www.youtube.com/watch?v=223RTMXXtxc",
-    "img": "https://img.youtube.com/vi/223RTMXXtxc/mqdefault.jpg",
+    "img": "/images/videos/aristotle.png",
     "copyright": "Oswald Labs"
   },
   {
@@ -34,6 +36,7 @@
     "date": "2018-02-10",
     "city": "enschede",
     "url": "https://www.facebook.com/UT.india/videos/vb.131267240259912/1537384432981512/?type=2&theater",
+    "img": "/images/videos/ut-india.png",
     "copyright": "University of Twente"
   },
   {
@@ -41,7 +44,7 @@
     "date": "2017-02-02",
     "city": "bangalore",
     "url": "https://www.youtube.com/watch?v=wxbEd0lo4vY",
-    "img": "https://img.youtube.com/vi/wxbEd0lo4vY/mqdefault.jpg",
+    "img": "/images/videos/startup-india-rocks.png",
     "copyright": "Startup India Rocks!"
   }
 ]
