@@ -5,7 +5,8 @@
     "city": "sf-bay-area",
     "url": "https://www.youtube.com/watch?v=zSX-yDAjUXk",
     "img": "/images/videos/oneup.png",
-    "copyright": "Christian Yang / OneUp"
+    "copyright": "Christian Yang / OneUp",
+    "duration": "0:59"
   },
   {
     "name": "Women Who Code Cloud 2019",
@@ -13,7 +14,8 @@
     "city": "sf-bay-area",
     "url": "https://www.facebook.com/AnandChowdhary/videos/2896608857033963/",
     "img": "/images/videos/wwcode.png",
-    "copyright": "Anand Chowdhary"
+    "copyright": "Anand Chowdhary",
+    "duration": "37:57"
   },
   {
     "name": "The best entrepreneurs in the UT (De beste ondernemers van de UT)",
@@ -21,7 +23,8 @@
     "city": "enschede",
     "url": "https://www.rtvoost.nl/media/137176/De-beste-ondernemers-van-de-UT",
     "img": "/images/videos/rtvoost.png",
-    "copyright": "RTV Oost"
+    "copyright": "RTV Oost",
+    "duration": "1:47"
   },
   {
     "name": "Aristotle by Oswald Labs",
@@ -29,7 +32,8 @@
     "city": "heerlen",
     "url": "https://www.youtube.com/watch?v=223RTMXXtxc",
     "img": "/images/videos/aristotle.png",
-    "copyright": "Oswald Labs"
+    "copyright": "Oswald Labs",
+    "duration": "5:24"
   },
   {
     "name": "In conversation with Anand Chowdhury",
@@ -37,7 +41,8 @@
     "city": "enschede",
     "url": "https://www.facebook.com/UT.india/videos/vb.131267240259912/1537384432981512/?type=2&theater",
     "img": "/images/videos/ut-india.png",
-    "copyright": "University of Twente"
+    "copyright": "University of Twente",
+    "duration": "29:58"
   },
   {
     "name": "Interview with Anand Chowdhary, CEO, Oswald Foundation",

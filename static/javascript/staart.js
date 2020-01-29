@@ -75,7 +75,7 @@ for (let i = 0; allLinks.length > i; i++) {
     link.classList.add("external-link");
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener noreferrer");
-    link.innerHTML = link.innerHTML + "<span> (opens in new window)</span>";
+    link.innerHTML = link.innerHTML + "<span class='sr-only'> (opens in new window)</span>";
   }
 }
 

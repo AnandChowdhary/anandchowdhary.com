@@ -139,8 +139,8 @@
     &:first-child {
       margin-top: 4rem;
     }
-    span:nth-child(2) {
-      margin: 0 1rem;
+    span + span {
+      margin-left: 1rem;
     }
     h2 {
       margin-bottom: 1rem;

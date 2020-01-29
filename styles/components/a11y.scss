@@ -23,16 +23,3 @@
   margin-right: 0.1em;
   opacity: 0.5;
 }
-.external-link span:last-child, .sr-only {
-  position: fixed;
-  z-index: -1;
-  left: -10%;
-  top: -10%;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
