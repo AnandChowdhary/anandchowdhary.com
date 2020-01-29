@@ -1,6 +1,6 @@
 ---
 title: Music
-layout: life-music-list.njk
+layout: life-listening-music.njk
 ---
 
-Music archive is here.
+Music is the best.

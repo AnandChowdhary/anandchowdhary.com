@@ -1,0 +1,31 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/listening/">Listening</a>
+        <a href="/life/listening/music/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </header>
+  <div class="container-outer">
+    <ul class="link-list life-categories">
+      <li>
+        <a href="/life/listening/music/artists/">
+          <span class="emoji" aria-hidden="true">🎙️</span>
+          <span>Artists</span>
+        </a>
+      </li>
+      <li>
+        <a href="/life/listening/music/songs/">
+          <span class="emoji" aria-hidden="true">🎧</span>
+          <span>Songs</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</main>
+{% include "footer.njk" %}
