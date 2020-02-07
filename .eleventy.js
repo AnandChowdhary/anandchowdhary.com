@@ -68,6 +68,16 @@ module.exports = eleventyConfig => {
       })}</time>`
   );
   eleventyConfig.addNunjucksFilter(
+    "datetimemonth",
+    value =>
+      `<time datetime="${new Date(value).toISOString()}">${new Date(
+        value
+      ).toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric"
+      })}</time>`
+  );
+  eleventyConfig.addNunjucksFilter(
     "datetimetime",
     value =>
       `<time class="time-ago" datetime="${new Date(
