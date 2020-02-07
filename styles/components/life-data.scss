@@ -103,6 +103,14 @@
     vertical-align: middle;
     margin-right: 1.5rem;
   }
+  &.tl img,
+  &.tl .img {
+    background-position: top left;
+  }
+  &.b img,
+  &.b .img {
+    border: 1px solid #eee;
+  }
   &.nr img,
   &.nr .img {
     border-radius: 0.2rem;

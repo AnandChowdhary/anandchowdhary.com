@@ -35,12 +35,19 @@
           <dd>{{ tag }}</dd>
           {% endfor %}
         </span>{% endif %}
+        {% if domain %}<span>
+          <dt>Domain</dt>
+          <dd>{{ domain }}</dd>
+        </span>{% endif %}
       </dl>
     </div>
     <a class="hide-project-details" href="#">Hide version details</a>
     </div>
   </header>
   <div class="container-outer">
+    <div class="image shadow">
+      <img alt="Screenshot of {{ title }}" src="/images/versions/{{ title | int }}.png">
+    </div>
     {{ content | safe }}
     {% if alias %}
     <p><a href="{{ alias | url }}">{{ alias | iconify | safe }}Continue reading on {{ publisher }}</a></p>
