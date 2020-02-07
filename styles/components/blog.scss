@@ -59,7 +59,7 @@ code {
   margin: 0 0.1rem;
 }
 
-pre {
+pre, .container-outer > pre {
   overflow-x: auto;
   padding: 1rem;
   margin: 1.5rem auto;
