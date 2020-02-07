@@ -166,12 +166,13 @@ function ready() {
     inputs[i].addEventListener("change", () => {
       var value = "categoryOther";
       for (var j = 0; j < inputs.length; j++)
-        if (inputs[j].checked)
-          value = inputs[j].getAttribute("id");
+        if (inputs[j].checked) value = inputs[j].getAttribute("id");
       var responses = document.querySelectorAll(".response");
       for (var i = 0; i < responses.length; i++)
         responses[i].setAttribute("hidden", "hidden");
-      document.querySelector(".response.response-" + value).removeAttribute("hidden", "hidden");
+      document
+        .querySelector(".response.response-" + value)
+        .removeAttribute("hidden", "hidden");
     });
   }
 

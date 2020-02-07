@@ -29,7 +29,9 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter(
     "iconify",
     value =>
-      `<span class="url-icon" style="background-image: url('${getDomainIcon(getDomainFromUrl(value))}')"></span>`
+      `<span class="url-icon" style="background-image: url('${getDomainIcon(
+        getDomainFromUrl(value)
+      )}')"></span>`
   );
   eleventyConfig.addNunjucksFilter(
     "datetime",
@@ -45,9 +47,9 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksFilter(
     "datetimetime",
     value =>
-      `<time class="time-ago" datetime="${new Date(value).toISOString()}">on ${new Date(
+      `<time class="time-ago" datetime="${new Date(
         value
-      ).toLocaleDateString("en-US", {
+      ).toISOString()}">on ${new Date(value).toLocaleDateString("en-US", {
         timeZone: "UTC",
         day: "numeric",
         month: "short",
@@ -69,7 +71,9 @@ module.exports = eleventyConfig => {
   });
 
   eleventyConfig.addCollection("websiteVersions", function(collection) {
-    return collection.getAll().filter(i => i.filePathStem.startsWith("/about/versions"));
+    return collection
+      .getAll()
+      .filter(i => i.filePathStem.startsWith("/about/versions"));
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("workTagsArchive", async value =>
@@ -124,54 +128,45 @@ module.exports = eleventyConfig => {
     }
   );
 
-  eleventyConfig.addNunjucksShortcode(
-    "getProjectsSelector",
-    value => {
-      try {
-        return getProjectsSelector(value);
-      } catch (error) {
-        return "";
-      }
+  eleventyConfig.addNunjucksShortcode("getProjectsSelector", value => {
+    try {
+      return getProjectsSelector(value);
+    } catch (error) {
+      return "";
     }
-  );
+  });
 
-  eleventyConfig.addNunjucksShortcode(
-    "getProjectNavbar",
-    value => {
-      try {
-        return getProjectNavbar(value);
-      } catch (error) {
-        return "";
-      }
+  eleventyConfig.addNunjucksShortcode("getProjectNavbar", value => {
+    try {
+      return getProjectNavbar(value);
+    } catch (error) {
+      return "";
     }
-  );
-  
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "collaboratorName",
-    async value => {
-      try {
-        let result = "";
-        if (await getDescription(
+  });
+
+  eleventyConfig.addNunjucksAsyncShortcode("collaboratorName", async value => {
+    try {
+      let result = "";
+      if (await getDescription("collaborators", value, "flag", true))
+        result += `<span class="flag">${await getDescription(
           "collaborators",
           value,
           "flag",
           true
-        ))
-          result += `<span class="flag">${await getDescription(
-            "collaborators",
-            value,
-            "flag",
-            true
-          )}</span>`;
-        if (await getDescription("collaborators", value, "name", true))
-          result += ` <span>${await getDescription("collaborators", value, "name", true)}</span>`;
-        if (result.trim()) return result;
-        return titleify(value);
-      } catch (error) {
-        return titleify(value);
-      }
+        )}</span>`;
+      if (await getDescription("collaborators", value, "name", true))
+        result += ` <span>${await getDescription(
+          "collaborators",
+          value,
+          "name",
+          true
+        )}</span>`;
+      if (result.trim()) return result;
+      return titleify(value);
+    } catch (error) {
+      return titleify(value);
     }
-  );
+  });
 
   eleventyConfig.addNunjucksAsyncShortcode("travelPageItem", async value => {
     return await getTravelPageItem(allItems, value);

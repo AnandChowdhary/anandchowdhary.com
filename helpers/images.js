@@ -17,20 +17,21 @@ const getBingImageUrl = args => {
     remove: /[*+~.()'"!:@]/g
   })}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);
-  const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(query)}&w=${width}&h=${height}&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
+  const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
+    query
+  )}&w=${width}&h=${height}&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
   const URL = `/images/cache/thumbnails/${SLUG}`;
 
-  if (existsSync(IMAGE))
-    return URL;
-  
+  if (existsSync(IMAGE)) return URL;
+
   try {
     download(BING, DIR, { filename: SLUG })
-    .then(() => {})
-    .catch(() => console.log("Unable to download image", query));
+      .then(() => {})
+      .catch(() => console.log("Unable to download image", query));
     return URL;
   } catch (error) {}
   return BING;
-}
+};
 
 const getDomainIcon = domain => {
   const DIR = join(__dirname, "..", ".cache", "images", "domains");
@@ -42,16 +43,15 @@ const getDomainIcon = domain => {
   const CLEARBIT = `https://logo.clearbit.com/${domain}`;
   const URL = `/images/cache/domains/${SLUG}`;
 
-  if (existsSync(IMAGE))
-    return URL;
-  
+  if (existsSync(IMAGE)) return URL;
+
   try {
     download(CLEARBIT, DIR, { filename: SLUG })
       .then(() => {})
-      .catch(() => console.log("Unable to download image", domain));;
+      .catch(() => console.log("Unable to download image", domain));
     return URL;
   } catch (error) {}
   return CLEARBIT;
-}
+};
 
 module.exports = { getBingImageUrl, getDomainIcon };

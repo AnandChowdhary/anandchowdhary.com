@@ -8,7 +8,7 @@ const {
 } = require("fs-extra");
 const { join } = require("path");
 const { trim, titleify } = require("./utils");
-const { getCityCountry } = require("./cities")
+const { getCityCountry } = require("./cities");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
@@ -103,10 +103,14 @@ const getCollaboratorProfilePictureUrl = async user => {
       join(__dirname, "..", "content", "_data", "descriptions.json")
     );
     const profiles = data.collaborators[user];
-    if (profiles.github) return `<img alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
-    if (profiles.twitter) return `<img alt="" src="https://unavatar.now.sh/twitter/${profiles.twitter}">`;
-    if (profiles.instagram) return `<img alt="" src="https://unavatar.now.sh/instagram/${profiles.instagram}">`;
-    if (profiles.facebook) return `<img alt="" src="https://unavatar.now.sh/facebook/${profiles.facebook}">`;
+    if (profiles.github)
+      return `<img alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
+    if (profiles.twitter)
+      return `<img alt="" src="https://unavatar.now.sh/twitter/${profiles.twitter}">`;
+    if (profiles.instagram)
+      return `<img alt="" src="https://unavatar.now.sh/instagram/${profiles.instagram}">`;
+    if (profiles.facebook)
+      return `<img alt="" src="https://unavatar.now.sh/facebook/${profiles.facebook}">`;
   } catch (error) {}
   return "";
 };
@@ -118,15 +122,24 @@ const getCollaboratorSocialProfiles = async name => {
     );
     const profiles = data.collaborators[name];
     let result = "<div class='collaborator-profiles social-links'>";
-    if (profiles.twitter) result += `<a href="https://twitter.com/${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`
-    if (profiles.linkedin) result += `<a href="https://www.linkedin.com/in/${profiles.linkedin}" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>`
-    if (profiles.github) result += `<a href="https://github.com/${profiles.github}" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>`
-    if (profiles.instagram) result += `<a href="https://www.instagram.com/${profiles.instagram}" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>`
-    if (profiles.facebook) result += `<a href="https://www.facebook.com/${profiles.facebook}" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>`
-    if (profiles.medium) result += `<a href="https://medium.com/${profiles.medium}" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>`
-    if (profiles.dribbble) result += `<a href="https://dribbble.com/${profiles.dribbble}" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>`
-    if (profiles.quora) result += `<a href="https://www.quora.com/${profiles.quora}" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>`
-    if (profiles.angellist) result += `<a href="https://angel.co/${profiles.angellist}" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>`
+    if (profiles.twitter)
+      result += `<a href="https://twitter.com/${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`;
+    if (profiles.linkedin)
+      result += `<a href="https://www.linkedin.com/in/${profiles.linkedin}" data-balloon="LinkedIn" data-balloon-pos="up"><i title="LinkedIn" class="fab fa-linkedin"></i></a>`;
+    if (profiles.github)
+      result += `<a href="https://github.com/${profiles.github}" data-balloon="GitHub" data-balloon-pos="up"><i title="GitHub" class="fab fa-github"></i></a>`;
+    if (profiles.instagram)
+      result += `<a href="https://www.instagram.com/${profiles.instagram}" data-balloon="Instagram" data-balloon-pos="up"><i title="Instagram" class="fab fa-instagram"></i></a>`;
+    if (profiles.facebook)
+      result += `<a href="https://www.facebook.com/${profiles.facebook}" data-balloon="Facebook" data-balloon-pos="up"><i title="Facebook" class="fab fa-facebook"></i></a>`;
+    if (profiles.medium)
+      result += `<a href="https://medium.com/${profiles.medium}" data-balloon="Medium" data-balloon-pos="up"><i title="Medium" class="fab fa-medium"></i></a>`;
+    if (profiles.dribbble)
+      result += `<a href="https://dribbble.com/${profiles.dribbble}" data-balloon="Dribbble" data-balloon-pos="up"><i title="Dribbble" class="fab fa-dribbble"></i></a>`;
+    if (profiles.quora)
+      result += `<a href="https://www.quora.com/${profiles.quora}" data-balloon="Quora" data-balloon-pos="up"><i title="Quora" class="fab fa-quora"></i></a>`;
+    if (profiles.angellist)
+      result += `<a href="https://angel.co/${profiles.angellist}" data-balloon="Angellist" data-balloon-pos="up"><i title="Angellist" class="fab fa-angellist"></i></a>`;
     result += `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous"></div>`;
     return result;
@@ -153,8 +166,8 @@ const getCityArchivePageData = async (allItems, city) => {
       </nav>
       <div class="content">
           <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
-        city
-      )}</span></h1>
+    city
+  )}</span></h1>
           ${getCityCountry(city)}
         </div>
     </div>
@@ -212,28 +225,47 @@ const getProjectNavbar = value =>
 
 const getProjectsSelector = value =>
   `<select class="filter-select serif" onchange="window.location.href = this.value">
-    <option${value === "all" ? ` selected` : ""} value="/projects/">All projects</option>
-    <option${value === "Web" ? ` selected` : ""} value="/projects/web">Web</option>
-    <option${value === "App" ? ` selected` : ""} value="/projects/app">Apps</option>
+    <option${
+      value === "all" ? ` selected` : ""
+    } value="/projects/">All projects</option>
+    <option${
+      value === "Web" ? ` selected` : ""
+    } value="/projects/web">Web</option>
+    <option${
+      value === "App" ? ` selected` : ""
+    } value="/projects/app">Apps</option>
     <option${
       value === "Branding" ? ` selected` : ""
     } value="/projects/branding">Branding</option>
-    <option${value === "AI" ? ` selected` : ""} value="/projects/ai">AI/ML</option>
-    <option${value === "IoT" ? ` selected` : ""} value="/projects/iot">IoT</option>
+    <option${
+      value === "AI" ? ` selected` : ""
+    } value="/projects/ai">AI/ML</option>
+    <option${
+      value === "IoT" ? ` selected` : ""
+    } value="/projects/iot">IoT</option>
   </select>`;
 
 const getWorkArchive = async (allItems, category, value) => {
-  let result = `<header class="intro"><div>`
+  let result = `<header class="intro"><div>`;
 
-  const TITLE = (await getDescription(category, value.toLowerCase(), "name", true)) || titleify(value);
+  const TITLE =
+    (await getDescription(category, value.toLowerCase(), "name", true)) ||
+    titleify(value);
 
   if (category !== "work")
     result += `<nav class="breadcrumbs">
-    <a href="/projects/">Projects</a><a href="/projects/${category}/">${titleify(category)}</a>
-    <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(category, value, "name", true)) ||
-    titleify(value)}</a>
+    <a href="/projects/">Projects</a><a href="/projects/${category}/">${titleify(
+      category
+    )}</a>
+    <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(
+      category,
+      value,
+      "name",
+      true
+    )) || titleify(value)}</a>
     </nav>`;
-  else if (["oswald-labs", "Open source"].includes(value)) result += `<nav class="breadcrumbs">
+  else if (["oswald-labs", "Open source"].includes(value))
+    result += `<nav class="breadcrumbs">
   <a href="/projects/">Projects</a><a href="/projects/${category}/">${TITLE}</a>
   </nav>`;
 
@@ -246,7 +278,10 @@ const getWorkArchive = async (allItems, category, value) => {
       true
     )} ${(await getDescription(category, value.toLowerCase(), "name", true)) ||
       titleify(value)}</h1>`;
-  } else if (category === "work" && !["oswald-labs", "Open source"].includes(value)) {
+  } else if (
+    category === "work" &&
+    !["oswald-labs", "Open source"].includes(value)
+  ) {
     result += `<h1 class="sr-only">${TITLE}</h1>`;
     result += getProjectsSelector(value);
     result += getProjectNavbar(value);
@@ -258,20 +293,20 @@ const getWorkArchive = async (allItems, category, value) => {
     image = image || getBingImageUrl(`${value} icon/70/70`);
     result += `<img alt="" src="${image}">`;
   }
-  if (category !== "collaborators" && !result.includes("</h1>")) result += `<h1>${TITLE}</h1>`;
+  if (category !== "collaborators" && !result.includes("</h1>"))
+    result += `<h1>${TITLE}</h1>`;
 
   const intro = await getDescription(category, value.toLowerCase(), "intro");
-  if (intro)
-    result += intro;
-  else if (category !== "work")
-    result += await getWikiSummary(value);
+  if (intro) result += intro;
+  else if (category !== "work") result += await getWikiSummary(value);
 
   if (category === "collaborators")
     result += `${await getCollaboratorSocialProfiles(value)}`;
-  
-  result += `</div></header><div class="container-outer">`
-  
-  if (category === "collaborators") result += `<p>Projects we worked on together include:</p>`;
+
+  result += `</div></header><div class="container-outer">`;
+
+  if (category === "collaborators")
+    result += `<p>Projects we worked on together include:</p>`;
   if (category === "tools") result += `<p>Projects built using ${TITLE}:</p>`;
   if (category === "stack") result += `<p>Projects built with ${TITLE}:</p>`;
 
