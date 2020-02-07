@@ -1,0 +1,35 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+    <h1>{{ title }}</h1>
+    <a class="show-project-details" href="#details">Show version details</a>
+    <div class="project-intro" id="details">
+      <dl>
+        {% if date %}<span>
+          <dt>Published</dt>
+          <dd>{{ date | datetime | safe }}</dd>
+        </span>{% endif %}
+        {% if tags and (tags.length > 1) %}<span>
+          <dt>Tags</dt>
+          {% for tag in tags %}{% if tag !== "blog" %}
+          {% if tag === "state-of-the" %}
+          <dd><a href="/blog/{{ tag }}/">State of the X</a></dd>
+          {% else %}
+          <dd><a href="/blog/{{ tag }}/">{{ tag | titleify }}</a></dd>
+          {% endif %}
+          {% endif %}{% endfor %}
+        </span>{% endif %}
+      </dl>
+    </div>
+    <a class="hide-project-details" href="#">Hide version details</a>
+    </div>
+  </header>
+  <div class="container-outer">
+    {{ content | safe }}
+    {% if alias %}
+    <p><a href="{{ alias | url }}">{{ alias | iconify | safe }}Continue reading on {{ publisher }}</a></p>
+    {% endif %}
+  </div>
+</main>
+{% include "footer.njk" %}
