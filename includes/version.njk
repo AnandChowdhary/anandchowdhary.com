@@ -50,7 +50,7 @@
   </header>
   <div class="container-outer">
     <div class="image shadow">
-      <img alt="Screenshot of {{ title }} homepage" src="/images/versions/{{ title | int }}/home.png">
+      <img alt="Screenshot of {{ title }} homepage" src="/images/versions/{{ title | slug }}/home.png">
     </div>
     {{ content | safe }}
     {% if alias %}
