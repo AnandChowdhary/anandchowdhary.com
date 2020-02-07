@@ -15,15 +15,25 @@
           <dt>Published</dt>
           <dd>{{ date | datetime | safe }}</dd>
         </span>{% endif %}
-        {% if tags and (tags.length > 1) %}<span>
-          <dt>Tags</dt>
-          {% for tag in tags %}{% if tag !== "blog" %}
-          {% if tag === "state-of-the" %}
-          <dd><a href="/blog/{{ tag }}/">State of the X</a></dd>
-          {% else %}
-          <dd><a href="/blog/{{ tag }}/">{{ tag | titleify }}</a></dd>
-          {% endif %}
-          {% endif %}{% endfor %}
+        {% if archive %}<span>
+          <dt>Archive</dt>
+          <dd><a href="{{ archive }}">Internet Archive</a></dd>
+        </span>{% endif %}
+        {% if generator %}<span>
+          <dt>Generator</dt>
+          <dd>{{ generator }}</dd>
+        </span>{% endif %}
+        {% if stack and (stack.length > 1) %}<span>
+          <dt>Stack</dt>
+          {% for tag in stack %}
+          <dd>{{ tag }}</dd>
+          {% endfor %}
+        </span>{% endif %}
+        {% if type and (type.length > 1) %}<span>
+          <dt>Typefaces</dt>
+          {% for tag in type %}
+          <dd>{{ tag }}</dd>
+          {% endfor %}
         </span>{% endif %}
       </dl>
     </div>

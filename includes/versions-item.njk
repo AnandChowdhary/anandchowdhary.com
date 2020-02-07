@@ -1,0 +1,17 @@
+<article class="versions-item">
+  <div class="content">
+    <h2>v{{ post.data.title }}</h2>
+    <div class="meta">
+      <div>
+        <a href="{{ post.url | url }}">
+          <time>{{ post.data.date.toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "short",
+            year : "numeric"
+          }) }}</time>
+        </a>
+      </div>
+      <div><a class="continue" href="{{ post.url | url }}">Continue reading &rarr;</a></div>
+    </div>
+  </div>
+</article>

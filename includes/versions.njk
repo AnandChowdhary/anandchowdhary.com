@@ -18,10 +18,10 @@ pagination:
       {{ content | safe }}
     </div>
   </header>
-  <div class="container m">
+  <div class="container-outer">
     <section class="version-items">
       {% for post in pagination %}
-        {{ post.data.title }}
+        {% include "versions-item.njk" %}
       {% endfor %}
     </section>
     {% if pagination.pageLinks.length > 1 %}
