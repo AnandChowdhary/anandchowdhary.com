@@ -14,7 +14,7 @@ const getBingImageUrl = args => {
   ensureDirSync(DIR);
   const SLUG = `${slugify(query, {
     lower: true,
-    remove: /[*+~.()'"!:@]/g
+    remove: /[*+~.()?#'"!:@]/g
   })}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);
   const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
