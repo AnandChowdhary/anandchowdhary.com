@@ -68,6 +68,10 @@ module.exports = eleventyConfig => {
     return allItems;
   });
 
+  eleventyConfig.addCollection("websiteVersions", function(collection) {
+    return collection.getAll().filter(i => i.filePathStem.startsWith("/about/versions"));
+  });
+
   eleventyConfig.addNunjucksAsyncShortcode("workTagsArchive", async value =>
     getWorkArchive(allItems, "work", value)
   );

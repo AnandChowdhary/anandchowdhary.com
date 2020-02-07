@@ -1,10 +1,10 @@
-{# ---
+---
 pagination:
-  data: collections.versions
+  data: collections.websiteVersions
   size: 10
   reverse: true
   alias: pagination
---- #}
+---
 
 {% include "head.njk" %}
 <main id="content">
@@ -18,10 +18,10 @@ pagination:
       {{ content | safe }}
     </div>
   </header>
-  {# <div class="container m">
-    <section class="blog-posts">
+  <div class="container m">
+    <section class="version-items">
       {% for post in pagination %}
-        {{ post.title }}
+        {{ post.data.title }}
       {% endfor %}
     </section>
     {% if pagination.pageLinks.length > 1 %}
@@ -34,6 +34,6 @@ pagination:
       {% endif %}
     </nav>
     {% endif %}
-  </div> #}
+  </div>
 </main>
 {% include "footer.njk" %}
