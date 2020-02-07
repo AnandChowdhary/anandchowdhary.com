@@ -1,5 +1,5 @@
 ---
-title: "22: Assembly"
+title: "Assembly"
 date: 2016-12-07
 archive: https://web.archive.org/web/20161207174612/http://anandchowdhary.com/
 archiveBroken: true

@@ -1,5 +1,5 @@
 ---
-title: "24: Abacus"
+title: "Abacus"
 date: 2018-07-08
 generator: Hugo
 archive: https://web.archive.org/web/20180708082514/https://anandchowdhary.com/

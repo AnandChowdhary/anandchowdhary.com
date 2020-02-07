@@ -1,5 +1,5 @@
 ---
-title: "25: Amsterdam"
+title: "Amsterdam"
 date: 2020-02-01
 generator: Eleventy
 archive: "#"

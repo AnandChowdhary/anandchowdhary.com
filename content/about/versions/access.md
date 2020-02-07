@@ -1,5 +1,5 @@
 ---
-title: "23: Access"
+title: "Access"
 date: 2017-10-10
 generator: WordPress
 archive: https://web.archive.org/web/20171010082516/https://anandchowdhary.com/
