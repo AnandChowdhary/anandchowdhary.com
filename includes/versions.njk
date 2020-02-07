@@ -1,23 +1,27 @@
----
+{# ---
 pagination:
   data: collections.versions
   size: 10
   reverse: true
   alias: pagination
----
+--- #}
 
 {% include "head.njk" %}
 <main id="content">
-  <header class="intro">
+  <header class="intro s">
     <div>
+      <nav class="breadcrumbs">
+        <a href="/about/">About</a>
+        <a href="/about/versions/">Versions</a>
+      </nav>
       <h1>{{ title }}</h1>
       {{ content | safe }}
     </div>
   </header>
-  <div class="container m">
-    <section class="version-items">
+  {# <div class="container m">
+    <section class="blog-posts">
       {% for post in pagination %}
-        {% include "version-item.njk" %}
+        {{ post.title }}
       {% endfor %}
     </section>
     {% if pagination.pageLinks.length > 1 %}
@@ -30,6 +34,6 @@ pagination:
       {% endif %}
     </nav>
     {% endif %}
-  </div>
+  </div> #}
 </main>
 {% include "footer.njk" %}
