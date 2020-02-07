@@ -1,7 +1,7 @@
 <article>
   <a href="{{ post.url | url }}">
     <div class="f">
-      <div class="img" style="background-image: url('/images/versions/{{ post.fileSlug }}.png')"></div>
+      <div class="img" style="background-image: url('/images/versions/{{ post.fileSlug }}/home.png')"></div>
       <div class="ff">
         <h2>v{{ post.data.title }}{% if post.data.latest %} <span class="htag">Latest</span>{% endif %}</h2>
         <div>{{ post.data.date | datetimemonth | safe }}</div>
