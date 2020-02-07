@@ -92,7 +92,19 @@
     vertical-align: middle;
     margin-right: 1.5rem;
   }
-  &.nr img {
+  .img {
+    height: 5rem;
+    width: 5rem;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 1.5rem;
+  }
+  &.nr img,
+  &.nr .img {
     border-radius: 0.2rem;
   }
 }
