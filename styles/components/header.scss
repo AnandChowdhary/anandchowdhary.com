@@ -135,3 +135,13 @@ header#masthead #more:target {
 .events a, .events .project-intro dt {
   color: darken($color: $colorEvents, $amount: 10);
 }
+
+.about .intro {
+  background-color: lighten($color: $colorAbout, $amount: 45);
+}
+.about header#masthead nav a.active span {
+  border-bottom-color: $colorAbout;
+}
+.about a, .about .project-intro dt {
+  color: darken($color: $colorAbout, $amount: 10);
+}
