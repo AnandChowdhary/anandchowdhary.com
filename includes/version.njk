@@ -19,6 +19,10 @@
           <dt>Archive</dt>
           <dd><a href="{{ archive }}">Internet Archive</a></dd>
         </span>{% endif %}
+        {% if source %}<span>
+          <dt>Source</dt>
+          <dd><a href="{{ source }}">GitHub tree</a></dd>
+        </span>{% endif %}
         {% if generator %}<span>
           <dt>Generator</dt>
           <dd>{{ generator }}</dd>
