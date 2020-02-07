@@ -23,13 +23,13 @@
           <dt>Generator</dt>
           <dd>{{ generator }}</dd>
         </span>{% endif %}
-        {% if stack and (stack.length > 1) %}<span>
+        {% if stack and (stack.length > 0) %}<span>
           <dt>Stack</dt>
           {% for tag in stack %}
           <dd>{{ tag }}</dd>
           {% endfor %}
         </span>{% endif %}
-        {% if type and (type.length > 1) %}<span>
+        {% if type and (type.length > 0) %}<span>
           <dt>Typefaces</dt>
           {% for tag in type %}
           <dd>{{ tag }}</dd>
