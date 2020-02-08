@@ -1,11 +1,16 @@
-<article>
+<article class="versions-item">
   <a href="{{ post.url | url }}">
-    <div class="f">
-      <div class="img" style="background-image: url('/images/versions/{{ post.fileSlug }}/home.png')"></div>
-      <div class="ff">
+    <div class="content">
+      <div class="versions-image" style="background-image: url('/images/versions/{{ post.fileSlug }}/home.png')"></div>
+      <div>
         <h2>{{ post.data.title }}{% if post.data.latest %} <span class="htag">Latest</span>{% endif %}</h2>
-        <div>{{ post.data.date | datetimemonth | safe }}</div>
+        <p>{{ post.data.date | datetimemonth | safe }}</p>
+        <div>
+          Random icon
+          <span>Random city</span>
+          <span>Random info</span>
+        </div>
       </div>
     </div>
-</a>
+  </a>
 </article>
