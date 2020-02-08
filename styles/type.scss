@@ -12,7 +12,9 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6,
 .hero p, .serif {
   line-height: 1.3;
-  font-family: "Domine", "IBM Plex Serif", "Georgia", serif;
+  -webkit-font-smoothing: antialiased;
+  font-family: "IBM Plex Serif", "Georgia", serif;
+  font-weight: 600;
 }
 
 .hero h1 {
