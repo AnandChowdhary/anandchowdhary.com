@@ -65,7 +65,10 @@ for (let i = 0; allLinks.length > i; i++) {
   var link = allLinks[i];
   var linkHref = link.getAttribute("href");
   if (isExternal(linkHref)) {
-    if (linkHref.indexOf("utm_source") === -1) {
+    if (
+      linkHref.indexOf("utm_source") === -1 &&
+      !linkHref.indexOf("archive.org") === -1
+    ) {
       if (linkHref.indexOf("?") > -1) {
         link.setAttribute("href", linkHref + "&" + utmParams);
       } else {
