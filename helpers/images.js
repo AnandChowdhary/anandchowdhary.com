@@ -10,7 +10,7 @@ const getBingImageUrl = args => {
   const width = argArr.length >= 2 ? argArr[1] : 210;
   const height = argArr.length >= 3 ? argArr[2] : 210;
 
-  const DIR = join(__dirname, "..", ".cache", "images", "thumbnails");
+  const DIR = join(__dirname, "..", "cache", "images", "thumbnails");
   ensureDirSync(DIR);
   const SLUG = `${slugify(query, {
     lower: true,
@@ -34,7 +34,7 @@ const getBingImageUrl = args => {
 };
 
 const getDomainIcon = domain => {
-  const DIR = join(__dirname, "..", ".cache", "images", "domains");
+  const DIR = join(__dirname, "..", "cache", "images", "domains");
   ensureDirSync(DIR);
   const SLUG = `${slugify(domain, {
     lower: true

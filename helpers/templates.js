@@ -15,7 +15,7 @@ const { getEventCard, getProjectCard } = require("./cards");
 
 const getWikiSummary = async value => {
   try {
-    const cachePath = join(__dirname, "..", ".cache", "wiki", `${value}.txt`);
+    const cachePath = join(__dirname, "..", "cache", "wiki", `${value}.txt`);
     if (await exists(cachePath)) return (await readFile(cachePath)).toString();
     const data = `<p>${
       (

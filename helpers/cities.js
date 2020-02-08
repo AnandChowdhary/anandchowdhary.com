@@ -5,7 +5,7 @@ const { titleify } = require("./utils");
 let cityData = {};
 
 try {
-  cityData = readJsonSync(join(__dirname, "..", ".cache", "city-data.json"));
+  cityData = readJsonSync(join(__dirname, "..", "cache", "city-data.json"));
 } catch (error) {}
 
 const getCityEmoji = city => {
