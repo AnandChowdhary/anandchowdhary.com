@@ -3412,6 +3412,13 @@ eleventy-plugin-pwa@^1.0.8:
     shimmer "^1.2.1"
     workbox-build "^4.3.0"
 
+eleventy-plugin-seo@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eleventy-plugin-seo/-/eleventy-plugin-seo-0.5.0.tgz#a20d2714f1d34b7cca4752daa05ea9e5974c28b3"
+  integrity sha512-7rXya1RwbRCb7IxWt3FqHYTet2JV0GJvhjiVvs7RFakLY+7Gy7pBhOlVI4tIQZr9irftEYbf0Jo1n+1ufBY2AQ==
+  dependencies:
+    html-entities "^1.2.1"
+
 elliptic@^6.0.0:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
@@ -4830,7 +4837,7 @@ html-encoding-sniffer@^1.0.2:
   dependencies:
     whatwg-encoding "^1.0.1"
 
-html-entities@1.2.1:
+html-entities@1.2.1, html-entities@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=

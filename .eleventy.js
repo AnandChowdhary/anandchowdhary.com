@@ -4,6 +4,7 @@ const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const typeset = require("typeset");
 const pluginPWA = require("eleventy-plugin-pwa");
+const pluginSEO = require("eleventy-plugin-seo");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const hljs = require("highlight.js");
@@ -45,6 +46,17 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginPWA);
+  eleventyConfig.addPlugin(pluginSEO, {
+    title: "Foobar Site",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    url: "https://foo.com",
+    author: "Jane Doe",
+    author: "username",
+    image: "foo.jpg",
+    options: {
+      titleDivider: "·"
+    }
+  });
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
