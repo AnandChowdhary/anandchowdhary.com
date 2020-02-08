@@ -43,17 +43,19 @@ function styles() {
 }
 
 function scripts() {
-  return gulp
-    .src(paths.scripts.src, { sourcemaps: true })
-    .pipe(
-      ts({
-        noImplicitAny: true
-      })
-    )
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(concat("main.min.js"))
-    .pipe(gulp.dest(paths.scripts.dest));
+  return (
+    gulp
+      .src(paths.scripts.src, { sourcemaps: true })
+      .pipe(
+        ts({
+          noImplicitAny: true
+        })
+      )
+      .pipe(babel())
+      // .pipe(uglify())
+      .pipe(concat("main.min.js"))
+      .pipe(gulp.dest(paths.scripts.dest))
+  );
 }
 
 function static() {
