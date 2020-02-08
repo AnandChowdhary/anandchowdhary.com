@@ -45,5 +45,9 @@
     "hooks": {
       "pre-commit": "yarn lint && git add ."
     }
+  },
+  "dependencies": {
+    "medium-zoom": "^1.0.5",
+    "timeago.js": "^4.0.2"
   }
 }

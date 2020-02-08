@@ -1,3 +1,5 @@
+import { render } from "timeago.js";
+import mediumZoom from "medium-zoom";
 import { updateStorage, updateText } from "./events";
 
 export const setupToggle = () => {
@@ -69,4 +71,46 @@ export const setupLinks = () => {
         link.innerHTML + "<span class='sr-only'> (opens in new window)</span>";
     }
   }
+
+  // Contact page
+  const inputs = document.querySelectorAll<HTMLInputElement>(
+    "input[name='category']"
+  );
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("change", () => {
+      let value = "categoryOther";
+      for (let j = 0; j < inputs.length; j++)
+        if (inputs[j].checked) value = inputs[j].getAttribute("id");
+      const responses = document.querySelectorAll(".response");
+      for (let i = 0; i < responses.length; i++)
+        responses[i].setAttribute("hidden", "hidden");
+      document
+        .querySelector(".response.response-" + value)
+        .removeAttribute("hidden");
+    });
+  }
+
+  // Life page
+  const age = document.querySelector(".age");
+  const birthday = new Date(1997, 11, 29).getTime();
+  function updateAge() {
+    const now = new Date().getTime();
+    if (age) age.innerHTML = ((now - birthday) / 31556952000).toFixed(10);
+  }
+  if (age) {
+    setInterval(() => {
+      if (age) updateAge();
+    }, 50);
+    updateAge();
+  }
+
+  // Time ago
+  const timers = document.querySelectorAll(".time-ago");
+  if (timers.length) render(timers);
+
+  // Zoomable images
+  const zoomImages = document.querySelectorAll(
+    ".two-images img, .three-images img, .image img:not(.real-image)"
+  );
+  if (zoomImages.length) mediumZoom(zoomImages);
 };
