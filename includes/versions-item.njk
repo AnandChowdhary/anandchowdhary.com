@@ -6,7 +6,7 @@
         <h2>{{ post.data.title }}{% if post.data.latest %} <span class="htag">Latest</span>{% endif %}</h2>
         <p>{{ post.data.date | datetimemonth | safe }}</p>
         <div>
-          <span aria-label="{{ post.data.generator | default('HTML') }}" data-balloon-pos="up" class="url-icon" style="background-image: url('{{ (post.data.generator | default('HTML') + ' icon/70/70') | bingImageUrl }}')"></span>
+          <span><span aria-label="{{ post.data.generator | default('HTML') }}" data-balloon-pos="up" class="url-icon" style="background-image: url('{{ (post.data.generator | default('HTML') + ' icon/70/70') | bingImageUrl }}')"></span></span>
           {% if post.data.stack and (post.data.stack.length > 0) %}
           {% for tag in post.data.stack %}
           <span>{{ tag }}</span>

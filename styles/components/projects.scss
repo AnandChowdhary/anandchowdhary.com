@@ -80,6 +80,7 @@ nav.categories-nav {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: -1rem;
   a {
     background-color: #fff;
     color: inherit;
@@ -87,7 +88,7 @@ nav.categories-nav {
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     margin-right: 1rem;
-    // margin-bottom: 1rem;
+    margin-bottom: 1rem;
     &.active {
       background-color: $colorProjects;
       color: #fff;
@@ -180,11 +181,13 @@ nav.categories-nav {
 }
 
 .project-tags {
-  line-height: 1;
+  margin-bottom: -0.5rem;
   span {
     background-color: whitesmoke;
     padding: 0.25rem 0.75rem;
     margin-right: 0.25rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
     font-size: 90%;
     border-radius: 1rem;
     &.stack {
