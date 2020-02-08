@@ -1,13 +1,13 @@
 import { debounce } from "debounce";
 
 export const addScrollers = () => {
-  var horizontalScollers = document.querySelectorAll(".horizontal-scroller");
-  for (var i = 0; i < horizontalScollers.length; i++) {
-    var scrollable = horizontalScollers[i];
-    var scroller = horizontalScollers[i].querySelector("*");
+  const horizontalScollers = document.querySelectorAll(".horizontal-scroller");
+  for (let i = 0; i < horizontalScollers.length; i++) {
+    const scrollable = horizontalScollers[i];
+    const scroller = horizontalScollers[i].querySelector("*");
     if (!scroller) break;
-    var id = `page_${i}`;
-    var nextPrev = `
+    const id = `page_${i}`;
+    const nextPrev = `
       <div class="scroll-buttons">
         <button data-prev="${id}">
           <span class="sr-only">Scroll left</span>
@@ -17,12 +17,12 @@ export const addScrollers = () => {
         </button>
       </div>
     `;
-    var scrollBy = scroller.getBoundingClientRect().width;
-    var nextPrevContainer = document.createElement("div");
+    const scrollBy = scroller.getBoundingClientRect().width;
+    const nextPrevContainer = document.createElement("div");
     nextPrevContainer.innerHTML = nextPrev;
     scrollable.appendChild(nextPrevContainer);
-    var next = document.querySelector(`[data-next="${id}"]`);
-    var prev = document.querySelector(`[data-prev="${id}"]`);
+    const next = document.querySelector(`[data-next="${id}"]`);
+    const prev = document.querySelector(`[data-prev="${id}"]`);
     function updateScroller() {
       if (next) {
         if (scroller.scrollLeft + scrollBy >= scroller.scrollWidth) {
@@ -48,7 +48,7 @@ export const addScrollers = () => {
     );
     if (next) {
       next.addEventListener("click", function() {
-        var left = scroller.scrollLeft + scrollBy;
+        const left = scroller.scrollLeft + scrollBy;
         scroller.scrollTo({
           top: 0,
           left,
@@ -58,7 +58,7 @@ export const addScrollers = () => {
     }
     if (prev) {
       prev.addEventListener("click", function() {
-        var left = scroller.scrollLeft - scrollBy;
+        const left = scroller.scrollLeft - scrollBy;
         scroller.scrollTo({
           top: 0,
           left,

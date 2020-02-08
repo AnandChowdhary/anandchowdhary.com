@@ -9,12 +9,14 @@ export const infiniteScroll = () => {
     "fetch" in window &&
     "requestAnimationFrame" in window
   ) {
-    var nextPageLink = document.querySelector("a.pagination-item--next");
-    var siblingArticle = document.querySelector("main#content section article");
-    var appendIn = siblingArticle ? siblingArticle.parentNode : undefined;
+    const nextPageLink = document.querySelector("a.pagination-item--next");
+    const siblingArticle = document.querySelector(
+      "main#content section article"
+    );
+    const appendIn = siblingArticle ? siblingArticle.parentNode : undefined;
     if (nextPageLink && appendIn) {
       let tried = false;
-      var observer = new IntersectionObserver(function(entries) {
+      const observer = new IntersectionObserver(function(entries) {
         if (tried) return;
         let intersecting = false;
         entries.forEach(function(entry) {
@@ -22,7 +24,7 @@ export const infiniteScroll = () => {
         });
         if (intersecting) tried = true;
         if (!intersecting) return;
-        var span = nextPageLink.querySelector("span");
+        const span = nextPageLink.querySelector("span");
         if (span) span.innerHTML = "Loading more items...";
         window
           .fetch(nextPageLink.getAttribute("href"))
@@ -30,21 +32,21 @@ export const infiniteScroll = () => {
             return result.text();
           })
           .then(function(html) {
-            var parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(html, "text/html");
-            var results = htmlDoc.querySelectorAll(
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const results = htmlDoc.querySelectorAll(
               "main#content section article"
             );
-            for (var i = 0; i < results.length; i++)
+            for (let i = 0; i < results.length; i++)
               appendIn.appendChild(results[i]);
-            var newPagination = htmlDoc.querySelector(
+            const newPagination = htmlDoc.querySelector(
               "main#content nav.pagination"
             );
-            var currentPagination = document.querySelector(
+            const currentPagination = document.querySelector(
               "main#content nav.pagination"
             );
             if (currentPagination && newPagination) {
-              var previousLinkNewPagination = htmlDoc.querySelector(
+              const previousLinkNewPagination = htmlDoc.querySelector(
                 "a.pagination-item--prev"
               );
               if (previousLinkNewPagination)
