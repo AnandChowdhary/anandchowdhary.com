@@ -1,6 +1,8 @@
 const { join } = require("path");
 const { readJSON } = require("fs-extra");
 const htmlmin = require("html-minifier");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginPWA = require("eleventy-plugin-pwa");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const hljs = require("highlight.js");
@@ -40,8 +42,11 @@ module.exports = eleventyConfig => {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginPWA);
+
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
-    if( outputPath.endsWith(".html") ) {
+    if (outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         sortClassName: true,
@@ -51,7 +56,7 @@ module.exports = eleventyConfig => {
         removeStyleLinkTypeAttributes: true,
         removeComments: true,
         removeAttributeQuotes: true,
-        quoteCharacter: "\"",
+        quoteCharacter: '"',
         processScripts: ["text/javascript", "application/ld+json"],
         minifyCSS: true,
         minifyJS: true,
