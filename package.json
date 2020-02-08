@@ -13,7 +13,7 @@
     "serve": "npm run gulp && eleventy --serve & gulp watch",
     "gulp": "gulp",
     "lint": "prettier '**/*.{ts,scss,md,js}' --write",
-    "parcel-build": "parcel build scripts/parcel.html"
+    "parcel-build": "rm -rf dist && parcel build scripts/parcel.html && node helpers/parcel.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",

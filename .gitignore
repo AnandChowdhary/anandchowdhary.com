@@ -12,6 +12,7 @@ _site/
 
 life-data/
 
+content/_data/jsFilePath.json
 content/_data/highlights.json
 content/_data/workTags.json
 content/_data/stackTags.json
