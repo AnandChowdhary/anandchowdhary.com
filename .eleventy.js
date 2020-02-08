@@ -47,12 +47,12 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginPWA);
   eleventyConfig.addPlugin(pluginSEO, {
-    title: "Foobar Site",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    url: "https://foo.com",
-    author: "Jane Doe",
-    author: "username",
-    image: "foo.jpg",
+    title: "Anand Chowdhary",
+    description:
+      "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company.",
+    url: "https://anandchowdhary.com",
+    author: "Anand Chowdhary",
+    twitter: "AnandChowdhary",
     options: {
       titleDivider: "·"
     }
