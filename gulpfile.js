@@ -1,11 +1,8 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
-var babel = require("gulp-babel");
 var concat = require("gulp-concat");
-var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 var cleanCSS = require("gulp-clean-css");
-var ts = require("gulp-typescript");
 var del = require("del");
 
 var paths = {
@@ -43,19 +40,7 @@ function styles() {
 }
 
 function scripts() {
-  return (
-    gulp
-      .src(paths.scripts.src, { sourcemaps: true })
-      .pipe(
-        ts({
-          noImplicitAny: true
-        })
-      )
-      .pipe(babel())
-      // .pipe(uglify())
-      .pipe(concat("main.min.js"))
-      .pipe(gulp.dest(paths.scripts.dest))
-  );
+  return;
 }
 
 function static() {
