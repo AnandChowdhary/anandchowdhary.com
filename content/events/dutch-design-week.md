@@ -11,7 +11,7 @@ venue: Klokgebouw Cultuurhallen
 tags: events
 ---
 
-I showcased Shravan Apps by Oswald Labs as part of the *Mind the Step* exhibition at the Dutch Design Week 2018 in the Klokgebouw in Eindhoven. The event featured design-driven technology and research by the 4TU, the consortium of Dutch technical universities.
+I showcased Shravan Apps by Oswald Labs as part of the _Mind the Step_ exhibition at the Dutch Design Week 2018 in the Klokgebouw in Eindhoven. The event featured design-driven technology and research by the 4TU, the consortium of Dutch technical universities.
 
 <!--more-->
 

@@ -9,7 +9,7 @@ tags:
 
 When you're advertising your smartphone app, perhaps the first thing you show off are platform badges. They're the easiest and most familiar way to tell users where they can find your app. All major platforms, Apple's App Store, Google Play, and Microsoft Store have official badges which are somewhat consistent with each other.
 
-However, these badges aren't *that* consistent. For example, Google shows the icon of Google Play (the distribution system), whereas Apple and Microsoft show their corporate logos (Apple previously had an iPhone shape as the icon).
+However, these badges aren't _that_ consistent. For example, Google shows the icon of Google Play (the distribution system), whereas Apple and Microsoft show their corporate logos (Apple previously had an iPhone shape as the icon).
 
 ![Current badges](/images/blog/google-play-badges/official-badges.png)
 

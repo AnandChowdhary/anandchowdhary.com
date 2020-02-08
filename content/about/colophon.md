@@ -20,4 +20,3 @@ The following licenses apply to all versions of my personal website, unless stat
 - Source code and code samples in articles are licensed under the MIT license
 - All text content is licensed under Creative Commons Attribution International 4.0 license (CC-BY 4.0)
 - Logos and portfolio assets such as images are proprietary and not available under an open-source license
-

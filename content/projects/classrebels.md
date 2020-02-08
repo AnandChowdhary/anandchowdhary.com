@@ -19,8 +19,7 @@ Unlike all stories, ClassRebels didn't start with the simple idea of making teac
 
 We believe that the whole idea of education is taken in the wrong sense. It's become a misconception that studying is only about scrolling through the pages of your textbook the night before your exam. It's not about that. Education is about freedom.
 
-> <span>Education is the most powerful weapon which you can use to change the world.</span>
-> <span>--- <cite>Nelson Mandela</cite></span>
+> <span>Education is the most powerful weapon which you can use to change the world.</span> > <span>--- <cite>Nelson Mandela</cite></span>
 
 And that's the dream we're trying to fulfill. Making education not restricted to classrooms — instead of a professor talking to hundreds of students in one single auditorium—we're providing both students and teachers with a place where they can interact with each other. Where they can study, but with a difference.
 

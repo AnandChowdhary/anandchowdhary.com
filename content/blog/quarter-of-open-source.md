@@ -66,7 +66,7 @@ These are the projects I've built in the first quarter of 2019. In this section,
 
 **Scratch:** A web component, `<form-group>` to automate labels and IDs. JavaScript, January 2019 · [GitHub](https://github.com/AnandChowdhary/accessible-web-components) · [NPM](https://npmjs.com/package/accessible-web-components)
 
-*Around this time is also when I learned TypeScript, so the projects after late-January are not in ES6.*
+_Around this time is also when I learned TypeScript, so the projects after late-January are not in ES6._
 
 ### 📅 Calendar Link
 
@@ -145,7 +145,6 @@ These are the projects I've built in the first quarter of 2019. In this section,
 **Itch:** Flags aren't good icons for languages. For example, should I use the US or the UK flag? Why not Pakistan's? They have more English speakers than the UK.
 
 **Scratch:** A generator for language icons using their codes and flag colors. TypeScript, March 2019 · [GitHub](https://github.com/AnandChowdhary/language-icons) · [NPM](https://npmjs.com/package/language-icons)
-
 
 ## Epilogue
 

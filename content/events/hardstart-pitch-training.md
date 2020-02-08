@@ -11,7 +11,7 @@ venue: Hardstart
 tags: events
 ---
 
-I developed and conducted a startup pitching workshop for student entrepreneurship organization and incubator Hardstart's flagship pitching event, *Pitch that Bitch*. It was the first time that I conducted a workshop for fellow student entrepreneurs, and it was definitely a very interesting experience.
+I developed and conducted a startup pitching workshop for student entrepreneurship organization and incubator Hardstart's flagship pitching event, _Pitch that Bitch_. It was the first time that I conducted a workshop for fellow student entrepreneurs, and it was definitely a very interesting experience.
 
 <!--more-->
 

@@ -11,4 +11,4 @@ venue: 91springboard
 tags: events
 ---
 
-I gave my first TEDx talk at TEDxHaileyRoad in New Delhi in June 2017 on *Designing for Inclusion*, where I talked about my story in starting Oswald Labs and rethinking today's approach to ignore accessibility and inclusion in design.
+I gave my first TEDx talk at TEDxHaileyRoad in New Delhi in June 2017 on _Designing for Inclusion_, where I talked about my story in starting Oswald Labs and rethinking today's approach to ignore accessibility and inclusion in design.

@@ -21,7 +21,7 @@ tools: ["Vue.js", "Django", "Firebase"]
 collaborators: ["alex-imbrea", "maurits-van-der-vijgh"]
 ---
 
-Between November 29 and December 1, 2018, my team and I built and presented Aristotle, an AI-powered e-learning platform for the schools of Limburg. The app was the winner of the *Education* category at [Brighthack](http://brighthack.eu) in Heerlen.
+Between November 29 and December 1, 2018, my team and I built and presented Aristotle, an AI-powered e-learning platform for the schools of Limburg. The app was the winner of the _Education_ category at [Brighthack](http://brighthack.eu) in Heerlen.
 
 For students, it automatically finds the best content from a variety of sources (like Khan Academy, Wikipedia, study material websites, etc.), and offers gamification and quizzes to better understand the syllabus. For teachers, it offers actionable analytics such as per-student performance. For the government, it offers school performance metrics and data visualization.
 

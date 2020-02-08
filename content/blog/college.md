@@ -24,7 +24,7 @@ Oswald went on to become really great, and it mainly started with us winning Sta
 - Digital Media Design at University of Hertfordshire
 - Applied Computer Science (Mobile Computing) at Sheridan College
 - Interaction Design Arts at University of the Arts London's College of Communication
-- Interaction Design at California College of the Arts (Creative Achievement scholarship, $80,000)
+- Interaction Design at California College of the Arts (Creative Achievement scholarship, \$80,000)
 - Interaction Design at Norwich University of the Arts
 - Creative Technology at the University of Twente
 

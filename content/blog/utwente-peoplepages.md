@@ -10,7 +10,7 @@ As a future creative technology student at the University of Twente, I wanted to
 
 <!--more-->
 
-I did a query to find all results starting with the letter "a" and got a minified JSON response with all data. Fortunately, they have unrestricted access to their endpoints. This is what it looks like when cleaned: 
+I did a query to find all results starting with the letter "a" and got a minified JSON response with all data. Fortunately, they have unrestricted access to their endpoints. This is what it looks like when cleaned:
 
 ```
 GET https://people.utwente.nl/search?query=a
@@ -54,25 +54,25 @@ GET https://people.utwente.nl/search?query=a
 }
 ```
 
-and so on. Since empty searches, space searches, and others weren't working, I decided to query each letter of the alphabet and save the JSON result to play with it: 
+and so on. Since empty searches, space searches, and others weren't working, I decided to query each letter of the alphabet and save the JSON result to play with it:
 
 ```bash
 wget https://people.utwente.nl/search?query={a..z}
 ```
 
-I soon realized that this wouldn't work because the API restricts the number of results to 50, but this would: 
+I soon realized that this wouldn't work because the API restricts the number of results to 50, but this would:
 
 ```sh
 wget https://people.utwente.nl/search?query={a..z}{a..z}
 ```
 
-This goes through every combination in the alphabet: aa, ab, ac . . . zx, zy, zz, and downloads the JSON file. This was enough, but in many combinations like xx, xz, etc., there were no results, so the empty JSON file was exactly 43 bytes with just the JSON structure. I then got rid of those files: 
+This goes through every combination in the alphabet: aa, ab, ac . . . zx, zy, zz, and downloads the JSON file. This was enough, but in many combinations like xx, xz, etc., there were no results, so the empty JSON file was exactly 43 bytes with just the JSON structure. I then got rid of those files:
 
 ```sh
 find . -name "*" -size 43c -delete
 ```
 
-This Bash command finds all files that are of 43 bytes in size and deletes them. Note that if I just filter the size in bytes and query something like `-size 43 -delete`, it interprets it as 43*512 bytes, so the [POSIX requirement](https://superuser.com/a/644274) states "c" for bytes.
+This Bash command finds all files that are of 43 bytes in size and deletes them. Note that if I just filter the size in bytes and query something like `-size 43 -delete`, it interprets it as 43\*512 bytes, so the [POSIX requirement](https://superuser.com/a/644274) states "c" for bytes.
 
 Finally I concatenated all the JSON files to one giant 4.9 MB file.
 
