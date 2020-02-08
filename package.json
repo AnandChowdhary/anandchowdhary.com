@@ -5,11 +5,11 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
-    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && npm run build && node helpers/sitemap.js",
+    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && npm run build",
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
     "compress-images": "imagemin cache/images/thumbnails/* --out-dir=cache/images/thumbnails && imagemin cache/images/domains/* --out-dir=cache/images/domains",
     "copy-cache-images": "npm run compress-images && mkdirp public/images/cache && cp -r cache/images/* public/images/cache",
-    "build": "npm run parcel-build && node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && npm run copy-highlights && npm run copy-cache-images",
+    "build": "npm run parcel-build && node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && npm run copy-highlights && npm run copy-cache-images && node helpers/sitemap.js",
     "serve": "npm run gulp && eleventy --serve & gulp watch",
     "gulp": "gulp",
     "lint": "prettier '{content,helpers,includes,scripts,styles}/*.{ts,scss,md,js}' --write",
@@ -31,6 +31,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "highlight.js": "^9.18.1",
+    "html-minifier": "^4.0.0",
     "husky": "^4.2.1",
     "imagemin-cli": "^5.1.0",
     "js-yaml": "^3.13.1",
@@ -44,7 +45,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && git add ."
+      "pre-commit": "npm run lint && git add ."
     }
   },
   "dependencies": {

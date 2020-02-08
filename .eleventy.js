@@ -1,5 +1,6 @@
 const { join } = require("path");
 const { readJSON } = require("fs-extra");
+const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const hljs = require("highlight.js");
@@ -38,6 +39,30 @@ module.exports = eleventyConfig => {
     permalinkSymbol: "#"
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
+
+  eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+    if( outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        sortClassName: true,
+        sortAttributes: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        removeComments: true,
+        removeAttributeQuotes: true,
+        quoteCharacter: "\"",
+        processScripts: ["text/javascript", "application/ld+json"],
+        minifyCSS: true,
+        minifyJS: true,
+        conservativeCollapse: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true
+      });
+      return minified;
+    }
+    return content;
+  });
 
   eleventyConfig.addNunjucksFilter("domainIcon", getDomainIcon);
   eleventyConfig.addNunjucksFilter("bingImageUrl", getBingImageUrl);
