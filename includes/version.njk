@@ -13,7 +13,7 @@
       <dl>
         {% if date %}<span>
           <dt>Published</dt>
-          <dd>{{ date | datetime | safe }}</dd>
+          <dd>{{ date | datetimemonth | safe }}</dd>
         </span>{% endif %}
         {% if archive %}<span>
           <dt>Archive</dt>
