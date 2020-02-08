@@ -37,8 +37,8 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 0; 
-            height: 0; 
+            width: 0;
+            height: 0;
             border-left: 0.5rem solid transparent;
             border-right: 0.5rem solid transparent;
             border-bottom: 0.5rem solid #333;
@@ -70,47 +70,50 @@
     }
   }
   .two-images,
-    .three-images,
-    .image,
-    iframe {
-      margin: 3rem 0;
-      + .two-images,
-      + .three-images,
-      + .image,
-      + iframe {
-        margin-top: -3rem;
-      }
+  .three-images,
+  .image,
+  iframe {
+    margin: 3rem 0;
+    + .two-images,
+    + .three-images,
+    + .image,
+    + iframe {
+      margin-top: -3rem;
     }
-    .show-project-details,
-    .hide-project-details {
+  }
+  .show-project-details,
+  .hide-project-details {
+    display: block;
+  }
+  .show-project-details + #details,
+  .show-project-details + #details + .hide-project-details {
+    display: none;
+  }
+  #details:target,
+  #details:target + .hide-project-details {
+    display: block;
+  }
+  .project-intro {
+    margin: 3rem auto;
+    dl {
       display: block;
     }
-    .show-project-details + #details,
-    .show-project-details + #details + .hide-project-details {
-      display: none;
-    }
-    #details:target, #details:target + .hide-project-details {
+    dl + dl,
+    span + span {
+      margin-top: 1.5rem;
       display: block;
     }
-    .project-intro {
-      margin: 3rem auto;
-      dl {
-        display: block;
-      }
-      dl + dl, span + span {
-        margin-top: 1.5rem;
-        display: block;
-      }
+  }
+  .two-images,
+  .three-images {
+    display: block;
+    > * {
+      width: 100%;
     }
-    .two-images, .three-images {
-      display: block;
-      > * {
-        width: 100%;
-      }
-    }
-    iframe.video-embed {
-      height: 15rem;
-    }
+  }
+  iframe.video-embed {
+    height: 15rem;
+  }
   .f {
     display: block;
     > *:not(:first-child) {
@@ -125,10 +128,12 @@
     a.logo {
       justify-content: center;
     }
-    a.logo, nav a {
+    a.logo,
+    nav a {
       padding: 1rem;
     }
-    a[href="#more"], #more a[href="#"] {
+    a[href="#more"],
+    #more a[href="#"] {
       display: none;
     }
     #more {
@@ -158,7 +163,8 @@
       }
     }
   }
-  .home-items > div, .projects > div {
+  .home-items > div,
+  .projects > div {
     display: block;
     article {
       width: 100%;
@@ -221,7 +227,7 @@
     display: block;
   }
   .blog:not(.home-items) article {
-    h2+div {
+    h2 + div {
       margin-bottom: 0;
     }
     .tag {
@@ -245,14 +251,16 @@
     }
   }
   .events-item {
-    .location, .events-item .meta {
+    .location,
+    .events-item .meta {
       display: block;
     }
     .location div:last-child {
       text-align: inherit;
       margin-top: 0.5rem;
     }
-    h2, h3 {
+    h2,
+    h3 {
       a {
         display: flex;
         margin-bottom: 1.5rem;

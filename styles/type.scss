@@ -4,13 +4,24 @@ body {
   font-family: $sansSerif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   font-weight: normal;
 }
 
-h1, h2, h3, h4, h5, h6,
-.hero p, .serif {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero p,
+.serif {
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
   font-family: "IBM Plex Serif", "Georgia", serif;
@@ -27,7 +38,10 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 500;
 }
 
-p, ul, ol, footer {
+p,
+ul,
+ol,
+footer {
   line-height: 1.7;
   margin: 0 0 1rem 0;
   &:last-child {

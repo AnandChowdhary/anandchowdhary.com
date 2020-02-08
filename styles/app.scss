@@ -23,7 +23,7 @@ body {
   margin: 0;
   font-size: 115%;
   overflow-wrap: break-word;
-  font-feature-settings: "kern" 1,"liga" 1,"dlig" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   font-kerning: normal;
 }
 
@@ -89,11 +89,10 @@ footer#colophon {
   background-size: cover;
   border-radius: 100%;
   &.l {
-    
   }
 }
 
 .blog .img-heading img {
   width: 5rem;
-  filter: drop-shadow(0 .15rem .15rem rgba(0,0,0,.1));
+  filter: drop-shadow(0 0.15rem 0.15rem rgba(0, 0, 0, 0.1));
 }

@@ -43,7 +43,8 @@
   transition: 0.3s;
   background-color: rgba(0, 0, 0, 0.25);
 }
-.blog-posts, .blog-title {
+.blog-posts,
+.blog-title {
   .l {
     flex: 0.6 0 0;
     > div {
@@ -59,7 +60,9 @@
   margin-bottom: 0;
   display: flex;
 }
-.blog-posts, .pagination, .intro > .blog-title {
+.blog-posts,
+.pagination,
+.intro > .blog-title {
   max-width: 960px;
   margin: auto;
 }
@@ -111,7 +114,8 @@
       .video-image,
       .versions-image {
         transform: scale(1.03);
-        box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor !important;
+        box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.25),
+          0 0 0 0.2rem $focusRingColor !important;
       }
       .book-image {
         transform: translateY(-0.5rem);
@@ -136,7 +140,8 @@
   }
 }
 
-.videos, .versions {
+.videos,
+.versions {
   section {
     max-width: 900px;
     a {

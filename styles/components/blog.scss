@@ -47,7 +47,8 @@ figcaption {
   }
 }
 
-pre, code {
+pre,
+code {
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 1rem;
   background-color: whitesmoke;
@@ -59,7 +60,8 @@ code {
   margin: 0 0.1rem;
 }
 
-pre, .container-outer > pre {
+pre,
+.container-outer > pre {
   overflow-x: auto;
   padding: 1rem;
   margin: 1.5rem auto;
@@ -77,4 +79,3 @@ pre, .container-outer > pre {
   margin-right: auto;
   display: block;
 }
-

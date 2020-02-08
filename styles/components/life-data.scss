@@ -52,7 +52,8 @@
     color: inherit;
     position: relative;
     &:focus {
-      box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.2), 0 0 0 0.2rem $focusRingColor;
+      box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.2),
+        0 0 0 0.2rem $focusRingColor;
       transform: translateY(-0.25rem);
     }
     &:hover {
@@ -66,13 +67,17 @@
   li:first-child a,
   li:first-child .a {
     border-radius: 0.2rem 0.2rem 0 0;
-    &:focus { border-radius: 0.2rem; }
+    &:focus {
+      border-radius: 0.2rem;
+    }
   }
   li:last-child a,
   li:last-child .a {
     border-bottom: none;
     border-radius: 0 0 0.2rem 0.2rem;
-    &:focus { border-radius: 0.2rem; }
+    &:focus {
+      border-radius: 0.2rem;
+    }
   }
   h2 {
     font-size: 125%;

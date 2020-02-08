@@ -14,12 +14,16 @@
     }
     &.project-image-padded .project-image-front {
       background-size: contain;
-      left: 1rem; right: 1rem;
-      top: 1rem; bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      top: 1rem;
+      bottom: 1rem;
     }
     &.project-image-cover .project-image-front {
-      top: 0; bottom: 0;
-      right: 0; left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
       background-size: cover;
     }
   }
@@ -29,8 +33,10 @@
   }
 }
 
-.projects, .project-item,
-.open-source, .open-source-item {
+.projects,
+.project-item,
+.open-source,
+.open-source-item {
   .item-icon {
     border-radius: 0;
   }
@@ -69,7 +75,8 @@
   }
 }
 
-nav.filter-nav, nav.categories-nav {
+nav.filter-nav,
+nav.categories-nav {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -126,7 +133,8 @@ nav.filter-nav, nav.categories-nav {
   }
   a:focus {
     box-shadow: none;
-    .project-image, h2 {
+    .project-image,
+    h2 {
       box-shadow: 0 0 0 0.2rem $focusRingColor;
     }
     .project-item-icon {
@@ -172,7 +180,7 @@ nav.filter-nav, nav.categories-nav {
 }
 
 .project-tags {
-line-height: 1;
+  line-height: 1;
   span {
     background-color: whitesmoke;
     padding: 0.25rem 0.75rem;
@@ -232,8 +240,8 @@ section.projects {
   margin-left: -0.25rem;
   line-height: 1;
   appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: transparent;
   background-image: url("data:image/svg+xml,%3Csvg width='30' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 15L0 0h30z' fill='%23888' fill-rule='evenodd'/%3E%3C/svg%3E");
   background-repeat: no-repeat;

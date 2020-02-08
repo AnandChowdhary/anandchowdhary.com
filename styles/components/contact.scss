@@ -10,7 +10,10 @@
   > div + div {
     margin-top: 1rem;
   }
-  input, textarea, select, button {
+  input,
+  textarea,
+  select,
+  button {
     font: inherit;
     border: 1px solid #ddd;
     box-sizing: border-box;

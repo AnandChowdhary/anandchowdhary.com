@@ -1,7 +1,8 @@
 @import "../variables";
 
 header#masthead {
-  nav, #more {
+  nav,
+  #more {
     display: flex;
   }
   a[href="#more"] {
@@ -72,7 +73,6 @@ header#masthead #more:target {
   }
 }
 
-
 .intro {
   background-color: whitesmoke;
   max-width: 100%;
@@ -108,7 +108,9 @@ header#masthead #more:target {
   }
 }
 .blog {
-  a, h2 + div, .project-intro dt {
+  a,
+  h2 + div,
+  .project-intro dt {
     color: darken($color: $colorBlog, $amount: 20);
   }
 }
@@ -122,7 +124,9 @@ header#masthead #more:target {
 .life header#masthead nav a.active span {
   border-bottom-color: $colorLife;
 }
-.life a, .life .project-intro dt, .life h2 + div {
+.life a,
+.life .project-intro dt,
+.life h2 + div {
   color: darken($color: $colorLife, $amount: 10);
 }
 
@@ -132,7 +136,8 @@ header#masthead #more:target {
 .events header#masthead nav a.active span {
   border-bottom-color: $colorEvents;
 }
-.events a, .events .project-intro dt {
+.events a,
+.events .project-intro dt {
   color: darken($color: $colorEvents, $amount: 10);
 }
 
@@ -142,6 +147,7 @@ header#masthead #more:target {
 .about header#masthead nav a.active span {
   border-bottom-color: $colorAbout;
 }
-.about a, .about .project-intro dt {
+.about a,
+.about .project-intro dt {
   color: darken($color: $colorAbout, $amount: 10);
 }

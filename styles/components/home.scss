@@ -14,7 +14,7 @@
     left: -20px;
     line-height: 1;
     top: 0;
-    transform: translate(-100%,-100%) rotate(-90deg);
+    transform: translate(-100%, -100%) rotate(-90deg);
     transform-origin: bottom right;
     &::before {
       content: "";
@@ -81,7 +81,8 @@
       box-shadow: none;
       picture {
         transform: scale(1.05);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25),
+          0 0 0 0.2rem $focusRingColor;
       }
     }
   }
@@ -130,7 +131,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
+
   $gutter: 2%;
   article {
     width: (50 - ($gutter / 2));
@@ -145,11 +146,13 @@
     margin: 0 1rem 0.5rem 0;
   }
 
-  h2, time {
+  h2,
+  time {
     display: inline;
   }
 
-  time, .meta {
+  time,
+  .meta {
     color: rgba(100, 100, 100, 0.75);
   }
 

@@ -21,10 +21,12 @@
   a:focus {
     img {
       transform: scale(1.03) translateY(-0.05rem);
-      box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
+      box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.25),
+        0 0 0 0.2rem $focusRingColor;
     }
   }
-  h2, h3 {
+  h2,
+  h3 {
     margin-top: 0;
     font-size: 120%;
     margin-bottom: -0.5rem;
@@ -38,7 +40,8 @@
   .location div:last-child {
     text-align: right;
   }
-  .location, .meta {
+  .location,
+  .meta {
     display: flex;
     justify-content: space-between;
   }

@@ -12,7 +12,9 @@
     }
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     &:not(:first-child) {
       margin-top: 2.5rem;
     }
@@ -64,7 +66,10 @@
       margin-top: -4rem;
     }
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     + .two-images,
     + .three-images,
     + .image,
@@ -118,7 +123,8 @@ nav.pagination {
     transition: 0.3s;
   }
   .pagination-item {
-    &::before, &::after {
+    &::before,
+    &::after {
       background-color: #333;
       width: 5rem;
       color: #fff;
@@ -143,7 +149,8 @@ nav.pagination {
       }
     }
     &:hover {
-      &::before, &::after {
+      &::before,
+      &::after {
         transform: scale(1.05);
       }
     }
@@ -153,15 +160,22 @@ nav.pagination {
         box-shadow: 0 0 0 0.2rem $focusRingColor;
         border-radius: 0.2rem;
       }
-      &::before, &::after {
+      &::before,
+      &::after {
         transform: scale(1.1);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25), 0 0 0 0.2rem $focusRingColor;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25),
+          0 0 0 0.2rem $focusRingColor;
       }
     }
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   position: relative;
   a.direct-link {
     position: absolute;
