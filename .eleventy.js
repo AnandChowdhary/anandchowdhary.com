@@ -106,7 +106,8 @@ module.exports = eleventyConfig => {
   eleventyConfig.addCollection("websiteVersions", function(collection) {
     return collection
       .getAll()
-      .filter(i => i.filePathStem.startsWith("/about/versions"));
+      .filter(i => i.filePathStem.startsWith("/about/versions"))
+      .sort((a, b) => a.date - b.date);
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("workTagsArchive", async value =>
