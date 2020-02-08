@@ -160,3 +160,15 @@ nav.pagination {
     }
   }
 }
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  a.direct-link {
+    position: absolute;
+    left: -2.25rem;
+    text-decoration: none;
+  }
+}
+h1 a.direct-link {
+  display: none;
+}
