@@ -8,6 +8,8 @@ static/css/
 static/js/
 _site/
 
+.cache/
+
 life-data/
 
 content/_data/highlights.json
