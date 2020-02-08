@@ -9,7 +9,7 @@
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
     "compress-images": "imagemin cache/images/thumbnails/* --out-dir=cache/images/thumbnails && imagemin cache/images/domains/* --out-dir=cache/images/domains",
     "copy-cache-images": "npm run compress-images && mkdirp public/images/cache && cp -r cache/images/* public/images/cache",
-    "build": "node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && npm run copy-highlights && npm run copy-cache-images",
+    "build": "npm run parcel-build && node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && npm run copy-highlights && npm run copy-cache-images",
     "serve": "npm run gulp && eleventy --serve & gulp watch",
     "gulp": "gulp",
     "lint": "prettier '**/*.{ts,scss,md,js}' --write",
