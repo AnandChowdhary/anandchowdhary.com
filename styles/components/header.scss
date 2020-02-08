@@ -74,7 +74,7 @@ header#masthead #more:target {
 }
 
 .intro {
-  background-color: whitesmoke;
+  background-color: lighten($color: $colorAbout, $amount: 45);
   max-width: 100%;
   width: 100%;
   padding: 3.5rem 0;

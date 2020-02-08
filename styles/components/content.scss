@@ -4,6 +4,18 @@
   max-width: 1100px;
   margin: 5rem auto 7.5rem auto;
 
+  &.nm {
+    margin: 0 auto;
+  }
+
+  &.nmb {
+    margin-bottom: 0;
+  }
+
+  &.nmt {
+    margin-top: 0;
+  }
+
   > * {
     max-width: 600px;
     margin: 0 auto 1rem auto;
