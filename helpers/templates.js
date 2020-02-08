@@ -48,7 +48,7 @@ const getEventsSummaryCity = async (allItems, value) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   if (items.length) {
     result += `
-      <h2>Events</h2>
+      <h2 id="events">Events <a class="direct-link" href="#events">#</a></h2>
       <p>This is a list of events I've spoken at in ${titleify(
         value
       )}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
@@ -71,7 +71,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   if (items.length) {
     result += `
-      <h2>Projects</h2>
+      <h2 id="projects">Projects <a class="direct-link" href="#projects">#</a></h2>
       <p>These are projects I've worked on in ${titleify(
         value
       )}. If you want to see more projects, visit the <a href="/projects/">Projects page</a>.</p>
@@ -187,13 +187,13 @@ const getCityArchivePageData = async (allItems, city) => {
     });
   } catch (error) {}
   result += `
-    <h2>About</h2>
+    <h2 id="about">About <a class="direct-link" href="#about">#</a></h2>
     <p>${await getWikiSummary(city)}</p>
     ${await getDescription("places", city)}
   `;
   if (images)
     result += `
-    <h2>Highlights</h2>
+    <h2 id="highlights">Highlights <a class="direct-link" href="#highlights">#</a></h2>
     <p>These highlighted stories are from my <a href="https://www.instagram.com/anandchowdhary/">Instagram profile</a>. If you want more photos, you should follow me there.</p></div>
     <div class="horizontal-scroller container"><div class="highlighted-stories">${images}</div></div><div class="container-outer">
   `;
