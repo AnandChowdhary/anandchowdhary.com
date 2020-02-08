@@ -2,6 +2,7 @@ const { join } = require("path");
 const { readJSON } = require("fs-extra");
 const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const typeset = require("typeset");
 const pluginPWA = require("eleventy-plugin-pwa");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -65,6 +66,14 @@ module.exports = eleventyConfig => {
         collapseBooleanAttributes: true
       });
       return minified;
+    }
+    return content;
+  });
+
+  eleventyConfig.addTransform("typeset", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      let typed = typeset(content);
+      return typed;
     }
     return content;
   });
