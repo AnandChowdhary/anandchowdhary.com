@@ -5,6 +5,7 @@ var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 var cleanCSS = require("gulp-clean-css");
+var ts = require("gulp-typescript");
 var del = require("del");
 
 var paths = {
@@ -13,7 +14,7 @@ var paths = {
     dest: "public/assets/styles/"
   },
   scripts: {
-    src: "scripts/**/*.js",
+    src: "scripts/**/*.ts",
     dest: "public/assets/scripts/"
   },
   static: {
@@ -44,6 +45,11 @@ function styles() {
 function scripts() {
   return gulp
     .src(paths.scripts.src, { sourcemaps: true })
+    .pipe(
+      ts({
+        noImplicitAny: true
+      })
+    )
     .pipe(babel())
     .pipe(uglify())
     .pipe(concat("main.min.js"))
