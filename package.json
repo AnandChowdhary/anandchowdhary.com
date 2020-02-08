@@ -10,7 +10,7 @@
     "compress-images": "imagemin cache/images/thumbnails/* --out-dir=cache/images/thumbnails && imagemin cache/images/domains/* --out-dir=cache/images/domains",
     "copy-cache-images": "npm run compress-images && mkdirp public/images/cache && cp -r cache/images/* public/images/cache",
     "build": "npm run parcel-build && node helpers/life-data.js && node helpers/blog-tags.js && eleventy && gulp && npm run copy-highlights && npm run copy-cache-images && node helpers/sitemap.js",
-    "serve": "npm run gulp && eleventy --serve & gulp watch",
+    "serve": "npm run gulp && npm run parcel-build && eleventy --serve & gulp watch",
     "gulp": "gulp",
     "lint": "prettier '{content,helpers,includes,scripts,styles}/*.{ts,scss,md,js}' --write",
     "parcel-build": "rm -rf dist && parcel build scripts/parcel.html && node helpers/parcel.js"

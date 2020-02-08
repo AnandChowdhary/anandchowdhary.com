@@ -7,7 +7,7 @@ var del = require("del");
 
 var paths = {
   styles: {
-    src: "styles/**/*.scss",
+    src: "styles/app.scss",
     dest: "public/assets/styles/"
   },
   static: {
