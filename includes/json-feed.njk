@@ -34,7 +34,7 @@ metadata:
       "date_published": "{{ post.date | rssDate }}",
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",
-      "content_html": "{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}"
+      "content_html": "{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | removeNewLines }}"
     }{% if not loop.last %},{% endif %}
     {%- endfor %}
   ]

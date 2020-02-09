@@ -90,6 +90,9 @@ module.exports = eleventyConfig => {
     return content;
   });
 
+  eleventyConfig.addNunjucksFilter("removeNewLines", val =>
+    val.replace(/\n/g, "")
+  );
   eleventyConfig.addNunjucksFilter("domainIcon", getDomainIcon);
   eleventyConfig.addNunjucksFilter("bingImageUrl", getBingImageUrl);
   eleventyConfig.addNunjucksFilter("domainFromUrl", getDomainFromUrl);
