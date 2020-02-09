@@ -1,5 +1,12 @@
-const { readdir, copyFile, ensureDir, writeJson } = require("fs-extra");
+const {
+  readdir,
+  copyFile,
+  ensureDir,
+  writeJson,
+  createReadStream
+} = require("fs-extra");
 const { join } = require("path");
+const { fromStream } = require("ssri");
 
 const copyParcelJs = async () => {
   const files = await readdir(join(__dirname, "..", "dist"));
@@ -15,9 +22,20 @@ const copyParcelJs = async () => {
       join(__dirname, "..", "public", "assets", "scripts", `${jsFile}.map`)
     );
   } catch (error) {}
+  const integrityMap = await fromStream(
+    createReadStream(
+      join(__dirname, "..", "public", "assets", "scripts", jsFile)
+    ),
+    {
+      algorithms: ["sha384"]
+    }
+  );
   await writeJson(
     join(__dirname, "..", "content", "_data", "jsFilePath.json"),
-    jsFile
+    {
+      name: jsFile,
+      integrity: integrityMap.toString()
+    }
   );
 };
 
