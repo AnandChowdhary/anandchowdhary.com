@@ -7,7 +7,7 @@ var del = require("del");
 
 var paths = {
   styles: {
-    src: "styles/app.scss",
+    src: "styles/**/*.scss",
     dest: "public/assets/styles/"
   },
   static: {
@@ -22,7 +22,7 @@ function clean() {
 
 function styles() {
   return gulp
-    .src(paths.styles.src)
+    .src(paths.styles.src.replace("**/*", "app"))
     .pipe(sass())
     .pipe(cleanCSS())
     .pipe(concat("main.min.css"))

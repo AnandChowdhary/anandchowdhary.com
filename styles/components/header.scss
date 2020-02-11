@@ -91,7 +91,10 @@ header#masthead #more:target {
 }
 
 .index header#masthead nav a.active span {
-  border-bottom-color: $colorHome;
+  border-bottom-color: #274a90;
+}
+.index {
+  color: #001d56;
 }
 
 .projects .intro {
