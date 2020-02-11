@@ -91,10 +91,10 @@ header#masthead #more:target {
 }
 
 .index header#masthead nav a.active span {
-  border-bottom-color: #274a90;
+  border-bottom-color: $colorHome;
 }
 .index {
-  color: #001d56;
+  color: $colorHome;
 }
 
 .projects .intro {
