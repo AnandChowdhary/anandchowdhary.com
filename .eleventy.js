@@ -58,29 +58,30 @@ module.exports = eleventyConfig => {
     }
   });
 
-  eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        sortClassName: true,
-        sortAttributes: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        removeComments: true,
-        removeAttributeQuotes: true,
-        quoteCharacter: '"',
-        processScripts: ["text/javascript", "application/ld+json"],
-        minifyCSS: true,
-        minifyJS: true,
-        conservativeCollapse: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true
-      });
-      return minified;
-    }
-    return content;
-  });
+  if (process.env.NODE_ENV === "production")
+    eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+      if (outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          sortClassName: true,
+          sortAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          removeComments: true,
+          removeAttributeQuotes: true,
+          quoteCharacter: '"',
+          processScripts: ["text/javascript", "application/ld+json"],
+          minifyCSS: true,
+          minifyJS: true,
+          conservativeCollapse: true,
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true
+        });
+        return minified;
+      }
+      return content;
+    });
 
   eleventyConfig.addTransform("typeset", (content, outputPath) => {
     if (outputPath.endsWith(".html")) {
