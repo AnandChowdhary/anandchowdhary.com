@@ -21,9 +21,9 @@
   <div class="r">
     {% excerpt post %}
     {% if post.data.alias %}
-    <p><a href="{{ post.data.alias | url }}">{{ post.data.alias | iconify | safe }}Continue reading on {{ post.data.publisher }}</a></p>
+    <p><a href="{{ post.data.alias | url }}">{{ post.data.alias | iconify | safe }}Read {{ post.data.title }} on {{ post.data.publisher }}</a></p>
     {% else %}
-    <p><a href="{{ post.url | url }}">Continue reading &rarr;</a></p>
+    <p><a href="{{ post.url | url }}">Read {{ post.data.title }} &rarr;</a></p>
     {% endif %}
   </div>
 </article>

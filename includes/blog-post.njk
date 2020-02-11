@@ -28,7 +28,7 @@
   <div class="container-outer">
     {{ content | safe }}
     {% if alias %}
-    <p><a href="{{ alias | url }}">{{ alias | iconify | safe }}Continue reading on {{ publisher }}</a></p>
+    <p><a href="{{ alias | url }}">{{ alias | iconify | safe }}Read {{ title }} on {{ publisher }}</a></p>
     {% endif %}
   </div>
 </main>

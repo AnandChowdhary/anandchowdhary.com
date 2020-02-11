@@ -26,9 +26,9 @@ const getEventCard = (post, h3 = false) =>
           })}</time>
         </a>
       </div>
-      <div><a class="continue" href="${
-        post.url
-      }">Continue reading &rarr;</a></div>
+      <div><a class="continue" href="${post.url}">Read ${
+    post.data.title
+  } &rarr;</a></div>
     </div>
     </div>
   </article>`;

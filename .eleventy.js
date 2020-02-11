@@ -316,8 +316,8 @@ module.exports = eleventyConfig => {
               ${extractExcerpt(item)}
               ${
                 item.data.alias
-                  ? `<p><a href="${item.data.alias}">Continue reading on ${item.data.publisher}</a></p>`
-                  : `<p><a href="${item.url}">Continue reading &rarr;</a></p>`
+                  ? `<p><a href="${item.data.alias}">Read ${item.data.title} on ${item.data.publisher}</a></p>`
+                  : `<p><a href="${item.url}">Read ${item.data.title} &rarr;</a></p>`
               }
             </div>
           </article>`;
