@@ -6,6 +6,10 @@
       <p>&copy; 2008&ndash;2020 <a href="/">Anand Chowdhary</a></p>
       <p><a href="https://madewithlove.org.in">Made with ❤️ in 🇮🇳🇳🇱🇺🇸</a></p>
     </footer>
+    {% if env.NODE_ENV == "production" %}
     <script src="/assets/scripts/{{ jsFilePath.name }}" integrity="{{ jsFilePath.integrity }}" crossorigin="anonymous"></script>
+    {% else %}
+    <script src="/assets/scripts/{{ jsFilePath.name }}"></script>
+    {% endif %}
   </body>
 </html>

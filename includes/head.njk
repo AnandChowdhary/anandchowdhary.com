@@ -7,7 +7,11 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% seo "" %}
+    {% if env.NODE_ENV == "production" %}
     <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}" integrity="{{ cssFilePath.integrity }}" crossorigin="anonymous">
+    {% else %}
+    <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}">
+    {% endif %}
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|IBM+Plex+Serif:600,500&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
