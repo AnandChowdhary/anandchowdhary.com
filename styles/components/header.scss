@@ -103,65 +103,60 @@ body {
 
 .projects {
   color: #003d52;
-}
-.projects .intro {
-  background-color: #faffa7;
-}
-.projects header#masthead nav a.active span {
-  border-bottom-color: #003d52;
-}
-
-.blog .intro {
-  background-color: lighten($color: $colorBlog, $amount: 55);
-  nav.filter-nav a.active {
-    background-color: $colorBlog;
+  .intro,
+  header#masthead {
+    background-color: #faffa7;
+  }
+  header#masthead nav a.active span {
+    border-bottom-color: #003d52;
   }
 }
+
 .blog {
   color: #003a39;
+  header#masthead nav a.active span {
+    border-bottom-color: #003a39;
+  }
+  .intro,
+  header#masthead {
+    background-color: #c0ffcd;
+  }
+  nav.filter-nav a.active {
+    background-color: #c0ffcd;
+  }
   a,
   h2 + div,
   .project-intro dt {
-    color: #d5ffcc;
+    color: #c0ffcd;
   }
-}
-.blog header#masthead nav a.active span {
-  border-bottom-color: #003a39;
 }
 
 .life {
   color: #003a39;
-}
-.life .intro {
-  background-color: #faffa7;
-}
-.life header#masthead nav a.active span {
-  border-bottom-color: #faffa7;
-}
-.life a,
-.life .project-intro dt,
-.life h2 + div {
-  color: #faffa7;
-}
-
-.events .intro {
-  background-color: lighten($color: $colorEvents, $amount: 50);
-}
-.events header#masthead nav a.active span {
-  border-bottom-color: $colorEvents;
-}
-.events a,
-.events .project-intro dt {
-  color: darken($color: $colorEvents, $amount: 10);
+  .intro,
+  header#masthead {
+    background-color: #faffa7;
+  }
+  header#masthead nav a.active span {
+    border-bottom-color: #faffa7;
+  }
+  a,
+  .project-intro dt,
+  h2 + div {
+    color: #faffa7;
+  }
 }
 
-.about .intro {
-  background-color: lighten($color: $colorAbout, $amount: 45);
-}
-.about header#masthead nav a.active span {
-  border-bottom-color: $colorAbout;
-}
-.about a,
-.about .project-intro dt {
-  color: darken($color: $colorAbout, $amount: 10);
+.events {
+  .intro,
+  header#masthead {
+    background-color: lighten($color: $colorEvents, $amount: 50);
+  }
+  header#masthead nav a.active span {
+    border-bottom-color: $colorEvents;
+  }
+  a,
+  .project-intro dt {
+    color: darken($color: $colorEvents, $amount: 10);
+  }
 }
