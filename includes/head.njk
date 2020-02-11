@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% seo "" %}
-    {% if env.NODE_ENV == "production" %}
+    {% if environment.NODE_ENV == "production" %}
     <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}" integrity="{{ cssFilePath.integrity }}" crossorigin="anonymous">
     {% else %}
     <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}">
@@ -22,7 +22,7 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    {% if env.NODE_ENV == "production" %}
+    {% if environment.NODE_ENV == "production" %}
     <script>if("serviceWorker" in navigator)navigator.serviceWorker.register("/service-worker.js")</script>
     {% endif %}
   </head>

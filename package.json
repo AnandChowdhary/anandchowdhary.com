@@ -9,7 +9,7 @@
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
     "compress-images": "imagemin cache/images/thumbnails/* --out-dir=cache/images/thumbnails && imagemin cache/images/domains/* --out-dir=cache/images/domains",
     "copy-cache-images": "npm run compress-images && mkdirp public/images/cache && cp -r cache/images/* public/images/cache",
-    "before-eleventy": "npm run copy-static && node helpers/life-data.js && node helpers/blog-tags.js",
+    "before-eleventy": "node helpers/env.js && npm run copy-static && node helpers/life-data.js && node helpers/blog-tags.js",
     "after-eleventy": "npm run copy-highlights && npm run copy-cache-images && node helpers/sitemap.js",
     "build": "npm run parcel-build && npm run before-eleventy && npm run build-eleventy && npm run after-eleventy",
     "serve": "npm run before-eleventy && npm run copy-highlights && npm run copy-cache-images && npm run build-eleventy --serve & npm run watch-parcel",
