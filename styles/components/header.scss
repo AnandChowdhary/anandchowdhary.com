@@ -93,15 +93,22 @@ header#masthead #more:target {
 .index header#masthead nav a.active span {
   border-bottom-color: $colorHome;
 }
-.index {
+.index .hero-container,
+.index header#masthead {
+  background-color: #bcfff1;
+}
+body {
   color: $colorHome;
 }
 
+.projects {
+  color: #003d52;
+}
 .projects .intro {
-  background-color: lighten($color: $colorProjects, $amount: 48);
+  background-color: #faffa7;
 }
 .projects header#masthead nav a.active span {
-  border-bottom-color: $colorProjects;
+  border-bottom-color: #003d52;
 }
 
 .blog .intro {
@@ -111,26 +118,30 @@ header#masthead #more:target {
   }
 }
 .blog {
+  color: #003a39;
   a,
   h2 + div,
   .project-intro dt {
-    color: darken($color: $colorBlog, $amount: 20);
+    color: #d5ffcc;
   }
 }
 .blog header#masthead nav a.active span {
-  border-bottom-color: $colorBlog;
+  border-bottom-color: #003a39;
 }
 
+.life {
+  color: #003a39;
+}
 .life .intro {
-  background-color: lighten($color: $colorLife, $amount: 43);
+  background-color: #faffa7;
 }
 .life header#masthead nav a.active span {
-  border-bottom-color: $colorLife;
+  border-bottom-color: #faffa7;
 }
 .life a,
 .life .project-intro dt,
 .life h2 + div {
-  color: darken($color: $colorLife, $amount: 10);
+  color: #faffa7;
 }
 
 .events .intro {
