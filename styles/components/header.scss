@@ -3,6 +3,7 @@
 header#masthead {
   nav,
   #more {
+    position: relative;
     display: flex;
   }
   a[href="#more"] {
@@ -74,7 +75,6 @@ header#masthead #more:target {
 }
 
 .intro {
-  background-color: lighten($color: $colorAbout, $amount: 45);
   max-width: 100%;
   width: 100%;
   padding: 3.5rem 0;
@@ -93,49 +93,71 @@ header#masthead #more:target {
 .index header#masthead nav a.active span {
   border-bottom-color: $colorHome;
 }
-.index .hero-container,
-.index header#masthead {
-  background-color: #bcfff1;
-}
+
 body {
   color: $colorHome;
 }
+.intro,
+header#masthead,
+.hero-container {
+  background-color: #bcfff1;
+}
+.hero-container a {
+  color: #00735b;
+}
+a.direct-link {
+  color: #bcfff1;
+}
 
-.projects {
+body.projects {
   color: #003d52;
   .intro,
   header#masthead {
-    background-color: #faffa7;
+    background-color: #ffd5d4;
+  }
+  a.direct-link {
+    color: #ffd5d4;
   }
   header#masthead nav a.active span {
     border-bottom-color: #003d52;
   }
+  a,
+  h2 + div,
+  .project-intro dt {
+    color: #540200;
+  }
 }
 
-.blog {
-  color: #003a39;
+body.blog {
+  color: #33000e;
   header#masthead nav a.active span {
-    border-bottom-color: #003a39;
+    border-bottom-color: #33000e;
   }
   .intro,
   header#masthead {
     background-color: #c0ffcd;
   }
+  a.direct-link {
+    color: #c0ffcd;
+  }
   nav.filter-nav a.active {
-    background-color: #c0ffcd;
+    background-color: #45614a;
   }
   a,
   h2 + div,
   .project-intro dt {
-    color: #c0ffcd;
+    color: #45614a;
   }
 }
 
-.life {
+body.life {
   color: #003a39;
   .intro,
   header#masthead {
     background-color: #faffa7;
+  }
+  a.direct-link {
+    color: #faffa7;
   }
   header#masthead nav a.active span {
     border-bottom-color: #faffa7;
@@ -143,20 +165,25 @@ body {
   a,
   .project-intro dt,
   h2 + div {
-    color: #faffa7;
+    color: #484c00;
   }
 }
 
-.events {
+body.events {
+  color: #3e0050;
   .intro,
   header#masthead {
-    background-color: lighten($color: $colorEvents, $amount: 50);
+    background-color: #c4f0ff;
+  }
+  a.direct-link {
+    color: #c4f0ff;
   }
   header#masthead nav a.active span {
     border-bottom-color: $colorEvents;
   }
   a,
-  .project-intro dt {
-    color: darken($color: $colorEvents, $amount: 10);
+  .project-intro dt,
+  h2 + div {
+    color: #00536f;
   }
 }
