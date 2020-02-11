@@ -9,9 +9,11 @@
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
     "compress-images": "imagemin cache/images/thumbnails/* --out-dir=cache/images/thumbnails && imagemin cache/images/domains/* --out-dir=cache/images/domains",
     "copy-cache-images": "npm run compress-images && mkdirp public/images/cache && cp -r cache/images/* public/images/cache",
-    "build": "npm run parcel-build && node helpers/life-data.js && node helpers/blog-tags.js && eleventy && npm run copy-highlights && npm run copy-cache-images && node helpers/sitemap.js",
-    "serve": "npm run parcel-build && eleventy --serve",
+    "build": "npm run parcel-build && npm run copy-static && node helpers/life-data.js && node helpers/blog-tags.js && eleventy && npm run copy-highlights && npm run copy-cache-images && node helpers/sitemap.js",
+    "serve": "npm run parcel-build && npm run copy-static && eleventy --serve & npm run watch-parcel",
     "lint": "prettier '{content,helpers,includes,scripts,styles,.}/*.{ts,scss,md,js}' --write",
+    "copy-static": "cp -r static/* public/assets",
+    "watch-parcel": "onchange 'scripts/**/*.js' 'styles/**/*.scss' -- npm run parcel-build",
     "parcel-build": "rm -rf dist && parcel build scripts/parcel.html && node helpers/parcel.js"
   },
   "devDependencies": {
@@ -53,6 +55,7 @@
   "dependencies": {
     "debounce": "^1.2.0",
     "medium-zoom": "^1.0.5",
+    "onchange": "^6.1.0",
     "timeago.js": "^4.0.2"
   }
 }
