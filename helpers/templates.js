@@ -9,6 +9,7 @@ const {
 const { join } = require("path");
 const { trim, titleify } = require("./utils");
 const { getCityCountry } = require("./cities");
+const { getMdDescription } = require("./utils");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
@@ -86,23 +87,16 @@ const getProjectsSummaryCity = async (allItems, value) => {
 const getDescription = async (type, key, k, noTag = false) => {
   if (!key) return "";
   try {
-    const data = await readJson(
-      join(__dirname, "..", "content", "_data", "descriptions.json")
-    );
-    if (key && typeof data[type][key] === "string")
-      return `<p>${data[type][key]}</p>`;
-    if (key && k && typeof data[type][key][k] === "string")
-      return noTag ? data[type][key][k] : `<p>${data[type][key][k]}</p>`;
+    const data = getMdDescription(`${type}/${key}`);
+    if (data && k && data[k]) return noTag ? data[k] : `<p>${data[k]}</p>`;
+    if (data.content) return `<p>${data.content}</p>`;
   } catch (error) {}
   return "";
 };
 
 const getCollaboratorProfilePictureUrl = async user => {
   try {
-    const data = await readJson(
-      join(__dirname, "..", "content", "_data", "descriptions.json")
-    );
-    const profiles = data.collaborators[user];
+    const profiles = getMdDescription(`collaborators/${user}`);
     if (profiles.github)
       return `<img alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
     if (profiles.twitter)
@@ -117,10 +111,7 @@ const getCollaboratorProfilePictureUrl = async user => {
 
 const getCollaboratorSocialProfiles = async name => {
   try {
-    const data = await readJson(
-      join(__dirname, "..", "content", "_data", "descriptions.json")
-    );
-    const profiles = data.collaborators[name];
+    const profiles = getMdDescription(`collaborators/${name}`);
     let result = "<div class='collaborator-profiles social-links'>";
     if (profiles.twitter)
       result += `<a href="https://twitter.com/${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`;
@@ -189,7 +180,7 @@ const getCityArchivePageData = async (allItems, city) => {
   result += `
     <h2 id="about">About <a class="direct-link" href="#about">#</a></h2>
     <p>${await getWikiSummary(city)}</p>
-    ${await getDescription("places", city)}
+    ${(await getDescription("places", city)).content || ""}
   `;
   if (images)
     result += `

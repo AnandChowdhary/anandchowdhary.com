@@ -5,13 +5,11 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const typeset = require("typeset");
 const pluginPWA = require("eleventy-plugin-pwa");
 const pluginSEO = require("eleventy-plugin-seo");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const hljs = require("highlight.js");
 const { trim, titleify, getDomainFromUrl } = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
 const { getEventCard } = require("./helpers/cards");
 const { getBingImageUrl, getDomainIcon } = require("./helpers/images");
+const { markdownLibrary } = require("./helpers/markdown");
 const {
   getTravelPageItem,
   getCityArchivePageData,
@@ -24,24 +22,6 @@ const {
 } = require("./helpers/templates");
 
 module.exports = eleventyConfig => {
-  let markdownLibrary = markdownIt({
-    html: true,
-    breaks: true,
-    linkify: true,
-    typographer: true,
-    highlight: (str, lang) => {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return hljs.highlight(lang, str).value;
-        } catch (error) {}
-      }
-      return "";
-    }
-  }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
-  });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   eleventyConfig.addPlugin(pluginRss);
