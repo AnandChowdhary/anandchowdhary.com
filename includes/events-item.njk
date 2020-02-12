@@ -1,25 +1,15 @@
-<article class="events-item">
-  <div class="content">
-    <h2>
-      <a href="{{ post.url | url }}">
-        <img class="item-icon" alt="" src="{{ post.data.icon }}"><span>{{ post.data.title }}</span>
-      </a>
-    </h2>
-    <div class="location">
-      <div>{{ post.data.venue }}</div>
-      <div><a href="/life/travel/{{ post.data.places }}">{{ post.data.places | place }}</a></div>
-    </div>
-    <div class="meta">
-      <div>
-        <a href="{{ post.url | url }}">
-          <time>{{ post.data.date.toLocaleDateString("en-US", {
-            day: "numeric",
-            month: "short",
-            year : "numeric"
-          }) }}</time>
-        </a>
+<article>
+  <a href="{{ post.url | url }}">
+    <div class="f">
+      <img alt="" src="{{ post.data.icon }}">
+      <div class="ff">
+        <h2>{{ post.data.title }}</h2>
+        <div class="f">
+          <div>{{ post.data.venue }}</div>
+          <div>{{ post.data.date | datetime | safe }}</div>
+        </div>
+        <div>{{ post.data.places | place }}</div>
       </div>
-      <div><a class="continue" href="{{ post.url | url }}">Read {{ post.data.title }} &rarr;</a></div>
     </div>
-  </div>
+  </a>
 </article>

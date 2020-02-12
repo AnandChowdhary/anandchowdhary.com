@@ -23,7 +23,7 @@
 main h1 {
   &.has-icon {
     margin-bottom: 0.5rem;
-    span {
+    > span {
       display: block;
     }
   }

@@ -79,6 +79,9 @@
       border-radius: 0.2rem;
     }
   }
+  div + div {
+    margin-top: 0.5rem;
+  }
   h2 {
     font-size: 125%;
     margin-bottom: 0.5rem;
@@ -93,9 +96,11 @@
   }
   img {
     height: 5rem;
+    width: 5rem;
     border-radius: 100%;
     vertical-align: middle;
-    margin-right: 1.5rem;
+    margin-right: 2rem;
+    margin-left: -7rem;
   }
   .img {
     height: 5rem;
@@ -106,7 +111,8 @@
     background-repeat: no-repeat;
     border-radius: 100%;
     vertical-align: middle;
-    margin-right: 1.5rem;
+    margin-right: 2rem;
+    margin-left: -7rem;
   }
   &.tl img,
   &.tl .img {
