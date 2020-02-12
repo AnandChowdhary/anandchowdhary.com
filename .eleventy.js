@@ -223,11 +223,11 @@ module.exports = eleventyConfig => {
           "flag",
           true
         )}</span>`;
-      if (await getDescription("collaborators", value, "name", true))
+      if (await getDescription("collaborators", value, "title", true))
         result += ` <span>${await getDescription(
           "collaborators",
           value,
-          "name",
+          "title",
           true
         )}</span>`;
       if (result.trim()) return result;

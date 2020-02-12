@@ -89,7 +89,6 @@ const getDescription = async (type, key, k, noTag = false) => {
   try {
     const data = getMdDescription(`${type}/${key}`);
     if (data && k && data[k]) return noTag ? data[k] : `<p>${data[k]}</p>`;
-    if (data.content) return `<p>${data.content}</p>`;
   } catch (error) {}
   return "";
 };
@@ -180,7 +179,7 @@ const getCityArchivePageData = async (allItems, city) => {
   result += `
     <h2 id="about">About <a class="direct-link" href="#about">#</a></h2>
     <p>${await getWikiSummary(city)}</p>
-    ${(await getDescription("places", city)).content || ""}
+    ${(await getDescription("places", city, "content")) || ""}
   `;
   if (images)
     result += `
@@ -240,7 +239,7 @@ const getWorkArchive = async (allItems, category, value) => {
   let result = `<header class="intro"><div>`;
 
   const TITLE =
-    (await getDescription(category, value.toLowerCase(), "name", true)) ||
+    (await getDescription(category, value.toLowerCase(), "title", true)) ||
     titleify(value);
 
   if (category !== "work")
@@ -251,7 +250,7 @@ const getWorkArchive = async (allItems, category, value) => {
     <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(
       category,
       value,
-      "name",
+      "title",
       true
     )) || titleify(value)}</a>
     </nav>`;
@@ -267,7 +266,7 @@ const getWorkArchive = async (allItems, category, value) => {
       value,
       "flag",
       true
-    )} ${(await getDescription(category, value.toLowerCase(), "name", true)) ||
+    )} ${(await getDescription(category, value.toLowerCase(), "title", true)) ||
       titleify(value)}</h1>`;
   } else if (
     category === "work" &&
@@ -287,7 +286,7 @@ const getWorkArchive = async (allItems, category, value) => {
   if (category !== "collaborators" && !result.includes("</h1>"))
     result += `<h1>${TITLE}</h1>`;
 
-  const intro = await getDescription(category, value.toLowerCase(), "intro");
+  const intro = await getDescription(category, value.toLowerCase(), "content");
   if (intro) result += intro;
   else if (category !== "work") result += await getWikiSummary(value);
 
