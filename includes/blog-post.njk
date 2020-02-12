@@ -13,11 +13,7 @@
         {% if tags and (tags.length > 0) %}<span>
           <dt>Tags</dt>
           {% for tag in tags %}{% if tag !== "blog" %}
-          {% if tag === "state-of-the" %}
-          <dd><a href="/blog/{{ tag }}/">State of the X</a></dd>
-          {% else %}
-          <dd><a href="/blog/{{ tag }}/">{{ tag | titleify }}</a></dd>
-          {% endif %}
+          <dd><a href="/blog/{{ tag }}/">{{ tag | getBlogTagName }}</a></dd>
           {% endif %}{% endfor %}
         </span>{% endif %}
       </dl>

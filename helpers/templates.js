@@ -372,6 +372,22 @@ const getTravelPageItem = async (allItems, city) => {
   `;
 };
 
+const getBlogFilterNav = (value = "all") => {
+  return `<nav class="filter-nav">
+    <a${value === "all" ? ` class="active"` : ""} href="/blog/">All</a>
+    <a${
+      value === "coffee-time" ? ` class="active"` : ""
+    } href="/blog/coffee-time/">Coffee Time</a>
+    <a${
+      value.includes("state-of-the") ? ` class="active"` : ""
+    } href="/blog/state-of-the/">State of the X</a>
+    <a${value === "code" ? ` class="active"` : ""} href="/blog/code/">Code</a>
+    <a${
+      value === "design" ? ` class="active"` : ""
+    } href="/blog/design/">Design</a>
+  </nav>`;
+};
+
 module.exports = {
   getWikiSummary,
   getTravelPageItem,
@@ -382,5 +398,6 @@ module.exports = {
   getWorkArchive,
   getCollaboratorProfilePictureUrl,
   getProjectNavbar,
-  getProjectsSelector
+  getProjectsSelector,
+  getBlogFilterNav
 };

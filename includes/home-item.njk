@@ -8,10 +8,7 @@
     }) }}</time>
     {% if post.data.tags and (post.data.tags.length > 0) %}<div class="project-tags">
       {% for tag in post.data.tags %}{% if tag !== "blog" %}
-      {% if tag === "state-of-the" %}
-      <span>State of the X</span>
-      {% else %}
-      <span>{{ tag | titleify }}</span>
+      <span>{{ tag | getBlogTagName }}</span>
       {% endif %}
       {% endif %}{% endfor %}
     </div>{% endif %}

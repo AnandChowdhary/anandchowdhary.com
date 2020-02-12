@@ -5,7 +5,12 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const typeset = require("typeset");
 const pluginPWA = require("eleventy-plugin-pwa");
 const pluginSEO = require("eleventy-plugin-seo");
-const { trim, titleify, getDomainFromUrl } = require("./helpers/utils");
+const {
+  trim,
+  titleify,
+  getDomainFromUrl,
+  getMdDescription
+} = require("./helpers/utils");
 const { getCityEmojiTitle } = require("./helpers/cities");
 const { getEventCard } = require("./helpers/cards");
 const { getBingImageUrl, getDomainIcon } = require("./helpers/images");
@@ -18,7 +23,8 @@ const {
   getProjectsSelector,
   getCollaboratorProfilePictureUrl,
   getProjectNavbar,
-  getWikiSummary
+  getWikiSummary,
+  getBlogFilterNav
 } = require("./helpers/templates");
 
 module.exports = eleventyConfig => {
@@ -158,6 +164,9 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksAsyncShortcode("toolsTagsArchive", async value =>
     getWorkArchive(allItems, "tools", value)
   );
+  eleventyConfig.addNunjucksShortcode("getBlogFilterNav", value =>
+    getBlogFilterNav(value)
+  );
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "eventRolesTagsArchive",
@@ -250,21 +259,8 @@ module.exports = eleventyConfig => {
         <div class="l"></div>
         <div class="r">
           <h1>Blog</h1>
-          <nav class="filter-nav">
-            <a href="/blog/">All</a>
-            <a${
-              value === "coffee-time" ? ` class="active"` : ""
-            } href="/blog/coffee-time/">Coffee Time</a>
-            <a${
-              value.includes("state-of-the") ? ` class="active"` : ""
-            } href="/blog/state-of-the/">State of the X</a>
-            <a${
-              value === "code" ? ` class="active"` : ""
-            } href="/blog/code/">Code</a>
-            <a${
-              value === "design" ? ` class="active"` : ""
-            } href="/blog/design/">Design</a>
-          </nav>
+          ${(await getDescription("blog", value, "content")) || ""}
+          ${getBlogFilterNav(value)}
         </div>
       </div></header><div class="container m"><section class="blog-posts">`;
       items.forEach(item => {
@@ -344,6 +340,10 @@ module.exports = eleventyConfig => {
   });
   eleventyConfig.addShortcode("excerpt", post => extractExcerpt(post));
   eleventyConfig.addNunjucksFilter("place", value => getCityEmojiTitle(value));
+  eleventyConfig.addNunjucksFilter(
+    "getBlogTagName",
+    value => getMdDescription(`blog/${value}`).title || titleify(value)
+  );
   return {
     dir: {
       input: "content",
