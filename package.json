@@ -36,7 +36,7 @@
     "fs-extra": "^8.1.0",
     "highlight.js": "^9.18.1",
     "html-minifier": "^4.0.0",
-    "husky": "^4.2.1",
+    "husky": "^4.2.2",
     "imagemin-cli": "^5.1.0",
     "js-yaml": "^3.13.1",
     "markdown-it": "^10.0.0",
