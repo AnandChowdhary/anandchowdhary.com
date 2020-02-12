@@ -12,10 +12,11 @@
     "before-eleventy": "node helpers/env.js && npm run copy-static && node helpers/life-data.js && node helpers/blog-tags.js",
     "after-eleventy": "npm run copy-highlights && npm run copy-cache-images && node helpers/sitemap.js",
     "build": "npm run parcel-build && npm run before-eleventy && npm run build-eleventy && npm run after-eleventy",
-    "serve": "npm run before-eleventy && npm run copy-highlights && npm run copy-cache-images && npm run build-eleventy --serve & npm run watch-parcel",
+    "serve": "npm run before-eleventy && npm run copy-highlights && npm run copy-cache-images && npm run serve-eleventy & npm run watch-parcel",
     "lint": "prettier '{content,helpers,includes,scripts,styles,.}/*.{ts,scss,md,js}' --write",
     "copy-static": "cp -r static/* public/",
     "build-eleventy": "eleventy",
+    "serve-eleventy": "eleventy --serve",
     "watch-parcel": "parcel watch scripts/parcel.html & onchange 'dist/*' -- node helpers/parcel.js",
     "parcel-build": "rm -rf dist && parcel build scripts/parcel.html && node helpers/parcel.js"
   },
