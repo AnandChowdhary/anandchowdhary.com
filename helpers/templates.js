@@ -7,9 +7,8 @@ const {
   exists
 } = require("fs-extra");
 const { join } = require("path");
-const { trim, titleify } = require("./utils");
+const { trim, titleify, getMdDescription } = require("./utils");
 const { getCityCountry } = require("./cities");
-const { getMdDescription } = require("./utils");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
@@ -377,14 +376,20 @@ const getBlogFilterNav = (value = "all") => {
     <a${value === "all" ? ` class="active"` : ""} href="/blog/">All</a>
     <a${
       value === "coffee-time" ? ` class="active"` : ""
-    } href="/blog/coffee-time/">Coffee Time</a>
+    } href="/blog/coffee-time/">${getMdDescription("blog/coffee-time").title ||
+    titleify("coffee-time")}</a>
     <a${
       value.includes("state-of-the") ? ` class="active"` : ""
-    } href="/blog/state-of-the/">State of the X</a>
-    <a${value === "code" ? ` class="active"` : ""} href="/blog/code/">Code</a>
+    } href="/blog/state-of-the/">${getMdDescription("blog/state-of-the")
+    .title || titleify("state-of-the")}</a>
+    <a${
+      value === "code" ? ` class="active"` : ""
+    } href="/blog/code/">${getMdDescription("blog/code").title ||
+    titleify("code")}</a>
     <a${
       value === "design" ? ` class="active"` : ""
-    } href="/blog/design/">Design</a>
+    } href="/blog/design/">${getMdDescription("blog/design").title ||
+    titleify("design")}</a>
   </nav>`;
 };
 

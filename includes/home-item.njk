@@ -9,7 +9,6 @@
     {% if post.data.tags and (post.data.tags.length > 0) %}<div class="project-tags">
       {% for tag in post.data.tags %}{% if tag !== "blog" %}
       <span>{{ tag | getBlogTagName }}</span>
-      {% endif %}
       {% endif %}{% endfor %}
     </div>{% endif %}
   </a>
