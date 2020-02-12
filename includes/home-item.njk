@@ -6,7 +6,7 @@
       month: "short",
       year : "numeric"
     }) }}</time>
-    {% if post.data.tags and (post.data.tags.length > 0) %}<div class="project-tags">
+    {% if post.data.tags and (post.data.tags.length > 1) %}<div class="project-tags">
       {% for tag in post.data.tags %}{% if tag !== "blog" %}
       <span>{{ tag | getBlogTagName }}</span>
       {% endif %}{% endfor %}

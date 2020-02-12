@@ -10,7 +10,7 @@
           <dt>Posted</dt>
           <dd>{{ date | datetime | safe }}</dd>
         </span>{% endif %}
-        {% if tags and (tags.length > 0) %}<span>
+        {% if tags and (tags.length > 1) %}<span>
           <dt>Tags</dt>
           {% for tag in tags %}{% if tag !== "blog" %}
           <dd><a href="/blog/{{ tag }}/">{{ tag | getBlogTagName }}</a></dd>
