@@ -121,7 +121,7 @@ body.projects {
   header#masthead nav a.active span {
     border-bottom-color: #003d52;
   }
-  a,
+  p a,
   h2 + div,
   .project-intro dt {
     color: #540200;
@@ -143,7 +143,7 @@ body.blog {
   nav.filter-nav a.active {
     background-color: #45614a;
   }
-  a,
+  p a,
   h2 + div,
   .project-intro dt {
     color: #45614a;
@@ -162,9 +162,9 @@ body.life {
   header#masthead nav a.active span {
     border-bottom-color: #faffa7;
   }
-  a,
-  .project-intro dt,
-  h2 + div {
+  p a,
+  h2 + div,
+  .project-intro dt {
     color: #484c00;
   }
 }
@@ -181,9 +181,9 @@ body.events {
   header#masthead nav a.active span {
     border-bottom-color: $colorEvents;
   }
-  a,
-  .project-intro dt,
-  h2 + div {
+  p a,
+  h2 + div,
+  .project-intro dt {
     color: #00536f;
   }
 }
