@@ -152,7 +152,7 @@
       &:first-child {
         margin-top: 4rem;
       }
-      span + span {
+      div > span + span {
         margin-left: 1rem;
       }
       h2 {

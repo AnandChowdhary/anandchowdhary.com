@@ -12,6 +12,7 @@ img_type: png
 icon: /images/projects/open-source/uppload/icon.png
 icon_bg: true
 stack: ["TypeScript"]
+award: "Product Hunt #1"
 ---
 
 Here is some text

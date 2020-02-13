@@ -181,7 +181,6 @@
     }
   }
   header#masthead {
-    display: block !important;
     nav {
       overflow-x: auto;
     }
@@ -307,10 +306,15 @@
     }
   }
   footer#colophon {
-    display: block;
     margin-bottom: 2rem;
     nav {
       margin-bottom: 1rem;
+    }
+  }
+  header#masthead,
+  footer#colophon {
+    .container {
+      display: block !important;
     }
   }
   .events-item {
