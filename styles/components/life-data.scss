@@ -95,25 +95,20 @@
   .flag {
     float: right;
   }
-  img {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 100%;
-    vertical-align: middle;
-    margin-right: 2rem;
-    margin-left: -7rem;
-  }
+  img,
   .img {
     height: 5rem;
     width: 5rem;
+    margin-right: 2rem;
+    margin-left: -7rem;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  .img {
     background-color: #eee;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    border-radius: 100%;
-    vertical-align: middle;
-    margin-right: 2rem;
-    margin-left: -7rem;
   }
   &.tl img,
   &.tl .img {
@@ -126,6 +121,12 @@
   &.nr img,
   &.nr .img {
     border-radius: 0.2rem;
+  }
+  &.s img,
+  &.s .img {
+    width: 3rem;
+    height: 3rem;
+    margin-left: -5rem;
   }
 }
 

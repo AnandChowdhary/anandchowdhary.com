@@ -90,10 +90,6 @@ header#masthead #more:target {
   }
 }
 
-.index header#masthead nav a.active span {
-  border-bottom-color: $colorHome;
-}
-
 body {
   color: $colorHome;
 }
@@ -121,9 +117,6 @@ body.projects {
   a.direct-link {
     color: #ffd5d4;
   }
-  header#masthead nav a.active span {
-    border-bottom-color: #003d52;
-  }
   a,
   h2 + div,
   .project-intro dt {
@@ -135,9 +128,6 @@ body.blog {
   color: #33000e;
   .intro a {
     color: #33000e;
-  }
-  header#masthead nav a.active span {
-    border-bottom-color: #33000e;
   }
   .intro,
   header#masthead {
@@ -168,9 +158,6 @@ body.life {
   a.direct-link {
     color: #faffa7;
   }
-  header#masthead nav a.active span {
-    border-bottom-color: #faffa7;
-  }
   a,
   h2 + div,
   .project-intro dt {
@@ -189,9 +176,6 @@ body.events {
   }
   a.direct-link {
     color: #c4f0ff;
-  }
-  header#masthead nav a.active span {
-    border-bottom-color: $colorEvents;
   }
   a,
   h2 + div,
