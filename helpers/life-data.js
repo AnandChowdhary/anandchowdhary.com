@@ -96,6 +96,7 @@ const lastUpdated = async () => {
     "podcast-history.yml",
     "emails.yml",
     "top-artists.yml",
+    "books.yml",
     "top-tracks.yml"
   ])
     lifeDataLastUpdated[file] = (

@@ -1,12 +1,13 @@
 <article class="books-item">
-  <a href="https://api.duckduckgo.com/?q=!goodreads+{{ (book.name + ' ' + book.author) | urlencode }}">
+  <a href="{{ book.url | url }}">
     <div class="content">
       <picture class="book-image">
-        <img src="{{ (book.name + ' ' + book.author + ' book cover/100/150') | bingImageUrl }}" alt="" loading="lazy" width="80" height="120">
+        <img src="{{ book.image_url }}" alt="" loading="lazy" width="80" height="120">
       </picture>
       <div>
-        <h2>{{ book.name }}</h2>
+        <h2>{{ book.title }}</h2>
         <div>{{ book.author }}</div>
+        {% if book.rating %}
         <div class="rating" aria-label="{{ book.rating }} stars out of 5">
           {% if ".5" in book.rating | string %}
             {% for i in range(1, book.rating) %}
@@ -62,6 +63,9 @@
             {% endfor %}
           {% endif %}
         </div>
+        {% else %}
+        <div><em>Currently reading</em></div>
+        {% endif %}
       </div>
     </div>
   </a>
