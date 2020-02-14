@@ -4,7 +4,6 @@ const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const typeset = require("typeset");
 const pluginPWA = require("eleventy-plugin-pwa");
-const pluginSEO = require("eleventy-plugin-seo");
 const {
   trim,
   titleify,
@@ -32,17 +31,6 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginPWA);
-  eleventyConfig.addPlugin(pluginSEO, {
-    title: "Anand Chowdhary",
-    description:
-      "Anand Chowdhary is a creative technologist and entrepreneur. He is the founder and CEO of Oswald Labs, an accessibility technology company.",
-    url: "https://anandchowdhary.com",
-    author: "Anand Chowdhary",
-    twitter: "AnandChowdhary",
-    options: {
-      titleDivider: "·"
-    }
-  });
 
   if (process.env.NODE_ENV === "production")
     eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
