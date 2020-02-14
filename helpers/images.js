@@ -23,13 +23,6 @@ const getBingImageUrl = args => {
   const URL = `/images/cache/thumbnails/${SLUG}`;
 
   if (existsSync(IMAGE)) return URL;
-
-  try {
-    download(BING, DIR, { filename: SLUG })
-      .then(() => {})
-      .catch(() => console.log("Unable to download image", query));
-    return URL;
-  } catch (error) {}
   return BING;
 };
 
