@@ -7,7 +7,8 @@ const {
   exists
 } = require("fs-extra");
 const { join } = require("path");
-const { trim, titleify, getMdDescription } = require("./utils");
+const { titleify, getMdDescription } = require("./utils");
+const slugify = require("slugify");
 const { getCityCountry } = require("./cities");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
@@ -240,7 +241,7 @@ const getWorkArchive = async (allItems, category, value) => {
   const TITLE =
     (await getDescription(
       `projects/${category}`,
-      value.toLowerCase(),
+      slugify(value),
       "title",
       true
     )) || titleify(value);
@@ -250,7 +251,7 @@ const getWorkArchive = async (allItems, category, value) => {
     <a href="/projects/">Projects</a><a href="/projects/${category}/">${titleify(
       category
     )}</a>
-    <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(
+    <a href="/projects/${category}/${slugify(value)}">${(await getDescription(
       `projects/${category}`,
       value,
       "title",
@@ -271,7 +272,7 @@ const getWorkArchive = async (allItems, category, value) => {
       true
     )} ${(await getDescription(
       `projects/${category}`,
-      value.toLowerCase(),
+      slugify(value),
       "title",
       true
     )) || titleify(value)}</h1>`;
@@ -287,7 +288,7 @@ const getWorkArchive = async (allItems, category, value) => {
     try {
       image = await getDescription(
         `projects/${category}`,
-        value.toLowerCase(),
+        slugify(value),
         "icon",
         true
       );
@@ -300,7 +301,7 @@ const getWorkArchive = async (allItems, category, value) => {
 
   const intro = await getDescription(
     `projects/${category}`,
-    value.toLowerCase(),
+    slugify(value),
     "content"
   );
   if (intro) result += intro;
@@ -333,13 +334,7 @@ const getTravelTime = async (allItems, city) => {
   let item;
   Object.keys(data).forEach(key => {
     const highlight = data[key];
-    const slug = trim(
-      highlight.meta.title
-        .toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, ""),
-      "-"
-    );
+    const slug = slugify(highlight.meta.title);
     if (slug === city) item = highlight;
   });
   if (item) {
