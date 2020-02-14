@@ -80,6 +80,13 @@ const gmail = async () => {
   await writeJson(join(CONTENT_DATA_DIR, "emails.json"), emails);
 };
 
+const goodreads = async () => {
+  const books = safeLoad(
+    await readFile(join(LIFE_DATA_DIR, "books.yml"), "utf8")
+  );
+  await writeJson(join(CONTENT_DATA_DIR, "books.json"), books);
+};
+
 const lastUpdated = async () => {
   const lifeDataLastUpdated = {};
   if (await exists(join(CONTENT_DATA_DIR, "lifeDataLastUpdated.json"))) return;
@@ -108,6 +115,7 @@ const lifeDataUtilities = async () => {
   await spotifyTracks();
   await pocketCasts();
   await wakatime();
+  await goodreads();
   await gmail();
 };
 
