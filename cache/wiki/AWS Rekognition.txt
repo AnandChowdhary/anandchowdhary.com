@@ -1,1 +1,0 @@
-<p>Amazon Rekognition is a cloud-based Software as a service (SaaS) computer vision platform that was launched in 2016. It has been sold and used by a number of United States government agencies, including ICE and Orlando, Florida police, as well as private entities. <a href="https://en.wikipedia.org/wiki/Special:Search?search=AWS%20Rekognition">Text from Wikipedia</a></p>

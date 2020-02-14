@@ -16,8 +16,15 @@ const { getEventCard, getProjectCard } = require("./cards");
 
 const getWikiSummary = async value => {
   try {
-    const cachePath = join(__dirname, "..", "cache", "wiki", `${value}.txt`);
+    const cachePath = join(
+      __dirname,
+      "..",
+      "cache",
+      "wiki",
+      `${slugify(value).toLowerCase()}.txt`
+    );
     if (await exists(cachePath)) return (await readFile(cachePath)).toString();
+    console.log("Fetching Wikipedia summary for", value);
     const data = `<p>${
       (
         await api.get(
@@ -321,7 +328,7 @@ const getWorkArchive = async (allItems, category, value) => {
   const items = allItems
     .filter(
       item =>
-        i.filePathStem.startsWith("projects/") &&
+        item.filePathStem.startsWith("projects/") &&
         (item.data[category] || []).includes(value)
     )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

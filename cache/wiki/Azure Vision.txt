@@ -1,1 +1,0 @@
-<p>Microsoft Azure (formerly Windows Azure ) is a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services through Microsoft-managed data centers. <a href="https://en.wikipedia.org/wiki/Special:Search?search=Azure%20Vision">Text from Wikipedia</a></p>
