@@ -54,7 +54,7 @@ const getDataFromUrl = (url, titleOnly = false) => {
 };
 
 const truncate = input =>
-  input.length > 200 ? `${input.substring(0, 200)}...` : input;
+  input.length > 250 ? `${input.substring(0, 250).trim()}...` : input;
 
 const last = arr => arr[arr.length - 1];
 const breadcrumize = url => {
