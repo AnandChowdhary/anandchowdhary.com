@@ -178,7 +178,7 @@ const getCityArchivePageData = async (allItems, city) => {
   result += `
     <h2 id="about">About <a class="direct-link" href="#about">#</a></h2>
     <p>${await getWikiSummary(city)}</p>
-    ${(await getDescription("places", city, "content")) || ""}
+    ${(await getDescription("life/travel", city, "content")) || ""}
   `;
   if (images)
     result += `
@@ -238,8 +238,12 @@ const getWorkArchive = async (allItems, category, value) => {
   let result = `<header class="intro"><div>`;
 
   const TITLE =
-    (await getDescription(category, value.toLowerCase(), "title", true)) ||
-    titleify(value);
+    (await getDescription(
+      `projects/${category}`,
+      value.toLowerCase(),
+      "title",
+      true
+    )) || titleify(value);
 
   if (category !== "work")
     result += `<nav class="breadcrumbs">
@@ -247,7 +251,7 @@ const getWorkArchive = async (allItems, category, value) => {
       category
     )}</a>
     <a href="/projects/${category}/${value.toLowerCase()}">${(await getDescription(
-      category,
+      `projects/${category}`,
       value,
       "title",
       true
@@ -261,12 +265,16 @@ const getWorkArchive = async (allItems, category, value) => {
   if (category === "collaborators") {
     result += `${await getCollaboratorProfilePictureUrl(value)}
     <h1>${await getDescription(
-      "collaborators",
+      "projects/collaborators",
       value,
       "flag",
       true
-    )} ${(await getDescription(category, value.toLowerCase(), "title", true)) ||
-      titleify(value)}</h1>`;
+    )} ${(await getDescription(
+      `projects/${category}`,
+      value.toLowerCase(),
+      "title",
+      true
+    )) || titleify(value)}</h1>`;
   } else if (
     category === "work" &&
     !["oswald-labs", "Open source"].includes(value)
@@ -277,7 +285,12 @@ const getWorkArchive = async (allItems, category, value) => {
   } else {
     let image = "";
     try {
-      image = await getDescription(category, value.toLowerCase(), "icon", true);
+      image = await getDescription(
+        `projects/${category}`,
+        value.toLowerCase(),
+        "icon",
+        true
+      );
     } catch (error) {}
     image = image || getBingImageUrl(`${value} icon/70/70`);
     result += `<img alt="" src="${image}">`;
@@ -285,7 +298,11 @@ const getWorkArchive = async (allItems, category, value) => {
   if (category !== "collaborators" && !result.includes("</h1>"))
     result += `<h1>${TITLE}</h1>`;
 
-  const intro = await getDescription(category, value.toLowerCase(), "content");
+  const intro = await getDescription(
+    `projects/${category}`,
+    value.toLowerCase(),
+    "content"
+  );
   if (intro) result += intro;
   else if (category !== "work") result += await getWikiSummary(value);
 

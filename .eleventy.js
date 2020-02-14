@@ -213,16 +213,16 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksAsyncShortcode("collaboratorName", async value => {
     try {
       let result = "";
-      if (await getDescription("collaborators", value, "flag", true))
+      if (await getDescription("projects/collaborators", value, "flag", true))
         result += `<span class="flag">${await getDescription(
-          "collaborators",
+          "projects/collaborators",
           value,
           "flag",
           true
         )}</span>`;
-      if (await getDescription("collaborators", value, "title", true))
+      if (await getDescription("projects/collaborators", value, "title", true))
         result += ` <span>${await getDescription(
-          "collaborators",
+          "projects/collaborators",
           value,
           "title",
           true
