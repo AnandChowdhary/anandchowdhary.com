@@ -128,8 +128,55 @@
     height: 3rem;
     margin-left: -5rem;
   }
+  + p {
+    margin-top: 2rem;
+  }
 }
 
 .ff {
   flex: 1 0 0;
+}
+
+.sum-list {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: nowrap;
+  article {
+    flex: 1 0 0;
+  }
+  img,
+  .img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    display: block;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+  }
+  &.nr img,
+  &.nr .img {
+    border-radius: 0.2rem;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    line-height: 1;
+    color: inherit;
+    position: relative;
+    &::after {
+      display: none;
+    }
+    &:focus {
+      box-shadow: none;
+      img,
+      .img {
+        transform: scale(1.1) translateY(-0.25rem);
+        box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.2),
+          0 0 0 0.2rem $focusRingColor;
+      }
+    }
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+  }
 }

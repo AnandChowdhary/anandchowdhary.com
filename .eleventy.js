@@ -171,7 +171,7 @@ module.exports = eleventyConfig => {
             </div>
           </header>
           <div class="container-outer">
-            <section class="posts">
+            <section class="link-list events-list">
               ${items.map(post => getEventCard(post)).join("")}
             </section>
           </div>
