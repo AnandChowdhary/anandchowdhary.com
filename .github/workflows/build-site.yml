@@ -20,7 +20,7 @@ jobs:
     - run: npm install
     - run: npm run build-site
     - uses: maxheld83/ghpages@v0.2.1
-    - name: GitHub Pages Deploy
+      name: GitHub Pages Deploy
       env:
         BUILD_DIR: "public/"
         GH_PAT:  ${{ secrets.GH_PAT }}
