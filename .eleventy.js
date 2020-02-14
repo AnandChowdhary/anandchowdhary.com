@@ -25,6 +25,7 @@ const {
   getWikiSummary,
   getBlogFilterNav
 } = require("./helpers/templates");
+const { getSeoTags } = require("./helpers/seo");
 
 module.exports = eleventyConfig => {
   eleventyConfig.setLibrary("md", markdownLibrary);
@@ -155,6 +156,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addNunjucksShortcode("getBlogFilterNav", value =>
     getBlogFilterNav(value)
   );
+  eleventyConfig.addNunjucksShortcode("getSeoTags", value => getSeoTags(value));
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "eventRolesTagsArchive",

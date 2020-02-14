@@ -1,17 +1,26 @@
 <!doctype html>
-<html lang="en" class="light">
+<html lang="en" class="light no-js">
   <head>
     <meta charset="utf-8">
     <link rel="preload" href="/assets/styles/{{ cssFilePath.name }}" as="style">
     <link rel="preload" href="/assets/scripts/{{ jsFilePath.name }}" as="script">
+
+    <!-- REMOVE IN PRODUCTION -->
     <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% seo "" %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% getSeoTags page.url %}
+
     {% if environment.NODE_ENV == "production" %}
     <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}" integrity="{{ cssFilePath.integrity }}" crossorigin="anonymous">
     {% else %}
     <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}">
     {% endif %}
+    <meta name="generator" content="Eleventy">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://anandchowdhary.com">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700|IBM+Plex+Serif:600,500&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -22,6 +31,8 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="author" href="https://plus.google.com/+AnandChowdhary0">
+    <script>document.documentElement.classList.remove("no-js")</script>
     {% if environment.NODE_ENV == "production" %}
     <script>if("serviceWorker" in navigator)navigator.serviceWorker.register("/service-worker.js")</script>
     {% endif %}

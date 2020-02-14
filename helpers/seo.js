@@ -3,11 +3,34 @@ const { join } = require("path");
 const { markdownLibrary } = require("./markdown");
 const frontMatter = require("front-matter");
 const { titleify } = require("./utils");
+const natural = require("natural");
+const tokenizer = new natural.WordTokenizer();
 
 const cleanUrl = url => {
   url = url.endsWith("/") ? url.slice(0, -1) : url;
   url = url.startsWith("/") ? url.substr(1) : url;
   return url;
+};
+
+const orderStringByFrequency = string => {
+  let frequentObj = {};
+  string
+    .split(" ")
+    .forEach(word =>
+      frequentObj[word] ? frequentObj[word]++ : (frequentObj[word] = 1)
+    );
+  return Object.entries(frequentObj)
+    .sort((a, b) => b[1] - a[1])
+    .map(arr => arr[0])
+    .join(" ");
+};
+
+const getKeywords = text => {
+  return orderStringByFrequency(tokenizer.tokenize(text).join(" "))
+    .split(" ")
+    .filter(i => i.length >= 5)
+    .slice(0, 25)
+    .join(", ");
 };
 
 const getDataFromUrl = (url, titleOnly = false) => {
@@ -60,7 +83,7 @@ const respond = (data, url, titleOnly) => {
     data.breadcrumbTitle ||
     [TITLE, ...breadcrumize(url).map(i => getDataFromUrl(i, true))]
       .reverse()
-      .join(" · ");
+      .join(" ‹ ");
   let description =
     descriptions[url] ||
     truncate(data.description || data.excerpt || data.content || DESCRIPTION);
@@ -69,10 +92,14 @@ const respond = (data, url, titleOnly) => {
     description = DESCRIPTION;
   }
   if (data.intro) description = data.intro;
+  const keywords = getKeywords(
+    data.description || data.excerpt || data.content || DESCRIPTION
+  );
   return {
     title,
     breadcrumbTitle,
-    description
+    description,
+    keywords
   };
 };
 
@@ -95,19 +122,36 @@ const processMarkdown = (data, url, titleOnly) => {
   );
 };
 
-const getSeoTitle = url => {
-  const data = getDataFromUrl(url);
-  return data.title;
-};
-
-const getSeoDescription = url => {
-  const data = getDataFromUrl(url);
-  return data.description;
-};
-
 const getSeoDetails = url => {
   const data = getDataFromUrl(url);
-  console.log("data", data);
+  return data;
 };
 
-module.exports = { getSeoTitle, getSeoDescription };
+const getSeoTags = url => {
+  const data = getSeoDetails(url);
+  const breadcrumbTitle = data.breadcrumbTitle;
+  const keywords =
+    "anand chowdhary, anand, chowdhary, oswald labs, " + data.keywords;
+  const description = data.description;
+  return `
+    <title>${breadcrumbTitle}</title>
+    <meta name="description" content="${description}">
+    <meta name="keywords" content="${keywords}">
+    <meta name="author" content="Anand Chowdhary">
+    <link rel="canonical" href="https://anandchowdhary.com${url}">
+    <meta property="og:title" content="${breadcrumbTitle}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anandchowdhary.com${url}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Anand Chowdhary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@AnandChowdhary">
+    <meta name="twitter:site" content="@AnandChowdhary">
+    <meta name="twitter:url" content="https://anandchowdhary.com${url}">
+    <meta name="twitter:title" content="${breadcrumbTitle}">
+    <meta name="twitter:description" content="${description}">
+  `;
+};
+
+module.exports = { getSeoTags };
