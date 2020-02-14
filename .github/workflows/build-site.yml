@@ -2,7 +2,7 @@ name: Build site
 on:
   push:
     branches:
-      - "master"
+      - "11ty"
   schedule:
     - cron: "4 4 * * *"
 jobs:
