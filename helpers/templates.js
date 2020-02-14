@@ -319,7 +319,11 @@ const getWorkArchive = async (allItems, category, value) => {
 
   result += `<section class="projects"><div>`;
   const items = allItems
-    .filter(item => (item.data[category] || []).includes(value))
+    .filter(
+      item =>
+        i.filePathStem.startsWith("projects/") &&
+        (item.data[category] || []).includes(value)
+    )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   items.forEach(project => {
     result += `${getProjectCard(project)}`;
