@@ -52,7 +52,7 @@ const getEventsSummaryCity = async (allItems, value) => {
       <p>This is a list of events I've spoken at in ${titleify(
         value
       )}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
-      <section class="events">
+      <section class="link-list events-list">
         <div>${items.map(post => getEventCard(post, true)).join("")}</div>
       </section>
     `;
