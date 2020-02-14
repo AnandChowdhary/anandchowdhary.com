@@ -157,6 +157,10 @@
   &.nr .img {
     border-radius: 0.2rem;
   }
+  &.nh img,
+  &.nh .img {
+    height: auto;
+  }
   a {
     display: block;
     text-decoration: none;

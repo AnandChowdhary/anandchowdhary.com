@@ -372,7 +372,7 @@ const getTravelTime = async (allItems, city) => {
   return "";
 };
 
-const getTravelPageItem = async (allItems, city) => {
+const getCityImageUrl = async city => {
   let image = "default";
   try {
     const files = await readFile(
@@ -381,6 +381,11 @@ const getTravelPageItem = async (allItems, city) => {
     image = `/images/highlights/${city}/cover.jpg`;
   } catch (error) {}
   if (image === "default") image = getBingImageUrl(`${city}/100/100`);
+  return image;
+};
+
+const getTravelPageItem = async (allItems, city) => {
+  const image = await getCityImageUrl(city);
   return `
     <article>
       <a href="/life/travel/${city}">
@@ -432,5 +437,7 @@ module.exports = {
   getCollaboratorProfilePictureUrl,
   getProjectNavbar,
   getProjectsSelector,
-  getBlogFilterNav
+  getBlogFilterNav,
+  getCityImageUrl,
+  getCityCountry
 };

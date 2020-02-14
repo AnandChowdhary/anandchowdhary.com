@@ -23,7 +23,9 @@ const {
   getCollaboratorProfilePictureUrl,
   getProjectNavbar,
   getWikiSummary,
-  getBlogFilterNav
+  getBlogFilterNav,
+  getCityImageUrl,
+  getCityCountry
 } = require("./helpers/templates");
 const { getSeoTags } = require("./helpers/seo");
 
@@ -142,6 +144,13 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addNunjucksAsyncShortcode("workTagsArchive", async value =>
     getWorkArchive(allItems, "work", value)
+  );
+
+  eleventyConfig.addNunjucksAsyncShortcode("cityImageUrl", async value =>
+    getCityImageUrl(value)
+  );
+  eleventyConfig.addNunjucksAsyncShortcode("cityCountry", async value =>
+    getCityCountry(value)
   );
   eleventyConfig.addNunjucksAsyncShortcode("stackTagsArchive", async value =>
     getWorkArchive(allItems, "stack", value)
