@@ -1,36 +1,24 @@
 const { getCityEmojiTitle } = require("./cities");
 
 const getEventCard = (post, h3 = false) =>
-  `<article class="events-item">
-    <div class="content">
-    <${h3 ? "h3" : "h2"}>
-      <a href="${post.url}">
-        <img class="item-icon" alt="" src="${post.data.icon}"><span>${
-    post.data.title
-  }</span>
-      </a>
-    </${h3 ? "h3" : "h2"}>
-    <div class="location">
-      <div>${post.data.venue}</div>
-      <div><a href="/life/travel/${post.data.places}">${getCityEmojiTitle(
-    post.data.places
-  )}</a></div>
-    </div>
-    <div class="meta">
-      <div>
-        <a href="${post.url}">
-          <time>${post.data.date.toLocaleDateString("en-US", {
-            day: "numeric",
-            month: "short",
-            year: "numeric"
-          })}</time>
-        </a>
+  `<article>
+    <a href="${post.url}">
+      <div class="f">
+        <img alt="" src="${post.data.icon}">
+        <div class="ff">
+          <${h3 ? "h3" : "h2"}>${post.data.title}</${h3 ? "h3" : "h2"}>
+          <div class="f">
+            <div>${post.data.venue}</div>
+            <div><time>${post.data.date.toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            })}</time></div>
+          </div>
+          <div>${getCityEmojiTitle(post.data.places)}</div>
+        </div>
       </div>
-      <div><a class="continue" href="${post.url}">Read ${
-    post.data.title
-  } &rarr;</a></div>
-    </div>
-    </div>
+    </a>
   </article>`;
 
 const getProjectCard = project =>
