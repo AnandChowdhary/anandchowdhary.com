@@ -1,8 +1,8 @@
 <article class="books-item">
-  <a href="/life/reading/{{ book.name | slug }}">
+  <a href="https://api.duckduckgo.com/?q=!goodreads+{{ (book.name + ' ' + book.author) | urlencode }}">
     <div class="content">
       <picture class="book-image">
-        <img src="{{ (book.name + ' ' + book.author + ' book cover/100/150') | bingImageUrl }}" alt="" loading="lazy">
+        <img src="{{ (book.name + ' ' + book.author + ' book cover/100/150') | bingImageUrl }}" alt="" loading="lazy" width="80" height="120">
       </picture>
       <div>
         <h2>{{ book.name }}</h2>
