@@ -308,7 +308,7 @@ module.exports = eleventyConfig => {
           "-"
         );
         result += `<article>
-          <a href="/life/travel/${slug}">
+          <a href="/life/travel/${slug}/">
             <picture>
               <img src="/images/highlights/${slug}/cover.jpg" alt="" width="80" height="80" loading="lazy">
             </picture>
