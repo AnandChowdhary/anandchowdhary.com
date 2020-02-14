@@ -196,7 +196,7 @@ const getCityArchivePageData = async (allItems, city) => {
 const getProjectNavbar = value =>
   `<nav class="categories-nav">
     <a${
-      value === "oswald-labs" ? ` class="active"` : ""
+      value === "Oswald Labs" ? ` class="active"` : ""
     } href="/projects/oswald-labs/">Oswald Labs</a>
     <a${
       value === "Open source" ? ` class="active"` : ""
@@ -257,7 +257,7 @@ const getWorkArchive = async (allItems, category, value) => {
       true
     )) || titleify(value)}</a>
     </nav>`;
-  else if (["oswald-labs", "Open source"].includes(value))
+  else if (["Oswald Labs", "Open source"].includes(value))
     result += `<nav class="breadcrumbs">
   <a href="/projects/">Projects</a><a href="/projects/${category}/">${TITLE}</a>
   </nav>`;
@@ -277,7 +277,7 @@ const getWorkArchive = async (allItems, category, value) => {
     )) || titleify(value)}</h1>`;
   } else if (
     category === "work" &&
-    !["oswald-labs", "Open source"].includes(value)
+    !["Oswald Labs", "Open source"].includes(value)
   ) {
     result += `<h1 class="sr-only">${TITLE}</h1>`;
     result += getProjectsSelector(value);

@@ -3,7 +3,7 @@ title: Agastya
 tags: projects
 intro: End-to-end web accessibility plugin with disabled-friendly features and legibility customizations
 date: 2017-08-25
-work: ["Web", "oswald-labs"]
+work: ["Web", "Oswald Labs"]
 bg: "skyblue"
 style: cover
 img_src: /images/projects/oswald-labs/agastya/cover

@@ -3,7 +3,7 @@ title: Valmiki
 tags: projects
 intro: Browser extension for easy reading and web customization for people with dyslexia
 date: 2016-06-11
-work: ["Web", "oswald-labs"]
+work: ["Web", "Oswald Labs"]
 bg: "#28a745"
 style: padded
 img_src: /images/projects/oswald-labs/valmiki/cover
