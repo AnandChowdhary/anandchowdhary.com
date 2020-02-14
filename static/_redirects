@@ -1,2 +1,19 @@
 # Redirect default Netlify subdomain to primary domain
 http://anandchowdhary.netlify.com/* https://anandchowdhary.com/:splat 301!
+
+# Coffee Time redirects
+/blog/google-docs-github/ /blog/coffee-time/google-docs-github/
+/blog/twitter-subaccounts/ /blog/coffee-time/twitter-subaccounts/
+
+# New open-source project pages
+/open-source/staart/ /projects/open-source/staart/
+/open-source/uppload/ /projects/open-source/uppload/
+
+# Legacy open-source category pages
+/open-source/hello-bar/ https://github.com/AnandChowdhary/hello-bar
+/open-source/hovercard/ https://github.com/AnandChowdhary/hovercard
+/open-source/precis/ https://github.com/AnandChowdhary/precis
+/open-source/one-grid/ https://github.com/AnandChowdhary/one-grid
+/open-source/essential.css/ https://github.com/AnandChowdhary/essential.css
+/open-source/aptitude/ https://github.com/AnandChowdhary/aptitude
+/open-source/ac.js/ https://github.com/AnandChowdhary/ac.js
