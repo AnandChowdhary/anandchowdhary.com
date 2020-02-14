@@ -376,15 +376,20 @@ const getTravelPageItem = async (allItems, city) => {
   } catch (error) {}
   if (image === "default") image = getBingImageUrl(`${city}/100/100`);
   return `
-    <article><a href="/life/travel/${city}">
-      <h2 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
-    city
-  )}</span></h2>
-      <div class="f">
-        ${getCityCountry(city)}
-        <div>${await getTravelTime(allItems, city)}</div>
-      </div>
-    </a></article>
+    <article>
+      <a href="/life/travel/${city}">
+        <div class="f">
+          <img alt="" src="${image}">
+          <div class="f ff">
+            <div>
+              <h2>${titleify(city)}</h2>
+              <div>${getCityCountry(city)}</div>
+            </div>
+            <div>${await getTravelTime(allItems, city)}</div>
+          </div>
+        </div>
+      </a>
+    </article>
   `;
 };
 
