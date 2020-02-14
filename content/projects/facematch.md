@@ -13,7 +13,6 @@ img_src: /images/portfolio/facematch_2x
 img_type: png
 style: cover
 stack: ["JavaScript", "Python"]
-tools: ["AWS Rekognition"]
 collaborators: ["mohit-ahuja"]
 award: €1,000+
 award_position: 1

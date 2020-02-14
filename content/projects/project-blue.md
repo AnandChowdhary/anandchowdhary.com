@@ -10,7 +10,7 @@ timeline: 1 month
 client: IDII
 img_src: /images/portfolio/project-blue_2x
 img_type: png
-tools: ["Autodesk", "SolidWorks", "Photoshop"]
+tools: ["Photoshop"]
 icon: /images/projects/project-blue/icon.png
 ---
 

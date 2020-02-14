@@ -10,7 +10,7 @@ style: cover
 img_src: /images/portfolio/wendy_2x
 img_type: png
 stack: ["JavaScript", "Python"]
-tools: ["Vue.js", "Firebase", "Azure Vision"]
+tools: ["Vue.js", "Firebase"]
 collaborators: ["mohit-ahuja"]
 ---
 

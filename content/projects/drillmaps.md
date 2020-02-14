@@ -12,7 +12,7 @@ img_src: /images/portfolio/drillmaps_2x
 img_type: png
 style: padded
 stack: ["JavaScript"]
-tools: ["Vue.js", "Node.js", "Stripe", "Firebase"]
+tools: ["Vue.js", "Node.js", "Firebase"]
 icon: /images/projects/drillmaps/icon.png
 icon_bg: true
 ---

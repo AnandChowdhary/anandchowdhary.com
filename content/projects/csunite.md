@@ -15,7 +15,7 @@ style: padded
 award: €2,500
 award_position: 1
 stack: ["JavaScript"]
-tools: ["Vue.js", "Google Maps"]
+tools: ["Vue.js"]
 collaborators: ["mohit-ahuja"]
 ---
 

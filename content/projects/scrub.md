@@ -7,7 +7,6 @@ icon: /images/projects/scrub/icon.png
 timeline: 36 hours
 work: ["Web"]
 stack: ["TypeScript"]
-tools: ["Wix Corvid"]
 client: Corvid by Wix
 bg: "#145efb"
 style: padded

@@ -17,7 +17,7 @@ venue: Brightlands Campus
 award: €12,500
 award_position: 1
 stack: ["JavaScript", "Python"]
-tools: ["Vue.js", "Django", "Firebase"]
+tools: ["Vue.js", "Firebase"]
 collaborators: ["alex-imbrea", "maurits-van-der-vijgh"]
 ---
 

@@ -12,7 +12,7 @@ img_type: png
 icon: /images/projects/blueboard/icon.png
 icon_bg: true
 stack: ["C++", "Java"]
-tools: ["Processing", "Arduino"]
+tools: ["Processing", "Arduino", "Android"]
 ---
 
 BlueBoard is a Bluetooth-powered smart billboard that actually cares about you. Privacy-first and context-aware, it connects with your smartphone via Bluetooth and shows you relevant advertisements and information.

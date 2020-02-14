@@ -15,7 +15,7 @@ venue: LABS Holborn
 award: £10,000
 award_position: 1
 stack: ["JavaScript"]
-tools: ["Vue.js", "Dialogflow"]
+tools: ["Vue.js"]
 collaborators: ["alex-imbrea"]
 ---
 
