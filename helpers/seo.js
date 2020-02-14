@@ -154,4 +154,4 @@ const getSeoTags = url => {
   `;
 };
 
-module.exports = { getSeoTags };
+module.exports = { getSeoTags, getDataFromUrl };
