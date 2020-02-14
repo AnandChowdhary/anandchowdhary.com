@@ -328,7 +328,7 @@ const getWorkArchive = async (allItems, category, value) => {
   const items = allItems
     .filter(
       item =>
-        item.filePathStem.startsWith("projects/") &&
+        item.filePathStem.startsWith("/projects/") &&
         (item.data[category] || []).includes(value)
     )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
