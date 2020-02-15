@@ -15,9 +15,9 @@
 
     {% getSeoTags page.url %}
 
-    {% if environment.NODE_ENV == "production" %}
-    <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}" integrity="{{ cssFilePath.integrity }}" crossorigin="anonymous">
-    {% else %}
+    {# {% if environment.NODE_ENV == "production" %} #}
+    {# <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}" integrity="{{ cssFilePath.integrity }}" crossorigin="anonymous"> #}
+    {# {% else %} #}
     <link rel="stylesheet" href="/assets/styles/{{ cssFilePath.name }}">
     {% endif %}
     <meta name="generator" content="Eleventy">
