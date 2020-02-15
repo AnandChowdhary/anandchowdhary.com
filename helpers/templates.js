@@ -320,9 +320,11 @@ const getWorkArchive = async (allItems, category, value) => {
   result += `</div></header><div class="container-outer">`;
 
   if (category === "collaborators")
-    result += `<p>Projects we worked on together include:</p>`;
-  if (category === "tools") result += `<p>Projects built using ${TITLE}:</p>`;
-  if (category === "stack") result += `<p>Projects built with ${TITLE}:</p>`;
+    result += `<p class="intro-p">Projects we worked on together include:</p>`;
+  if (category === "tools")
+    result += `<p class="intro-p">Projects built using ${TITLE}:</p>`;
+  if (category === "stack")
+    result += `<p class="intro-p">Projects built with ${TITLE}:</p>`;
 
   result += `<section class="projects"><div>`;
   const items = allItems
@@ -388,7 +390,7 @@ const getTravelPageItem = async (allItems, city) => {
   const image = await getCityImageUrl(city);
   return `
     <article>
-      <a href="/life/travel/${city}">
+      <a href="/life/travel/${city}/">
         <div class="f">
           <img alt="" src="${image}">
           <div class="f ff">

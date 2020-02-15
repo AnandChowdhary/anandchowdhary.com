@@ -201,6 +201,10 @@
       }
     }
   }
+  .sum-list article {
+    width: 10rem;
+    flex: none;
+  }
   .projects:not(.index),
   .blog:not(.home-items) article {
     h1 {

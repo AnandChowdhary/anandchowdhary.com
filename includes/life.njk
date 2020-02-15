@@ -6,40 +6,44 @@
       {{ content | safe }}
     </div>
   </header>
-  <div class="container-outer">
+  <div class="container-outer nmb">
     <h2>Travel</h2>
-    <section class="sum-list">
-      {% for item in cities %}{% if loop.index <= 3 %}
-        <article>
-          <a href="/life/travel/{{ item }}">
+  </div>
+  <div class="container ox"><section class="sum-list">
+    {% for item in cities %}{% if loop.index <= 5 %}
+      <article>
+        <a href="/life/travel/{{ item }}/">
+          <div> 
+            <img alt="" src="{% cityImageUrl item %}">
             <div>
-              <img alt="" src="{% cityImageUrl item %}">
-              <div>
-                <h3>{{ item | titleify }}</h3>
-                <div>{% cityCountry item %}</div>
-              </div>
+              <h3>{{ item | titleify }}</h3>
+              <div>{% cityCountry item %}</div>
             </div>
-          </a>
-        </article>
-      {% endif %}{% endfor %}
-    </section>
+          </div>
+        </a>
+      </article>
+    {% endif %}{% endfor %}
+  </section></div>
+  <div class="container-outer nm">
     <p><a href="/life/travel/">Explore more cities &rarr;</a></p>
     <h2>Programming</h2>
-    <section class="sum-list nr">
-      {% for item in programming.languages %}{% if loop.index <= 3 %}
-        <article>
-          <span class="a" href="/projects/stack/{{ item.name | slug }}">
+  </div>
+  <div class="container ox"><section class="sum-list nr">
+    {% for item in programming.languages %}{% if loop.index <= 5 %}
+      <article>
+        <span class="a">
+          <div>
+            <img src="{{ (item.name + ' icon/70/70') | bingImageUrl }}" alt="">
             <div>
-              <img src="{{ (item.name + ' icon/70/70') | bingImageUrl }}" alt="">
-              <div>
-                <h3>{{ item.name }}</h3>
-                <div>{{ item.text }}</div>
-              </div>
+              <h3>{{ item.name }}</h3>
+              <div>{{ item.text }}</div>
             </div>
-          </span>
-        </article>
-      {% endif %}{% endfor %}
-    </section>
+          </div>
+        </span>
+      </article>
+    {% endif %}{% endfor %}
+  </section></div>
+  <div class="container-outer nm">
     <p><a href="/life/work/programming/">Explore more top languages &rarr;</a></p>
     <h2>Emails</h2>
     <div class="data-summary">
@@ -58,72 +62,80 @@
     </div>
     <p><a href="/life/work/emails/">Explore more emails overview &rarr;</a></p>
     <h2>Podcasts</h2>
-    <section class="sum-list nr">
-      {% for item in pocketCastsPodcasts %}{% if loop.index <= 3 %}
-        <article>
-          <a href="{{ item.url | url }}">
+  </div>
+  <div class="container ox"><section class="sum-list nr">
+    {% for item in pocketCastsPodcasts %}{% if loop.index <= 5 %}
+      <article>
+        <a href="{{ item.url | url }}">
+          <div>
+            <img alt="" src="{{ (item.title + ' podcast cover') | bingImageUrl }}">
             <div>
-              <img alt="" src="{{ (item.title + ' podcast cover') | bingImageUrl }}">
-              <div>
-                <h3>{{ item.title }}</h3>
-                <div>{{ item.author }}</div>
-              </div>
+              <h3>{{ item.title }}</h3>
+              <div>{{ item.author }}</div>
             </div>
-          </a>
-        </article>
-      {% endif %}{% endfor %}
-    </section>
-    <p><a href="/life/listening/music/podcasts/">Explore more podcasts &rarr;</a></p>
+          </div>
+        </a>
+      </article>
+    {% endif %}{% endfor %}
+  </section></div>
+  <div class="container-outer nm">
+    <p><a href="/life/listening/podcasts/">Explore more podcasts &rarr;</a></p>
     <h2>Top Songs</h2>
-    <section class="sum-list nr">
-      {% for item in shortTermTracks %}{% if loop.index <= 3 %}
-        <article>
-          <a href="{{ item.href | replace('api.spotify.com/v1/tracks', 'open.spotify.com/track') }}">
+  </div>
+  <div class="container ox"><section class="sum-list nr">
+    {% for item in shortTermTracks %}{% if loop.index <= 5 %}
+      <article>
+        <a href="{{ item.href | replace('api.spotify.com/v1/tracks', 'open.spotify.com/track') }}">
+          <div>
+            <img alt="" src="{{ item.album.images[1].url }}">
             <div>
-              <img alt="" src="{{ item.album.images[1].url }}">
-              <div>
-                <h3>{{ item.name }}</h3>
-                <div>{{ item.artists[0].name }}</div>
-              </div>
+              <h3>{{ item.name }}</h3>
+              <div>{{ item.artists[0].name }}</div>
             </div>
-          </a>
-        </article>
-      {% endif %}{% endfor %}
-    </section>
+          </div>
+        </a>
+      </article>
+    {% endif %}{% endfor %}
+  </section></div>
+  <div class="container-outer nm">
     <p><a href="/life/listening/music/songs/">Explore more top tracks &rarr;</a></p>
     <h2>Top Artists</h2>
-    <section class="sum-list">
-      {% for item in shortTermArtists %}{% if loop.index <= 3 %}
-        <article>
-          <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
+  </div>
+  <div class="container ox"><section class="sum-list">
+    {% for item in shortTermArtists %}{% if loop.index <= 5 %}
+      <article>
+        <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
+          <div>
+            <img alt="" src="{{ item.images[1].url }}">
             <div>
-              <img alt="" src="{{ item.images[1].url }}">
-              <div>
-                <h3>{{ item.name }}</h3>
-                <div>{{ item.genres[0] | capitalize }}</div>
-              </div>
+              <h3>{{ item.name }}</h3>
+              <div>{{ item.genres[0] | capitalize }}</div>
             </div>
-          </a>
-        </article>
-      {% endif %}{% endfor %}
-    </section>
+          </div>
+        </a>
+      </article>
+    {% endif %}{% endfor %}
+  </section></div>
+  <div class="container-outer nm">
     <p><a href="/life/listening/music/artists/">Explore more top artists &rarr;</a></p>
     <h2>Books</h2>
-    <section class="sum-list nr nh">
-      {% for item in books %}{% if loop.index <= 3 %}
-        <article>
-          <a href="{{ book.url | url }}">
+  </div>
+  <div class="container ox"><section class="sum-list nr">
+    {% for item in books %}{% if loop.index <= 5 %}
+      <article>
+        <a href="{{ book.url | url }}">
+          <div>
+            <div class="img book-img" style="background-image: url('{{ item.image_url }}')"></div>
             <div>
-              <img src="{{ item.image_url }}" alt="">
-              <div>
-                <h3>{{ item.title }}</h3>
-                <div>{{ item.author }}</div>
-              </div>
+              <h3>{{ item.title }}</h3>
+              <div>{{ item.author }}</div>
             </div>
-          </a>
-        </article>
-      {% endif %}{% endfor %}
-    </section>
+          </div>
+        </a>
+      </article>
+    {% endif %}{% endfor %}
+  </section></div>
+  <div class="container-outer nmt">
     <p><a href="/life/reading/">Explore more books &rarr;</a></p>
   </div>
 </main>

@@ -282,7 +282,7 @@ module.exports = eleventyConfig => {
                 .filter(i => i !== "blog")
                 .map(
                   tag => `
-                <a class="tag" href="/blog/${tag}">${tag}</a>
+                <a class="tag" href="/blog/${tag}/">${tag}</a>
               `
                 )
                 .join("")}

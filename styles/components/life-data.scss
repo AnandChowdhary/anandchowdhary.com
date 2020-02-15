@@ -39,7 +39,7 @@
   padding: 0;
   list-style: none;
   article + article {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
   li {
     margin-bottom: 0;
@@ -143,6 +143,9 @@
   flex-wrap: nowrap;
   article {
     flex: 1 0 0;
+    &:nth-child(2) {
+      margin: 0 1rem;
+    }
   }
   img,
   .img {
@@ -152,6 +155,14 @@
     display: block;
     transition: 0.3s;
     margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &.book-img {
+      background-position: bottom center;
+      background-size: contain;
+      height: 8rem;
+    }
   }
   &.nr img,
   &.nr .img {

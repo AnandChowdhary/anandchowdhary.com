@@ -13,7 +13,7 @@
       }) }}</time></div>
       {% for tag in post.data.tags %}
         {% if tag !== "blog" %}
-          <a class="tag" href="/blog/{{ tag }}">{{ tag }}</a>
+          <a class="tag" href="/blog/{{ tag }}/">{{ tag }}</a>
         {% endif %}
       {% endfor %}
     </div>
