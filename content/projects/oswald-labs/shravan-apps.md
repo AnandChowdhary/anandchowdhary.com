@@ -13,6 +13,6 @@ stack: ["JavaScript"]
 collaborators: ["mahendra-singh-raghuwanshi"]
 ---
 
-From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+Shravan Apps are a set of smartphones apps for Android and iOS devices for people with disabilities. I envisioned a suite of apps for living with a specific disability. Shravan Apps include Augmenta11y, Visib11y, Wikibility, and Live Subtitles.
 
 <div class="image"><img alt="" src="/images/projects/oswald-labs/shravan/cover.png"></div>

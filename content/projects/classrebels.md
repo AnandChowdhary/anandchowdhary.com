@@ -6,7 +6,7 @@ intro: Education-technology startup trying to break classroom barriers, products
 date: 2014-01-15
 work: ["Branding", "Web", "Startup"]
 timeline: 1 year
-img_src: /images/portfolio/classrebels_2x
+img_src: /images/projects/classrebels/cover
 img_type: png
 style: cover
 stack: ["PHP", "Python", "JavaScript"]

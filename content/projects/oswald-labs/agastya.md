@@ -14,7 +14,7 @@ tools: ["Node.js", "Vue.js"]
 collaborators: ["mahendra-singh-raghuwanshi"]
 ---
 
-From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+Agastya is a web accessibility plugin for websites. It has over 20 features, such as dyslexia-friendly reading mode, blind-friendly read aloud, and user customizations features for contrast, font size, etc. I built Agastya as Oswald Labs' first revenue-generating product with a monthly subscription.
 
 <div class="three-images shadow">
   <img src="/images/projects/oswald-labs/agastya/home.png" alt="Screenshot of podcasts">
@@ -22,7 +22,7 @@ From September to December 2019, I studied Typography at Santa Clara University 
   <img src="/images/projects/oswald-labs/agastya/chatbot.png" alt="Screenshot of stats">
 </div>
 
-From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+Companies can whitelabel Agastya with their branding (colors, logo, etc.) when they incorporate it on their websites. It also gives developers access to advanced analytics about users, browsers, devices, and more. Agastya is free for small websites and a paid subscription for larger companies.
 
 <div class="three-images shadow">
   <img src="/images/projects/oswald-labs/agastya/modes.png" alt="Screenshot of podcasts">
@@ -30,6 +30,6 @@ From September to December 2019, I studied Typography at Santa Clara University 
   <img src="/images/projects/oswald-labs/agastya/whitelabelled.png" alt="Screenshot of stats">
 </div>
 
-From September to December 2019, I studied Typography at Santa Clara University in California as part of my minor semester abroad. One of the projects I designed was a brochure, ticket, and design system for a typography event featuring iconic designer Tobias Frere-Jones.
+With tens of features, Agastya is the most versatile web accessibility plugin in the world, written with TypeScript and served via Oswald Labs' global content delivery network to our clients. More information is available on the [Agastya website](https://oswaldlabs.com/platform/agastya/).
 
 <div class="image"><img alt="" src="/images/projects/oswald-labs/agastya/cover.png"></div>

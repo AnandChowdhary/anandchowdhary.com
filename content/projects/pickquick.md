@@ -2,7 +2,7 @@
 title: PickQuick
 tags: projects
 intro: Branding, ecommerce platform for university students to buy, sell, and barter old books
-date: 2013-10-11
+date: 2012-07-05
 work: ["Web", "Branding"]
 collaborators: ["akshat-srivastava"]
 bg: "#b0c486"

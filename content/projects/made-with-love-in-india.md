@@ -8,8 +8,8 @@ icon: /images/projects/mwlii/icon.png
 icon_bg: true
 work: ["Web", "Branding"]
 bg: "#f10032"
-style: padded
-img_src: /images/portfolio/made-with-love-in-india_2x
+style: cover
+img_src: /images/projects/mwlii/cover
 img_type: png
 stack: ["PHP"]
 ---
@@ -33,4 +33,8 @@ Made with Love in India is a platform to celebrate, promote, and build a brand -
 <div class="two-images scale">
   <div><img alt="" src="/images/projects/mwlii/3.png"></div>
   <div><img alt="" src="/images/projects/mwlii/4.png"></div>
+</div>
+<div class="two-images scale">
+  <div><img alt="" src="/images/projects/mwlii/cover.png"></div>
+  <div><img alt="" src="/images/portfolio/made-with-love-in-india_2x.png"></div>
 </div>
