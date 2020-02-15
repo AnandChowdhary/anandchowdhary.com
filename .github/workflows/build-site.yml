@@ -2,9 +2,9 @@ name: Build site
 on:
   push:
     branches:
-      - "11ty"
+      - "master"
   schedule:
-    - cron: "4 4 * * *"
+    - cron: "00 01,13 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
