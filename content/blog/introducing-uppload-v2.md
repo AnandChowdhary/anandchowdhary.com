@@ -4,6 +4,7 @@ date: 2020-01-03
 tags:
   - blog
   - code
+  - open-source
 alias: https://uppload.js.org/blog/introducing-uppload-v2
 publisher: Uppload Blog
 ---
