@@ -5,7 +5,7 @@ subcategory: Branding
 intro: Redesigned brand identity of Internet.org for an event in five hours. Made a trustworthy, user-centric brand.
 date: 2013-10-11
 work: ["Branding", "Web"]
-bg: "#ef5c46"
+bg: "#a03c0c"
 style: padded
 img_src: /images/portfolio/internet.org_2x
 img_type: png
