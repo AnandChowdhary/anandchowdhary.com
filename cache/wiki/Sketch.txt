@@ -1,0 +1,1 @@
+<p>DescriptionSketch is a vector graphics editor, developed by the Dutch company Bohemian Coding. Sketch was first released on 7 September 2010 for macOS. It won an Apple Design Award in 2012. <a href="https://en.wikipedia.org/wiki/Special:Search?search=Sketch+(software)">Text from Wikipedia</a></p>

@@ -1,15 +1,14 @@
 ---
 title: The Defence for MD5
 date: 2017-02-26
-tags: ["Life"]
-type: content
+tags: blog
 ---
 
 A few days ago, I tried to reset my password on PR.com, the press releases website. I entered my email, and they sent me the username and password in plain text. That's right, in plain text.
 
 <!--more-->
 
-{{< img alt="Screenshot of email" src="/images/blog/md5-pr_wav36p" type="png" >}}
+<div class="image"><img alt="Screenshot of email" src="/images/blog/md5-pr_wav36p.png"></div>
 
 The problem with this method of password storage is that if anyone gets access to your database, they can literally just see the passwords. This is why hashing is used, which converts the plain text password to an encrypted "hashed" version that is, in an ideal world, undecryptable. The problem with this hashing is really about how hashing fundamentally works: collisions are not uncommon, i.e., multiple strings could have the same hashed string.
 
@@ -27,12 +26,12 @@ The next thing step to safe password storage is called salting. Salting is essen
 
 Now, even though collisions are common in MD5, it's still much much better at storing sensitive information than plain text. Since intruders usually just match your hashed file to hashes of common passwords, dictionary words, combinations, etc., if you have a nice, long password, the brute force method becomes inefficient.
 
-This is why, as long as passwords are lengthy and therefore relatively secure, "outdated" hashing algorithms such as MD5 are also actually not a bad choice if it's as simple as `md5($string)` vs `$string` when storing the password.  I have a nice long Facebook password, and I've decided to make its MD5 hash public to prove my point:
+This is why, as long as passwords are lengthy and therefore relatively secure, "outdated" hashing algorithms such as MD5 are also actually not a bad choice if it's as simple as `md5($string)` vs `$string` when storing the password. I have a nice long Facebook password, and I've decided to make its MD5 hash public to prove my point:
 
 ```
 cf7dd0b01c061029778c72facdc14451
 ```
 
-Even though it's *just* MD5, I don't think anyone can decrypt it. Not for 573 quadrillion years, at least.
+Even though it's _just_ MD5, I don't think anyone can decrypt it. Not for 573 quadrillion years, at least.
 
 **Footnote:** I'm not saying that we should use MD5 to sign TLS certificates, that's crazy talk. All I'm saying is that (a) MD5 is better than plain text, and (b) it works for practical purposes, as long as there's no sensitive data to be accessed and the user has a long, non-dictionary password.

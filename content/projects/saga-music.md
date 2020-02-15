@@ -1,14 +1,19 @@
 ---
 title: Saga Music
+tags: projects
 subcategory: Web
 intro: Free music downloading and sharing app for Android and the web. Over 100,000 downloads. Shut down in 2016.
 date: 2015-05-31
 icon: /images/projects/saga-music/icon.png
+icon_bg: true
 bg: "#00c1d7"
 timeline: 2 months
 work: ["App", "Branding", "Web"]
 img_src: /images/portfolio/saga-music_2x
 img_type: png
+style: padded
+stack: ["PHP", "JavaScript", "Java"]
+tools: ["Android"]
 ---
 
 Music has always been an integral part of our lives. Ever since people started using the internet, they've been downloading music and movies. The process became relatively simple with the introduction of Napster in 1999, which led to the development of many such tools. I remember growing up with Limewire and Bearshare. After the discontinuation of these services in after ten long years, downloading music became really complicated again.
@@ -24,21 +29,19 @@ As a proof of concept, I made an app for Android and the web, called Saga. Downl
 [View source on Github &rarr;](https://github.com/AnandChowdhary/saga-android)
 
 <div class="two-images">
-	<div><img alt="" src="/images/projects/saga-music/2.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/1.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/2.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/1.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/projects/saga-music/4.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/3.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/4.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/3.jpg"></div>
 </div>
 <div class="two-images">
-	<div><img alt="" src="/images/projects/saga-music/5.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/6.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/5.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/6.jpg"></div>
 </div>
 <div class="three-images">
-	<div><img alt="" src="/images/projects/saga-music/7.jpg"></div>
-	<div><img alt="" src="/images/projects/saga-music/8.png"></div>
-	<div><img alt="" src="/images/projects/saga-music/9.png"></div>
+  <div><img alt="" src="/images/projects/saga-music/7.jpg"></div>
+  <div><img alt="" src="/images/projects/saga-music/8.png"></div>
+  <div><img alt="" src="/images/projects/saga-music/9.png"></div>
 </div>
-
-<footer>This project was done in collaboration with <a href="https://github.com/prempalsingh">Prempal Singh 🇮🇳</a>.</footer>

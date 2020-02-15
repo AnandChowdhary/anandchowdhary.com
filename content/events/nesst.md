@@ -1,14 +1,14 @@
 ---
 title: NESST Season 2
 date: 2018-03-07
-roles: ["Speaker"]
-places: ["Enschede"]
+roles: speaker
+places: enschede
 link: https://www.facebook.com/events/1838806939471157/
 linkType: Facebook
 icon: /images/icons/nesst.png
 color: "#ffb600"
-type: content
 venue: the cee spot
+tags: events
 ---
 
 After being featured by Het Financieele Dagblad (Dutch Financial Times) as one of the Netherlands' 50 most-innovative young entrepreneurs and professionals, I was invited by Enschede-based non-profit startup accelerator NESST to deliver the opening keynote for their new season.

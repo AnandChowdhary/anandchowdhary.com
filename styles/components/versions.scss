@@ -1,0 +1,16 @@
+@import "../variables";
+
+.htag {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: lighten($color: $colorAbout, $amount: 40);
+  color: #000;
+  line-height: 1;
+  font-size: 60%;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  letter-spacing: 1px;
+  margin-left: 0.5rem;
+  font-family: $sansSerif;
+}

@@ -1,0 +1,82 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <div class="f">
+      <div>
+        <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
+        <div>
+          <time>{{ date.toLocaleDateString("en-US", {
+            month: "long",
+            year : "numeric"
+          }) }}</time>
+        </div>
+      </div>
+      {% if award or award_position %}<div><div class="award{% if award_position %} award--{{ award_position }}{% endif %}">
+        {% if award_position %}
+          {% if award_position === 1 %}
+            <span class="award-position">1st prize</span>
+          {% elif award_position === 2 %}
+            <span class="award-position">2nd prize</span>
+          {% elif award_position === 3 %}
+            <span class="award-position">3rd prize</span>
+          {% else %}
+            <span>{{ award_position }}</span>
+          {% endif %}
+        {% endif %}
+        {% if award %}<span>{{ award }}</span>{% endif %}
+      </div></div>{% endif %}
+    </div>
+    <a class="show-project-details" href="#details">Show project details</a>
+    <div class="project-intro" id="details">
+      <dl>
+        {% if client %}<span>
+          <dt>Client</dt>
+          {% if client_link %}
+          <dd><a href="{{ client_link }}">{{ client }}</a></dd>
+          {% else %}
+          <dd>{{ client }}</dd>
+          {% endif %}
+        </span>{% endif %}
+        {% if work %}<span>
+          <dt>Work</dt>
+          {% for tag in work %}
+          <dd><a href="/projects/{{ tag | slug }}/">{{ tag }}</a></dd>
+          {% endfor %}
+        </span>{% endif %}
+        {% if stack %}<span>
+          <dt>Stack</dt>
+          {% for tag in stack %}
+          <dd><a href="/projects/stack/{{ tag | slug }}/">{{ tag }}</a></dd>
+          {% endfor %}
+        </span>{% endif %}
+        {% if tools %}<span>
+          <dt>Tools</dt>
+          {% for tag in tools %}
+          <dd><a href="/projects/tools/{{ tag | slug }}/">{{ tag }}</a></dd>
+          {% endfor %}
+        </span>{% endif %}
+        {% if collaborators %}<span>
+          <dt>Collaborators</dt>
+          {% for tag in collaborators %}
+          <dd><a href="/projects/collaborators/{{ tag }}/">{% collaboratorName tag %}</a></dd>
+          {% endfor %}
+        </span>{% endif %}
+        {% if timeline %}<span>
+          <dt>Timeline</dt>
+          <dd>{{ timeline }}</dd>
+        </span>{% endif %}
+        {% if places %}<span>
+          <dt>City</dt>
+          <dd><a href="/life/travel/{{ places }}/">{{ places | place }}</a></dd>
+        </span>{% endif %}
+      </dl>
+    </div>
+    <a class="hide-project-details" href="#">Hide project details</a>
+    </div>
+  </header>
+  <div class="container-outer">
+    {{ content | safe }}
+  </div>
+</main>
+{% include "footer.njk" %}

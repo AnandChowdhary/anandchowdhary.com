@@ -1,5 +1,6 @@
 ---
 title: Unifiers
+tags: projects
 intro: India's first online training platform, built in collaboration with government agencies and large corporates.
 date: 2014-05-27
 work: ["Web"]
@@ -9,6 +10,8 @@ timeline: 2 months
 style: padded
 img_src: /images/portfolio/unifiers_2x
 img_type: png
+stack: ["PHP", "JavaScript"]
+icon: /images/projects/unifiers/icon.png
 ---
 
 For 3 years, I worked part-time as a consultant to Unifiers Social Ventures Pvt. Ltd., a leading social infrastructure company, and worked on a variety of projects.

@@ -1,0 +1,43 @@
+---
+pagination:
+  data: stackTags
+  size: 10
+  alias: pagination
+---
+
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/projects/">Projects</a>
+        <a href="/projects/stack/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </header>
+  <div class="container-outer">
+    <section class="link-list stack-list nr s">
+      {% for item in pagination %}
+        <article>
+          <a href="/projects/stack/{{ item | slug }}">
+            <img alt="" src="{{ (item + ' icon/70/70') | bingImageUrl }}">
+            <span>{{ item }}</span>
+          </a>
+        </article>
+      {% endfor %}
+    </section>
+    {% if pagination.pageLinks.length > 1 %}
+    <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
+      {% if pagination.previousPageLink %}
+        <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+      {% endif %}
+      {% if pagination.nextPageLink %}
+        <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</main>
+{% include "footer.njk" %}

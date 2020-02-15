@@ -1,0 +1,39 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <div class="f">
+      <div>
+        <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
+        <div>{{ date | datetime | safe }}</div>
+      </div>
+    </div>
+    <a class="show-project-details" href="#details">Show event details</a>
+    <div class="project-intro" id="details">
+      <dl>
+        {% if roles %}<span>
+          <dt>Role</dt>
+          <dd><a href="/events/roles/{{ roles }}/">{{ roles | titleify }}</a></dd>
+        </span>{% endif %}
+        {% if places %}<span>
+          <dt>City</dt>
+          <dd><a href="/life/travel/{{ places }}">{{ places | place }}</a></dd>
+        </span>{% endif %}
+        {% if linkType and link %}<span>
+          <dt>Details</dt>
+          <dd><a href="{{ link }}">{{ linkType }}</a></dd>
+        </span>{% endif %}
+        {% if venue %}<span>
+          <dt>Venue</dt>
+          <dd><a href="https://www.google.com/maps/search/?api=1&query={{ venue | urlencode }},%20{{ places | urlencode }}">{{ venue }}</a></dd>
+        </span>{% endif %}
+      </dl>
+    </div>
+    <a class="hide-project-details" href="#">Hide event details</a>
+    </div>
+  </header>
+  <div class="container-outer">
+    {{ content | safe }}
+  </div>
+</main>
+{% include "footer.njk" %}

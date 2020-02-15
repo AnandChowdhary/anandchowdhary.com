@@ -1,14 +1,21 @@
 ---
 title: FaceMatch
+tags: projects
 subcategory: App
 intro: Face recognition Augmented Reality app for business events, built at the AWS Hackathon for StartupFest Europe.
 date: 2017-09-23
 icon: /images/projects/facematch/icon.png
-work: ["App", "Artificial Intelligence", "Augmented Reality"]
+icon_bg: true
+work: ["App", "AI"]
 client: AWS
 timeline: 24 hours
 img_src: /images/portfolio/facematch_2x
 img_type: png
+style: cover
+stack: ["JavaScript", "Python"]
+collaborators: ["mohit-ahuja"]
+award: €1,000+
+award_position: 1
 ---
 
 For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://www.thefutureofhightech.com/), part of the Startup Fest Europe 2017, I developed FaceMatch, a mobile app that uses deep learning-based facial detection, and displays the results in an augmented reality heads-up display. I ended up winning the hackathon's grand prize of €1,000 along with VIP tickets for StartupFest Europe.
@@ -16,8 +23,8 @@ For the Amazon Web Services (AWS) Hackathon at [The Future of High Tech](http://
 [View GitHub repo &rarr;](https://github.com/AnandChowdhary/facematch)
 
 <div class="two-images shadow">
-	<div><img alt="" src="/images/projects/facematch/1.jpg"></div>
-	<div><img alt="" src="/images/projects/facematch/2.jpg"></div>
+  <div><img alt="" src="/images/projects/facematch/1.jpg"></div>
+  <div><img alt="" src="/images/projects/facematch/2.jpg"></div>
 </div>
 
 The idea is simple — if you enter a large conference or a room full of people, you want to know who you should network with. FaceMatch uses AI to understand faces, and finds their relevant info from their LinkedIn profiles. This means that you can essentially point the phone at someone, get information like their age, gender, expression, designation, and company, along with a link to their LinkedIn profile.
@@ -29,5 +36,3 @@ It also uses object and scene detection, so you can just point your camera in th
 FaceMatch uses Amazon Rekognition, a service that lets you quickly add sophisticated deep learning-based visual search and image classification to apps. I ended up using Face Comparison, Facial Analysis, and Object and Scene Detection APIs.
 
 <div class="image"><img alt="" src="/images/portfolio/facematch_2x.png"></div>
-
-<footer>This project was done in collaboration with Mohit Ahuja 🇮🇳.</footer>

@@ -1,0 +1,14 @@
+---
+pagination:
+  data: workTags
+  size: 1
+  alias: workTags
+addAllPagesToCollections: true
+permalink: /projects/{{ workTags | slug }}/
+---
+
+{% include "head.njk" %}
+<main id="content">
+  {% workTagsArchive workTags %}
+</main>
+{% include "footer.njk" %}

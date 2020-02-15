@@ -1,0 +1,72 @@
+<article class="books-item">
+  <a href="{{ book.url | url }}">
+    <div class="content">
+      <picture class="book-image">
+        <img src="{{ book.image_url }}" alt="" loading="lazy" width="80" height="120">
+      </picture>
+      <div>
+        <h2>{{ book.title }}</h2>
+        <div>{{ book.author }}</div>
+        {% if book.rating %}
+        <div class="rating" aria-label="{{ book.rating }} stars out of 5">
+          {% if ".5" in book.rating | string %}
+            {% for i in range(1, book.rating) %}
+              <svg class="star" viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-14, -50)" fill="#FFCD00">
+                        <polygon points="25.5 67.25 18.7404696 70.8036954 20.031425 63.2768477 14.5628501 57.9463046 22.1202348 56.8481523 25.5 50 28.8797652 56.8481523 36.4371499 57.9463046 30.968575 63.2768477 32.2595304 70.8036954"></polygon>
+                    </g>
+                </g>
+              </svg>
+            {% endfor %}
+            <svg class="star half-star" viewBox="0 0 12 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-14, -18)" fill="#ffcd00">
+                        <path d="M25.5,18 L25.5,35.25 L18.7404696,38.8036954 L20.031425,31.2768477 L14.5628501,25.9463046 L22.1202348,24.8481523 L25.5,18 Z"></path>
+                    </g>
+                </g>
+            </svg>
+            <svg class="star half-star half-no-star" viewBox="0 0 12 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-25, -50)" fill="#DDDDDD">
+                        <path d="M25.5,50 L28.8797652,56.8481523 L36.4371499,57.9463046 L30.968575,63.2768477 L32.2595304,70.8036954 L25.5,67.25 L25.5,50 Z"></path>
+                    </g>
+                </g>
+            </svg>
+            {% for i in range(book.rating + 1, 5) %}
+              <svg class="star no-star" viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-14, -50)" fill="#dddddd">
+                        <polygon points="25.5 67.25 18.7404696 70.8036954 20.031425 63.2768477 14.5628501 57.9463046 22.1202348 56.8481523 25.5 50 28.8797652 56.8481523 36.4371499 57.9463046 30.968575 63.2768477 32.2595304 70.8036954"></polygon>
+                    </g>
+                </g>
+            </svg>
+            {% endfor %}
+          {% else %}
+            {% for i in range(0, book.rating) %}
+              <svg class="star" viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-14, -50)" fill="#FFCD00">
+                        <polygon points="25.5 67.25 18.7404696 70.8036954 20.031425 63.2768477 14.5628501 57.9463046 22.1202348 56.8481523 25.5 50 28.8797652 56.8481523 36.4371499 57.9463046 30.968575 63.2768477 32.2595304 70.8036954"></polygon>
+                    </g>
+                </g>
+              </svg>
+            {% endfor %}
+            {% for i in range(book.rating, 5) %}
+              <svg class="star no-star" viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g transform="translate(-14, -50)" fill="#dddddd">
+                        <polygon points="25.5 67.25 18.7404696 70.8036954 20.031425 63.2768477 14.5628501 57.9463046 22.1202348 56.8481523 25.5 50 28.8797652 56.8481523 36.4371499 57.9463046 30.968575 63.2768477 32.2595304 70.8036954"></polygon>
+                    </g>
+                </g>
+            </svg>
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% else %}
+        <div><em>Currently reading</em></div>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</article>

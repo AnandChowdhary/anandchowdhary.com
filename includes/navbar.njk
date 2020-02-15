@@ -1,0 +1,15 @@
+<nav>
+  <a{% if page.url == "/" %} class="active"{% endif %} href="/"><span>Home</span></a>
+  <a{% if "/projects/" in page.url %} class="active"{% endif %} href="/projects/"><span>Projects</span></a>
+  <a{% if "/blog/" in page.url %} class="active"{% endif %} href="/blog/"><span>Blog</span></a>
+  <a{% if "/events/" in page.url %} class="active"{% endif %} href="/events/"><span>Speaking</span></a>
+  <a{% if "/life/" in page.url %} class="active"{% endif %} href="/life/"><span>Life</span></a>
+  <div id="more">
+    <a href="#" aria-label="Close"><span><span>&times;</span></span></a>
+    <a{% if "/about/" in page.url %} class="active"{% endif %} href="/about/"><span>About</span></a>
+    <a{% if "/press/" in page.url %} class="active"{% endif %} href="/press/"><span>Press</span></a>
+    <a{% if "/videos/" in page.url %} class="active"{% endif %} href="/videos/"><span>Videos</span></a>
+    <a{% if "/contact/" in page.url %} class="active"{% endif %} href="/contact/"><span>Contact</span></a>
+  </div>
+  <a href="#more" data-balloon-pos="down" aria-label="More"><span>&bullet; &bullet; &bullet;</span></a>
+</nav>

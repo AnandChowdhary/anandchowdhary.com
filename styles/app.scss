@@ -1,0 +1,99 @@
+@import "./variables";
+@import "./components/balloon.scss";
+@import "./type.scss";
+@import "./components/breadcrumbs.scss";
+@import "./components/header.scss";
+@import "./components/content.scss";
+@import "./components/layout.scss";
+@import "./components/projects.scss";
+@import "./components/books.scss";
+@import "./components/home.scss";
+@import "./components/travel.scss";
+@import "./components/footer.scss";
+@import "./components/events.scss";
+@import "./components/blog.scss";
+@import "./components/press.scss";
+@import "./components/versions.scss";
+@import "./components/contact.scss";
+@import "./components/life-data.scss";
+@import "./components/a11y.scss";
+@import "./components/mobile.scss";
+@import "./components/highlight.scss";
+
+body {
+  margin: 0;
+  font-size: 115%;
+  overflow-wrap: break-word;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  font-kerning: normal;
+}
+
+::selection {
+  background-color: #ffdf6e;
+}
+
+a {
+  color: $linkColor;
+  transition: 0.3s;
+  &:focus {
+    outline: none;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0 0.2rem $focusRingColor;
+  }
+}
+
+header#masthead,
+footer#colophon {
+  font-size: 90%;
+  position: relative;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.container-large {
+  max-width: 100%;
+  position: relative;
+}
+
+.content {
+  position: relative;
+}
+
+.show-project-details,
+.hide-project-details {
+  display: none;
+  background-color: #fff;
+  color: inherit;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 80%;
+  margin: 2.5rem auto 0 auto;
+}
+
+.url-icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  background-color: #aaa;
+  background-position: center center;
+  margin-right: 1rem;
+  vertical-align: middle;
+  line-height: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  &.l {
+  }
+}
+
+.blog .img-heading img {
+  width: 5rem;
+  filter: drop-shadow(0 0.15rem 0.15rem rgba(0, 0, 0, 0.1));
+}

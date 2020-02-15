@@ -1,0 +1,15 @@
+<article>
+  <a href="{{ post.url | url }}">
+    <div class="f">
+      <img alt="" src="{{ post.data.icon }}">
+      <div class="ff">
+        <h2>{{ post.data.title }}</h2>
+        <div class="f">
+          <div>{{ post.data.venue }}</div>
+          <div>{{ post.data.date | datetime | safe }}</div>
+        </div>
+        <div>{{ post.data.places | place }}</div>
+      </div>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,39 @@
+---
+pagination:
+  data: collections.blog
+  size: 10
+  reverse: true
+  alias: pagination
+---
+
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro">
+    <div class="blog-title">
+      <div class="l"></div>
+      <div class="r">
+        <h1>{{ title }}</h1>
+        {{ content | safe }}
+        {% getBlogFilterNav "all" %}
+      </div>
+    </div>
+  </header>
+  <div class="container m">
+    <section class="blog-posts">
+      {% for post in pagination %}
+        {% include "blog-item.njk" %}
+      {% endfor %}
+    </section>
+    {% if pagination.pageLinks.length > 1 %}
+    <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
+      {% if pagination.previousPageLink %}
+        <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+      {% endif %}
+      {% if pagination.nextPageLink %}
+        <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</main>
+{% include "footer.njk" %}

@@ -1,0 +1,14 @@
+---
+pagination:
+  data: blogTags
+  size: 1
+  alias: blogTags
+addAllPagesToCollections: true
+permalink: /blog/{{ blogTags }}/
+---
+
+{% include "head.njk" %}
+<main id="content">
+  {% blogTagArchive blogTags %}
+</main>
+{% include "footer.njk" %}

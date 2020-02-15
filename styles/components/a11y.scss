@@ -1,0 +1,25 @@
+.sr-only {
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.external-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTc2IDUxMiI+PHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNNDQ4IDI3OXYxODVjMCAyNy0yMSA0OC00OCA0OEg0OGMtMjcgMC00OC0yMS00OC00OFYxMTJjMC0yNyAyMS00OCA0OC00OGgyNDhhMjQgMjQgMCAwMTE3IDdsMTYgMTZjMTUgMTUgNCA0MS0xNyA0MUg2NHYzMjBoMzIwVjI5NWMwLTYgMy0xMiA3LTE3bDE2LTE2YzE1LTE1IDQxLTQgNDEgMTd6TTU3NiAzN2MwLTIwLTE3LTM3LTM3LTM3SDM4MGMtMTUgMC0yOCAxMy0yOCAyOHYxOGMwIDE2IDEzIDI4IDI5IDI4bDY3LTItMjQ5IDI0N2MtOSA5LTkgMjUgMCAzNGwyNCAyNGM5IDkgMjUgOSAzNCAwbDI0Ny0yNDktMiA2N2MwIDE2IDEyIDI5IDI4IDI5aDE4YzE1IDAgMjgtMTMgMjgtMjhWMzd6Ii8+PC9zdmc+");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-left: 0.25em;
+  margin-right: 0.1em;
+  opacity: 0.5;
+}

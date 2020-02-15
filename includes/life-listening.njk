@@ -1,0 +1,67 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/work/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </header>
+  <div class="container-outer">
+    <h2>Podcasts</h2>
+    <section class="sum-list music-list nr">
+      {% for item in pocketCastsPodcasts %}{% if loop.index <= 3 %}
+        <article>
+          <a href="{{ item.url | url }}">
+            <div>
+              <img alt="" src="{{ (item.title + ' podcast cover') | bingImageUrl }}">
+              <div>
+                <h3>{{ item.title }}</h3>
+                <div>{{ item.author }}</div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endif %}{% endfor %}
+    </section>
+    <p><a href="/life/listening/music/podcasts/">Explore more podcasts &rarr;</a></p>
+    <h2>Top Songs</h2>
+    <section class="sum-list music-list nr">
+      {% for item in shortTermTracks %}{% if loop.index <= 3 %}
+        <article>
+          <a href="{{ item.href | replace('api.spotify.com/v1/tracks', 'open.spotify.com/track') }}">
+            <div>
+              <img alt="" src="{{ item.album.images[1].url }}">
+              <div>
+                <h3>{{ item.name }}</h3>
+                <div>{{ item.artists[0].name }}</div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endif %}{% endfor %}
+    </section>
+    <p><a href="/life/listening/music/songs/">Explore more top tracks &rarr;</a></p>
+    <h2>Top Artists</h2>
+    <section class="sum-list music-list">
+      {% for item in shortTermArtists %}{% if loop.index <= 3 %}
+        <article>
+          <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
+            <div>
+              <img alt="" src="{{ item.images[1].url }}">
+              <div>
+                <h3>{{ item.name }}</h3>
+                <div>{{ item.genres[0] | capitalize }}</div>
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endif %}{% endfor %}
+    </section>
+    <p><a href="/life/listening/music/artists/">Explore more top artists &rarr;</a></p>
+  </div>
+</main>
+{% include "footer.njk" %}

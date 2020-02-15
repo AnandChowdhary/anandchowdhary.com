@@ -1,0 +1,13 @@
+footer#colophon {
+  margin-bottom: 1rem;
+  text-align: center;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  nav {
+    a:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 ---
 title: Timeless
+layout: page.njk
 ---
 
 A collection of quotes I've curated over the years.

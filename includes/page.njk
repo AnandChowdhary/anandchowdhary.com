@@ -1,0 +1,12 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <h1>{{ title }}</h1>
+    </div>
+  </header>
+  <div class="container-outer">
+    {{ content | safe }}
+  </div>
+</main>
+{% include "footer.njk" %}

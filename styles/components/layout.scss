@@ -1,0 +1,90 @@
+@import "../variables";
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  &.m {
+    margin: 5rem auto;
+  }
+  &.ox {
+    overflow-x: auto;
+  }
+}
+
+.item-icon {
+  width: 5rem;
+  height: 5rem;
+  vertical-align: top;
+  float: left;
+  margin-right: 1.5rem;
+  margin-left: -6.5rem;
+  transform: translateY(0.25rem);
+  border-radius: 100%;
+  // margin-bottom: -2rem;
+}
+
+main h1 {
+  &.has-icon {
+    margin-bottom: 0.5rem;
+    > span {
+      display: block;
+    }
+  }
+  &.has-no-icon {
+    + div {
+      margin-top: -1.25rem;
+    }
+  }
+}
+
+.f {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog .img-heading {
+  img {
+    margin-right: 1rem;
+    margin-left: -7rem;
+    float: left;
+    vertical-align: middle;
+  }
+}
+
+.horizontal-scroller {
+  position: relative;
+  .scroll-buttons {
+    button {
+      z-index: 1;
+      top: 50%;
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      margin-top: -1.5rem;
+      padding: 0;
+      border-radius: 100%;
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+      border: 1px solid #ddd;
+      background-color: #fff;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: 0.3s;
+      &:first-of-type {
+        left: -1.5rem;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTM1LjcgNi40YTMuNSAzLjUgMCAxMC01LTVsLTIwIDIwYTMuNSAzLjUgMCAwMDAgNWwyMCAyMGEzLjUgMy41IDAgMTA1LTVMMTguMiAyNCAzNS43IDYuNHoiIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPgo8L3N2Zz4K");
+      }
+      &:last-of-type {
+        right: -1.5rem;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTExLjUgNDEuNWEzLjUgMy41IDAgMTA1IDVsMjAtMjBhMy41IDMuNSAwIDAwMC01bC0yMC0yMGEzLjUgMy41IDAgMTAtNSA1TDI5LjEgMjQgMTEuNSA0MS41eiIgZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=");
+      }
+      &:focus {
+        outline: none;
+        transform: scale(1.05);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25),
+          0 0 0 0.2rem $focusRingColor;
+      }
+    }
+  }
+}

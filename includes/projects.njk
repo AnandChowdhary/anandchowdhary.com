@@ -1,0 +1,39 @@
+---
+pagination:
+  data: collections.projects
+  size: 10
+  reverse: true
+  alias: pagination
+---
+
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro">
+    <div class="container-large">
+      <h1 class="sr-only">{{ title }}</h1>
+      {% getProjectsSelector "all" %}
+      {{ content | safe }}
+      {% getProjectNavbar "all" %}
+    </div>
+  </header>
+  <div class="container-outer small-p">
+    <section class="projects">
+      <div>
+        {% for project in pagination %}
+          {% include "project-item.njk" %}
+        {% endfor %}
+      </div>
+    </section>
+    {% if pagination.pageLinks.length > 1 %}
+    <nav class="pagination {% if pagination.previousPageLink %}pagination--has-prev{% endif %} {% if pagination.nextPageLink %}pagination--has-next{% endif %}">
+      {% if pagination.previousPageLink %}
+        <a class="pagination-item pagination-item--prev" href="{{ pagination.previousPageHref | url }}"><span>Previous</span></a>
+      {% endif %}
+      {% if pagination.nextPageLink %}
+        <a class="pagination-item pagination-item--next" href="{{ pagination.nextPageHref | url }}"><span>Next</span></a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</main>
+{% include "footer.njk" %}

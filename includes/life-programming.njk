@@ -1,0 +1,52 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/work/">Work</a>
+        <a href="/life/work/programming/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a> on GitHub.</p>
+    </div>
+  </header>
+  <div class="container-outer">
+    <div class="data-summary">
+      <div>
+        <div>{{ programming.totalText }}</div>
+        <div>Total this week</div>
+      </div>
+      <div>
+        <div>{{ programming.dailyAverageText }}</div>
+        <div>Daily average</div>
+      </div>
+    </div>
+    <h2>Top languages</h2>
+    <section class="link-list languages-list nr s">
+      {% for item in programming.languages %}
+        <article>
+          {% if item.name in stackTags %}
+          <a href="/projects/stack/{{ item.name | slug }}" class="a">
+          {% else %}
+          <span class="a">
+          {% endif %}
+            <div class="f">
+              <img alt="" src="{{ (item.name + ' icon/70/70') | bingImageUrl }}">
+              <div class="f ff">
+                <div>{{ item.name }}</div>
+                <div>{{ item.text }}</div>
+              </div>
+            </div>
+          {% if item.name in stackTags %}
+          </a>
+          {% else %}
+          </span>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </section>
+  </div>
+</main>
+{% include "footer.njk" %}

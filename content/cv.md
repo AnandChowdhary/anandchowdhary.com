@@ -1,24 +1,24 @@
 ---
 title: Curriculum vitae
-intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CEO of Oswald Labs.
+layout: page.njk
 ---
 
 ## Education
 
-- BSc Creative Technology, 2017–*present*  
+- BSc Creative Technology, 2017–_present_  
   University of Twente, the Netherlands
-   - Honors program in Science
-   - 10+ projects, including with IBM
+  - Honors program in Science
+  - 10+ projects, including with IBM
 - Global Engineering Education Exchange, 2019  
   Santa Clara University, California, United States
 - High school, CBSE science, 2019  
   The Mother's International School
-   - 30+ awards and certificates
-   - CBSE topper in English (98%)
+  - 30+ awards and certificates
+  - CBSE topper in English (98%)
 
 ## Work
 
-- Oswald Labs, 2016–*present*  
+- Oswald Labs, 2016–_present_  
   CEO
 - El Niño BV, 2017–2019  
   Software Engineering Consultant
@@ -50,26 +50,26 @@ Featured in Forbes 30 Under 30, The Next Web T500 (twice) and by the Dutch Finan
 #### Extremely high proficiency (2+ years)
 
 - Founder–CEO
- - Team management & leadership (small teams, ~10)
- - Business development
- - Marketing, PR, and community
- - Technical product cycles
+- Team management & leadership (small teams, ~10)
+- Business development
+- Marketing, PR, and community
+- Technical product cycles
 - Accessibility engineer
- - ARIA, semantic web, WAI guidelines
- - Testing & screen readers
- - ADA/EU/WCAG compliance
+- ARIA, semantic web, WAI guidelines
+- Testing & screen readers
+- ADA/EU/WCAG compliance
 
 #### Might I say talent? (4+ years)
 
 - Full-stack developer
- - Framework-agnostic frontend development
- - Scalable & secure APIs and platforms
- - Server management & resource allocation
+- Framework-agnostic frontend development
+- Scalable & secure APIs and platforms
+- Server management & resource allocation
 - Full-stack designer
- - UI/UX design & prototyping
- - User research & UX writing
- - Branding & graphic design
- - Print design & typography
+- UI/UX design & prototyping
+- User research & UX writing
+- Branding & graphic design
+- Print design & typography
 
 ## Stacks
 

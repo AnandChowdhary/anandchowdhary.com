@@ -1,5 +1,6 @@
 ---
 title: BharatHacks
+tags: projects
 subcategory: Hackathon
 intro: Hackathon to solve India-specific problems in New Delhi with 200 participants and tens of thousands of dollars in prizes.
 date: 2017-07-18
@@ -24,4 +25,4 @@ I personally organized the event, arranged logistics, delivered the keynote, and
 
 [Visit BharatHacks &rarr;](https://bharathacks.github.io)
 
-{{< img src="/images/projects/bharathacks/1" type="png" >}}
+<div class="image"><img alt="" src="/images/projects/bharathacks/1.png"></div>

@@ -1,0 +1,50 @@
+{% include "head.njk" %}
+<main id="content">
+  <header class="intro s">
+    <div>
+      <nav class="breadcrumbs">
+        <a href="/life/">Life</a>
+        <a href="/life/work/">{{ title }}</a>
+      </nav>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </header>
+  <div class="container-outer">
+    <p><a href="/life/travel/">Explore more cities &rarr;</a></p>
+    <h2>Programming</h2>
+    <section class="sum-list nr">
+      {% for item in programming.languages %}{% if loop.index <= 3 %}
+        <article>
+          <span class="a" href="/projects/stack/{{ item.name | slug }}">
+            <div>
+              <img src="{{ (item.name + ' icon/70/70') | bingImageUrl }}" alt="">
+              <div>
+                <h3>{{ item.name }}</h3>
+                <div>{{ item.text }}</div>
+              </div>
+            </div>
+          </span>
+        </article>
+      {% endif %}{% endfor %}
+    </section>
+    <p><a href="/life/work/programming/">Explore more top languages &rarr;</a></p>
+    <h2>Emails</h2>
+    <div class="data-summary">
+      <div>
+        <div>{{ emails.sentLastWeek }}</div>
+        <div>Sent this week</div>
+      </div>
+      <div>
+        <div>{{ emails.receivedLastWeek }}</div>
+        <div>Received this week</div>
+      </div>
+      <div>
+        <div>{{ ((emails.sentLastWeek / emails.receivedLastWeek) * 100) | round(2) }}%</div>
+        <div>Reply ratio</div>
+      </div>
+    </div>
+    <p><a href="/life/work/emails/">Explore more emails overview &rarr;</a></p>
+  </div>
+</main>
+{% include "footer.njk" %}

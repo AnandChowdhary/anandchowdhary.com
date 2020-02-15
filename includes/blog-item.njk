@@ -1,0 +1,29 @@
+<article>
+  <div class="l">
+    <div>
+      {% if post.data.alias %}
+      <h2><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
+      {% else %}
+      <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+      {% endif %}
+      <div>Posted on <time>{{ post.data.date.toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "short",
+        year : "numeric"
+      }) }}</time></div>
+      {% for tag in post.data.tags %}
+        {% if tag !== "blog" %}
+          <a class="tag" href="/blog/{{ tag }}/">{{ tag }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="r">
+    {% excerpt post %}
+    {% if post.data.alias %}
+    <p><a href="{{ post.data.alias | url }}">{{ post.data.alias | iconify | safe }}Read {{ post.data.title }} on {{ post.data.publisher }}</a></p>
+    {% else %}
+    <p><a href="{{ post.url | url }}">Read {{ post.data.title }} &rarr;</a></p>
+    {% endif %}
+  </div>
+</article>
