@@ -8,7 +8,7 @@ stack: ["CSS", "PHP"]
 domain: "anandchowdhary.com"
 ---
 
-<div class="image shadow"><img alt="Screenshot of Projects page" src="/images/versions/arise/writing.png"></div>
-<div class="image shadow"><img alt="Screenshot of Blog page" src="/images/versions/arise/about.png"></div>
-<div class="image shadow"><img alt="Screenshot of Blog page" src="/images/versions/arise/photos.png"></div>
-<div class="image shadow"><img alt="Screenshot of Blog page" src="/images/versions/arise/portfolio.png"></div>
+<div class="image shadow scrollable"><img alt="Screenshot of Projects page" src="/images/versions/arise/writing.png"></div>
+<div class="image shadow scrollable"><img alt="Screenshot of Blog page" src="/images/versions/arise/about.png"></div>
+<div class="image shadow scrollable"><img alt="Screenshot of Blog page" src="/images/versions/arise/photos.png"></div>
+<div class="image shadow scrollable"><img alt="Screenshot of Blog page" src="/images/versions/arise/portfolio.png"></div>
