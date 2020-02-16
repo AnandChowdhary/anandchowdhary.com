@@ -3,7 +3,7 @@ title: Colophon
 layout: page.njk
 ---
 
-I built and published my first personal website in 2008. You're currently visiting the 25th version of this website.
+I built and published my first personal website in 2008. You're currently visiting the 26th version of this website.
 
 ## Stack
 
