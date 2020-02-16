@@ -18,15 +18,15 @@ I went back to my alma mater, The Mother's International School, as the keynote 
 Photos (c) [Sai Raunaq Gosain](https://instagram.com/vellaindian).
 
 <div class="two-images">
-  <img alt="" src="/images/events/minet-x-2018/IMG_8006.jpg">
-  <img alt="" src="/images/events/minet-x-2018/IMG_7988.jpg">
+  <img alt="Anand Chowdhary speaking on stage" src="/images/events/minet-x-2018/IMG_8006.jpg">
+  <img alt="Anand Chowdhary speaking behind a set of logos" src="/images/events/minet-x-2018/IMG_7988.jpg">
 </div>
 <div class="two-images">
   <div>
-    <img alt="" src="/images/events/minet-x-2018/IMG_8045.jpg">
-    <img alt="" src="/images/events/minet-x-2018/IMG_7997.jpg">
+    <img alt="Anand Chowdhary explaining Problems + Tools slide" src="/images/events/minet-x-2018/IMG_8045.jpg">
+    <img alt="Anand Chowdhary speaking about Class Rebels" src="/images/events/minet-x-2018/IMG_7997.jpg">
   </div>
   <div>
-    <img alt="" src="/images/events/minet-x-2018/IMG_7995.jpg">
+    <img alt="Anand Chowdhary speaking with blue background" src="/images/events/minet-x-2018/IMG_7995.jpg">
   </div>
 </div>

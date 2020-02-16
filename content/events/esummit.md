@@ -20,11 +20,11 @@ eSummit was organized by the entrepreneurship cell of Indian Institute of Techno
 Photos (c) E-Cell, IIT Kanpur
 
 <div class="two-images">
-  <img alt="" src="/images/events/esummit/1.jpg">
-  <img alt="" src="/images/events/esummit/2.jpg">
+  <img alt="Anand Chowdhary speaking at a podium" src="/images/events/esummit/1.jpg">
+  <img alt="Panel answering a question" src="/images/events/esummit/2.jpg">
 </div>
 
 <div class="two-images">
-  <img alt="" src="/images/events/esummit/3.jpg">
-  <img alt="" src="/images/events/esummit/4.jpg">
+  <img alt="Panel discussion with three speakers" src="/images/events/esummit/3.jpg">
+  <img alt="Anand Chowdhary receiving an award" src="/images/events/esummit/4.jpg">
 </div>

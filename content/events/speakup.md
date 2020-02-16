@@ -20,11 +20,11 @@ I gave a demo of Ara, an AI-powered assistant for work, which raised its seed ro
 Photos © Masterphoto/SpeakUp
 
 <div class="two-images">
-  <img alt="" src="/images/events/speakup/5baa7959cb226_MASTERPHOTO_NL-20-09-18_042.jpg">
-  <img alt="" src="/images/events/speakup/5baa79763d49f_MASTERPHOTO_NL-20-09-18_102.jpg">
+  <img alt="Anand Chowdhary explaining to 3 listeners" src="/images/events/speakup/5baa7959cb226_MASTERPHOTO_NL-20-09-18_042.jpg">
+  <img alt="Overview of event space with many participants" src="/images/events/speakup/5baa79763d49f_MASTERPHOTO_NL-20-09-18_102.jpg">
 </div>
 
 <div class="two-images">
-  <img alt="" src="/images/events/speakup/5baa797ed3317_MASTERPHOTO_NL-20-09-18_121.jpg">
-  <img alt="" src="/images/events/speakup/5baa795ec8ec7_MASTERPHOTO_NL-20-09-18_053.jpg">
+  <img alt="Anand Chowdhary and Florian Overkamp in conversation" src="/images/events/speakup/5baa797ed3317_MASTERPHOTO_NL-20-09-18_121.jpg">
+  <img alt="People looking at a demo during the event" src="/images/events/speakup/5baa795ec8ec7_MASTERPHOTO_NL-20-09-18_053.jpg">
 </div>

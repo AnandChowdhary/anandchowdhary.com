@@ -6,7 +6,7 @@ layout: page.njk
 
 <div class="image">
   <figure>
-    <img alt="" src="/images/photos/anand-chowdhary.jpg">
+    <img alt="Anand Chowdhary standing on a desk in his office" src="/images/photos/anand-chowdhary.jpg">
     <figcaption>Photo &copy; <a href="https://www.rikkertharink.nl">Rikkert Harink</a></figcaption>
   </figure>
 </div>
