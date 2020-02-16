@@ -1,5 +1,10 @@
-# Redirect default Netlify subdomain to primary domain
+# Default Netlify subdomain to primary domain
 http://anandchowdhary.netlify.com/* https://anandchowdhary.com/:splat 301!
+
+# Primary domain versions
+http://anandchowdhary.com/ https://anandchowdhary.com/
+http://www.anandchowdhary.com/ https://anandchowdhary.com/
+https://www.anandchowdhary.com/ https://anandchowdhary.com/
 
 # Coffee Time redirects
 /blog/google-docs-github/ /blog/coffee-time/google-docs-github/
