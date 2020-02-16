@@ -1,4 +1,9 @@
 ---
 title: Event Roles
-layout: event-roles-tags.njk
+layout: page.njk
 ---
+
+- [Speaker](/events/roles/speaker/)
+- [Panelist](/events/roles/panelist/)
+- [Exhibition](/events/roles/exhibition/)
+- [Trainer](/events/roles/trainer/)

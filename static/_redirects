@@ -15,6 +15,7 @@ https://www.anandchowdhary.com/ https://anandchowdhary.com/
 /open-source/uppload/ /projects/open-source/uppload/
 
 # Legacy open-source category pages
+/open-source/ /projects/open-source/
 /open-source/hello-bar/ https://github.com/AnandChowdhary/hello-bar
 /open-source/hovercard/ https://github.com/AnandChowdhary/hovercard
 /open-source/precis/ https://github.com/AnandChowdhary/precis
@@ -38,7 +39,7 @@ https://www.anandchowdhary.com/ https://anandchowdhary.com/
 /places/new-delhi/ /life/travel/new-delhi/
 /places/paris/ /life/travel/paris/
 /places/ /life/travel/
-/places/san-francisco/ /life/travel/san-francisco/
+/places/san-francisco/ /life/travel/sf-bay-area/
 /places/santa-clara/ /life/travel/santa-clara/
 
 # Roles
