@@ -4,7 +4,7 @@
     <div>
       <div class="f">
       <div>
-        <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
+        <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img itemprop="thumbnailUrl" class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
         <div>{{ date | datetime | safe }}</div>
       </div>
     </div>

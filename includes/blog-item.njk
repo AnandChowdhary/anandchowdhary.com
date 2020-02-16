@@ -1,12 +1,12 @@
-<article>
+<main itemscope itemtype="http://schema.org/Article" id="content">
   <div class="l">
     <div>
       {% if post.data.alias %}
-      <h2><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
+      <h2 itemprop="name"><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
       {% else %}
-      <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+      <h2 itemprop="name"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
       {% endif %}
-      <div>Posted on <time>{{ post.data.date.toLocaleDateString("en-US", {
+      <div>Posted on <time itemprop="dateCreated">{{ post.data.date.toLocaleDateString("en-US", {
         day: "numeric",
         month: "short",
         year : "numeric"
@@ -18,12 +18,12 @@
       {% endfor %}
     </div>
   </div>
-  <div class="r">
+  <div class="r" itemprop="articleBody">
     {% excerpt post %}
     {% if post.data.alias %}
-    <p><a href="{{ post.data.alias | url }}">{{ post.data.alias | iconify | safe }}Read {{ post.data.title }} on {{ post.data.publisher }}</a></p>
+    <p><a itemprop="url" href="{{ post.data.alias | url }}">{{ post.data.alias | iconify | safe }}Read {{ post.data.title }} on {{ post.data.publisher }}</a></p>
     {% else %}
-    <p><a href="{{ post.url | url }}">Read {{ post.data.title }} &rarr;</a></p>
+    <p><a itemprop="url" href="{{ post.url | url }}">Read {{ post.data.title }} &rarr;</a></p>
     {% endif %}
   </div>
 </article>

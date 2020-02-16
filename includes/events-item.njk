@@ -1,14 +1,19 @@
-<article>
-  <a href="{{ post.url | url }}">
+<article itemscope itemtype="http://schema.org/Event">
+  <a itemprop="url" href="{{ post.url | url }}">
     <div class="f">
-      <img alt="" src="{{ post.data.icon }}">
+      <img alt="" itemprop="thumbnailUrl" src="{{ post.data.icon }}">
       <div class="ff">
-        <h2>{{ post.data.title }}</h2>
-        <div class="f">
-          <div>{{ post.data.venue }}</div>
-          <div>{{ post.data.date | datetime | safe }}</div>
+        <h2 itemprop="name">{{ post.data.title }}</h2>
+        <meta itemprop="startDate" content="{{ post.data.date }}" />
+        <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+          <div class="f">
+            <div itemprop="name">{{ post.data.venue }}</div>
+            <div>{{ post.data.date | datetime | safe }}</div>
+          </div>
+          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="addressLocality">{{ post.data.places | place }}</span>
+          </div>
         </div>
-        <div>{{ post.data.places | place }}</div>
       </div>
     </div>
   </a>

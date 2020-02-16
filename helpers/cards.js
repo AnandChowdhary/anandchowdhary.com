@@ -1,21 +1,30 @@
 const { getCityEmojiTitle } = require("./cities");
 
 const getEventCard = (post, h3 = false) =>
-  `<article>
-    <a href="${post.url}">
+  `<article itemscope itemtype="http://schema.org/Event">
+    <a itemprop="url" href="${post.url}">
       <div class="f">
-        <img alt="" src="${post.data.icon}">
+        <img alt="" itemprop="thumbnailUrl" src="${post.data.icon}">
         <div class="ff">
-          <${h3 ? "h3" : "h2"}>${post.data.title}</${h3 ? "h3" : "h2"}>
-          <div class="f">
-            <div>${post.data.venue}</div>
-            <div><time>${post.data.date.toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "short",
-              year: "numeric"
-            })}</time></div>
+          <${h3 ? "h3" : "h2"} itemprop="name">${post.data.title}</${
+    h3 ? "h3" : "h2"
+  }>
+          <meta itemprop="startDate" content="${post.data.date}" />
+          <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <div class="f">
+              <div itemprop="name">${post.data.venue}</div>
+              <div><time>${post.data.date.toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+              })}</time></div>
+            </div>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="addressLocality">${getCityEmojiTitle(
+                post.data.places
+              )}</span>
+            </div>
           </div>
-          <div>${getCityEmojiTitle(post.data.places)}</div>
         </div>
       </div>
     </a>
