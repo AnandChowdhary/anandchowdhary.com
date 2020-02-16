@@ -28,7 +28,7 @@ export const removeWebP = () => {
       images[i].setAttribute("src", currentSource.replace("&output=webp", ""));
   }
   const backgrounds = document.querySelectorAll<HTMLDivElement>(
-    `document.querySelectorAll("[style*='background']");`
+    `[style*='background']`
   );
   for (let i = 0; i < backgrounds.length; i++) {
     const currentStyle = backgrounds[i].getAttribute("style");
