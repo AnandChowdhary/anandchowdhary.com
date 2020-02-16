@@ -13,10 +13,7 @@
         </div>
       {% endif %}
       <h2 itemprop="name">{{ project.data.title }}</h2>
-      <time itemprop="dateCreated">{{ project.data.date.toLocaleDateString("en-US", {
-        month: "long",
-        year : "numeric"
-      }) }}</time>
+      <span>{{ project.data.date | datetimemonth | safe }}</span>
     </div>
     <p itemprop="abstract">{{ project.data.intro }}</p>
     <div class="project-tags">
@@ -37,4 +34,10 @@
       {% endif %}
     </div>
   </a>
+  <meta itemprop="author" content="Anand Chowdhary" />
+  <meta itemprop="dateCreated" content="{{ project.data.date }}" />
+  <meta itemprop="datePublished" content="{{ project.data.date }}" />
+  <meta itemprop="headline" content="{{ project.data.title }}" />
+  <meta itemprop="image" content="https://images.weserv.nl/?url=https://anandchowdhary.com{{ project.data.img_src }}.{{ project.data.img_type }}&w=600&l=2&af&il" />
+  <meta itemprop="publisher" content="Anand Chowdhary" />
 </article>

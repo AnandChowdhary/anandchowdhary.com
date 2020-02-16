@@ -9,6 +9,7 @@ const getEventCard = (post, h3 = false) =>
           <${h3 ? "h3" : "h2"} itemprop="name">${post.data.title}</${
     h3 ? "h3" : "h2"
   }>
+          <meta itemprop="endDate" content="${post.data.date}" />
           <meta itemprop="startDate" content="${post.data.date}" />
           <div itemprop="location" itemscope itemtype="http://schema.org/Place">
             <div class="f">
@@ -95,6 +96,14 @@ const getProjectCard = project =>
         }
       </div>
     </a>
+    <meta itemprop="author" content="Anand Chowdhary" />
+    <meta itemprop="dateCreated" content="${project.data.date}" />
+    <meta itemprop="datePublished" content="${project.data.date}" />
+    <meta itemprop="headline" content="${project.data.title}" />
+    <meta itemprop="image" content="https://images.weserv.nl/?url=https://anandchowdhary.com${
+      project.data.img_src
+    }.${project.data.img_type}&w=600&l=2&af&il" />
+    <meta itemprop="publisher" content="Anand Chowdhary" />
   </article>`;
 
 module.exports = { getEventCard, getProjectCard };
