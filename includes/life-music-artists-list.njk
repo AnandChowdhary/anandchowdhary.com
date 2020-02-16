@@ -49,7 +49,7 @@ pagination:
   <div class="container-outer">
     <section class="link-list music-list" itemscope itemtype="http://schema.org/ItemList">
       {% for item in pagination %}
-        <article itemprop="track" itemscope itemtype="https://schema.org/Person">
+        <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Person">
           <a itemprop="url" href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
             <div class="f">
               <img itemprop="thumbnailUrl" alt="" src="{{ item.images[1].url }}">

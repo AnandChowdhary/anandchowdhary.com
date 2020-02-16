@@ -47,7 +47,7 @@ pagination:
     </div>
   </header>
   <div class="container-outer">
-    <section class="link-list tracks-list nr" itemscope itemtype="http://schema.org/ItemList http://schema.org/MusicPlaylist">
+    <section class="link-list tracks-list nr" itemscope itemtype="http://schema.org/MusicPlaylist">
       {% for item in pagination %}
         <article itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
           <a itemprop="url" href="{{ item.href | replace('api.spotify.com/v1/tracks', 'open.spotify.com/track') }}">
