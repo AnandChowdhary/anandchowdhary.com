@@ -1,15 +1,12 @@
-const {
-  mkdirp,
-  readFile,
-  writeFile,
-  readJson,
-  readdir,
-  exists
-} = require("fs-extra");
+const { mkdirp, readFile, writeFile, readdir, exists } = require("fs-extra");
 const { join } = require("path");
 const { titleify, getMdDescription } = require("./utils");
 const slugify = require("slugify");
-const { getCityCountry, getCityName } = require("./cities");
+const {
+  getCityCountry,
+  getCityName,
+  getCityFirstVisited
+} = require("./cities");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
@@ -384,42 +381,6 @@ const getWorkArchive = async (allItems, category, value) => {
   return `${result}</div></section></div>`;
 };
 
-const getTravelTime = async (allItems, city) => {
-  const data = await readJson(
-    join(__dirname, "..", "life-data", "instagram-highlights.json")
-  );
-  let item;
-  Object.keys(data).forEach(key => {
-    const highlight = data[key];
-    const slug = slugify(highlight.meta.title)
-      .trim()
-      .toLowerCase();
-    if (slug === city) item = highlight;
-  });
-  if (item) {
-    const date = item.data[0].date;
-    return `<time datetime="${new Date(date).toISOString()}">${new Date(
-      date
-    ).toLocaleDateString("en-US", {
-      month: "long",
-      year: "numeric"
-    })}</time>`;
-  }
-  const items = allItems.filter(item =>
-    (item.data.places || []).includes(city)
-  );
-  if (items.length) {
-    const date = items[0].date;
-    return `<time datetime="${new Date(date).toISOString()}">${new Date(
-      date
-    ).toLocaleDateString("en-US", {
-      month: "long",
-      year: "numeric"
-    })}</time>`;
-  }
-  return "";
-};
-
 const getCityImageUrl = async city => {
   let image = "default";
   try {
@@ -432,8 +393,9 @@ const getCityImageUrl = async city => {
   return image;
 };
 
-const getTravelPageItem = async (allItems, city) => {
+const getTravelPageItem = async city => {
   const image = await getCityImageUrl(city);
+  const firstVisited = getCityFirstVisited(city);
   return `
     <article>
       <a href="/life/travel/${city}/">
@@ -443,7 +405,15 @@ const getTravelPageItem = async (allItems, city) => {
             <h2>${getCityName(city)}</h2>
             <div class="f">
               <div>${getCityCountry(city)}</div>
-              <div>${await getTravelTime(allItems, city)}</div>
+              <div><time datetime="${new Date(
+                firstVisited
+              ).toISOString()}">${new Date(firstVisited).toLocaleDateString(
+    "en-US",
+    {
+      month: "long",
+      year: "numeric"
+    }
+  )}</time></div>
             </div>
           </div>
         </div>

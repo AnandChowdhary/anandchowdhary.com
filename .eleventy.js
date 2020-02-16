@@ -250,7 +250,7 @@ module.exports = eleventyConfig => {
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("travelPageItem", async value => {
-    return await getTravelPageItem(allItems, value);
+    return await getTravelPageItem(value);
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("blogTagArchive", async value => {

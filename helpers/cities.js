@@ -17,6 +17,12 @@ const getCityName = city => {
   return "";
 };
 
+const getCityFirstVisited = city => {
+  const thisCity = cityData.filter(i => i.slug === city);
+  if (thisCity.length) return thisCity[0].firstVisited;
+  return "";
+};
+
 const getCityCountry = city => {
   const thisCity = cityData.filter(i => i.slug === city);
   if (thisCity.length)
@@ -34,5 +40,6 @@ module.exports = {
   getCityEmoji,
   getCityName,
   getCityCountry,
-  getCityEmojiTitle
+  getCityEmojiTitle,
+  getCityFirstVisited
 };
