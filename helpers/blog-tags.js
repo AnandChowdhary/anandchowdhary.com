@@ -2,6 +2,7 @@ const { readFile, writeJson, readJSON } = require("fs-extra");
 const { join } = require("path");
 const recursiveReaddir = require("recursive-readdir");
 const frontMatter = require("front-matter");
+const { getMdDescription, titleify } = require("./utils");
 
 const trim = (s, mask) => {
   while (~mask.indexOf(s[0])) s = s.slice(1);
@@ -110,9 +111,22 @@ const generatePlacesTags = async () => {
     );
   });
   const placesData = Array.from(places).filter(i => i);
+  const placesObjects = [];
+  for await (const slug of placesData) {
+    const desc = getMdDescription(`life/travel/${slug}`);
+    const flag = desc.flag;
+    const title = desc.title || titleify(slug);
+    const country = desc.country;
+    placesObjects.push({
+      title,
+      slug,
+      flag,
+      country
+    });
+  }
   await writeJson(
     join(__dirname, "..", "content", "_data", "cities.json"),
-    placesData
+    placesObjects
   );
 };
 

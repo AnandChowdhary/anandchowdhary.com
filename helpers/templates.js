@@ -391,7 +391,9 @@ const getTravelTime = async (allItems, city) => {
   let item;
   Object.keys(data).forEach(key => {
     const highlight = data[key];
-    const slug = slugify(highlight.meta.title);
+    const slug = slugify(highlight.meta.title)
+      .trim()
+      .toLowerCase();
     if (slug === city) item = highlight;
   });
   if (item) {
