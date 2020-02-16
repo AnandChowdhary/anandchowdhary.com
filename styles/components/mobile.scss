@@ -77,9 +77,12 @@
   .blog-posts .l {
     margin-bottom: 2rem;
   }
+  .intro-p {
+    margin-top: -1rem;
+  }
   .container-large,
   .intro.s > div,
-  .intro > .blog-title,
+  .intro > *,
   .pagination,
   main > * {
     width: 90%;
@@ -111,15 +114,15 @@
   }
   .show-project-details,
   .hide-project-details {
-    display: block;
+    display: block !important;
   }
   .show-project-details + #details,
   .show-project-details + #details + .hide-project-details {
-    display: none;
+    display: none !important;
   }
   #details:target,
   #details:target + .hide-project-details {
-    display: block;
+    display: block !important;
   }
   .project-intro {
     margin: 3rem auto;
@@ -127,7 +130,7 @@
       display: block;
     }
     dl + dl,
-    span + span {
+    span:not(.flag) + span {
       margin-top: 1.5rem;
       display: block;
     }
@@ -144,6 +147,7 @@
     display: block;
     margin-bottom: -1rem;
     span + span {
+      margin-left: 0 !important;
       margin: 0 0 1rem 0;
     }
     .video-image,

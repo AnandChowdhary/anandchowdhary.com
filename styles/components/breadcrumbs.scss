@@ -1,8 +1,13 @@
 .breadcrumbs {
   line-height: 1;
-  margin-bottom: 0.75rem;
-  a {
-    text-decoration: none;
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin: 0;
+  }
+  li {
     &:last-child {
       display: none;
     }
@@ -11,5 +16,8 @@
       margin: 0 0.75rem;
       pointer-events: none;
     }
+  }
+  a {
+    text-decoration: none;
   }
 }
