@@ -156,22 +156,28 @@ const getCityArchivePageData = async (allItems, city) => {
     <div>
       <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/">
+            <span itemprop="name">Anand Chowdhary</span></a>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
           <a itemprop="item" href="/life/">
             <span itemprop="name">Life</span></a>
           </a>
-          <meta itemprop="position" content="1" />
+          <meta itemprop="position" content="2" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
           <a itemprop="item" href="/life/travel/">
             <span itemprop="name">Travel</span></a>
           </a>
-          <meta itemprop="position" content="2" />
+          <meta itemprop="position" content="3" />
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
           <a itemprop="item" href="/life/travel/${city}/">
             <span itemprop="name">${getCityName(city)}</span></a>
           </a>
-          <meta itemprop="position" content="3" />
+          <meta itemprop="position" content="4" />
         </li>
       </ol>
       <div class="content">
@@ -270,16 +276,22 @@ const getWorkArchive = async (allItems, category, value) => {
     result += `
     <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/">
+          <span itemprop="name">Anand Chowdhary</span></a>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="/projects/">
           <span itemprop="name">Projects</span></a>
         </a>
-        <meta itemprop="position" content="1" />
+        <meta itemprop="position" content="2" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="/projects/${category}/">
           <span itemprop="name">${titleify(category)}</span></a>
         </a>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="3" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="/projects/${category}/${slugify(value)}">
@@ -290,7 +302,7 @@ const getWorkArchive = async (allItems, category, value) => {
             true
           )) || titleify(value)}</span></a>
         </a>
-        <meta itemprop="position" content="3" />
+        <meta itemprop="position" content="4" />
       </li>
     </ol>
   `;
@@ -298,16 +310,22 @@ const getWorkArchive = async (allItems, category, value) => {
     result += `
     <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/">
+          <span itemprop="name">Anand Chowdhary</span></a>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="/projects/">
           <span itemprop="name">Projects</span></a>
         </a>
-        <meta itemprop="position" content="1" />
+        <meta itemprop="position" content="2" />
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="/projects/${category}/">
           <span itemprop="name">${TITLE}</span></a>
         </a>
-        <meta itemprop="position" content="2" />
+        <meta itemprop="position" content="3" />
       </li>
     </ol>
   `;

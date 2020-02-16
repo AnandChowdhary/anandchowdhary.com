@@ -8,6 +8,7 @@
     margin: 0;
   }
   li {
+    &:first-child,
     &:last-child {
       display: none;
     }
