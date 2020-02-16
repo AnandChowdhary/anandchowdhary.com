@@ -9,7 +9,7 @@ const {
 const { join } = require("path");
 const { titleify, getMdDescription } = require("./utils");
 const slugify = require("slugify");
-const { getCityCountry } = require("./cities");
+const { getCityCountry, getCityName } = require("./cities");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
@@ -57,7 +57,7 @@ const getEventsSummaryCity = async (allItems, value) => {
   if (items.length) {
     result += `
       <h2 id="events">Events <a class="direct-link" href="#events">#</a></h2>
-      <p>This is a list of events I've spoken at in ${titleify(
+      <p>This is a list of events I've spoken at in ${getCityName(
         value
       )}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
       <section class="link-list events-list">
@@ -80,7 +80,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
   if (items.length) {
     result += `
       <h2 id="projects">Projects <a class="direct-link" href="#projects">#</a></h2>
-      <p>These are projects I've worked on in ${titleify(
+      <p>These are projects I've worked on in ${getCityName(
         value
       )}. If you want to see more projects, visit the <a href="/projects/">Projects page</a>.</p>
       <section class="projects">
@@ -171,13 +171,13 @@ const getCityArchivePageData = async (allItems, city) => {
         </li>
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
           <a itemprop="item" href="/life/travel/${city}/">
-            <span itemprop="name">${titleify(city)}</span></a>
+            <span itemprop="name">${getCityName(city)}</span></a>
           </a>
           <meta itemprop="position" content="3" />
         </li>
       </ol>
       <div class="content">
-          <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
+          <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${getCityName(
     city
   )}</span></h1>
           ${getCityCountry(city)}
@@ -440,7 +440,7 @@ const getTravelPageItem = async (allItems, city) => {
         <div class="f">
           <img alt="" src="${image}">
           <div class="ff">
-            <h2>${titleify(city)}</h2>
+            <h2>${getCityName(city)}</h2>
             <div class="f">
               <div>${getCityCountry(city)}</div>
               <div>${await getTravelTime(allItems, city)}</div>
@@ -487,5 +487,6 @@ module.exports = {
   getProjectsSelector,
   getBlogFilterNav,
   getCityImageUrl,
-  getCityCountry
+  getCityCountry,
+  getCityName
 };

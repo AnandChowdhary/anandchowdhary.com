@@ -12,12 +12,12 @@
   <div class="container ox"><section class="sum-list">
     {% for item in cities %}{% if loop.index <= 5 %}
       <article>
-        <a href="/life/travel/{{ item }}/">
+        <a href="/life/travel/{{ item.slug }}/">
           <div> 
-            <img alt="" src="{% cityImageUrl item %}">
+            <img alt="" src="{% cityImageUrl item.slug %}">
             <div>
-              <h3>{{ item | titleify }}</h3>
-              <div>{% cityCountry item %}</div>
+              <h3>{% cityName item.slug %}</h3>
+              <div>{% cityCountry item.slug %}</div>
             </div>
           </div>
         </a>

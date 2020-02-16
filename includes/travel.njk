@@ -30,7 +30,7 @@ pagination:
   <div class="container-outer">
     <section class="link-list travel-list">
       {% for item in pagination %}
-        {% travelPageItem item %}
+        {% travelPageItem item.slug %}
       {% endfor %}
     </section>
     {% if pagination.pageLinks.length > 1 %}

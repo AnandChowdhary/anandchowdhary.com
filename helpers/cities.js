@@ -1,29 +1,40 @@
 const { readJsonSync } = require("fs-extra");
 const { join } = require("path");
-const { titleify } = require("./utils");
 
-let cityData = {};
+let cityData = [];
 
 try {
-  cityData = readJsonSync(join(__dirname, "..", "cache", "city-data.json"));
+  cityData = readJsonSync(join(__dirname, "..", "cache", "cities.json"));
 } catch (error) {}
 
 const getCityEmoji = city => {
-  if (cityData[city]) return cityData[city].emoji;
+  const thisCity = cityData.filter(i => i.slug === city);
+  if (thisCity.length) return thisCity.emoji;
+  return "";
+};
+
+const getCityName = city => {
+  const thisCity = cityData.filter(i => i.slug === city);
+  if (thisCity.length) return thisCity.title;
   return "";
 };
 
 const getCityCountry = city => {
-  if (cityData[city])
-    return `<div>${cityData[city].emoji} ${cityData[city].country}</div>`;
+  const thisCity = cityData.filter(i => i.slug === city);
+  if (thisCity.length)
+    return `<div>${thisCity.emoji} ${thisCity.country}</div>`;
   return "";
 };
 
 const getCityEmojiTitle = city => {
-  let result = "";
-  if (getCityEmoji(city)) result += `${getCityEmoji(city)} `;
-  result += titleify(city);
-  return result;
+  const thisCity = cityData.filter(i => i.slug === city);
+  if (thisCity.length) return `${thisCity.emoji} ${thisCity.country}`;
+  return "";
 };
 
-module.exports = { getCityEmoji, getCityCountry, getCityEmojiTitle };
+module.exports = {
+  getCityEmoji,
+  getCityName,
+  getCityCountry,
+  getCityEmojiTitle
+};

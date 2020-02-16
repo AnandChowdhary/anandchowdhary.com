@@ -25,7 +25,8 @@ const {
   getWikiSummary,
   getBlogFilterNav,
   getCityImageUrl,
-  getCityCountry
+  getCityCountry,
+  getCityName
 } = require("./helpers/templates");
 const { getSeoTags } = require("./helpers/seo");
 
@@ -151,6 +152,9 @@ module.exports = eleventyConfig => {
   );
   eleventyConfig.addNunjucksAsyncShortcode("cityCountry", async value =>
     getCityCountry(value)
+  );
+  eleventyConfig.addNunjucksAsyncShortcode("cityName", async value =>
+    getCityName(value)
   );
   eleventyConfig.addNunjucksAsyncShortcode("stackTagsArchive", async value =>
     getWorkArchive(allItems, "stack", value)
