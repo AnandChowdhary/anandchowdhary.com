@@ -5,6 +5,7 @@ const slugify = require("slugify");
 const {
   getCityCountry,
   getCityName,
+  getCityImageUrl,
   getCityFirstVisited
 } = require("./cities");
 const { getBingImageUrl } = require("./images");
@@ -381,20 +382,8 @@ const getWorkArchive = async (allItems, category, value) => {
   return `${result}</div></section></div>`;
 };
 
-const getCityImageUrl = async city => {
-  let image = "default";
-  try {
-    const files = await readFile(
-      join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
-    );
-    image = `/images/highlights/${city}/cover.jpg`;
-  } catch (error) {}
-  if (image === "default") image = getBingImageUrl(`${city}/100/100`);
-  return image;
-};
-
 const getTravelPageItem = async city => {
-  const image = await getCityImageUrl(city);
+  const image = getCityImageUrl(city);
   const firstVisited = getCityFirstVisited(city);
   return `
     <article>

@@ -1,5 +1,6 @@
-const { readJsonSync } = require("fs-extra");
+const { readJsonSync, readFileSync } = require("fs-extra");
 const { join } = require("path");
+const { getBingImageUrl } = require("./images");
 
 let cityData = readJsonSync(
   join(__dirname, "..", "content", "_data", "cities.json")
@@ -23,6 +24,18 @@ const getCityFirstVisited = city => {
   return "";
 };
 
+const getCityImageUrl = city => {
+  let image = "default";
+  try {
+    const files = readFileSync(
+      join(__dirname, "..", "life-data", "highlights", city, "cover.jpg")
+    );
+    image = `/images/highlights/${city}/cover.jpg`;
+  } catch (error) {}
+  if (image === "default") image = getBingImageUrl(`${city}/100/100`);
+  return image;
+};
+
 const getCityCountry = city => {
   const thisCity = cityData.filter(i => i.slug === city);
   if (thisCity.length)
@@ -41,5 +54,6 @@ module.exports = {
   getCityName,
   getCityCountry,
   getCityEmojiTitle,
-  getCityFirstVisited
+  getCityFirstVisited,
+  getCityImageUrl
 };

@@ -5,12 +5,11 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const typeset = require("typeset");
 const pluginPWA = require("eleventy-plugin-pwa");
 const {
-  trim,
   titleify,
   getDomainFromUrl,
   getMdDescription
 } = require("./helpers/utils");
-const { getCityEmojiTitle } = require("./helpers/cities");
+const { getCityEmojiTitle, getCityImageUrl } = require("./helpers/cities");
 const { getEventCard } = require("./helpers/cards");
 const { getBingImageUrl, getDomainIcon } = require("./helpers/images");
 const { markdownLibrary } = require("./helpers/markdown");
@@ -24,7 +23,6 @@ const {
   getProjectNavbar,
   getWikiSummary,
   getBlogFilterNav,
-  getCityImageUrl,
   getCityCountry,
   getCityName
 } = require("./helpers/templates");
@@ -307,28 +305,21 @@ module.exports = eleventyConfig => {
   });
   eleventyConfig.addNunjucksAsyncShortcode("highlights", async () => {
     try {
-      const file = await readJSON(
-        join(__dirname, "life-data", "instagram-highlights.json")
-      );
+      const file = (
+        await readJSON(join(__dirname, "content", "_data", "cities.json"))
+      ).slice(0, 10);
       let result = "";
-      Object.keys(file).forEach(key => {
-        const item = file[key];
-        const slug = trim(
-          item.meta.title
-            .toLowerCase()
-            .replace(/ /g, "-")
-            .replace(/[^\w-]+/g, ""),
-          "-"
-        );
+      for await (const item of file) {
+        const image = getCityImageUrl(item.slug);
         result += `<article>
-          <a href="/life/travel/${slug}/">
+          <a href="/life/travel/${item.slug}/">
             <picture>
-              <img src="/images/highlights/${slug}/cover.jpg" alt="" width="80" height="80" loading="lazy">
+              <img src="${image}" alt="" width="80" height="80" loading="lazy">
             </picture>
             <div>
-              <div>${item.meta.title}</div>
-              <div><time datetime="${item.data[0].date}">${new Date(
-          item.data[0].date
+              <div>${item.title}</div>
+              <div><time datetime="${item.firstVisited}">${new Date(
+          item.firstVisited
         ).toLocaleDateString("en-US", {
           month: "long",
           year: "numeric"
@@ -336,7 +327,7 @@ module.exports = eleventyConfig => {
             </div>
           </a>
         </article>`;
-      });
+      }
       return result;
     } catch (error) {}
     return "";
