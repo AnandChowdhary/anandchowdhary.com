@@ -2,11 +2,26 @@
 <main id="content">
   <header class="intro s">
     <div>
-      <nav class="breadcrumbs">
-        <a href="/life/">Life</a>
-        <a href="/life/work/">Work</a>
-        <a href="/life/work/programming/">{{ title }}</a>
-      </nav>
+      <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/life/">
+            <span itemprop="name">Life</span></a>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/life/work/">
+            <span itemprop="name">Work</span></a>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/life/work/programming/">
+            <span itemprop="name">{{ title }}</span></a>
+          </a>
+          <meta itemprop="position" content="3" />
+        </li>
+      </ol>
       <h1>{{ title }}</h1>
       {{ content | safe }}
       <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a> on GitHub.</p>

@@ -156,11 +156,26 @@ const getCityArchivePageData = async (allItems, city) => {
   let result = `
     <header class="intro s">
     <div>
-      <nav class="breadcrumbs">
-        <a href="/life/">Life</a>
-        <a href="/life/travel/">Travel</a>
-        <a href="/life/travel/${city}/">${titleify(city)}</a>
-      </nav>
+      <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/life/">
+            <span itemprop="name">Life</span></a>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/life/travel/">
+            <span itemprop="name">Travel</span></a>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/life/travel/${city}/">
+            <span itemprop="name">${titleify(city)}</span></a>
+          </a>
+          <meta itemprop="position" content="3" />
+        </li>
+      </ol>
       <div class="content">
           <h1 class="has-icon"><img class="item-icon" alt="" src="${image}"><span>${titleify(
     city
@@ -254,21 +269,50 @@ const getWorkArchive = async (allItems, category, value) => {
     )) || titleify(value);
 
   if (category !== "work")
-    result += `<nav class="breadcrumbs">
-    <a href="/projects/">Projects</a><a href="/projects/${category}/">${titleify(
-      category
-    )}</a>
-    <a href="/projects/${category}/${slugify(value)}">${(await getDescription(
-      `projects/${category}`,
-      value,
-      "title",
-      true
-    )) || titleify(value)}</a>
-    </nav>`;
+    result += `
+    <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/projects/">
+          <span itemprop="name">Projects</span></a>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/projects/${category}/">
+          <span itemprop="name">${titleify(category)}</span></a>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/projects/${category}/${slugify(value)}">
+          <span itemprop="name">${(await getDescription(
+            `projects/${category}`,
+            value,
+            "title",
+            true
+          )) || titleify(value)}</span></a>
+        </a>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+  `;
   else if (["Oswald Labs", "Open source"].includes(value))
-    result += `<nav class="breadcrumbs">
-  <a href="/projects/">Projects</a><a href="/projects/${category}/">${TITLE}</a>
-  </nav>`;
+    result += `
+    <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/projects/">
+          <span itemprop="name">Projects</span></a>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/projects/${category}/">
+          <span itemprop="name">${TITLE}</span></a>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  `;
 
   if (category === "collaborators") {
     result += `${await getCollaboratorProfilePictureUrl(value)}

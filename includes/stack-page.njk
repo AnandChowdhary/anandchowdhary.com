@@ -9,10 +9,20 @@ pagination:
 <main id="content">
   <header class="intro s">
     <div>
-      <nav class="breadcrumbs">
-        <a href="/projects/">Projects</a>
-        <a href="/projects/stack/">{{ title }}</a>
-      </nav>
+      <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/projects/">
+            <span itemprop="name">Projects</span></a>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="/projects/stack/">
+            <span itemprop="name">{{ title }}</span></a>
+          </a>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
       <h1>{{ title }}</h1>
       {{ content | safe }}
     </div>
