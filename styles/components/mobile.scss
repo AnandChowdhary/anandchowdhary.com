@@ -174,12 +174,6 @@
       margin-top: 2.5rem;
     }
   }
-  .link-list .f {
-    display: flex;
-    > *:not(:first-child) {
-      margin-top: 0;
-    }
-  }
   header#masthead {
     nav {
       overflow-x: auto;
@@ -324,28 +318,6 @@
       display: block !important;
     }
   }
-  .events-item {
-    .location,
-    .events-item .meta {
-      display: block;
-    }
-    .location div:last-child {
-      text-align: inherit;
-      margin-top: 0.5rem;
-    }
-    h2,
-    h3 {
-      a {
-        display: flex;
-        margin-bottom: 1.5rem;
-        &:focus {
-          img {
-            transform: scale(1.05) translateY(-0.33rem);
-          }
-        }
-      }
-    }
-  }
   .item-icon {
     margin-left: 0;
     width: 2.5rem;
@@ -363,14 +335,31 @@
   .places article a .f > :not(:first-child) {
     margin-top: 0.5rem;
   }
-  .places .events-item h3 {
-    margin-bottom: 1rem;
-  }
-  .events-item h2 {
-    margin-bottom: 1rem;
-  }
-  .events .item-icon {
-    transform: translateY(-0.33rem);
+  .link-list {
+    a {
+      line-height: inherit;
+    }
+    .f {
+      display: flex;
+      > *:not(:first-child) {
+        margin-top: 0;
+      }
+    }
+    &.s {
+      img,
+      .img {
+        margin-left: 0;
+      }
+    }
+    h2,
+    h3 {
+      + .f {
+        display: block;
+        > *:not(:first-child) {
+          margin-top: 0.5rem;
+        }
+      }
+    }
   }
   .contact .response {
     margin-left: -5%;
@@ -381,5 +370,11 @@
     margin: 2rem 0 1.5rem 0;
     display: block;
     float: none;
+  }
+  .link-list img,
+  .link-list .img {
+    margin-left: 0;
+    width: 4rem;
+    height: 4rem;
   }
 }

@@ -437,12 +437,12 @@ const getTravelPageItem = async (allItems, city) => {
       <a href="/life/travel/${city}/">
         <div class="f">
           <img alt="" src="${image}">
-          <div class="f ff">
-            <div>
-              <h2>${titleify(city)}</h2>
+          <div class="ff">
+            <h2>${titleify(city)}</h2>
+            <div class="f">
               <div>${getCityCountry(city)}</div>
+              <div>${await getTravelTime(allItems, city)}</div>
             </div>
-            <div>${await getTravelTime(allItems, city)}</div>
           </div>
         </div>
       </a>
