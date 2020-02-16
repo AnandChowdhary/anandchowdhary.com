@@ -47,14 +47,14 @@ pagination:
     </div>
   </header>
   <div class="container-outer">
-    <section class="link-list music-list">
+    <section class="link-list music-list" itemscope itemtype="http://schema.org/ItemList">
       {% for item in pagination %}
-        <article>
-          <a href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
+        <article itemprop="track" itemscope itemtype="https://schema.org/Person">
+          <a itemprop="url" href="{{ item.href | replace('api.spotify.com/v1/artists', 'open.spotify.com/artist') }}">
             <div class="f">
-              <img alt="" src="{{ item.images[1].url }}">
+              <img itemprop="thumbnailUrl" alt="" src="{{ item.images[1].url }}">
               <div class="ff">
-                <h2>{{ item.name }}</h2>
+                <h2 itemprop="name">{{ item.name }}</h2>
                 <div>{{ item.genres[0] | capitalize }}</div>
               </div>
             </div>

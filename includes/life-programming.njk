@@ -45,19 +45,19 @@
       </div>
     </div>
     <h2>Top languages</h2>
-    <section class="link-list languages-list nr s">
+    <section class="link-list languages-list nr s" itemscope itemtype="http://schema.org/ItemList">
       {% for item in programming.languages %}
-        <article>
+        <article itemprop="track" itemscope itemtype="https://schema.org/CreativeWork">
           {% if item.name in stackTags %}
-          <a href="/projects/stack/{{ item.name | slug }}" class="a">
+          <a itemprop="url" href="/projects/stack/{{ item.name | slug }}" class="a">
           {% else %}
           <span class="a">
           {% endif %}
             <div class="f">
-              <img alt="" src="{{ (item.name + ' icon/70/70') | bingImageUrl }}">
+              <img itemprop="thumbnailUrl" alt="" src="{{ (item.name + ' icon/70/70') | bingImageUrl }}">
               <div class="f ff">
-                <div>{{ item.name }}</div>
-                <div>{{ item.text }}</div>
+                <div itemprop="name">{{ item.name }}</div>
+                <div itemprop="author">{{ item.text }}</div>
               </div>
             </div>
           {% if item.name in stackTags %}

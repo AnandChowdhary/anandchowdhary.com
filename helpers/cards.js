@@ -31,8 +31,8 @@ const getEventCard = (post, h3 = false) =>
   </article>`;
 
 const getProjectCard = project =>
-  `<article class="project-item">
-    <a href="${project.url}">
+  `<article itemscope itemtype="http://schema.org/Article" class="project-item" class="project-item">
+    <a itemprop="url" href="${project.url}">
       <div aria-hidden="true" class="project-image project-image-${
         project.data.style
       }" style="background-color: ${project.data.bg}">
@@ -50,18 +50,23 @@ const getProjectCard = project =>
         <div class="project-item-icon${
           project.data.icon_bg ? " project-item-icon-box" : ""
         }">
-          <img alt="" src="${project.data.icon}">
+          <img itemprop="thumbnailUrl" alt="" src="https://images.weserv.nl/?url=https://anandchowdhary.com${
+            project.data.icon
+          }&w=80&w=80&l=2&af&il&output=webp">
         </div>
         `
             : ""
         }
-        <h2>${project.data.title}</h2>
-        <time>${project.data.date.toLocaleDateString("en-US", {
-          month: "long",
-          year: "numeric"
-        })}</time>
+        <h2 itemprop="name">${project.data.title}</h2>
+        <time itemprop="dateCreated">${project.data.date.toLocaleDateString(
+          "en-US",
+          {
+            month: "long",
+            year: "numeric"
+          }
+        )}</time>
       </div>
-      <p>${project.data.intro}</p>
+      <p itemprop="abstract">${project.data.intro}</p>
       <div class="project-tags">
         ${
           project.data.work

@@ -1,5 +1,5 @@
-<article class="project-item">
-  <a href="{{ project.url | url }}">
+<article itemscope itemtype="http://schema.org/Article" class="project-item">
+  <a itemprop="url" href="{{ project.url | url }}">
     <div aria-hidden="true" class="project-image project-image-{{ project.data.style }}" style="background-color: {{ project.data.bg }}">
       <div
         class="project-image-front"
@@ -9,16 +9,16 @@
     <div>
       {% if project.data.icon %}
         <div class="project-item-icon{% if project.data.icon_bg %} project-item-icon-box{% endif %}">
-          <img alt="" src="https://images.weserv.nl/?url=https://anandchowdhary.com{{ project.data.icon }}&w=80&w=80&l=2&af&il&output=webp">
+          <img itemprop="thumbnailUrl" alt="" src="https://images.weserv.nl/?url=https://anandchowdhary.com{{ project.data.icon }}&w=80&w=80&l=2&af&il&output=webp">
         </div>
       {% endif %}
-      <h2>{{ project.data.title }}</h2>
-      <time>{{ project.data.date.toLocaleDateString("en-US", {
+      <h2 itemprop="name">{{ project.data.title }}</h2>
+      <time itemprop="dateCreated">{{ project.data.date.toLocaleDateString("en-US", {
         month: "long",
         year : "numeric"
       }) }}</time>
     </div>
-    <p>{{ project.data.intro }}</p>
+    <p itemprop="abstract">{{ project.data.intro }}</p>
     <div class="project-tags">
       {% if project.data.work %}
         {% for tag in project.data.work %}

@@ -1,12 +1,12 @@
 {% include "head.njk" %}
-<main id="content">
+<main itemscope itemtype="http://schema.org/Article" id="content">
   <header class="intro s">
     <div>
       <div class="f">
       <div>
-        <h1 class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
+        <h1 itemprop="name" class="{% if icon %}has-icon{% else %}has-no-icon{% endif %}">{% if icon %}<img itemprop="thumbnailUrl" class="item-icon" alt="" src="{{ icon }}">{% endif %}<span>{{ title }}</span></h1>
         <div>
-          <time>{{ date.toLocaleDateString("en-US", {
+          <time itemprop="dateCreated">{{ date.toLocaleDateString("en-US", {
             month: "long",
             year : "numeric"
           }) }}</time>
