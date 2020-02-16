@@ -73,7 +73,7 @@ const descriptions = {};
 const respond = (data, url, titleOnly) => {
   const TITLE = "Anand Chowdhary";
   const DESCRIPTION =
-    "Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CEO of Oswald Labs.";
+    "Anand Chowdhary is a creative technologist and entrepreneur, and the co-founder and CEO of Oswald Labs, an award-winning accessibility technology company.";
   const title =
     titles[url] || data.title || titleify(last(url.split("/")) || TITLE);
   titles[url] = title;
@@ -95,11 +95,15 @@ const respond = (data, url, titleOnly) => {
   const keywords = getKeywords(
     data.description || data.excerpt || data.content || DESCRIPTION
   );
+  const imageUrl =
+    data.image ||
+    "https://anandchowdhary.com/images/photos/anand-chowdhary.jpg";
   return {
     title,
     breadcrumbTitle,
     description,
-    keywords
+    keywords,
+    imageUrl
   };
 };
 
@@ -112,9 +116,16 @@ const processMarkdown = (data, url, titleOnly) => {
     .replace(/\n/g, "")
     .replace(/ +(?= )/g, "")
     .trim();
+  let image = "";
+  try {
+    image =
+      "https://anandchowdhary.com" +
+      /<img.*?src="(.*?)"/.exec(markdownLibrary.render(fileInfo.body))[1];
+  } catch (error) {}
   return respond(
     {
       content,
+      image,
       ...fileInfo.attributes
     },
     url,
@@ -129,6 +140,7 @@ const getSeoDetails = url => {
 
 const getSeoTags = url => {
   const data = getSeoDetails(url);
+  const imageUrl = data.imageUrl;
   const breadcrumbTitle = data.breadcrumbTitle;
   const keywords =
     "anand chowdhary, anand, chowdhary, oswald labs, " + data.keywords;
@@ -141,11 +153,13 @@ const getSeoTags = url => {
     <link rel="canonical" href="https://anandchowdhary.com${url}">
     <meta property="og:title" content="${breadcrumbTitle}">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="${imageUrl}">
     <meta property="og:url" content="https://anandchowdhary.com${url}">
     <meta property="og:description" content="${description}">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Anand Chowdhary">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="${imageUrl}">
     <meta name="twitter:creator" content="@AnandChowdhary">
     <meta name="twitter:site" content="@AnandChowdhary">
     <meta name="twitter:url" content="https://anandchowdhary.com${url}">
