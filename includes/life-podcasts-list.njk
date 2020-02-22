@@ -37,7 +37,7 @@ pagination:
       </ol>
       <h1>{{ title }}</h1>
       {{ content | safe }}
-      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["podcasts.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['podcasts.yml'].html_url }}">{{ lifeDataLastUpdated["podcasts.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/podcasts.yml">podcasts.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/pocket-casts.ts">Pocket Casts</a> on GitHub.</p>
+      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["podcasts.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['podcasts.yml'].html_url }}">{{ lifeDataLastUpdated["podcasts.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/podcasts.yml">podcasts.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/pocket-casts.ts">Pocket Casts</a> on GitHub. You can also view the <a href="https://github.com/AnandChowdhary/life-data/commits/master/podcasts.yml">commit history</a> to see how this data has changed over time.</p>
     </div>
   </header>
   <div class="container-outer">

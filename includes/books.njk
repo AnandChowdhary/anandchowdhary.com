@@ -31,7 +31,7 @@ pagination:
       </ol>
       <h1>{{ title }}</h1>
       {{ content | safe }}
-      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["books.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['books.yml'].html_url }}">{{ lifeDataLastUpdated["books.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/books.yml">books.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/goodreads.ts">Goodreads</a> on GitHub.</p>
+      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["books.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['books.yml'].html_url }}">{{ lifeDataLastUpdated["books.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/books.yml">books.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/goodreads.ts">Goodreads</a> on GitHub. You can also view the <a href="https://github.com/AnandChowdhary/life-data/commits/master/books.yml">commit history</a> to see how this data has changed over time.</p>
     </div>
   </header>
   <div class="container-outer">

@@ -43,7 +43,7 @@ pagination:
       </ol>
       <h1>{{ title }}</h1>
       {{ content | safe }}
-      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["top-tracks.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['top-tracks.yml'].html_url }}">{{ lifeDataLastUpdated["top-tracks.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/top-tracks.yml">top-tracks.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/spotify.ts">Spotify</a> on GitHub.</p>
+      <p>This is a living document, and data was last updated {{ lifeDataLastUpdated["top-tracks.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['top-tracks.yml'].html_url }}">{{ lifeDataLastUpdated["top-tracks.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/top-tracks.yml">top-tracks.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/spotify.ts">Spotify</a> on GitHub. You can also view the <a href="https://github.com/AnandChowdhary/life-data/commits/master/top-tracks.yml">commit history</a> to see how this data has changed over time.</p>
     </div>
   </header>
   <div class="container-outer">
