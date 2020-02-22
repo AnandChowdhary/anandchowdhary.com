@@ -18,7 +18,7 @@ const getBingImageUrl = args => {
   })}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);
   const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
-    query
+    query.replace(/\'/g, "").replace(/\"/g, "")
   )}&w=${width}&h=${height}&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`;
   const URL = `/images/cache/thumbnails/${SLUG}`;
 
