@@ -2,12 +2,16 @@
   <a href="{{ book.url | url }}">
     <div class="content">
       <picture class="book-image">
-        <img src="{{ book.image_url }}" alt="" loading="lazy" width="80" height="120">
+        {% if 'nophoto' in book.image_url %}
+          <img alt="" src="{{ (book.title + ' ' + book.author + ' book cover/80/120') | bingImageUrl }}">
+        {% else %}
+          <img src="{{ book.image_url }}" alt="" loading="lazy" width="80" height="120">
+        {% endif %}
       </picture>
       <div>
         <h2>{{ book.title }}</h2>
         <div>{{ book.author }}</div>
-        {% if book.rating %}
+        {% if book.rating and (book.rating != '0') %}
         <div class="rating" aria-label="{{ book.rating }} stars out of 5">
           {% if ".5" in book.rating | string %}
             {% for i in range(1, book.rating) %}
@@ -64,7 +68,7 @@
           {% endif %}
         </div>
         {% else %}
-        <div><em>Currently reading</em></div>
+        <p><em>Currently reading</em></p>
         {% endif %}
       </div>
     </div>

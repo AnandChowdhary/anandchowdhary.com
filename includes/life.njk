@@ -125,7 +125,11 @@
       <article>
         <a href="{{ book.url | url }}">
           <div>
-            <div class="img book-img" style="background-image: url('{{ item.image_url }}')"></div>
+            {% if 'nophoto' in item.image_url %}
+              <div class="img book-img" style="background-image: url('{{ (book.title + ' ' + book.author + ' book cover/80/120') | bingImageUrl }}')"></div>
+            {% else %}
+              <div class="img book-img" style="background-image: url('{{ item.image_url }}')"></div>
+            {% endif %}
             <div>
               <h3>{{ item.title }}</h3>
               <div>{{ item.author }}</div>
