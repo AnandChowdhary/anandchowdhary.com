@@ -5,7 +5,7 @@
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
   "license": "MIT",
   "scripts": {
-    "build-site": "rm -rf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && npm run build",
+    "build-site": "rimraf life-data && git clone --depth 1 https://github.com/AnandChowdhary/life-data && npm run build",
     "copy-highlights": "mkdirp public/images/highlights && cp -r life-data/highlights public/images",
     "compress-images": "imagemin cache/images/thumbnails/* --out-dir=cache/images/thumbnails && imagemin cache/images/domains/* --out-dir=cache/images/domains",
     "copy-cache-images": "mkdirp public/images/cache && cp -r cache/images/* public/images/cache",
@@ -18,7 +18,7 @@
     "build-eleventy": "eleventy",
     "serve-eleventy": "eleventy --serve",
     "watch-parcel": "parcel watch scripts/parcel.html & onchange 'dist/*' -- node helpers/parcel.js",
-    "parcel-build": "rm -rf dist && parcel build scripts/parcel.html && node helpers/parcel.js"
+    "parcel-build": "rimraf dist && parcel build scripts/parcel.html && node helpers/parcel.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
@@ -46,6 +46,7 @@
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
     "recursive-readdir": "^2.2.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.25.0",
     "slugify": "^1.3.6",
     "ssri": "^8.0.0",
