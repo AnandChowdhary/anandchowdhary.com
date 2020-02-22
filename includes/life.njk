@@ -129,7 +129,7 @@
   <div class="container ox"><section class="sum-list nr">
     {% for item in books %}{% if loop.index <= 5 %}
       <article>
-        <a href="{{ book.url | url }}">
+        <a href="{{ item.url | url }}">
           <div>
             {% if 'nophoto' in item.image_url %}
               <div class="img book-img" style="background-image: url('{{ (item.title + ' ' + item.author + ' book cover/80/120') | bingImageUrl }}')"></div>
