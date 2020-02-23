@@ -27,7 +27,7 @@
   <div class="container-outer nm">
     <p><a href="/life/travel/">Explore more cities &rarr;</a></p>
     <h2>Programming</h2>
-    <p>Last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a>.</p>
+    <p>This tracks my programming hours in VS Code. Last updated {{ lifeDataLastUpdated["development.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['development.yml'].html_url }}">{{ lifeDataLastUpdated["development.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/development.yml">development.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/wakatime.ts">Wakatime</a>.</p>
   </div>
   <div class="container ox"><section class="sum-list nr">
     {% for item in programming.languages %}{% if loop.index <= 5 %}
@@ -64,7 +64,7 @@
     </div>
     <p><a href="/life/work/emails/">Explore more emails overview &rarr;</a></p>
     <h2>Podcasts</h2>
-    <p>Last updated {{ lifeDataLastUpdated["podcasts.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['podcasts.yml'].html_url }}">{{ lifeDataLastUpdated["podcasts.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/podcasts.yml">podcasts.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/pocket-casts.ts">Pocket Casts</a>.</p>
+    <p>I use <a href="https://github.com/AnandChowdhary/services/blob/master/api/pocket-casts.ts">Pocket Casts</a> to listen to podcasts pretty frequently. Last updated {{ lifeDataLastUpdated["podcasts.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['podcasts.yml'].html_url }}">{{ lifeDataLastUpdated["podcasts.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/podcasts.yml">podcasts.yml</a>.</p>
   </div>
   <div class="container ox"><section class="sum-list nr">
     {% for item in pocketCastsPodcasts %}{% if loop.index <= 5 %}
@@ -124,7 +124,7 @@
   <div class="container-outer nm">
     <p><a href="/life/listening/music/artists/">Explore more top artists &rarr;</a></p>
     <h2>Books</h2>
-    <p>Last updated {{ lifeDataLastUpdated["books.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['books.yml'].html_url }}">{{ lifeDataLastUpdated["books.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/books.yml">books.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/goodreads.ts">Goodreads</a>.</p>
+    <p>This is a list of new books I've completed recently. I mostly use an Kindle to read books and Audible to listen to audiobooks. Last updated {{ lifeDataLastUpdated["books.yml"].commit.author.date | datetimetime | safe }} in <a href="{{ lifeDataLastUpdated['books.yml'].html_url }}">{{ lifeDataLastUpdated["books.yml"].sha | truncate(6, true, "") }}</a> in <a href="https://github.com/AnandChowdhary/life-data/blob/master/books.yml">books.yml</a> using <a href="https://github.com/AnandChowdhary/services/blob/master/api/goodreads.ts">Goodreads</a>.</p>
   </div>
   <div class="container ox"><section class="sum-list nr">
     {% for item in books %}{% if loop.index <= 5 %}
