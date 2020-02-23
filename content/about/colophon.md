@@ -13,6 +13,13 @@ The typefaces are IBM Plex Sans and IBM Plex Serif, delivered by Google Fonts. T
 
 [View older versions →](/about/versions/)
 
+## Feeds
+
+Apart from HTML content on the web, you can subscribe to this website via the following feeds:
+
+- [RSS feed](https://anandchowdhary.com/feed.xml)
+- [JSON feed](https://anandchowdhary.com/feed.json)
+
 ## License
 
 The following licenses apply to all versions of my personal website, unless stated otherwise on a page:
