@@ -100,7 +100,7 @@ const getDescription = async (type, key, k, noTag = false) => {
 
 const getCollaboratorProfilePictureUrl = async user => {
   try {
-    const profiles = getMdDescription(`collaborators/${user}`);
+    const profiles = getMdDescription(`projects/collaborators/${user}`);
     if (profiles.github)
       return `<img alt="" src="https://unavatar.now.sh/github/${profiles.github}">`;
     if (profiles.twitter)
@@ -115,7 +115,7 @@ const getCollaboratorProfilePictureUrl = async user => {
 
 const getCollaboratorSocialProfiles = async name => {
   try {
-    const profiles = getMdDescription(`collaborators/${name}`);
+    const profiles = getMdDescription(`projects/collaborators/${name}`);
     let result = "<div class='collaborator-profiles social-links'>";
     if (profiles.twitter)
       result += `<a href="https://twitter.com/${profiles.twitter}" data-balloon="Twitter" data-balloon-pos="up"><i title="Twitter" class="fab fa-twitter"></i></a>`;
