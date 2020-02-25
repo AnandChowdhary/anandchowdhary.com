@@ -265,14 +265,14 @@ module.exports = eleventyConfig => {
         </div>
       </div></header><div class="container m"><section class="blog-posts">`;
       items.forEach(item => {
-        result += `<article>
+        result += `<article  itemscope itemtype="http://schema.org/Article">
             <div class="l">
               ${
                 item.data.alias
-                  ? `<h2><a href="${item.data.alias}">${item.data.title}</a></h2>`
-                  : `<h2><a href="${item.url}">${item.data.title}</a></h2>`
+                  ? `<h2 itemprop="name"><a href="${item.data.alias}">${item.data.title}</a></h2>`
+                  : `<h2 itemprop="name"><a href="${item.url}">${item.data.title}</a></h2>`
               }
-              <div>Posted on <time>${item.data.date.toLocaleDateString(
+              <div>Posted on <time itemprop="dateCreated">${item.data.date.toLocaleDateString(
                 "en-US",
                 {
                   day: "numeric",
@@ -289,12 +289,12 @@ module.exports = eleventyConfig => {
                 )
                 .join("")}
             </div>
-            <div class="r">
+            <div class="r" itemprop="articleBody">
               ${extractExcerpt(item)}
               ${
                 item.data.alias
-                  ? `<p><a href="${item.data.alias}">Read ${item.data.title} on ${item.data.publisher}</a></p>`
-                  : `<p><a href="${item.url}">Read ${item.data.title} &rarr;</a></p>`
+                  ? `<p><a itemprop="url" href="${item.data.alias}">Read ${item.data.title} on ${item.data.publisher}</a></p>`
+                  : `<p><a itemprop="url" href="${item.url}">Read ${item.data.title} &rarr;</a></p>`
               }
             </div>
           </article>`;

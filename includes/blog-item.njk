@@ -1,22 +1,20 @@
-<main itemscope itemtype="http://schema.org/Article" id="content">
+<article itemscope itemtype="http://schema.org/Article">
   <div class="l">
-    <div>
-      {% if post.data.alias %}
-      <h2 itemprop="name"><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
-      {% else %}
-      <h2 itemprop="name"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+    {% if post.data.alias %}
+    <h2 itemprop="name"><a href="{{ post.data.alias | url }}">{{ post.data.title }}</a></h2>
+    {% else %}
+    <h2 itemprop="name"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+    {% endif %}
+    <div>Posted on <time itemprop="dateCreated">{{ post.data.date.toLocaleDateString("en-US", {
+      day: "numeric",
+      month: "short",
+      year : "numeric"
+    }) }}</time></div>
+    {% for tag in post.data.tags %}
+      {% if tag !== "blog" %}
+        <a class="tag" href="/blog/{{ tag }}/">{{ tag }}</a>
       {% endif %}
-      <div>Posted on <time itemprop="dateCreated">{{ post.data.date.toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "short",
-        year : "numeric"
-      }) }}</time></div>
-      {% for tag in post.data.tags %}
-        {% if tag !== "blog" %}
-          <a class="tag" href="/blog/{{ tag }}/">{{ tag }}</a>
-        {% endif %}
-      {% endfor %}
-    </div>
+    {% endfor %}
   </div>
   <div class="r" itemprop="articleBody">
     {% excerpt post %}
