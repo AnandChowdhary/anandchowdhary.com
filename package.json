@@ -60,7 +60,7 @@
     "slugify": "^1.4.0",
     "ssri": "^8.0.0",
     "typescript": "^3.8.3",
-    "typeset": "^0.2.6"
+    "typeset": "^0.2.7"
   },
   "husky": {
     "hooks": {
