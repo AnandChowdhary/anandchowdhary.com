@@ -27,7 +27,7 @@
     "task:js": "rimraf dist && parcel build scripts/parcel.html"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@babel/core": "^7.9.6",
     "@types/debounce": "^1.2.0",
