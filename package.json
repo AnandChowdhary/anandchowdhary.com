@@ -38,7 +38,7 @@
     "download": "^8.0.0",
     "eleventy-plugin-pwa": "^1.0.8",
     "eleventy-plugin-seo": "^0.5.0",
-    "front-matter": "^4.0.0",
+    "front-matter": "^4.0.1",
     "fs-extra": "^9.0.0",
     "highlight.js": "^10.0.3",
     "html-minifier": "^4.0.0",
