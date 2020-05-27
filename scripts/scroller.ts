@@ -42,27 +42,27 @@ export const addScrollers = () => {
     updateScroller();
     scroller.addEventListener(
       "scroll",
-      debounce(function() {
+      debounce(function () {
         updateScroller();
       }, 250)
     );
     if (next) {
-      next.addEventListener("click", function() {
+      next.addEventListener("click", function () {
         const left = scroller.scrollLeft + scrollBy;
         scroller.scrollTo({
           top: 0,
           left,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       });
     }
     if (prev) {
-      prev.addEventListener("click", function() {
+      prev.addEventListener("click", function () {
         const left = scroller.scrollLeft - scrollBy;
         scroller.scrollTo({
           top: 0,
           left,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       });
     }

@@ -7,7 +7,7 @@ export const setupToggle = () => {
     ".theme-toggle"
   );
   if (toggleButton) {
-    toggleButton.addEventListener("click", function() {
+    toggleButton.addEventListener("click", function () {
       document.documentElement.classList.toggle("dark");
       updateStorage();
       updateText(toggleButton);

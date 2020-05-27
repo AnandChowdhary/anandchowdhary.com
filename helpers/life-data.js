@@ -68,7 +68,7 @@ const wakatime = async () => {
     await readFile(join(LIFE_DATA_DIR, "development.yml"), "utf8")
   );
   programming.languages = programming.languages.filter(
-    lang => lang.text !== "0 secs"
+    (lang) => lang.text !== "0 secs"
   );
   await writeJson(join(CONTENT_DATA_DIR, "programming.json"), programming);
 };
@@ -97,7 +97,7 @@ const lastUpdated = async () => {
     "emails.yml",
     "top-artists.yml",
     "books.yml",
-    "top-tracks.yml"
+    "top-tracks.yml",
   ])
     lifeDataLastUpdated[file] = (
       await axios.get(

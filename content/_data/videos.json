@@ -45,11 +45,21 @@
     "duration": "29:58"
   },
   {
+    "name": "BharatHacks Live",
+    "date": "2017-06-17",
+    "city": "new-delhi",
+    "url": "https://www.facebook.com/saranshkataria6/videos/10213396434210989/",
+    "img": "/images/videos/bharathacks.png",
+    "copyright": "Facebook Developer Circle: Delhi, NCR",
+    "duration": "34:37"
+  },
+  {
     "name": "Interview with Anand Chowdhary, CEO, Oswald Foundation",
     "date": "2017-02-02",
     "city": "bangalore",
     "url": "https://www.youtube.com/watch?v=wxbEd0lo4vY",
     "img": "/images/videos/startup-india-rocks.png",
-    "copyright": "Startup India Rocks!"
+    "copyright": "Startup India Rocks!",
+    "duration": "1:03"
   }
 ]

@@ -17,7 +17,7 @@ const getEventCard = (post, h3 = false) =>
               <div><time>${post.data.date.toLocaleDateString("en-US", {
                 day: "numeric",
                 month: "short",
-                year: "numeric"
+                year: "numeric",
               })}</time></div>
             </div>
             <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
@@ -31,7 +31,7 @@ const getEventCard = (post, h3 = false) =>
     </a>
   </article>`;
 
-const getProjectCard = project =>
+const getProjectCard = (project) =>
   `<article itemscope itemtype="http://schema.org/Article" class="project-item" class="project-item">
     <a itemprop="url" href="${project.url}">
       <div aria-hidden="true" class="project-image project-image-${
@@ -63,7 +63,7 @@ const getProjectCard = project =>
           "en-US",
           {
             month: "long",
-            year: "numeric"
+            year: "numeric",
           }
         )}</time>
       </div>
@@ -72,7 +72,7 @@ const getProjectCard = project =>
         ${
           project.data.work
             ? `
-          ${project.data.work.map(tag => `<span>${tag}</span>`).join("")}
+          ${project.data.work.map((tag) => `<span>${tag}</span>`).join("")}
         `
             : ""
         }
@@ -80,7 +80,7 @@ const getProjectCard = project =>
           project.data.stack
             ? `
           ${project.data.stack
-            .map(tag => `<span class="stack">${tag}</span>`)
+            .map((tag) => `<span class="stack">${tag}</span>`)
             .join("")}
         `
             : ""
@@ -89,7 +89,7 @@ const getProjectCard = project =>
           project.data.tools
             ? `
           ${project.data.tools
-            .map(tag => `<span class="tools">${tag}</span>`)
+            .map((tag) => `<span class="tools">${tag}</span>`)
             .join("")}
         `
             : ""

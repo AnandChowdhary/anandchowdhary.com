@@ -11,7 +11,7 @@ const runOnPageChangeAndLoad = () => {
   setupImages();
   addScrollers();
   infiniteScroll();
-  checkWebP(supports => {
+  checkWebP((supports) => {
     if (!supports) removeWebP();
   });
 };

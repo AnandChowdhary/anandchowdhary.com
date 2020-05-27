@@ -6,13 +6,13 @@ const {
   getCityCountry,
   getCityName,
   getCityImageUrl,
-  getCityFirstVisited
+  getCityFirstVisited,
 } = require("./cities");
 const { getBingImageUrl } = require("./images");
 const { api } = require("./api");
 const { getEventCard, getProjectCard } = require("./cards");
 
-const getWikiSummary = async value => {
+const getWikiSummary = async (value) => {
   try {
     const cachePath = join(
       __dirname,
@@ -47,7 +47,7 @@ const getEventsSummaryCity = async (allItems, value) => {
   let result = "";
   const items = allItems
     .filter(
-      item =>
+      (item) =>
         (item.data.tags || []).includes("events") &&
         (item.data.places || []).includes(value)
     )
@@ -59,7 +59,7 @@ const getEventsSummaryCity = async (allItems, value) => {
         value
       )}. If you want to see more of my events, visit the <a href="/events/">Speaking page</a>.</p>
       <section class="link-list events-list">
-        <div>${items.map(post => getEventCard(post, true)).join("")}</div>
+        <div>${items.map((post) => getEventCard(post, true)).join("")}</div>
       </section>
     `;
   }
@@ -70,7 +70,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
   let result = "";
   const items = allItems
     .filter(
-      item =>
+      (item) =>
         (item.data.tags || []).includes("projects") &&
         (item.data.places || []).includes(value)
     )
@@ -82,7 +82,7 @@ const getProjectsSummaryCity = async (allItems, value) => {
         value
       )}. If you want to see more projects, visit the <a href="/projects/">Projects page</a>.</p>
       <section class="projects">
-        <div>${items.map(post => getProjectCard(post)).join("")}</div>
+        <div>${items.map((post) => getProjectCard(post)).join("")}</div>
       </section>
     `;
   }
@@ -98,7 +98,7 @@ const getDescription = async (type, key, k, noTag = false) => {
   return "";
 };
 
-const getCollaboratorProfilePictureUrl = async user => {
+const getCollaboratorProfilePictureUrl = async (user) => {
   try {
     const profiles = getMdDescription(`projects/collaborators/${user}`);
     if (profiles.github)
@@ -113,7 +113,7 @@ const getCollaboratorProfilePictureUrl = async user => {
   return "";
 };
 
-const getCollaboratorSocialProfiles = async name => {
+const getCollaboratorSocialProfiles = async (name) => {
   try {
     const profiles = getMdDescription(`projects/collaborators/${name}`);
     let result = "<div class='collaborator-profiles social-links'>";
@@ -194,7 +194,7 @@ const getCityArchivePageData = async (allItems, city) => {
     const files = await readdir(
       join(__dirname, "..", "life-data", "highlights", city)
     );
-    files.forEach(file => {
+    files.forEach((file) => {
       if (file !== "cover.jpg") {
         images += `
           <img alt="" src="/images/highlights/${city}/${file}">
@@ -220,7 +220,7 @@ const getCityArchivePageData = async (allItems, city) => {
   return `${result}</div>`;
 };
 
-const getProjectNavbar = value =>
+const getProjectNavbar = (value) =>
   `<nav class="categories-nav">
     <a${
       value === "Oswald Labs" ? ` class="active"` : ""
@@ -239,7 +239,7 @@ const getProjectNavbar = value =>
     } href="/projects/tools/">Tools</a>
   </nav>`;
 
-const getProjectsSelector = value =>
+const getProjectsSelector = (value) =>
   `<select class="filter-select serif" onchange="window.location.href = this.value">
     <option${
       value === "all" ? ` selected` : ""
@@ -295,12 +295,14 @@ const getWorkArchive = async (allItems, category, value) => {
       </li>
       <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
         <a itemprop="item" href="/projects/${category}/${slugify(value)}">
-          <span itemprop="name">${(await getDescription(
-            `projects/${category}`,
-            value,
-            "title",
-            true
-          )) || titleify(value)}</span></a>
+          <span itemprop="name">${
+            (await getDescription(
+              `projects/${category}`,
+              value,
+              "title",
+              true
+            )) || titleify(value)
+          }</span></a>
         </a>
         <meta itemprop="position" content="4" />
       </li>
@@ -337,12 +339,14 @@ const getWorkArchive = async (allItems, category, value) => {
       value,
       "flag",
       true
-    )} ${(await getDescription(
-      `projects/${category}`,
-      slugify(value),
-      "title",
-      true
-    )) || titleify(value)}</h1>`;
+    )} ${
+      (await getDescription(
+        `projects/${category}`,
+        slugify(value),
+        "title",
+        true
+      )) || titleify(value)
+    }</h1>`;
   } else if (
     category === "work" &&
     !["Oswald Labs", "Open source"].includes(value)
@@ -389,18 +393,18 @@ const getWorkArchive = async (allItems, category, value) => {
   result += `<section class="projects"><div>`;
   const items = allItems
     .filter(
-      item =>
+      (item) =>
         item.filePathStem.startsWith("/projects/") &&
         (item.data[category] || []).includes(value)
     )
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  items.forEach(project => {
+  items.forEach((project) => {
     result += `${getProjectCard(project)}`;
   });
   return `${result}</div></section></div>`;
 };
 
-const getTravelPageItem = async city => {
+const getTravelPageItem = async (city) => {
   const image = getCityImageUrl(city);
   const firstVisited = getCityFirstVisited(city);
   return `
@@ -418,7 +422,7 @@ const getTravelPageItem = async city => {
     "en-US",
     {
       month: "long",
-      year: "numeric"
+      year: "numeric",
     }
   )}</time></div>
             </div>
@@ -434,20 +438,20 @@ const getBlogFilterNav = (value = "all") => {
     <a${value === "all" ? ` class="active"` : ""} href="/blog/">All</a>
     <a${
       value === "coffee-time" ? ` class="active"` : ""
-    } href="/blog/coffee-time/">${getMdDescription("blog/coffee-time").title ||
-    titleify("coffee-time")}</a>
+    } href="/blog/coffee-time/">${
+    getMdDescription("blog/coffee-time").title || titleify("coffee-time")
+  }</a>
     <a${
       value.includes("state-of-the") ? ` class="active"` : ""
-    } href="/blog/state-of-the/">${getMdDescription("blog/state-of-the")
-    .title || titleify("state-of-the")}</a>
-    <a${
-      value === "code" ? ` class="active"` : ""
-    } href="/blog/code/">${getMdDescription("blog/code").title ||
-    titleify("code")}</a>
-    <a${
-      value === "design" ? ` class="active"` : ""
-    } href="/blog/design/">${getMdDescription("blog/design").title ||
-    titleify("design")}</a>
+    } href="/blog/state-of-the/">${
+    getMdDescription("blog/state-of-the").title || titleify("state-of-the")
+  }</a>
+    <a${value === "code" ? ` class="active"` : ""} href="/blog/code/">${
+    getMdDescription("blog/code").title || titleify("code")
+  }</a>
+    <a${value === "design" ? ` class="active"` : ""} href="/blog/design/">${
+    getMdDescription("blog/design").title || titleify("design")
+  }</a>
   </nav>`;
 };
 
@@ -465,5 +469,5 @@ module.exports = {
   getBlogFilterNav,
   getCityImageUrl,
   getCityCountry,
-  getCityName
+  getCityName,
 };

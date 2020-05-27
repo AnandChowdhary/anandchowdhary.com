@@ -9,24 +9,24 @@ const trim = (s, mask) => {
   return s;
 };
 
-const titleify = value =>
+const titleify = (value) =>
   (value || "")
     .replace(/-/g, " ")
     .replace(/\//g, " ")
     .toLowerCase()
     .split(" ")
-    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
     .join(" ")
     .replace(/ The/g, " the")
     .replace(/ Of/g, " of");
 
-const getDomainFromUrl = value =>
+const getDomainFromUrl = (value) =>
   value
     .replace(/https?:\/\//, "")
     .replace("www.", "")
     .split("/")[0];
 
-const getMdDescription = query => {
+const getMdDescription = (query) => {
   try {
     const fileContents = readFileSync(
       join(__dirname, "descriptions", `${query}.md`)
@@ -35,7 +35,7 @@ const getMdDescription = query => {
     const content = markdownLibrary.render(fileInfo.body);
     return {
       content,
-      ...fileInfo.attributes
+      ...fileInfo.attributes,
     };
   } catch (error) {
     return {};

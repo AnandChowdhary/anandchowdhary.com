@@ -4,7 +4,7 @@ const download = require("download");
 const { join } = require("path");
 const slugify = require("slugify");
 
-const getBingImageUrl = args => {
+const getBingImageUrl = (args) => {
   const argArr = args.split("/");
   const query = argArr[0];
   const width = argArr.length >= 2 ? argArr[1] : 210;
@@ -14,7 +14,7 @@ const getBingImageUrl = args => {
   ensureDirSync(DIR);
   const SLUG = `${slugify(query, {
     lower: true,
-    remove: /[*+~.()?#'"!:@]/g
+    remove: /[*+~.()?#'"!:@]/g,
   })}-${width}x${height}.jpg`;
   const IMAGE = join(DIR, SLUG);
   const BING = `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
@@ -26,11 +26,11 @@ const getBingImageUrl = args => {
   return BING;
 };
 
-const getDomainIcon = domain => {
+const getDomainIcon = (domain) => {
   const DIR = join(__dirname, "..", "cache", "images", "domains");
   ensureDirSync(DIR);
   const SLUG = `${slugify(domain, {
-    lower: true
+    lower: true,
   })}.png`;
   const IMAGE = join(DIR, SLUG);
   const CLEARBIT = `https://logo.clearbit.com/${domain}`;

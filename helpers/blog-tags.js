@@ -19,11 +19,11 @@ const generateBlogTags = async () => {
   for await (const file of contentFiles) {
     const fileContents = (await readFile(file)).toString();
     const fileAttributes = frontMatter(fileContents).attributes;
-    ([fileAttributes.tags].flat() || []).forEach(tag => {
+    ([fileAttributes.tags].flat() || []).forEach((tag) => {
       if (tag !== "blog") tags.add(tag);
     });
   }
-  const blogTags = Array.from(tags).filter(i => i);
+  const blogTags = Array.from(tags).filter((i) => i);
   await writeJson(
     join(__dirname, "..", "content", "_data", "blogTags.json"),
     blogTags
@@ -38,9 +38,9 @@ const generateEventRolesTags = async () => {
   for await (const file of contentFiles) {
     const fileContents = (await readFile(file)).toString();
     const fileAttributes = frontMatter(fileContents).attributes;
-    ([fileAttributes.roles].flat() || []).forEach(tag => roles.add(tag));
+    ([fileAttributes.roles].flat() || []).forEach((tag) => roles.add(tag));
   }
-  const eventRolesTags = Array.from(roles).filter(i => i);
+  const eventRolesTags = Array.from(roles).filter((i) => i);
   await writeJson(
     join(__dirname, "..", "content", "_data", "eventRolesTags.json"),
     eventRolesTags
@@ -58,17 +58,17 @@ const generateProjectTags = async () => {
   for await (const file of contentFiles) {
     const fileContents = (await readFile(file)).toString();
     const fileAttributes = frontMatter(fileContents).attributes;
-    ([fileAttributes.work].flat() || []).forEach(tag => work.add(tag));
-    ([fileAttributes.stack].flat() || []).forEach(tag => stack.add(tag));
-    ([fileAttributes.tools].flat() || []).forEach(tag => tools.add(tag));
-    ([fileAttributes.collaborators].flat() || []).forEach(tag =>
+    ([fileAttributes.work].flat() || []).forEach((tag) => work.add(tag));
+    ([fileAttributes.stack].flat() || []).forEach((tag) => stack.add(tag));
+    ([fileAttributes.tools].flat() || []).forEach((tag) => tools.add(tag));
+    ([fileAttributes.collaborators].flat() || []).forEach((tag) =>
       collaborators.add(tag)
     );
   }
-  const workTags = Array.from(work).filter(i => i);
-  const stackTags = Array.from(stack).filter(i => i);
-  const toolsTags = Array.from(tools).filter(i => i);
-  const collaboratorsTags = Array.from(collaborators).filter(i => i);
+  const workTags = Array.from(work).filter((i) => i);
+  const stackTags = Array.from(stack).filter((i) => i);
+  const toolsTags = Array.from(tools).filter((i) => i);
+  const collaboratorsTags = Array.from(collaborators).filter((i) => i);
   await writeJson(
     join(__dirname, "..", "content", "_data", "workTags.json"),
     workTags
@@ -94,19 +94,17 @@ const generatePlacesTags = async () => {
     if (file.endsWith(".md")) {
       const fileContents = (await readFile(file)).toString();
       const fileAttributes = frontMatter(fileContents).attributes;
-      ([fileAttributes.places].flat() || []).forEach(tag => places.add(tag));
+      ([fileAttributes.places].flat() || []).forEach((tag) => places.add(tag));
     }
   }
   const highlights = await readJson(
     join(__dirname, "..", "life-data", "instagram-highlights.json")
   );
-  Object.keys(highlights).forEach(key => {
-    const slug = slugify(highlights[key].meta.title)
-      .trim()
-      .toLowerCase();
+  Object.keys(highlights).forEach((key) => {
+    const slug = slugify(highlights[key].meta.title).trim().toLowerCase();
     places.add(slug);
   });
-  const placesData = Array.from(places).filter(i => i);
+  const placesData = Array.from(places).filter((i) => i);
   const placesObjects = [];
   for await (const slug of placesData) {
     const desc = getMdDescription(`life/travel/${slug}`);
@@ -120,7 +118,7 @@ const generatePlacesTags = async () => {
       slug,
       flag,
       country,
-      firstVisited
+      firstVisited,
     });
   }
   await writeJson(
@@ -135,12 +133,12 @@ const generatePlacesTags = async () => {
   );
 };
 
-const getPostsTimesForCity = async city => {
+const getPostsTimesForCity = async (city) => {
   const posts = [];
   const times = [];
   const contentFiles = (
     await recursiveReaddir(join(__dirname, "..", "content"))
-  ).filter(i => i.endsWith(".md"));
+  ).filter((i) => i.endsWith(".md"));
   for await (const file of contentFiles) {
     const fileContents = (await readFile(file)).toString();
     const fileAttributes = frontMatter(fileContents).attributes;
@@ -162,11 +160,9 @@ const getPostsTimesForCity = async city => {
     join(__dirname, "..", "life-data", "instagram-highlights.json")
   );
   let item;
-  Object.keys(data).forEach(key => {
+  Object.keys(data).forEach((key) => {
     const highlight = data[key];
-    const slug = slugify(highlight.meta.title)
-      .trim()
-      .toLowerCase();
+    const slug = slugify(highlight.meta.title).trim().toLowerCase();
     if (slug === city) item = highlight;
   });
   if (item) {
@@ -174,7 +170,7 @@ const getPostsTimesForCity = async city => {
   }
   return {
     posts,
-    times: times.sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+    times: times.sort((a, b) => new Date(a).getTime() - new Date(b).getTime()),
   };
 };
 

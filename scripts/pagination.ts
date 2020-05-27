@@ -16,10 +16,10 @@ export const infiniteScroll = () => {
     const appendIn = siblingArticle ? siblingArticle.parentNode : undefined;
     if (nextPageLink && appendIn) {
       let tried = false;
-      const observer = new IntersectionObserver(function(entries) {
+      const observer = new IntersectionObserver(function (entries) {
         if (tried) return;
         let intersecting = false;
-        entries.forEach(function(entry) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting) intersecting = true;
         });
         if (intersecting) tried = true;
@@ -28,10 +28,10 @@ export const infiniteScroll = () => {
         if (span) span.innerHTML = "Loading more items...";
         window
           .fetch(nextPageLink.getAttribute("href"))
-          .then(function(result) {
+          .then(function (result) {
             return result.text();
           })
-          .then(function(html) {
+          .then(function (html) {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
             const results = htmlDoc.querySelectorAll(
@@ -63,7 +63,7 @@ export const infiniteScroll = () => {
             }
             window.requestAnimationFrame(infiniteScroll);
           })
-          .catch(function() {
+          .catch(function () {
             if (span) span.innerHTML = "Next";
           });
       });

@@ -6,29 +6,29 @@ const { titleify } = require("./utils");
 const natural = require("natural");
 const tokenizer = new natural.WordTokenizer();
 
-const cleanUrl = url => {
+const cleanUrl = (url) => {
   url = url.endsWith("/") ? url.slice(0, -1) : url;
   url = url.startsWith("/") ? url.substr(1) : url;
   return url;
 };
 
-const orderStringByFrequency = string => {
+const orderStringByFrequency = (string) => {
   let frequentObj = {};
   string
     .split(" ")
-    .forEach(word =>
+    .forEach((word) =>
       frequentObj[word] ? frequentObj[word]++ : (frequentObj[word] = 1)
     );
   return Object.entries(frequentObj)
     .sort((a, b) => b[1] - a[1])
-    .map(arr => arr[0])
+    .map((arr) => arr[0])
     .join(" ");
 };
 
-const getKeywords = text => {
+const getKeywords = (text) => {
   return orderStringByFrequency(tokenizer.tokenize(text).join(" "))
     .split(" ")
-    .filter(i => i.length >= 5)
+    .filter((i) => i.length >= 5)
     .slice(0, 25)
     .join(", ");
 };
@@ -53,11 +53,11 @@ const getDataFromUrl = (url, titleOnly = false) => {
   return respond({}, url, titleOnly);
 };
 
-const truncate = input =>
+const truncate = (input) =>
   input.length > 250 ? `${input.substring(0, 250).trim()}...` : input;
 
-const last = arr => arr[arr.length - 1];
-const breadcrumize = url => {
+const last = (arr) => arr[arr.length - 1];
+const breadcrumize = (url) => {
   const parts = url.split("/");
   for (let i = 0; i < parts.length; i++) {
     const items = parts.slice(0, i);
@@ -81,7 +81,7 @@ const respond = (data, url, titleOnly) => {
   let breadcrumbTitle =
     breadcrumbTitles[url] ||
     data.breadcrumbTitle ||
-    [TITLE, ...breadcrumize(url).map(i => getDataFromUrl(i, true))]
+    [TITLE, ...breadcrumize(url).map((i) => getDataFromUrl(i, true))]
       .reverse()
       .join(" ‹ ");
   let description =
@@ -103,7 +103,7 @@ const respond = (data, url, titleOnly) => {
     breadcrumbTitle,
     description,
     keywords,
-    imageUrl
+    imageUrl,
   };
 };
 
@@ -126,19 +126,19 @@ const processMarkdown = (data, url, titleOnly) => {
     {
       content,
       image,
-      ...fileInfo.attributes
+      ...fileInfo.attributes,
     },
     url,
     titleOnly
   );
 };
 
-const getSeoDetails = url => {
+const getSeoDetails = (url) => {
   const data = getDataFromUrl(url);
   return data;
 };
 
-const getSeoTags = url => {
+const getSeoTags = (url) => {
   const data = getSeoDetails(url);
   const imageUrl = data.imageUrl;
   const breadcrumbTitle = data.breadcrumbTitle;

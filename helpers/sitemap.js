@@ -6,10 +6,10 @@ const { getDataFromUrl } = require("./seo");
 
 const getAllPages = async () => {
   return (await recursiveReaddir(join(__dirname, "..", "public")))
-    .filter(i => i.endsWith(".html"))
-    .map(i => (i.endsWith("index.html") ? i.replace("/index.html", "/") : i))
-    .map(i => i.replace(join(__dirname, "..", "public"), ""))
-    .filter(i => i !== "/admin/")
+    .filter((i) => i.endsWith(".html"))
+    .map((i) => (i.endsWith("index.html") ? i.replace("/index.html", "/") : i))
+    .map((i) => i.replace(join(__dirname, "..", "public"), ""))
+    .filter((i) => i !== "/admin/")
     .sort((a, b) => a.localeCompare(b));
 };
 
@@ -17,7 +17,7 @@ const generateSitemap = async () => {
   const files = await getAllPages();
   const newHtml = files
     .map(
-      i =>
+      (i) =>
         `- [${getDataFromUrl(i)
           .breadcrumbTitle.split(" ‹ ")
           .reverse()
@@ -36,7 +36,7 @@ const generateSitemap = async () => {
   const XML = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   ${files
     .map(
-      i => `<url>
+      (i) => `<url>
   <loc>https://anandchowdhary.com${i}</loc>
 </url>`
     )

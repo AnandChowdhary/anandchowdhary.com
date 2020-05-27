@@ -14,11 +14,11 @@ const markdownLibrary = markdownIt({
       } catch (error) {}
     }
     return "";
-  }
+  },
 }).use(markdownItAnchor, {
   permalink: true,
   permalinkClass: "direct-link",
-  permalinkSymbol: "#"
+  permalinkSymbol: "#",
 });
 
 module.exports = { markdownLibrary };
