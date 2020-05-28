@@ -56,7 +56,7 @@
     "prettier": "^2.0.5",
     "recursive-readdir": "^2.2.2",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.5",
+    "sass": "^1.26.6",
     "slugify": "^1.4.0",
     "ssri": "^8.0.0",
     "typescript": "^3.9.3",
