@@ -39,7 +39,7 @@
     "eleventy-plugin-pwa": "^1.0.8",
     "eleventy-plugin-seo": "^0.5.0",
     "front-matter": "^4.0.2",
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^9.0.1",
     "highlight.js": "^10.0.3",
     "html-minifier": "^4.0.0",
     "husky": "^4.2.5",
