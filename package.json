@@ -29,7 +29,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "@babel/core": "^7.10.2",
+    "@babel/core": "^7.10.3",
     "@types/debounce": "^1.2.0",
     "axios": "^0.19.2",
     "axios-cache-adapter": "^2.5.0",
