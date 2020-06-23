@@ -57,7 +57,7 @@
     "recursive-readdir": "^2.2.2",
     "rimraf": "^3.0.2",
     "sass": "^1.26.9",
-    "slugify": "^1.4.0",
+    "slugify": "^1.4.2",
     "ssri": "^8.0.0",
     "typescript": "^3.9.5",
     "typeset": "^0.2.9"
