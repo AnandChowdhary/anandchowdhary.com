@@ -59,7 +59,7 @@
     "sass": "^1.26.9",
     "slugify": "^1.4.4",
     "ssri": "^8.0.0",
-    "typescript": "^3.9.5",
+    "typescript": "^3.9.6",
     "typeset": "^0.2.9"
   },
   "husky": {
