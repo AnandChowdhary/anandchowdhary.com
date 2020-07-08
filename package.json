@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "debounce": "^1.2.0",
-    "medium-zoom": "^1.0.5",
+    "medium-zoom": "^1.0.6",
     "timeago.js": "^4.0.2"
   }
 }
