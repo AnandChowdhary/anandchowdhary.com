@@ -40,7 +40,7 @@
     "eleventy-plugin-seo": "^0.5.1",
     "front-matter": "^4.0.2",
     "fs-extra": "^9.0.1",
-    "highlight.js": "^10.1.1",
+    "highlight.js": "^10.1.2",
     "html-minifier": "^4.0.0",
     "husky": "^4.2.5",
     "imagemin-cli": "^6.0.0",
