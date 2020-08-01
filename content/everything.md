@@ -3,6 +3,18 @@ title: Everything
 layout: page.njk
 ---
 
+## 2020
+
+### July
+
+Co-founded Koj, a Swiss interior-as-a-service company
+
+Graduated from Creative Technology BSc at the University of Twente
+
+### June
+
+Wrote BSc thesis on Email-based Intelligent Virtual Assistants (EIVA)
+
 ## 2018
 
 ### October
