@@ -45,6 +45,11 @@
   ],
   "interviews": [
     {
+      "name": "GitHub",
+      "date": "2020",
+      "url": "https://github.blog/2020-08-13-github-actions-karuna/"
+    },
+    {
       "name": "BrowserStack",
       "date": "2019",
       "url": "https://www.browserstack.com/blog/open-source-spotlight-oswald-labs-with-anand-chowdhary/"
