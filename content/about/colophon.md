@@ -17,8 +17,10 @@ The typefaces are IBM Plex Sans and IBM Plex Serif, delivered by Google Fonts. T
 
 Apart from HTML content on the web, you can subscribe to this website via the following feeds:
 
-- [RSS feed](https://anandchowdhary.com/feed.xml)
-- [JSON feed](https://anandchowdhary.com/feed.json)
+- [RSS feed (full website)](https://anandchowdhary.com/feed.xml)
+- [JSON feed (full website)](https://anandchowdhary.com/feed.json)
+- [RSS feed (blog)](https://anandchowdhary.com/blog.xml)
+- [JSON feed (blog)](https://anandchowdhary.com/blog.json)
 
 ## License
 
