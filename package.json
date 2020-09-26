@@ -34,7 +34,7 @@
     "axios": "^0.20.0",
     "axios-cache-adapter": "^2.5.0",
     "cheerio": "^1.0.0-rc.3",
-    "del": "^5.1.0",
+    "del": "^6.0.0",
     "download": "^8.0.0",
     "eleventy-plugin-pwa": "^1.0.8",
     "eleventy-plugin-seo": "^0.5.1",
