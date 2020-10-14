@@ -45,7 +45,7 @@
     "husky": "^4.3.0",
     "imagemin-cli": "^6.0.0",
     "js-yaml": "^3.14.0",
-    "markdown-it": "^11.0.1",
+    "markdown-it": "^12.0.0",
     "markdown-it-anchor": "^6.0.0",
     "mkdirp": "^1.0.4",
     "natural": "^2.1.5",
