@@ -13,7 +13,7 @@ layout: page.njk
 
 Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CTO of [Koj](https://koj.co), a Swiss interior-as-a-service company. Previously, he was the co-founder and CEO of [Oswald Labs](https://oswaldlabs.com), an award-winning accessibility technology company, and studied Creative Technology BSc at the [University of Twente](https://www.utwente.nl/en).
 
-He is also a consultant and advisor to several startups and studios around the world. Previously, he has worked with organizations like the Government of Delhi, Justice Adda (a University of Cambridge social venture), IBM, Cyankart, and Unifiers.
+He is also a consultant and [advisor](/mentoring/) to several startups and studios around the world. Previously, he has worked with organizations like the Government of Delhi, Justice Adda (a University of Cambridge social venture), IBM, Cyankart, and Unifiers.
 
 He has been featured in Forbes 30 Under 30 Asia 2018, Het Financieele Dagblad (Dutch Financial Times)'s list of 50 most-innovative entrepreneurs and professional under 35 in the Netherlands, and in publications such as The Next Web, HuffPost, Hindustan Times, Time Out magazine, and others. [See full list of press](/press/)
 
