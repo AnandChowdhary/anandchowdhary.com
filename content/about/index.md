@@ -15,7 +15,7 @@ Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, Indi
 
 He is also a consultant and [advisor](/mentoring/) to several startups and studios around the world. Previously, he has worked with organizations like the Government of Delhi, Justice Adda (a University of Cambridge social venture), IBM, Cyankart, and Unifiers.
 
-He has been featured in Forbes 30 Under 30 Asia 2018, Het Financieele Dagblad (Dutch Financial Times)'s list of 50 most-innovative entrepreneurs and professional under 35 in the Netherlands, and in publications such as The Next Web, HuffPost, Hindustan Times, Time Out magazine, and others. [See full list of press](/press/)
+He has been featured in Forbes 30 Under 30 Asia 2018, Het Financieele Dagblad (Dutch Financial Times)'s list of 50 most-innovative entrepreneurs and professional under 35 in the Netherlands, and in publications such as The Next Web, HuffPost, Hindustan Times, Time Out magazine, and others. [See full list of press](/press/) or [find out what I'm up to now](/now/).
 
 - [Résumé](https://www.dropbox.com/s/18jw3binirgc8rq/AnandChowdhary_Sep2019_Resume.pdf?dl=0) -- Last updated October 2019
 - [Curriculum vitae](https://www.dropbox.com/s/ksyfiujs5sqy14s/AnandChowdhary_CV_Aug18.pdf?dl=0) -- Last updated August 2018
