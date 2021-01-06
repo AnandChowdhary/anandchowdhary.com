@@ -31,7 +31,7 @@
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@babel/core": "^7.12.1",
     "@types/debounce": "^1.2.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "axios-cache-adapter": "^2.5.0",
     "cheerio": "^1.0.0-rc.3",
     "del": "^6.0.0",
