@@ -1,5 +1,15 @@
 [
   {
+    "name": "Helping fight COVID-19 using GitHub",
+    "url": "https://githubsatellite.com/sessions/helping-fight-covid-19-using-github/",
+    "city": "sf-bay-area",
+    "date": "2021-03-26",
+    "img": "/images/videos/github-satellite-2021.png",
+    "copyright": "GitHub",
+    "duration": "27:04",
+    "description": "In this talk, we'll discuss how the open source community and GitHub have been working together to fight the impact COVID-19."
+  },
+  {
     "name": "Building Technology for the Next Billion",
     "date": "2020-06-30",
     "city": "new-delhi",
