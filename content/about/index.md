@@ -1,6 +1,6 @@
 ---
 title: About
-intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder of Koj and Oswald Labs.
+intro: Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Groningen, the Netherlands. He is the co-founder of Koj and Oswald Labs.
 layout: page.njk
 ---
 
@@ -11,7 +11,7 @@ layout: page.njk
   </figure>
 </div>
 
-Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Enschede, the Netherlands. He is the co-founder and CTO of [Koj](https://koj.co), a Swiss interior-as-a-service company. Previously, he was the co-founder and CEO of [Oswald Labs](https://oswaldlabs.com), an award-winning accessibility technology company, and studied Creative Technology BSc at the [University of Twente](https://www.utwente.nl/en).
+Anand Chowdhary is a creative technologist and entrepreneur from New Delhi, India, currently living in Groningen, the Netherlands. He is the co-founder and CTO of [Pabio](https://pabio.com), an interior design and rental furniture company from Switzerland, funded by Y Combinator. Previously, he was the co-founder and CEO of [Oswald Labs](https://oswaldlabs.com), an award-winning accessibility technology company, and studied Creative Technology BSc at the [University of Twente](https://www.utwente.nl/en).
 
 He is also a consultant and [advisor](/mentoring/) to several startups and studios around the world. Previously, he has worked with organizations like the Government of Delhi, Justice Adda (a University of Cambridge social venture), IBM, Cyankart, and Unifiers.
 
