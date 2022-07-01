@@ -1,1 +1,0 @@
-<p>WordPress is a content management system (CMS) written in PHP paired with a MySQL, MariaDB, or SQLite database. Features include a plugin architecture and a template system, referred to within WordPress as Themes. <a href="https://en.wikipedia.org/wiki/Special:Search?search=WordPress">Text from Wikipedia</a></p>

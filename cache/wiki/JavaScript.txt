@@ -1,1 +1,0 @@
-<p>JavaScript, often abbreviated as JS, is an interpreted programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. <a href="https://en.wikipedia.org/wiki/Special:Search?search=JavaScript">Text from Wikipedia</a></p>
