@@ -1,37 +1,37 @@
 {
   "awards": [
     {
-      "date": "2018-01-01",
-      "title": "21 Under 21",
-      "publication": "YourStory",
-      "href": "https://yourstory.com/2018/08/21-under-21-meet-the-young-entrepreneurs-who-are-changing-the-world-one-startup-at-a-time"
-    },
-    {
-      "date": "2018-01-01",
+      "date": "2018-01-18",
       "title": "50 Talents Under the Age of 35",
       "publication": "Het Financieele Dagblad",
       "href": "https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst"
     },
     {
-      "date": "2018-01-01",
+      "date": "2018-03-27",
       "title": "Forbes 30 Under 30",
       "publication": "Forbes Asia",
       "href": "https://www.forbes.com/profile/oswald-labs/"
     },
     {
-      "date": "2019-01-01",
+      "date": "2019-05-08",
       "title": "The Next Web T500",
       "publication": "The Next Web",
       "href": "https://thenextweb.com/conference/t500"
     },
     {
-      "date": "2021-01-01",
+      "date": "2018-08-21",
+      "title": "21 Under 21",
+      "publication": "YourStory",
+      "href": "https://yourstory.com/2018/08/21-under-21-meet-the-young-entrepreneurs-who-are-changing-the-world-one-startup-at-a-time"
+    },
+    {
+      "date": "2021-02-09",
       "title": "GitHub Stars",
       "publication": "GitHub",
       "href": "https://stars.github.com/profiles/anandchowdhary/"
     },
     {
-      "date": "2021-01-01",
+      "date": "2021-01-28",
       "title": "Karmaveer Chakra Award",
       "publication": "iCONGO",
       "href": "https://rexideas.com/index.php/karmaveer-global-fellowship/"
@@ -39,17 +39,17 @@
   ],
   "podcasts": [
     {
-      "date": "2018-01-01",
+      "date": "2018-02-05",
+      "title": "The Next Billion: Anand Chowdhary",
+      "publisher": "Ready or Not",
+      "href": "https://overcast.fm/+Oa3ivwUlI"
+    },
+    {
+      "date": "2018-09-28",
       "title": "E94: Anand Chowdhary",
       "publisher": "The Indian Startup Show",
       "href": "http://www.indianstartupshow.com/anand",
       "embed": "https://open.spotify.com/embed/episode/22paCnKhK69elGTr35NVzX"
-    },
-    {
-      "date": "2018-01-01",
-      "title": "The Next Billion: Anand Chowdhary",
-      "publisher": "Ready or Not",
-      "href": "https://overcast.fm/+Oa3ivwUlI"
     },
     {
       "date": "2021-03-27",

@@ -272,22 +272,22 @@ export const handler: Handlers<HomeData> = {
             } as const)
         ),
         ...press.awards.map(
-          (event) =>
+          (award) =>
             ({
               type: "award",
-              title: event.title,
-              date: event.date,
-              publisher: event.publisher,
+              title: award.title,
+              date: award.date,
+              publisher: award.publisher,
             } as const)
         ),
         ...press.podcasts.map(
-          (event) =>
+          (interview) =>
             ({
               type: "podcast-interview",
-              title: event.title,
-              date: event.date,
-              embed: event.embed,
-              publisher: event.publisher,
+              title: interview.title,
+              date: interview.date,
+              embed: interview.embed,
+              publisher: interview.publisher,
             } as const)
         ),
         ...press.features.map(
