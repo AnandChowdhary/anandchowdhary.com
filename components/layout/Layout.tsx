@@ -5,16 +5,16 @@ import { Icons } from "../Icons.tsx";
 
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about/" },
-  { label: "Blog", href: "/blog/" },
-  { label: "Events", href: "/events/" },
-  { label: "Projects", href: "/projects/" },
-  { label: "Life", href: "/life/" },
-  { label: "Mentoring", href: "/mentoring/" },
-  { label: "Press", href: "/press/" },
-  { label: "Videos", href: "/videos/" },
-  { label: "Travel", href: "/travel/" },
-  { label: "Contact", href: "/contact/" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Events", href: "/events" },
+  { label: "Projects", href: "/projects" },
+  { label: "Life", href: "/life" },
+  { label: "Mentoring", href: "/mentoring" },
+  { label: "Press", href: "/press" },
+  { label: "Videos", href: "/videos" },
+  { label: "Travel", href: "/travel" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Navbar() {
@@ -78,7 +78,7 @@ function Footer() {
   return (
     <footer className={tw`text-slate-500`}>
       <div
-        className={tw`max-w-2xl px-6 pt-16 pb-8 mx-auto leading-none md:px-0`}
+        className={tw`max-w-screen-md px-6 pt-16 pb-8 mx-auto leading-none md:px-0`}
       >
         <div
           className={tw`pt-4 border-t-2 border-orange-100 dark:border-slate-800`}
@@ -282,7 +282,7 @@ opacity: 1;
       />
       <header className={tw`pt-8 pb-24`}>
         <div
-          className={tw`flex justify-between max-w-2xl px-6 mx-auto md:px-0`}
+          className={tw`flex justify-between max-w-screen-md px-6 mx-auto md:px-0`}
         >
           <a
             href="/"
@@ -304,9 +304,7 @@ opacity: 1;
           <Navbar />
         </div>
       </header>
-      <main className={tw`max-w-2xl px-6 mx-auto space-y-8 md:px-0`}>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
       <Icons />
     </div>

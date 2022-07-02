@@ -1,23 +1,192 @@
 /** @jsx h */
 import { h } from "preact";
+import { orange } from "twind/colors";
 import { tw } from "@twind";
-import Counter from "../islands/Counter.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/layout/Layout.tsx";
+import { t } from "../utils/i18n.tsx";
 
-export default function Home() {
+interface HomeData {
+  okrs: {
+    updatedAt: string;
+    years: {
+      name: number;
+      progress: number;
+      success: number;
+      quarters: {
+        name: number;
+        progress: number;
+        success: number;
+        objectives: {
+          name: string;
+          progress: number;
+          success: number;
+          key_results: {
+            name: string;
+            target_result: number;
+            current_result: number;
+            progress: number;
+            success: number;
+          }[];
+        }[];
+      }[];
+    }[];
+  };
+}
+
+export const handler: Handlers<HomeData> = {
+  async GET(_req, ctx) {
+    const okrs = (await (
+      await fetch("https://anandchowdhary.github.io/okrs/api.json")
+    ).json()) as HomeData["okrs"];
+    return ctx.render({ okrs });
+  },
+};
+
+export default function Home({ data }: PageProps<HomeData>) {
+  const okrYear = data.okrs.years.sort((a, b) => b.name - a.name)[0];
+  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
+
   return (
     <Layout>
-      <div class={tw`p-4 mx-auto max-w-screen-md`}>
-        <img
-          src="/logo.svg"
-          height="100px"
-          alt="the fresh logo: a sliced lemon dripping with juice"
-        />
-        <p class={tw`my-6`}>
-          Welcome to `fresh`. Try update this message in the ./routes/index.tsx
-          file, and refresh.
-        </p>
-        <Counter start={3} />
+      <div class={tw`mx-auto max-w-screen-md px-4 md:px-0`}>
+        <section className={tw`space-y-4`}>
+          <h2
+            className={tw`text-2xl font-semibold font-display`}
+          >{`OKRs for Q${okrQuarter.name} ${okrYear.name}`}</h2>
+          <p className={tw`text-gray-500`}>
+            I use{" "}
+            <strong className={tw`font-medium`}>
+              Objectives and Key Results
+            </strong>{" "}
+            both for my personal and professional life. These numbers are
+            updated{" "}
+            <span
+              title={`Last updated on ${new Date(
+                data.okrs.updatedAt
+              ).toLocaleDateString("en-US", { dateStyle: "long" })}`}
+              className={tw`border-b border-gray-500 border-dotted`}
+            >
+              weekly
+            </span>{" "}
+            and are open source, available on{" "}
+            <a href="#" className={tw`underline`}>
+              GitHub
+            </a>
+            .
+          </p>
+          <div className={tw`space-y-2`}>
+            {okrQuarter.objectives.map(({ name, success, key_results }) => (
+              <details key={name} className={tw`appearance-none`}>
+                <summary
+                  className={tw`bg-white px-4 py-2 rounded-lg flex flex-col mb-2 shadow-sm`}
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${
+                      orange[400]
+                    } ${Math.round(success * 100)}%, white ${
+                      Math.round(success * 100) + 0.01
+                    }%)`,
+                    backgroundSize: "100% 0.1rem",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "bottom left",
+                  }}
+                >
+                  <div className={tw`flex justify-between`}>
+                    <div className={tw`flex items-center space-x-2`}>
+                      <div>{name}</div>
+                      <svg
+                        className={tw`text-gray-400`}
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </div>
+                    <div className={tw`text-gray-500`}>
+                      {Math.round(success * 100)}%
+                    </div>
+                  </div>
+                </summary>
+                <div className={tw`mb-4 mx-4 space-y-1`}>
+                  {key_results.map(({ name, success }) => (
+                    <div
+                      key={name}
+                      className={tw`bg-white px-4 py-2 rounded-lg flex justify-between shadow-sm`}
+                      style={{
+                        backgroundImage: `linear-gradient(to right, ${
+                          orange[400]
+                        } ${Math.round(success * 100)}%, white ${
+                          Math.round(success * 100) + 0.01
+                        }%)`,
+                        backgroundSize: "100% 0.1rem",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "bottom left",
+                      }}
+                    >
+                      <div>
+                        {t(name.replace(/\[redacted\]/g, "<0></0>"), {}, [
+                          () => (
+                            <span
+                              className={tw`py-1 px-2 uppercase text-xs font-medium tracking-widest relative`}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className={tw`absolute left-0 w-full top-0 h-full`}
+                              >
+                                <filter id="noiseFilter">
+                                  <feTurbulence
+                                    type="fractalNoise"
+                                    baseFrequency="0.65"
+                                    numOctaves="3"
+                                    stitchTiles="stitch"
+                                  />
+                                </filter>
+
+                                <rect
+                                  width="100%"
+                                  height="100%"
+                                  filter="url(#noiseFilter)"
+                                />
+                              </svg>
+                              <span>Redacted</span>
+                            </span>
+                          ),
+                        ])}
+                      </div>
+                      <div className={tw`text-gray-500`}>
+                        {Math.round(success * 100)}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
+          <p className={tw`mt-2`}>
+            <a
+              href="/life/okrs"
+              className={tw`flex items-center space-x-2 font-medium`}
+            >
+              <span>See past OKRs</span>
+              <svg
+                aria-hidden="true"
+                width="1rem"
+                height="1rem"
+                className={tw`text-gray-600`}
+                transform="rotate(-90)"
+              >
+                <use href="#chevron"></use>
+              </svg>
+            </a>
+          </p>
+        </section>
       </div>
     </Layout>
   );

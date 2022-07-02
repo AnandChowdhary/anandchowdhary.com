@@ -407,6 +407,23 @@ export const Icons = () => {
         </defs>
         <use href="#microphone" />
       </svg>
+
+      <svg style="display: none">
+        <defs>
+          <symbol
+            id="chevron"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </symbol>
+        </defs>
+        <use href="#chevron" />
+      </svg>
     </Fragment>
   );
 };
