@@ -5,6 +5,7 @@ import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/layout/Layout.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
+import { SectionLink } from "../components/text/SectionLink.tsx";
 import { t } from "../utils/i18n.tsx";
 
 interface HomeData {
@@ -50,7 +51,32 @@ export default function Home({ data }: PageProps<HomeData>) {
 
   return (
     <Layout>
-      <div class={tw`mx-auto max-w-screen-md px-4 md:px-0`}>
+      <div class={tw`max-w-screen-md px-4 mx-auto space-y-16 md:px-0`}>
+        <section className={tw`grid-cols-2 gap-8 sm:grid`}>
+          <div className={tw`mb-6 sm:mb-0`}>
+            <img
+              alt=""
+              src="https://place-hold.it/500x375"
+              className={tw`w-full rounded`}
+            />
+          </div>
+          <div className={tw`space-y-4`}>
+            <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+              <span className="wave">👋</span>
+              <span>{" Hi, I'm Anand"}</span>
+            </h2>
+            <p className={tw`text-lg text-gray-500`}>
+              I'm a creative technologist and entrepreneur, currently working
+              remotely as the co-founder and CTO of Pabio, a rent-to-own
+              furniture company in Europe.
+            </p>
+            <p>
+              I'm also an award-winning open source contributor and Y Combinator
+              and Forbes 30 Under 30 alum.
+            </p>
+            <SectionLink label="Learn more about me" href="/about" />
+          </div>
+        </section>
         <section className={tw`space-y-4`}>
           <h2
             className={tw`text-2xl font-semibold font-display`}
@@ -82,11 +108,11 @@ export default function Home({ data }: PageProps<HomeData>) {
               ]
             )}
           </p>
-          <div className={tw`space-y-2`}>
+          <div className={tw`space-y-3`}>
             {okrQuarter.objectives.map(({ name, success, key_results }) => (
               <details key={name} className={tw`appearance-none`}>
                 <summary
-                  className={tw`bg-white px-4 py-2 rounded-lg flex flex-col mb-2 shadow-sm`}
+                  className={tw`flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm`}
                   style={{
                     backgroundImage: `linear-gradient(to right, ${
                       orange[400]
@@ -121,11 +147,11 @@ export default function Home({ data }: PageProps<HomeData>) {
                     </div>
                   </div>
                 </summary>
-                <div className={tw`mb-4 mx-4 space-y-1`}>
+                <div className={tw`mx-4 mb-4 space-y-1`}>
                   {key_results.map(({ name, success }) => (
                     <div
                       key={name}
-                      className={tw`bg-white px-4 py-2 rounded-lg flex justify-between shadow-sm`}
+                      className={tw`flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm`}
                       style={{
                         backgroundImage: `linear-gradient(to right, ${
                           orange[400]
@@ -141,11 +167,11 @@ export default function Home({ data }: PageProps<HomeData>) {
                         {t(name.replace(/\[redacted\]/g, "<0></0>"), {}, [
                           () => (
                             <span
-                              className={tw`py-1 px-2 uppercase text-xs font-medium tracking-widest relative`}
+                              className={tw`relative px-2 py-1 text-xs font-medium tracking-widest uppercase`}
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className={tw`absolute left-0 w-full top-0 h-full pointer-events-none rounded-sm`}
+                                className={tw`absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none`}
                               >
                                 <filter id="noiseFilter">
                                   <feTurbulence
@@ -176,23 +202,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               </details>
             ))}
           </div>
-          <p className={tw`mt-2`}>
-            <a
-              href="/life/okrs"
-              className={tw`flex items-center space-x-2 font-medium`}
-            >
-              <span>See past OKRs</span>
-              <svg
-                aria-hidden="true"
-                width="1rem"
-                height="1rem"
-                className={tw`text-gray-600`}
-                transform="rotate(-90)"
-              >
-                <use href="#chevron"></use>
-              </svg>
-            </a>
-          </p>
+          <SectionLink label="See past OKRs" href="/life/okrs" />
         </section>
       </div>
     </Layout>

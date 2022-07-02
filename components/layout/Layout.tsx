@@ -54,7 +54,7 @@ function Navbar() {
           </span>
         </summary>
         <div
-          className={tw`absolute right-0 z-50 flex flex-col w-32 p-1 mt-2 text-sm text-gray-600 rounded shadow top-full backdrop-blur bg-white dark:bg-slate-800 dark:text-slate-400`}
+          className={tw`absolute right-0 z-50 flex flex-col w-32 p-1 mt-2 text-sm text-gray-600 bg-white rounded shadow top-full backdrop-blur dark:bg-slate-800 dark:text-slate-400`}
         >
           {NAV.map(({ label, href }, index) => (
             <a
@@ -152,7 +152,7 @@ function Footer() {
                   </svg>
                 </summary>
                 <div
-                  className={tw`absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 rounded shadow backdrop-blur bg-white dark:bg-slate-800 bottom-10 dark:text-slate-400`}
+                  className={tw`absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 bg-white rounded shadow backdrop-blur dark:bg-slate-800 bottom-10 dark:text-slate-400`}
                 >
                   <form
                     className={tw`p-3 mb-1 border-b border-gray-100 dark:border-slate-800`}
@@ -217,7 +217,7 @@ function Footer() {
 export const Layout: FunctionComponent = ({ children }) => {
   return (
     <div
-      className={tw`text-gray-700 dark:text-slate-400 bg-orange-50 dark:bg-slate-900 selection:bg-orange-100 dark:selection:bg-slate-800`}
+      className={tw`min-h-screen text-gray-700 dark:text-slate-400 bg-orange-50 dark:bg-slate-900 selection:bg-orange-100 dark:selection:bg-slate-800`}
     >
       <style
         dangerouslySetInnerHTML={{
@@ -227,7 +227,6 @@ font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
 Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
 sans-serif;
 font-variant-ligatures: historical-ligatures;
-font-size: 107%;
 line-height: 1.7;
 }
 
@@ -285,10 +284,29 @@ transition: transform 0.3s;
 details[open] .rotate-on-open {
 transform: rotate(180deg);
 }
+
+.wave {
+animation-name: wave-animation;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+transform-origin: 70% 70%;
+display: inline-block;
+}
+
+@keyframes wave-animation {
+0% { transform: rotate(0.0deg) }
+7% { transform: rotate(14.0deg) }
+14% { transform: rotate(-8.0deg) }
+21% { transform: rotate(14.0deg) }
+28% { transform: rotate(-4.0deg) }
+35% { transform: rotate(10.0deg) }
+42% { transform: rotate(0.0deg) }
+100% { transform: rotate(0.0deg) }
+}
         `,
         }}
       />
-      <header className={tw`pt-8 pb-24`}>
+      <header className={tw`pt-8 pb-16`}>
         <div
           className={tw`flex justify-between max-w-screen-md px-6 mx-auto md:px-0`}
         >
