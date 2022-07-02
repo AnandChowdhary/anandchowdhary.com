@@ -28,6 +28,7 @@ export const t = (
       if (components[index]) {
         result = result
           .map((item) => {
+            if (typeof item !== "string" || !item.includes(tag)) return item;
             return replaceJSX(
               item,
               `${tag}${item.split(tag)[1].split("<")[0]}${tag.replace(

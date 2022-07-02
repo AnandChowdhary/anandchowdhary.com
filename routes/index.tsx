@@ -1,9 +1,10 @@
 /** @jsx h */
-import { h } from "preact";
+import { h, ComponentChildren } from "preact";
 import { orange } from "twind/colors";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/layout/Layout.tsx";
+import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { t } from "../utils/i18n.tsx";
 
 interface HomeData {
@@ -55,25 +56,31 @@ export default function Home({ data }: PageProps<HomeData>) {
             className={tw`text-2xl font-semibold font-display`}
           >{`OKRs for Q${okrQuarter.name} ${okrYear.name}`}</h2>
           <p className={tw`text-gray-500`}>
-            I use{" "}
-            <strong className={tw`font-medium`}>
-              Objectives and Key Results
-            </strong>{" "}
-            both for my personal and professional life. These numbers are
-            updated{" "}
-            <span
-              title={`Last updated on ${new Date(
-                data.okrs.updatedAt
-              ).toLocaleDateString("en-US", { dateStyle: "long" })}`}
-              className={tw`border-b border-gray-500 border-dotted`}
-            >
-              weekly
-            </span>{" "}
-            and are open source, available on{" "}
-            <a href="#" className={tw`underline`}>
-              GitHub
-            </a>
-            .
+            {t(
+              "I use <0>Objectives and Key Results</0> both for my personal and professional life. These numbers are updated <1>weekly</1> and are open source, available on <2>GitHub</2>.",
+              {},
+              [
+                ({ children }: { children: ComponentChildren }) => (
+                  <strong children={children} />
+                ),
+                ({ children }: { children: ComponentChildren }) => (
+                  <span
+                    title={`Last updated on ${new Date(
+                      data.okrs.updatedAt
+                    ).toLocaleDateString("en-US", { dateStyle: "long" })}`}
+                    className={tw`border-b border-gray-500 border-dotted`}
+                    children={children}
+                  />
+                ),
+                ({ children }: { children: ComponentChildren }) => (
+                  <ExternalLink
+                    href="https://github.com/AnandChowdhary/okrs"
+                    className={tw`underline`}
+                    children={children}
+                  />
+                ),
+              ]
+            )}
           </p>
           <div className={tw`space-y-2`}>
             {okrQuarter.objectives.map(({ name, success, key_results }) => (
@@ -95,7 +102,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     <div className={tw`flex items-center space-x-2`}>
                       <div>{name}</div>
                       <svg
-                        className={tw`text-gray-400`}
+                        className={`${tw`text-gray-400`} rotate-on-open`}
                         stroke="currentColor"
                         fill="none"
                         stroke-width="2"
@@ -138,7 +145,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className={tw`absolute left-0 w-full top-0 h-full`}
+                                className={tw`absolute left-0 w-full top-0 h-full pointer-events-none rounded-sm`}
                               >
                                 <filter id="noiseFilter">
                                   <feTurbulence

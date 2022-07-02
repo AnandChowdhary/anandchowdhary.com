@@ -277,6 +277,14 @@ opacity: 0;
 details[open] .show-on-open {
 opacity: 1;
 }
+
+.rotate-on-open {
+transition: transform 0.3s;
+}
+
+details[open] .rotate-on-open {
+transform: rotate(180deg);
+}
         `,
         }}
       />
