@@ -9,7 +9,8 @@ const STARTUPS = [
     name: "Pabio",
     start: "2020",
     end: "present",
-    description: "Rent-to-own furniture in Europe with personalized interior",
+    description:
+      "Rent-to-own furniture in Europe with personalized interior design",
   },
   {
     icon: "oswald-labs",
@@ -84,7 +85,8 @@ export default function About() {
           <p>
             From time to time, he speaks at events and writes articles about
             entrepreneurship and technology. He has been featured in
-            publications like TechCrunch, Forbes, The Next Web.
+            publications like TechCrunch, Forbes, The Next Web, and Hindustan
+            Times.
           </p>
         </div>
       </section>
