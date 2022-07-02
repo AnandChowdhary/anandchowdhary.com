@@ -293,6 +293,10 @@ transform-origin: 70% 70%;
 display: inline-block;
 }
 
+@media (prefers-reduced-motion: reduce) {
+.wave { animation: none; }
+}
+
 @keyframes wave-animation {
 0% { transform: rotate(0.0deg) }
 7% { transform: rotate(14.0deg) }

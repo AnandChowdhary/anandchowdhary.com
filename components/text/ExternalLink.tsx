@@ -6,9 +6,12 @@ export const ExternalLink: FunctionComponent<{
   href: string;
   className?: string;
 }> = ({ href, className, children }) => {
+  const url = new URL(href);
+  url.searchParams.append("utm_source", "anandchowdhary.com");
+
   return (
     <a
-      href={href}
+      href={url.toString()}
       target="_blank"
       className={`${className} ${tw`inline-flex items-center space-x-1`}`}
     >
@@ -19,8 +22,8 @@ export const ExternalLink: FunctionComponent<{
         fill="none"
         stroke-width="0"
         viewBox="0 0 24 24"
-        height="1em"
-        width="1em"
+        height="0.75em"
+        width="0.75em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>(external link)</title>

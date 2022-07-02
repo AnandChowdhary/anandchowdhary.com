@@ -8,6 +8,7 @@ export const config: Configuration = {
   mode: "silent",
   theme: {
     colors: {
+      ...colors,
       slate: colors.red,
       orange: colors.orange,
       white: colors.white,

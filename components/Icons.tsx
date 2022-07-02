@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h, Fragment, FunctionComponent } from "preact";
+import { h, Fragment } from "preact";
 
 export const Icons = () => {
   return (
