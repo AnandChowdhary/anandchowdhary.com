@@ -6,6 +6,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/layout/Layout.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
+import TimeAgo from "../islands/TimeAgo.tsx";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 import * as colors from "twind/colors";
@@ -36,6 +37,9 @@ interface HomeData {
       }[];
     }[];
   };
+  languages: { name: string; duration: string; percent: number }[];
+  music: { name: string; plays: number; percent: number }[];
+  contributionsGraph: string;
   timeline: (
     | {
         type: "event";
@@ -90,6 +94,7 @@ interface HomeData {
         type: "press-feature";
         date: string;
         title: string;
+        href: string;
         publisher: string;
         author?: string;
         description?: string;
@@ -102,13 +107,13 @@ const categoryData: Record<
   { color: keyof typeof colors; icon: string; prefix: string }
 > = {
   "blog-post": {
-    color: "blue",
+    color: "indigo",
     icon: "book-open",
     prefix: "Wrote a blog post",
   },
   event: { color: "cyan", icon: "podium", prefix: "Spoke at an event" },
-  book: { color: "indigo", icon: "book-open", prefix: "Finished a book" },
-  "life-event": { color: "lime", icon: "alarm", prefix: "Life milestone" },
+  book: { color: "purple", icon: "book-open", prefix: "Finished a book" },
+  "life-event": { color: "rose", icon: "alarm", prefix: "Life milestone" },
   video: {
     color: "red",
     icon: "video-camera",
@@ -120,7 +125,7 @@ const categoryData: Record<
     prefix: "Received an award",
   },
   "podcast-interview": {
-    color: "rose",
+    color: "fuchsia",
     icon: "microphone",
     prefix: "Featured in a podcast",
   },
@@ -215,8 +220,74 @@ export const handler: Handlers<HomeData> = {
       duration: string;
       description: string;
     }[];
+    const lastWeekCode = await (
+      await (
+        await fetch(
+          "https://gist.githubusercontent.com/AnandChowdhary/e5e2ae3ca3bf2ae1a36a1a113045e7de/raw"
+        )
+      ).blob()
+    ).text();
+    const languages: HomeData["languages"] = lastWeekCode
+      .split("\n")
+      .map((line) => {
+        return {
+          name: line.match("[A-Za-z]+")?.[0] ?? "",
+          duration: line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "",
+          percent:
+            parseInt(line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "0") /
+            lastWeekCode
+              .split("\n")
+              .map((line) =>
+                parseInt(line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "0")
+              )
+              .reduce((a, b) => a + b, 0),
+        };
+      });
+    const lastWeekMusic = await (
+      await (
+        await fetch(
+          "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
+        )
+      ).blob()
+    ).text();
+    const music: HomeData["music"] = lastWeekMusic.split("\n").map((line) => {
+      return {
+        name: line
+          .split("▌")[0]
+          .split("▌")[0]
+          .split("░")[0]
+          .split("█")[0]
+          .trim(),
+        plays: parseInt(line.replace(" plays", "").split(" ").pop() ?? "0"),
+        percent:
+          parseInt(line.replace(" plays", "").split(" ").pop() ?? "0") /
+          lastWeekMusic
+            .split("\n")
+            .map((line) =>
+              parseInt(line.replace(" plays", "").split(" ").pop() ?? "0")
+            )
+            .reduce((a, b) => a + b, 0),
+      };
+    });
+    const contributionsGraph =
+      `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
+      (
+        await (
+          await (
+            await fetch("https://github.com/users/AnandChowdhary/contributions")
+          ).blob()
+        ).text()
+      )
+        .split(
+          `<svg width="717" height="112" class="js-calendar-graph-svg">`
+        )[1]
+        .split("</svg>")[0] +
+      "</svg>";
     return ctx.render({
       okrs,
+      languages,
+      music,
+      contributionsGraph,
       timeline: [
         ...events.map(
           (event) =>
@@ -294,6 +365,7 @@ export const handler: Handlers<HomeData> = {
           (article) =>
             ({
               type: "press-feature",
+              href: article.href,
               title: article.title,
               date: article.date,
               publisher: article.publisher,
@@ -323,7 +395,9 @@ export default function Home({ data }: PageProps<HomeData>) {
           </div>
           <div className={tw`space-y-4`}>
             <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
-              <span className="wave">👋</span>
+              <span className="wave" aria-hidden="true">
+                👋
+              </span>
               <span>{" Hi, I'm Anand"}</span>
             </h2>
             <p className={tw`text-lg text-gray-500`}>
@@ -349,25 +423,17 @@ export default function Home({ data }: PageProps<HomeData>) {
           </div>
         </section>
         <section className={tw`space-y-4`}>
-          <h2
-            className={tw`text-2xl font-semibold font-display`}
-          >{`OKRs for Q${okrQuarter.name} ${okrYear.name}`}</h2>
+          <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+            <span aria-hidden="true">📊</span>
+            <span>{` OKRs for Q${okrQuarter.name} ${okrYear.name}`}</span>
+          </h2>
           <p className={tw`text-gray-500`}>
             {t(
-              "I use <0>Objectives and Key Results</0> both for my personal and professional life. These numbers are updated <1>weekly</1> and are open source, available on <2>GitHub</2>.",
+              "I use <0>Objectives and Key Results</0> both for my personal and professional life. This data is available on <1>GitHub</1> and was last updated <2></2>.",
               {},
               [
                 ({ children }: { children: ComponentChildren }) => (
                   <strong children={children} />
-                ),
-                ({ children }: { children: ComponentChildren }) => (
-                  <span
-                    title={`Last updated on ${new Date(
-                      data.okrs.updatedAt
-                    ).toLocaleDateString("en-US", { dateStyle: "full" })}`}
-                    className={tw`border-b border-gray-500 border-dotted`}
-                    children={children}
-                  />
                 ),
                 ({ children }: { children: ComponentChildren }) => (
                   <ExternalLink
@@ -376,6 +442,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     children={children}
                   />
                 ),
+                () => <TimeAgo date={data.okrs.updatedAt} />,
               ]
             )}
           </p>
@@ -392,7 +459,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     }%)`,
                     backgroundSize: "100% 0.1rem",
                     backgroundRepeat: "no-repeat",
-                    backgroundPosition: "bottom left",
+                    backgroundPosition: "left bottom",
                   }}
                 >
                   <div className={tw`flex justify-between`}>
@@ -431,7 +498,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                         }%)`,
                         backgroundSize: "100% 0.1rem",
                         backgroundRepeat: "no-repeat",
-                        backgroundPosition: "bottom left",
+                        backgroundPosition: "left bottom",
                       }}
                     >
                       <div>
@@ -476,128 +543,324 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="See past OKRs" href="/life/okrs" />
         </section>
         <section className={tw`space-y-4`}>
+          <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+            <span aria-hidden="true">👨‍💻</span>
+            <span>{" Last year in contributions"}</span>
+          </h2>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+.js-calendar-graph-svg {
+  width: 100%;
+}
+.ContributionCalendar-label {
+  font-size: 70%;
+  opacity: 0.5;
+}
+.ContributionCalendar-day[data-level="0"] {
+  fill: white;
+}
+.ContributionCalendar-day[data-level="1"] {
+  fill: ${colors.green[300]};
+}
+.ContributionCalendar-day[data-level="2"] {
+  fill: ${colors.green[500]};
+}
+.ContributionCalendar-day[data-level="3"] {
+  fill: ${colors.green[700]};
+}
+.ContributionCalendar-day[data-level="4"] {
+  fill: ${colors.green[900]};
+}
+`,
+            }}
+          />
+          <div dangerouslySetInnerHTML={{ __html: data.contributionsGraph }} />
+          <SectionLink label="See my GitHub profile" href="/life/okrs" />
+        </section>
+        <div className={tw`grid-cols-2 gap-8 sm:grid`}>
+          <section className={tw`space-y-4`}>
+            <header className={tw`space-y-1`}>
+              <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+                <span aria-hidden="true">💻</span>
+                <span>{" Last week in code"}</span>
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Last updated <TimeAgo date={data.okrs.updatedAt} />
+              </p>
+            </header>
+            <div className={tw`space-y-2`}>
+              {data.languages.slice(0, 5).map((language) => (
+                <div
+                  key={language.name}
+                  className={tw`flex bg-white rounded-lg shadow-sm`}
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${
+                      orange[400]
+                    } ${Math.round(language.percent * 100)}%, white ${
+                      Math.round(language.percent * 100) + 0.01
+                    }%)`,
+                    backgroundSize: "100% 0.1rem",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "left bottom",
+                  }}
+                >
+                  <div
+                    className={tw`flex items-center justify-between flex-grow h-12 px-4`}
+                  >
+                    <div>{language.name}</div>
+                    <div className={tw`text-gray-500`}>{language.duration}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <SectionLink label="See more code data" href="/life/okrs" />
+          </section>
+          <section className={tw`space-y-4`}>
+            <header className={tw`space-y-1`}>
+              <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+                <span aria-hidden="true">🎵</span>
+                <span>{" Last week in music"}</span>
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Last updated <TimeAgo date={data.okrs.updatedAt} />
+              </p>
+            </header>
+            <div className={tw`space-y-2`}>
+              {data.music.slice(0, 5).map((artist) => (
+                <div
+                  key={artist.name}
+                  className={tw`flex bg-white rounded-lg shadow-sm`}
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${
+                      orange[400]
+                    } ${Math.round(artist.percent * 100)}%, white ${
+                      Math.round(artist.percent * 100) + 0.01
+                    }%)`,
+                    backgroundSize: "100% 0.1rem",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "3rem 100%",
+                  }}
+                >
+                  <div className={tw`min-w-12`}>
+                    <img
+                      alt=""
+                      src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                        `tse2.mm.bing.net/th?q=${encodeURIComponent(
+                          artist.name
+                        )}&w=100&h=100&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
+                      )}&w=100&h=100&fit=cover`}
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      className={tw`object-cover w-12 h-full rounded-l-lg`}
+                    />
+                  </div>
+                  <div
+                    className={tw`flex items-center justify-between flex-grow h-12 px-4`}
+                  >
+                    <div>{artist.name}</div>
+                    <div className={tw`text-gray-500`}>{`${artist.plays} ${
+                      artist.plays === 1 ? "play" : "plays"
+                    }`}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <SectionLink label="See more music data" href="/life/okrs" />
+          </section>
+        </div>
+        <section className={tw`space-y-4`}>
           <h2 className={tw`text-2xl font-semibold font-display`}>Changelog</h2>
           <p className={tw`text-gray-500`}>
             {"The latest from my desk, curated from different sources."}
           </p>
           <div className={tw`relative space-y-8`}>
             <div
-              className={tw`absolute top-0 w-1 h-full bg-orange-200 left-4`}
+              className={tw`absolute top-0 w-1 bg-orange-200 bottom-6 left-4`}
             />
-            {data.timeline.map((item) => (
-              <article key={item.title} className={tw`flex`}>
-                <div className={tw`flex flex-grow`}>
-                  <div className={tw`shrink-0`} style={{ minWidth: "3rem" }}>
-                    <div>
+            {data.timeline.map((item, index) => (
+              <div key={item.title}>
+                {(index === 0 ||
+                  new Date(item.date).getFullYear() !==
+                    new Date(data.timeline[index - 1].date).getFullYear()) && (
+                  <div className={tw`flex flex-grow ${index > 0 && "pt-6"}`}>
+                    <div className={tw`shrink-0`} style={{ minWidth: "3rem" }}>
                       <div
-                        className={tw`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-${
-                          categoryData[item.type].color
-                        }-500`}
-                      >
-                        <svg aria-hidden="true" width="1em" height="1em">
-                          <use href={`#${categoryData[item.type].icon}`}></use>
-                        </svg>
-                      </div>
+                        className={tw`relative w-5 h-5 ml-2 bg-orange-600 border-4 rounded-full border-orange-50`}
+                      />
+                    </div>
+                    <div>
+                      <h3 className={tw`mb-8 text-xl font-semibold`}>
+                        {new Date(item.date).getFullYear()}
+                      </h3>
                     </div>
                   </div>
-                  <div className={tw`flex-grow space-y-1`}>
-                    <div className={tw`text-gray-500`}>
-                      <span>
-                        <span
-                          className={tw`text-${
+                )}
+                <article className={tw`flex`}>
+                  <div className={tw`flex flex-grow`}>
+                    <div className={tw`shrink-0`} style={{ minWidth: "3rem" }}>
+                      <div>
+                        <div
+                          className={tw`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-${
                             categoryData[item.type].color
                           }-500`}
                         >
-                          {categoryData[item.type].prefix}
-                        </span>
-                        {` on ${new Date(item.date).toLocaleDateString(
-                          "en-US",
-                          {
-                            dateStyle: "long",
-                          }
-                        )}`}
-                      </span>
-                    </div>
-                    <h3 className={tw`text-lg font-medium leading-6`}>
-                      {item.title}
-                    </h3>
-                    {item.type === "book" && (
-                      <p>{`by ${item.authors.join(", ")}`}</p>
-                    )}
-                    {item.type === "blog-post" && (
-                      <p
-                        className={tw`text-gray-500`}
-                      >{`Reading time: ${humanizeMmSs(
-                        String(item.words / 250)
-                      )}`}</p>
-                    )}
-                    {item.type === "event" && (
-                      <p className={tw`text-gray-500`}>
-                        <span className={tw`mr-1`}>{item.emoji}</span>
-                        <span>{` ${item.location}`}</span>
-                      </p>
-                    )}
-                    {item.type === "podcast-interview" && (
-                      <p className={tw`text-gray-500`}>{item.publisher}</p>
-                    )}
-                    {item.type === "press-feature" && (
-                      <p className={tw`text-gray-500`}>
-                        {`${item.author ? `by ${item.author} for ` : ""} ${
-                          item.publisher
-                        }`.trim()}
-                      </p>
-                    )}
-                    {item.type === "award" && (
-                      <p
-                        className={tw`text-gray-500`}
-                      >{`Awarded by ${item.publisher}`}</p>
-                    )}
-                    {item.type === "video" && (
-                      <ul className={tw`text-gray-500`}>
-                        <li>{`${item.publisher}, ${item.city}`}</li>
-                        <li>{`Watch time: ${humanizeMmSs(item.duration)}`}</li>
-                      </ul>
-                    )}
-                    {"description" in item && item.description && (
-                      <p className={tw`text-gray-500`}>{item.description}</p>
-                    )}
-                    {"embed" in item && item.embed && (
-                      <div className={tw`pt-2`}>
-                        <iframe
-                          src={item.embed}
-                          loading="lazy"
-                          scrolling="no"
-                          className={tw`w-full overflow-hidden rounded-lg`}
-                          style={{ height: "152px" }}
-                        />
+                          <svg aria-hidden="true" width="1em" height="1em">
+                            <use
+                              href={`#${categoryData[item.type].icon}`}
+                            ></use>
+                          </svg>
+                        </div>
                       </div>
-                    )}
+                    </div>
+                    <div className={tw`flex-grow space-y-1`}>
+                      <div className={tw`text-gray-500`}>
+                        <span>
+                          <span
+                            className={tw`text-${
+                              categoryData[item.type].color
+                            }-500`}
+                          >
+                            {categoryData[item.type].prefix}
+                          </span>
+                          {` on ${new Date(item.date).toLocaleDateString(
+                            "en-US",
+                            {
+                              dateStyle: "long",
+                            }
+                          )}`}
+                        </span>
+                      </div>
+                      {"href" in item && item.href ? (
+                        <h4 className={tw`text-lg font-medium leading-6`}>
+                          {item.href.startsWith("http") ? (
+                            <ExternalLink href={item.href}>
+                              {item.title}
+                            </ExternalLink>
+                          ) : (
+                            <a href="item.href">{item.title}</a>
+                          )}
+                        </h4>
+                      ) : (
+                        <h4 className={tw`text-lg font-medium leading-6`}>
+                          {item.title}
+                        </h4>
+                      )}
+                      {item.type === "book" && (
+                        <p>{`by ${item.authors.join(", ")}`}</p>
+                      )}
+                      {item.type === "blog-post" && (
+                        <p
+                          className={tw`text-gray-500`}
+                        >{`Reading time: ${humanizeMmSs(
+                          String(item.words / 250)
+                        )}`}</p>
+                      )}
+                      {item.type === "event" && (
+                        <p className={tw`text-gray-500`}>
+                          <span className={tw`mr-1`}>{item.emoji}</span>
+                          <span>{` ${item.location}`}</span>
+                        </p>
+                      )}
+                      {item.type === "podcast-interview" && (
+                        <p className={tw`text-gray-500`}>{item.publisher}</p>
+                      )}
+                      {item.type === "press-feature" && (
+                        <p
+                          className={tw`flex items-center space-x-2 text-gray-500`}
+                        >
+                          <img
+                            alt=""
+                            src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                              `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(
+                                item.href
+                              )}&size=128`
+                            )}&w=48&h=48&fit=cover&bg=white`}
+                            loading="lazy"
+                            width={24}
+                            height={24}
+                            className={tw`w-6 h-6 rounded-full`}
+                          />
+                          <span>
+                            {t(
+                              `${
+                                item.author
+                                  ? `by <0>${item.author}</0> for `
+                                  : ""
+                              } ${item.publisher}`.trim(),
+                              {},
+                              [
+                                ({
+                                  children,
+                                }: {
+                                  children: ComponentChildren;
+                                }) => (
+                                  <strong
+                                    key={0}
+                                    children={children}
+                                    className={tw`font-medium`}
+                                  />
+                                ),
+                              ]
+                            )}
+                          </span>
+                        </p>
+                      )}
+                      {item.type === "award" && (
+                        <p
+                          className={tw`text-gray-500`}
+                        >{`Awarded by ${item.publisher}`}</p>
+                      )}
+                      {item.type === "video" && (
+                        <ul className={tw`text-gray-500`}>
+                          <li>{`${item.publisher}, ${item.city}`}</li>
+                          <li>{`Watch time: ${humanizeMmSs(
+                            item.duration
+                          )}`}</li>
+                        </ul>
+                      )}
+                      {"description" in item && item.description && (
+                        <p className={tw`text-gray-500`}>{item.description}</p>
+                      )}
+                      {"embed" in item && item.embed && (
+                        <div className={tw`pt-2`}>
+                          <iframe
+                            src={item.embed}
+                            loading="lazy"
+                            scrolling="no"
+                            className={tw`w-full overflow-hidden rounded-lg`}
+                            style={{ height: "152px" }}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className={tw`ml-6 shrink-0`}>
-                  {item.type === "book" ? (
-                    <img
-                      alt=""
-                      src={`https://images.weserv.nl/?url=${encodeURIComponent(
-                        item.image.split("//")[1]
-                      )}&w=300&h=450&fit=cover`}
-                      loading="lazy"
-                      className={tw`w-24 rounded-lg`}
-                    />
-                  ) : (
-                    item.type === "video" && (
+                  <div className={tw`ml-6 shrink-0`}>
+                    {item.type === "book" ? (
                       <img
                         alt=""
-                        src={`https://images.weserv.nl/?url=${encodeURIComponent(
-                          item.img.split("//")[1]
-                        )}&w=700&h=450&fit=cover`}
+                        src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                          item.image.split("//")[1]
+                        )}&w=300&h=450&fit=cover`}
                         loading="lazy"
-                        className={tw`w-48 rounded-lg`}
+                        className={tw`w-24 rounded-lg`}
                       />
-                    )
-                  )}
-                </div>
-              </article>
+                    ) : (
+                      item.type === "video" && (
+                        <img
+                          alt=""
+                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                            item.img.split("//")[1]
+                          )}&w=700&h=450&fit=cover`}
+                          loading="lazy"
+                          className={tw`w-48 rounded-lg`}
+                        />
+                      )
+                    )}
+                  </div>
+                </article>
+              </div>
             ))}
           </div>
         </section>

@@ -13,11 +13,11 @@ export const ExternalLink: FunctionComponent<{
     <a
       href={url.toString()}
       target="_blank"
-      className={`${className} ${tw`inline-flex items-center space-x-1`}`}
+      className={`${className} ${tw`space-x-1`}`}
     >
       <span>{children}</span>
       <svg
-        className={tw`opacity-50`}
+        className={tw`inline opacity-50`}
         stroke="currentColor"
         fill="none"
         stroke-width="0"

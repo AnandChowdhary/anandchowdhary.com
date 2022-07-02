@@ -3,37 +3,37 @@
     {
       "date": "2018-01-18",
       "title": "50 Talents Under the Age of 35",
-      "publication": "Het Financieele Dagblad",
+      "publisher": "Het Financieele Dagblad",
       "href": "https://fd.nl/fd-persoonlijk/1231259/talentenspecial-de-lijst"
     },
     {
       "date": "2018-03-27",
       "title": "Forbes 30 Under 30",
-      "publication": "Forbes Asia",
+      "publisher": "Forbes Asia",
       "href": "https://www.forbes.com/profile/oswald-labs/"
     },
     {
       "date": "2019-05-08",
       "title": "The Next Web T500",
-      "publication": "The Next Web",
+      "publisher": "The Next Web",
       "href": "https://thenextweb.com/conference/t500"
     },
     {
       "date": "2018-08-21",
       "title": "21 Under 21",
-      "publication": "YourStory",
+      "publisher": "YourStory",
       "href": "https://yourstory.com/2018/08/21-under-21-meet-the-young-entrepreneurs-who-are-changing-the-world-one-startup-at-a-time"
     },
     {
       "date": "2021-02-09",
       "title": "GitHub Stars",
-      "publication": "GitHub",
+      "publisher": "GitHub",
       "href": "https://stars.github.com/profiles/anandchowdhary/"
     },
     {
       "date": "2021-01-28",
       "title": "Karmaveer Chakra Award",
-      "publication": "iCONGO",
+      "publisher": "iCONGO",
       "href": "https://rexideas.com/index.php/karmaveer-global-fellowship/"
     }
   ],
@@ -61,6 +61,7 @@
   "features": [
     {
       "date": "2009-03-30",
+      "title": "Delhi kids show the way",
       "publisher": "Hindustan Times",
       "author": "Avishek G. Dastidar",
       "href": "https://www.hindustantimes.com/delhi/delhi-kids-show-the-way/story-mASjzUCDtbQIa9pya13tCK.html",
@@ -130,8 +131,9 @@
     },
     {
       "date": "2017-01-01",
+      "title": "App to help dyslexics browse the web",
       "publisher": "Hindustan Times",
-      "author": "Rajeev.Mullick",
+      "author": "Rajeev Mullick",
       "href": "http://paper.hindustantimes.com/epaper/iphone/showpage.aspx?issue=89332016071000000000001001&page=6&returnUrl=http%253a%252f%252fpaper.hindustantimes.com%252fepaper%252fiphone%252fhomepage.aspx%2523_title89332016071000000000001001%252fwatitle8933201607100"
     },
     {
