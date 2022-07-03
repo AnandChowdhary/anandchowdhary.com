@@ -11,9 +11,6 @@ import TimeAgo from "../islands/TimeAgo.tsx";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 import * as colors from "twind/colors";
-import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
-
-const { GITHUB_USERNAME, GITHUB_TOKEN } = config();
 
 interface HomeData {
   okrs: {
@@ -271,7 +268,9 @@ export const handler: Handlers<HomeData> = {
               fetch(`https://api.github.com/repos/${repo}`, {
                 headers: {
                   Authorization: `Basic ${encode(
-                    GITHUB_USERNAME + ":" + GITHUB_TOKEN
+                    Deno.env.get("GITHUB_USERNAME") +
+                      ":" +
+                      Deno.env.get("GITHUB_TOKEN")
                   )}`,
                 },
               })

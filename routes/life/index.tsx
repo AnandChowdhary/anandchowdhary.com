@@ -6,12 +6,9 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { Layout } from "../../components/layout/Layout.tsx";
 import { ExternalLink } from "../../components/text/ExternalLink.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
-import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 import TimeAgo from "../../islands/TimeAgo.tsx";
 import { t } from "../../utils/i18n.tsx";
 import * as colors from "twind/colors";
-
-const { RESCUETIME_API_KEY } = config();
 
 interface HomeData {
   okrs: {
@@ -126,7 +123,9 @@ export const handler: Handlers<HomeData> = {
     };
     const rescueTimeData = (await (
       await fetch(
-        `https://www.rescuetime.com/anapi/daily_summary_feed?restrict_begin=2022-06-25&restrict_end=2022-07-02&key=${RESCUETIME_API_KEY}`
+        `https://www.rescuetime.com/anapi/daily_summary_feed?restrict_begin=2022-06-25&restrict_end=2022-07-02&key=${Deno.env.get(
+          "RESCUETIME_API_KEY"
+        )}`
       )
     ).json()) as {
       id: string;
