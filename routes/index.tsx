@@ -1,5 +1,6 @@
 /** @jsx h */
-import { h, ComponentChildren, Fragment } from "preact";
+import { h, ComponentChildren } from "preact";
+import { encode } from "https://deno.land/std@0.146.0/encoding/base64.ts";
 import { orange } from "twind/colors";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
@@ -10,6 +11,9 @@ import TimeAgo from "../islands/TimeAgo.tsx";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 import * as colors from "twind/colors";
+import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
+
+const { GITHUB_USERNAME, GITHUB_TOKEN } = config();
 
 interface HomeData {
   okrs: {
@@ -37,9 +41,6 @@ interface HomeData {
       }[];
     }[];
   };
-  languages: { name: string; duration: string; percent: number }[];
-  music: { name: string; plays: number; percent: number }[];
-  contributionsGraph: string;
   timeline: (
     | {
         type: "event";
@@ -99,6 +100,19 @@ interface HomeData {
         author?: string;
         description?: string;
       }
+    | {
+        type: "open-source-project";
+        date: string;
+        title: string;
+        href: string;
+        language?: string;
+        languageColor?: string;
+        stars: number;
+        issues: number;
+        forks: number;
+        watchers: number;
+        description?: string;
+      }
   )[];
 }
 
@@ -134,10 +148,23 @@ const categoryData: Record<
     icon: "newspaper",
     prefix: "Featured in the press",
   },
+  "open-source-project": {
+    color: "green",
+    icon: "newspaper",
+    prefix: "Launched an open source project",
+  },
 };
 
 export const handler: Handlers<HomeData> = {
   async GET(_req, ctx) {
+    try {
+      const data = await Deno.readTextFile("./data/props.json");
+      return ctx.render(JSON.parse(data));
+    } catch (error) {
+      // Ignore caching errors
+    }
+
+    console.log("Loading uncached data");
     const okrs = (await (
       await fetch("https://anandchowdhary.github.io/okrs/api.json")
     ).json()) as HomeData["okrs"];
@@ -220,74 +247,55 @@ export const handler: Handlers<HomeData> = {
       duration: string;
       description: string;
     }[];
-    const lastWeekCode = await (
+    const listHtml = (
       await (
-        await fetch(
-          "https://gist.githubusercontent.com/AnandChowdhary/e5e2ae3ca3bf2ae1a36a1a113045e7de/raw"
-        )
-      ).blob()
-    ).text();
-    const languages: HomeData["languages"] = lastWeekCode
-      .split("\n")
-      .map((line) => {
-        return {
-          name: line.match("[A-Za-z]+")?.[0] ?? "",
-          duration: line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "",
-          percent:
-            parseInt(line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "0") /
-            lastWeekCode
-              .split("\n")
-              .map((line) =>
-                parseInt(line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "0")
-              )
-              .reduce((a, b) => a + b, 0),
-        };
-      });
-    const lastWeekMusic = await (
-      await (
-        await fetch(
-          "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
-        )
-      ).blob()
-    ).text();
-    const music: HomeData["music"] = lastWeekMusic.split("\n").map((line) => {
-      return {
-        name: line
-          .split("▌")[0]
-          .split("▌")[0]
-          .split("░")[0]
-          .split("█")[0]
-          .trim(),
-        plays: parseInt(line.replace(" plays", "").split(" ").pop() ?? "0"),
-        percent:
-          parseInt(line.replace(" plays", "").split(" ").pop() ?? "0") /
-          lastWeekMusic
-            .split("\n")
-            .map((line) =>
-              parseInt(line.replace(" plays", "").split(" ").pop() ?? "0")
-            )
-            .reduce((a, b) => a + b, 0),
-      };
-    });
-    const contributionsGraph =
-      `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
-      (
         await (
-          await (
-            await fetch("https://github.com/users/AnandChowdhary/contributions")
-          ).blob()
-        ).text()
+          await fetch(
+            "https://github.com/stars/AnandChowdhary/lists/featured-projects"
+          )
+        ).blob()
+      ).text()
+    ).split("user-list-repositories")[1];
+    const languageColors = (await (
+      await fetch(
+        "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json"
       )
-        .split(
-          `<svg width="717" height="112" class="js-calendar-graph-svg">`
-        )[1]
-        .split("</svg>")[0] +
-      "</svg>";
-    return ctx.render({
+    ).json()) as Record<string, { color: string }>;
+    const repos = await Promise.all(
+      (
+        await Promise.all(
+          (listHtml.match(/\<h3\>\n.+\<a href=\".+\"\>/g) ?? [])
+            .map((code) => code.split(`href="/`)[1]?.split(`"`)[0] ?? "")
+            .filter((i) => !!i)
+            .map((repo) =>
+              fetch(`https://api.github.com/repos/${repo}`, {
+                headers: {
+                  Authorization: `Basic ${encode(
+                    GITHUB_USERNAME + ":" + GITHUB_TOKEN
+                  )}`,
+                },
+              })
+            )
+        )
+      ).map(
+        (i) =>
+          i.json() as Promise<{
+            id: string;
+            full_name: string;
+            html_url: string;
+            description: string;
+            created_at: string;
+            homepage?: string;
+            stargazers_count: number;
+            watchers_count: number;
+            forks_count: number;
+            open_issues: number;
+            language?: string;
+          }>
+      )
+    );
+    const props = {
       okrs,
-      languages,
-      music,
-      contributionsGraph,
       timeline: [
         ...events.map(
           (event) =>
@@ -373,8 +381,26 @@ export const handler: Handlers<HomeData> = {
               description: article.description,
             } as const)
         ),
+        ...repos.map(
+          (article) =>
+            ({
+              type: "open-source-project",
+              href: article.html_url,
+              title: article.full_name,
+              date: article.created_at,
+              description: article.description,
+              stars: article.stargazers_count,
+              issues: article.open_issues,
+              forks: article.forks_count,
+              watchers: article.watchers_count,
+              language: article.language,
+              languageColor: languageColors[article.language ?? ""]?.color,
+            } as const)
+        ),
       ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
-    });
+    };
+    Deno.writeTextFile("./data/props.json", JSON.stringify(props, null, 2));
+    return ctx.render(props);
   },
 };
 
@@ -543,134 +569,6 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="See past OKRs" href="/life/okrs" />
         </section>
         <section className={tw`space-y-4`}>
-          <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
-            <span aria-hidden="true">👨‍💻</span>
-            <span>{" Last year in contributions"}</span>
-          </h2>
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-.js-calendar-graph-svg {
-  width: 100%;
-}
-.ContributionCalendar-label {
-  font-size: 70%;
-  opacity: 0.5;
-}
-.ContributionCalendar-day[data-level="0"] {
-  fill: white;
-}
-.ContributionCalendar-day[data-level="1"] {
-  fill: ${colors.green[300]};
-}
-.ContributionCalendar-day[data-level="2"] {
-  fill: ${colors.green[500]};
-}
-.ContributionCalendar-day[data-level="3"] {
-  fill: ${colors.green[700]};
-}
-.ContributionCalendar-day[data-level="4"] {
-  fill: ${colors.green[900]};
-}
-`,
-            }}
-          />
-          <div dangerouslySetInnerHTML={{ __html: data.contributionsGraph }} />
-          <SectionLink label="See my GitHub profile" href="/life/okrs" />
-        </section>
-        <div className={tw`grid-cols-2 gap-8 sm:grid`}>
-          <section className={tw`space-y-4`}>
-            <header className={tw`space-y-1`}>
-              <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
-                <span aria-hidden="true">💻</span>
-                <span>{" Last week in code"}</span>
-              </h2>
-              <p className={tw`text-gray-500`}>
-                Last updated <TimeAgo date={data.okrs.updatedAt} />
-              </p>
-            </header>
-            <div className={tw`space-y-2`}>
-              {data.languages.slice(0, 5).map((language) => (
-                <div
-                  key={language.name}
-                  className={tw`flex bg-white rounded-lg shadow-sm`}
-                  style={{
-                    backgroundImage: `linear-gradient(to right, ${
-                      orange[400]
-                    } ${Math.round(language.percent * 100)}%, white ${
-                      Math.round(language.percent * 100) + 0.01
-                    }%)`,
-                    backgroundSize: "100% 0.1rem",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "left bottom",
-                  }}
-                >
-                  <div
-                    className={tw`flex items-center justify-between flex-grow h-12 px-4`}
-                  >
-                    <div>{language.name}</div>
-                    <div className={tw`text-gray-500`}>{language.duration}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <SectionLink label="See more code data" href="/life/okrs" />
-          </section>
-          <section className={tw`space-y-4`}>
-            <header className={tw`space-y-1`}>
-              <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
-                <span aria-hidden="true">🎵</span>
-                <span>{" Last week in music"}</span>
-              </h2>
-              <p className={tw`text-gray-500`}>
-                Last updated <TimeAgo date={data.okrs.updatedAt} />
-              </p>
-            </header>
-            <div className={tw`space-y-2`}>
-              {data.music.slice(0, 5).map((artist) => (
-                <div
-                  key={artist.name}
-                  className={tw`flex bg-white rounded-lg shadow-sm`}
-                  style={{
-                    backgroundImage: `linear-gradient(to right, ${
-                      orange[400]
-                    } ${Math.round(artist.percent * 100)}%, white ${
-                      Math.round(artist.percent * 100) + 0.01
-                    }%)`,
-                    backgroundSize: "100% 0.1rem",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "3rem 100%",
-                  }}
-                >
-                  <div className={tw`min-w-12`}>
-                    <img
-                      alt=""
-                      src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                        `tse2.mm.bing.net/th?q=${encodeURIComponent(
-                          artist.name
-                        )}&w=100&h=100&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
-                      )}&w=100&h=100&fit=cover`}
-                      width={100}
-                      height={100}
-                      loading="lazy"
-                      className={tw`object-cover w-12 h-full rounded-l-lg`}
-                    />
-                  </div>
-                  <div
-                    className={tw`flex items-center justify-between flex-grow h-12 px-4`}
-                  >
-                    <div>{artist.name}</div>
-                    <div className={tw`text-gray-500`}>{`${artist.plays} ${
-                      artist.plays === 1 ? "play" : "plays"
-                    }`}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <SectionLink label="See more music data" href="/life/okrs" />
-          </section>
-        </div>
-        <section className={tw`space-y-4`}>
           <h2 className={tw`text-2xl font-semibold font-display`}>Changelog</h2>
           <p className={tw`text-gray-500`}>
             {"The latest from my desk, curated from different sources."}
@@ -822,6 +720,37 @@ export default function Home({ data }: PageProps<HomeData>) {
                       )}
                       {"description" in item && item.description && (
                         <p className={tw`text-gray-500`}>{item.description}</p>
+                      )}
+                      {item.type === "open-source-project" && (
+                        <ul className={tw`flex space-x-4`}>
+                          {item.language && (
+                            <li className={tw`flex items-center space-x-1`}>
+                              <svg
+                                aria-hidden="true"
+                                width="1em"
+                                height="1em"
+                                style={{ color: item.languageColor ?? "#aaa" }}
+                              >
+                                <use href="#circle"></use>
+                              </svg>
+                              <span>{item.language}</span>
+                            </li>
+                          )}
+                          <li className={tw`flex items-center space-x-1`}>
+                            <svg width="1em" height="1em">
+                              <title>Stars</title>
+                              <use href="#star"></use>
+                            </svg>
+                            <span>{item.stars.toLocaleString()}</span>
+                          </li>
+                          <li className={tw`flex items-center space-x-1`}>
+                            <svg width="1em" height="1em">
+                              <title>Forks</title>
+                              <use href="#forks"></use>
+                            </svg>
+                            <span>{item.forks.toLocaleString()}</span>
+                          </li>
+                        </ul>
                       )}
                       {"embed" in item && item.embed && (
                         <div className={tw`pt-2`}>

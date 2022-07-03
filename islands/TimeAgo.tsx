@@ -1,5 +1,6 @@
 /** @jsx h */
 import { h } from "preact";
+import { useState, useEffect } from "preact/hooks";
 import { tw } from "@twind";
 
 interface CounterProps {
@@ -60,6 +61,19 @@ function fromNow(
 }
 
 export default function TimeAgo(props: CounterProps) {
+  const [result, setResult] = useState<string>(
+    fromNow(new Date(props.date), new Date()) ?? "just now"
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setResult(fromNow(new Date(props.date), new Date()) ?? "just now");
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!props.date) return null;
+
   return (
     <time
       dateTime={new Date(props.date).toISOString()}
@@ -69,7 +83,7 @@ export default function TimeAgo(props: CounterProps) {
       })}
       className={tw`border-b border-gray-500 border-dotted`}
     >
-      {fromNow(new Date(props.date), new Date())}
+      {result}
     </time>
   );
 }

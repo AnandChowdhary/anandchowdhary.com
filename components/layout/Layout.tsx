@@ -6,10 +6,10 @@ import { Icons } from "../Icons.tsx";
 const NAV = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Life", href: "/life" },
   { label: "Blog", href: "/blog" },
   { label: "Events", href: "/events" },
   { label: "Projects", href: "/projects" },
-  { label: "Life", href: "/life" },
   { label: "Mentoring", href: "/mentoring" },
   { label: "Press", href: "/press" },
   { label: "Videos", href: "/videos" },
