@@ -398,7 +398,8 @@ export const handler: Handlers<HomeData> = {
         ),
       ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     };
-    Deno.writeTextFile("./data/props.json", JSON.stringify(props, null, 2));
+    if (Deno.env.get("CACHE_ENABLED"))
+      Deno.writeTextFile("./data/props.json", JSON.stringify(props, null, 2));
     return ctx.render(props);
   },
 };
