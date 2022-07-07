@@ -47,6 +47,11 @@ interface HomeData {
         emoji: string;
       }
     | {
+        type: "project";
+        date: string;
+        title: string;
+      }
+    | {
         type: "blog-post";
         date: string;
         title: string;
@@ -80,6 +85,12 @@ interface HomeData {
         date: string;
         title: string;
         publisher: string;
+      }
+    | {
+        type: "travel";
+        date: string;
+        title: string;
+        assets: string[];
       }
     | {
         type: "podcast-interview";
@@ -121,6 +132,16 @@ const categoryData: Record<
     color: "indigo",
     icon: "book-open",
     prefix: "Wrote a blog post",
+  },
+  project: {
+    color: "lightBlue",
+    icon: "newspaper",
+    prefix: "Published a project",
+  },
+  travel: {
+    color: "green",
+    icon: "plane",
+    prefix: "Traveled to a new place",
   },
   event: { color: "cyan", icon: "podium", prefix: "Spoke at an event" },
   book: { color: "purple", icon: "book-open", prefix: "Finished a book" },
@@ -174,6 +195,20 @@ export const handler: Handlers<HomeData> = {
       emoji: string;
       venue: string;
       city: string;
+    }[];
+    const projects = (await (
+      await fetch("https://anandchowdhary.github.io/projects/api.json")
+    ).json()) as {
+      slug: string;
+      title: string;
+      date: string;
+    }[];
+    const travel = (await (
+      await fetch("https://anandchowdhary.github.io/travel/api.json")
+    ).json()) as {
+      date: string;
+      title: string;
+      assets: string[];
     }[];
     const blog = (await (
       await fetch(
@@ -244,55 +279,22 @@ export const handler: Handlers<HomeData> = {
       duration: string;
       description: string;
     }[];
-    const listHtml = (
-      await (
-        await (
-          await fetch(
-            "https://github.com/stars/AnandChowdhary/lists/featured-projects"
-          )
-        ).blob()
-      ).text()
-    ).split("user-list-repositories")[1];
-    const languageColors = (await (
+    const repos = (await (
       await fetch(
-        "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json"
+        "https://raw.githubusercontent.com/AnandChowdhary/featured/HEAD/repos.json"
       )
-    ).json()) as Record<string, { color: string }>;
-    const repos = await Promise.all(
-      (
-        await Promise.all(
-          (listHtml.match(/\<h3\>\n.+\<a href=\".+\"\>/g) ?? [])
-            .map((code) => code.split(`href="/`)[1]?.split(`"`)[0] ?? "")
-            .filter((i) => !!i)
-            .map((repo) =>
-              fetch(`https://api.github.com/repos/${repo}`, {
-                headers: {
-                  Authorization: `Basic ${encode(
-                    Deno.env.get("GITHUB_USERNAME") +
-                      ":" +
-                      Deno.env.get("GITHUB_TOKEN")
-                  )}`,
-                },
-              })
-            )
-        )
-      ).map(
-        (i) =>
-          i.json() as Promise<{
-            id: string;
-            full_name: string;
-            html_url: string;
-            description: string;
-            created_at: string;
-            homepage?: string;
-            stargazers_count: number;
-            watchers_count: number;
-            forks_count: number;
-            open_issues: number;
-            language?: string;
-          }>
-      )
-    );
+    ).json()) as {
+      html_url: string;
+      full_name: string;
+      created_at: string;
+      description?: string;
+      stargazers_count: number;
+      open_issues: number;
+      forks_count: number;
+      watchers_count: number;
+      language: string;
+      language_color?: string;
+    }[];
     const props = {
       okrs,
       timeline: [
@@ -304,6 +306,14 @@ export const handler: Handlers<HomeData> = {
               date: event.date,
               location: [event.venue, event.city].filter((i) => !!i).join(", "),
               emoji: event.emoji,
+            } as const)
+        ),
+        ...projects.map(
+          (project) =>
+            ({
+              type: "project",
+              title: project.title,
+              date: project.date,
             } as const)
         ),
         ...blog.map(
@@ -349,6 +359,15 @@ export const handler: Handlers<HomeData> = {
               duration: video.duration,
             } as const)
         ),
+        ...travel.map(
+          (place) =>
+            ({
+              type: "travel",
+              date: place.date,
+              title: place.title,
+              assets: place.assets,
+            } as const)
+        ),
         ...press.awards.map(
           (award) =>
             ({
@@ -381,19 +400,19 @@ export const handler: Handlers<HomeData> = {
             } as const)
         ),
         ...repos.map(
-          (article) =>
+          (repo) =>
             ({
               type: "open-source-project",
-              href: article.html_url,
-              title: article.full_name,
-              date: article.created_at,
-              description: article.description,
-              stars: article.stargazers_count,
-              issues: article.open_issues,
-              forks: article.forks_count,
-              watchers: article.watchers_count,
-              language: article.language,
-              languageColor: languageColors[article.language ?? ""]?.color,
+              href: repo.html_url,
+              title: repo.full_name,
+              date: repo.created_at,
+              description: repo.description,
+              stars: repo.stargazers_count,
+              issues: repo.open_issues,
+              forks: repo.forks_count,
+              watchers: repo.watchers_count,
+              language: repo.language,
+              languageColor: repo.language_color,
             } as const)
         ),
       ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
@@ -595,7 +614,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     </div>
                   </div>
                 )}
-                <article className={tw`flex`}>
+                <article className={tw`sm:flex`}>
                   <div className={tw`flex flex-grow`}>
                     <div className={tw`shrink-0`} style={{ minWidth: "3rem" }}>
                       <div>
@@ -737,18 +756,73 @@ export default function Home({ data }: PageProps<HomeData>) {
                             </li>
                           )}
                           <li className={tw`flex items-center space-x-1`}>
-                            <svg width="1em" height="1em">
-                              <title>Stars</title>
+                            <svg aria-hidden="true" width="1em" height="1em">
                               <use href="#star"></use>
                             </svg>
-                            <span>{item.stars.toLocaleString()}</span>
+                            <span>
+                              {t(
+                                `<0>${item.stars.toLocaleString()}</0> stars`,
+                                {},
+                                [
+                                  ({
+                                    children,
+                                  }: {
+                                    children: ComponentChildren;
+                                  }) => (
+                                    <strong
+                                      className={tw`font-medium`}
+                                      children={children}
+                                    />
+                                  ),
+                                ]
+                              )}
+                            </span>
                           </li>
                           <li className={tw`flex items-center space-x-1`}>
-                            <svg width="1em" height="1em">
-                              <title>Forks</title>
+                            <svg aria-hidden="true" width="1em" height="1em">
+                              <use href="#watchers"></use>
+                            </svg>
+                            <span>
+                              {t(
+                                `<0>${item.watchers.toLocaleString()}</0> watchers`,
+                                {},
+                                [
+                                  ({
+                                    children,
+                                  }: {
+                                    children: ComponentChildren;
+                                  }) => (
+                                    <strong
+                                      className={tw`font-medium`}
+                                      children={children}
+                                    />
+                                  ),
+                                ]
+                              )}
+                            </span>
+                          </li>{" "}
+                          <li className={tw`flex items-center space-x-1`}>
+                            <svg aria-hidden="true" width="1em" height="1em">
                               <use href="#forks"></use>
                             </svg>
-                            <span>{item.forks.toLocaleString()}</span>
+                            <span>
+                              {t(
+                                `<0>${item.forks.toLocaleString()}</0> forks`,
+                                {},
+                                [
+                                  ({
+                                    children,
+                                  }: {
+                                    children: ComponentChildren;
+                                  }) => (
+                                    <strong
+                                      className={tw`font-medium`}
+                                      children={children}
+                                    />
+                                  ),
+                                ]
+                              )}
+                            </span>
                           </li>
                         </ul>
                       )}
@@ -765,7 +839,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                       )}
                     </div>
                   </div>
-                  <div className={tw`ml-6 shrink-0`}>
+                  <div className={tw`mt-4 ml-12 sm:mt-0 sm:ml-6 shrink-0`}>
                     {item.type === "book" ? (
                       <img
                         alt=""
@@ -773,18 +847,30 @@ export default function Home({ data }: PageProps<HomeData>) {
                           item.image.split("//")[1]
                         )}&w=300&h=450&fit=cover`}
                         loading="lazy"
-                        className={tw`w-24 rounded-lg`}
+                        className={tw`w-24 rounded-lg shadow`}
                       />
                     ) : (
                       item.type === "video" && (
-                        <img
-                          alt=""
-                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                            item.img.split("//")[1]
-                          )}&w=700&h=450&fit=cover`}
-                          loading="lazy"
-                          className={tw`w-48 rounded-lg`}
-                        />
+                        <div className={tw`relative`}>
+                          <svg
+                            aria-hidden="true"
+                            width="2rem"
+                            height="2rem"
+                            className={tw`absolute text-white -translate-x-1/2 -translate-y-1/2 drop-shadow left-1/2 top-1/2`}
+                          >
+                            <use href="#triangle"></use>
+                          </svg>
+                          <img
+                            alt=""
+                            src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                              item.img.split("//")[1]
+                            )}&w=700&h=370&fit=cover`}
+                            loading="lazy"
+                            width={512}
+                            height={370}
+                            className={tw`w-full rounded-lg sm:w-64`}
+                          />
+                        </div>
                       )
                     )}
                   </div>

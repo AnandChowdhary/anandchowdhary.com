@@ -46,8 +46,13 @@ const STARTUPS = [
 export default function About() {
   return (
     <Layout>
-      <div class={tw`p-4 mx-auto max-w-screen-md`}>
+      <div class={tw`max-w-screen-md px-4 mx-auto space-y-16 md:px-0`}>
         <section>
+          <img
+            alt="Anand standing on a table with his MacBook in his hand"
+            src="https://d33wubrfki0l68.cloudfront.net/41df0551175f4c6716aad2988c37ceb83a342b9e/7b5dc/images/photos/anand-chowdhary.jpg"
+            className={tw`mb-8 rounded-lg`}
+          />
           <header className={tw`mb-5 space-y-5`}>
             <h1
               className={tw`text-4xl font-semibold font-display dark:text-slate-200`}
@@ -93,7 +98,7 @@ export default function About() {
         </section>
         <section>
           <h2
-            className={tw`text-2xl font-semibold font-display dark:text-slate-200`}
+            className={tw`mt-8 text-2xl font-semibold font-display dark:text-slate-200`}
           >
             Startups founded
           </h2>
