@@ -51,7 +51,7 @@ export default function About() {
           <img
             alt="Anand standing on a table with his MacBook in his hand"
             src="https://d33wubrfki0l68.cloudfront.net/41df0551175f4c6716aad2988c37ceb83a342b9e/7b5dc/images/photos/anand-chowdhary.jpg"
-            className={tw`mb-8 rounded-lg`}
+            className={tw`mb-8 rounded-lg w-full bg-white border p-2`}
           />
           <header className={tw`mb-5 space-y-5`}>
             <h1

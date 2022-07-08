@@ -1,17 +1,19 @@
 /** @jsx h */
 import { h, ComponentChildren } from "preact";
 import { encode } from "https://deno.land/std@0.146.0/encoding/base64.ts";
-import { orange } from "twind/colors";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/layout/Layout.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
+import { OKRCards } from "../components/data/OKRs.tsx";
+import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
+import { BarChart } from "../components/data/BarChart.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 import * as colors from "twind/colors";
-import type { IOkrs } from "../utils/data.ts";
+import type { IOkrs, ITheme } from "../utils/data.ts";
 import {
   getOkrs,
   getEvents,
@@ -23,10 +25,12 @@ import {
   getPress,
   getVideos,
   getRepos,
+  getThemes,
 } from "../utils/data.ts";
 
 interface HomeData {
   okrs: IOkrs;
+  themes: ITheme[];
   timeline: (
     | {
         type: "event";
@@ -167,6 +171,7 @@ export const handler: Handlers<HomeData> = {
     const { awards, podcasts, features } = await getPress();
     const props = {
       okrs: await getOkrs(),
+      themes: await getThemes(),
       timeline: [
         ...(await getEvents()).map(
           (event) =>
@@ -294,20 +299,23 @@ export const handler: Handlers<HomeData> = {
 export default function Home({ data }: PageProps<HomeData>) {
   const okrYear = data.okrs.years.sort((a, b) => b.name - a.name)[0];
   const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
+  const theme = data.themes.sort(
+    (a, b) => parseInt(a.year) - parseInt(b.year)
+  )[0];
 
   return (
     <Layout>
-      <div class={tw`max-w-screen-md px-4 mx-auto space-y-16 md:px-0`}>
-        <section className={tw`grid-cols-2 gap-8 sm:grid`}>
+      <div class={tw`max-w-screen-md px-4 mx-auto space-y-12 md:px-0`}>
+        <section className={tw`grid-cols-2 gap-8 gap-y-12 sm:grid`}>
           <div className={tw`mb-6 sm:mb-0`}>
             <img
-              alt=""
+              alt="Portrait of Anand"
               src="https://place-hold.it/500x375"
-              className={tw`w-full rounded`}
+              className={tw`w-full rounded-lg bg-white border p-2 sm:h-full object-fit-contain`}
             />
           </div>
           <div className={tw`space-y-4`}>
-            <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+            <h2 className={tw`space-x-2 text-2xl font-semibold font-display`}>
               <span className="wave" aria-hidden="true">
                 👋
               </span>
@@ -315,7 +323,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             </h2>
             <p className={tw`text-lg text-gray-500`}>
               {t(
-                "I'm a creative technologist and entrepreneur, currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture company in Europe.",
+                "I'm a creative technologist and entrepreneur, currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture with interior design company in Europe.",
                 {},
                 [
                   ({ children }: { children: ComponentChildren }) => (
@@ -334,133 +342,129 @@ export default function Home({ data }: PageProps<HomeData>) {
             </p>
             <SectionLink label="Learn more about me" href="/about" />
           </div>
+          <article className={tw`space-y-4`}>
+            <header>
+              <h2
+                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+              >
+                <span aria-hidden="true">🌈</span>
+                <SectionLink
+                  label={`Theme for ${theme.year}`}
+                  href="/life/themes"
+                />
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Yearly theme that dictates quarterly goals
+              </p>
+            </header>
+            <div
+              className={tw`space-y-2 bg-white shadow-sm p-4 rounded relative`}
+            >
+              <p className={tw`text-2xl`}>{theme.title}</p>
+              <p className={tw`text-gray-500 overflow-hidden h-20 text-sm`}>
+                {theme.description}
+              </p>
+              <div
+                className={tw`absolute left-0 right-0 bottom-0 h-24 pointer-events-none rounded-b`}
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to bottom, rgba(255, 255, 255, 0.001), rgba(255, 255, 255, 1))",
+                }}
+              />
+            </div>
+            <div className={tw`pt-1`}>
+              <DataFooterLinks
+                links={[{ label: "View past themes", href: "/life/themes" }]}
+              />
+            </div>
+          </article>
+          <article className={tw`space-y-4`}>
+            <header>
+              <h2
+                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+              >
+                <span aria-hidden="true">📊</span>
+                <SectionLink
+                  label={`OKRs for Q${okrQuarter.name} ${okrYear.name}`}
+                  href="/life/okrs"
+                />
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Personal Objectives and Key Results
+              </p>
+            </header>
+            <OKRCards data={data.okrs} />
+            <div className={tw`pt-1`}>
+              <DataFooterLinks updatedAt={data.okrs.updatedAt} />
+            </div>
+          </article>
+          <article className={tw`space-y-4`}>
+            <header>
+              <h2
+                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+              >
+                <span aria-hidden="true">💼</span>
+                <SectionLink
+                  label={`Last week in productivity`}
+                  href="/life/productivity"
+                />
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Daily productivity score, computed by RescueTime
+              </p>
+            </header>
+            <BarChart
+              rgb="150, 220, 220"
+              data={[
+                { date: "2022-07-01", value: 91 },
+                { date: "2022-07-02", value: 31 },
+                { date: "2022-07-03", value: 43 },
+                { date: "2022-07-04", value: 94 },
+                { date: "2022-07-05", value: 65 },
+                { date: "2022-07-06", value: 86 },
+                { date: "2022-07-07", value: 57 },
+              ]}
+            />
+            <DataFooterLinks updatedAt={data.okrs.updatedAt} />
+          </article>
+          <article className={tw`space-y-4`}>
+            <header>
+              <h2
+                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+              >
+                <span aria-hidden="true">😴</span>
+                <SectionLink label={`Last week in sleep`} href="/life/health" />
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Number of hours asleep, tracked by Oura Ring
+              </p>
+            </header>
+            <BarChart
+              rgb="255, 180, 180"
+              data={[
+                { date: "2022-07-01", value: 8.1 },
+                { date: "2022-07-02", value: 7.1 },
+                { date: "2022-07-03", value: 7.7 },
+                { date: "2022-07-04", value: 9 },
+                { date: "2022-07-05", value: 6.5 },
+                { date: "2022-07-06", value: 8.6 },
+                { date: "2022-07-07", value: 7.8 },
+              ]}
+            />
+            <DataFooterLinks updatedAt={data.okrs.updatedAt} />
+          </article>
         </section>
         <section className={tw`space-y-4`}>
-          <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
-            <span aria-hidden="true">📊</span>
-            <span>{` OKRs for Q${okrQuarter.name} ${okrYear.name}`}</span>
-          </h2>
-          <p className={tw`text-gray-500`}>
-            {t(
-              "I use <0>Objectives and Key Results</0> both for my personal and professional life. This data is available on <1>GitHub</1> and was last updated <2></2>.",
-              {},
-              [
-                ({ children }: { children: ComponentChildren }) => (
-                  <strong children={children} />
-                ),
-                ({ children }: { children: ComponentChildren }) => (
-                  <ExternalLink
-                    href="https://github.com/AnandChowdhary/okrs"
-                    className={tw`underline`}
-                    children={children}
-                  />
-                ),
-                () => <TimeAgo date={data.okrs.updatedAt} />,
-              ]
-            )}
-          </p>
-          <div className={tw`space-y-3`}>
-            {okrQuarter.objectives.map(({ name, success, key_results }) => (
-              <details key={name} className={tw`appearance-none`}>
-                <summary
-                  className={tw`flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm`}
-                  style={{
-                    backgroundImage: `linear-gradient(to right, ${
-                      orange[400]
-                    } ${Math.round(success * 100)}%, white ${
-                      Math.round(success * 100) + 0.01
-                    }%)`,
-                    backgroundSize: "100% 0.1rem",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "left bottom",
-                  }}
-                >
-                  <div className={tw`flex justify-between`}>
-                    <div className={tw`flex items-center space-x-2`}>
-                      <div>{name}</div>
-                      <svg
-                        className={`${tw`text-gray-400`} rotate-on-open`}
-                        stroke="currentColor"
-                        fill="none"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </div>
-                    <div className={tw`text-gray-500`}>
-                      {Math.round(success * 100)}%
-                    </div>
-                  </div>
-                </summary>
-                <div className={tw`mx-4 mb-4 space-y-1`}>
-                  {key_results.map(({ name, success }) => (
-                    <div
-                      key={name}
-                      className={tw`flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm`}
-                      style={{
-                        backgroundImage: `linear-gradient(to right, ${
-                          orange[400]
-                        } ${Math.round(success * 100)}%, white ${
-                          Math.round(success * 100) + 0.01
-                        }%)`,
-                        backgroundSize: "100% 0.1rem",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "left bottom",
-                      }}
-                    >
-                      <div>
-                        {t(name.replace(/\[redacted\]/g, "<0></0>"), {}, [
-                          () => (
-                            <span
-                              className={tw`relative px-2 py-1 text-xs font-medium tracking-widest uppercase`}
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className={tw`absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none`}
-                              >
-                                <filter id="noiseFilter">
-                                  <feTurbulence
-                                    type="fractalNoise"
-                                    baseFrequency="0.65"
-                                    numOctaves="3"
-                                    stitchTiles="stitch"
-                                  />
-                                </filter>
-
-                                <rect
-                                  width="100%"
-                                  height="100%"
-                                  filter="url(#noiseFilter)"
-                                />
-                              </svg>
-                              <span>Redacted</span>
-                            </span>
-                          ),
-                        ])}
-                      </div>
-                      <div className={tw`text-gray-500`}>
-                        {Math.round(success * 100)}%
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </div>
-          <SectionLink label="See past OKRs" href="/life/okrs" />
-        </section>
-        <section className={tw`space-y-4`}>
-          <h2 className={tw`text-2xl font-semibold font-display`}>Changelog</h2>
-          <p className={tw`text-gray-500`}>
-            {"The latest from my desk, curated from different sources."}
-          </p>
-          <div className={tw`relative space-y-8`}>
+          <header className={tw`space-y-2`}>
+            <h2 className={tw`space-x-2 text-2xl font-semibold font-display`}>
+              <span aria-hidden="true">🕰</span>
+              <span>Changelog</span>
+            </h2>
+            <p className={tw`text-gray-500`}>
+              {"The latest from my desk, curated from different sources."}
+            </p>
+          </header>
+          <div className={tw`relative space-y-4`}>
             <div
               className={tw`absolute top-0 w-1 bg-orange-200 bottom-6 left-4`}
             />
@@ -476,7 +480,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                       />
                     </div>
                     <div>
-                      <h3 className={tw`mb-8 text-xl font-semibold`}>
+                      <h3 className={tw`mb-6 text-xl font-semibold`}>
                         {new Date(item.date).getFullYear()}
                       </h3>
                     </div>

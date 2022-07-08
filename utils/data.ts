@@ -195,6 +195,18 @@ export const getVideos = async () => {
   return videos;
 };
 
+export interface ITheme {
+  year: string;
+  title: string;
+  description: string;
+}
+export const getThemes = async () => {
+  const themes = JSON.parse(
+    await Deno.readTextFile("./data/themes.json")
+  ) as ITheme[];
+  return themes;
+};
+
 export interface IRepo {
   html_url: string;
   full_name: string;
