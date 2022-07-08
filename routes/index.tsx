@@ -11,33 +11,22 @@ import TimeAgo from "../islands/TimeAgo.tsx";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 import * as colors from "twind/colors";
+import type { IOkrs } from "../utils/data.ts";
+import {
+  getOkrs,
+  getEvents,
+  getProjects,
+  getTravel,
+  getBlogPosts,
+  getBooks,
+  getLifeEvents,
+  getPress,
+  getVideos,
+  getRepos,
+} from "../utils/data.ts";
 
 interface HomeData {
-  okrs: {
-    updatedAt: string;
-    years: {
-      name: number;
-      progress: number;
-      success: number;
-      quarters: {
-        name: number;
-        progress: number;
-        success: number;
-        objectives: {
-          name: string;
-          progress: number;
-          success: number;
-          key_results: {
-            name: string;
-            target_result: number;
-            current_result: number;
-            progress: number;
-            success: number;
-          }[];
-        }[];
-      }[];
-    }[];
-  };
+  okrs: IOkrs;
   timeline: (
     | {
         type: "event";
@@ -175,130 +164,11 @@ const categoryData: Record<
 
 export const handler: Handlers<HomeData> = {
   async GET(_req, ctx) {
-    try {
-      const data = await Deno.readTextFile("./data/props.json");
-      return ctx.render(JSON.parse(data));
-    } catch (error) {
-      // Ignore caching errors
-    }
-
-    console.log("Loading uncached data");
-    const okrs = (await (
-      await fetch("https://anandchowdhary.github.io/okrs/api.json")
-    ).json()) as HomeData["okrs"];
-    const events = (await (
-      await fetch("https://anandchowdhary.github.io/events/api.json")
-    ).json()) as {
-      slug: string;
-      name: string;
-      date: string;
-      emoji: string;
-      venue: string;
-      city: string;
-    }[];
-    const projects = (await (
-      await fetch("https://anandchowdhary.github.io/projects/api.json")
-    ).json()) as {
-      slug: string;
-      title: string;
-      date: string;
-    }[];
-    const travel = (await (
-      await fetch("https://anandchowdhary.github.io/travel/api.json")
-    ).json()) as {
-      date: string;
-      title: string;
-      assets: string[];
-    }[];
-    const blog = (await (
-      await fetch(
-        "https://raw.githubusercontent.com/AnandChowdhary/blog/HEAD/api.json"
-      )
-    ).json()) as {
-      slug: string;
-      title: string;
-      words: number;
-      date: string;
-    }[];
-    const books = (await (
-      await fetch(
-        "https://raw.githubusercontent.com/AnandChowdhary/books/HEAD/api.json"
-      )
-    ).json()) as {
-      title: string;
-      authors: string[];
-      publisher: string;
-      publishedDate: string;
-      description: string;
-      image: string;
-      issueNumber: number;
-      progressPercent: number;
-      state: "reading" | "completed";
-      startedAt: string;
-    }[];
-    const lifeEvents = JSON.parse(
-      await Deno.readTextFile("./data/life-events.json")
-    ) as {
-      date: string;
-      title: string;
-      description?: string;
-    }[];
-    const press = JSON.parse(await Deno.readTextFile("./data/press.json")) as {
-      awards: {
-        title: string;
-        publisher: string;
-        date: string;
-        href: string;
-      }[];
-      podcasts: {
-        title: string;
-        publisher: string;
-        date: string;
-        href: string;
-        embed?: string;
-      }[];
-      features: {
-        title: string;
-        publisher: string;
-        date: string;
-        href: string;
-        author?: string;
-        description?: string;
-      }[];
-    };
-    const videos = JSON.parse(
-      await Deno.readTextFile("./data/videos.json")
-    ) as {
-      title: string;
-      href: string;
-      city: string;
-      country: string;
-      date: string;
-      img: string;
-      publisher: string;
-      duration: string;
-      description: string;
-    }[];
-    const repos = (await (
-      await fetch(
-        "https://raw.githubusercontent.com/AnandChowdhary/featured/HEAD/repos.json"
-      )
-    ).json()) as {
-      html_url: string;
-      full_name: string;
-      created_at: string;
-      description?: string;
-      stargazers_count: number;
-      open_issues: number;
-      forks_count: number;
-      watchers_count: number;
-      language: string;
-      language_color?: string;
-    }[];
+    const { awards, podcasts, features } = await getPress();
     const props = {
-      okrs,
+      okrs: await getOkrs(),
       timeline: [
-        ...events.map(
+        ...(await getEvents()).map(
           (event) =>
             ({
               type: "event",
@@ -308,7 +178,7 @@ export const handler: Handlers<HomeData> = {
               emoji: event.emoji,
             } as const)
         ),
-        ...projects.map(
+        ...(await getProjects()).map(
           (project) =>
             ({
               type: "project",
@@ -316,7 +186,7 @@ export const handler: Handlers<HomeData> = {
               date: project.date,
             } as const)
         ),
-        ...blog.map(
+        ...(await getBlogPosts()).map(
           (post) =>
             ({
               type: "blog-post",
@@ -325,7 +195,7 @@ export const handler: Handlers<HomeData> = {
               words: post.words,
             } as const)
         ),
-        ...books
+        ...(await getBooks())
           .filter(({ state }) => state == "completed")
           .map(
             (book) =>
@@ -337,7 +207,7 @@ export const handler: Handlers<HomeData> = {
                 date: book.startedAt,
               } as const)
           ),
-        ...lifeEvents.map(
+        ...(await getLifeEvents()).map(
           (event) =>
             ({
               type: "life-event",
@@ -346,7 +216,7 @@ export const handler: Handlers<HomeData> = {
               description: event.description,
             } as const)
         ),
-        ...videos.map(
+        ...(await getVideos()).map(
           (video) =>
             ({
               type: "video",
@@ -359,7 +229,7 @@ export const handler: Handlers<HomeData> = {
               duration: video.duration,
             } as const)
         ),
-        ...travel.map(
+        ...(await getTravel()).map(
           (place) =>
             ({
               type: "travel",
@@ -368,7 +238,7 @@ export const handler: Handlers<HomeData> = {
               assets: place.assets,
             } as const)
         ),
-        ...press.awards.map(
+        ...awards.map(
           (award) =>
             ({
               type: "award",
@@ -377,7 +247,7 @@ export const handler: Handlers<HomeData> = {
               publisher: award.publisher,
             } as const)
         ),
-        ...press.podcasts.map(
+        ...podcasts.map(
           (interview) =>
             ({
               type: "podcast-interview",
@@ -387,7 +257,7 @@ export const handler: Handlers<HomeData> = {
               publisher: interview.publisher,
             } as const)
         ),
-        ...press.features.map(
+        ...features.map(
           (article) =>
             ({
               type: "press-feature",
@@ -399,7 +269,7 @@ export const handler: Handlers<HomeData> = {
               description: article.description,
             } as const)
         ),
-        ...repos.map(
+        ...(await getRepos()).map(
           (repo) =>
             ({
               type: "open-source-project",
@@ -417,8 +287,6 @@ export const handler: Handlers<HomeData> = {
         ),
       ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     };
-    if (Deno.env.get("CACHE_ENABLED"))
-      Deno.writeTextFile("./data/props.json", JSON.stringify(props, null, 2));
     return ctx.render(props);
   },
 };
