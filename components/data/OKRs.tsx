@@ -13,7 +13,7 @@ export const OKRCards: FunctionComponent<{
   data: IOkrs;
 }> = ({ data }) => {
   const okrYear = data.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
+  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[0];
 
   return (
     <div className={tw`space-y-3`}>
@@ -117,7 +117,7 @@ export const OKRs: FunctionComponent<{
   data: IOkrs;
 }> = ({ data }) => {
   const okrYear = data.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
+  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[0];
 
   return (
     <section className={tw`space-y-4`}>

@@ -167,7 +167,7 @@ const categoryData: Record<
 };
 
 export const handler: Handlers<HomeData> = {
-  async GET(_req, ctx) {
+  async GET(request, context) {
     const { awards, podcasts, features } = await getPress();
     const props = {
       okrs: await getOkrs(),
@@ -292,16 +292,19 @@ export const handler: Handlers<HomeData> = {
         ),
       ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     };
-    return ctx.render(props);
+    const response = await context.render(props);
+    response.headers.set("Cache-Control", "public, max-age=600");
+    return response;
   },
 };
 
 export default function Home({ data }: PageProps<HomeData>) {
   const okrYear = data.okrs.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
+  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[0];
   const theme = data.themes.sort(
     (a, b) => parseInt(a.year) - parseInt(b.year)
   )[0];
+  console.log(new Date());
 
   return (
     <Layout>
@@ -412,7 +415,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 />
               </h2>
               <p className={tw`text-gray-500`}>
-                Daily productivity score, computed by RescueTime
+                Daily productivity score by RescueTime
               </p>
             </header>
             <BarChart
@@ -438,7 +441,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <SectionLink label={`Last week in sleep`} href="/life/health" />
               </h2>
               <p className={tw`text-gray-500`}>
-                Number of hours asleep, tracked by Oura Ring
+                Number of hours asleep by Oura Ring
               </p>
             </header>
             <BarChart
