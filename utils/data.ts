@@ -1,3 +1,5 @@
+console.log("Cache enabled", Deno.env.get("CACHE_ENABLED"));
+
 export interface IOkrs {
   updatedAt: string;
   years: {
