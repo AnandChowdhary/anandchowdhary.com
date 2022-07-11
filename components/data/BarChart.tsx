@@ -4,14 +4,14 @@ import type { FunctionComponent } from "preact";
 import { tw } from "@twind";
 
 export const BarChart: FunctionComponent<{
-  data: { date: string; value: number }[];
+  data: { label?: string; date: string; value: number }[];
   rgb: string;
 }> = ({ data, rgb }) => {
   return (
     <div
       className={tw`rounded bg-white shadow-sm flex items-end justify-between p-4 text-center`}
     >
-      {data.map(({ date, value }, _, array) => (
+      {data.map(({ date, label, value }, _, array) => (
         <div
           key={date}
           className={tw`h-48 flex flex-col`}
@@ -29,7 +29,7 @@ export const BarChart: FunctionComponent<{
                 })`,
               }}
             >
-              {value}
+              {label ?? value}
             </div>
           </div>
           <div className={tw`mt-2 text-xs`}>

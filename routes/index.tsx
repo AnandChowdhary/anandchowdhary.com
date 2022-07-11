@@ -311,7 +311,9 @@ export default function Home({ data }: PageProps<HomeData>) {
             <img
               alt="Portrait of Anand"
               src="https://place-hold.it/500x375"
-              className={tw`w-full rounded-lg bg-white border p-2 sm:h-full object-fit-contain`}
+              className={tw`w-full rounded-lg bg-white border p-2 sm:h-full object-cover`}
+              width={500}
+              height={375}
             />
           </div>
           <div className={tw`space-y-4`}>
@@ -323,7 +325,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             </h2>
             <p className={tw`text-lg text-gray-500`}>
               {t(
-                "I'm a creative technologist and entrepreneur, currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture with interior design company in Europe.",
+                "I'm a creative technologist and entrepreneur currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture with interior design company in Europe.",
                 {},
                 [
                   ({ children }: { children: ComponentChildren }) => (
@@ -442,13 +444,13 @@ export default function Home({ data }: PageProps<HomeData>) {
             <BarChart
               rgb="255, 180, 180"
               data={[
-                { date: "2022-07-01", value: 8.1 },
-                { date: "2022-07-02", value: 7.1 },
-                { date: "2022-07-03", value: 7.7 },
-                { date: "2022-07-04", value: 9 },
-                { date: "2022-07-05", value: 6.5 },
-                { date: "2022-07-06", value: 8.6 },
-                { date: "2022-07-07", value: 7.8 },
+                { date: "2022-07-01", label: "8:06", value: 8.1 },
+                { date: "2022-07-02", label: "7:06", value: 7.1 },
+                { date: "2022-07-03", label: "7:42", value: 7.7 },
+                { date: "2022-07-04", label: "9:06", value: 9.1 },
+                { date: "2022-07-05", label: "6:30", value: 6.5 },
+                { date: "2022-07-06", label: "8:36", value: 8.6 },
+                { date: "2022-07-07", label: "7:48", value: 7.8 },
               ]}
             />
             <DataFooterLinks updatedAt={data.okrs.updatedAt} />
