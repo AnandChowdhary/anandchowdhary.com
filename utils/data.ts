@@ -1,4 +1,4 @@
-console.log("Cache enabled", Deno.env.get("CACHE_ENABLED"));
+console.log("Cache enabled", Deno.env.get("CACHE_ENABLED") === "true");
 
 export interface IOkrs {
   updatedAt: string;
@@ -26,7 +26,7 @@ export interface IOkrs {
   }[];
 }
 export const getOkrs = async (): Promise<IOkrs> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/okrs.json");
     return JSON.parse(data);
   }
@@ -46,7 +46,7 @@ export interface IEvent {
   city: string;
 }
 export const getEvents = async (): Promise<IEvent[]> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/events.json");
     return JSON.parse(data);
   }
@@ -63,7 +63,7 @@ interface IProject {
   date: string;
 }
 export const getProjects = async (): Promise<IProject[]> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/projects.json");
     return JSON.parse(data);
   }
@@ -80,7 +80,7 @@ export interface ITravel {
   assets: string[];
 }
 export const getTravel = async (): Promise<ITravel[]> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/travel.json");
     return JSON.parse(data);
   }
@@ -98,7 +98,7 @@ export interface IBlogPost {
   date: string;
 }
 export const getBlogPosts = async (): Promise<IBlogPost[]> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/blog.json");
     return JSON.parse(data);
   }
@@ -124,7 +124,7 @@ export interface IBook {
   startedAt: string;
 }
 export const getBooks = async (): Promise<IBook[]> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/books.json");
     return JSON.parse(data);
   }
@@ -222,7 +222,7 @@ export interface IRepo {
   language_color?: string;
 }
 export const getRepos = async (): Promise<IRepo[]> => {
-  if (Deno.env.get("CACHE_ENABLED")) {
+  if (Deno.env.get("CACHE_ENABLED") === "true") {
     const data = await Deno.readTextFile("./.cache/repos.json");
     return JSON.parse(data);
   }
