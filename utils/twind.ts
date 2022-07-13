@@ -9,7 +9,6 @@ export const config: Configuration = {
   theme: {
     colors: {
       ...colors,
-      slate: colors.red,
       orange: colors.orange,
       white: colors.white,
       gray: colors.trueGray,

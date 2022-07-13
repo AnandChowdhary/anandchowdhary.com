@@ -14,7 +14,7 @@ export default function App({ Component }: AppProps) {
         <link rel="prefetch" href={asset("anand.svg")} />
       </Head>
       <body
-        className={tw`min-h-screen text-gray-700 dark:text-slate-400 bg-orange-50 dark:bg-slate-900`}
+        className={tw`min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900`}
       >
         <div>
           <style
@@ -114,7 +114,7 @@ display: inline-block;
             >
               <a
                 href="/"
-                className={tw`flex items-center space-x-2 font-medium dark:text-slate-300 whitespace-nowrap`}
+                className={tw`flex items-center space-x-2 font-medium dark:text-gray-300 whitespace-nowrap`}
               >
                 <svg
                   viewBox="0 0 700 700"

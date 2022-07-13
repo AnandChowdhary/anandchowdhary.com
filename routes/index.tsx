@@ -304,7 +304,6 @@ export default function Home({ data }: PageProps<HomeData>) {
   const theme = data.themes.sort(
     (a, b) => parseInt(a.year) - parseInt(b.year)
   )[0];
-  console.log(new Date());
 
   return (
     <div class={tw`max-w-screen-md px-4 mx-auto space-y-12 md:px-0`}>

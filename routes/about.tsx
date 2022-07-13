@@ -1,12 +1,13 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
-import { Layout } from "../components/layout/Layout.tsx";
+import { ExternalLink } from "../components/text/ExternalLink.tsx";
 
 const STARTUPS = [
   {
     icon: "pabio",
     name: "Pabio",
+    href: "https://pabio.com",
     start: "2020",
     end: "present",
     description:
@@ -15,6 +16,7 @@ const STARTUPS = [
   {
     icon: "oswald-labs",
     name: "Oswald Labs",
+    href: "https://oswaldlabs.com",
     start: "2016",
     end: "2020",
     description: "Accessibility technology for the next billion Internet users",
@@ -22,6 +24,7 @@ const STARTUPS = [
   {
     icon: "melangebox",
     name: "Melangebox",
+    href: "https://melangebox.com",
     start: "2017",
     end: "2020",
     description: "Sustainable, high-quality, and affordable fashion for India",
@@ -50,11 +53,11 @@ export default function About() {
         <img
           alt="Anand standing on a table with his MacBook in his hand"
           src="https://d33wubrfki0l68.cloudfront.net/41df0551175f4c6716aad2988c37ceb83a342b9e/7b5dc/images/photos/anand-chowdhary.jpg"
-          className={tw`mb-8 rounded-lg w-full bg-white border shadow-sm`}
+          className={tw`mb-12 rounded-lg w-full bg-white border shadow-sm`}
         />
         <header className={tw`mb-5 space-y-5`}>
           <h1
-            className={tw`text-4xl font-semibold font-display dark:text-slate-200`}
+            className={tw`text-4xl font-semibold font-display dark:text-gray-200`}
           >
             About
           </h1>
@@ -97,15 +100,15 @@ export default function About() {
       </section>
       <section>
         <h2
-          className={tw`mt-8 text-2xl font-semibold font-display dark:text-slate-200`}
+          className={tw`mt-8 text-2xl font-semibold font-display dark:text-gray-200`}
         >
           Startups founded
         </h2>
         <ul className={tw`mt-6`}>
-          {STARTUPS.map(({ name, description, start, end, icon }) => (
+          {STARTUPS.map(({ name, description, start, end, icon, href }) => (
             <li key={name} className={tw`flex mt-6`}>
               <div
-                className={tw`flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-slate-80`}
+                className={tw`flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-gray-80`}
                 role="presentation"
               >
                 <svg aria-hidden="true">
@@ -115,12 +118,18 @@ export default function About() {
 
               <div>
                 <h3>
-                  <strong className={tw`font-medium dark:text-slate-300`}>
-                    {name}
+                  <strong className={tw`font-medium dark:text-gray-300`}>
+                    {href ? (
+                      <ExternalLink href={href}>{name}</ExternalLink>
+                    ) : (
+                      name
+                    )}
                   </strong>
-                  , {start}–{end}
+                  <span className={tw`text-gray-500`}>
+                    {`, ${start}–${end}`}
+                  </span>
                 </h3>
-                <p className={tw`text-gray-500 dark:text-slate-500`}>
+                <p className={tw`text-gray-500 dark:text-gray-500`}>
                   {description}
                 </p>
               </div>
