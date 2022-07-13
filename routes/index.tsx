@@ -1,6 +1,5 @@
 /** @jsx h */
 import { h, ComponentChildren } from "preact";
-import { encode } from "https://deno.land/std@0.146.0/encoding/base64.ts";
 import { tw } from "@twind";
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
@@ -9,35 +8,29 @@ import { SectionLink } from "../components/text/SectionLink.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { BarChart } from "../components/data/BarChart.tsx";
-import TimeAgo from "../islands/TimeAgo.tsx";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 import * as colors from "twind/colors";
 import type { IOkrs, ITheme } from "../utils/data.ts";
-import {
-  getOkrs,
-  getEvents,
-  getProjects,
-  getTravel,
-  getBlogPosts,
-  getBooks,
-  getLifeEvents,
-  getPress,
-  getVideos,
-  getRepos,
-  getThemes,
-} from "../utils/data.ts";
 
 interface HomeData {
-  okrs: IOkrs;
-  themes: ITheme[];
+  okr: {
+    title: string;
+    description: string;
+    data: IOkrs["years"][0]["quarters"][0];
+  };
+  theme: ITheme;
   timeline: (
+    | {
+        type: "okr";
+        date: string;
+        title: string;
+      }
     | {
         type: "event";
         date: string;
         title: string;
-        location: string;
-        emoji: string;
+        data: { location: string; emoji: string };
       }
     | {
         type: "project";
@@ -48,14 +41,13 @@ interface HomeData {
         type: "blog-post";
         date: string;
         title: string;
-        words: number;
+        data: { words: number };
       }
     | {
         type: "book";
         date: string;
         title: string;
-        authors: string[];
-        image: string;
+        data: { authors: string[]; image: string };
       }
     | {
         type: "life-event";
@@ -67,52 +59,57 @@ interface HomeData {
         type: "video";
         date: string;
         title: string;
-        city: string;
-        country: string;
-        img: string;
-        publisher: string;
-        duration: string;
+        data: {
+          city: string;
+          country: string;
+          img: string;
+          publisher: string;
+          duration: string;
+        };
       }
     | {
         type: "award";
         date: string;
         title: string;
-        publisher: string;
+        data: { publisher: string };
       }
     | {
         type: "travel";
         date: string;
         title: string;
-        assets: string[];
+        data: { assets: string[] };
       }
     | {
         type: "podcast-interview";
         date: string;
         title: string;
-        publisher: string;
-        embed?: string;
+        data: { publisher: string; embed?: string };
       }
     | {
         type: "press-feature";
         date: string;
         title: string;
-        href: string;
-        publisher: string;
-        author?: string;
         description?: string;
+        href: string;
+        data: {
+          publisher: string;
+          author?: string;
+        };
       }
     | {
         type: "open-source-project";
         date: string;
         title: string;
         href: string;
-        language?: string;
-        languageColor?: string;
-        stars: number;
-        issues: number;
-        forks: number;
-        watchers: number;
-        description?: string;
+        data: {
+          language?: string;
+          languageColor?: string;
+          stars: number;
+          issues: number;
+          forks: number;
+          watchers: number;
+          description?: string;
+        };
       }
   )[];
 }
@@ -121,6 +118,11 @@ const categoryData: Record<
   HomeData["timeline"][0]["type"],
   { color: keyof typeof colors; icon: string; prefix: string }
 > = {
+  okr: {
+    color: "orange",
+    icon: "book-open",
+    prefix: "New quarterly OKRs",
+  },
   "blog-post": {
     color: "indigo",
     icon: "book-open",
@@ -168,129 +170,25 @@ const categoryData: Record<
 
 export const handler: Handlers<HomeData> = {
   async GET(request, context) {
-    const { awards, podcasts, features } = await getPress();
+    const timeline = (await (
+      await fetch("https://anandchowdhary.github.io/everything/api.json")
+    ).json()) as {
+      date: string;
+      type: string;
+      title: string;
+      description?: string;
+      data?: unknown;
+    }[];
+
     const props = {
-      okrs: await getOkrs(),
-      themes: await getThemes(),
-      timeline: [
-        ...(await getEvents()).map(
-          (event) =>
-            ({
-              type: "event",
-              title: event.name,
-              date: event.date,
-              location: [event.venue, event.city].filter((i) => !!i).join(", "),
-              emoji: event.emoji,
-            } as const)
-        ),
-        ...(await getProjects()).map(
-          (project) =>
-            ({
-              type: "project",
-              title: project.title,
-              date: project.date,
-            } as const)
-        ),
-        ...(await getBlogPosts()).map(
-          (post) =>
-            ({
-              type: "blog-post",
-              title: post.title,
-              date: post.date,
-              words: post.words,
-            } as const)
-        ),
-        ...(await getBooks())
-          .filter(({ state }) => state == "completed")
-          .map(
-            (book) =>
-              ({
-                type: "book",
-                title: book.title,
-                image: book.image,
-                authors: book.authors,
-                date: book.startedAt,
-              } as const)
-          ),
-        ...(await getLifeEvents()).map(
-          (event) =>
-            ({
-              type: "life-event",
-              title: event.title,
-              date: event.date,
-              description: event.description,
-            } as const)
-        ),
-        ...(await getVideos()).map(
-          (video) =>
-            ({
-              type: "video",
-              date: video.date,
-              title: video.title,
-              city: video.city,
-              country: video.country,
-              img: video.img,
-              publisher: video.publisher,
-              duration: video.duration,
-            } as const)
-        ),
-        ...(await getTravel()).map(
-          (place) =>
-            ({
-              type: "travel",
-              date: place.date,
-              title: place.title,
-              assets: place.assets,
-            } as const)
-        ),
-        ...awards.map(
-          (award) =>
-            ({
-              type: "award",
-              title: award.title,
-              date: award.date,
-              publisher: award.publisher,
-            } as const)
-        ),
-        ...podcasts.map(
-          (interview) =>
-            ({
-              type: "podcast-interview",
-              title: interview.title,
-              date: interview.date,
-              embed: interview.embed,
-              publisher: interview.publisher,
-            } as const)
-        ),
-        ...features.map(
-          (article) =>
-            ({
-              type: "press-feature",
-              href: article.href,
-              title: article.title,
-              date: article.date,
-              publisher: article.publisher,
-              author: article.author,
-              description: article.description,
-            } as const)
-        ),
-        ...(await getRepos()).map(
-          (repo) =>
-            ({
-              type: "open-source-project",
-              href: repo.html_url,
-              title: repo.full_name,
-              date: repo.created_at,
-              description: repo.description,
-              stars: repo.stargazers_count,
-              issues: repo.open_issues,
-              forks: repo.forks_count,
-              watchers: repo.watchers_count,
-              language: repo.language,
-              languageColor: repo.language_color,
-            } as const)
-        ),
-      ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+      timeline,
+      okr: timeline.find(({ type }) => type === "okr"),
+      theme: {
+        year: "2022",
+        title: "Year of Teamwork",
+        description:
+          "I want to delegate more and plan for further into the future, do a better job at internalizing feedback, and continue to do the things I did right while investing more in my support system.",
+      },
     };
     const response = await context.render(props);
     response.headers.set("Cache-Control", "public, max-age=600");
@@ -299,11 +197,7 @@ export const handler: Handlers<HomeData> = {
 };
 
 export default function Home({ data }: PageProps<HomeData>) {
-  const okrYear = data.okrs.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[0];
-  const theme = data.themes.sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
-  )[0];
+  const { timeline, okr, theme } = data;
 
   return (
     <div class={tw`max-w-screen-md px-4 mx-auto space-y-12 md:px-0`}>
@@ -378,6 +272,8 @@ export default function Home({ data }: PageProps<HomeData>) {
           </div>
           <div className={tw`pt-1`}>
             <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/everything/api.json"
+              githubUrl="https://github.com/AnandChowdhary/everything"
               links={[{ label: "View past themes", href: "/life/themes" }]}
             />
           </div>
@@ -389,7 +285,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             >
               <span aria-hidden="true">📊</span>
               <SectionLink
-                label={`OKRs for Q${okrQuarter.name} ${okrYear.name}`}
+                label={`OKRs for Q${okr.data.name}`}
                 href="/life/okrs"
               />
             </h2>
@@ -397,9 +293,13 @@ export default function Home({ data }: PageProps<HomeData>) {
               Personal Objectives and Key Results
             </p>
           </header>
-          <OKRCards data={data.okrs} />
+          <OKRCards okr={okr} />
           <div className={tw`pt-1`}>
-            <DataFooterLinks updatedAt={data.okrs.updatedAt} />
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/okrs/api.json"
+              githubUrl="https://github.com/AnandChowdhary/okrs"
+              links={[{ label: "View past OKRs", href: "/life/themes" }]}
+            />
           </div>
         </article>
         <article className={tw`space-y-4`}>
@@ -429,7 +329,11 @@ export default function Home({ data }: PageProps<HomeData>) {
               { date: "2022-07-07", value: 57 },
             ]}
           />
-          <DataFooterLinks updatedAt={data.okrs.updatedAt} />
+          <DataFooterLinks
+            apiUrl="https://anandchowdhary.github.io/everything/api.json"
+            githubUrl="https://github.com/AnandChowdhary/everything"
+            updatedAt={"2022-01-01"}
+          />
         </article>
         <article className={tw`space-y-4`}>
           <header>
@@ -455,7 +359,11 @@ export default function Home({ data }: PageProps<HomeData>) {
               { date: "2022-07-07", label: "7:48", value: 7.8 },
             ]}
           />
-          <DataFooterLinks updatedAt={data.okrs.updatedAt} />
+          <DataFooterLinks
+            apiUrl="https://anandchowdhary.github.io/everything/api.json"
+            githubUrl="https://github.com/AnandChowdhary/everything"
+            updatedAt={"2022-01-01"}
+          />
         </article>
       </section>
       <section className={tw`space-y-4`}>
@@ -472,7 +380,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           <div
             className={tw`absolute top-0 w-1 bg-orange-200 bottom-6 left-4`}
           />
-          {data.timeline.map((item, index) => (
+          {timeline.map((item, index) => (
             <div key={item.title}>
               {(index === 0 ||
                 new Date(item.date).getFullYear() !==
@@ -539,23 +447,23 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </h4>
                     )}
                     {item.type === "book" && (
-                      <p>{`by ${item.authors.join(", ")}`}</p>
+                      <p>{`by ${item.data.authors.join(", ")}`}</p>
                     )}
                     {item.type === "blog-post" && (
                       <p
                         className={tw`text-gray-500`}
                       >{`Reading time: ${humanizeMmSs(
-                        String(item.words / 250)
+                        String(item.data.words / 250)
                       )}`}</p>
                     )}
                     {item.type === "event" && (
                       <p className={tw`text-gray-500`}>
-                        <span className={tw`mr-1`}>{item.emoji}</span>
-                        <span>{` ${item.location}`}</span>
+                        <span className={tw`mr-1`}>{item.data.emoji}</span>
+                        <span>{` ${item.data.location}`}</span>
                       </p>
                     )}
                     {item.type === "podcast-interview" && (
-                      <p className={tw`text-gray-500`}>{item.publisher}</p>
+                      <p className={tw`text-gray-500`}>{item.data.publisher}</p>
                     )}
                     {item.type === "press-feature" && (
                       <p
@@ -576,8 +484,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                         <span>
                           {t(
                             `${
-                              item.author ? `by <0>${item.author}</0> for ` : ""
-                            } ${item.publisher}`.trim(),
+                              item.data.author
+                                ? `by <0>${item.data.author}</0> for `
+                                : ""
+                            } ${item.data.publisher}`.trim(),
                             {},
                             [
                               ({
@@ -599,12 +509,14 @@ export default function Home({ data }: PageProps<HomeData>) {
                     {item.type === "award" && (
                       <p
                         className={tw`text-gray-500`}
-                      >{`Awarded by ${item.publisher}`}</p>
+                      >{`Awarded by ${item.data.publisher}`}</p>
                     )}
                     {item.type === "video" && (
                       <ul className={tw`text-gray-500`}>
-                        <li>{`${item.publisher}, ${item.city}`}</li>
-                        <li>{`Watch time: ${humanizeMmSs(item.duration)}`}</li>
+                        <li>{`${item.data.publisher}, ${item.data.city}`}</li>
+                        <li>{`Watch time: ${humanizeMmSs(
+                          item.data.duration
+                        )}`}</li>
                       </ul>
                     )}
                     {"description" in item && item.description && (
@@ -612,7 +524,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     )}
                     {item.type === "open-source-project" && (
                       <ul className={tw`flex space-x-4`}>
-                        {item.language && (
+                        {item.data.language && (
                           <li
                             className={tw`flex flex-wrap items-center space-x-1`}
                           >
@@ -620,11 +532,13 @@ export default function Home({ data }: PageProps<HomeData>) {
                               aria-hidden="true"
                               width="1em"
                               height="1em"
-                              style={{ color: item.languageColor ?? "#aaa" }}
+                              style={{
+                                color: item.data.languageColor ?? "#aaa",
+                              }}
                             >
                               <use href="#circle"></use>
                             </svg>
-                            <span>{item.language}</span>
+                            <span>{item.data.language}</span>
                           </li>
                         )}
                         <li
@@ -635,7 +549,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                           </svg>
                           <span>
                             {t(
-                              `<0>${item.stars.toLocaleString()}</0> stars`,
+                              `<0>${item.data.stars.toLocaleString()}</0> stars`,
                               {},
                               [
                                 ({
@@ -660,7 +574,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                           </svg>
                           <span>
                             {t(
-                              `<0>${item.watchers.toLocaleString()}</0> watchers`,
+                              `<0>${item.data.watchers.toLocaleString()}</0> watchers`,
                               {},
                               [
                                 ({
@@ -685,7 +599,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                           </svg>
                           <span>
                             {t(
-                              `<0>${item.forks.toLocaleString()}</0> forks`,
+                              `<0>${item.data.forks.toLocaleString()}</0> forks`,
                               {},
                               [
                                 ({
@@ -704,17 +618,20 @@ export default function Home({ data }: PageProps<HomeData>) {
                         </li>
                       </ul>
                     )}
-                    {"embed" in item && item.embed && (
-                      <div className={tw`pt-2`}>
-                        <iframe
-                          src={item.embed}
-                          loading="lazy"
-                          scrolling="no"
-                          className={tw`w-full overflow-hidden rounded-lg`}
-                          style={{ height: "152px" }}
-                        />
-                      </div>
-                    )}
+                    {item.type === "podcast-interview" &&
+                      "embed" in item &&
+                      "data" in item &&
+                      item.data.embed && (
+                        <div className={tw`pt-2`}>
+                          <iframe
+                            src={item.data.embed}
+                            loading="lazy"
+                            scrolling="no"
+                            className={tw`w-full overflow-hidden rounded-lg`}
+                            style={{ height: "152px" }}
+                          />
+                        </div>
+                      )}
                   </div>
                 </div>
                 <div className={tw`mt-4 ml-12 sm:mt-0 sm:ml-6 shrink-0`}>
@@ -722,7 +639,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     <img
                       alt=""
                       src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                        item.image.split("//")[1]
+                        item.data.image.split("//")[1]
                       )}&w=300&h=450&fit=cover`}
                       loading="lazy"
                       className={tw`w-24 rounded-lg shadow`}
@@ -741,7 +658,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                         <img
                           alt=""
                           src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                            item.img.split("//")[1]
+                            item.data.img.split("//")[1]
                           )}&w=700&h=370&fit=cover`}
                           loading="lazy"
                           width={512}

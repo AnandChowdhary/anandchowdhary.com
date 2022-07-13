@@ -10,14 +10,17 @@ import TimeAgo from "../../islands/TimeAgo.tsx";
 import { t } from "../../utils/i18n.tsx";
 
 export const OKRCards: FunctionComponent<{
-  data: IOkrs;
-}> = ({ data }) => {
-  const okrYear = data.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[0];
+  okr: {
+    title: string;
+    description: string;
+    data: IOkrs["years"][0]["quarters"][0];
+  };
+}> = ({ okr }) => {
+  const { data } = okr;
 
   return (
     <div className={tw`space-y-3`}>
-      {okrQuarter.objectives.map(({ name, success, key_results }) => (
+      {data.objectives.map(({ name, success, progress, key_results }) => (
         <details key={name} className={tw`appearance-none`}>
           <summary
             className={tw`flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm`}
@@ -50,13 +53,18 @@ export const OKRCards: FunctionComponent<{
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
               </div>
-              <div className={tw`text-gray-500 pl-4`}>
+              <div
+                className={tw`text-gray-500 pl-4`}
+                title={`${Math.round(success * 100)}% success, ${Math.round(
+                  progress * 100
+                )}% progress`}
+              >
                 {Math.round(success * 100)}%
               </div>
             </div>
           </summary>
           <div className={tw`mx-4 mb-4 space-y-1`}>
-            {key_results.map(({ name, success }) => (
+            {key_results.map(({ name, success, progress }) => (
               <div
                 key={name}
                 className={tw`flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm`}
@@ -101,7 +109,12 @@ export const OKRCards: FunctionComponent<{
                     ),
                   ])}
                 </div>
-                <div className={tw`text-gray-500 pl-4`}>
+                <div
+                  className={tw`text-gray-500 pl-4`}
+                  title={`${Math.round(success * 100)}% success, ${Math.round(
+                    progress * 100
+                  )}% progress`}
+                >
                   {Math.round(success * 100)}%
                 </div>
               </div>
@@ -114,16 +127,19 @@ export const OKRCards: FunctionComponent<{
 };
 
 export const OKRs: FunctionComponent<{
-  data: IOkrs;
-}> = ({ data }) => {
-  const okrYear = data.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[0];
+  okr: {
+    title: string;
+    description: string;
+    data: IOkrs["years"][0]["quarters"][0];
+  };
+}> = ({ okr }) => {
+  const { title } = okr;
 
   return (
     <section className={tw`space-y-4`}>
       <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
         <span aria-hidden="true">📊</span>
-        <span>{` OKRs for Q${okrQuarter.name} ${okrYear.name}`}</span>
+        <span>{` OKRs for ${title}`}</span>
       </h2>
       <p className={tw`text-gray-500`}>
         {t(
@@ -140,11 +156,11 @@ export const OKRs: FunctionComponent<{
                 children={children}
               />
             ),
-            () => <TimeAgo date={data.updatedAt} />,
+            () => <TimeAgo date={"2022-01-01"} />,
           ]
         )}
       </p>
-      <OKRCards data={data} />
+      <OKRCards okr={okr} />
       <SectionLink label="See past OKRs" href="/life/okrs" />
     </section>
   );

@@ -7,8 +7,10 @@ import TimeAgo from "../../islands/TimeAgo.tsx";
 
 export const DataFooterLinks: FunctionComponent<{
   updatedAt?: string;
+  apiUrl: string;
+  githubUrl: string;
   links?: { label: string; href: string }[];
-}> = ({ links, updatedAt }) => {
+}> = ({ links, updatedAt, apiUrl, githubUrl }) => {
   return (
     <footer className={tw`flex space-x-4 text-sm`}>
       {links?.map(({ label, href }) => (
@@ -19,18 +21,12 @@ export const DataFooterLinks: FunctionComponent<{
         </div>
       ))}
       <div>
-        <ExternalLink
-          href="https://github.com/AnandChowdhary/okrs"
-          className={tw`underline`}
-        >
+        <ExternalLink href={apiUrl} className={tw`underline`}>
           API
         </ExternalLink>
       </div>
       <div>
-        <ExternalLink
-          href="https://github.com/AnandChowdhary/okrs"
-          className={tw`underline`}
-        >
+        <ExternalLink href={githubUrl} className={tw`underline`}>
           GitHub
         </ExternalLink>
       </div>
