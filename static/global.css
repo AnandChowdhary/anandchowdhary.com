@@ -1,0 +1,36 @@
+.longform {
+  font-size: 110%;
+}
+
+.longform h1,
+.longform h2,
+.longform h3,
+.longform h4,
+.longform h5,
+.longform h6 {
+  font-weight: 600;
+}
+.longform h1 {
+  font-size: 200%;
+}
+.longform h2 {
+  font-size: 166%;
+}
+.longform h3 {
+  font-size: 133%;
+}
+.longform h4 {
+  font-size: 100%;
+}
+
+.longform * + * {
+  margin-top: 1rem;
+}
+
+.longform a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+.longform a:hover {
+  opacity: 0.8;
+}

@@ -642,6 +642,8 @@ export default function Home({ data }: PageProps<HomeData>) {
                         item.data.image.split("//")[1]
                       )}&w=300&h=450&fit=cover`}
                       loading="lazy"
+                      width={300}
+                      height={450}
                       className={tw`w-24 rounded-lg shadow`}
                     />
                   ) : (

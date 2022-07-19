@@ -11,7 +11,8 @@ export default function App({ Component }: AppProps) {
     <html className={tw`bg-yellow-500 py-2`}>
       <Head>
         <title>Anand Chowdhary</title>
-        <link rel="prefetch" href={asset("anand.svg")} />
+        <link rel="prefetch" href={`/${asset("anand.svg")}`} />
+        <link rel="stylesheet" href={`/${asset("global.css")}`} />
       </Head>
       <body
         className={tw`min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900`}
