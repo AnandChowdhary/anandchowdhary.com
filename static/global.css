@@ -9,6 +9,7 @@
 .longform h5,
 .longform h6 {
   font-weight: 600;
+  position: relative;
 }
 .longform h1 {
   font-size: 200%;
@@ -33,4 +34,69 @@
 }
 .longform a:hover {
   opacity: 0.8;
+}
+
+.longform p:first-child {
+  font-size: 110%;
+}
+
+.breadcrumbs li + li:not(:first-child)::after {
+  content: "›";
+  padding: 0 0.5rem;
+}
+
+a.anchor {
+  position: absolute;
+  left: -1.5em;
+  top: 50%;
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+a.anchor svg {
+  height: 1em;
+  width: 1em;
+  opacity: 0.5;
+}
+
+.longform h1:hover a.anchor,
+.longform h2:hover a.anchor,
+.longform h3:hover a.anchor,
+.longform h4:hover a.anchor,
+.longform h5:hover a.anchor,
+.longform h6:hover a.anchor {
+  opacity: 1;
+}
+
+a[data-footnote-ref] {
+  text-decoration: none;
+}
+[data-footnote-ref]:before {
+  content: "[";
+}
+[data-footnote-ref]:after {
+  content: "]";
+}
+
+.footnotes {
+  font-size: 80%;
+  border-top: 0.2rem solid rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+}
+.footnotes a {
+  text-decoration: none;
+}
+
+.post-header {
+  margin: 1rem 0;
+}
+.post-header h1 {
+  font-size: 200%;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.post-header p {
+  color: rgba( 0, 0, 0, 0.5)
 }
