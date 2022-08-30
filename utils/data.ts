@@ -235,3 +235,25 @@ export const getRepos = async (): Promise<IRepo[]> => {
   ).json()) as IRepo[];
   return repos;
 };
+
+export const getGyroscope = async (): Promise<any> => {
+  if (CACHE_ENABLED) {
+    const data = await Deno.readTextFile("./.cache/zero.html");
+    return data;
+  }
+  const data = await (
+    await fetch("https://gyrosco.pe/anand-chowdhary/zero/?_pjax=%23page")
+  ).text();
+  return data;
+};
+
+export const getGyroscopeSports = async (): Promise<any> => {
+  if (CACHE_ENABLED) {
+    const data = await Deno.readTextFile("./.cache/sport.html");
+    return data;
+  }
+  const data = await (
+    await fetch("https://gyrosco.pe/anand-chowdhary/zero/sport/?_pjax=%23page")
+  ).text();
+  return data;
+};

@@ -2,13 +2,17 @@
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { tw } from "@twind";
+import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 import { ComponentChildren, h } from "preact";
 import * as colors from "twind/colors";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
+import Age from "../islands/Age.tsx";
+import TimeAgo from "../islands/TimeAgo.tsx";
 import type { IOkrs, ITheme } from "../utils/data.ts";
+import { getGyroscope, getGyroscopeSports } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
 
@@ -17,6 +21,22 @@ interface HomeData {
     title: string;
     description: string;
     data: IOkrs["years"][0]["quarters"][0];
+  };
+  gyroscope: {
+    lastSeenAt: {
+      name: string;
+      locationTimeAgo: string;
+    };
+    heart: {
+      value: string;
+      timeAgo: string;
+      diffValue: string;
+      diffValueTimeAgo: string;
+    };
+    steps: {
+      value: string;
+      timeAgo: string;
+    };
   };
   theme: ITheme;
   timeline: (
@@ -177,9 +197,47 @@ export const handler: Handlers<HomeData> = {
       | HomeData["okr"]
       | undefined;
     if (!okr) throw new Error("OKR not found");
+
+    const gyroscope = await getGyroscope();
+    const document = new DOMParser().parseFromString(gyroscope, "text/html");
+    if (!document) throw new Error("Unable to fetch gyroscope");
+    const locationName = document.querySelector(".location-name");
+    if (!locationName) throw new Error("Unable to find location time ago");
+    const locationTimeAgo = document.querySelector(".location-time-ago");
+    if (!locationTimeAgo) throw new Error("Unable to find location time ago");
+
+    const sports = await getGyroscopeSports();
+    const document2 = new DOMParser().parseFromString(sports, "text/html");
+    if (!document2) throw new Error("Unable to fetch gyroscope");
+
     const props = {
       timeline,
       okr,
+      gyroscope: {
+        lastSeenAt: {
+          name: locationName.innerText,
+          locationTimeAgo: locationTimeAgo.innerText,
+        },
+        heart: {
+          value: document2.querySelector(".bpm-increment")?.innerText ?? "",
+          timeAgo: (
+            document2.querySelector(".heart-rate .updated")?.innerText ?? ""
+          ).split(" with ")[0],
+          diffValue:
+            document2.querySelector(".heart-rate .diff .amount")?.innerText ??
+            "",
+          diffValueTimeAgo:
+            document2.querySelector(".heart-rate .diff .time")?.innerText ?? "",
+        },
+        steps: {
+          value:
+            document2.querySelector(".step-circle:last-child .amount")
+              ?.innerText ?? "",
+          timeAgo:
+            document2.querySelector(".step-circle:last-child .timestamp")
+              ?.innerText ?? "",
+        },
+      },
       theme: {
         year: "2022",
         title: "Year of Teamwork",
@@ -194,7 +252,7 @@ export const handler: Handlers<HomeData> = {
 };
 
 export default function Home({ data }: PageProps<HomeData>) {
-  const { timeline, okr, theme } = data;
+  const { timeline, okr, theme, gyroscope } = data;
 
   return (
     <div class={tw`max-w-screen-md px-4 mx-auto space-y-12 md:px-0`}>
@@ -238,122 +296,209 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      <section className={tw`grid grid-cols-5 text-center gap-12`}>
-        {[
-          {
-            logo: "yourstory.svg",
-            title: "20 Under 20",
-            publication: "YourStory 20 Under 20",
-          },
-          {
-            logo: "the-next-web.svg",
-            title: "TNW T500",
-            publication: "The Next Web T500",
-          },
-          {
-            logo: "github-stars.svg",
-            title: "2020–22",
-            publication: "GitHub Stars",
-          },
-          {
-            logo: "forbes.svg",
-            title: "30 Under 30",
-            publication: "Forbes 30 Under 30",
-          },
-          {
-            logo: "het-financieele-dagblad.svg",
-            title: "50 Under 25",
-            publication: "FD Persoonlijk",
-          },
-        ].map((award) => (
-          <a
-            key={award.title}
-            href="#"
-            className={tw`opacity-70 hover:opacity-100 transition relative h-12 flex flex-col items-center justify-center px-6`}
-          >
-            <div
-              className={tw`absolute top-0 left-0 bottom-0 h-12 bg-contain bg-no-repeat bg-left`}
-              style={{
-                backgroundImage: "url(/awards/leaf.svg)",
-                aspectRatio: "86 / 150",
-              }}
-            />
-            <div
-              className={tw`absolute top-0 right-0 bottom-0 h-12 bg-contain bg-no-repeat bg-right`}
-              style={{
-                backgroundImage: "url(/awards/leaf.svg)",
-                transform: "scaleX(-1)",
-                aspectRatio: "86 / 150",
-              }}
-            />
-            <img alt="" src={`/awards/${award.logo}`} />
-            <div className={tw`font-medium -mt-1`} style={{ fontSize: "60%" }}>
-              {award.title}
-            </div>
-          </a>
-        ))}
+      <section className={tw`overflow-auto`}>
+        <div
+          className={tw`grid grid-cols-5 text-center gap-12 overflow-auto`}
+          style={{ minWidth: "700px" }}
+        >
+          {[
+            {
+              logo: "yourstory.svg",
+              title: "20 Under 20",
+              publication: "YourStory 20 Under 20",
+            },
+            {
+              logo: "the-next-web.svg",
+              title: "TNW T500",
+              publication: "The Next Web T500",
+            },
+            {
+              logo: "github-stars.svg",
+              title: "2020–22",
+              publication: "GitHub Stars",
+            },
+            {
+              logo: "forbes.svg",
+              title: "30 Under 30",
+              publication: "Forbes 30 Under 30",
+            },
+            {
+              logo: "het-financieele-dagblad.svg",
+              title: "50 Under 25",
+              publication: "FD Persoonlijk",
+            },
+          ].map((award) => (
+            <a
+              key={award.title}
+              href="#"
+              className={tw`opacity-70 hover:opacity-100 transition relative h-12 flex flex-col items-center justify-center px-6`}
+            >
+              <div
+                className={tw`absolute top-0 left-0 bottom-0 h-12 bg-contain bg-no-repeat bg-left`}
+                style={{
+                  backgroundImage: "url(/awards/leaf.svg)",
+                  aspectRatio: "86 / 150",
+                }}
+              />
+              <div
+                className={tw`absolute top-0 right-0 bottom-0 h-12 bg-contain bg-no-repeat bg-right`}
+                style={{
+                  backgroundImage: "url(/awards/leaf.svg)",
+                  transform: "scaleX(-1)",
+                  aspectRatio: "86 / 150",
+                }}
+              />
+              <img alt="" src={`/awards/${award.logo}`} />
+              <div
+                className={tw`font-medium -mt-1`}
+                style={{ fontSize: "60%" }}
+              >
+                {award.title}
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
       <section className={tw`grid-cols-2 gap-8 gap-y-12 sm:grid`}>
-        <article className={tw`space-y-4`}>
-          <header>
-            <h2
-              className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-            >
-              <span aria-hidden="true">🌈</span>
-              <SectionLink
-                label={`Theme for ${theme.year}`}
-                href="/life/themes"
-              />
-            </h2>
-            <p className={tw`text-gray-500`}>
-              Yearly theme that dictates quarterly goals
-            </p>
-          </header>
-          <div
-            className={tw`relative p-4 space-y-2 bg-white rounded shadow-sm`}
-          >
-            <p className={tw`text-2xl`}>{theme.title}</p>
-            <p className={tw`h-20 overflow-hidden text-sm text-gray-500`}>
-              {theme.description}
-            </p>
+        <div className={tw`space-y-8`}>
+          <article className={tw`space-y-4`}>
+            <header>
+              <h2
+                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+              >
+                <span aria-hidden="true">🌈</span>
+                <SectionLink
+                  label={`Theme for ${theme.year}`}
+                  href="/life/themes"
+                />
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Yearly theme that dictates quarterly goals
+              </p>
+            </header>
             <div
-              className={tw`absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none`}
-              style={{
-                backgroundImage:
-                  "linear-gradient(to bottom, rgba(255, 255, 255, 0.001), rgba(255, 255, 255, 1))",
-              }}
-            />
-          </div>
-          <div className={tw`pt-1`}>
-            <DataFooterLinks
-              apiUrl="https://anandchowdhary.github.io/everything/api.json"
-              githubUrl="https://github.com/AnandChowdhary/everything"
-              links={[{ label: "View past themes", href: "/life/themes" }]}
-            />
-          </div>
-        </article>
+              className={tw`relative space-y-2 bg-white p-4 rounded shadow-sm`}
+            >
+              <p className={tw`text-2xl`}>{theme.title}</p>
+              <p className={tw`h-20 overflow-hidden text-sm text-gray-500`}>
+                {theme.description}
+              </p>
+              <div
+                className={tw`absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none`}
+                style={{
+                  backgroundImage:
+                    "linear-gradient(to bottom, rgba(255, 255, 255, 0.001), rgba(255, 255, 255, 1))",
+                }}
+              />
+            </div>
+            <div className={tw`pt-1`}>
+              <DataFooterLinks
+                apiUrl="https://anandchowdhary.github.io/everything/api.json"
+                githubUrl="https://github.com/AnandChowdhary/everything"
+                links={[{ label: "View past themes", href: "/life/themes" }]}
+              />
+            </div>
+          </article>
+          <article className={tw`space-y-4`}>
+            <header>
+              <h2
+                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+              >
+                <span aria-hidden="true">📊</span>
+                <SectionLink
+                  label={`OKRs for Q${okr.data.name}`}
+                  href="/life/okrs"
+                />
+              </h2>
+              <p className={tw`text-gray-500`}>
+                Personal Objectives and Key Results
+              </p>
+            </header>
+            <OKRCards okr={okr} />
+            <div className={tw`pt-1`}>
+              <DataFooterLinks
+                apiUrl="https://anandchowdhary.github.io/okrs/api.json"
+                githubUrl="https://github.com/AnandChowdhary/okrs"
+                links={[{ label: "View past OKRs", href: "/life/okrs" }]}
+              />
+            </div>
+          </article>
+        </div>
         <article className={tw`space-y-4`}>
           <header>
             <h2
               className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
             >
-              <span aria-hidden="true">📊</span>
-              <SectionLink
-                label={`OKRs for Q${okr.data.name}`}
-                href="/life/okrs"
-              />
+              <span aria-hidden="true">🌍</span>
+              <SectionLink label={`Live`} href="/life" />
             </h2>
             <p className={tw`text-gray-500`}>
-              Personal Objectives and Key Results
+              Tracking my life data in real time
             </p>
           </header>
-          <OKRCards okr={okr} />
-          <div className={tw`pt-1`}>
-            <DataFooterLinks
-              apiUrl="https://anandchowdhary.github.io/okrs/api.json"
-              githubUrl="https://github.com/AnandChowdhary/okrs"
-              links={[{ label: "View past OKRs", href: "/life/themes" }]}
-            />
+          <div className={tw`relative space-y-4`}>
+            <div className={tw`bg-white rounded shadow-sm p-4 space-y-4`}>
+              <div className={tw`flex space-x-2`}>
+                <span aria-hidden="true">🎂</span>
+                <div>
+                  <p>
+                    <Age />
+                    {" years old"}
+                  </p>
+                  <p className={tw`text-sm text-gray-500`}>
+                    Next birthday <TimeAgo date={"2022-12-29"} />
+                  </p>
+                </div>
+              </div>
+              <div className={tw`flex space-x-2`}>
+                <span aria-hidden="true">📍</span>
+                <div>
+                  <p>
+                    Last seen at{" "}
+                    <strong className={tw`font-medium`}>
+                      {gyroscope.lastSeenAt.name}
+                    </strong>
+                  </p>
+                  <p className={tw`text-sm text-gray-500`}>
+                    {gyroscope.lastSeenAt.locationTimeAgo}
+                  </p>
+                </div>
+              </div>
+              <div className={tw`flex space-x-2`}>
+                <span aria-hidden="true">🫀</span>
+                <div>
+                  <p>
+                    <span className={tw`mr-2`}>
+                      Heart beating at{" "}
+                      <strong className={tw`font-medium`}>
+                        {gyroscope.heart.value} bpm
+                      </strong>
+                    </span>
+                    <span
+                      className={
+                        gyroscope.heart.diffValue.includes("▲")
+                          ? tw`text-sm text-red-700`
+                          : tw`text-sm text-green-700`
+                      }
+                    >
+                      {gyroscope.heart.diffValue}
+                    </span>
+                  </p>
+                  <p className={tw`text-sm text-gray-500`}>
+                    {gyroscope.heart.timeAgo}
+                  </p>
+                </div>
+              </div>
+              <div className={tw`flex space-x-2`}>
+                <span aria-hidden="true">🏃‍♂️</span>
+                <div>
+                  <p>{gyroscope.steps.value}</p>
+                  <p className={tw`text-sm text-gray-500`}>
+                    {gyroscope.steps.timeAgo}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </article>
       </section>
