@@ -1,17 +1,16 @@
 /** @jsx h */
-import { h, ComponentChildren } from "preact";
-import { tw } from "@twind";
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import { tw } from "@twind";
+import { ComponentChildren, h } from "preact";
+import * as colors from "twind/colors";
+import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
+import { OKRCards } from "../components/data/OKRs.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
-import { OKRCards } from "../components/data/OKRs.tsx";
-import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
-import { BarChart } from "../components/data/BarChart.tsx";
+import type { IOkrs, ITheme } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
-import * as colors from "twind/colors";
-import type { IOkrs, ITheme } from "../utils/data.ts";
 
 interface HomeData {
   okr: {
@@ -172,17 +171,15 @@ export const handler: Handlers<HomeData> = {
   async GET(request, context) {
     const timeline = (await (
       await fetch("https://anandchowdhary.github.io/everything/api.json")
-    ).json()) as {
-      date: string;
-      type: string;
-      title: string;
-      description?: string;
-      data?: unknown;
-    }[];
+    ).json()) as HomeData["timeline"];
 
+    const okr = timeline.find(({ type }) => type === "okr") as
+      | HomeData["okr"]
+      | undefined;
+    if (!okr) throw new Error("OKR not found");
     const props = {
       timeline,
-      okr: timeline.find(({ type }) => type === "okr"),
+      okr,
       theme: {
         year: "2022",
         title: "Year of Teamwork",
@@ -240,6 +237,63 @@ export default function Home({ data }: PageProps<HomeData>) {
           </p>
           <SectionLink label="Learn more about me" href="/about" />
         </div>
+      </section>
+      <section className={tw`grid grid-cols-5 text-center gap-12`}>
+        {[
+          {
+            logo: "yourstory.svg",
+            title: "20 Under 20",
+            publication: "YourStory 20 Under 20",
+          },
+          {
+            logo: "the-next-web.svg",
+            title: "TNW T500",
+            publication: "The Next Web T500",
+          },
+          {
+            logo: "github-stars.svg",
+            title: "2020–22",
+            publication: "GitHub Stars",
+          },
+          {
+            logo: "forbes.svg",
+            title: "30 Under 30",
+            publication: "Forbes 30 Under 30",
+          },
+          {
+            logo: "het-financieele-dagblad.svg",
+            title: "50 Under 25",
+            publication: "FD Persoonlijk",
+          },
+        ].map((award) => (
+          <a
+            key={award.title}
+            href="#"
+            className={tw`opacity-70 hover:opacity-100 transition relative h-12 flex flex-col items-center justify-center px-6`}
+          >
+            <div
+              className={tw`absolute top-0 left-0 bottom-0 h-12 bg-contain bg-no-repeat bg-left`}
+              style={{
+                backgroundImage: "url(/awards/leaf.svg)",
+                aspectRatio: "86 / 150",
+              }}
+            />
+            <div
+              className={tw`absolute top-0 right-0 bottom-0 h-12 bg-contain bg-no-repeat bg-right`}
+              style={{
+                backgroundImage: "url(/awards/leaf.svg)",
+                transform: "scaleX(-1)",
+                aspectRatio: "86 / 150",
+              }}
+            />
+            <img alt="" src={`/awards/${award.logo}`} />
+            <div className={tw`font-medium -mt-1`} style={{ fontSize: "60%" }}>
+              {award.title}
+            </div>
+          </a>
+        ))}
+      </section>
+      <section className={tw`grid-cols-2 gap-8 gap-y-12 sm:grid`}>
         <article className={tw`space-y-4`}>
           <header>
             <h2
@@ -301,69 +355,6 @@ export default function Home({ data }: PageProps<HomeData>) {
               links={[{ label: "View past OKRs", href: "/life/themes" }]}
             />
           </div>
-        </article>
-        <article className={tw`space-y-4`}>
-          <header>
-            <h2
-              className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-            >
-              <span aria-hidden="true">💼</span>
-              <SectionLink
-                label={`Last week in productivity`}
-                href="/life/productivity"
-              />
-            </h2>
-            <p className={tw`text-gray-500`}>
-              Daily productivity score by RescueTime
-            </p>
-          </header>
-          <BarChart
-            rgb="150, 220, 220"
-            data={[
-              { date: "2022-07-01", value: 91 },
-              { date: "2022-07-02", value: 31 },
-              { date: "2022-07-03", value: 43 },
-              { date: "2022-07-04", value: 94 },
-              { date: "2022-07-05", value: 65 },
-              { date: "2022-07-06", value: 86 },
-              { date: "2022-07-07", value: 57 },
-            ]}
-          />
-          <DataFooterLinks
-            apiUrl="https://anandchowdhary.github.io/everything/api.json"
-            githubUrl="https://github.com/AnandChowdhary/everything"
-            updatedAt={"2022-01-01"}
-          />
-        </article>
-        <article className={tw`space-y-4`}>
-          <header>
-            <h2
-              className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-            >
-              <span aria-hidden="true">😴</span>
-              <SectionLink label={`Last week in sleep`} href="/life/health" />
-            </h2>
-            <p className={tw`text-gray-500`}>
-              Number of hours asleep by Oura Ring
-            </p>
-          </header>
-          <BarChart
-            rgb="255, 180, 180"
-            data={[
-              { date: "2022-07-01", label: "8:06", value: 8.1 },
-              { date: "2022-07-02", label: "7:06", value: 7.1 },
-              { date: "2022-07-03", label: "7:42", value: 7.7 },
-              { date: "2022-07-04", label: "9:06", value: 9.1 },
-              { date: "2022-07-05", label: "6:30", value: 6.5 },
-              { date: "2022-07-06", label: "8:36", value: 8.6 },
-              { date: "2022-07-07", label: "7:48", value: 7.8 },
-            ]}
-          />
-          <DataFooterLinks
-            apiUrl="https://anandchowdhary.github.io/everything/api.json"
-            githubUrl="https://github.com/AnandChowdhary/everything"
-            updatedAt={"2022-01-01"}
-          />
         </article>
       </section>
       <section className={tw`space-y-4`}>
@@ -619,7 +610,6 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </ul>
                     )}
                     {item.type === "podcast-interview" &&
-                      "embed" in item &&
                       "data" in item &&
                       item.data.embed && (
                         <div className={tw`pt-2`}>

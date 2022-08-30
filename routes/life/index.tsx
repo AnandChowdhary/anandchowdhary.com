@@ -1,5 +1,7 @@
 /** @jsx h */
 import { h, ComponentChildren } from "preact";
+import { BarChart } from "../../components/data/BarChart.tsx";
+import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
 import { orange } from "twind/colors";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
@@ -153,11 +155,13 @@ export const handler: Handlers<HomeData> = {
       contributionsGraph,
       productivity: {
         updatedAt: new Date().toISOString(),
-        data: rescueTimeData.slice(0, 5).map((item) => ({
-          date: item.date,
-          pulse: item.productivity_pulse,
-          duration: item.total_duration_formatted,
-        })),
+        data:
+          [] ||
+          rescueTimeData.slice(0, 5).map((item) => ({
+            date: item.date,
+            pulse: item.productivity_pulse,
+            duration: item.total_duration_formatted,
+          })),
       },
     });
   },
@@ -169,6 +173,69 @@ export default function Home({ data }: PageProps<HomeData>) {
 
   return (
     <div class={tw`max-w-screen-md px-4 mx-auto space-y-16 md:px-0`}>
+      <article className={tw`space-y-4`}>
+        <header>
+          <h2
+            className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+          >
+            <span aria-hidden="true">💼</span>
+            <SectionLink
+              label={`Last week in productivity`}
+              href="/life/productivity"
+            />
+          </h2>
+          <p className={tw`text-gray-500`}>
+            Daily productivity score by RescueTime
+          </p>
+        </header>
+        <BarChart
+          rgb="150, 220, 220"
+          data={[
+            { date: "2022-07-01", value: 91 },
+            { date: "2022-07-02", value: 31 },
+            { date: "2022-07-03", value: 43 },
+            { date: "2022-07-04", value: 94 },
+            { date: "2022-07-05", value: 65 },
+            { date: "2022-07-06", value: 86 },
+            { date: "2022-07-07", value: 57 },
+          ]}
+        />
+        <DataFooterLinks
+          apiUrl="https://anandchowdhary.github.io/everything/api.json"
+          githubUrl="https://github.com/AnandChowdhary/everything"
+          updatedAt={"2022-01-01"}
+        />
+      </article>
+      <article className={tw`space-y-4`}>
+        <header>
+          <h2
+            className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
+          >
+            <span aria-hidden="true">😴</span>
+            <SectionLink label={`Last week in sleep`} href="/life/health" />
+          </h2>
+          <p className={tw`text-gray-500`}>
+            Number of hours asleep by Oura Ring
+          </p>
+        </header>
+        <BarChart
+          rgb="255, 180, 180"
+          data={[
+            { date: "2022-07-01", label: "8:06", value: 8.1 },
+            { date: "2022-07-02", label: "7:06", value: 7.1 },
+            { date: "2022-07-03", label: "7:42", value: 7.7 },
+            { date: "2022-07-04", label: "9:06", value: 9.1 },
+            { date: "2022-07-05", label: "6:30", value: 6.5 },
+            { date: "2022-07-06", label: "8:36", value: 8.6 },
+            { date: "2022-07-07", label: "7:48", value: 7.8 },
+          ]}
+        />
+        <DataFooterLinks
+          apiUrl="https://anandchowdhary.github.io/everything/api.json"
+          githubUrl="https://github.com/AnandChowdhary/everything"
+          updatedAt={"2022-01-01"}
+        />
+      </article>
       <section className={tw`space-y-4`}>
         <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
           <span aria-hidden="true">📊</span>
