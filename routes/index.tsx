@@ -1,9 +1,7 @@
-/** @jsx h */
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { tw } from "@twind";
 import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
 import * as colors from "twind/colors";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
@@ -280,26 +278,26 @@ export default function Home({ data }: PageProps<HomeData>) {
   const { timeline, okr, theme, gyroscope } = data;
 
   return (
-    <div class={tw`max-w-screen-md px-4 mx-auto space-y-12 md:px-0`}>
-      <section className={tw`grid-cols-2 gap-8 gap-y-12 sm:grid`}>
-        <div className={tw`items-start justify-center mb-6 sm:flex`}>
+    <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+      <section className="grid-cols-2 gap-8 gap-y-12 sm:grid">
+        <div className="items-start justify-center mb-6 sm:flex">
           <img
             alt="Illustrated portrait of Anand in comic-book style"
             src={asset("anand.svg")}
-            className={tw`object-contain object-bottom w-1/2 sm:w-2/3`}
+            className="object-contain object-bottom w-1/2 sm:w-2/3"
             width={198}
             height={198}
             loading="eager"
           />
         </div>
-        <div className={tw`space-y-4`}>
-          <h2 className={tw`space-x-2 text-2xl font-semibold font-display`}>
+        <div className="space-y-4">
+          <h2 className="space-x-2 text-2xl font-semibold font-display">
             <span className="wave" aria-hidden="true">
               👋
             </span>
             <span>{" Hi, I'm Anand"}</span>
           </h2>
-          <p className={tw`text-lg text-gray-500`}>
+          <p className="text-lg text-gray-500">
             {t(
               "I'm a creative technologist and entrepreneur currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture with interior design company in Europe.",
               {},
@@ -307,7 +305,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 ({ children }: { children: ComponentChildren }) => (
                   <ExternalLink
                     href="https://pabio.com"
-                    className={tw`underline`}
+                    className="underline"
                     children={children}
                   />
                 ),
@@ -321,9 +319,9 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      <section className={tw`overflow-auto`}>
+      <section className="overflow-auto">
         <div
-          className={tw`grid grid-cols-5 text-center gap-12 overflow-auto`}
+          className="grid grid-cols-5 text-center gap-12 overflow-auto"
           style={{ minWidth: "700px" }}
         >
           {[
@@ -356,17 +354,17 @@ export default function Home({ data }: PageProps<HomeData>) {
             <a
               key={award.title}
               href="#"
-              className={tw`opacity-70 hover:opacity-100 transition relative h-12 flex flex-col items-center justify-center px-6`}
+              className="opacity-70 hover:opacity-100 transition relative h-12 flex flex-col items-center justify-center px-6"
             >
               <div
-                className={tw`absolute top-0 left-0 bottom-0 h-12 bg-contain bg-no-repeat bg-left`}
+                className="absolute top-0 left-0 bottom-0 h-12 bg-contain bg-no-repeat bg-left"
                 style={{
                   backgroundImage: "url(/awards/leaf.svg)",
                   aspectRatio: "86 / 150",
                 }}
               />
               <div
-                className={tw`absolute top-0 right-0 bottom-0 h-12 bg-contain bg-no-repeat bg-right`}
+                className="absolute top-0 right-0 bottom-0 h-12 bg-contain bg-no-repeat bg-right"
                 style={{
                   backgroundImage: "url(/awards/leaf.svg)",
                   transform: "scaleX(-1)",
@@ -374,49 +372,42 @@ export default function Home({ data }: PageProps<HomeData>) {
                 }}
               />
               <img alt="" src={`/awards/${award.logo}`} />
-              <div
-                className={tw`font-medium -mt-1`}
-                style={{ fontSize: "60%" }}
-              >
+              <div className="font-medium -mt-1" style={{ fontSize: "60%" }}>
                 {award.title}
               </div>
             </a>
           ))}
         </div>
       </section>
-      <section className={tw`grid-cols-2 gap-8 gap-y-12 sm:grid`}>
-        <div className={tw`space-y-8`}>
-          <article className={tw`space-y-4`}>
+      <section className="grid-cols-2 gap-8 gap-y-12 sm:grid">
+        <div className="space-y-8">
+          <article className="space-y-4">
             <header>
-              <h2
-                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-              >
+              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">🌈</span>
                 <SectionLink
                   label={`Theme for ${theme.year}`}
                   href="/life/themes"
                 />
               </h2>
-              <p className={tw`text-gray-500`}>
+              <p className="text-gray-500">
                 Yearly theme that dictates quarterly goals
               </p>
             </header>
-            <div
-              className={tw`relative space-y-2 bg-white p-4 rounded shadow-sm`}
-            >
-              <p className={tw`text-2xl`}>{theme.title}</p>
-              <p className={tw`h-20 overflow-hidden text-sm text-gray-500`}>
+            <div className="relative space-y-2 bg-white p-4 rounded shadow-sm">
+              <p className="text-2xl">{theme.title}</p>
+              <p className="h-20 overflow-hidden text-sm text-gray-500">
                 {theme.description}
               </p>
               <div
-                className={tw`absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none`}
+                className="absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none"
                 style={{
                   backgroundImage:
                     "linear-gradient(to bottom, rgba(255, 255, 255, 0.001), rgba(255, 255, 255, 1))",
                 }}
               />
             </div>
-            <div className={tw`pt-1`}>
+            <div className="pt-1">
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/everything/api.json"
                 githubUrl="https://github.com/AnandChowdhary/everything"
@@ -424,23 +415,21 @@ export default function Home({ data }: PageProps<HomeData>) {
               />
             </div>
           </article>
-          <article className={tw`space-y-4`}>
+          <article className="space-y-4">
             <header>
-              <h2
-                className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-              >
+              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">📊</span>
                 <SectionLink
                   label={`OKRs for Q${okr.data.name}`}
                   href="/life/okrs"
                 />
               </h2>
-              <p className={tw`text-gray-500`}>
+              <p className="text-gray-500">
                 Personal Objectives and Key Results
               </p>
             </header>
             <OKRCards okr={okr} />
-            <div className={tw`pt-1`}>
+            <div className="pt-1">
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/okrs/api.json"
                 githubUrl="https://github.com/AnandChowdhary/okrs"
@@ -449,76 +438,72 @@ export default function Home({ data }: PageProps<HomeData>) {
             </div>
           </article>
         </div>
-        <article className={tw`space-y-4`}>
+        <article className="space-y-4">
           <header>
-            <h2
-              className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-            >
+            <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🌍</span>
               <SectionLink label={`Live`} href="/life" />
             </h2>
-            <p className={tw`text-gray-500`}>
-              Tracking my life data in real time
-            </p>
+            <p className="text-gray-500">Tracking my life data in real time</p>
           </header>
-          <div className={tw`relative space-y-4`}>
-            <div className={tw`bg-white rounded shadow-sm p-4 space-y-4`}>
-              <div className={tw`flex space-x-2`}>
+          <div className="relative space-y-4">
+            <div className="bg-white rounded shadow-sm p-4 space-y-4">
+              <div className="flex space-x-2">
                 <span aria-hidden="true">🎂</span>
                 <div>
                   <p>
                     <Age />
                     {" years old"}
                   </p>
-                  <p className={tw`text-sm text-gray-500`}>
+                  <p className="text-sm text-gray-500">
                     Next birthday <TimeAgo date={"2022-12-29"} />
                   </p>
                 </div>
               </div>
-              <div className={tw`flex space-x-2`}>
+              <div className="flex space-x-2">
                 <span aria-hidden="true">📍</span>
                 <div>
                   <p>
                     Last seen at{" "}
-                    <strong className={tw`font-medium`}>
+                    <strong className="font-medium">
                       {gyroscope.lastSeenAt.name}
                     </strong>
                   </p>
-                  <p className={tw`text-sm text-gray-500`}>
+                  <p className="text-sm text-gray-500">
                     {gyroscope.lastSeenAt.locationTimeAgo}
                   </p>
                 </div>
               </div>
-              <div className={tw`flex space-x-2`}>
+              <div className="flex space-x-2">
                 <span aria-hidden="true">🫀</span>
                 <div>
                   <p>
-                    <span className={tw`mr-2`}>
+                    <span className="mr-2">
                       Heart beating at{" "}
-                      <strong className={tw`font-medium`}>
+                      <strong className="font-medium">
                         {gyroscope.heart.value} bpm
                       </strong>
                     </span>
                     <span
                       className={
                         gyroscope.heart.diffValue.includes("▲")
-                          ? tw`text-sm text-red-700`
-                          : tw`text-sm text-green-700`
+                          ? `text-sm text-red-700`
+                          : `text-sm text-green-700`
                       }
                     >
                       {gyroscope.heart.diffValue}
                     </span>
                   </p>
-                  <p className={tw`text-sm text-gray-500`}>
+                  <p className="text-sm text-gray-500">
                     {gyroscope.heart.timeAgo}
                   </p>
                 </div>
               </div>
-              <div className={tw`flex space-x-2`}>
+              <div className="flex space-x-2">
                 <span aria-hidden="true">🏃‍♂️</span>
                 <div>
                   <p>{gyroscope.steps.value}</p>
-                  <p className={tw`text-sm text-gray-500`}>
+                  <p className="text-sm text-gray-500">
                     {gyroscope.steps.timeAgo}
                   </p>
                 </div>
@@ -527,48 +512,44 @@ export default function Home({ data }: PageProps<HomeData>) {
           </div>
         </article>
       </section>
-      <section className={tw`space-y-4`}>
-        <header className={tw`space-y-2`}>
+      <section className="space-y-4">
+        <header className="space-y-2">
           <h2
-            className={tw`space-x-2 text-2xl font-semibold font-display`}
+            className="space-x-2 text-2xl font-semibold font-display"
             id="changelog"
           >
             <span aria-hidden="true">🕰</span>
             <span>Changelog</span>
           </h2>
-          <p className={tw`text-gray-500`}>
+          <p className="text-gray-500">
             {"The latest from my desk, curated from different sources."}
           </p>
           <Filters categoryData={categoryData} />
         </header>
-        <div className={tw`relative space-y-4`}>
-          <div
-            className={tw`absolute top-0 w-1 bg-orange-200 bottom-6 left-4`}
-          />
+        <div className="relative space-y-4">
+          <div className="absolute top-0 w-1 bg-orange-200 bottom-6 left-4" />
           {timeline.map((item, index) => (
             <div key={item.title}>
               {(index === 0 ||
                 new Date(item.date).getFullYear() !==
                   new Date(data.timeline[index - 1].date).getFullYear()) && (
-                <div className={tw`flex flex-grow ${index > 0 && "pt-6"}`}>
-                  <div className={tw`shrink-0`} style={{ minWidth: "3rem" }}>
-                    <div
-                      className={tw`relative w-5 h-5 ml-2 bg-orange-600 border-4 rounded-full border-orange-50`}
-                    />
+                <div className={`flex flex-grow ${index > 0 && "pt-6"}`}>
+                  <div className="shrink-0" style={{ minWidth: "3rem" }}>
+                    <div className="relative w-5 h-5 ml-2 bg-orange-600 border-4 rounded-full border-orange-50" />
                   </div>
                   <div>
-                    <h3 className={tw`mb-6 text-xl font-semibold`}>
+                    <h3 className="mb-6 text-xl font-semibold">
                       {new Date(item.date).getFullYear()}
                     </h3>
                   </div>
                 </div>
               )}
-              <article className={tw`sm:flex`}>
-                <div className={tw`flex flex-grow`}>
-                  <div className={tw`shrink-0`} style={{ minWidth: "3rem" }}>
+              <article className="sm:flex">
+                <div className="flex flex-grow">
+                  <div className="shrink-0" style={{ minWidth: "3rem" }}>
                     <div>
                       <div
-                        className={tw`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-${
+                        className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-${
                           categoryData[item.type].color
                         }-500`}
                       >
@@ -578,11 +559,11 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </div>
                     </div>
                   </div>
-                  <div className={tw`flex-grow space-y-1`}>
-                    <div className={tw`text-gray-500`}>
+                  <div className="flex-grow space-y-1">
+                    <div className="text-gray-500">
                       <span>
                         <span
-                          className={tw`text-${
+                          className={`text-${
                             categoryData[item.type].color
                           }-500`}
                         >
@@ -597,7 +578,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </span>
                     </div>
                     {"href" in item && item.href ? (
-                      <h4 className={tw`text-lg font-medium leading-6`}>
+                      <h4 className="text-lg font-medium leading-6">
                         {item.href.startsWith("http") ? (
                           <ExternalLink href={item.href}>
                             {item.title}
@@ -607,7 +588,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                         )}
                       </h4>
                     ) : (
-                      <h4 className={tw`text-lg font-medium leading-6`}>
+                      <h4 className="text-lg font-medium leading-6">
                         {item.title}
                       </h4>
                     )}
@@ -615,25 +596,21 @@ export default function Home({ data }: PageProps<HomeData>) {
                       <p>{`by ${item.data.authors.join(", ")}`}</p>
                     )}
                     {item.type === "blog-post" && (
-                      <p
-                        className={tw`text-gray-500`}
-                      >{`Reading time: ${humanizeMmSs(
+                      <p className="text-gray-500">{`Reading time: ${humanizeMmSs(
                         String(item.data.words / 250)
                       )}`}</p>
                     )}
                     {item.type === "event" && (
-                      <p className={tw`text-gray-500`}>
-                        <span className={tw`mr-1`}>{item.data.emoji}</span>
+                      <p className="text-gray-500">
+                        <span className="mr-1">{item.data.emoji}</span>
                         <span>{` ${item.data.location}`}</span>
                       </p>
                     )}
                     {item.type === "podcast-interview" && (
-                      <p className={tw`text-gray-500`}>{item.data.publisher}</p>
+                      <p className="text-gray-500">{item.data.publisher}</p>
                     )}
                     {item.type === "press-feature" && (
-                      <p
-                        className={tw`flex items-center space-x-2 text-gray-500`}
-                      >
+                      <p className="flex items-center space-x-2 text-gray-500">
                         <img
                           alt=""
                           src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
@@ -644,7 +621,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                           loading="lazy"
                           width={24}
                           height={24}
-                          className={tw`w-6 h-6 rounded-full`}
+                          className="w-6 h-6 rounded-full"
                         />
                         <span>
                           {t(
@@ -663,7 +640,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                                 <strong
                                   key={0}
                                   children={children}
-                                  className={tw`font-medium`}
+                                  className="font-medium"
                                 />
                               ),
                             ]
@@ -672,12 +649,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </p>
                     )}
                     {item.type === "award" && (
-                      <p
-                        className={tw`text-gray-500`}
-                      >{`Awarded by ${item.data.publisher}`}</p>
+                      <p className="text-gray-500">{`Awarded by ${item.data.publisher}`}</p>
                     )}
                     {item.type === "video" && (
-                      <ul className={tw`text-gray-500`}>
+                      <ul className="text-gray-500">
                         <li>{`${item.data.publisher}, ${item.data.city}`}</li>
                         <li>{`Watch time: ${humanizeMmSs(
                           item.data.duration
@@ -685,14 +660,12 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </ul>
                     )}
                     {"description" in item && item.description && (
-                      <p className={tw`text-gray-500`}>{item.description}</p>
+                      <p className="text-gray-500">{item.description}</p>
                     )}
                     {item.type === "open-source-project" && (
-                      <ul className={tw`flex space-x-4`}>
+                      <ul className="flex space-x-4">
                         {item.data.language && (
-                          <li
-                            className={tw`flex flex-wrap items-center space-x-1`}
-                          >
+                          <li className="flex flex-wrap items-center space-x-1">
                             <svg
                               aria-hidden="true"
                               width="1em"
@@ -706,9 +679,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                             <span>{item.data.language}</span>
                           </li>
                         )}
-                        <li
-                          className={tw`flex flex-wrap items-center space-x-1`}
-                        >
+                        <li className="flex flex-wrap items-center space-x-1">
                           <svg aria-hidden="true" width="1em" height="1em">
                             <use href="#star"></use>
                           </svg>
@@ -723,7 +694,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                                   children: ComponentChildren;
                                 }) => (
                                   <strong
-                                    className={tw`font-medium`}
+                                    className="font-medium"
                                     children={children}
                                   />
                                 ),
@@ -731,9 +702,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                             )}
                           </span>
                         </li>
-                        <li
-                          className={tw`flex flex-wrap items-center space-x-1`}
-                        >
+                        <li className="flex flex-wrap items-center space-x-1">
                           <svg aria-hidden="true" width="1em" height="1em">
                             <use href="#watchers"></use>
                           </svg>
@@ -748,7 +717,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                                   children: ComponentChildren;
                                 }) => (
                                   <strong
-                                    className={tw`font-medium`}
+                                    className="font-medium"
                                     children={children}
                                   />
                                 ),
@@ -756,9 +725,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                             )}
                           </span>
                         </li>{" "}
-                        <li
-                          className={tw`flex flex-wrap items-center space-x-1`}
-                        >
+                        <li className="flex flex-wrap items-center space-x-1">
                           <svg aria-hidden="true" width="1em" height="1em">
                             <use href="#forks"></use>
                           </svg>
@@ -773,7 +740,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                                   children: ComponentChildren;
                                 }) => (
                                   <strong
-                                    className={tw`font-medium`}
+                                    className="font-medium"
                                     children={children}
                                   />
                                 ),
@@ -786,19 +753,19 @@ export default function Home({ data }: PageProps<HomeData>) {
                     {item.type === "podcast-interview" &&
                       "data" in item &&
                       item.data.embed && (
-                        <div className={tw`pt-2`}>
+                        <div className="pt-2">
                           <iframe
                             src={item.data.embed}
                             loading="lazy"
                             scrolling="no"
-                            className={tw`w-full overflow-hidden rounded-lg`}
+                            className="w-full overflow-hidden rounded-lg"
                             style={{ height: "152px" }}
                           />
                         </div>
                       )}
                   </div>
                 </div>
-                <div className={tw`mt-4 ml-12 sm:mt-0 sm:ml-6 shrink-0`}>
+                <div className="mt-4 ml-12 sm:mt-0 sm:ml-6 shrink-0">
                   {item.type === "book" ? (
                     <img
                       alt=""
@@ -808,16 +775,16 @@ export default function Home({ data }: PageProps<HomeData>) {
                       loading="lazy"
                       width={300}
                       height={450}
-                      className={tw`w-24 rounded-lg shadow`}
+                      className="w-24 rounded-lg shadow"
                     />
                   ) : (
                     item.type === "video" && (
-                      <div className={tw`relative`}>
+                      <div className="relative">
                         <svg
                           aria-hidden="true"
                           width="2rem"
                           height="2rem"
-                          className={tw`absolute text-white -translate-x-1/2 -translate-y-1/2 drop-shadow left-1/2 top-1/2`}
+                          className="absolute text-white -translate-x-1/2 -translate-y-1/2 drop-shadow left-1/2 top-1/2"
                         >
                           <use href="#triangle"></use>
                         </svg>
@@ -829,7 +796,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                           loading="lazy"
                           width={512}
                           height={370}
-                          className={tw`w-full rounded-lg sm:w-64`}
+                          className="w-full rounded-lg sm:w-64"
                         />
                       </div>
                     )

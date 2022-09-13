@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 
 const STARTUPS = [
@@ -48,42 +45,40 @@ const STARTUPS = [
 
 export default function About() {
   return (
-    <div class={tw`max-w-screen-md px-4 mx-auto space-y-16 md:px-0`}>
+    <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
       <section>
-        <figure class={tw`mb-12`}>
+        <figure class="mb-12">
           <img
             alt="Anand standing on a table with his MacBook in his hand"
             src="https://d33wubrfki0l68.cloudfront.net/41df0551175f4c6716aad2988c37ceb83a342b9e/7b5dc/images/photos/anand-chowdhary.jpg"
             width={2450}
             height={1633}
-            className={tw`rounded-lg w-full bg-white border shadow-sm`}
+            className="rounded-lg w-full bg-white border shadow-sm"
           />
-          <figcaption
-            class={tw`text-center text-gray-500 text-xs mt-2 inline-flex items-center justify-center w-full`}
-          >
-            <span>&copy; Name of photographer</span>
+          <figcaption class="text-center text-gray-500 text-xs mt-2 inline-flex items-center justify-center w-full">
+            <span>
+              &copy; <a href="https://rikkertharink.nl">Rikkert Harink</a>
+            </span>
             <span
               aria-hidden="true"
               title="Anand standing on a table with his MacBook in his hand"
-              class={tw`bg-gray-200 rounded uppercase px-1 ml-2 font-medium cursor-default`}
+              class="bg-gray-200 rounded uppercase px-1 ml-2 font-medium cursor-default"
               style={{ fontSize: "80%" }}
             >
               Alt
             </span>
           </figcaption>
         </figure>
-        <header className={tw`mb-5 space-y-5`}>
-          <h1
-            className={tw`text-4xl font-semibold font-display dark:text-gray-200`}
-          >
+        <header className="mb-5 space-y-5">
+          <h1 className="text-4xl font-semibold font-display dark:text-gray-200">
             About
           </h1>
-          <p className={tw`text-xl leading-relaxed`}>
+          <p className="text-xl leading-relaxed">
             Anand Chowdhary is a creative technologist and entrepreneur.
           </p>
         </header>
         <div
-          className={tw`space-y-5 md:columns-2 copy`}
+          className="space-y-5 md:columns-2 copy"
           style={{ columnCount: 2, columnGap: "2rem" }}
         >
           <p>
@@ -114,16 +109,14 @@ export default function About() {
         </div>
       </section>
       <section>
-        <h2
-          className={tw`mt-8 text-2xl font-semibold font-display dark:text-gray-200`}
-        >
+        <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200">
           Startups founded
         </h2>
-        <ul className={tw`mt-6`}>
+        <ul className="mt-6">
           {STARTUPS.map(({ name, description, start, end, icon, href }) => (
-            <li key={name} className={tw`flex mt-6`}>
+            <li key={name} className="flex mt-6">
               <div
-                className={tw`flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-gray-80`}
+                className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-gray-80"
                 role="presentation"
               >
                 <svg aria-hidden="true">
@@ -133,18 +126,16 @@ export default function About() {
 
               <div>
                 <h3>
-                  <strong className={tw`font-medium dark:text-gray-300`}>
+                  <strong className="font-medium dark:text-gray-300">
                     {href ? (
                       <ExternalLink href={href}>{name}</ExternalLink>
                     ) : (
                       name
                     )}
                   </strong>
-                  <span className={tw`text-gray-500`}>
-                    {`, ${start}–${end}`}
-                  </span>
+                  <span className="text-gray-500">{`, ${start}–${end}`}</span>
                 </h3>
-                <p className={tw`text-gray-500 dark:text-gray-500`}>
+                <p className="text-gray-500 dark:text-gray-500">
                   {description}
                 </p>
               </div>
@@ -153,9 +144,7 @@ export default function About() {
         </ul>
       </section>
       <section>
-        <h2
-          className={tw`mt-8 text-2xl font-semibold font-display dark:text-gray-200 mb-6`}
-        >
+        <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200 mb-6">
           Other work
         </h2>
         {[
@@ -171,9 +160,9 @@ export default function About() {
               "I work with early-stage startups as an active angel investor. I also scout seed and Series A investments for funds such as Julian Capital and OSS Capital.",
           },
         ].map(({ name, description, href }) => (
-          <article key={name} className={tw`mt-6`}>
+          <article key={name} className="mt-6">
             <h3>
-              <strong className={tw`font-medium dark:text-gray-300`}>
+              <strong className="font-medium dark:text-gray-300">
                 {href ? <ExternalLink href={href}>{name}</ExternalLink> : name}
               </strong>
             </h3>

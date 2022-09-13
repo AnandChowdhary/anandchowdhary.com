@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 import { asset, Head } from "$fresh/runtime.ts";
 import { Icons } from "../components/Icons.tsx";
 import { Navbar, Footer } from "../components/layout/Layout.tsx";
@@ -8,15 +5,13 @@ import { AppProps } from "$fresh/src/server/types.ts";
 
 export default function App({ Component }: AppProps) {
   return (
-    <html className={tw`bg-yellow-500 py-2`}>
+    <html className="bg-yellow-500 py-2">
       <Head>
         <title>Anand Chowdhary</title>
         <link rel="prefetch" href={`/${asset("anand.svg")}`} />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
       </Head>
-      <body
-        className={tw`min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900`}
-      >
+      <body className="min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900">
         <div>
           <style
             dangerouslySetInnerHTML={{
@@ -109,18 +104,16 @@ display: inline-block;
         `,
             }}
           />
-          <header className={tw`pt-6 pb-16`}>
-            <div
-              className={tw`flex justify-between max-w-screen-md px-6 mx-auto md:px-0`}
-            >
+          <header className="pt-6 pb-16">
+            <div className="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">
               <a
                 href="/"
-                className={tw`flex items-center space-x-2 font-medium dark:text-gray-300 whitespace-nowrap`}
+                className="flex items-center space-x-2 font-medium dark:text-gray-300 whitespace-nowrap"
               >
                 <svg
                   viewBox="0 0 700 700"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={tw`w-5 h-5 text-teal-500`}
+                  className="w-5 h-5 text-teal-500"
                   role="presentation"
                 >
                   <path

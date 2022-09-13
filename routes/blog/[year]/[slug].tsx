@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import frontMatter from "https://esm.sh/front-matter@4.0.2";
 import { render } from "../../../utils/markdown.ts";
@@ -82,7 +79,7 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
   const { title, content, date, meta, history, previous, next } = data;
 
   return (
-    <div className={tw`max-w-screen-md px-4 mx-auto md:px-0`}>
+    <div className="max-w-screen-md px-4 mx-auto md:px-0">
       <nav>
         <ol className="flex flex-wrap breadcrumbs">
           <li className="hidden">
@@ -103,12 +100,12 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
         </p>
       </header>
       <div className="longform" dangerouslySetInnerHTML={{ __html: content }} />
-      <footer className={tw`grid grid-cols-2 mt-8`}>
+      <footer className="grid grid-cols-2 mt-8">
         {previous && (
           <div>
             <div>&larr; Previous post</div>
-            <div className={tw`font-medium`}>{previous.title}</div>
-            <div className={tw`text-gray-500`}>
+            <div className="font-medium">{previous.title}</div>
+            <div className="text-gray-500">
               {new Date(previous.date).toLocaleDateString("en-US", {
                 dateStyle: "long",
               })}
@@ -116,10 +113,10 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
           </div>
         )}
         {previous && (
-          <div className={tw`text-right`}>
+          <div className="text-right">
             <div>Next post &rarr;</div>
-            <div className={tw`font-medium`}>{previous.title}</div>
-            <div className={tw`text-gray-500`}>
+            <div className="font-medium">{previous.title}</div>
+            <div className="text-gray-500">
               {new Date(previous.date).toLocaleDateString("en-US", {
                 dateStyle: "long",
               })}

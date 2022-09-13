@@ -1,7 +1,4 @@
-/** @jsx h */
-import { h } from "preact";
 import { useState, useEffect } from "preact/hooks";
-import { tw } from "@twind";
 
 interface CounterProps {
   date: string;
@@ -81,7 +78,7 @@ export default function TimeAgo(props: CounterProps) {
         dateStyle: "long",
         timeStyle: "short",
       })}
-      className={tw`border-b border-gray-500 border-dotted`}
+      className="border-b border-gray-500 border-dotted"
     >
       {result}
     </time>

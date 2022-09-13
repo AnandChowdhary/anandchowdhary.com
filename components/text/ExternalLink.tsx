@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h, FunctionComponent } from "preact";
-import { tw } from "@twind";
+import { FunctionComponent } from "preact";
 
 export const ExternalLink: FunctionComponent<{
   href: string;
@@ -13,11 +11,11 @@ export const ExternalLink: FunctionComponent<{
     <a
       href={url.toString()}
       target="_blank"
-      className={`${className} ${tw`space-x-1`}`}
+      className={`${className} ${`space-x-1`}`}
     >
       <span>{children}</span>
       <svg
-        className={tw`inline opacity-50`}
+        className="inline opacity-50"
         stroke="currentColor"
         fill="none"
         stroke-width="0"

@@ -1,13 +1,10 @@
-/** @jsx h */
-import { h } from "preact";
-import type { FunctionComponent, ComponentChildren } from "preact";
-import { tw } from "@twind";
-import type { IOkrs } from "../../utils/data.ts";
+import type { ComponentChildren, FunctionComponent } from "preact";
 import { orange } from "twind/colors";
+import TimeAgo from "../../islands/TimeAgo.tsx";
+import type { IOkrs } from "../../utils/data.ts";
+import { t } from "../../utils/i18n.tsx";
 import { ExternalLink } from "../text/ExternalLink.tsx";
 import { SectionLink } from "../text/SectionLink.tsx";
-import TimeAgo from "../../islands/TimeAgo.tsx";
-import { t } from "../../utils/i18n.tsx";
 
 export const OKRCards: FunctionComponent<{
   okr: {
@@ -19,11 +16,11 @@ export const OKRCards: FunctionComponent<{
   const { data } = okr;
 
   return (
-    <div className={tw`space-y-3`}>
+    <div className="space-y-3">
       {data.objectives.map(({ name, success, progress, key_results }) => (
-        <details key={name} className={tw`appearance-none`}>
+        <details key={name} className="appearance-none">
           <summary
-            className={tw`flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm`}
+            className="flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm"
             style={{
               backgroundImage: `linear-gradient(to right, ${
                 orange[400]
@@ -35,11 +32,11 @@ export const OKRCards: FunctionComponent<{
               backgroundPosition: "left bottom",
             }}
           >
-            <div className={tw`flex justify-between`}>
-              <div className={tw`flex items-center space-x-2`}>
+            <div className="flex justify-between">
+              <div className="flex items-center space-x-2">
                 <div>{name}</div>
                 <svg
-                  className={`${tw`text-gray-400`} rotate-on-open`}
+                  className="text-gray-400 rotate-on-open"
                   stroke="currentColor"
                   fill="none"
                   stroke-width="2"
@@ -54,7 +51,7 @@ export const OKRCards: FunctionComponent<{
                 </svg>
               </div>
               <div
-                className={tw`text-gray-500 pl-4`}
+                className="text-gray-500 pl-4"
                 title={`${Math.round(success * 100)}% success, ${Math.round(
                   progress * 100
                 )}% progress`}
@@ -63,11 +60,11 @@ export const OKRCards: FunctionComponent<{
               </div>
             </div>
           </summary>
-          <div className={tw`mx-4 mb-4 space-y-1`}>
+          <div className="mx-4 mb-4 space-y-1">
             {key_results.map(({ name, success, progress }) => (
               <div
                 key={name}
-                className={tw`flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm`}
+                className="flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${
                     orange[400]
@@ -82,12 +79,10 @@ export const OKRCards: FunctionComponent<{
                 <div>
                   {t(name.replace(/\[redacted\]/g, "<0></0>"), {}, [
                     () => (
-                      <span
-                        className={tw`relative px-2 py-1 text-xs font-medium tracking-widest uppercase`}
-                      >
+                      <span className="relative px-2 py-1 text-xs font-medium tracking-widest uppercase">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className={tw`absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none`}
+                          className="absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none"
                         >
                           <filter id="noiseFilter">
                             <feTurbulence
@@ -110,7 +105,7 @@ export const OKRCards: FunctionComponent<{
                   ])}
                 </div>
                 <div
-                  className={tw`text-gray-500 pl-4`}
+                  className="text-gray-500 pl-4"
                   title={`${Math.round(success * 100)}% success, ${Math.round(
                     progress * 100
                   )}% progress`}
@@ -136,12 +131,12 @@ export const OKRs: FunctionComponent<{
   const { title } = okr;
 
   return (
-    <section className={tw`space-y-4`}>
-      <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+    <section className="space-y-4">
+      <h2 className="space-x-1 text-2xl font-semibold font-display">
         <span aria-hidden="true">📊</span>
         <span>{` OKRs for ${title}`}</span>
       </h2>
-      <p className={tw`text-gray-500`}>
+      <p className="text-gray-500">
         {t(
           "I use <0>Objectives and Key Results</0> both for my personal and professional life. This data is available on <1>GitHub</1> and was last updated <2></2>.",
           {},
@@ -152,7 +147,7 @@ export const OKRs: FunctionComponent<{
             ({ children }: { children: ComponentChildren }) => (
               <ExternalLink
                 href="https://github.com/AnandChowdhary/okrs"
-                className={tw`underline`}
+                className="underline"
                 children={children}
               />
             ),

@@ -1,25 +1,21 @@
-/** @jsx h */
-import { h } from "preact";
 import type { FunctionComponent } from "preact";
-import { tw } from "@twind";
-
 export const BarChart: FunctionComponent<{
   data: { label?: string; date: string; value: number }[];
   rgb: string;
 }> = ({ data, rgb }) => {
   return (
     <div
-      className={tw`rounded bg-white shadow-sm flex items-end justify-between p-4 text-center`}
+      className="rounded bg-white shadow-sm flex items-end justify-between p-4 text-center"
     >
       {data.map(({ date, label, value }, _, array) => (
         <div
           key={date}
-          className={tw`h-48 flex flex-col`}
+          className="h-48 flex flex-col"
           style={{ width: `${Math.round(100 / 7) - 2}%` }}
         >
-          <div className={tw`flex-grow flex flex-col justify-end`}>
+          <div className="flex-grow flex flex-col justify-end">
             <div
-              className={tw`pt-2 rounded`}
+              className="pt-2 rounded"
               style={{
                 height: `${
                   (value / Math.max(...array.map(({ value }) => value))) * 100
@@ -32,7 +28,7 @@ export const BarChart: FunctionComponent<{
               {label ?? value}
             </div>
           </div>
-          <div className={tw`mt-2 text-xs`}>
+          <div className="mt-2 text-xs">
             {`${
               [
                 "Jan",

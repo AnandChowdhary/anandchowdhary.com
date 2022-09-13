@@ -1,7 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
-
 export default function Filters({
   categoryData,
 }: {
@@ -27,20 +23,20 @@ export default function Filters({
   return (
     <form
       id="changelog-filters"
-      className={tw`flex flex-wrap text-sm`}
+      className="flex flex-wrap text-sm"
       onSubmit={(event) => updateChangelog(event)}
     >
       {Object.entries(categoryData).map(([key, { title }]) => (
         <label
           key={key}
-          className={tw`shadow-sm px-2 py-1 mr-2 mb-2 bg-white rounded`}
+          className="shadow-sm px-2 py-1 mr-2 mb-2 bg-white rounded"
         >
           <input
             name={key}
             type="checkbox"
             onClick={(event) => updateChangelog(event)}
           />
-          <span className={tw`ml-2`}>{title}</span>
+          <span className="ml-2">{title}</span>
         </label>
       ))}
     </form>

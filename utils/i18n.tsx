@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-
 function replaceJSX(str: string, find: string, replace: any): any[] {
   const parts = str.split(find);
   const result = [];

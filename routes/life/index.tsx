@@ -1,15 +1,13 @@
-/** @jsx h */
-import { h, ComponentChildren } from "preact";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { ComponentChildren } from "preact";
+import * as colors from "twind/colors";
+import { orange } from "twind/colors";
 import { BarChart } from "../../components/data/BarChart.tsx";
 import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
-import { orange } from "twind/colors";
-import { tw } from "@twind";
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { ExternalLink } from "../../components/text/ExternalLink.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
 import TimeAgo from "../../islands/TimeAgo.tsx";
 import { t } from "../../utils/i18n.tsx";
-import * as colors from "twind/colors";
 
 interface HomeData {
   okrs: {
@@ -172,19 +170,17 @@ export default function Home({ data }: PageProps<HomeData>) {
   const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
 
   return (
-    <div class={tw`max-w-screen-md px-4 mx-auto space-y-16 md:px-0`}>
-      <article className={tw`space-y-4`}>
+    <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
+      <article className="space-y-4">
         <header>
-          <h2
-            className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-          >
+          <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">💼</span>
             <SectionLink
               label={`Last week in productivity`}
               href="/life/productivity"
             />
           </h2>
-          <p className={tw`text-gray-500`}>
+          <p className="text-gray-500">
             Daily productivity score by RescueTime
           </p>
         </header>
@@ -206,17 +202,13 @@ export default function Home({ data }: PageProps<HomeData>) {
           updatedAt={"2022-01-01"}
         />
       </article>
-      <article className={tw`space-y-4`}>
+      <article className="space-y-4">
         <header>
-          <h2
-            className={tw`flex items-center space-x-2 text-xl font-semibold font-display`}
-          >
+          <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">😴</span>
             <SectionLink label={`Last week in sleep`} href="/life/health" />
           </h2>
-          <p className={tw`text-gray-500`}>
-            Number of hours asleep by Oura Ring
-          </p>
+          <p className="text-gray-500">Number of hours asleep by Oura Ring</p>
         </header>
         <BarChart
           rgb="255, 180, 180"
@@ -236,12 +228,12 @@ export default function Home({ data }: PageProps<HomeData>) {
           updatedAt={"2022-01-01"}
         />
       </article>
-      <section className={tw`space-y-4`}>
-        <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+      <section className="space-y-4">
+        <h2 className="space-x-1 text-2xl font-semibold font-display">
           <span aria-hidden="true">📊</span>
           <span>{` OKRs for Q${okrQuarter.name} ${okrYear.name}`}</span>
         </h2>
-        <p className={tw`text-gray-500`}>
+        <p className="text-gray-500">
           {t(
             "I use <0>Objectives and Key Results</0> both for my personal and professional life. This data is available on <1>GitHub</1> and was last updated <2></2>.",
             {},
@@ -252,7 +244,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               ({ children }: { children: ComponentChildren }) => (
                 <ExternalLink
                   href="https://github.com/AnandChowdhary/okrs"
-                  className={tw`underline`}
+                  className="underline"
                   children={children}
                 />
               ),
@@ -260,11 +252,11 @@ export default function Home({ data }: PageProps<HomeData>) {
             ]
           )}
         </p>
-        <div className={tw`space-y-3`}>
+        <div className="space-y-3">
           {okrQuarter.objectives.map(({ name, success, key_results }) => (
-            <details key={name} className={tw`appearance-none`}>
+            <details key={name} className="appearance-none">
               <summary
-                className={tw`flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm`}
+                className="flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${
                     orange[400]
@@ -276,11 +268,11 @@ export default function Home({ data }: PageProps<HomeData>) {
                   backgroundPosition: "left bottom",
                 }}
               >
-                <div className={tw`flex justify-between`}>
-                  <div className={tw`flex items-center space-x-2`}>
+                <div className="flex justify-between">
+                  <div className="flex items-center space-x-2">
                     <div>{name}</div>
                     <svg
-                      className={`${tw`text-gray-400`} rotate-on-open`}
+                      className="text-gray-400 rotate-on-open"
                       stroke="currentColor"
                       fill="none"
                       stroke-width="2"
@@ -294,16 +286,16 @@ export default function Home({ data }: PageProps<HomeData>) {
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </div>
-                  <div className={tw`text-gray-500`}>
+                  <div className="text-gray-500">
                     {Math.round(success * 100)}%
                   </div>
                 </div>
               </summary>
-              <div className={tw`mx-4 mb-4 space-y-1`}>
+              <div className="mx-4 mb-4 space-y-1">
                 {key_results.map(({ name, success }) => (
                   <div
                     key={name}
-                    className={tw`flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm`}
+                    className="flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm"
                     style={{
                       backgroundImage: `linear-gradient(to right, ${
                         orange[400]
@@ -318,12 +310,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                     <div>
                       {t(name.replace(/\[redacted\]/g, "<0></0>"), {}, [
                         () => (
-                          <span
-                            className={tw`relative px-2 py-1 text-xs font-medium tracking-widest uppercase`}
-                          >
+                          <span className="relative px-2 py-1 text-xs font-medium tracking-widest uppercase">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className={tw`absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none`}
+                              className="absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none"
                             >
                               <filter id="noiseFilter">
                                 <feTurbulence
@@ -345,7 +335,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                         ),
                       ])}
                     </div>
-                    <div className={tw`text-gray-500`}>
+                    <div className="text-gray-500">
                       {Math.round(success * 100)}%
                     </div>
                   </div>
@@ -356,8 +346,8 @@ export default function Home({ data }: PageProps<HomeData>) {
         </div>
         <SectionLink label="See past OKRs" href="/life/okrs" />
       </section>
-      <section className={tw`space-y-4`}>
-        <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+      <section className="space-y-4">
+        <h2 className="space-x-1 text-2xl font-semibold font-display">
           <span aria-hidden="true">👨‍💻</span>
           <span>{" Last year in contributions"}</span>
         </h2>
@@ -392,22 +382,22 @@ export default function Home({ data }: PageProps<HomeData>) {
         <div dangerouslySetInnerHTML={{ __html: data.contributionsGraph }} />
         <SectionLink label="See my GitHub profile" href="/life/okrs" />
       </section>
-      <div className={tw`grid-cols-2 gap-8 sm:grid`}>
-        <section className={tw`space-y-4`}>
-          <header className={tw`space-y-1`}>
-            <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+      <div className="grid-cols-2 gap-8 sm:grid">
+        <section className="space-y-4">
+          <header className="space-y-1">
+            <h2 className="space-x-1 text-2xl font-semibold font-display">
               <span aria-hidden="true">💻</span>
               <span>{" Last week in productivity"}</span>
             </h2>
-            <p className={tw`text-gray-500`}>
+            <p className="text-gray-500">
               Last updated <TimeAgo date={data.productivity.updatedAt} />
             </p>
           </header>
-          <div className={tw`space-y-2`}>
+          <div className="space-y-2">
             {data.productivity.data.slice(0, 5).map((language) => (
               <div
                 key={language.date}
-                className={tw`flex bg-white rounded-lg shadow-sm`}
+                className="flex bg-white rounded-lg shadow-sm"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${
                     orange[400]
@@ -419,43 +409,39 @@ export default function Home({ data }: PageProps<HomeData>) {
                   backgroundPosition: "left bottom",
                 }}
               >
-                <div
-                  className={tw`flex items-center justify-between flex-grow h-12 px-4`}
-                >
+                <div className="flex items-center justify-between flex-grow h-12 px-4">
                   <div>
                     {new Date(language.date).toLocaleDateString("en-US", {
                       dateStyle: "long",
                     })}
                   </div>
-                  <div
-                    className={tw`text-gray-500`}
-                  >{`${language.pulse}%`}</div>
+                  <div className="text-gray-500">{`${language.pulse}%`}</div>
                 </div>
               </div>
             ))}
           </div>
           <SectionLink label="See past scores" href="/life/productivity" />
         </section>
-        <section className={tw`space-y-4`}>
+        <section className="space-y-4">
           <SectionLink label="See more music data" href="/life/okrs" />
         </section>
       </div>
-      <div className={tw`grid-cols-2 gap-8 sm:grid`}>
-        <section className={tw`space-y-4`}>
-          <header className={tw`space-y-1`}>
-            <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+      <div className="grid-cols-2 gap-8 sm:grid">
+        <section className="space-y-4">
+          <header className="space-y-1">
+            <h2 className="space-x-1 text-2xl font-semibold font-display">
               <span aria-hidden="true">💻</span>
               <span>{" Last week in code"}</span>
             </h2>
-            <p className={tw`text-gray-500`}>
+            <p className="text-gray-500">
               Last updated <TimeAgo date={data.languages.updatedAt} />
             </p>
           </header>
-          <div className={tw`space-y-2`}>
+          <div className="space-y-2">
             {data.languages.data.slice(0, 5).map((language) => (
               <div
                 key={language.name}
-                className={tw`flex bg-white rounded-lg shadow-sm`}
+                className="flex bg-white rounded-lg shadow-sm"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${
                     orange[400]
@@ -467,32 +453,30 @@ export default function Home({ data }: PageProps<HomeData>) {
                   backgroundPosition: "left bottom",
                 }}
               >
-                <div
-                  className={tw`flex items-center justify-between flex-grow h-12 px-4`}
-                >
+                <div className="flex items-center justify-between flex-grow h-12 px-4">
                   <div>{language.name}</div>
-                  <div className={tw`text-gray-500`}>{language.duration}</div>
+                  <div className="text-gray-500">{language.duration}</div>
                 </div>
               </div>
             ))}
           </div>
           <SectionLink label="See more code data" href="/life/okrs" />
         </section>
-        <section className={tw`space-y-4`}>
-          <header className={tw`space-y-1`}>
-            <h2 className={tw`space-x-1 text-2xl font-semibold font-display`}>
+        <section className="space-y-4">
+          <header className="space-y-1">
+            <h2 className="space-x-1 text-2xl font-semibold font-display">
               <span aria-hidden="true">🎵</span>
               <span>{" Last week in music"}</span>
             </h2>
-            <p className={tw`text-gray-500`}>
+            <p className="text-gray-500">
               Last updated <TimeAgo date={data.music.updatedAt} />
             </p>
           </header>
-          <div className={tw`space-y-2`}>
+          <div className="space-y-2">
             {data.music.data.slice(0, 5).map((artist) => (
               <div
                 key={artist.name}
-                className={tw`flex bg-white rounded-lg shadow-sm`}
+                className="flex bg-white rounded-lg shadow-sm"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${
                     orange[400]
@@ -504,7 +488,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   backgroundPosition: "3rem 100%",
                 }}
               >
-                <div className={tw`min-w-12`}>
+                <div className="min-w-12">
                   <img
                     alt=""
                     src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
@@ -515,14 +499,12 @@ export default function Home({ data }: PageProps<HomeData>) {
                     width={100}
                     height={100}
                     loading="lazy"
-                    className={tw`object-cover w-12 h-full rounded-l-lg`}
+                    className="object-cover w-12 h-full rounded-l-lg"
                   />
                 </div>
-                <div
-                  className={tw`flex items-center justify-between flex-grow h-12 px-4`}
-                >
+                <div className="flex items-center justify-between flex-grow h-12 px-4">
                   <div>{artist.name}</div>
-                  <div className={tw`text-gray-500`}>{`${artist.plays} ${
+                  <div className="text-gray-500">{`${artist.plays} ${
                     artist.plays === 1 ? "play" : "plays"
                   }`}</div>
                 </div>

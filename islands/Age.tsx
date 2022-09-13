@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 import { useState, useEffect } from "preact/hooks";
 
 export default function TimeAgo() {
@@ -18,7 +15,7 @@ export default function TimeAgo() {
 
   return (
     <span>
-      <strong className={tw`font-medium`}>{Math.floor(liveAge)}</strong>
+      <strong className="font-medium">{Math.floor(liveAge)}</strong>
       {"."}
       {liveAge.toFixed(8).split(".")[1]}
     </span>
