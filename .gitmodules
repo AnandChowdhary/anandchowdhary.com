@@ -1,0 +1,3 @@
+[submodule "everything"]
+	path = everything
+	url = git@github.com:AnandChowdhary/everything
