@@ -10,6 +10,7 @@ import { OKRCards } from "../components/data/OKRs.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
 import Age from "../islands/Age.tsx";
+import Filters from "../islands/Filters.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
 import type { IOkrs, ITheme } from "../utils/data.ts";
 import { getGyroscope, getGyroscopeSports } from "../utils/data.ts";
@@ -135,55 +136,79 @@ interface HomeData {
 
 const categoryData: Record<
   HomeData["timeline"][0]["type"],
-  { color: keyof typeof colors; icon: string; prefix: string }
+  { color: keyof typeof colors; icon: string; prefix: string; title: string }
 > = {
   okr: {
     color: "orange",
     icon: "book-open",
     prefix: "New quarterly OKRs",
+    title: "OKR",
   },
   "blog-post": {
     color: "indigo",
     icon: "book-open",
     prefix: "Wrote a blog post",
+    title: "Blog post",
   },
   project: {
     color: "lightBlue",
     icon: "newspaper",
     prefix: "Published a project",
+    title: "Project",
   },
   travel: {
     color: "green",
     icon: "plane",
     prefix: "Traveled to a new place",
+    title: "Travel",
   },
-  event: { color: "cyan", icon: "podium", prefix: "Spoke at an event" },
-  book: { color: "purple", icon: "book-open", prefix: "Finished a book" },
-  "life-event": { color: "rose", icon: "alarm", prefix: "Life milestone" },
+  event: {
+    color: "cyan",
+    icon: "podium",
+    prefix: "Spoke at an event",
+    title: "Event",
+  },
+  book: {
+    color: "purple",
+    icon: "book-open",
+    prefix: "Finished a book",
+    title: "Book",
+  },
+  "life-event": {
+    color: "rose",
+    icon: "alarm",
+    prefix: "Life milestone",
+    title: "Life event",
+  },
   video: {
     color: "red",
     icon: "video-camera",
     prefix: "Featured in a video",
+    title: "Video",
   },
   award: {
     color: "yellow",
     icon: "award",
     prefix: "Received an award",
+    title: "Award",
   },
   "podcast-interview": {
     color: "fuchsia",
     icon: "microphone",
     prefix: "Featured in a podcast",
+    title: "Podcast",
   },
   "press-feature": {
     color: "teal",
     icon: "newspaper",
     prefix: "Featured in the press",
+    title: "Press",
   },
   "open-source-project": {
     color: "green",
     icon: "newspaper",
     prefix: "Launched an open source project",
+    title: "Open source",
   },
 };
 
@@ -504,13 +529,17 @@ export default function Home({ data }: PageProps<HomeData>) {
       </section>
       <section className={tw`space-y-4`}>
         <header className={tw`space-y-2`}>
-          <h2 className={tw`space-x-2 text-2xl font-semibold font-display`}>
+          <h2
+            className={tw`space-x-2 text-2xl font-semibold font-display`}
+            id="changelog"
+          >
             <span aria-hidden="true">🕰</span>
             <span>Changelog</span>
           </h2>
           <p className={tw`text-gray-500`}>
             {"The latest from my desk, curated from different sources."}
           </p>
+          <Filters categoryData={categoryData} />
         </header>
         <div className={tw`relative space-y-4`}>
           <div

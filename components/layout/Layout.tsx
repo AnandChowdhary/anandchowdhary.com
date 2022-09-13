@@ -83,6 +83,21 @@ export function Footer() {
         <div
           className={tw`pt-4 border-t-2 border-orange-100 dark:border-gray-800`}
         ></div>
+        <div>
+          <nav className={tw`flex flex-wrap justify-between mb-2 space-x-3`}>
+            {new Array(new Date().getFullYear() - 2008 + 1)
+              .fill(0)
+              .map((_, i) => (
+                <a
+                  key={i}
+                  href={`/archive/${2008 + i}`}
+                  className={tw`text-gray-400`}
+                >
+                  {2008 + i}
+                </a>
+              ))}
+          </nav>
+        </div>
         <div className={tw`flex items-center justify-between`}>
           <p>© 2008–2022 Anand Chowdhary</p>
           <div className={tw`flex items-center space-x-4`}>
