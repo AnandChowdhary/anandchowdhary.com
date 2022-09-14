@@ -17,7 +17,7 @@ export default function TimeAgo() {
     <span>
       <strong className="font-medium">{Math.floor(liveAge)}</strong>
       {"."}
-      {liveAge.toFixed(8).split(".")[1]}
+      {liveAge.toFixed(9).split(".")[1]}
     </span>
   );
 }

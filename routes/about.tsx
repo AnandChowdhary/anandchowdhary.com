@@ -85,7 +85,7 @@ export default function About() {
             Anand Chowdhary is an engineer, designer, and entrepreneur from New
             Delhi, India, working remotely from Groningen, the Netherlands, as
             the co-founder &amp; CTO of <a href="https://pabio.com">Pabio</a>,
-            an interior design rent-to-own furniture company.
+            an interior design and rent-to-own furniture company.
           </p>
           <p>
             As an engineer, he's focused on web standards and the JavaScript

@@ -1,3 +1,5 @@
+import everything from "../../everything/api.json" assert { type: "json" };
+
 const NAV = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -72,17 +74,18 @@ export function Footer() {
         <div className="pt-4 border-t-2 border-orange-100 dark:border-gray-800"></div>
         <div>
           <nav className="flex flex-wrap justify-between mb-2 space-x-3">
-            {new Array(new Date().getFullYear() - 2008 + 1)
-              .fill(0)
-              .map((_, i) => (
-                <a
-                  key={i}
-                  href={`/archive/${2008 + i}`}
-                  className="text-gray-400"
-                >
-                  {2008 + i}
-                </a>
-              ))}
+            {Array.from(
+              new Set<number>(
+                everything
+                  .filter(({ type }) => type !== "life-event")
+                  .map(({ date }) => new Date(date).getUTCFullYear())
+                  .sort((a, b) => a - b)
+              )
+            ).map((year) => (
+              <a key={year} href={`/archive/${year}`} className="text-gray-400">
+                {year}
+              </a>
+            ))}
           </nav>
         </div>
         <div className="flex items-center justify-between">

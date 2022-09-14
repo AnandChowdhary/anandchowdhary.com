@@ -1,19 +1,44 @@
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 import { ComponentChildren } from "preact";
 import * as colors from "twind/colors";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
+import timeline from "../everything/api.json" assert { type: "json" };
 import Age from "../islands/Age.tsx";
 import Filters from "../islands/Filters.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
 import type { IOkrs, ITheme } from "../utils/data.ts";
-import { getGyroscope, getGyroscopeSports } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
 import { humanizeMmSs } from "../utils/string.ts";
+
+const birthdayThisYear = new Date("1997-12-29");
+birthdayThisYear.setUTCFullYear(new Date().getUTCFullYear());
+const nextBirthday =
+  Date.now() < birthdayThisYear.getTime()
+    ? birthdayThisYear
+    : new Date(birthdayThisYear.getTime() + 31536000000);
+
+interface Summary {
+  count: number;
+  average: number;
+  sum: number;
+  minimum: number;
+  maximum: number;
+  breakdown: ({ start: string; end: string } & Omit<Summary, "breakdown">)[];
+}
+
+interface Item {
+  id: number;
+  synced_at: string;
+  hash: string;
+  date: string;
+  type: string;
+  value: number;
+  unit: string;
+}
 
 interface HomeData {
   okr: {
@@ -24,18 +49,10 @@ interface HomeData {
   gyroscope: {
     lastSeenAt: {
       name: string;
-      locationTimeAgo: string;
+      locationTimeAgo: Date;
     };
-    heart: {
-      value: string;
-      timeAgo: string;
-      diffValue: string;
-      diffValueTimeAgo: string;
-    };
-    steps: {
-      value: string;
-      timeAgo: string;
-    };
+    heart: Item[];
+    steps: { summary: Summary; data: Item[] };
   };
   theme: ITheme;
   timeline: (
@@ -210,55 +227,42 @@ const categoryData: Record<
   },
 };
 
+const fetchJson = async <T = unknown,>(url: string): Promise<T> => {
+  const data = await fetch(url);
+  return data.json();
+};
+
 export const handler: Handlers<HomeData> = {
   async GET(request, context) {
-    const timeline = (await (
-      await fetch("https://anandchowdhary.github.io/everything/api.json")
-    ).json()) as HomeData["timeline"];
-
     const okr = timeline.find(({ type }) => type === "okr") as
       | HomeData["okr"]
       | undefined;
     if (!okr) throw new Error("OKR not found");
 
-    const gyroscope = await getGyroscope();
-    const document = new DOMParser().parseFromString(gyroscope, "text/html");
-    if (!document) throw new Error("Unable to fetch gyroscope");
-    const locationName = document.querySelector(".location-name");
-    if (!locationName) throw new Error("Unable to find location time ago");
-    const locationTimeAgo = document.querySelector(".location-time-ago");
-    if (!locationTimeAgo) throw new Error("Unable to find location time ago");
-
-    const sports = await getGyroscopeSports();
-    const document2 = new DOMParser().parseFromString(sports, "text/html");
-    if (!document2) throw new Error("Unable to fetch gyroscope");
+    const stepsData = await fetchJson<any[]>(
+      "https://anandlifedata.fly.dev/data?sort=date:desc&type=heart_rate&limit=2"
+    );
 
     const props = {
       timeline,
       okr,
       gyroscope: {
         lastSeenAt: {
-          name: locationName.innerText,
-          locationTimeAgo: locationTimeAgo.innerText,
+          name: "Zürich",
+          locationTimeAgo: new Date(),
         },
-        heart: {
-          value: document2.querySelector(".bpm-increment")?.innerText ?? "",
-          timeAgo: (
-            document2.querySelector(".heart-rate .updated")?.innerText ?? ""
-          ).split(" with ")[0],
-          diffValue:
-            document2.querySelector(".heart-rate .diff .amount")?.innerText ??
-            "",
-          diffValueTimeAgo:
-            document2.querySelector(".heart-rate .diff .time")?.innerText ?? "",
-        },
+        heart: await fetchJson(
+          "https://anandlifedata.fly.dev/data?sort=date:desc&type=heart_rate&limit=2"
+        ),
         steps: {
-          value:
-            document2.querySelector(".step-circle:last-child .amount")
-              ?.innerText ?? "",
-          timeAgo:
-            document2.querySelector(".step-circle:last-child .timestamp")
-              ?.innerText ?? "",
+          summary: await fetchJson(
+            `https://anandlifedata.fly.dev/?type=heart_rate&after=${new Date(
+              stepsData[0].date
+            )
+              .toISOString()
+              .substring(0, 10)}`
+          ),
+          data: stepsData,
         },
       },
       theme: {
@@ -411,7 +415,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/everything/api.json"
                 githubUrl="https://github.com/AnandChowdhary/everything"
-                links={[{ label: "View past themes", href: "/life/themes" }]}
+                // links={[{ label: "View past themes", href: "/life/themes" }]}
               />
             </div>
           </article>
@@ -433,7 +437,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/okrs/api.json"
                 githubUrl="https://github.com/AnandChowdhary/okrs"
-                links={[{ label: "View past OKRs", href: "/life/okrs" }]}
+                // links={[{ label: "View past OKRs", href: "/life/okrs" }]}
               />
             </div>
           </article>
@@ -456,7 +460,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     {" years old"}
                   </p>
                   <p className="text-sm text-gray-500">
-                    Next birthday <TimeAgo date={"2022-12-29"} />
+                    Next birthday <TimeAgo date={nextBirthday.toISOString()} />
                   </p>
                 </div>
               </div>
@@ -464,13 +468,16 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <span aria-hidden="true">📍</span>
                 <div>
                   <p>
-                    Last seen at{" "}
+                    Last seen in{" "}
                     <strong className="font-medium">
                       {gyroscope.lastSeenAt.name}
                     </strong>
                   </p>
                   <p className="text-sm text-gray-500">
-                    {gyroscope.lastSeenAt.locationTimeAgo}
+                    Spotted{" "}
+                    <TimeAgo
+                      date={gyroscope.lastSeenAt.locationTimeAgo.toISOString()}
+                    />
                   </p>
                 </div>
               </div>
@@ -479,36 +486,39 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <div>
                   <p>
                     <span className="mr-2">
-                      Heart beating at{" "}
+                      {"Heart rate "}
                       <strong className="font-medium">
-                        {gyroscope.heart.value} bpm
+                        {gyroscope.heart[0].value.toLocaleString("en-US")} bpm
                       </strong>
                     </span>
-                    <span
-                      className={
-                        gyroscope.heart.diffValue.includes("▲")
-                          ? `text-sm text-red-700`
-                          : `text-sm text-green-700`
-                      }
-                    >
-                      {gyroscope.heart.diffValue}
-                    </span>
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {gyroscope.heart.timeAgo}
+                    <p className="text-sm text-gray-500">
+                      Tracked <TimeAgo date={gyroscope.heart[0].date} />
+                    </p>
                   </p>
                 </div>
               </div>
               <div className="flex space-x-2">
                 <span aria-hidden="true">🏃‍♂️</span>
                 <div>
-                  <p>{gyroscope.steps.value}</p>
+                  <p>
+                    {Math.round(gyroscope.steps.summary.sum).toLocaleString(
+                      "en-US"
+                    )}
+                    {" steps"}
+                  </p>
                   <p className="text-sm text-gray-500">
-                    {gyroscope.steps.timeAgo}
+                    Tracked <TimeAgo date={gyroscope.steps.data[0].date} />
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="pt-1">
+            <DataFooterLinks
+              apiUrl="https://github.com/AnandChowdhary/live"
+              githubUrl="https://github.com/AnandChowdhary/live"
+              // links={[{ label: "View past themes", href: "/life/themes" }]}
+            />
           </div>
         </article>
       </section>
