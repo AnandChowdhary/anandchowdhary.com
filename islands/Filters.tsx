@@ -1,28 +1,32 @@
 export default function Filters({
   categoryData,
+  selected,
 }: {
+  selected: string[];
   categoryData: Record<
     string,
-    { color: string; icon: string; prefix: string; title: string }
+    { color: string; icon: string; prefix: string; title: string; url: string }
   >;
 }) {
   const updateChangelog = (event: Event) => {
     event.preventDefault();
     const filters = document.querySelectorAll<HTMLInputElement>(
-      "#changelog-filters input[type='checkbox']"
+      "#filters input[type='checkbox']"
     );
     const checked: string[] = [];
     filters.forEach((filter) => {
       if (filter.checked) checked.push(filter.getAttribute("name") ?? "");
     });
-    const params = new URLSearchParams();
-    params.set("filters", checked.join(","));
-    window.location.href = `/?${params.toString()}#changelog`;
+    const finalUrl = new URL(window.location.href);
+    finalUrl.searchParams.set("filters", checked.join(","));
+    if (checked.length === 0) finalUrl.searchParams.delete("filters");
+    finalUrl.hash = "filters";
+    window.location.href = finalUrl.toString();
   };
 
   return (
     <form
-      id="changelog-filters"
+      id="filters"
       className="flex flex-wrap text-sm"
       onSubmit={(event) => updateChangelog(event)}
     >
@@ -34,11 +38,15 @@ export default function Filters({
           <input
             name={key}
             type="checkbox"
+            checked={selected.includes(key)}
             onClick={(event) => updateChangelog(event)}
           />
           <span className="ml-2">{title}</span>
         </label>
       ))}
+      <button type="submit" className="sr-only">
+        Submit
+      </button>
     </form>
   );
 }

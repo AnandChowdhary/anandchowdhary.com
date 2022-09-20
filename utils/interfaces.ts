@@ -1,5 +1,5 @@
 import timeline from "../everything/api.json" assert { type: "json" };
-type Timeline = typeof timeline;
+export type Timeline = typeof timeline;
 
 interface Summary {
   count: number;
@@ -55,4 +55,5 @@ export interface HomeData {
   };
   theme: { year: string; title: string; description: string };
   timeline: Timeline;
+  query: string;
 }

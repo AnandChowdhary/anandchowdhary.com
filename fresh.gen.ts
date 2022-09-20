@@ -5,10 +5,13 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/_app.tsx";
 import * as $1 from "./routes/about.tsx";
-import * as $2 from "./routes/blog/[year]/[slug].tsx";
-import * as $3 from "./routes/data.tsx";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/life/index.tsx";
+import * as $2 from "./routes/archive/[year].tsx";
+import * as $3 from "./routes/archive/index.tsx";
+import * as $4 from "./routes/archive/page/[number].tsx";
+import * as $5 from "./routes/blog/[year]/[slug].tsx";
+import * as $6 from "./routes/data.tsx";
+import * as $7 from "./routes/index.tsx";
+import * as $8 from "./routes/life/index.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Filters.tsx";
 import * as $$2 from "./islands/TimeAgo.tsx";
@@ -17,10 +20,13 @@ const manifest = {
   routes: {
     "./routes/_app.tsx": $0,
     "./routes/about.tsx": $1,
-    "./routes/blog/[year]/[slug].tsx": $2,
-    "./routes/data.tsx": $3,
-    "./routes/index.tsx": $4,
-    "./routes/life/index.tsx": $5,
+    "./routes/archive/[year].tsx": $2,
+    "./routes/archive/index.tsx": $3,
+    "./routes/archive/page/[number].tsx": $4,
+    "./routes/blog/[year]/[slug].tsx": $5,
+    "./routes/data.tsx": $6,
+    "./routes/index.tsx": $7,
+    "./routes/life/index.tsx": $8,
   },
   islands: {
     "./islands/Age.tsx": $$0,
