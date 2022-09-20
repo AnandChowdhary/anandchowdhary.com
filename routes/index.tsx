@@ -1,7 +1,6 @@
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { ComponentChildren } from "preact";
-import * as colors from "twind/colors";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
@@ -10,8 +9,13 @@ import timeline from "../everything/api.json" assert { type: "json" };
 import Age from "../islands/Age.tsx";
 import Filters from "../islands/Filters.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
-import type { IOkrs, ITheme } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
+import { categoryData } from "../utils/data.ts";
+import type {
+  HomeData,
+  Item,
+  OptionalItemSummaryValue,
+} from "../utils/interfaces.ts";
 import { humanizeMmSs } from "../utils/string.ts";
 
 const birthdayThisYear = new Date("1997-12-29");
@@ -20,212 +24,6 @@ const nextBirthday =
   Date.now() < birthdayThisYear.getTime()
     ? birthdayThisYear
     : new Date(birthdayThisYear.getTime() + 31536000000);
-
-interface Summary {
-  count: number;
-  average: number;
-  sum: number;
-  minimum: number;
-  maximum: number;
-  breakdown: ({ start: string; end: string } & Omit<Summary, "breakdown">)[];
-}
-
-interface Item {
-  id: number;
-  synced_at: string;
-  hash: string;
-  date: string;
-  type: string;
-  value: number;
-  unit: string;
-}
-
-interface HomeData {
-  okr: {
-    title: string;
-    description: string;
-    data: IOkrs["years"][0]["quarters"][0];
-  };
-  gyroscope: {
-    lastSeenAt: {
-      name: string;
-      locationTimeAgo: Date;
-    };
-    heart: Item[];
-    steps: { summary: Summary; data: Item[] };
-  };
-  theme: ITheme;
-  timeline: (
-    | {
-        type: "okr";
-        date: string;
-        title: string;
-      }
-    | {
-        type: "event";
-        date: string;
-        title: string;
-        data: { location: string; emoji: string };
-      }
-    | {
-        type: "project";
-        date: string;
-        title: string;
-      }
-    | {
-        type: "blog-post";
-        date: string;
-        title: string;
-        data: { words: number };
-      }
-    | {
-        type: "book";
-        date: string;
-        title: string;
-        data: { authors: string[]; image: string };
-      }
-    | {
-        type: "life-event";
-        date: string;
-        title: string;
-        description?: string;
-      }
-    | {
-        type: "video";
-        date: string;
-        title: string;
-        data: {
-          city: string;
-          country: string;
-          img: string;
-          publisher: string;
-          duration: string;
-        };
-      }
-    | {
-        type: "award";
-        date: string;
-        title: string;
-        data: { publisher: string };
-      }
-    | {
-        type: "travel";
-        date: string;
-        title: string;
-        data: { assets: string[] };
-      }
-    | {
-        type: "podcast-interview";
-        date: string;
-        title: string;
-        data: { publisher: string; embed?: string };
-      }
-    | {
-        type: "press-feature";
-        date: string;
-        title: string;
-        description?: string;
-        href: string;
-        data: {
-          publisher: string;
-          author?: string;
-        };
-      }
-    | {
-        type: "open-source-project";
-        date: string;
-        title: string;
-        href: string;
-        data: {
-          language?: string;
-          languageColor?: string;
-          stars: number;
-          issues: number;
-          forks: number;
-          watchers: number;
-          description?: string;
-        };
-      }
-  )[];
-}
-
-const categoryData: Record<
-  HomeData["timeline"][0]["type"],
-  { color: keyof typeof colors; icon: string; prefix: string; title: string }
-> = {
-  okr: {
-    color: "orange",
-    icon: "book-open",
-    prefix: "New quarterly OKRs",
-    title: "OKR",
-  },
-  "blog-post": {
-    color: "indigo",
-    icon: "book-open",
-    prefix: "Wrote a blog post",
-    title: "Blog post",
-  },
-  project: {
-    color: "lightBlue",
-    icon: "newspaper",
-    prefix: "Published a project",
-    title: "Project",
-  },
-  travel: {
-    color: "green",
-    icon: "plane",
-    prefix: "Traveled to a new place",
-    title: "Travel",
-  },
-  event: {
-    color: "cyan",
-    icon: "podium",
-    prefix: "Spoke at an event",
-    title: "Event",
-  },
-  book: {
-    color: "purple",
-    icon: "book-open",
-    prefix: "Finished a book",
-    title: "Book",
-  },
-  "life-event": {
-    color: "rose",
-    icon: "alarm",
-    prefix: "Life milestone",
-    title: "Life event",
-  },
-  video: {
-    color: "red",
-    icon: "video-camera",
-    prefix: "Featured in a video",
-    title: "Video",
-  },
-  award: {
-    color: "yellow",
-    icon: "award",
-    prefix: "Received an award",
-    title: "Award",
-  },
-  "podcast-interview": {
-    color: "fuchsia",
-    icon: "microphone",
-    prefix: "Featured in a podcast",
-    title: "Podcast",
-  },
-  "press-feature": {
-    color: "teal",
-    icon: "newspaper",
-    prefix: "Featured in the press",
-    title: "Press",
-  },
-  "open-source-project": {
-    color: "green",
-    icon: "newspaper",
-    prefix: "Launched an open source project",
-    title: "Open source",
-  },
-};
 
 const fetchJson = async <T = unknown,>(url: string): Promise<T> => {
   const data = await fetch(url);
@@ -239,31 +37,31 @@ export const handler: Handlers<HomeData> = {
       | undefined;
     if (!okr) throw new Error("OKR not found");
 
-    const stepsData = await fetchJson<any[]>(
-      "https://anandlifedata.fly.dev/data?sort=date:desc&type=heart_rate&limit=2"
-    );
+    let heart: OptionalItemSummaryValue = undefined;
+    const location: OptionalItemSummaryValue = undefined; // const -> let
+    const steps: OptionalItemSummaryValue = undefined; // const -> let
+
+    try {
+      const [heartRateData] = await Promise.all([
+        fetchJson<Item[]>(
+          "https://anandlifedata.fly.dev/data?sort=date:desc&type=heart_rate&limit=2"
+        ),
+      ]);
+      heart = {
+        value: Math.round(heartRateData[0].value).toLocaleString("en-US"),
+        timeAgo: heartRateData[0].date,
+      };
+    } catch (error) {
+      //
+    }
 
     const props = {
       timeline,
       okr,
       gyroscope: {
-        lastSeenAt: {
-          name: "Zürich",
-          locationTimeAgo: new Date(),
-        },
-        heart: await fetchJson(
-          "https://anandlifedata.fly.dev/data?sort=date:desc&type=heart_rate&limit=2"
-        ),
-        steps: {
-          summary: await fetchJson(
-            `https://anandlifedata.fly.dev/?type=heart_rate&after=${new Date(
-              stepsData[0].date
-            )
-              .toISOString()
-              .substring(0, 10)}`
-          ),
-          data: stepsData,
-        },
+        location,
+        heart,
+        steps,
       },
       theme: {
         year: "2022",
@@ -466,50 +264,60 @@ export default function Home({ data }: PageProps<HomeData>) {
               </div>
               <div className="flex space-x-2">
                 <span aria-hidden="true">📍</span>
-                <div>
-                  <p>
-                    Last seen in{" "}
-                    <strong className="font-medium">
-                      {gyroscope.lastSeenAt.name}
-                    </strong>
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Spotted{" "}
-                    <TimeAgo
-                      date={gyroscope.lastSeenAt.locationTimeAgo.toISOString()}
-                    />
-                  </p>
-                </div>
+                {gyroscope.location ? (
+                  <div>
+                    <p>
+                      Last seen in{" "}
+                      <strong className="font-medium">
+                        {gyroscope.location.value}
+                      </strong>
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Spotted <TimeAgo date={gyroscope.location.timeAgo} />
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-gray-500">Unable to load location</p>
+                )}
               </div>
               <div className="flex space-x-2">
                 <span aria-hidden="true">🫀</span>
-                <div>
-                  <p>
-                    <span className="mr-2">
-                      {"Heart rate "}
-                      <strong className="font-medium">
-                        {gyroscope.heart[0].value.toLocaleString("en-US")} bpm
-                      </strong>
-                    </span>
-                    <p className="text-sm text-gray-500">
-                      Tracked <TimeAgo date={gyroscope.heart[0].date} />
+                {gyroscope.heart ? (
+                  <div>
+                    <p>
+                      <span className="mr-2">
+                        {"Heart rate is "}
+                        <strong className="font-medium">
+                          {gyroscope.heart.value}
+                          {" bpm"}
+                        </strong>
+                      </span>
+                      <p className="text-sm text-gray-500">
+                        Tracked <TimeAgo date={gyroscope.heart.timeAgo} />
+                      </p>
                     </p>
-                  </p>
-                </div>
+                  </div>
+                ) : (
+                  <p className="text-gray-500">Unable to load heart rate</p>
+                )}
               </div>
               <div className="flex space-x-2">
                 <span aria-hidden="true">🏃‍♂️</span>
-                <div>
-                  <p>
-                    {Math.round(gyroscope.steps.summary.sum).toLocaleString(
-                      "en-US"
-                    )}
-                    {" steps"}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Tracked <TimeAgo date={gyroscope.steps.data[0].date} />
-                  </p>
-                </div>
+                {gyroscope.steps ? (
+                  <div>
+                    <p>
+                      <strong className="font-medium">
+                        {gyroscope.steps.value}
+                      </strong>
+                      {" steps walked today"}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Tracked <TimeAgo date={gyroscope.steps.timeAgo} />
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-gray-500">Unable to load step count</p>
+                )}
               </div>
             </div>
           </div>
@@ -559,9 +367,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <div className="shrink-0" style={{ minWidth: "3rem" }}>
                     <div>
                       <div
-                        className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-${
-                          categoryData[item.type].color
-                        }-500`}
+                        className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50`}
+                        style={{
+                          backgroundColor: categoryData[item.type].color,
+                        }}
                       >
                         <svg aria-hidden="true" width="1em" height="1em">
                           <use href={`#${categoryData[item.type].icon}`}></use>
@@ -572,11 +381,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <div className="flex-grow space-y-1">
                     <div className="text-gray-500">
                       <span>
-                        <span
-                          className={`text-${
-                            categoryData[item.type].color
-                          }-500`}
-                        >
+                        <span style={{ color: categoryData[item.type].color }}>
                           {categoryData[item.type].prefix}
                         </span>
                         {` on ${new Date(item.date).toLocaleDateString(
@@ -587,7 +392,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                         )}`}
                       </span>
                     </div>
-                    {"href" in item && item.href ? (
+                    <h4 className="text-lg font-medium leading-6">
+                      {item.title}
+                    </h4>
+                    {/* {"href" in item && item.href ? (
                       <h4 className="text-lg font-medium leading-6">
                         {item.href.startsWith("http") ? (
                           <ExternalLink href={item.href}>
@@ -601,80 +409,88 @@ export default function Home({ data }: PageProps<HomeData>) {
                       <h4 className="text-lg font-medium leading-6">
                         {item.title}
                       </h4>
-                    )}
-                    {item.type === "book" && (
+                    )} */}
+                    {item.data?.authors && (
                       <p>{`by ${item.data.authors.join(", ")}`}</p>
                     )}
-                    {item.type === "blog-post" && (
+                    {item.data?.words && (
                       <p className="text-gray-500">{`Reading time: ${humanizeMmSs(
                         String(item.data.words / 250)
                       )}`}</p>
                     )}
-                    {item.type === "event" && (
+                    {item.data?.emoji && item.data?.location && (
                       <p className="text-gray-500">
                         <span className="mr-1">{item.data.emoji}</span>
                         <span>{` ${item.data.location}`}</span>
                       </p>
                     )}
-                    {item.type === "podcast-interview" && (
+                    {item.data?.publisher && (
                       <p className="text-gray-500">{item.data.publisher}</p>
                     )}
                     {item.type === "press-feature" && (
                       <p className="flex items-center space-x-2 text-gray-500">
-                        <img
-                          alt=""
-                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                            `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(
-                              item.href
-                            )}&size=128`
-                          )}&w=48&h=48&fit=cover&bg=white`}
-                          loading="lazy"
-                          width={24}
-                          height={24}
-                          className="w-6 h-6 rounded-full"
-                        />
-                        <span>
-                          {t(
-                            `${
-                              item.data.author
-                                ? `by <0>${item.data.author}</0> for `
-                                : ""
-                            } ${item.data.publisher}`.trim(),
-                            {},
-                            [
-                              ({
-                                children,
-                              }: {
-                                children: ComponentChildren;
-                              }) => (
-                                <strong
-                                  key={0}
-                                  children={children}
-                                  className="font-medium"
-                                />
-                              ),
-                            ]
-                          )}
-                        </span>
+                        {item.url && (
+                          <img
+                            alt=""
+                            src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                              `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(
+                                item.url
+                              )}&size=128`
+                            )}&w=48&h=48&fit=cover&bg=white`}
+                            loading="lazy"
+                            width={24}
+                            height={24}
+                            className="w-6 h-6 rounded-full"
+                          />
+                        )}
+                        {item.data?.author && (
+                          <span>
+                            {t(
+                              `${
+                                item.data.author
+                                  ? `by <0>${item.data.author}</0> for `
+                                  : ""
+                              } ${item.data.publisher}`.trim(),
+                              {},
+                              [
+                                ({
+                                  children,
+                                }: {
+                                  children: ComponentChildren;
+                                }) => (
+                                  <strong
+                                    key={0}
+                                    children={children}
+                                    className="font-medium"
+                                  />
+                                ),
+                              ]
+                            )}
+                          </span>
+                        )}
                       </p>
                     )}
-                    {item.type === "award" && (
+                    {item.type === "award" && item.data?.publisher && (
                       <p className="text-gray-500">{`Awarded by ${item.data.publisher}`}</p>
                     )}
                     {item.type === "video" && (
                       <ul className="text-gray-500">
-                        <li>{`${item.data.publisher}, ${item.data.city}`}</li>
-                        <li>{`Watch time: ${humanizeMmSs(
-                          item.data.duration
-                        )}`}</li>
+                        {item.data?.publisher && item.data?.city && (
+                          <li>{`${item.data.publisher}, ${item.data.city}`}</li>
+                        )}
+                        {item.data?.duration && (
+                          <li>{`Watch time: ${humanizeMmSs(
+                            item.data.duration
+                          )}`}</li>
+                        )}
                       </ul>
                     )}
-                    {"description" in item && item.description && (
+                    {item.description && (
                       <p className="text-gray-500">{item.description}</p>
                     )}
                     {item.type === "open-source-project" && (
                       <ul className="flex space-x-4">
-                        {item.data.language && (
+                        {item.data?.language && item.data?.languageColor && (
                           <li className="flex flex-wrap items-center space-x-1">
                             <svg
                               aria-hidden="true"
@@ -689,94 +505,98 @@ export default function Home({ data }: PageProps<HomeData>) {
                             <span>{item.data.language}</span>
                           </li>
                         )}
-                        <li className="flex flex-wrap items-center space-x-1">
-                          <svg aria-hidden="true" width="1em" height="1em">
-                            <use href="#star"></use>
-                          </svg>
-                          <span>
-                            {t(
-                              `<0>${item.data.stars.toLocaleString()}</0> stars`,
-                              {},
-                              [
-                                ({
-                                  children,
-                                }: {
-                                  children: ComponentChildren;
-                                }) => (
-                                  <strong
-                                    className="font-medium"
-                                    children={children}
-                                  />
-                                ),
-                              ]
-                            )}
-                          </span>
-                        </li>
-                        <li className="flex flex-wrap items-center space-x-1">
-                          <svg aria-hidden="true" width="1em" height="1em">
-                            <use href="#watchers"></use>
-                          </svg>
-                          <span>
-                            {t(
-                              `<0>${item.data.watchers.toLocaleString()}</0> watchers`,
-                              {},
-                              [
-                                ({
-                                  children,
-                                }: {
-                                  children: ComponentChildren;
-                                }) => (
-                                  <strong
-                                    className="font-medium"
-                                    children={children}
-                                  />
-                                ),
-                              ]
-                            )}
-                          </span>
-                        </li>{" "}
-                        <li className="flex flex-wrap items-center space-x-1">
-                          <svg aria-hidden="true" width="1em" height="1em">
-                            <use href="#forks"></use>
-                          </svg>
-                          <span>
-                            {t(
-                              `<0>${item.data.forks.toLocaleString()}</0> forks`,
-                              {},
-                              [
-                                ({
-                                  children,
-                                }: {
-                                  children: ComponentChildren;
-                                }) => (
-                                  <strong
-                                    className="font-medium"
-                                    children={children}
-                                  />
-                                ),
-                              ]
-                            )}
-                          </span>
-                        </li>
+                        {item.data?.stars && (
+                          <li className="flex flex-wrap items-center space-x-1">
+                            <svg aria-hidden="true" width="1em" height="1em">
+                              <use href="#star"></use>
+                            </svg>
+                            <span>
+                              {t(
+                                `<0>${item.data.stars.toLocaleString()}</0> stars`,
+                                {},
+                                [
+                                  ({
+                                    children,
+                                  }: {
+                                    children: ComponentChildren;
+                                  }) => (
+                                    <strong
+                                      className="font-medium"
+                                      children={children}
+                                    />
+                                  ),
+                                ]
+                              )}
+                            </span>
+                          </li>
+                        )}
+                        {item.data?.watchers && (
+                          <li className="flex flex-wrap items-center space-x-1">
+                            <svg aria-hidden="true" width="1em" height="1em">
+                              <use href="#watchers"></use>
+                            </svg>
+                            <span>
+                              {t(
+                                `<0>${item.data.watchers.toLocaleString()}</0> watchers`,
+                                {},
+                                [
+                                  ({
+                                    children,
+                                  }: {
+                                    children: ComponentChildren;
+                                  }) => (
+                                    <strong
+                                      className="font-medium"
+                                      children={children}
+                                    />
+                                  ),
+                                ]
+                              )}
+                            </span>
+                          </li>
+                        )}
+                        {item.data?.forks && (
+                          <li className="flex flex-wrap items-center space-x-1">
+                            <svg aria-hidden="true" width="1em" height="1em">
+                              <use href="#forks"></use>
+                            </svg>
+                            <span>
+                              {t(
+                                `<0>${item.data.forks.toLocaleString()}</0> forks`,
+                                {},
+                                [
+                                  ({
+                                    children,
+                                  }: {
+                                    children: ComponentChildren;
+                                  }) => (
+                                    <strong
+                                      className="font-medium"
+                                      children={children}
+                                    />
+                                  ),
+                                ]
+                              )}
+                            </span>
+                          </li>
+                        )}
                       </ul>
                     )}
-                    {item.type === "podcast-interview" &&
-                      "data" in item &&
-                      item.data.embed && (
-                        <div className="pt-2">
-                          <iframe
-                            src={item.data.embed}
-                            loading="lazy"
-                            scrolling="no"
-                            className="w-full overflow-hidden rounded-lg"
-                            style={{ height: "152px" }}
-                          />
-                        </div>
-                      )}
+                    {item.type === "podcast-interview" && item.data?.embed && (
+                      <div className="pt-2">
+                        <iframe
+                          src={item.data.embed}
+                          loading="lazy"
+                          scrolling="no"
+                          className="w-full overflow-hidden rounded-lg"
+                          style={{ height: "152px" }}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="mt-4 ml-12 sm:mt-0 sm:ml-6 shrink-0">
-                  {item.type === "book" ? (
+                  {item.type === "book" && item.data?.image ? (
                     <img
                       alt=""
                       src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
@@ -788,7 +608,8 @@ export default function Home({ data }: PageProps<HomeData>) {
                       className="w-24 rounded-lg shadow"
                     />
                   ) : (
-                    item.type === "video" && (
+                    item.type === "video" &&
+                    item.data?.img && (
                       <div className="relative">
                         <svg
                           aria-hidden="true"

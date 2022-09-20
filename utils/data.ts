@@ -1,259 +1,79 @@
-const CACHE_ENABLED = Deno.env.get("CACHE_ENABLED") === "true";
-console.log("Cache enabled", CACHE_ENABLED);
+import type { HomeData } from "./interfaces.ts";
 
-export interface IOkrs {
-  updatedAt: string;
-  years: {
-    name: number;
-    progress: number;
-    success: number;
-    quarters: {
-      name: number;
-      progress: number;
-      success: number;
-      objectives: {
-        name: string;
-        progress: number;
-        success: number;
-        key_results: {
-          name: string;
-          target_result: number;
-          current_result: number;
-          progress: number;
-          success: number;
-        }[];
-      }[];
-    }[];
-  }[];
-}
-export const getOkrs = async (): Promise<IOkrs> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/okrs.json");
-    return JSON.parse(data);
-  }
-
-  const okrs = (await (
-    await fetch("https://anandchowdhary.github.io/okrs/api.json")
-  ).json()) as IOkrs;
-  return okrs;
-};
-
-export interface IEvent {
-  slug: string;
-  name: string;
-  date: string;
-  emoji: string;
-  venue: string;
-  city: string;
-}
-export const getEvents = async (): Promise<IEvent[]> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/events.json");
-    return JSON.parse(data);
-  }
-
-  const events = (await (
-    await fetch("https://anandchowdhary.github.io/events/api.json")
-  ).json()) as IEvent[];
-  return events;
-};
-
-interface IProject {
-  slug: string;
-  title: string;
-  date: string;
-}
-export const getProjects = async (): Promise<IProject[]> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/projects.json");
-    return JSON.parse(data);
-  }
-
-  const projects = (await (
-    await fetch("https://anandchowdhary.github.io/projects/api.json")
-  ).json()) as IProject[];
-  return projects;
-};
-
-export interface ITravel {
-  date: string;
-  title: string;
-  assets: string[];
-}
-export const getTravel = async (): Promise<ITravel[]> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/travel.json");
-    return JSON.parse(data);
-  }
-
-  const travel = (await (
-    await fetch("https://anandchowdhary.github.io/travel/api.json")
-  ).json()) as ITravel[];
-  return travel;
-};
-
-export interface IBlogPost {
-  slug: string;
-  title: string;
-  words: number;
-  date: string;
-}
-export const getBlogPosts = async (): Promise<IBlogPost[]> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/blog.json");
-    return JSON.parse(data);
-  }
-
-  const blogPosts = (await (
-    await fetch(
-      "https://raw.githubusercontent.com/AnandChowdhary/blog/HEAD/api.json"
-    )
-  ).json()) as IBlogPost[];
-  return blogPosts;
-};
-
-export interface IBook {
-  title: string;
-  authors: string[];
-  publisher: string;
-  publishedDate: string;
-  description: string;
-  image: string;
-  issueNumber: number;
-  progressPercent: number;
-  state: "reading" | "completed";
-  startedAt: string;
-}
-export const getBooks = async (): Promise<IBook[]> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/books.json");
-    return JSON.parse(data);
-  }
-
-  const books = (await (
-    await fetch(
-      "https://raw.githubusercontent.com/AnandChowdhary/books/HEAD/api.json"
-    )
-  ).json()) as IBook[];
-  return books;
-};
-
-export interface ILifeEvent {
-  date: string;
-  title: string;
-  description?: string;
-}
-export const getLifeEvents = async (): Promise<ILifeEvent[]> => {
-  const lifeEvents = JSON.parse(
-    await Deno.readTextFile("./data/life-events.json")
-  ) as ILifeEvent[];
-  return lifeEvents;
-};
-
-export interface IPress {
-  awards: {
-    title: string;
-    publisher: string;
-    date: string;
-    href: string;
-  }[];
-  podcasts: {
-    title: string;
-    publisher: string;
-    date: string;
-    href: string;
-    embed?: string;
-  }[];
-  features: {
-    title: string;
-    publisher: string;
-    date: string;
-    href: string;
-    author?: string;
-    description?: string;
-  }[];
-}
-export const getPress = async (): Promise<IPress> => {
-  const press = JSON.parse(
-    await Deno.readTextFile("./data/press.json")
-  ) as IPress;
-  return press;
-};
-
-export interface IVideo {
-  title: string;
-  href: string;
-  city: string;
-  country: string;
-  date: string;
-  img: string;
-  publisher: string;
-  duration: string;
-  description: string;
-}
-export const getVideos = async () => {
-  const videos = JSON.parse(
-    await Deno.readTextFile("./data/videos.json")
-  ) as IVideo[];
-  return videos;
-};
-
-export interface ITheme {
-  year: string;
-  title: string;
-  description: string;
-}
-export const getThemes = async () => {
-  const themes = JSON.parse(
-    await Deno.readTextFile("./data/themes.json")
-  ) as ITheme[];
-  return themes;
-};
-
-export interface IRepo {
-  html_url: string;
-  full_name: string;
-  created_at: string;
-  description?: string;
-  stargazers_count: number;
-  open_issues: number;
-  forks_count: number;
-  watchers_count: number;
-  language: string;
-  language_color?: string;
-}
-export const getRepos = async (): Promise<IRepo[]> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/repos.json");
-    return JSON.parse(data);
-  }
-
-  const repos = (await (
-    await fetch(
-      "https://raw.githubusercontent.com/AnandChowdhary/featured/HEAD/repos.json"
-    )
-  ).json()) as IRepo[];
-  return repos;
-};
-
-export const getGyroscope = async (): Promise<any> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/zero.html");
-    return data;
-  }
-  const data = await (
-    await fetch("https://gyrosco.pe/anand-chowdhary/zero/?_pjax=%23page")
-  ).text();
-  return data;
-};
-
-export const getGyroscopeSports = async (): Promise<any> => {
-  if (CACHE_ENABLED) {
-    const data = await Deno.readTextFile("./.cache/sport.html");
-    return data;
-  }
-  const data = await (
-    await fetch("https://gyrosco.pe/anand-chowdhary/zero/sport/?_pjax=%23page")
-  ).text();
-  return data;
+export const categoryData: Record<
+  HomeData["timeline"][0]["type"],
+  { color: string; icon: string; prefix: string; title: string }
+> = {
+  okr: {
+    color: "orange",
+    icon: "book-open",
+    prefix: "New quarterly OKRs",
+    title: "OKR",
+  },
+  "blog-post": {
+    color: "indigo",
+    icon: "book-open",
+    prefix: "Wrote a blog post",
+    title: "Blog post",
+  },
+  project: {
+    color: "lightBlue",
+    icon: "newspaper",
+    prefix: "Published a project",
+    title: "Project",
+  },
+  travel: {
+    color: "green",
+    icon: "plane",
+    prefix: "Traveled to a new place",
+    title: "Travel",
+  },
+  event: {
+    color: "cyan",
+    icon: "podium",
+    prefix: "Spoke at an event",
+    title: "Event",
+  },
+  book: {
+    color: "purple",
+    icon: "book-open",
+    prefix: "Finished a book",
+    title: "Book",
+  },
+  "life-event": {
+    color: "rose",
+    icon: "alarm",
+    prefix: "Life milestone",
+    title: "Life event",
+  },
+  video: {
+    color: "red",
+    icon: "video-camera",
+    prefix: "Featured in a video",
+    title: "Video",
+  },
+  award: {
+    color: "yellow",
+    icon: "award",
+    prefix: "Received an award",
+    title: "Award",
+  },
+  "podcast-interview": {
+    color: "fuchsia",
+    icon: "microphone",
+    prefix: "Featured in a podcast",
+    title: "Podcast",
+  },
+  "press-feature": {
+    color: "teal",
+    icon: "newspaper",
+    prefix: "Featured in the press",
+    title: "Press",
+  },
+  "open-source-project": {
+    color: "green",
+    icon: "newspaper",
+    prefix: "Launched an open source project",
+    title: "Open source",
+  },
 };
