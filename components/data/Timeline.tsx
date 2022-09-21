@@ -33,7 +33,13 @@ export const Timeline: FunctionComponent<{
 
   return (
     <div>
-      <Filters categoryData={categoryData} selected={selected} />
+      <Filters
+        categoryData={categoryData}
+        selected={selected}
+        options={Object.keys(categoryData).filter((key) =>
+          items.find(({ type }) => type === key)
+        )}
+      />
       <div className="relative space-y-4">
         <div className="absolute top-0 w-1 bg-orange-200 bottom-6 left-4" />
         {visible.map((item, index) => (

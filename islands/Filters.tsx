@@ -1,8 +1,10 @@
 export default function Filters({
   categoryData,
   selected,
+  options,
 }: {
   selected: string[];
+  options: string[];
   categoryData: Record<
     string,
     { color: string; icon: string; prefix: string; title: string; url: string }
@@ -30,20 +32,22 @@ export default function Filters({
       className="flex flex-wrap text-sm"
       onSubmit={(event) => updateChangelog(event)}
     >
-      {Object.entries(categoryData).map(([key, { title }]) => (
-        <label
-          key={key}
-          className="shadow-sm px-2 py-1 mr-2 mb-2 bg-white rounded"
-        >
-          <input
-            name={key}
-            type="checkbox"
-            checked={selected.includes(key)}
-            onClick={(event) => updateChangelog(event)}
-          />
-          <span className="ml-2">{title}</span>
-        </label>
-      ))}
+      {Object.entries(categoryData)
+        .filter(([key]) => options.includes(key))
+        .map(([key, { title }]) => (
+          <label
+            key={key}
+            className="shadow-sm px-2 py-1 mr-2 mb-2 bg-white rounded"
+          >
+            <input
+              name={key}
+              type="checkbox"
+              checked={selected.includes(key)}
+              onClick={(event) => updateChangelog(event)}
+            />
+            <span className="ml-2">{title}</span>
+          </label>
+        ))}
       <button type="submit" className="sr-only">
         Submit
       </button>
