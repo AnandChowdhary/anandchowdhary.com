@@ -1,4 +1,5 @@
 import { asset } from "$fresh/runtime.ts";
+import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
@@ -97,7 +98,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             <span className="wave" aria-hidden="true">
               👋
             </span>
-            <span>{" Hi, I'm Anand"}</span>
+            <span>{smartquotes(" Hi, I'm Anand")}</span>
           </h2>
           <p className="text-lg text-gray-500">
             {t(
@@ -115,8 +116,9 @@ export default function Home({ data }: PageProps<HomeData>) {
             )}
           </p>
           <p>
-            I'm also an award-winning open source contributor and Y Combinator
-            and Forbes 30 Under 30 alum.
+            {smartquotes(
+              "I'm also an award-winning open source contributor and Y Combinator and Forbes 30 Under 30 alum."
+            )}
           </p>
           <SectionLink label="Learn more about me" href="/about" />
         </div>
@@ -240,95 +242,142 @@ export default function Home({ data }: PageProps<HomeData>) {
             </div>
           </article>
         </div>
-        <article className="space-y-4">
-          <header>
-            <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
-              <span aria-hidden="true">🌍</span>
-              <SectionLink label={`Live`} href="/life" />
-            </h2>
-            <p className="text-gray-500">Tracking my life data in real time</p>
-          </header>
-          <div className="relative space-y-4">
-            <div className="bg-white rounded shadow-sm p-4 space-y-4">
-              <div className="flex space-x-2">
-                <span aria-hidden="true">🎂</span>
-                <div>
-                  <p>
-                    <Age />
-                    {" years old"}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Next birthday <TimeAgo date={nextBirthday.toISOString()} />
-                  </p>
+        <div className="space-y-8">
+          <article className="space-y-4">
+            <header>
+              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+                <span aria-hidden="true">🌍</span>
+                <SectionLink label={`Live`} href="/life" />
+              </h2>
+              <p className="text-gray-500">
+                Tracking my life data in real time
+              </p>
+            </header>
+            <div className="relative space-y-4">
+              <div className="bg-white rounded shadow-sm p-4 space-y-4">
+                <div className="flex space-x-2">
+                  <span aria-hidden="true">🎂</span>
+                  <div>
+                    <p>
+                      <Age />
+                      {" years old"}
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Next birthday{" "}
+                      <TimeAgo date={nextBirthday.toISOString()} />
+                    </p>
+                  </div>
+                </div>
+                <div className="flex space-x-2">
+                  <span aria-hidden="true">📍</span>
+                  {gyroscope.location ? (
+                    <div>
+                      <p>
+                        Last seen in{" "}
+                        <strong className="font-medium">
+                          {gyroscope.location.value}
+                        </strong>
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Spotted <TimeAgo date={gyroscope.location.timeAgo} />
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">Unable to load location</p>
+                  )}
+                </div>
+                <div className="flex space-x-2">
+                  <span aria-hidden="true">🫀</span>
+                  {gyroscope.heart ? (
+                    <div>
+                      <p>
+                        <span className="mr-2">
+                          {"Heart rate is "}
+                          <strong className="font-medium">
+                            {gyroscope.heart.value}
+                            {" bpm"}
+                          </strong>
+                        </span>
+                        <p className="text-sm text-gray-500">
+                          Tracked <TimeAgo date={gyroscope.heart.timeAgo} />
+                        </p>
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">Unable to load heart rate</p>
+                  )}
+                </div>
+                <div className="flex space-x-2">
+                  <span aria-hidden="true">🏃‍♂️</span>
+                  {gyroscope.steps ? (
+                    <div>
+                      <p>
+                        <strong className="font-medium">
+                          {gyroscope.steps.value}
+                        </strong>
+                        {" steps walked today"}
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Tracked <TimeAgo date={gyroscope.steps.timeAgo} />
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">Unable to load step count</p>
+                  )}
                 </div>
               </div>
-              <div className="flex space-x-2">
-                <span aria-hidden="true">📍</span>
-                {gyroscope.location ? (
-                  <div>
-                    <p>
-                      Last seen in{" "}
-                      <strong className="font-medium">
-                        {gyroscope.location.value}
-                      </strong>
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Spotted <TimeAgo date={gyroscope.location.timeAgo} />
-                    </p>
-                  </div>
-                ) : (
-                  <p className="text-gray-500">Unable to load location</p>
-                )}
-              </div>
-              <div className="flex space-x-2">
-                <span aria-hidden="true">🫀</span>
-                {gyroscope.heart ? (
-                  <div>
-                    <p>
-                      <span className="mr-2">
-                        {"Heart rate is "}
-                        <strong className="font-medium">
-                          {gyroscope.heart.value}
-                          {" bpm"}
-                        </strong>
-                      </span>
-                      <p className="text-sm text-gray-500">
-                        Tracked <TimeAgo date={gyroscope.heart.timeAgo} />
-                      </p>
-                    </p>
-                  </div>
-                ) : (
-                  <p className="text-gray-500">Unable to load heart rate</p>
-                )}
-              </div>
-              <div className="flex space-x-2">
-                <span aria-hidden="true">🏃‍♂️</span>
-                {gyroscope.steps ? (
-                  <div>
-                    <p>
-                      <strong className="font-medium">
-                        {gyroscope.steps.value}
-                      </strong>
-                      {" steps walked today"}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Tracked <TimeAgo date={gyroscope.steps.timeAgo} />
-                    </p>
-                  </div>
-                ) : (
-                  <p className="text-gray-500">Unable to load step count</p>
-                )}
-              </div>
             </div>
-          </div>
-          <div className="pt-1">
-            <DataFooterLinks
-              apiUrl="https://github.com/AnandChowdhary/live"
-              githubUrl="https://github.com/AnandChowdhary/live"
-              // links={[{ label: "View past themes", href: "/life/themes" }]}
-            />
-          </div>
-        </article>
+            <div className="pt-1">
+              <DataFooterLinks
+                apiUrl="https://github.com/AnandChowdhary/live"
+                githubUrl="https://github.com/AnandChowdhary/live"
+                // links={[{ label: "View past themes", href: "/life/themes" }]}
+              />
+            </div>
+          </article>
+          <article className="space-y-4">
+            <header>
+              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+                <span aria-hidden="true">🥷</span>
+                <span>Hacker News feed</span>
+              </h2>
+              <p className="text-gray-500">My top projects on the top of HN</p>
+            </header>
+            <ul className="space-y-4 bg-white rounded shadow-sm p-4 block">
+              {[
+                {
+                  id: 30468793,
+                  points: 260,
+                  comments: 290,
+                  title:
+                    "Explain the first 10 lines of Twitter's source code to me",
+                },
+                {
+                  id: 31927902,
+                  points: 168,
+                  comments: 58,
+                  title:
+                    "upptime/upptime: Uptime monitor and status page powered by GitHub",
+                },
+                {
+                  id: 27783939,
+                  points: 112,
+                  comments: 103,
+                  title:
+                    "Launch HN: Pabio (YC S21) – Interior design and furniture rental as a service",
+                },
+              ].map(({ id, title, points, comments }) => (
+                <li className="space-y-2" key={id}>
+                  <div className="leading-6">{smartquotes(title)}</div>
+                  <footer className="text-sm flex space-x-3 flex-wrap text-gray-500">
+                    <span>{points} points</span>
+                    <span>{comments} comments</span>
+                  </footer>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
       </section>
       <section className="space-y-4">
         <header className="space-y-2">
@@ -347,6 +396,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           timeline={timeline}
           query={query}
           selected={Object.keys(categoryData).filter((item) => item !== "book")}
+          maxItems={10}
         />
       </section>
     </div>

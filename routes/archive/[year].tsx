@@ -20,11 +20,11 @@ export const handler: Handlers<ArchiveData> = {
         ? timeline.filter(({ date }) => new Date(date).getFullYear() === year)
         : timeline,
       previousYear: timeline
-        .find(({ date }) => new Date(date).getFullYear() < year)
+        .find(({ date }) => new Date(date).getUTCFullYear() < year)
         ?.date?.substring(0, 4),
       nextYear: [...timeline]
         .reverse()
-        .find(({ date }) => new Date(date).getFullYear() > year)
+        .find(({ date }) => new Date(date).getUTCFullYear() > year)
         ?.date?.substring(0, 4),
       query: new URL(request.url).search,
     };

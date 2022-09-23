@@ -69,29 +69,12 @@ export function Navbar() {
 
 export function Footer() {
   return (
-    <footer className="text-gray-500">
+    <footer className="text-gray-400">
       <div className="max-w-screen-md px-6 pt-16 pb-8 mx-auto leading-none md:px-0">
-        <div className="pt-4 border-t-2 border-orange-100 dark:border-gray-800"></div>
-        <div>
-          <nav className="flex flex-wrap justify-between mb-2 space-x-3">
-            {Array.from(
-              new Set<number>(
-                everything
-                  .filter(({ type }) => type !== "life-event")
-                  .map(({ date }) => new Date(date).getUTCFullYear())
-                  .sort((a, b) => a - b)
-              )
-            ).map((year) => (
-              <a key={year} href={`/archive/${year}`} className="text-gray-400">
-                {year}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <div className="flex items-center justify-between">
-          <p>© 2008–2022 Anand Chowdhary</p>
+        <div className="flex items-center justify-between text-sm mb-2">
+          <p>Made with 🧡 in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>
           <div className="flex items-center space-x-4">
-            <div className="relative flex items-center">
+            <div className="relative flex items-center space-x-1">
               <a className="p-1 transition rounded-lg hover:bg-orange-100 hover:text-orange-700 dark:hover:bg-gray-800 dark:hover:text-gray-300">
                 <span className="sr-only">GitHub</span>
                 <svg
@@ -203,6 +186,23 @@ export function Footer() {
               </details>
             </div>
           </div>
+        </div>
+        <div className="pt-4 border-t-2 border-orange-100 dark:border-gray-800"></div>
+        <div>
+          <nav className="flex flex-wrap justify-between mb-2 space-x-3">
+            {Array.from(
+              new Set<number>(
+                everything
+                  .filter(({ type }) => type !== "life-event")
+                  .map(({ date }) => new Date(date).getUTCFullYear())
+                  .sort((a, b) => a - b)
+              )
+            ).map((year) => (
+              <a key={year} href={`/archive/${year}`} className="text-gray-400">
+                {year}
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

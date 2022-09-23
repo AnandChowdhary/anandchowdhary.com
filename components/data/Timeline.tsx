@@ -1,4 +1,5 @@
 import { ComponentChildren, FunctionComponent } from "preact";
+import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.ts";
 import { t } from "../../utils/i18n.tsx";
@@ -9,8 +10,9 @@ export const Timeline: FunctionComponent<{
   timeline: ITimeline;
   query: string;
   hideYearHeading?: boolean;
+  maxItems?: number;
   selected?: string[];
-}> = ({ timeline, hideYearHeading, query, selected }) => {
+}> = ({ timeline, hideYearHeading, query, selected, maxItems }) => {
   selected ??= Object.keys(categoryData);
   try {
     const parsed = new URLSearchParams(query).get("filters")?.split(",");
@@ -21,8 +23,8 @@ export const Timeline: FunctionComponent<{
   }
 
   const items = timeline.filter(({ type }) => selected?.includes(type));
-  const hasMore = items.length > 10;
-  const visible = items.slice(0, 10);
+  const hasMore = maxItems && items.length > maxItems;
+  const visible = maxItems ? items.slice(0, maxItems) : items;
 
   if (timeline.length === 0)
     return (
@@ -37,16 +39,16 @@ export const Timeline: FunctionComponent<{
         categoryData={categoryData}
         selected={selected}
         options={Object.keys(categoryData).filter((key) =>
-          items.find(({ type }) => type === key)
+          timeline.find(({ type }) => type === key)
         )}
       />
-      <div className="relative space-y-4">
+      <div className="relative space-y-8">
         <div className="absolute top-0 w-1 bg-orange-200 bottom-6 left-4" />
         {visible.map((item, index) => (
           <div key={item.title}>
             {(index === 0 ||
               new Date(item.date).getFullYear() !==
-                new Date(timeline[index - 1].date).getFullYear()) &&
+                new Date(visible[index - 1].date).getFullYear()) &&
               !hideYearHeading && (
                 <div className={`flex flex-grow ${index > 0 && "pt-6"}`}>
                   <div className="shrink-0" style={{ minWidth: "3rem" }}>
@@ -87,7 +89,7 @@ export const Timeline: FunctionComponent<{
                     </span>
                   </div>
                   <h4 className="text-lg font-medium leading-6">
-                    {item.title}
+                    {smartquotes(item.title)}
                   </h4>
                   {/* {"href" in item && item.href ? (
               <h4 className="text-lg font-medium leading-6">
@@ -105,21 +107,27 @@ export const Timeline: FunctionComponent<{
               </h4>
             )} */}
                   {item.data?.authors && (
-                    <p>{`by ${item.data.authors.join(", ")}`}</p>
+                    <p>{smartquotes(`by ${item.data.authors.join(", ")}`)}</p>
                   )}
                   {item.data?.words && (
-                    <p className="text-gray-500">{`Reading time: ${humanizeMmSs(
-                      String(item.data.words / 250)
-                    )}`}</p>
+                    <p className="text-gray-500">
+                      {smartquotes(
+                        `Reading time: ${humanizeMmSs(
+                          String(item.data.words / 250)
+                        )}`
+                      )}
+                    </p>
                   )}
                   {item.data?.emoji && item.data?.location && (
                     <p className="text-gray-500">
                       <span className="mr-1">{item.data.emoji}</span>
-                      <span>{` ${item.data.location}`}</span>
+                      <span>{smartquotes(` ${item.data.location}`)}</span>
                     </p>
                   )}
                   {item.data?.publisher && (
-                    <p className="text-gray-500">{item.data.publisher}</p>
+                    <p className="text-gray-500">
+                      {smartquotes(item.data.publisher)}
+                    </p>
                   )}
                   {item.type === "press-feature" && (
                     <p className="flex items-center space-x-2 text-gray-500">
@@ -165,22 +173,32 @@ export const Timeline: FunctionComponent<{
                     </p>
                   )}
                   {item.type === "award" && item.data?.publisher && (
-                    <p className="text-gray-500">{`Awarded by ${item.data.publisher}`}</p>
+                    <p className="text-gray-500">
+                      {smartquotes(`Awarded by ${item.data.publisher}`)}
+                    </p>
                   )}
                   {item.type === "video" && (
                     <ul className="text-gray-500">
                       {item.data?.publisher && item.data?.city && (
-                        <li>{`${item.data.publisher}, ${item.data.city}`}</li>
+                        <li>
+                          {smartquotes(
+                            `${item.data.publisher}, ${item.data.city}`
+                          )}
+                        </li>
                       )}
                       {item.data?.duration && (
-                        <li>{`Watch time: ${humanizeMmSs(
-                          item.data.duration
-                        )}`}</li>
+                        <li>
+                          {smartquotes(
+                            `Watch time: ${humanizeMmSs(item.data.duration)}`
+                          )}
+                        </li>
                       )}
                     </ul>
                   )}
                   {item.description && (
-                    <p className="text-gray-500">{item.description}</p>
+                    <p className="text-gray-500">
+                      {smartquotes(item.description)}
+                    </p>
                   )}
                   {item.type === "open-source-project" && (
                     <ul className="flex space-x-4">
@@ -196,7 +214,7 @@ export const Timeline: FunctionComponent<{
                           >
                             <use href="#circle"></use>
                           </svg>
-                          <span>{item.data.language}</span>
+                          <span>{smartquotes(item.data.language)}</span>
                         </li>
                       )}
                       {item.data?.stars && (
