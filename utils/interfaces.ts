@@ -21,10 +21,39 @@ export interface Item {
 }
 
 interface ItemSummaryValue {
-  value: string;
-  timeAgo: string;
+  values: string[];
+  timeAgo?: string;
 }
 export type OptionalItemSummaryValue = ItemSummaryValue | undefined;
+
+export interface OuraSleepData {
+  total: number;
+  rem: number;
+  awake: number;
+  deep: number;
+  duration: number;
+  efficiency: number;
+  light: number;
+  score: number;
+}
+export interface OuraActivity {
+  steps: 6574;
+  total: 300;
+  cal_active: 305;
+  cal_total: 2431;
+  score: 93;
+}
+export interface OuraReadiness {
+  score: 82;
+  score_activity_balance: 60;
+  score_hrv_balance: 60;
+  score_previous_day: 95;
+  score_previous_night: 95;
+  score_recovery_index: 100;
+  score_resting_hr: 75;
+  score_sleep_balance: 89;
+  score_temperature: 100;
+}
 
 export interface HomeData {
   okr: {
@@ -52,6 +81,7 @@ export interface HomeData {
     location: OptionalItemSummaryValue;
     heart: OptionalItemSummaryValue;
     steps: OptionalItemSummaryValue;
+    sleep: OptionalItemSummaryValue;
   };
   theme: { year: string; title: string; description: string };
   timeline: Timeline;

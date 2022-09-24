@@ -1,6 +1,6 @@
 import { asset } from "$fresh/runtime.ts";
-import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
@@ -14,8 +14,10 @@ import { categoryData } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
 import type {
   HomeData,
-  Item,
   OptionalItemSummaryValue,
+  OuraActivity,
+  OuraReadiness,
+  OuraSleepData,
 } from "../utils/interfaces.ts";
 
 const birthdayThisYear = new Date("1997-12-29");
@@ -38,19 +40,88 @@ export const handler: Handlers<HomeData> = {
     if (!okr) throw new Error("OKR not found");
 
     let heart: OptionalItemSummaryValue = undefined;
+    let sleep: OptionalItemSummaryValue = undefined;
+    let steps: OptionalItemSummaryValue = undefined;
     const location: OptionalItemSummaryValue = undefined; // const -> let
-    const steps: OptionalItemSummaryValue = undefined; // const -> let
+
+    const [sleepApi, activityApi, readinessApi] = await Promise.all([
+      fetchJson<{ weeks: Record<number, string[]> }>(
+        "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
+      ),
+      fetchJson<{ weeks: Record<number, string[]> }>(
+        "https://anandchowdhary.github.io/life/data/oura-activity/api.json"
+      ),
+      fetchJson<{ weeks: Record<number, string[]> }>(
+        "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
+      ),
+    ]);
+    const sleepApiYear = Number(
+      Object.keys(sleepApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
+    );
+    const activityApiYear = Number(
+      Object.keys(activityApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
+    );
+    const readinessApiYear = Number(
+      Object.keys(readinessApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
+    );
 
     try {
-      const [heartRateData] = await Promise.all([
-        fetchJson<Item[]>(
-          "https://anandlifedata.fly.dev/data?sort=date:desc&type=heart_rate&limit=2"
+      const [sleepData, activityData, readinessData] = await Promise.all([
+        fetchJson<Record<string, OuraSleepData>>(
+          `https://anandchowdhary.github.io/life/data/oura-sleep/summary/weeks/2022/${sleepApi.weeks[
+            sleepApiYear
+          ].pop()}`
+        ),
+        fetchJson<Record<string, OuraActivity>>(
+          `https://anandchowdhary.github.io/life/data/oura-activity/summary/weeks/2022/${activityApi.weeks[
+            activityApiYear
+          ].pop()}`
+        ),
+        fetchJson<Record<string, OuraReadiness>>(
+          `https://anandchowdhary.github.io/life/data/oura-readiness/summary/weeks/2022/${readinessApi.weeks[
+            readinessApiYear
+          ].pop()}`
         ),
       ]);
-      heart = {
-        value: Math.round(heartRateData[0].value).toLocaleString("en-US"),
-        timeAgo: heartRateData[0].date,
-      };
+      const sleepDataLast = Object.entries(sleepData)
+        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
+        .find((item) => item[1].total > 1);
+      const activityDataLast = Object.entries(activityData)
+        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
+        .find((item) => item[1].total > 1);
+      const readinessDataLast = Object.entries(readinessData)
+        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
+        .find((item) => item[1].score_resting_hr > 1);
+
+      if (sleepDataLast)
+        sleep = {
+          values: [
+            (sleepDataLast[1].total / 3600).toLocaleString("en-US", {
+              maximumFractionDigits: 1,
+            }),
+            (sleepDataLast[1].rem / 3600).toLocaleString("en-US", {
+              maximumFractionDigits: 1,
+            }),
+            sleepDataLast[1].efficiency.toLocaleString("en-US"),
+          ],
+        };
+      if (activityDataLast)
+        steps = {
+          values: [
+            Math.round(activityDataLast[1].steps).toLocaleString("en-US"),
+            Math.round(activityDataLast[1].cal_active).toLocaleString("en-US"),
+            Math.round(activityDataLast[1].cal_total).toLocaleString("en-US"),
+          ],
+        };
+      if (readinessDataLast)
+        heart = {
+          values: [
+            Math.round(readinessDataLast[1].score).toLocaleString("en-US"),
+            Math.round(readinessDataLast[1].score_previous_day).toLocaleString(
+              "en-US"
+            ),
+          ],
+        };
     } catch (error) {
       //
     }
@@ -62,6 +133,7 @@ export const handler: Handlers<HomeData> = {
         location,
         heart,
         steps,
+        sleep,
       },
       theme: {
         year: "2022",
@@ -268,43 +340,42 @@ export default function Home({ data }: PageProps<HomeData>) {
                     </p>
                   </div>
                 </div>
-                <div className="flex space-x-2">
-                  <span aria-hidden="true">📍</span>
-                  {gyroscope.location ? (
+                {gyroscope.location && (
+                  <div className="flex space-x-2">
+                    <span aria-hidden="true">📍</span>
                     <div>
                       <p>
                         Last seen in{" "}
                         <strong className="font-medium">
-                          {gyroscope.location.value}
+                          {gyroscope.location.values[0]}
                         </strong>
                       </p>
-                      <p className="text-sm text-gray-500">
-                        Spotted <TimeAgo date={gyroscope.location.timeAgo} />
-                      </p>
+                      {gyroscope.location.timeAgo && (
+                        <p className="text-sm text-gray-500">
+                          Spotted <TimeAgo date={gyroscope.location.timeAgo} />
+                        </p>
+                      )}
                     </div>
-                  ) : (
-                    <p className="text-gray-500">Unable to load location</p>
-                  )}
-                </div>
+                  </div>
+                )}
                 <div className="flex space-x-2">
-                  <span aria-hidden="true">🫀</span>
-                  {gyroscope.heart ? (
+                  <span aria-hidden="true">🛌</span>
+                  {gyroscope.sleep ? (
                     <div>
                       <p>
                         <span className="mr-2">
-                          {"Heart rate is "}
+                          {"Slept "}
                           <strong className="font-medium">
-                            {gyroscope.heart.value}
-                            {" bpm"}
+                            {`${gyroscope.sleep.values[0]} hours`}
                           </strong>
                         </span>
                         <p className="text-sm text-gray-500">
-                          Tracked <TimeAgo date={gyroscope.heart.timeAgo} />
+                          {`${gyroscope.sleep.values[1]} hours REM sleep, ${gyroscope.sleep.values[2]}% efficient`}
                         </p>
                       </p>
                     </div>
                   ) : (
-                    <p className="text-gray-500">Unable to load heart rate</p>
+                    <p className="text-gray-500">Unable to load sleep data</p>
                   )}
                 </div>
                 <div className="flex space-x-2">
@@ -313,24 +384,44 @@ export default function Home({ data }: PageProps<HomeData>) {
                     <div>
                       <p>
                         <strong className="font-medium">
-                          {gyroscope.steps.value}
+                          {`${gyroscope.steps.values[0]} steps`}
                         </strong>
-                        {" steps walked today"}
+                        {" walked"}
                       </p>
                       <p className="text-sm text-gray-500">
-                        Tracked <TimeAgo date={gyroscope.steps.timeAgo} />
+                        {`${gyroscope.steps.values[1]} active calories of ${gyroscope.steps.values[2]} total`}
                       </p>
                     </div>
                   ) : (
                     <p className="text-gray-500">Unable to load step count</p>
                   )}
                 </div>
+                <div className="flex space-x-2">
+                  <span aria-hidden="true">🫀</span>
+                  {gyroscope.heart ? (
+                    <div>
+                      <p>
+                        <span className="mr-2">
+                          {"Readiness score is "}
+                          <strong className="font-medium">
+                            {`${gyroscope.heart.values[0]}%`}
+                          </strong>
+                        </span>
+                        <p className="text-sm text-gray-500">
+                          {`Was ${gyroscope.heart.values[1]}% on the previous day`}
+                        </p>
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-gray-500">Unable to load heart rate</p>
+                  )}
+                </div>
               </div>
             </div>
             <div className="pt-1">
               <DataFooterLinks
-                apiUrl="https://github.com/AnandChowdhary/live"
-                githubUrl="https://github.com/AnandChowdhary/live"
+                apiUrl="https://github.com/AnandChowdhary/life"
+                githubUrl="https://github.com/AnandChowdhary/life"
                 // links={[{ label: "View past themes", href: "/life/themes" }]}
               />
             </div>
