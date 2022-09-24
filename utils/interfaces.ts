@@ -1,5 +1,47 @@
-import timeline from "../everything/api.json" assert { type: "json" };
-export type Timeline = typeof timeline;
+export type Timeline = {
+  type: string;
+  url: string;
+  source: string;
+  title: string;
+  date: string;
+  description?: string;
+  data?: {
+    publisher?: string;
+    author?: string;
+    description?: string;
+    image?: string;
+    authors?: string[];
+    words?: number;
+    location?: string;
+    emoji?: string;
+    stars?: number;
+    issues?: number;
+    forks?: number;
+    watchers?: number;
+    language?: string;
+    languageColor?: string;
+    city?: string;
+    country?: string;
+    img?: string;
+    duration?: string;
+    embed?: string;
+    name?: number;
+    progress?: number;
+    success?: number;
+    objectives?: {
+      name: string;
+      progress: number;
+      success: number;
+      key_results: {
+        name: string;
+        current_result: number;
+        target_result: number;
+        progress: number;
+        success: number;
+      }[];
+    }[];
+  };
+}[];
 
 interface Summary {
   count: number;

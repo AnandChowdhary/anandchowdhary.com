@@ -1,5 +1,10 @@
 import type { HomeData } from "./interfaces.ts";
 
+export const fetchJson = async <T = unknown>(url: string): Promise<T> => {
+  const data = await fetch(url);
+  return data.json();
+};
+
 export const categoryData: Record<
   HomeData["timeline"][0]["type"],
   { color: string; icon: string; prefix: string; title: string; url: string }

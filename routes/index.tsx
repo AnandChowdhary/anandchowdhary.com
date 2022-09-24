@@ -7,18 +7,18 @@ import { OKRCards } from "../components/data/OKRs.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
-import timeline from "../everything/api.json" assert { type: "json" };
 import Age from "../islands/Age.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
-import { categoryData } from "../utils/data.ts";
+import { categoryData, fetchJson } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
 import type {
   HomeData,
+  LocationApiResult,
   OptionalItemSummaryValue,
   OuraActivity,
-  LocationApiResult,
   OuraReadiness,
   OuraSleepData,
+  Timeline as ITimeline,
 } from "../utils/interfaces.ts";
 
 const birthdayThisYear = new Date("1997-12-29");
@@ -28,24 +28,17 @@ const nextBirthday =
     ? birthdayThisYear
     : new Date(birthdayThisYear.getTime() + 31536000000);
 
-const fetchJson = async <T = unknown,>(url: string): Promise<T> => {
-  const data = await fetch(url);
-  return data.json();
-};
-
 export const handler: Handlers<HomeData> = {
   async GET(request, context) {
-    const okr = timeline.find(({ type }) => type === "okr") as
-      | HomeData["okr"]
-      | undefined;
-    if (!okr) throw new Error("OKR not found");
-
     let heart: OptionalItemSummaryValue = undefined;
     let sleep: OptionalItemSummaryValue = undefined;
     let steps: OptionalItemSummaryValue = undefined;
     let location: OptionalItemSummaryValue = undefined;
 
-    const [sleepApi, activityApi, readinessApi] = await Promise.all([
+    const [timeline, sleepApi, activityApi, readinessApi] = await Promise.all([
+      fetchJson<ITimeline>(
+        "https://anandchowdhary.github.io/everything/api.json"
+      ),
       fetchJson<{ weeks: Record<number, string[]> }>(
         "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
       ),
@@ -56,6 +49,12 @@ export const handler: Handlers<HomeData> = {
         "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
       ),
     ]);
+
+    const okr = timeline.find(({ type }) => type === "okr") as
+      | HomeData["okr"]
+      | undefined;
+    if (!okr) throw new Error("OKR not found");
+
     const sleepApiYear = Number(
       Object.keys(sleepApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
     );

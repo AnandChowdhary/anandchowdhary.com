@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Timeline } from "../../../components/data/Timeline.tsx";
-import timeline from "../../../everything/api.json" assert { type: "json" };
+import { fetchJson } from "../../../utils/data.ts";
 import { Timeline as ITimeline } from "../../../utils/interfaces.ts";
 
 interface ArchiveData {
@@ -9,7 +9,11 @@ interface ArchiveData {
 }
 
 export const handler: Handlers<ArchiveData> = {
-  GET(request, context) {
+  async GET(request, context) {
+    const timeline = await fetchJson<ITimeline>(
+      "https://anandchowdhary.github.io/everything/api.json"
+    );
+
     const props = {
       timeline,
       query: new URL(request.url).search,
