@@ -54,6 +54,24 @@ export interface OuraReadiness {
   score_sleep_balance: 89;
   score_temperature: 100;
 }
+export interface LocationApiResult {
+  updatedAt: string;
+  approximateCoordinates: [number, number];
+  label: string;
+  timezone?: {
+    name: string;
+    countries: string[];
+    utcOffset: number;
+    utcOffsetStr: string;
+    dstOffset: number;
+    dstOffsetStr: string;
+  };
+  country: {
+    code: string;
+    name: string;
+    timezones: string[];
+  };
+}
 
 export interface HomeData {
   okr: {

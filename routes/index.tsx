@@ -16,6 +16,7 @@ import type {
   HomeData,
   OptionalItemSummaryValue,
   OuraActivity,
+  LocationApiResult,
   OuraReadiness,
   OuraSleepData,
 } from "../utils/interfaces.ts";
@@ -42,7 +43,7 @@ export const handler: Handlers<HomeData> = {
     let heart: OptionalItemSummaryValue = undefined;
     let sleep: OptionalItemSummaryValue = undefined;
     let steps: OptionalItemSummaryValue = undefined;
-    const location: OptionalItemSummaryValue = undefined; // const -> let
+    let location: OptionalItemSummaryValue = undefined;
 
     const [sleepApi, activityApi, readinessApi] = await Promise.all([
       fetchJson<{ weeks: Record<number, string[]> }>(
@@ -66,23 +67,27 @@ export const handler: Handlers<HomeData> = {
     );
 
     try {
-      const [sleepData, activityData, readinessData] = await Promise.all([
-        fetchJson<Record<string, OuraSleepData>>(
-          `https://anandchowdhary.github.io/life/data/oura-sleep/summary/weeks/2022/${sleepApi.weeks[
-            sleepApiYear
-          ].pop()}`
-        ),
-        fetchJson<Record<string, OuraActivity>>(
-          `https://anandchowdhary.github.io/life/data/oura-activity/summary/weeks/2022/${activityApi.weeks[
-            activityApiYear
-          ].pop()}`
-        ),
-        fetchJson<Record<string, OuraReadiness>>(
-          `https://anandchowdhary.github.io/life/data/oura-readiness/summary/weeks/2022/${readinessApi.weeks[
-            readinessApiYear
-          ].pop()}`
-        ),
-      ]);
+      const [sleepData, activityData, readinessData, locationData] =
+        await Promise.all([
+          fetchJson<Record<string, OuraSleepData>>(
+            `https://anandchowdhary.github.io/life/data/oura-sleep/summary/weeks/2022/${sleepApi.weeks[
+              sleepApiYear
+            ].pop()}`
+          ),
+          fetchJson<Record<string, OuraActivity>>(
+            `https://anandchowdhary.github.io/life/data/oura-activity/summary/weeks/2022/${activityApi.weeks[
+              activityApiYear
+            ].pop()}`
+          ),
+          fetchJson<Record<string, OuraReadiness>>(
+            `https://anandchowdhary.github.io/life/data/oura-readiness/summary/weeks/2022/${readinessApi.weeks[
+              readinessApiYear
+            ].pop()}`
+          ),
+          fetchJson<LocationApiResult>(
+            "https://anandchowdhary.github.io/location/api.json"
+          ),
+        ]);
       const sleepDataLast = Object.entries(sleepData)
         .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
         .find((item) => item[1].total > 1);
@@ -122,6 +127,20 @@ export const handler: Handlers<HomeData> = {
             ),
           ],
         };
+      location = {
+        values: [
+          locationData.label,
+          locationData.country.name.replace(" of America", ""),
+          locationData.timezone?.utcOffsetStr ?? "",
+          new Date()
+            .toLocaleTimeString("en-US", {
+              timeStyle: "short",
+              timeZone: locationData?.timezone?.name,
+            })
+            .toLowerCase(),
+        ],
+        timeAgo: locationData.updatedAt,
+      };
     } catch (error) {
       //
     }
@@ -344,15 +363,18 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <div className="flex space-x-2">
                     <span aria-hidden="true">📍</span>
                     <div>
-                      <p>
+                      <p className="leading-5 mb-1">
                         Last seen in{" "}
                         <strong className="font-medium">
                           {gyroscope.location.values[0]}
                         </strong>
+                        {`, ${gyroscope.location.values[1]}`}
                       </p>
-                      {gyroscope.location.timeAgo && (
+                      {gyroscope.location.values[2] && (
                         <p className="text-sm text-gray-500">
-                          Spotted <TimeAgo date={gyroscope.location.timeAgo} />
+                          {smartquotes(
+                            `It's ${gyroscope.location.values[3]} (UTC ${gyroscope.location.values[2]})`
+                          )}
                         </p>
                       )}
                     </div>
@@ -362,7 +384,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">🛌</span>
                   {gyroscope.sleep ? (
                     <div>
-                      <p>
+                      <p className="leading-5 mb-1">
                         <span className="mr-2">
                           {"Slept "}
                           <strong className="font-medium">
@@ -382,7 +404,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">🏃‍♂️</span>
                   {gyroscope.steps ? (
                     <div>
-                      <p>
+                      <p className="leading-5 mb-1">
                         <strong className="font-medium">
                           {`${gyroscope.steps.values[0]} steps`}
                         </strong>
@@ -400,7 +422,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">🫀</span>
                   {gyroscope.heart ? (
                     <div>
-                      <p>
+                      <p className="leading-5 mb-1">
                         <span className="mr-2">
                           {"Readiness score is "}
                           <strong className="font-medium">
@@ -426,7 +448,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               />
             </div>
           </article>
-          <article className="space-y-4">
+          {/* <article className="space-y-4">
             <header>
               <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">🥷</span>
@@ -467,7 +489,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 </li>
               ))}
             </ul>
-          </article>
+          </article> */}
         </div>
       </section>
       <section className="space-y-4">
