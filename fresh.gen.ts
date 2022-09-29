@@ -9,9 +9,10 @@ import * as $2 from "./routes/archive/[year].tsx";
 import * as $3 from "./routes/archive/index.tsx";
 import * as $4 from "./routes/archive/page/[number].tsx";
 import * as $5 from "./routes/blog/[year]/[slug].tsx";
-import * as $6 from "./routes/data.tsx";
-import * as $7 from "./routes/index.tsx";
-import * as $8 from "./routes/life/index.tsx";
+import * as $6 from "./routes/contact.tsx";
+import * as $7 from "./routes/data.tsx";
+import * as $8 from "./routes/index.tsx";
+import * as $9 from "./routes/life/index.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Filters.tsx";
 import * as $$2 from "./islands/TimeAgo.tsx";
@@ -24,9 +25,10 @@ const manifest = {
     "./routes/archive/index.tsx": $3,
     "./routes/archive/page/[number].tsx": $4,
     "./routes/blog/[year]/[slug].tsx": $5,
-    "./routes/data.tsx": $6,
-    "./routes/index.tsx": $7,
-    "./routes/life/index.tsx": $8,
+    "./routes/contact.tsx": $6,
+    "./routes/data.tsx": $7,
+    "./routes/index.tsx": $8,
+    "./routes/life/index.tsx": $9,
   },
   islands: {
     "./islands/Age.tsx": $$0,

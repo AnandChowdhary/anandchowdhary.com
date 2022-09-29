@@ -100,3 +100,9 @@ a[data-footnote-ref] {
 .post-header p {
   color: rgba( 0, 0, 0, 0.5)
 }
+
+.inset-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}

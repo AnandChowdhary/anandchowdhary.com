@@ -11,6 +11,7 @@ export const ExternalLink: FunctionComponent<{
     <a
       href={url.toString()}
       target="_blank"
+      rel="noopener noreferrer"
       className={`${className} ${`space-x-1`}`}
     >
       <span>{children}</span>

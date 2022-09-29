@@ -6,12 +6,15 @@ import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
+import { LoadError } from "../components/text/LoadError.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
+import { Socials } from "../components/text/Socials.tsx";
 import Age from "../islands/Age.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
 import { categoryData, fetchJson } from "../utils/data.ts";
 import { t } from "../utils/i18n.tsx";
 import type {
+  ApiWeeklyValues,
   HomeData,
   LocationApiResult,
   OptionalItemSummaryValue,
@@ -34,26 +37,38 @@ export const handler: Handlers<HomeData> = {
     let sleep: OptionalItemSummaryValue = undefined;
     let steps: OptionalItemSummaryValue = undefined;
     let location: OptionalItemSummaryValue = undefined;
+    let timeline: ITimeline = [];
+    let sleepApi: ApiWeeklyValues = { weeks: {} };
+    let activityApi: ApiWeeklyValues = { weeks: {} };
+    let readinessApi: ApiWeeklyValues = { weeks: {} };
 
-    const [timeline, sleepApi, activityApi, readinessApi] = await Promise.all([
-      fetchJson<ITimeline>(
-        "https://anandchowdhary.github.io/everything/api.json"
-      ),
-      fetchJson<{ weeks: Record<number, string[]> }>(
-        "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
-      ),
-      fetchJson<{ weeks: Record<number, string[]> }>(
-        "https://anandchowdhary.github.io/life/data/oura-activity/api.json"
-      ),
-      fetchJson<{ weeks: Record<number, string[]> }>(
-        "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
-      ),
-    ]);
+    try {
+      const [_timeline, _sleepApi, _activityApi, _readinessApi] =
+        await Promise.all([
+          fetchJson<ITimeline>(
+            "https://anandchowdhary.github.io/everything/api.json"
+          ),
+          fetchJson<ApiWeeklyValues>(
+            "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
+          ),
+          fetchJson<ApiWeeklyValues>(
+            "https://anandchowdhary.github.io/life/data/oura-activity/api.json"
+          ),
+          fetchJson<ApiWeeklyValues>(
+            "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
+          ),
+        ]);
+      timeline = _timeline;
+      sleepApi = _sleepApi;
+      activityApi = _activityApi;
+      readinessApi = _readinessApi;
+    } catch (error) {
+      //
+    }
 
-    const okr = timeline.find(({ type }) => type === "okr") as
+    const okr = timeline?.find(({ type }) => type === "okr") as
       | HomeData["okr"]
       | undefined;
-    if (!okr) throw new Error("OKR not found");
 
     const sleepApiYear = Number(
       Object.keys(sleepApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
@@ -231,7 +246,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             },
             {
               logo: "github-stars.svg",
-              title: "2020–22",
+              title: "GitHub Star",
               publication: "GitHub Stars",
             },
             {
@@ -314,7 +329,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">📊</span>
                 <SectionLink
-                  label={`OKRs for Q${okr.data.name}`}
+                  label={okr ? `OKRs for Q${okr.data.name}` : "OKRs"}
                   href="/life/okrs"
                 />
               </h2>
@@ -322,7 +337,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 Personal Objectives and Key Results
               </p>
             </header>
-            <OKRCards okr={okr} />
+            {okr ? <OKRCards okr={okr} /> : <LoadError items="OKRs" />}
             <div className="pt-1">
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/okrs/api.json"
@@ -396,7 +411,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-gray-500">Unable to load sleep data</p>
+                    <LoadError items="sleep data" />
                   )}
                 </div>
                 <div className="flex space-x-2">
@@ -414,7 +429,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-gray-500">Unable to load step count</p>
+                    <LoadError items="step count" />
                   )}
                 </div>
                 <div className="flex space-x-2">
@@ -434,7 +449,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                       </p>
                     </div>
                   ) : (
-                    <p className="text-gray-500">Unable to load heart rate</p>
+                    <LoadError items="heart rate" />
                   )}
                 </div>
               </div>
@@ -445,6 +460,40 @@ export default function Home({ data }: PageProps<HomeData>) {
                 githubUrl="https://github.com/AnandChowdhary/life"
                 // links={[{ label: "View past themes", href: "/life/themes" }]}
               />
+            </div>
+          </article>
+          <article className="space-y-2">
+            <header>
+              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+                <span aria-hidden="true">📇</span>
+                <SectionLink label={`Connect`} href="/contact" />
+              </h2>
+            </header>
+            <div className="flex flex-wrap items-center space-x-2 -mx-1">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+              >
+                📫
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+              >
+                📘
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+              >
+                🐦
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+              >
+                🔍
+              </a>
             </div>
           </article>
           {/* <article className="space-y-4">
@@ -492,24 +541,27 @@ export default function Home({ data }: PageProps<HomeData>) {
         </div>
       </section>
       <section className="space-y-4">
-        <header className="space-y-2">
-          <h2
-            className="space-x-2 text-2xl font-semibold font-display"
-            id="changelog"
-          >
+        <header>
+          <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">🕰</span>
-            <span>Changelog</span>
+            <SectionLink label={`Changelog`} href="/archive" />
           </h2>
           <p className="text-gray-500">
             {"The latest from my desk, curated from different sources."}
           </p>
         </header>
-        <Timeline
-          timeline={timeline}
-          query={query}
-          selected={Object.keys(categoryData).filter((item) => item !== "book")}
-          maxItems={10}
-        />
+        {timeline.length ? (
+          <Timeline
+            timeline={timeline}
+            query={query}
+            selected={Object.keys(categoryData).filter(
+              (item) => item !== "book"
+            )}
+            maxItems={10}
+          />
+        ) : (
+          <LoadError items="changelog" />
+        )}
       </section>
     </div>
   );

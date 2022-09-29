@@ -68,6 +68,9 @@ interface ItemSummaryValue {
 }
 export type OptionalItemSummaryValue = ItemSummaryValue | undefined;
 
+export interface ApiWeeklyValues {
+  weeks: Record<number, string[]>;
+}
 export interface OuraSleepData {
   total: number;
   rem: number;
@@ -116,7 +119,7 @@ export interface LocationApiResult {
 }
 
 export interface HomeData {
-  okr: {
+  okr?: {
     title: string;
     description: string;
     data: {
