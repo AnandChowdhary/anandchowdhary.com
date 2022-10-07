@@ -1,3 +1,4 @@
+import { render } from "../utils/markdown.ts";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 
 export default function Contact() {
@@ -52,41 +53,51 @@ export default function Contact() {
                 label: "GitHub",
                 name: "AnandChowdhary",
                 href: "https://github.com/AnandChowdhary",
+                icon: "logo-github",
               },
               {
                 label: "LinkedIn",
                 name: "/in/AnandChowdhary",
                 href: "https://www.linkedin.com/in/anandchowdhary",
+                icon: "logo-linkedin",
               },
               {
                 label: "Twitter",
                 name: "@AnandChowdhary",
                 href: "https://twitter.com/AnandChowdhary",
+                icon: "logo-twitter",
               },
               {
                 label: "Instagram",
                 name: "anandchowdhary",
                 href: "https://www.instagram.com/anandchowdhary",
+                icon: "logo-instagram",
               },
-              {
-                label: "Wikipedia",
-                name: "User:AnandChowdhary",
-                href: "https://en.wikipedia.org/wiki/User:AnandChowdhary",
-              },
-            ].map(({ label, name, href }, index, array) => (
+            ].map(({ label, name, href, icon }, index, array) => (
               <li
                 key={label}
                 className={`px-4 py-2 flex items-center justify-between relative border-gray-100 ${
                   array.length - 1 !== index && "border-b"
                 }`}
               >
-                <ExternalLink href={href} className="inset-link">
-                  {label}
-                </ExternalLink>
+                <span className="flex items-center space-x-2">
+                  <ion-icon name={icon}></ion-icon>
+                  <ExternalLink href={href} className="inset-link">
+                    {label}
+                  </ExternalLink>
+                </span>
                 <span className="text-gray-500">{name}</span>
               </li>
             ))}
           </ul>
+          <h2 className="font-medium text-xl">PGP</h2>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: render(
+                `If you want to send an encrypted email, you can [download my PGP public key](/files/public-key.asc) and drop me a line at [anandchowdhary@pm.me](mailto:anandchowdhary@pm.me). Note that I don't check my Proton Mail email as frequently as the contact form above, so time-to-reply may be longer.`
+              ),
+            }}
+          />
         </div>
       </section>
     </div>

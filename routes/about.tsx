@@ -4,6 +4,7 @@ const STARTUPS = [
   {
     icon: "pabio",
     name: "Pabio",
+    position: "co-founder & CTO",
     href: "https://pabio.com",
     start: "2020",
     end: "present",
@@ -13,6 +14,7 @@ const STARTUPS = [
   {
     icon: "oswald-labs",
     name: "Oswald Labs",
+    position: "co-founder & CEO",
     href: "https://oswaldlabs.com",
     start: "2016",
     end: "2020",
@@ -21,6 +23,7 @@ const STARTUPS = [
   {
     icon: "melangebox",
     name: "Melangebox",
+    position: "co-founder & CTO",
     href: "https://melangebox.com",
     start: "2017",
     end: "2020",
@@ -29,6 +32,7 @@ const STARTUPS = [
   {
     icon: "class-rebels",
     name: "Class Rebels",
+    position: "co-founder & CEO",
     start: "2014",
     end: "2016",
     description: "Collaborative e-learning platform for CBSE K-12",
@@ -36,6 +40,7 @@ const STARTUPS = [
   {
     icon: "pickquick",
     name: "PickQuick",
+    position: "co-founder & CTO",
     start: "2012",
     end: "2013",
     description:
@@ -111,37 +116,40 @@ export default function About() {
       </section>
       <section>
         <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200">
-          Startups founded
+          Work
         </h2>
         <ul className="mt-6">
-          {STARTUPS.map(({ name, description, start, end, icon, href }) => (
-            <li key={name} className="flex mt-6">
-              <div
-                className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-gray-80"
-                role="presentation"
-              >
-                <svg aria-hidden="true">
-                  <use href={`#${icon}`}></use>
-                </svg>
-              </div>
+          {STARTUPS.map(
+            ({ name, position, description, start, end, icon, href }) => (
+              <li key={name} className="flex mt-6">
+                <div
+                  className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-gray-80"
+                  role="presentation"
+                >
+                  <svg aria-hidden="true">
+                    <use href={`#${icon}`}></use>
+                  </svg>
+                </div>
 
-              <div>
-                <h3>
-                  <strong className="font-medium dark:text-gray-300">
-                    {href ? (
-                      <ExternalLink href={href}>{name}</ExternalLink>
-                    ) : (
-                      name
-                    )}
-                  </strong>
-                  <span className="text-gray-500">{`, ${start}–${end}`}</span>
-                </h3>
-                <p className="text-gray-500 dark:text-gray-500">
-                  {description}
-                </p>
-              </div>
-            </li>
-          ))}
+                <div>
+                  <h3>
+                    <strong className="font-medium dark:text-gray-300">
+                      {href ? (
+                        <ExternalLink href={href}>{name}</ExternalLink>
+                      ) : (
+                        name
+                      )}
+                    </strong>
+                    <span className="text-gray-500">{`, ${position}`}</span>
+                    <span className="text-gray-500">{`, ${start}–${end}`}</span>
+                  </h3>
+                  <p className="text-gray-500 dark:text-gray-500">
+                    {description}
+                  </p>
+                </div>
+              </li>
+            )
+          )}
         </ul>
       </section>
       <section>

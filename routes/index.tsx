@@ -373,9 +373,9 @@ export default function Home({ data }: PageProps<HomeData>) {
                     </p>
                   </div>
                 </div>
-                {gyroscope.location && (
-                  <div className="flex space-x-2">
-                    <span aria-hidden="true">📍</span>
+                <div className="flex space-x-2">
+                  <span aria-hidden="true">📍</span>
+                  {gyroscope.location ? (
                     <div>
                       <p className="leading-5 mb-1">
                         Last seen in{" "}
@@ -392,8 +392,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                         </p>
                       )}
                     </div>
-                  </div>
-                )}
+                  ) : (
+                    <LoadError items="location" />
+                  )}
+                </div>
                 <div className="flex space-x-2">
                   <span aria-hidden="true">🛌</span>
                   {gyroscope.sleep ? (

@@ -67,11 +67,35 @@ export function Navbar() {
   );
 }
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "ion-icon": any;
+    }
+  }
+}
+
 export function Footer() {
   return (
     <footer className="text-gray-400">
       <div className="max-w-screen-md px-6 pt-16 pb-8 mx-auto leading-none md:px-0">
         <div className="flex items-center justify-between text-sm mb-2">
+          <p className="flex items-center space-x-1">
+            <span>
+              0.06g of{" "}
+              <abbr title="Carbon dioxide equivalent">
+                CO<sub>2</sub>
+              </abbr>{" "}
+              emitted
+            </span>
+            <a
+              href="#"
+              className="flex items-center"
+              aria-label="Carbon emission details"
+            >
+              <ion-icon name="information-circle-outline"></ion-icon>
+            </a>
+          </p>
           <p>Made with 🧡 in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>
           <div className="flex items-center space-x-4">
             <div className="relative flex items-center space-x-1">
