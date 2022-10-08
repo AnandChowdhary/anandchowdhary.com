@@ -8,8 +8,8 @@ interface BlogPostData {
   content: string;
   meta?: Record<string, string>;
   history: GitHubCommit[];
-  previous?: { title: string; date: string };
-  next?: { title: string; date: string };
+  previous?: { title: string; pathname: string; date: string };
+  next?: { title: string; pathname: string; date: string };
 }
 interface GitHubCommit {
   sha: string;
@@ -25,29 +25,23 @@ export const handler: Handlers<BlogPostData> = {
     );
     if (!response.ok) throw new Error("Not found");
     const markdown = await response.text();
-    let history: GitHubCommit[] = [];
-    try {
-      const historyResponse = await fetch(
-        `https://api.github.com/repos/izuzak/pmrpc/commits?path=README.markdown`,
-        { cache: "force-cache" }
-      );
-      if (!historyResponse.ok) throw new Error("Error in fetching history");
-      history = (await historyResponse.json()) as GitHubCommit[];
-    } catch (error) {
-      console.log(error);
-    }
+    // let history: GitHubCommit[] = [];
+    // try {
+    //   const historyResponse = await fetch(
+    //     `https://api.github.com/repos/izuzak/pmrpc/commits?path=README.markdown`,
+    //     { cache: "force-cache" }
+    //   );
+    //   if (!historyResponse.ok) throw new Error("Error in fetching history");
+    //   history = (await historyResponse.json()) as GitHubCommit[];
+    // } catch (error) {
+    //   console.log(error);
+    // }
     const title = markdown
       .split("\n")
       .find((line) => line.startsWith("# "))
       ?.replace("# ", "");
     const { attributes, body } = frontMatter(markdown);
     const content = render(body.replace(`# ${title}`, ""));
-    const date =
-      attributes && typeof attributes === "object" && "date" in attributes
-        ? Object(attributes).date
-        : history?.[0]?.commit?.committer?.date;
-    if (!title) throw new Error("Blog post title not found");
-    if (!date) throw new Error("Blog post date not found");
     const timeline = (await (
       await fetch("https://anandchowdhary.github.io/everything/api.json")
     ).json()) as {
@@ -56,21 +50,44 @@ export const handler: Handlers<BlogPostData> = {
       title: string;
       description?: string;
       data?: unknown;
+      url?: string;
     }[];
-    const previous = timeline.find(({ type }) => type === "blog-post");
+    const currentIndex = timeline.findIndex(
+      ({ type, url }) =>
+        type === "blog-post" && url && url.endsWith(context.params.slug)
+    );
+    const date =
+      attributes && typeof attributes === "object" && "date" in attributes
+        ? Object(attributes).date
+        : timeline[currentIndex].date;
+    if (!title) throw new Error("Blog post title not found");
+    if (!date) throw new Error("Blog post date not found");
+
+    const previous = timeline
+      .slice(currentIndex + 1)
+      .find(({ type }) => type === "blog-post");
     const next = timeline
-      .splice(
-        timeline.findIndex(({ type, title }) => type === "blog-post" && title)
-      )
+      .slice(0, currentIndex)
       .find(({ type }) => type === "blog-post");
     return context.render({
       meta: attributes ? Object(attributes) : {},
-      history,
+      history: [],
       content,
       date,
       title,
-      previous: previous && { title: previous.title, date: previous.date },
-      next: next && { title: next.title, date: next.date },
+      previous: previous && {
+        title: previous.title,
+        pathname:
+          "url" in previous && previous.url
+            ? new URL(previous.url).pathname
+            : "",
+        date: previous.date,
+      },
+      next: next && {
+        title: next.title,
+        pathname: "url" in next && next.url ? new URL(next.url).pathname : "",
+        date: next.date,
+      },
     });
   },
 };
@@ -100,11 +117,13 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
         </p>
       </header>
       <div className="longform" dangerouslySetInnerHTML={{ __html: content }} />
-      <footer className="grid grid-cols-2 mt-8">
+      <footer className="grid md:grid-cols-2 gap-4 mt-8">
         {previous && (
           <div>
             <div>&larr; Previous post</div>
-            <div className="font-medium">{previous.title}</div>
+            <div className="font-medium">
+              <a href={previous.pathname}>{previous.title}</a>
+            </div>
             <div className="text-gray-500">
               {new Date(previous.date).toLocaleDateString("en-US", {
                 dateStyle: "long",
@@ -112,12 +131,14 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
             </div>
           </div>
         )}
-        {previous && (
+        {next && (
           <div className="text-right">
             <div>Next post &rarr;</div>
-            <div className="font-medium">{previous.title}</div>
+            <div className="font-medium">
+              <a href={next.pathname}>{next.title}</a>
+            </div>
             <div className="text-gray-500">
-              {new Date(previous.date).toLocaleDateString("en-US", {
+              {new Date(next.date).toLocaleDateString("en-US", {
                 dateStyle: "long",
               })}
             </div>
