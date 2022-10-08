@@ -5,115 +5,24 @@ import { AppProps } from "$fresh/src/server/types.ts";
 
 export default function App({ Component }: AppProps) {
   return (
-    <html className="bg-yellow-500 py-2">
+    <html class="bg-yellow-500 py-2">
       <Head>
         <title>Anand Chowdhary</title>
         <link rel="prefetch" href={`/${asset("anand.svg")}`} />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
       </Head>
-      <body className="min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900">
+      <body class="min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900">
         <div>
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-html {
-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-sans-serif;
-font-variant-ligatures: historical-ligatures;
-line-height: 1.7;
-}
-
-.font-display {
-font-family: "InterDisplay", "Inter", -apple-system, BlinkMacSystemFont,
-"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-"Helvetica Neue", sans-serif;
-}
-
-.full-link::after {
-content: "";
-position: absolute;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-}
-
-.copy a {
-font-weight: 500;
-text-decoration: underline;
-transition: 0.3s;
-opacity: 0.75;
-}
-
-.copy a:hover {
-opacity: 1;
-}
-
-.copy p {
--moz-column-break-inside: avoid;
- break-inside: avoid-column;
-}
-
-.hide-on-open {
-opacity: 1;
-}
-
-details[open] .hide-on-open {
-opacity: 0;
-}
-
-.show-on-open {
-opacity: 0;
-}
-
-details[open] .show-on-open {
-opacity: 1;
-}
-
-.rotate-on-open {
-transition: transform 0.3s;
-}
-
-details[open] .rotate-on-open {
-transform: rotate(180deg);
-}
-
-.wave {
-animation-name: wave-animation;
-animation-duration: 5s;
-animation-iteration-count: infinite;
-transform-origin: 70% 70%;
-display: inline-block;
-}
-
-@media (prefers-reduced-motion: reduce) {
-.wave { animation: none; }
-}
-
-@keyframes wave-animation {
-0% { transform: rotate(0.0deg) }
-7% { transform: rotate(14.0deg) }
-14% { transform: rotate(-8.0deg) }
-21% { transform: rotate(14.0deg) }
-28% { transform: rotate(-4.0deg) }
-35% { transform: rotate(10.0deg) }
-42% { transform: rotate(0.0deg) }
-100% { transform: rotate(0.0deg) }
-}
-        `,
-            }}
-          />
-          <header className="pt-6 pb-16">
-            <div className="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">
+          <header class="pt-6 pb-16">
+            <div class="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">
               <a
                 href="/"
-                className="flex items-center space-x-2 font-medium dark:text-gray-300 whitespace-nowrap"
+                class="flex items-center space-x-2 font-medium dark:text-gray-300 whitespace-nowrap"
               >
                 <svg
                   viewBox="0 0 700 700"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 text-teal-500"
+                  class="w-5 h-5 text-teal-500"
                   role="presentation"
                 >
                   <path
@@ -124,6 +33,19 @@ display: inline-block;
                 <span>Anand Chowdhary</span>
               </a>
               <Navbar />
+            </div>
+            <div class="max-w-screen-md px-6 mx-auto md:px-0 mt-4">
+              <div class="border-2 border-dashed px-4 py-3 rounded-lg bg-gray-100 space-y-1 text-sm">
+                <p class="uppercase text-xs">
+                  <a href="/about/versions/alameda/">
+                    <strong>Public redesign</strong>
+                  </a>
+                </p>
+                <p>
+                  Things might look a little janky for a bit, but that's okay! I
+                  am in the process of refreshing the design.
+                </p>
+              </div>
             </div>
           </header>
           <main>

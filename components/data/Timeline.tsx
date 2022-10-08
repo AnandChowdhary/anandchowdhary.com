@@ -88,24 +88,21 @@ export const Timeline: FunctionComponent<{
                       })}`}
                     </span>
                   </div>
-                  <h4 className="text-lg font-medium leading-6">
-                    {smartquotes(item.title)}
-                  </h4>
-                  {/* {"href" in item && item.href ? (
-              <h4 className="text-lg font-medium leading-6">
-                {item.href.startsWith("http") ? (
-                  <ExternalLink href={item.href}>
-                    {item.title}
-                  </ExternalLink>
-                ) : (
-                  <a href="item.href">{item.title}</a>
-                )}
-              </h4>
-            ) : (
-              <h4 className="text-lg font-medium leading-6">
-                {item.title}
-              </h4>
-            )} */}
+                  {"url" in item &&
+                  item.url &&
+                  item.url.startsWith("https://anandchowdhary.com/") ? (
+                    <h4 className="text-lg font-medium leading-6">
+                      <h4 className="text-lg font-medium leading-6">
+                        <a href={new URL(item.url).pathname}>
+                          {smartquotes(item.title)}
+                        </a>
+                      </h4>
+                    </h4>
+                  ) : (
+                    <h4 className="text-lg font-medium leading-6">
+                      {smartquotes(item.title)}
+                    </h4>
+                  )}
                   {item.data?.authors && (
                     <p>{smartquotes(`by ${item.data.authors.join(", ")}`)}</p>
                   )}

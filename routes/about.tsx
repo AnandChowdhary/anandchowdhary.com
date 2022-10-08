@@ -83,7 +83,7 @@ export default function About() {
           </p>
         </header>
         <div
-          className="space-y-5 md:columns-2 copy"
+          className="space-y-5 md:columns-2"
           style={{ columnCount: 2, columnGap: "2rem" }}
         >
           <p>
