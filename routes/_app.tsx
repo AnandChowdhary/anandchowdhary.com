@@ -1,7 +1,8 @@
 import { asset, Head } from "$fresh/runtime.ts";
-import { Icons } from "../components/Icons.tsx";
-import { Navbar, Footer } from "../components/layout/Layout.tsx";
 import { AppProps } from "$fresh/src/server/types.ts";
+import { Icons } from "../components/Icons.tsx";
+import { Footer, Navbar } from "../components/layout/Layout.tsx";
+import { render } from "../utils/markdown.ts";
 
 export default function App({ Component }: AppProps) {
   return (
@@ -41,10 +42,13 @@ export default function App({ Component }: AppProps) {
                     <strong>Public redesign</strong>
                   </a>
                 </p>
-                <p>
-                  Things might look a little janky for a bit, but that's okay! I
-                  am in the process of refreshing the design.
-                </p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: render(
+                      `I'm currently and very publicly redesigning my personal website, so some things might be a little janky!`
+                    ),
+                  }}
+                />
               </div>
             </div>
           </header>
@@ -54,14 +58,6 @@ export default function App({ Component }: AppProps) {
           <Footer />
           <Icons />
         </div>
-        <script
-          type="module"
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-        ></script>
-        <script
-          nomodule
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-        ></script>
       </body>
     </html>
   );

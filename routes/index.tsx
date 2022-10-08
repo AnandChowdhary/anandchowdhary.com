@@ -11,7 +11,7 @@ import { SectionLink } from "../components/text/SectionLink.tsx";
 import { Socials } from "../components/text/Socials.tsx";
 import Age from "../islands/Age.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
-import { categoryData, fetchJson } from "../utils/data.ts";
+import { categoryData, fetchJson } from "../utils/data.tsx";
 import { t } from "../utils/i18n.tsx";
 import type {
   ApiWeeklyValues,

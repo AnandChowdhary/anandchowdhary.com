@@ -1,7 +1,7 @@
 import type { ComponentChildren, FunctionComponent } from "preact";
 import { orange } from "twind/colors";
 import TimeAgo from "../../islands/TimeAgo.tsx";
-import type { IOkrs } from "../../utils/data.ts";
+import type { IOkrs } from "../../utils/data.tsx";
 import { t } from "../../utils/i18n.tsx";
 import { ExternalLink } from "../text/ExternalLink.tsx";
 import { SectionLink } from "../text/SectionLink.tsx";

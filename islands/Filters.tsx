@@ -7,7 +7,7 @@ export default function Filters({
   options: string[];
   categoryData: Record<
     string,
-    { color: string; icon: string; prefix: string; title: string; url: string }
+    { color: string; prefix: string; title: string }
   >;
 }) {
   const updateChangelog = (event: Event) => {

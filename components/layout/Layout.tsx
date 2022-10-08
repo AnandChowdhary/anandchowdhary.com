@@ -1,3 +1,4 @@
+import { InfoCircleOutline } from "../Icons.tsx";
 import { Socials } from "../text/Socials.tsx";
 
 const NAV = [
@@ -67,14 +68,6 @@ export function Navbar() {
   );
 }
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "ion-icon": any;
-    }
-  }
-}
-
 export function Footer() {
   return (
     <footer className="text-gray-400">
@@ -90,10 +83,11 @@ export function Footer() {
             </span>
             <a
               href="#"
-              className="flex items-center"
+              className="flex items-center opacity-100"
               aria-label="Carbon emission details"
+              title="Carbon emission details"
             >
-              <ion-icon name="information-circle-outline"></ion-icon>
+              <InfoCircleOutline class="w-4 h-4" />
             </a>
           </p>
           <p>Made with 🧡 in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>

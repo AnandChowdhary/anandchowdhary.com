@@ -1,7 +1,7 @@
 import { ComponentChildren, FunctionComponent } from "preact";
 import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import Filters from "../../islands/Filters.tsx";
-import { categoryData } from "../../utils/data.ts";
+import { categoryData } from "../../utils/data.tsx";
 import { t } from "../../utils/i18n.tsx";
 import type { Timeline as ITimeline } from "../../utils/interfaces.ts";
 import { humanizeMmSs } from "../../utils/string.ts";
@@ -66,14 +66,12 @@ export const Timeline: FunctionComponent<{
                 <div className="shrink-0" style={{ minWidth: "3rem" }}>
                   <div>
                     <div
-                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50`}
+                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 p-1`}
                       style={{
                         backgroundColor: categoryData[item.type].color,
                       }}
                     >
-                      <svg aria-hidden="true" width="1em" height="1em">
-                        <use href={`#${categoryData[item.type].icon}`}></use>
-                      </svg>
+                      {categoryData[item.type].icon}
                     </div>
                   </div>
                 </div>

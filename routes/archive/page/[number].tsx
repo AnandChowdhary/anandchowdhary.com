@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Timeline } from "../../../components/data/Timeline.tsx";
-import { fetchJson } from "../../../utils/data.ts";
+import { fetchJson } from "../../../utils/data.tsx";
 import { Timeline as ITimeline } from "../../../utils/interfaces.ts";
 
 interface ArchiveData {

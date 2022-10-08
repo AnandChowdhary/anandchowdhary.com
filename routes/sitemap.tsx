@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
-import { categoryData } from "../utils/data.ts";
+import { categoryData } from "../utils/data.tsx";
 import { render } from "../utils/markdown.ts";
 import { pages } from "./sitemap.xml.tsx";
 
