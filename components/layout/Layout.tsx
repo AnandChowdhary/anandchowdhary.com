@@ -153,9 +153,15 @@ export function Footer() {
                   </form>
                   <a
                     className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                    href="#"
+                    href="/colophon"
                   >
                     Colophon
+                  </a>
+                  <a
+                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                    href="/sitemap"
+                  >
+                    Sitemap
                   </a>
                   <a
                     className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
