@@ -1,7 +1,7 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Timeline } from "../../components/data/Timeline.tsx";
-import { fetchJson } from "../../utils/data.tsx";
-import { Timeline as ITimeline } from "../../utils/interfaces.ts";
+import { Timeline } from "../../../components/data/Timeline.tsx";
+import { fetchJson } from "../../../utils/data.tsx";
+import { Timeline as ITimeline } from "../../../utils/interfaces.ts";
 
 interface ArchiveData {
   timeline: ITimeline;
@@ -40,29 +40,38 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   const { timeline, year, query, nextYear, previousYear } = data;
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+      <nav>
+        <ol className="flex flex-wrap breadcrumbs">
+          <li className="hidden">
+            <a href="/">Anand Chowdhary</a>
+          </li>
+          <li>
+            <a href="/blog">Blog</a>
+          </li>
+        </ol>
+      </nav>
       <section className="space-y-4">
         {timeline.length > 0 && (
           <header className="grid grid-cols-3">
             <div className="text-left">
               {previousYear && (
-                <a href={`/archive/${previousYear}`}>{`← ${previousYear}`}</a>
+                <a href={`/blog/${previousYear}`}>{`← ${previousYear}`}</a>
               )}
             </div>
             <h1 className="space-x-2 text-2xl font-semibold font-display text-center">
               <span>{year}</span>
             </h1>
             <div className="text-right">
-              {nextYear && (
-                <a href={`/archive/${nextYear}`}>{`${nextYear} →`}</a>
-              )}
+              {nextYear && <a href={`/blog/${nextYear}`}>{`${nextYear} →`}</a>}
             </div>
           </header>
         )}
         <Timeline
+          hideFilters
           hideYearHeading={year !== undefined}
-          timeline={timeline}
+          timeline={timeline.filter(({ type }) => type === "blog-post")}
           query={query}
-          hasMoreHref={previousYear ? `/archive/${previousYear}` : undefined}
+          hasMoreHref={previousYear ? `/blog/${previousYear}` : undefined}
           hasMoreLabel={previousYear}
         />
       </section>

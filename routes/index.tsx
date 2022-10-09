@@ -546,7 +546,10 @@ export default function Home({ data }: PageProps<HomeData>) {
         <header>
           <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">🕰</span>
-            <SectionLink label={`Changelog`} href="/archive" />
+            <SectionLink
+              label={`Changelog`}
+              href={`/archive/${new Date(timeline[0].date).getUTCFullYear()}`}
+            />
           </h2>
           <p className="text-gray-500">
             {"The latest from my desk, curated from different sources."}
@@ -560,6 +563,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               (item) => item !== "book"
             )}
             maxItems={10}
+            hasMoreHref="special://last-archive-year"
           />
         ) : (
           <LoadError items="changelog" />

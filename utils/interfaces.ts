@@ -11,6 +11,7 @@ export type Timeline = {
     description?: string;
     image?: string;
     authors?: string[];
+    excerpt?: string;
     words?: number;
     location?: string;
     emoji?: string;

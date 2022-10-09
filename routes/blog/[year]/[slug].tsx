@@ -7,35 +7,18 @@ interface BlogPostData {
   date: string;
   content: string;
   meta?: Record<string, string>;
-  history: GitHubCommit[];
   previous?: { title: string; pathname: string; date: string };
   next?: { title: string; pathname: string; date: string };
 }
-interface GitHubCommit {
-  sha: string;
-  html_url: string;
-  commit: { message: string; committer: { date: string } };
-}
 
 export const handler: Handlers<BlogPostData> = {
-  async GET(request, context) {
+  async GET(_, context) {
     const response = await fetch(
       `https://raw.githubusercontent.com/AnandChowdhary/blog/master/blog/${context.params.year}/${context.params.slug}.md`,
       { cache: "force-cache" }
     );
     if (!response.ok) throw new Error("Not found");
     const markdown = await response.text();
-    // let history: GitHubCommit[] = [];
-    // try {
-    //   const historyResponse = await fetch(
-    //     `https://api.github.com/repos/izuzak/pmrpc/commits?path=README.markdown`,
-    //     { cache: "force-cache" }
-    //   );
-    //   if (!historyResponse.ok) throw new Error("Error in fetching history");
-    //   history = (await historyResponse.json()) as GitHubCommit[];
-    // } catch (error) {
-    //   console.log(error);
-    // }
     const title = markdown
       .split("\n")
       .find((line) => line.startsWith("# "))
@@ -71,7 +54,6 @@ export const handler: Handlers<BlogPostData> = {
       .find(({ type }) => type === "blog-post");
     return context.render({
       meta: attributes ? Object(attributes) : {},
-      history: [],
       content,
       date,
       title,
@@ -93,10 +75,20 @@ export const handler: Handlers<BlogPostData> = {
 };
 
 export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
-  const { title, content, date, meta, history, previous, next } = data;
+  const { title, content, date, meta, previous, next } = data;
 
   return (
     <div className="max-w-screen-md px-4 mx-auto md:px-0">
+      <img
+        alt=""
+        src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+          `https://anandchowdhary.github.io/blog/assets/${params.slug}.png`
+        )}&w=1024&h=512&fit=cover`}
+        loading="lazy"
+        width={1024}
+        height={512}
+        className="w-full rounded-lg shadow mb-8"
+      />
       <nav>
         <ol className="flex flex-wrap breadcrumbs">
           <li className="hidden">
@@ -145,26 +137,6 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
           </div>
         )}
       </footer>
-      {/* <footer className="bg-white mt-12 p-4 rounded border">
-        <h2>About this post</h2>
-        <h3>Commit history</h3>
-        {history.map((commit) => (
-          <div key={commit.sha} className="flex">
-            <div className="w-24">()</div>
-            <div>
-              <div>
-                <ExternalLink href={commit.html_url}>
-                  {new Date(commit.commit.committer.date).toLocaleDateString(
-                    "en-US",
-                    { dateStyle: "long" }
-                  )}
-                </ExternalLink>
-              </div>
-              <p>{commit.commit.message}</p>
-            </div>
-          </div>
-        ))}
-      </footer> */}
     </div>
   );
 }

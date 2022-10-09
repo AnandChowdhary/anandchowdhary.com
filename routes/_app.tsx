@@ -14,7 +14,7 @@ export default function App({ Component }: AppProps) {
       </Head>
       <body class="min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900">
         <div>
-          <header class="pt-6 pb-16">
+          <header class="pt-6 pb-8">
             <div class="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">
               <a
                 href="/"
