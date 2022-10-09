@@ -5,6 +5,7 @@ import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
+import { GitHub, Instagram, LinkedIn, Twitter } from "../components/Icons.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { LoadError } from "../components/text/LoadError.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
@@ -229,7 +230,7 @@ export default function Home({ data }: PageProps<HomeData>) {
       </section>
       <section className="overflow-auto">
         <div
-          className="grid grid-cols-5 text-center gap-12 overflow-auto"
+          className="grid grid-cols-5 gap-12 overflow-auto text-center"
           style={{ minWidth: "700px" }}
         >
           {[
@@ -262,17 +263,17 @@ export default function Home({ data }: PageProps<HomeData>) {
             <a
               key={award.title}
               href="#"
-              className="opacity-70 hover:opacity-100 transition relative h-12 flex flex-col items-center justify-center px-6"
+              className="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
             >
               <div
-                className="absolute top-0 left-0 bottom-0 h-12 bg-contain bg-no-repeat bg-left"
+                className="absolute top-0 bottom-0 left-0 h-12 bg-left bg-no-repeat bg-contain"
                 style={{
                   backgroundImage: "url(/awards/leaf.svg)",
                   aspectRatio: "86 / 150",
                 }}
               />
               <div
-                className="absolute top-0 right-0 bottom-0 h-12 bg-contain bg-no-repeat bg-right"
+                className="absolute top-0 bottom-0 right-0 h-12 bg-right bg-no-repeat bg-contain"
                 style={{
                   backgroundImage: "url(/awards/leaf.svg)",
                   transform: "scaleX(-1)",
@@ -280,7 +281,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 }}
               />
               <img alt="" src={`/awards/${award.logo}`} />
-              <div className="font-medium -mt-1" style={{ fontSize: "60%" }}>
+              <div className="-mt-1 font-medium" style={{ fontSize: "60%" }}>
                 {award.title}
               </div>
             </a>
@@ -302,7 +303,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 Yearly theme that dictates quarterly goals
               </p>
             </header>
-            <div className="relative space-y-2 bg-white p-4 rounded shadow-sm">
+            <div className="relative p-4 space-y-2 bg-white rounded shadow-sm">
               <p className="text-2xl">{theme.title}</p>
               <p className="h-20 overflow-hidden text-sm text-gray-500">
                 {theme.description}
@@ -358,7 +359,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               </p>
             </header>
             <div className="relative space-y-4">
-              <div className="bg-white rounded shadow-sm p-4 space-y-4">
+              <div className="p-4 space-y-4 bg-white rounded shadow-sm">
                 <div className="flex space-x-2">
                   <span aria-hidden="true">🎂</span>
                   <div>
@@ -376,7 +377,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">📍</span>
                   {gyroscope.location ? (
                     <div>
-                      <p className="leading-5 mb-1">
+                      <p className="mb-1 leading-5">
                         Last seen in{" "}
                         <strong className="font-medium">
                           {gyroscope.location.values[0]}
@@ -399,7 +400,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">🛌</span>
                   {gyroscope.sleep ? (
                     <div>
-                      <p className="leading-5 mb-1">
+                      <p className="mb-1 leading-5">
                         <span className="mr-2">
                           {"Slept "}
                           <strong className="font-medium">
@@ -419,7 +420,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">🏃‍♂️</span>
                   {gyroscope.steps ? (
                     <div>
-                      <p className="leading-5 mb-1">
+                      <p className="mb-1 leading-5">
                         <strong className="font-medium">
                           {`${gyroscope.steps.values[0]} steps`}
                         </strong>
@@ -437,7 +438,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <span aria-hidden="true">🫀</span>
                   {gyroscope.heart ? (
                     <div>
-                      <p className="leading-5 mb-1">
+                      <p className="mb-1 leading-5">
                         <span className="mr-2">
                           {"Readiness score is "}
                           <strong className="font-medium">
@@ -470,30 +471,34 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <SectionLink label={`Connect`} href="/contact" />
               </h2>
             </header>
-            <div className="flex flex-wrap items-center space-x-2 -mx-1">
+            <div className="flex flex-wrap items-center -mx-1 space-x-4">
               <a
-                href="#"
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+                href="https://github.com/AnandChowdhary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                📫
+                <GitHub class="w-6 h-6" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+                href="https://www.linkedin.com/in/AnandChowdhary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                📘
+                <LinkedIn class="w-6 h-6" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+                href="https://twitter.com/AnandChowdhary"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                🐦
+                <Twitter class="w-6 h-6" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-sm bg-white"
+                href="https://www.instagram.com/anandchowdhary/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                🔍
+                <Instagram class="w-6 h-6" />
               </a>
             </div>
           </article>
@@ -505,7 +510,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               </h2>
               <p className="text-gray-500">My top projects on the top of HN</p>
             </header>
-            <ul className="space-y-4 bg-white rounded shadow-sm p-4 block">
+            <ul className="block p-4 space-y-4 bg-white rounded shadow-sm">
               {[
                 {
                   id: 30468793,
@@ -531,7 +536,7 @@ export default function Home({ data }: PageProps<HomeData>) {
               ].map(({ id, title, points, comments }) => (
                 <li className="space-y-2" key={id}>
                   <div className="leading-6">{smartquotes(title)}</div>
-                  <footer className="text-sm flex space-x-3 flex-wrap text-gray-500">
+                  <footer className="flex flex-wrap space-x-3 text-sm text-gray-500">
                     <span>{points} points</span>
                     <span>{comments} comments</span>
                   </footer>

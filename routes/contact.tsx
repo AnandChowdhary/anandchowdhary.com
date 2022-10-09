@@ -1,103 +1,103 @@
 import { render } from "../utils/markdown.ts";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
+import { GitHub, Instagram, LinkedIn, Twitter } from "../components/Icons.tsx";
 
 export default function Contact() {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
-      <header className="mb-5 space-y-5">
-        <h1 className="text-4xl font-semibold font-display dark:text-gray-200">
+      <header class="mb-5 space-y-5">
+        <h1 class="text-4xl font-semibold font-display dark:text-gray-200">
           Contact
         </h1>
-        <p className="text-xl leading-relaxed">
+        <p class="text-xl leading-relaxed">
           You can get in touch with me by filling the form below.
         </p>
       </header>
-      <section className="grid md:grid-cols-2 gap-12">
+      <section class="grid gap-12 md:grid-cols-2">
         <form
-          className="space-y-4"
+          class="space-y-4"
           method="POST"
           action="https://formspree.io/mail@anandchowdhary.com"
         >
-          <label className="block space-y-2">
-            <span className="block">Name</span>
+          <label class="block space-y-2">
+            <span class="block">Name</span>
             <input
               name="name"
               type="text"
-              className="shadow-sm rounded w-full py-2 px-4 text-xl"
+              class="w-full px-4 py-2 text-xl rounded shadow-sm"
               required
             />
           </label>
-          <label className="block space-y-2">
-            <span className="block">Email</span>
+          <label class="block space-y-2">
+            <span class="block">Email</span>
             <input
               name="email"
               type="email"
-              className="shadow-sm rounded w-full py-2 px-4 text-xl"
+              class="w-full px-4 py-2 text-xl rounded shadow-sm"
               required
             />
           </label>
-          <label className="block space-y-2">
-            <span className="block">Message</span>
+          <label class="block space-y-2">
+            <span class="block">Message</span>
             <textarea
               name="message"
-              className="shadow-sm rounded w-full py-2 px-4 text-xl"
+              class="w-full px-4 py-2 text-xl rounded shadow-sm"
               rows={4}
               required
             />
           </label>
           <button
             type="submit"
-            className="shadow-sm rounded py-2 px-6 bg-orange-200"
+            class="px-6 py-2 bg-orange-200 rounded shadow-sm"
           >
             Send message
           </button>
         </form>
-        <div className="space-y-4">
-          <h2 className="font-medium text-xl">Elsewhere</h2>
-          <ul className="rounded-lg overflow-hidden bg-white shadow-sm">
+        <div class="space-y-4">
+          <h2 class="text-xl font-medium">Elsewhere</h2>
+          <ul class="overflow-hidden bg-white rounded-lg shadow-sm">
             {[
               {
                 label: "GitHub",
                 name: "AnandChowdhary",
                 href: "https://github.com/AnandChowdhary",
-                icon: "logo-github",
               },
               {
                 label: "LinkedIn",
                 name: "/in/AnandChowdhary",
                 href: "https://www.linkedin.com/in/anandchowdhary",
-                icon: "logo-linkedin",
               },
               {
                 label: "Twitter",
                 name: "@AnandChowdhary",
                 href: "https://twitter.com/AnandChowdhary",
-                icon: "logo-twitter",
               },
               {
                 label: "Instagram",
                 name: "anandchowdhary",
                 href: "https://www.instagram.com/anandchowdhary",
-                icon: "logo-instagram",
               },
-            ].map(({ label, name, href, icon }, index, array) => (
+            ].map(({ label, name, href }, index, array) => (
               <li
                 key={label}
-                className={`px-4 py-2 flex items-center justify-between relative border-gray-100 ${
+                class={`px-4 py-2 flex items-center justify-between relative border-gray-100 ${
                   array.length - 1 !== index && "border-b"
                 }`}
               >
-                <span className="flex items-center space-x-2">
-                  <ion-icon name={icon}></ion-icon>
-                  <ExternalLink href={href} className="inset-link">
+                <span class="flex items-center space-x-2">
+                  {label === "GitHub" && <GitHub class="w-4 h-4" />}
+                  {label === "LinkedIn" && <LinkedIn class="w-4 h-4" />}
+                  {label === "Twitter" && <Twitter class="w-4 h-4" />}
+                  {label === "Instagram" && <Instagram class="w-4 h-4" />}
+                  <ExternalLink href={href} class="inset-link">
                     {label}
                   </ExternalLink>
                 </span>
-                <span className="text-gray-500">{name}</span>
+                <span class="text-gray-500">{name}</span>
               </li>
             ))}
           </ul>
-          <h2 className="font-medium text-xl">PGP</h2>
+          <h2 class="text-xl font-medium">PGP</h2>
           <p
             dangerouslySetInnerHTML={{
               __html: render(

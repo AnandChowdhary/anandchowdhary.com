@@ -2,8 +2,8 @@ import { FunctionComponent } from "preact";
 
 export const ExternalLink: FunctionComponent<{
   href: string;
-  className?: string;
-}> = ({ href, className, children }) => {
+  class?: string;
+}> = ({ href, class: className, children }) => {
   const url = new URL(href);
   url.searchParams.append("utm_source", "anandchowdhary.com");
 
@@ -12,11 +12,11 @@ export const ExternalLink: FunctionComponent<{
       href={url.toString()}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${className} ${`space-x-1`}`}
+      class={`${className} ${`space-x-1`}`}
     >
       <span>{children}</span>
       <svg
-        className="inline opacity-50"
+        class="inline opacity-50"
         stroke="currentColor"
         fill="none"
         stroke-width="0"
