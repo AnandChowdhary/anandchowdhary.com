@@ -34,8 +34,8 @@ const nextBirthday =
 export const handler: Handlers<LifeData> = {
   async GET(request, context) {
     let heart: OptionalItemSummaryValue = undefined;
-    let sleep: OptionalItemSummaryValue = undefined;
-    let steps: OptionalItemSummaryValue = undefined;
+    let sleep: Record<string, OuraSleepData> | undefined = undefined;
+    let activity: Record<string, OuraActivity> | undefined = undefined;
     let location: OptionalItemSummaryValue = undefined;
     let timeline: ITimeline = [];
     let sleepApi: ApiWeeklyValues = { weeks: {} };
@@ -117,45 +117,6 @@ export const handler: Handlers<LifeData> = {
             "https://anandchowdhary.github.io/location/api.json"
           ),
         ]);
-      const sleepDataLast = Object.entries(sleepData)
-        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-        .find((item) => item[1].total > 1);
-      const activityDataLast = Object.entries(activityData)
-        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-        .find((item) => item[1].total > 1);
-      const readinessDataLast = Object.entries(readinessData)
-        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-        .find((item) => item[1].score_resting_hr > 1);
-
-      if (sleepDataLast)
-        sleep = {
-          values: [
-            (sleepDataLast[1].total / 3600).toLocaleString("en-US", {
-              maximumFractionDigits: 1,
-            }),
-            (sleepDataLast[1].rem / 3600).toLocaleString("en-US", {
-              maximumFractionDigits: 1,
-            }),
-            sleepDataLast[1].efficiency.toLocaleString("en-US"),
-          ],
-        };
-      if (activityDataLast)
-        steps = {
-          values: [
-            Math.round(activityDataLast[1].steps).toLocaleString("en-US"),
-            Math.round(activityDataLast[1].cal_active).toLocaleString("en-US"),
-            Math.round(activityDataLast[1].cal_total).toLocaleString("en-US"),
-          ],
-        };
-      if (readinessDataLast)
-        heart = {
-          values: [
-            Math.round(readinessDataLast[1].score).toLocaleString("en-US"),
-            Math.round(readinessDataLast[1].score_previous_day).toLocaleString(
-              "en-US"
-            ),
-          ],
-        };
       location = {
         values: [
           locationData.label,
@@ -181,6 +142,8 @@ export const handler: Handlers<LifeData> = {
             )[1]
             .split("</svg>")[0] +
           "</svg>";
+      sleep = sleepData;
+      activity = activityData;
     } catch (error) {
       //
     }
@@ -216,7 +179,7 @@ export const handler: Handlers<LifeData> = {
       gyroscope: {
         location,
         heart,
-        steps,
+        activity,
         sleep,
       },
       theme: {
@@ -240,11 +203,11 @@ export default function Home({ data }: PageProps<LifeData>) {
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
-      <header className="space-y-2">
-        <h1 className="text-4xl font-semibold font-display dark:text-gray-200">
+      <header class="space-y-2">
+        <h1 class="text-4xl font-semibold font-display dark:text-gray-200">
           Life
         </h1>
-        <p className="text-xl leading-relaxed">
+        <p class="text-xl leading-relaxed">
           You can get in touch with me by filling the form below.
         </p>
       </header>
@@ -315,7 +278,7 @@ export default function Home({ data }: PageProps<LifeData>) {
             <div class="p-4">
               {gyroscope.location ? (
                 <div class="space-y-2">
-                  <p className="flex items-center mb-1 space-x-3 leading-5">
+                  <p class="flex items-center mb-1 space-x-3 leading-5">
                     {gyroscope.location.values[4] && (
                       <img
                         alt=""
@@ -323,13 +286,13 @@ export default function Home({ data }: PageProps<LifeData>) {
                         class="rounded-sm"
                       />
                     )}
-                    <strong className="font-medium">
+                    <strong class="font-medium">
                       {gyroscope.location.values[0]}
                     </strong>
                     {`, ${gyroscope.location.values[1]}`}
                   </p>
                   {gyroscope.location.values[2] && (
-                    <p className="text-sm text-gray-500">
+                    <p class="text-sm text-gray-500">
                       {smartquotes(
                         `It's ${gyroscope.location.values[3]} (UTC ${gyroscope.location.values[2]})`
                       )}
@@ -355,12 +318,12 @@ export default function Home({ data }: PageProps<LifeData>) {
             </h2>
             <p class="text-gray-500">Last week in Spotify listening history</p>
           </header>
-          <div className="space-y-2">
+          <div class="space-y-2">
             {music ? (
               music.slice(0, 5).map((artist) => (
                 <div
                   key={artist.name}
-                  className="flex bg-white rounded-lg shadow-sm"
+                  class="flex bg-white rounded-lg shadow-sm"
                   style={{
                     backgroundImage: `linear-gradient(to right, ${
                       colors.orange[400]
@@ -372,7 +335,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                     backgroundPosition: "3rem 100%",
                   }}
                 >
-                  <div className="min-w-12">
+                  <div class="min-w-12">
                     <img
                       alt=""
                       src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
@@ -383,12 +346,12 @@ export default function Home({ data }: PageProps<LifeData>) {
                       width={48}
                       height={48}
                       loading="lazy"
-                      className="object-cover w-12 h-full rounded-l-lg"
+                      class="object-cover w-12 h-full rounded-l-lg"
                     />
                   </div>
-                  <div className="flex items-center justify-between flex-grow h-12 px-4">
+                  <div class="flex items-center justify-between flex-grow h-12 px-4">
                     <div>{artist.name}</div>
-                    <div className="text-gray-500">{`${artist.plays} ${
+                    <div class="text-gray-500">{`${artist.plays} ${
                       artist.plays === 1 ? "play" : "plays"
                     }`}</div>
                   </div>
@@ -403,8 +366,294 @@ export default function Home({ data }: PageProps<LifeData>) {
             githubUrl="https://gist.github.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922"
           />
         </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🔥</span>
+              <SectionLink label="Calories burned" href="/life/calories" />
+            </h2>
+            <p class="text-gray-500">Tracked with Oura</p>
+          </header>
+          <div class="flex relative -mx-2 h-64">
+            <div
+              class="absolute z-10 right-4 top-2 flex space-x-4 text-xs justify-center py-1 px-2 rounded"
+              style={{
+                background: "rgba(255, 255, 255, 0.5)",
+                backdropFilter: "blur(0.5rem)",
+              }}
+            >
+              <div class="flex items-center space-x-2">
+                <div
+                  class="h-3 w-3 rounded"
+                  style={{ background: "#fca5a5" }}
+                ></div>
+                <span>Total</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="h-3 w-3 rounded"
+                  style={{
+                    background: "#ef4444",
+                  }}
+                ></div>
+                <span>Active</span>
+              </div>
+            </div>
+            {gyroscope.activity ? (
+              Object.entries(gyroscope.activity)
+                .filter(([_, { cal_total }]) => cal_total > 0)
+                .map(([date, { cal_total, cal_active }]) => (
+                  <div key={date} class="flex-1 w-full flex items-end">
+                    <div class="w-full px-2 h-full flex flex-col justify-end">
+                      <div
+                        class="rounded-lg relative overflow-hidden"
+                        style={{
+                          background: "#fca5a5",
+                          height: `${Math.round(
+                            (100 * cal_total) /
+                              Math.max(
+                                ...Object.values(gyroscope.activity ?? {}).map(
+                                  (x) => x.cal_total ?? 0
+                                )
+                              )
+                          )}%`,
+                        }}
+                      >
+                        <div
+                          class="absolute left-0 right-0"
+                          style={{
+                            background: "#ef4444",
+                            height: `${Math.round(
+                              (100 * cal_active) / cal_total
+                            )}%`,
+                            bottom: "0",
+                          }}
+                        ></div>
+                      </div>
+                      <div class="text-xs text-center mt-2">
+                        <div>
+                          {`${new Date(date)
+                            .toLocaleString("en-US", {
+                              weekday: "long",
+                            })
+                            .substring(0, 3)} ${new Date(date).getDate()}`}
+                        </div>
+                        <div>
+                          <strong class="font-medium">{`${Number(
+                            cal_total
+                          ).toLocaleString("en-US", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 1,
+                          })}`}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+            ) : (
+              <LoadError items="activity" />
+            )}
+          </div>
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🛌</span>
+              <SectionLink label="Sleep" href="/life/sleep" />
+            </h2>
+            <p class="text-gray-500">Different stages of sleep</p>
+          </header>
+          <div class="flex relative -mx-2 h-64">
+            <div
+              class="absolute z-10 right-4 top-2 flex space-x-4 text-xs justify-center py-1 px-2 rounded"
+              style={{
+                background: "rgba(255, 255, 255, 0.5)",
+                backdropFilter: "blur(0.5rem)",
+              }}
+            >
+              <div class="flex items-center space-x-2">
+                <div
+                  class="h-3 w-3 rounded"
+                  style={{ background: "#818cf8" }}
+                ></div>
+                <span>Light</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="h-3 w-3 rounded"
+                  style={{ background: "#6366f1" }}
+                ></div>
+                <span>Deep</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="h-3 w-3 rounded"
+                  style={{ background: "#3730a3" }}
+                ></div>
+                <span>REM</span>
+              </div>
+            </div>
+            {gyroscope.sleep ? (
+              Object.entries(gyroscope.sleep)
+                .filter(([_, { total }]) => total > 0)
+                .map(([date, { deep, rem, total }]) => (
+                  <div key={date} class="flex-1 w-full flex items-end">
+                    <div class="w-full px-2 h-full flex flex-col justify-end">
+                      <div
+                        class="rounded-lg relative overflow-hidden"
+                        style={{
+                          background: "#818cf8",
+                          height: `${Math.round(
+                            (100 * total) /
+                              Math.max(
+                                ...Object.values(gyroscope.sleep ?? {}).map(
+                                  (x) => x.total ?? 0
+                                )
+                              )
+                          )}%`,
+                        }}
+                      >
+                        <div
+                          class="absolute left-0 right-0"
+                          style={{
+                            background: "#6366f1",
+                            height: `${Math.round((100 * deep) / total)}%`,
+                            bottom: `${Math.round((100 * rem) / total)}%`,
+                          }}
+                        ></div>
+                        <div
+                          class="absolute left-0 right-0"
+                          style={{
+                            background: "#3730a3",
+                            height: `${Math.round((100 * rem) / total)}%`,
+                            bottom: "0",
+                          }}
+                        ></div>
+                      </div>
+                      <div class="text-xs text-center mt-2">
+                        <div>
+                          {`${new Date(date)
+                            .toLocaleString("en-US", {
+                              weekday: "long",
+                            })
+                            .substring(0, 3)} ${new Date(date).getDate()}`}
+                        </div>
+                        <div>
+                          <strong class="font-medium">{`${Number(
+                            total / 3600
+                          ).toLocaleString("en-US", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 1,
+                          })}h`}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+            ) : (
+              <LoadError items="sleep" />
+            )}
+          </div>
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🏃‍♂️</span>
+              <SectionLink label="Steps" href="/life/steps" />
+            </h2>
+            <p class="text-gray-500">Tracked every day using Oura</p>
+          </header>
+          <div class="flex relative -mx-2 h-64">
+            {gyroscope.activity ? (
+              Object.entries(gyroscope.activity)
+                .filter(([_, { steps }]) => steps > 0)
+                .map(([date, { steps }]) => (
+                  <div key={date} class="flex-1 w-full flex items-end">
+                    <div class="w-full px-2 h-full flex flex-col justify-end">
+                      <div
+                        class="rounded-lg relative overflow-hidden"
+                        style={{
+                          background: "#2dd4bf",
+                          height: `${Math.round(
+                            (100 * steps) /
+                              Math.max(
+                                ...Object.values(gyroscope.activity ?? {}).map(
+                                  (x) => x.steps ?? 0
+                                )
+                              )
+                          )}%`,
+                        }}
+                      />
+                      <div class="text-xs text-center mt-2">
+                        <div>
+                          {`${new Date(date)
+                            .toLocaleString("en-US", {
+                              weekday: "long",
+                            })
+                            .substring(0, 3)} ${new Date(date).getDate()}`}
+                        </div>
+                        <div>
+                          <strong class="font-medium">{`${Number(
+                            steps
+                          ).toLocaleString("en-US", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 1,
+                          })}`}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+            ) : (
+              <LoadError items="sleep" />
+            )}
+          </div>
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🏃‍♂️</span>
+              <SectionLink label="Score" href="/life/steps" />
+            </h2>
+            <p class="text-gray-500">Tracked every day using Oura</p>
+          </header>
+          <div class="flex relative -mx-2 h-64">
+            {Object.entries(gyroscope.activity ?? {})
+              .filter(([_, { score }]) => score > 0)
+              .map(([date, { score }]) => (
+                <div key={date} class="flex-1 w-full flex items-end">
+                  <div class="w-full px-2 h-full flex flex-col justify-end">
+                    <div
+                      class="rounded-lg relative overflow-hidden"
+                      style={{
+                        background: "#fbbf24",
+                        height: `${Math.round(score)}%`,
+                      }}
+                    />
+                    <div class="text-xs text-center mt-2">
+                      <div>
+                        {`${new Date(date)
+                          .toLocaleString("en-US", {
+                            weekday: "long",
+                          })
+                          .substring(0, 3)} ${new Date(date).getDate()}`}
+                      </div>
+                      <div>
+                        <strong class="font-medium">{`${Number(
+                          score
+                        ).toLocaleString("en-US", {
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 1,
+                        })}%`}</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </article>
       </section>
-      <section className="space-y-4">
+      <section class="space-y-4">
         <header>
           <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">👨‍💻</span>

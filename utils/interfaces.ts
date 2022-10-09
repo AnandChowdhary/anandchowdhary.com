@@ -144,8 +144,8 @@ export interface HomeData {
   gyroscope: {
     location: OptionalItemSummaryValue;
     heart: OptionalItemSummaryValue;
-    steps: OptionalItemSummaryValue;
-    sleep: OptionalItemSummaryValue;
+    activity?: Record<string, OuraActivity>;
+    sleep?: Record<string, OuraSleepData>;
   };
   theme: { year: string; title: string; description: string };
   timeline: Timeline;
