@@ -107,7 +107,8 @@ export const Timeline: FunctionComponent<{
                       </div>
                       {"url" in item &&
                       item.url &&
-                      item.url.startsWith("https://anandchowdhary.com/") ? (
+                      item.url.startsWith("https://anandchowdhary.com/") &&
+                      item.type !== "life-event" ? (
                         <h4 className="text-lg font-medium leading-6">
                           <h4 className="text-lg font-medium leading-6">
                             <a href={new URL(item.url).pathname}>

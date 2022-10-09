@@ -5,6 +5,10 @@ export const fetchJson = async <T = unknown,>(url: string): Promise<T> => {
   return data.json();
 };
 
+export const fetchText = async (url: string): Promise<string> => {
+  return (await (await fetch(url)).blob()).text();
+};
+
 export const categoryData: Record<
   HomeData["timeline"][0]["type"],
   { color: string; icon: any; prefix: string; title: string }

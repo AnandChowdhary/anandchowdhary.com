@@ -6,7 +6,7 @@ export const SectionLink: FunctionComponent<{
   return (
     <a
       href={href}
-      className="inline-flex items-center space-x-1 font-medium text-gray-800 transition hover:text-gray-500 group"
+      className="inline-flex items-center space-x-1 font-medium text-gray-800 transition hover:text-gray-500 group no-underline"
     >
       <span>{label}</span>
       <svg

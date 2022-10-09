@@ -1,103 +1,193 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { ComponentChildren } from "preact";
+import { asset } from "$fresh/runtime.ts";
 import * as colors from "twind/colors";
-import { orange } from "twind/colors";
-import { BarChart } from "../../components/data/BarChart.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
+import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
+import { OKRCards } from "../../components/data/OKRs.tsx";
+import { Timeline } from "../../components/data/Timeline.tsx";
 import { ExternalLink } from "../../components/text/ExternalLink.tsx";
+import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
+import Age from "../../islands/Age.tsx";
 import TimeAgo from "../../islands/TimeAgo.tsx";
+import { categoryData, fetchJson, fetchText } from "../../utils/data.tsx";
 import { t } from "../../utils/i18n.tsx";
+import type {
+  ApiWeeklyValues,
+  LifeData,
+  LocationApiResult,
+  OptionalItemSummaryValue,
+  OuraActivity,
+  OuraReadiness,
+  OuraSleepData,
+  Timeline as ITimeline,
+} from "../../utils/interfaces.ts";
 
-interface HomeData {
-  okrs: {
-    updatedAt: string;
-    years: {
-      name: number;
-      progress: number;
-      success: number;
-      quarters: {
-        name: number;
-        progress: number;
-        success: number;
-        objectives: {
-          name: string;
-          progress: number;
-          success: number;
-          key_results: {
-            name: string;
-            target_result: number;
-            current_result: number;
-            progress: number;
-            success: number;
-          }[];
-        }[];
-      }[];
-    }[];
-  };
-  languages: {
-    updatedAt: string;
-    data: { name: string; duration: string; percent: number }[];
-  };
-  music: {
-    updatedAt: string;
-    data: { name: string; plays: number; percent: number }[];
-  };
-  productivity: {
-    updatedAt: string;
-    data: { date: string; pulse: number; duration: string }[];
-  };
-  contributionsGraph: string;
-}
+const birthdayThisYear = new Date("1997-12-29");
+birthdayThisYear.setUTCFullYear(new Date().getUTCFullYear());
+const nextBirthday =
+  Date.now() < birthdayThisYear.getTime()
+    ? birthdayThisYear
+    : new Date(birthdayThisYear.getTime() + 31536000000);
 
-export const handler: Handlers<HomeData> = {
-  async GET(_req, ctx) {
-    const okrs = (await (
-      await fetch("https://anandchowdhary.github.io/okrs/api.json")
-    ).json()) as HomeData["okrs"];
-    const lastWeekCode = await (
-      await (
-        await fetch(
-          "https://gist.githubusercontent.com/AnandChowdhary/e5e2ae3ca3bf2ae1a36a1a113045e7de/raw"
-        )
-      ).blob()
-    ).text();
-    const lastWeekCodeData = (await (
-      await fetch(
-        "https://api.github.com/gists/e5e2ae3ca3bf2ae1a36a1a113045e7de"
-      )
-    ).json()) as { id: string; created_at: string; updated_at: string };
-    const languages: HomeData["languages"] = {
-      data: lastWeekCode.split("\n").map((line) => {
-        return {
-          name: line.match("[A-Za-z]+")?.[0] ?? "",
-          duration: line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "",
-          percent:
-            parseInt(line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "0") /
-            lastWeekCode
-              .split("\n")
-              .map((line) =>
-                parseInt(line.match("[0-9]+ hrs? [0-9]+ min?")?.[0] ?? "0")
-              )
-              .reduce((a, b) => a + b, 0),
-        };
-      }),
-      updatedAt: lastWeekCodeData.updated_at,
-    };
-    const lastWeekMusic = await (
-      await (
-        await fetch(
+export const handler: Handlers<LifeData> = {
+  async GET(request, context) {
+    let heart: OptionalItemSummaryValue = undefined;
+    let sleep: OptionalItemSummaryValue = undefined;
+    let steps: OptionalItemSummaryValue = undefined;
+    let location: OptionalItemSummaryValue = undefined;
+    let timeline: ITimeline = [];
+    let sleepApi: ApiWeeklyValues = { weeks: {} };
+    let activityApi: ApiWeeklyValues = { weeks: {} };
+    let readinessApi: ApiWeeklyValues = { weeks: {} };
+    let contributionsApi: string | undefined = undefined;
+    let lastWeekMusicApi: string | undefined = undefined;
+
+    try {
+      const [
+        _timeline,
+        _sleepApi,
+        _activityApi,
+        _readinessApi,
+        _contributionsApi,
+        _lastWeekMusicApi,
+      ] = await Promise.all([
+        fetchJson<ITimeline>(
+          "https://anandchowdhary.github.io/everything/api.json"
+        ),
+        fetchJson<ApiWeeklyValues>(
+          "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
+        ),
+        fetchJson<ApiWeeklyValues>(
+          "https://anandchowdhary.github.io/life/data/oura-activity/api.json"
+        ),
+        fetchJson<ApiWeeklyValues>(
+          "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
+        ),
+        fetchText("https://github.com/users/AnandChowdhary/contributions"),
+        fetchText(
           "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
-        )
-      ).blob()
-    ).text();
-    const lastWeekMusicData = (await (
-      await fetch(
-        "https://api.github.com/gists/14a66f452302d199c4abde0ffe891922"
-      )
-    ).json()) as { id: string; created_at: string; updated_at: string };
-    const music: HomeData["music"] = {
-      data: lastWeekMusic.split("\n").map((line) => {
+        ),
+      ]);
+      timeline = _timeline;
+      sleepApi = _sleepApi;
+      activityApi = _activityApi;
+      readinessApi = _readinessApi;
+      contributionsApi = _contributionsApi;
+      lastWeekMusicApi = _lastWeekMusicApi;
+    } catch (error) {
+      //
+    }
+
+    const okr = timeline?.find(({ type }) => type === "okr") as
+      | LifeData["okr"]
+      | undefined;
+
+    const sleepApiYear = Number(
+      Object.keys(sleepApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
+    );
+    const activityApiYear = Number(
+      Object.keys(activityApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
+    );
+    const readinessApiYear = Number(
+      Object.keys(readinessApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
+    );
+    let contributionsGraph: string | undefined = undefined;
+
+    try {
+      const [sleepData, activityData, readinessData, locationData] =
+        await Promise.all([
+          fetchJson<Record<string, OuraSleepData>>(
+            `https://anandchowdhary.github.io/life/data/oura-sleep/summary/weeks/2022/${sleepApi.weeks[
+              sleepApiYear
+            ].pop()}`
+          ),
+          fetchJson<Record<string, OuraActivity>>(
+            `https://anandchowdhary.github.io/life/data/oura-activity/summary/weeks/2022/${activityApi.weeks[
+              activityApiYear
+            ].pop()}`
+          ),
+          fetchJson<Record<string, OuraReadiness>>(
+            `https://anandchowdhary.github.io/life/data/oura-readiness/summary/weeks/2022/${readinessApi.weeks[
+              readinessApiYear
+            ].pop()}`
+          ),
+          fetchJson<LocationApiResult>(
+            "https://anandchowdhary.github.io/location/api.json"
+          ),
+        ]);
+      const sleepDataLast = Object.entries(sleepData)
+        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
+        .find((item) => item[1].total > 1);
+      const activityDataLast = Object.entries(activityData)
+        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
+        .find((item) => item[1].total > 1);
+      const readinessDataLast = Object.entries(readinessData)
+        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
+        .find((item) => item[1].score_resting_hr > 1);
+
+      if (sleepDataLast)
+        sleep = {
+          values: [
+            (sleepDataLast[1].total / 3600).toLocaleString("en-US", {
+              maximumFractionDigits: 1,
+            }),
+            (sleepDataLast[1].rem / 3600).toLocaleString("en-US", {
+              maximumFractionDigits: 1,
+            }),
+            sleepDataLast[1].efficiency.toLocaleString("en-US"),
+          ],
+        };
+      if (activityDataLast)
+        steps = {
+          values: [
+            Math.round(activityDataLast[1].steps).toLocaleString("en-US"),
+            Math.round(activityDataLast[1].cal_active).toLocaleString("en-US"),
+            Math.round(activityDataLast[1].cal_total).toLocaleString("en-US"),
+          ],
+        };
+      if (readinessDataLast)
+        heart = {
+          values: [
+            Math.round(readinessDataLast[1].score).toLocaleString("en-US"),
+            Math.round(readinessDataLast[1].score_previous_day).toLocaleString(
+              "en-US"
+            ),
+          ],
+        };
+      location = {
+        values: [
+          locationData.label,
+          locationData.country.name.replace(" of America", ""),
+          locationData.timezone?.utcOffsetStr ?? "",
+          new Date()
+            .toLocaleTimeString("en-US", {
+              timeStyle: "short",
+              timeZone: locationData?.timezone?.name,
+            })
+            .toLowerCase(),
+          locationData.country.code,
+          locationData.approximateCoordinates.join(),
+        ],
+        timeAgo: locationData.updatedAt,
+      };
+      if (contributionsApi)
+        contributionsGraph =
+          `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
+          contributionsApi
+            .split(
+              `<svg width="717" height="112" class="js-calendar-graph-svg">`
+            )[1]
+            .split("</svg>")[0] +
+          "</svg>";
+    } catch (error) {
+      //
+    }
+
+    let music: LifeData["music"] | undefined = undefined;
+    if (lastWeekMusicApi) {
+      music = lastWeekMusicApi.split("\n").map((line) => {
         return {
           name: line
             .split("▌")[0]
@@ -110,247 +200,218 @@ export const handler: Handlers<HomeData> = {
           plays: parseInt(line.replace(" plays", "").split(" ").pop() ?? "0"),
           percent:
             parseInt(line.replace(" plays", "").split(" ").pop() ?? "0") /
-            lastWeekMusic
+            (lastWeekMusicApi ?? "")
               .split("\n")
               .map((line) =>
                 parseInt(line.replace(" plays", "").split(" ").pop() ?? "0")
               )
               .reduce((a, b) => a + b, 0),
         };
-      }),
-      updatedAt: lastWeekMusicData.updated_at,
-    };
-    const rescueTimeData = (await (
-      await fetch(
-        `https://www.rescuetime.com/anapi/daily_summary_feed?restrict_begin=2022-06-25&restrict_end=2022-07-02&key=${Deno.env.get(
-          "RESCUETIME_API_KEY"
-        )}`
-      )
-    ).json()) as {
-      id: string;
-      date: string;
-      productivity_pulse: number;
-      total_duration_formatted: string;
-    }[];
-    const contributionsGraph =
-      `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
-      (
-        await (
-          await (
-            await fetch("https://github.com/users/AnandChowdhary/contributions")
-          ).blob()
-        ).text()
-      )
-        .split(
-          `<svg width="717" height="112" class="js-calendar-graph-svg">`
-        )[1]
-        .split("</svg>")[0] +
-      "</svg>";
-    return ctx.render({
-      okrs,
-      languages,
-      music,
-      contributionsGraph,
-      productivity: {
-        updatedAt: new Date().toISOString(),
-        data:
-          [] ||
-          rescueTimeData.slice(0, 5).map((item) => ({
-            date: item.date,
-            pulse: item.productivity_pulse,
-            duration: item.total_duration_formatted,
-          })),
+      });
+    }
+
+    const props = {
+      timeline,
+      okr,
+      gyroscope: {
+        location,
+        heart,
+        steps,
+        sleep,
       },
-    });
+      theme: {
+        year: "2022",
+        title: "Year of Teamwork",
+        description:
+          "I want to delegate more and plan for further into the future, do a better job at internalizing feedback, and continue to do the things I did right while investing more in my support system.",
+      },
+      contributionsGraph,
+      query: new URL(request.url).search,
+      music,
+    };
+    const response = await context.render(props);
+    response.headers.set("Cache-Control", "public, max-age=600");
+    return response;
   },
 };
 
-export default function Home({ data }: PageProps<HomeData>) {
-  const okrYear = data.okrs.years.sort((a, b) => b.name - a.name)[0];
-  const okrQuarter = okrYear.quarters.sort((a, b) => b.name - a.name)[1]; // Change to [0]
+export default function Home({ data }: PageProps<LifeData>) {
+  const { okr, theme, gyroscope, contributionsGraph, music } = data;
 
   return (
-    <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
-      <article className="space-y-4">
-        <header>
-          <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
-            <span aria-hidden="true">💼</span>
-            <SectionLink
-              label={`Last week in productivity`}
-              href="/life/productivity"
-            />
-          </h2>
-          <p className="text-gray-500">
-            Daily productivity score by RescueTime
-          </p>
-        </header>
-        <BarChart
-          rgb="150, 220, 220"
-          data={[
-            { date: "2022-07-01", value: 91 },
-            { date: "2022-07-02", value: 31 },
-            { date: "2022-07-03", value: 43 },
-            { date: "2022-07-04", value: 94 },
-            { date: "2022-07-05", value: 65 },
-            { date: "2022-07-06", value: 86 },
-            { date: "2022-07-07", value: 57 },
-          ]}
-        />
-        <DataFooterLinks
-          apiUrl="https://anandchowdhary.github.io/everything/api.json"
-          githubUrl="https://github.com/AnandChowdhary/everything"
-          updatedAt={"2022-01-01"}
-        />
-      </article>
-      <article className="space-y-4">
-        <header>
-          <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
-            <span aria-hidden="true">😴</span>
-            <SectionLink label={`Last week in sleep`} href="/life/health" />
-          </h2>
-          <p className="text-gray-500">Number of hours asleep by Oura Ring</p>
-        </header>
-        <BarChart
-          rgb="255, 180, 180"
-          data={[
-            { date: "2022-07-01", label: "8:06", value: 8.1 },
-            { date: "2022-07-02", label: "7:06", value: 7.1 },
-            { date: "2022-07-03", label: "7:42", value: 7.7 },
-            { date: "2022-07-04", label: "9:06", value: 9.1 },
-            { date: "2022-07-05", label: "6:30", value: 6.5 },
-            { date: "2022-07-06", label: "8:36", value: 8.6 },
-            { date: "2022-07-07", label: "7:48", value: 7.8 },
-          ]}
-        />
-        <DataFooterLinks
-          apiUrl="https://anandchowdhary.github.io/everything/api.json"
-          githubUrl="https://github.com/AnandChowdhary/everything"
-          updatedAt={"2022-01-01"}
-        />
-      </article>
-      <section className="space-y-4">
-        <h2 className="space-x-1 text-2xl font-semibold font-display">
-          <span aria-hidden="true">📊</span>
-          <span>{` OKRs for Q${okrQuarter.name} ${okrYear.name}`}</span>
-        </h2>
-        <p className="text-gray-500">
-          {t(
-            "I use <0>Objectives and Key Results</0> both for my personal and professional life. This data is available on <1>GitHub</1> and was last updated <2></2>.",
-            {},
-            [
-              ({ children }: { children: ComponentChildren }) => (
-                <strong children={children} />
-              ),
-              ({ children }: { children: ComponentChildren }) => (
-                <ExternalLink
-                  href="https://github.com/AnandChowdhary/okrs"
-                  className="underline"
-                  children={children}
-                />
-              ),
-              () => <TimeAgo date={data.okrs.updatedAt} />,
-            ]
-          )}
+    <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+      <header className="space-y-2">
+        <h1 className="text-4xl font-semibold font-display dark:text-gray-200">
+          Life
+        </h1>
+        <p className="text-xl leading-relaxed">
+          You can get in touch with me by filling the form below.
         </p>
-        <div className="space-y-3">
-          {okrQuarter.objectives.map(({ name, success, key_results }) => (
-            <details key={name} className="appearance-none">
-              <summary
-                className="flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm"
-                style={{
-                  backgroundImage: `linear-gradient(to right, ${
-                    orange[400]
-                  } ${Math.round(success * 100)}%, white ${
-                    Math.round(success * 100) + 0.01
-                  }%)`,
-                  backgroundSize: "100% 0.1rem",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "left bottom",
-                }}
-              >
-                <div className="flex justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div>{name}</div>
-                    <svg
-                      className="text-gray-400 rotate-on-open"
-                      stroke="currentColor"
-                      fill="none"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      height="1em"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
+      </header>
+      <section class="grid md:grid-cols-2 gap-8">
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🌈</span>
+              <SectionLink label="Yearly themes" href="/life/themes" />
+            </h2>
+            <p class="text-gray-500">
+              Yearly theme that dictates quarterly goals
+            </p>
+          </header>
+          <div class="relative space-y-2 bg-white p-4 rounded shadow-sm">
+            <p class="text-2xl">{theme.title}</p>
+            <p class="h-20 overflow-hidden text-sm text-gray-500">
+              {theme.description}
+            </p>
+            <div
+              class="absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to bottom, rgba(255, 255, 255, 0.001), rgba(255, 255, 255, 1))",
+              }}
+            />
+          </div>
+          <DataFooterLinks
+            apiUrl="https://anandchowdhary.github.io/everything/api.json"
+            githubUrl="https://github.com/AnandChowdhary/everything"
+            links={[{ label: "View past themes", href: "/life/themes" }]}
+          />
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">📊</span>
+              <SectionLink label="Quarterly OKRs" href="/life/okrs" />
+            </h2>
+            <p class="text-gray-500">Personal Objectives and Key Results</p>
+          </header>
+          {okr ? <OKRCards okr={okr} /> : <LoadError items="OKRs" />}
+          <DataFooterLinks
+            apiUrl="https://anandchowdhary.github.io/okrs/api.json"
+            githubUrl="https://github.com/AnandChowdhary/okrs"
+            links={[{ label: "View past OKRs", href: "/life/okrs" }]}
+          />
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">📍</span>
+              <SectionLink label="Location" href="/life/location" />
+            </h2>
+            <p class="text-gray-500">Tracking my location in real time</p>
+          </header>
+          <div class="relative bg-white rounded shadow-sm">
+            {gyroscope.location && (
+              <img
+                alt=""
+                src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${gyroscope.location.values[5]
+                  .split(",")
+                  .reverse()
+                  .join()},13/368x200?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                class="w-full rounded-t"
+              />
+            )}
+            <div class="p-4">
+              {gyroscope.location ? (
+                <div class="space-y-2">
+                  <p className="flex items-center mb-1 space-x-3 leading-5">
+                    {gyroscope.location.values[4] && (
+                      <img
+                        alt=""
+                        src={`https://cdn.jsdelivr.net/gh/Yummygum/flagpack-core@v2.0.0/svg/m/${gyroscope.location.values[4].toUpperCase()}.svg`}
+                        class="rounded-sm"
+                      />
+                    )}
+                    <strong className="font-medium">
+                      {gyroscope.location.values[0]}
+                    </strong>
+                    {`, ${gyroscope.location.values[1]}`}
+                  </p>
+                  {gyroscope.location.values[2] && (
+                    <p className="text-sm text-gray-500">
+                      {smartquotes(
+                        `It's ${gyroscope.location.values[3]} (UTC ${gyroscope.location.values[2]})`
+                      )}
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <LoadError items="location" />
+              )}
+            </div>
+          </div>
+          <DataFooterLinks
+            apiUrl="https://anandchowdhary.github.io/location/api.json"
+            githubUrl="https://github.com/AnandChowdhary/location"
+            links={[{ label: "View past location", href: "/life/location" }]}
+          />
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🎵</span>
+              <SectionLink label="Music" href="/life/music" />
+            </h2>
+            <p class="text-gray-500">Last week in Spotify listening history</p>
+          </header>
+          <div className="space-y-2">
+            {music ? (
+              music.slice(0, 5).map((artist) => (
+                <div
+                  key={artist.name}
+                  className="flex bg-white rounded-lg shadow-sm"
+                  style={{
+                    backgroundImage: `linear-gradient(to right, ${
+                      colors.orange[400]
+                    } ${Math.round(artist.percent * 100)}%, white ${
+                      Math.round(artist.percent * 100) + 0.01
+                    }%)`,
+                    backgroundSize: "100% 0.1rem",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "3rem 100%",
+                  }}
+                >
+                  <div className="min-w-12">
+                    <img
+                      alt=""
+                      src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                        `tse2.mm.bing.net/th?q=${encodeURIComponent(
+                          artist.name
+                        )}&w=48&h=48&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
+                      )}&w=48&h=48&fit=cover`}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      className="object-cover w-12 h-full rounded-l-lg"
+                    />
                   </div>
-                  <div className="text-gray-500">
-                    {Math.round(success * 100)}%
+                  <div className="flex items-center justify-between flex-grow h-12 px-4">
+                    <div>{artist.name}</div>
+                    <div className="text-gray-500">{`${artist.plays} ${
+                      artist.plays === 1 ? "play" : "plays"
+                    }`}</div>
                   </div>
                 </div>
-              </summary>
-              <div className="mx-4 mb-4 space-y-1">
-                {key_results.map(({ name, success }) => (
-                  <div
-                    key={name}
-                    className="flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm"
-                    style={{
-                      backgroundImage: `linear-gradient(to right, ${
-                        orange[400]
-                      } ${Math.round(success * 100)}%, white ${
-                        Math.round(success * 100) + 0.01
-                      }%)`,
-                      backgroundSize: "100% 0.1rem",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "left bottom",
-                    }}
-                  >
-                    <div>
-                      {t(name.replace(/\[redacted\]/g, "<0></0>"), {}, [
-                        () => (
-                          <span className="relative px-2 py-1 text-xs font-medium tracking-widest uppercase">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="absolute top-0 left-0 w-full h-full rounded-sm pointer-events-none"
-                            >
-                              <filter id="noiseFilter">
-                                <feTurbulence
-                                  type="fractalNoise"
-                                  baseFrequency="0.65"
-                                  numOctaves="3"
-                                  stitchTiles="stitch"
-                                />
-                              </filter>
-
-                              <rect
-                                width="100%"
-                                height="100%"
-                                filter="url(#noiseFilter)"
-                              />
-                            </svg>
-                            <span>Redacted</span>
-                          </span>
-                        ),
-                      ])}
-                    </div>
-                    <div className="text-gray-500">
-                      {Math.round(success * 100)}%
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </details>
-          ))}
-        </div>
-        <SectionLink label="See past OKRs" href="/life/okrs" />
+              ))
+            ) : (
+              <LoadError items="music" />
+            )}
+          </div>
+          <DataFooterLinks
+            apiUrl="https://api.github.com/gists/14a66f452302d199c4abde0ffe891922"
+            githubUrl="https://gist.github.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922"
+          />
+        </article>
       </section>
       <section className="space-y-4">
-        <h2 className="space-x-1 text-2xl font-semibold font-display">
-          <span aria-hidden="true">👨‍💻</span>
-          <span>{" Last year in contributions"}</span>
-        </h2>
+        <header>
+          <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+            <span aria-hidden="true">👨‍💻</span>
+            <SectionLink label="Contributions" href="/life/location" />
+          </h2>
+          <p class="text-gray-500">Last year in GitHub activity</p>
+        </header>
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -379,141 +440,12 @@ export default function Home({ data }: PageProps<HomeData>) {
 `,
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: data.contributionsGraph }} />
-        <SectionLink label="See my GitHub profile" href="/life/okrs" />
+        {contributionsGraph ? (
+          <div dangerouslySetInnerHTML={{ __html: contributionsGraph }} />
+        ) : (
+          <LoadError items="contributions" />
+        )}
       </section>
-      <div className="grid-cols-2 gap-8 sm:grid">
-        <section className="space-y-4">
-          <header className="space-y-1">
-            <h2 className="space-x-1 text-2xl font-semibold font-display">
-              <span aria-hidden="true">💻</span>
-              <span>{" Last week in productivity"}</span>
-            </h2>
-            <p className="text-gray-500">
-              Last updated <TimeAgo date={data.productivity.updatedAt} />
-            </p>
-          </header>
-          <div className="space-y-2">
-            {data.productivity.data.slice(0, 5).map((language) => (
-              <div
-                key={language.date}
-                className="flex bg-white rounded-lg shadow-sm"
-                style={{
-                  backgroundImage: `linear-gradient(to right, ${
-                    orange[400]
-                  } ${Math.round(language.pulse)}%, white ${
-                    Math.round(language.pulse) + 0.01
-                  }%)`,
-                  backgroundSize: "100% 0.1rem",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "left bottom",
-                }}
-              >
-                <div className="flex items-center justify-between flex-grow h-12 px-4">
-                  <div>
-                    {new Date(language.date).toLocaleDateString("en-US", {
-                      dateStyle: "long",
-                    })}
-                  </div>
-                  <div className="text-gray-500">{`${language.pulse}%`}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <SectionLink label="See past scores" href="/life/productivity" />
-        </section>
-        <section className="space-y-4">
-          <SectionLink label="See more music data" href="/life/okrs" />
-        </section>
-      </div>
-      <div className="grid-cols-2 gap-8 sm:grid">
-        <section className="space-y-4">
-          <header className="space-y-1">
-            <h2 className="space-x-1 text-2xl font-semibold font-display">
-              <span aria-hidden="true">💻</span>
-              <span>{" Last week in code"}</span>
-            </h2>
-            <p className="text-gray-500">
-              Last updated <TimeAgo date={data.languages.updatedAt} />
-            </p>
-          </header>
-          <div className="space-y-2">
-            {data.languages.data.slice(0, 5).map((language) => (
-              <div
-                key={language.name}
-                className="flex bg-white rounded-lg shadow-sm"
-                style={{
-                  backgroundImage: `linear-gradient(to right, ${
-                    orange[400]
-                  } ${Math.round(language.percent * 100)}%, white ${
-                    Math.round(language.percent * 100) + 0.01
-                  }%)`,
-                  backgroundSize: "100% 0.1rem",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "left bottom",
-                }}
-              >
-                <div className="flex items-center justify-between flex-grow h-12 px-4">
-                  <div>{language.name}</div>
-                  <div className="text-gray-500">{language.duration}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <SectionLink label="See more code data" href="/life/okrs" />
-        </section>
-        <section className="space-y-4">
-          <header className="space-y-1">
-            <h2 className="space-x-1 text-2xl font-semibold font-display">
-              <span aria-hidden="true">🎵</span>
-              <span>{" Last week in music"}</span>
-            </h2>
-            <p className="text-gray-500">
-              Last updated <TimeAgo date={data.music.updatedAt} />
-            </p>
-          </header>
-          <div className="space-y-2">
-            {data.music.data.slice(0, 5).map((artist) => (
-              <div
-                key={artist.name}
-                className="flex bg-white rounded-lg shadow-sm"
-                style={{
-                  backgroundImage: `linear-gradient(to right, ${
-                    orange[400]
-                  } ${Math.round(artist.percent * 100)}%, white ${
-                    Math.round(artist.percent * 100) + 0.01
-                  }%)`,
-                  backgroundSize: "100% 0.1rem",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "3rem 100%",
-                }}
-              >
-                <div className="min-w-12">
-                  <img
-                    alt=""
-                    src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                      `tse2.mm.bing.net/th?q=${encodeURIComponent(
-                        artist.name
-                      )}&w=100&h=100&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
-                    )}&w=100&h=100&fit=cover`}
-                    width={100}
-                    height={100}
-                    loading="lazy"
-                    className="object-cover w-12 h-full rounded-l-lg"
-                  />
-                </div>
-                <div className="flex items-center justify-between flex-grow h-12 px-4">
-                  <div>{artist.name}</div>
-                  <div className="text-gray-500">{`${artist.plays} ${
-                    artist.plays === 1 ? "play" : "plays"
-                  }`}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <SectionLink label="See more music data" href="/life/okrs" />
-        </section>
-      </div>
     </div>
   );
 }

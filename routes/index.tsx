@@ -8,7 +8,6 @@ import { Timeline } from "../components/data/Timeline.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { LoadError } from "../components/text/LoadError.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
-import { Socials } from "../components/text/Socials.tsx";
 import Age from "../islands/Age.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
 import { categoryData, fetchJson } from "../utils/data.tsx";

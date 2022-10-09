@@ -51,7 +51,7 @@ export const OKRCards: FunctionComponent<{
                 </svg>
               </div>
               <div
-                className="text-gray-500 pl-4"
+                className="pl-4 text-gray-500"
                 title={`${Math.round(success * 100)}% success, ${Math.round(
                   progress * 100
                 )}% progress`}
@@ -105,7 +105,7 @@ export const OKRCards: FunctionComponent<{
                   ])}
                 </div>
                 <div
-                  className="text-gray-500 pl-4"
+                  className="pl-4 text-gray-500"
                   title={`${Math.round(success * 100)}% success, ${Math.round(
                     progress * 100
                   )}% progress`}

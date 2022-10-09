@@ -13,10 +13,15 @@ export default function Contact() {
         </p>
       </header>
       <section className="grid md:grid-cols-2 gap-12">
-        <form className="space-y-4">
+        <form
+          className="space-y-4"
+          method="POST"
+          action="https://formspree.io/mail@anandchowdhary.com"
+        >
           <label className="block space-y-2">
             <span className="block">Name</span>
             <input
+              name="name"
               type="text"
               className="shadow-sm rounded w-full py-2 px-4 text-xl"
               required
@@ -25,6 +30,7 @@ export default function Contact() {
           <label className="block space-y-2">
             <span className="block">Email</span>
             <input
+              name="email"
               type="email"
               className="shadow-sm rounded w-full py-2 px-4 text-xl"
               required
@@ -33,6 +39,7 @@ export default function Contact() {
           <label className="block space-y-2">
             <span className="block">Message</span>
             <textarea
+              name="message"
               className="shadow-sm rounded w-full py-2 px-4 text-xl"
               rows={4}
               required

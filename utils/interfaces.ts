@@ -150,4 +150,11 @@ export interface HomeData {
   theme: { year: string; title: string; description: string };
   timeline: Timeline;
   query: string;
+  music?: {
+    name: string;
+    plays: number;
+    percent: number;
+  }[];
 }
+
+export type LifeData = HomeData & { contributionsGraph?: string };
