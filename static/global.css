@@ -171,6 +171,18 @@ a.anchor svg {
 .longform h6:hover a.anchor {
   opacity: 1;
 }
+.longform ul, .longform ol {
+  padding-left: 1.5rem;
+}
+.longform ul {
+  list-style: disc;
+}
+.longform ol {
+  list-style: decimal;
+}
+.longform li + li {
+  margin-top: 0.5rem;
+}
 
 a[data-footnote-ref] {
   text-decoration: none;
@@ -208,4 +220,12 @@ a[data-footnote-ref] {
   content: "";
   position: absolute;
   inset: 0;
+}
+
+.readme {
+  font-size: 90%;
+}
+.readme p:first-child {
+  font-size: 95%;
+  opacity: 75%;
 }

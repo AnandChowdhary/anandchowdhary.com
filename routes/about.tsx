@@ -1,3 +1,22 @@
+import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
+import { render } from "../utils/markdown.ts";
+
+interface AboutData {
+  readme: string;
+}
+
+export const handler: Handlers<AboutData> = {
+  async GET(_, context) {
+    const readme = await (
+      await fetch(
+        "https://raw.githubusercontent.com/AnandChowdhary/readme/main/README.md"
+      )
+    ).text();
+    return context.render({ readme });
+  },
+};
+
+import { GitHub } from "../components/Icons.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 
 const STARTUPS = [
@@ -48,13 +67,13 @@ const STARTUPS = [
   },
 ];
 
-export default function About() {
+export default function About({ data }: PageProps<AboutData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
       <section>
         <figure class="mb-12">
           <img
-            alt="Anand standing on a table with his MacBook in his hand"
+            alt="Anand standing on a table with his MacBook in his hand at an office"
             src="https://d33wubrfki0l68.cloudfront.net/41df0551175f4c6716aad2988c37ceb83a342b9e/7b5dc/images/photos/anand-chowdhary.jpg"
             width={2450}
             height={1633}
@@ -66,7 +85,7 @@ export default function About() {
             </span>
             <span
               aria-hidden="true"
-              title="Anand standing on a table with his MacBook in his hand"
+              title="Anand standing on a table with his MacBook at an office"
               class="bg-gray-200 rounded uppercase px-1 ml-2 font-medium cursor-default"
               style={{ fontSize: "80%" }}
             >
@@ -83,7 +102,7 @@ export default function About() {
           </p>
         </header>
         <div
-          className="space-y-5 md:columns-2"
+          className="space-y-5"
           style={{ columnCount: 2, columnGap: "2rem" }}
         >
           <p>
@@ -152,32 +171,33 @@ export default function About() {
           )}
         </ul>
       </section>
-      <section>
-        <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200 mb-6">
-          Other work
+      <section class="readme">
+        <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200">
+          README
         </h2>
-        {[
-          {
-            name: "Chowdhary.org",
-            href: "https://chowdhary.org",
-            description:
-              "Chowdhary.org is the home for all my nonprofit work, including Karuna 2020 (food for migrant laborers and masks for frontline and healthcare workers during COVID-19), Made with Love in India (platform to celebrate Indian small businesses and startups), and BharatHacks (two-day hackathon to solve India-specific problems).",
-          },
-          {
-            name: "Early stage startup investments",
-            description:
-              "I work with early-stage startups as an active angel investor. I also scout seed and Series A investments for funds such as Julian Capital and OSS Capital.",
-          },
-        ].map(({ name, description, href }) => (
-          <article key={name} className="mt-6">
-            <h3>
-              <strong className="font-medium dark:text-gray-300">
-                {href ? <ExternalLink href={href}>{name}</ExternalLink> : name}
-              </strong>
-            </h3>
-            <p>{description}</p>
-          </article>
-        ))}
+        <div class="bg-gray-100 border-b border-gray-100 px-6 py-3 shadow-sm rounded-t flex items-center justify-between mt-5">
+          <div class="font-semibold font-mono">README.md</div>
+          <div class="flex items-center justify-between space-x-2">
+            <GitHub class="w-4 h-4" />
+            <ExternalLink href="https://github.com/AnandChowdhary/readme">
+              AnandChowdhary/readme on GitHub
+            </ExternalLink>
+          </div>
+        </div>
+        <div
+          class="bg-white shadow-sm rounded-b p-6 longform"
+          dangerouslySetInnerHTML={{
+            __html: render(
+              data.readme
+                .split("\n")
+                .filter(
+                  (line) =>
+                    !line.startsWith("# ") && !line.startsWith("> **Note**")
+                )
+                .join("\n")
+            ),
+          }}
+        />
       </section>
     </div>
   );

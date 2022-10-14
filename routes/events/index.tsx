@@ -29,7 +29,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
         <h1 class="font-semibold text-3xl">Blog</h1>
         <Timeline
           hideFilters
-          timeline={timeline.filter(({ type }) => type === "blog-post")}
+          timeline={timeline.filter(({ type }) => type === "event")}
           query={query}
         />
       </section>
