@@ -29,6 +29,7 @@ export type Timeline = {
     name?: number;
     progress?: number;
     success?: number;
+    coordinates?: number[];
     objectives?: {
       name: string;
       progress: number;

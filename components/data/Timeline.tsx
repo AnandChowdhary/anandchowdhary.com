@@ -336,7 +336,25 @@ export const Timeline: FunctionComponent<{
                       )}
                     </div>
                     <div class="col-span-2 flex justify-end items-start">
-                      {item.type === "blog-post" ? (
+                      {item.type === "okr" ? (
+                        <img
+                          alt=""
+                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                            `https://raw.githubusercontent.com/AnandChowdhary/okrs/main/assets/${item.url
+                              .split("/")
+                              .reverse()
+                              .join("/")
+                              .substring(0, 6)
+                              .split("/")
+                              .reverse()
+                              .join("-")}.png`
+                          )}&w=512&h=256&fit=cover`}
+                          loading="lazy"
+                          width={512}
+                          height={256}
+                          className="w-full rounded-lg shadow"
+                        />
+                      ) : item.type === "blog-post" ? (
                         <img
                           alt=""
                           src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
@@ -350,20 +368,40 @@ export const Timeline: FunctionComponent<{
                           className="w-full rounded-lg shadow"
                         />
                       ) : item.type === "book" && item.data?.image ? (
+                        <div
+                          class="rounded-lg w-full bg-cover bg-center bg-no-repeat flex justify-center"
+                          style={{
+                            backgroundImage: `url(https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                              item.data.image.split("//")[1]
+                            )}&w=300&h=450&fit=cover&blur=15)`,
+                          }}
+                        >
+                          <img
+                            alt=""
+                            src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                              item.data.image.split("//")[1]
+                            )}&w=300&h=450&fit=cover`}
+                            loading="lazy"
+                            width={300}
+                            height={450}
+                            className="w-24 block"
+                          />
+                        </div>
+                      ) : item.type === "event" && item.data?.coordinates ? (
                         <img
                           alt=""
-                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                            item.data.image.split("//")[1]
-                          )}&w=300&h=450&fit=cover`}
+                          src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${item.data?.coordinates
+                            .reverse()
+                            .join()},13/512x256?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
                           loading="lazy"
-                          width={300}
-                          height={450}
-                          className="w-24 rounded-lg shadow"
+                          width={512}
+                          height={256}
+                          className="w-full rounded-lg shadow"
                         />
                       ) : (
                         item.type === "video" &&
                         item.data?.img && (
-                          <div className="relative">
+                          <div className="relative w-full">
                             <svg
                               aria-hidden="true"
                               width="2rem"
@@ -376,11 +414,11 @@ export const Timeline: FunctionComponent<{
                               alt=""
                               src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
                                 item.data.img.split("//")[1]
-                              )}&w=700&h=370&fit=cover`}
+                              )}&w=512&h=256&fit=cover`}
                               loading="lazy"
                               width={512}
-                              height={370}
-                              className="w-full rounded-lg sm:w-64"
+                              height={256}
+                              className="w-full rounded-lg"
                             />
                           </div>
                         )
