@@ -242,9 +242,7 @@ export default function Props({ data }: PageProps<Props>) {
         </form>
       </header>
       <Records breakdown={data.breakdown} data={data.steps} unit="steps">
-        <h2 className="mb-4 text-2xl font-semibold font-display dark:text-gray-200">
-          Steps
-        </h2>
+        <h2 className="mb-4 text-2xl font-semibold font-display">Steps</h2>
       </Records>
       <Records
         breakdown={data.breakdown}
@@ -256,12 +254,12 @@ export default function Props({ data }: PageProps<Props>) {
             : `${Math.floor(value / 60)} hr ${value % 60} min`
         }
       >
-        <h2 className="mb-4 text-2xl font-semibold font-display dark:text-gray-200">
+        <h2 className="mb-4 text-2xl font-semibold font-display">
           Exercise time
         </h2>
       </Records>
       <Records breakdown={data.breakdown} data={data.activeEnergy} unit="kcal">
-        <h2 className="mb-4 text-2xl font-semibold font-display dark:text-gray-200">
+        <h2 className="mb-4 text-2xl font-semibold font-display">
           Active energy
         </h2>
       </Records>
@@ -270,7 +268,7 @@ export default function Props({ data }: PageProps<Props>) {
         data={data.flightsClimbed}
         unit="stairs"
       >
-        <h2 className="mb-4 text-2xl font-semibold font-display dark:text-gray-200">
+        <h2 className="mb-4 text-2xl font-semibold font-display">
           Flights climbed
         </h2>
       </Records>

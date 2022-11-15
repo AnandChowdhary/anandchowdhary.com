@@ -21,7 +21,7 @@ export function Navbar() {
       {NAV.slice(0, 5).map(({ label, href }, index) => (
         <a
           href={href}
-          className={`hidden text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 md:block ${
+          className={`hidden text-gray-500 transition hover:text-gray-700 md:block ${
             index < 3 && "sm:block"
           }`}
           aria-current="false"
@@ -30,7 +30,7 @@ export function Navbar() {
         </a>
       ))}
       <details className="w-6 appearance-none">
-        <summary className="relative text-gray-500 list-none transition hover:text-gray-700 dark:hover:text-gray-300">
+        <summary className="relative text-gray-500 list-none transition hover:text-gray-700">
           <svg
             className="transition hide-on-open"
             viewBox="0 0 118 118"
@@ -49,12 +49,12 @@ export function Navbar() {
             &times;
           </span>
         </summary>
-        <div className="absolute right-0 z-50 flex flex-col w-32 p-1 mt-2 text-sm text-gray-600 bg-white rounded shadow top-full backdrop-blur dark:bg-gray-800 dark:text-gray-400">
+        <div className="absolute right-0 z-50 flex flex-col w-32 p-1 mt-2 text-sm text-gray-600 bg-white rounded shadow top-full backdrop-blur">
           {NAV.map(({ label, href }, index) => (
             <a
               key={label}
               href={href}
-              className={`px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300 ${
+              className={`px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 ${
                 index < 3 ? "sm:hidden md:hidden" : index < 5 && "md:hidden"
               }`}
               aria-current="false"
@@ -95,7 +95,7 @@ export function Footer() {
             <div className="relative flex items-center space-x-1">
               <Socials />
               <details className="appearance-none">
-                <summary className="p-1 list-none transition rounded-lg cursor-default hover:bg-orange-100 hover:text-orange-700 dark:hover:bg-gray-800 dark:hover:text-gray-300">
+                <summary className="p-1 list-none transition rounded-lg cursor-default hover:bg-orange-100 hover:text-orange-700">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48"
@@ -114,15 +114,15 @@ export function Footer() {
                     ></path>
                   </svg>
                 </summary>
-                <div className="absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 bg-white rounded shadow backdrop-blur dark:bg-gray-800 bottom-10 dark:text-gray-400">
-                  <form className="p-3 mb-1 border-b border-gray-100 dark:border-gray-800">
+                <div className="absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 bg-white rounded shadow backdrop-blur bottom-10">
+                  <form className="p-3 mb-1 border-b border-gray-100">
                     <fieldset className="flex flex-col space-y-1">
                       <legend className="mb-1 font-medium">Theme</legend>
                       <label className="flex items-center space-x-2">
                         <input
                           type="radio"
                           name="theme"
-                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none dark:border-gray-700 dark:bg-gray-500 dark:checked:bg-gray-300 checked:border-orange-600"
+                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none-300 checked:border-orange-600"
                         />
                         <span>Light</span>
                       </label>
@@ -130,7 +130,7 @@ export function Footer() {
                         <input
                           type="radio"
                           name="theme"
-                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none dark:border-gray-700 dark:bg-gray-500 dark:checked:bg-gray-300 checked:border-orange-600"
+                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none-300 checked:border-orange-600"
                         />
                         <span>Dark</span>
                       </label>
@@ -138,7 +138,7 @@ export function Footer() {
                         <input
                           type="radio"
                           name="theme"
-                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none dark:border-gray-700 dark:bg-gray-500 dark:checked:bg-gray-300 checked:border-orange-600"
+                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none-300 checked:border-orange-600"
                           checked
                         />
                         <span>System</span>
@@ -146,25 +146,25 @@ export function Footer() {
                     </fieldset>
                   </form>
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800"
                     href="/colophon"
                   >
                     Colophon
                   </a>
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800"
                     href="/sitemap"
                   >
                     Sitemap
                   </a>
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800"
                     href="#"
                   >
                     View page history
                   </a>
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                    className="px-3 py-2 transition rounded hover:bg-orange-50 hover:text-orange-800"
                     href="#"
                   >
                     Edit on GitHub
@@ -174,7 +174,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="pt-4 border-t-2 border-orange-100 dark:border-gray-800"></div>
+        <div className="pt-4 border-t-2 border-orange-100"></div>
         <div>
           <nav className="flex flex-wrap justify-between mb-2 space-x-3">
             {Array.from(

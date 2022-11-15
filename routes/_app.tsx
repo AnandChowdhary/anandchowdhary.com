@@ -12,13 +12,13 @@ export default function App({ Component }: AppProps) {
         <link rel="prefetch" href={`/${asset("anand.svg")}`} />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
       </Head>
-      <body class="min-h-screen text-gray-700 dark:text-gray-400 bg-orange-50 dark:bg-gray-900">
+      <body class="min-h-screen text-gray-700 bg-orange-50">
         <div>
           <header class="pt-6 pb-8">
             <div class="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">
               <a
                 href="/"
-                class="flex items-center space-x-2 font-medium dark:text-gray-300 whitespace-nowrap"
+                class="flex items-center space-x-2 font-medium whitespace-nowrap"
               >
                 <svg
                   viewBox="0 0 700 700"

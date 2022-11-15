@@ -204,9 +204,7 @@ export default function Home({ data }: PageProps<LifeData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
       <header class="space-y-2">
-        <h1 class="text-4xl font-semibold font-display dark:text-gray-200">
-          Life
-        </h1>
+        <h1 class="text-4xl font-semibold font-display">Life</h1>
         <p class="text-xl leading-relaxed">
           You can get in touch with me by filling the form below.
         </p>

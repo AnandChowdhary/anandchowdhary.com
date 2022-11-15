@@ -94,9 +94,7 @@ export default function About({ data }: PageProps<AboutData>) {
           </figcaption>
         </figure>
         <header className="mb-5 space-y-5">
-          <h1 className="text-4xl font-semibold font-display dark:text-gray-200">
-            About
-          </h1>
+          <h1 className="text-4xl font-semibold font-display">About</h1>
           <p className="text-xl leading-relaxed">
             Anand Chowdhary is a creative technologist and entrepreneur.
           </p>
@@ -134,15 +132,13 @@ export default function About({ data }: PageProps<AboutData>) {
         </div>
       </section>
       <section>
-        <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200">
-          Work
-        </h2>
+        <h2 className="mt-8 text-2xl font-semibold font-display">Work</h2>
         <ul className="mt-6">
           {STARTUPS.map(
             ({ name, position, description, start, end, icon, href }) => (
               <li key={name} className="flex mt-6">
                 <div
-                  className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow dark:bg-gray-80"
+                  className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow"
                   role="presentation"
                 >
                   <svg aria-hidden="true">
@@ -152,7 +148,7 @@ export default function About({ data }: PageProps<AboutData>) {
 
                 <div>
                   <h3>
-                    <strong className="font-medium dark:text-gray-300">
+                    <strong className="font-medium">
                       {href ? (
                         <ExternalLink href={href}>{name}</ExternalLink>
                       ) : (
@@ -162,9 +158,7 @@ export default function About({ data }: PageProps<AboutData>) {
                     <span className="text-gray-500">{`, ${position}`}</span>
                     <span className="text-gray-500">{`, ${start}–${end}`}</span>
                   </h3>
-                  <p className="text-gray-500 dark:text-gray-500">
-                    {description}
-                  </p>
+                  <p className="text-gray-500">{description}</p>
                 </div>
               </li>
             )
@@ -172,9 +166,7 @@ export default function About({ data }: PageProps<AboutData>) {
         </ul>
       </section>
       <section class="readme">
-        <h2 className="mt-8 text-2xl font-semibold font-display dark:text-gray-200">
-          README
-        </h2>
+        <h2 className="mt-8 text-2xl font-semibold font-display">README</h2>
         <div class="bg-gray-100 border-b border-gray-100 px-6 py-3 shadow-sm rounded-t flex items-center justify-between mt-5">
           <div class="font-semibold font-mono">README.md</div>
           <div class="flex items-center justify-between space-x-2">

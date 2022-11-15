@@ -4,7 +4,7 @@ export function Socials() {
   return (
     <Fragment>
       <a
-        className="p-1 transition rounded-lg hover:bg-orange-100 hover:text-orange-700 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+        className="p-1 transition rounded-lg hover:bg-orange-100 hover:text-orange-700"
         href="https://twitter.com/AnandChowdhary"
       >
         <span className="sr-only">Twitter</span>
@@ -26,7 +26,7 @@ export function Socials() {
         </svg>
       </a>
       <a
-        className="p-1 transition rounded-lg hover:bg-orange-100 hover:text-orange-700 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+        className="p-1 transition rounded-lg hover:bg-orange-100 hover:text-orange-700"
         href="https://www.linkedin.com/in/AnandChowdhary"
       >
         <span className="sr-only">LinkedIn</span>

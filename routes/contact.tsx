@@ -6,9 +6,7 @@ export default function Contact() {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
       <header class="mb-5 space-y-5">
-        <h1 class="text-4xl font-semibold font-display dark:text-gray-200">
-          Contact
-        </h1>
+        <h1 class="text-4xl font-semibold font-display">Contact</h1>
         <p class="text-xl leading-relaxed">
           You can get in touch with me by filling the form below.
         </p>
