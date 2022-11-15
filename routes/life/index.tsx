@@ -1,20 +1,12 @@
-import { asset } from "$fresh/runtime.ts";
-import * as colors from "twind/colors";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import { ComponentChildren } from "preact";
+import * as colors from "twind/colors";
 import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../../components/data/OKRs.tsx";
-import { Timeline } from "../../components/data/Timeline.tsx";
-import { ExternalLink } from "../../components/text/ExternalLink.tsx";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
-import Age from "../../islands/Age.tsx";
-import TimeAgo from "../../islands/TimeAgo.tsx";
-import { categoryData, fetchJson, fetchText } from "../../utils/data.tsx";
-import { t } from "../../utils/i18n.tsx";
+import { fetchJson, fetchText } from "../../utils/data.tsx";
 import type {
-  ApiWeeklyValues,
   LifeData,
   LocationApiResult,
   OptionalItemSummaryValue,
@@ -33,47 +25,26 @@ const nextBirthday =
 
 export const handler: Handlers<LifeData> = {
   async GET(request, context) {
-    let heart: OptionalItemSummaryValue = undefined;
+    const heart: OptionalItemSummaryValue = undefined;
     let sleep: Record<string, OuraSleepData> | undefined = undefined;
     let activity: Record<string, OuraActivity> | undefined = undefined;
     let location: OptionalItemSummaryValue = undefined;
     let timeline: ITimeline = [];
-    let sleepApi: ApiWeeklyValues = { weeks: {} };
-    let activityApi: ApiWeeklyValues = { weeks: {} };
-    let readinessApi: ApiWeeklyValues = { weeks: {} };
     let contributionsApi: string | undefined = undefined;
     let lastWeekMusicApi: string | undefined = undefined;
 
     try {
-      const [
-        _timeline,
-        _sleepApi,
-        _activityApi,
-        _readinessApi,
-        _contributionsApi,
-        _lastWeekMusicApi,
-      ] = await Promise.all([
-        fetchJson<ITimeline>(
-          "https://anandchowdhary.github.io/everything/api.json"
-        ),
-        fetchJson<ApiWeeklyValues>(
-          "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
-        ),
-        fetchJson<ApiWeeklyValues>(
-          "https://anandchowdhary.github.io/life/data/oura-activity/api.json"
-        ),
-        fetchJson<ApiWeeklyValues>(
-          "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
-        ),
-        fetchText("https://github.com/users/AnandChowdhary/contributions"),
-        fetchText(
-          "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
-        ),
-      ]);
+      const [_timeline, _contributionsApi, _lastWeekMusicApi] =
+        await Promise.all([
+          fetchJson<ITimeline>(
+            "https://anandchowdhary.github.io/everything/api.json"
+          ),
+          fetchText("https://github.com/users/AnandChowdhary/contributions"),
+          fetchText(
+            "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
+          ),
+        ]);
       timeline = _timeline;
-      sleepApi = _sleepApi;
-      activityApi = _activityApi;
-      readinessApi = _readinessApi;
       contributionsApi = _contributionsApi;
       lastWeekMusicApi = _lastWeekMusicApi;
     } catch (error) {
@@ -83,35 +54,19 @@ export const handler: Handlers<LifeData> = {
     const okr = timeline?.find(({ type }) => type === "okr") as
       | LifeData["okr"]
       | undefined;
-
-    const sleepApiYear = Number(
-      Object.keys(sleepApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
-    );
-    const activityApiYear = Number(
-      Object.keys(activityApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
-    );
-    const readinessApiYear = Number(
-      Object.keys(readinessApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
-    );
     let contributionsGraph: string | undefined = undefined;
 
     try {
       const [sleepData, activityData, readinessData, locationData] =
         await Promise.all([
           fetchJson<Record<string, OuraSleepData>>(
-            `https://anandchowdhary.github.io/life/data/oura-sleep/summary/weeks/2022/${sleepApi.weeks[
-              sleepApiYear
-            ].pop()}`
+            `https://anandchowdhary.github.io/life/data/oura-sleep/summary/days.json`
           ),
           fetchJson<Record<string, OuraActivity>>(
-            `https://anandchowdhary.github.io/life/data/oura-activity/summary/weeks/2022/${activityApi.weeks[
-              activityApiYear
-            ].pop()}`
+            `https://anandchowdhary.github.io/life/data/oura-activity/summary/days.json`
           ),
           fetchJson<Record<string, OuraReadiness>>(
-            `https://anandchowdhary.github.io/life/data/oura-readiness/summary/weeks/2022/${readinessApi.weeks[
-              readinessApiYear
-            ].pop()}`
+            `https://anandchowdhary.github.io/life/data/oura-readiness/summary/days.json`
           ),
           fetchJson<LocationApiResult>(
             "https://anandchowdhary.github.io/location/api.json"
@@ -400,6 +355,7 @@ export default function Home({ data }: PageProps<LifeData>) {
             {gyroscope.activity ? (
               Object.entries(gyroscope.activity)
                 .filter(([_, { cal_total }]) => cal_total > 0)
+                .slice(-7)
                 .map(([date, { cal_total, cal_active }]) => (
                   <div key={date} class="flex-1 w-full flex items-end">
                     <div class="w-full px-2 h-full flex flex-col justify-end">
@@ -428,7 +384,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                           }}
                         ></div>
                       </div>
-                      <div class="text-xs text-center mt-2">
+                      <div class="text-xs text-center mt-2 truncate">
                         <div>
                           {`${new Date(date)
                             .toLocaleString("en-US", {
@@ -494,6 +450,7 @@ export default function Home({ data }: PageProps<LifeData>) {
             {gyroscope.sleep ? (
               Object.entries(gyroscope.sleep)
                 .filter(([_, { total }]) => total > 0)
+                .slice(-7)
                 .map(([date, { deep, rem, total }]) => (
                   <div key={date} class="flex-1 w-full flex items-end">
                     <div class="w-full px-2 h-full flex flex-col justify-end">
@@ -528,7 +485,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                           }}
                         ></div>
                       </div>
-                      <div class="text-xs text-center mt-2">
+                      <div class="text-xs text-center mt-2 truncate">
                         <div>
                           {`${new Date(date)
                             .toLocaleString("en-US", {
@@ -565,6 +522,7 @@ export default function Home({ data }: PageProps<LifeData>) {
             {gyroscope.activity ? (
               Object.entries(gyroscope.activity)
                 .filter(([_, { steps }]) => steps > 0)
+                .slice(-7)
                 .map(([date, { steps }]) => (
                   <div key={date} class="flex-1 w-full flex items-end">
                     <div class="w-full px-2 h-full flex flex-col justify-end">
@@ -582,7 +540,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                           )}%`,
                         }}
                       />
-                      <div class="text-xs text-center mt-2">
+                      <div class="text-xs text-center mt-2 truncate">
                         <div>
                           {`${new Date(date)
                             .toLocaleString("en-US", {
@@ -616,38 +574,43 @@ export default function Home({ data }: PageProps<LifeData>) {
             <p class="text-gray-500">Tracked every day using Oura</p>
           </header>
           <div class="flex relative -mx-2 h-64">
-            {Object.entries(gyroscope.activity ?? {})
-              .filter(([_, { score }]) => score > 0)
-              .map(([date, { score }]) => (
-                <div key={date} class="flex-1 w-full flex items-end">
-                  <div class="w-full px-2 h-full flex flex-col justify-end">
-                    <div
-                      class="rounded-lg relative overflow-hidden"
-                      style={{
-                        background: "#fbbf24",
-                        height: `${Math.round(score)}%`,
-                      }}
-                    />
-                    <div class="text-xs text-center mt-2">
-                      <div>
-                        {`${new Date(date)
-                          .toLocaleString("en-US", {
-                            weekday: "long",
-                          })
-                          .substring(0, 3)} ${new Date(date).getDate()}`}
-                      </div>
-                      <div>
-                        <strong class="font-medium">{`${Number(
-                          score
-                        ).toLocaleString("en-US", {
-                          minimumFractionDigits: 0,
-                          maximumFractionDigits: 1,
-                        })}%`}</strong>
+            {gyroscope.activity ? (
+              Object.entries(gyroscope.activity)
+                .filter(([_, { score }]) => score > 0)
+                .slice(-7)
+                .map(([date, { score }]) => (
+                  <div key={date} class="flex-1 w-full flex items-end">
+                    <div class="w-full px-2 h-full flex flex-col justify-end">
+                      <div
+                        class="rounded-lg relative overflow-hidden"
+                        style={{
+                          background: "#fbbf24",
+                          height: `${Math.round(score)}%`,
+                        }}
+                      />
+                      <div class="text-xs text-center mt-2 truncate">
+                        <div>
+                          {`${new Date(date)
+                            .toLocaleString("en-US", {
+                              weekday: "long",
+                            })
+                            .substring(0, 3)} ${new Date(date).getDate()}`}
+                        </div>
+                        <div>
+                          <strong class="font-medium">{`${Number(
+                            score
+                          ).toLocaleString("en-US", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 1,
+                          })}%`}</strong>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+            ) : (
+              <LoadError items="activity" />
+            )}
           </div>
         </article>
       </section>
