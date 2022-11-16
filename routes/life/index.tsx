@@ -6,7 +6,7 @@ import { OKRCards } from "../../components/data/OKRs.tsx";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
 import { fetchJson, fetchText } from "../../utils/data.tsx";
-import { getFlagUrl } from "../../utils/flagpack.ts";
+import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
 import type {
   LifeData,
   OptionalItemSummaryValue,
@@ -300,11 +300,12 @@ export default function Home({ data }: PageProps<LifeData>) {
                   <div class="min-w-12">
                     <img
                       alt=""
-                      src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                        `tse2.mm.bing.net/th?q=${encodeURIComponent(
+                      src={imageUrl(
+                        `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
                           artist.name
-                        )}&w=48&h=48&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
-                      )}&w=48&h=48&fit=cover`}
+                        )}&w=48&h=48&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`,
+                        { w: "48", h: "48", fit: "cover" }
+                      )}
                       width={48}
                       height={48}
                       loading="lazy"

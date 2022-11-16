@@ -2,7 +2,7 @@ import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { ComponentChildren, FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";
-import { getFlagUrl } from "../../utils/flagpack.ts";
+import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
 import { t } from "../../utils/i18n.tsx";
 import type { Timeline as ITimeline } from "../../utils/interfaces.ts";
 import { render } from "../../utils/markdown.ts";
@@ -176,11 +176,12 @@ export const Timeline: FunctionComponent<{
                           {item.url && (
                             <img
                               alt=""
-                              src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                              src={imageUrl(
                                 `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(
-                                  item.url
-                                )}&size=128`
-                              )}&w=48&h=48&fit=cover&bg=white`}
+                                  new URL(item.url).hostname
+                                )}&size=128`,
+                                { w: "48", h: "48", fit: "cover", bg: "white" }
+                              )}
                               loading="lazy"
                               width={24}
                               height={24}
@@ -364,7 +365,7 @@ export const Timeline: FunctionComponent<{
                       {item.type === "okr" ? (
                         <img
                           alt=""
-                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                          src={imageUrl(
                             `https://raw.githubusercontent.com/AnandChowdhary/okrs/main/assets/${item.url
                               .split("/")
                               .reverse()
@@ -372,8 +373,9 @@ export const Timeline: FunctionComponent<{
                               .substring(0, 6)
                               .split("/")
                               .reverse()
-                              .join("-")}.png`
-                          )}&w=512&h=256&fit=cover`}
+                              .join("-")}.png`,
+                            { w: "512", h: "256", fit: "cover" }
+                          )}
                           loading="lazy"
                           width={512}
                           height={256}
@@ -382,11 +384,12 @@ export const Timeline: FunctionComponent<{
                       ) : item.type === "blog-post" ? (
                         <img
                           alt=""
-                          src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
+                          src={imageUrl(
                             `https://anandchowdhary.github.io/blog/assets/${item.url
                               .split("/")
-                              .pop()}.png`
-                          )}&w=512&h=256&fit=cover`}
+                              .pop()}.png`,
+                            { w: "512", h: "256", fit: "cover" }
+                          )}
                           loading="lazy"
                           width={512}
                           height={256}
@@ -396,16 +399,19 @@ export const Timeline: FunctionComponent<{
                         <div
                           class="rounded-lg w-full bg-cover bg-center bg-no-repeat flex justify-center"
                           style={{
-                            backgroundImage: `url(https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                              item.data.image.split("//")[1]
-                            )}&w=300&h=450&fit=cover&blur=15)`,
+                            backgroundImage: `url(${imageUrl(
+                              item.data.image.split("//")[1],
+                              { w: "300", h: "450", fit: "cover", blur: "15" }
+                            )})`,
                           }}
                         >
                           <img
                             alt=""
-                            src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                              item.data.image.split("//")[1]
-                            )}&w=300&h=450&fit=cover`}
+                            src={imageUrl(item.data.image.split("//")[1], {
+                              w: "300",
+                              h: "450",
+                              fit: "cover",
+                            })}
                             loading="lazy"
                             width={300}
                             height={450}
@@ -449,9 +455,11 @@ export const Timeline: FunctionComponent<{
                             </svg>
                             <img
                               alt=""
-                              src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-                                item.data.img.split("//")[1]
-                              )}&w=512&h=256&fit=cover`}
+                              src={imageUrl(item.data.img.split("//")[1], {
+                                w: "512",
+                                h: "256",
+                                fit: "cover",
+                              })}
                               loading="lazy"
                               width={512}
                               height={256}

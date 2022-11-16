@@ -2,7 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { Timeline } from "../../components/data/Timeline.tsx";
 import { fetchJson } from "../../utils/data.tsx";
-import { getFlagUrl } from "../../utils/flagpack.ts";
+import { getFlagUrl } from "../../utils/urls.ts";
 import {
   LocationApiResult,
   Timeline as ITimeline,

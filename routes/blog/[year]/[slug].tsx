@@ -1,6 +1,7 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
 import frontMatter from "https://esm.sh/front-matter@4.0.2";
 import { render } from "../../../utils/markdown.ts";
+import { imageUrl } from "../../../utils/urls.ts";
 
 interface BlogPostData {
   title: string;
@@ -81,9 +82,10 @@ export default function BlogPost({ data, params }: PageProps<BlogPostData>) {
     <div className="max-w-screen-md px-4 mx-auto md:px-0">
       <img
         alt=""
-        src={`https://images.weserv.nl/?&maxage=1y&url=${encodeURIComponent(
-          `https://anandchowdhary.github.io/blog/assets/${params.slug}.png`
-        )}&w=1024&h=512&fit=cover`}
+        src={imageUrl(
+          `https://anandchowdhary.github.io/blog/assets/${params.slug}.png`,
+          { w: "1024", h: "512", fit: "cover" }
+        )}
         loading="lazy"
         width={1024}
         height={512}

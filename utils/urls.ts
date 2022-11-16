@@ -4,3 +4,9 @@ export const getFlagUrl = (countryCode: string) => {
     countryCode ?? ""
   ).toUpperCase()}.svg`;
 };
+
+export const imageUrl = (url: string, search: Record<string, string>) => {
+  return `https://wsrv.nl/?url=${encodeURIComponent(
+    url
+  )}?maxage=1y&${new URLSearchParams(search).toString()}`;
+};
