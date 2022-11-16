@@ -8,13 +8,22 @@ import { SectionLink } from "../../components/text/SectionLink.tsx";
 import { fetchJson, fetchText } from "../../utils/data.tsx";
 import type {
   LifeData,
-  LocationApiResult,
   OptionalItemSummaryValue,
   OuraActivity,
   OuraReadiness,
   OuraSleepData,
   Timeline as ITimeline,
 } from "../../utils/interfaces.ts";
+function toHoursAndMinutes(totalMinutes: number) {
+  const minutes = totalMinutes % 60;
+  const hours = Math.floor(totalMinutes / 60);
+  return `${hours > 0 ? "+" : ""}${padTo2Digits(hours)}:${padTo2Digits(
+    minutes
+  )}`;
+}
+function padTo2Digits(num: number) {
+  return num.toString().padStart(2, "0");
+}
 
 const birthdayThisYear = new Date("1997-12-29");
 birthdayThisYear.setUTCFullYear(new Date().getUTCFullYear());
@@ -50,33 +59,13 @@ export const handler: Handlers<LifeData> = {
     } catch (error) {
       //
     }
-
-    const okr = timeline?.find(({ type }) => type === "okr") as
-      | LifeData["okr"]
-      | undefined;
-    let contributionsGraph: string | undefined = undefined;
-
-    try {
-      const [sleepData, activityData, readinessData, locationData] =
-        await Promise.all([
-          fetchJson<Record<string, OuraSleepData>>(
-            `https://anandchowdhary.github.io/life/data/oura-sleep/summary/days.json`
-          ),
-          fetchJson<Record<string, OuraActivity>>(
-            `https://anandchowdhary.github.io/life/data/oura-activity/summary/days.json`
-          ),
-          fetchJson<Record<string, OuraReadiness>>(
-            `https://anandchowdhary.github.io/life/data/oura-readiness/summary/days.json`
-          ),
-          fetchJson<LocationApiResult>(
-            "https://anandchowdhary.github.io/location/api.json"
-          ),
-        ]);
+    const locationData = timeline.find((i) => i.type === "travel")?.data as any;
+    if (locationData)
       location = {
         values: [
           locationData.label,
           locationData.country.name.replace(" of America", ""),
-          locationData.timezone?.utcOffsetStr ?? "",
+          toHoursAndMinutes(locationData.timezone?.utcOffset ?? 0),
           new Date()
             .toLocaleTimeString("en-US", {
               timeStyle: "short",
@@ -88,6 +77,24 @@ export const handler: Handlers<LifeData> = {
         ],
         timeAgo: locationData.updatedAt,
       };
+
+    const okr = timeline?.find(({ type }) => type === "okr") as
+      | LifeData["okr"]
+      | undefined;
+    let contributionsGraph: string | undefined = undefined;
+
+    try {
+      const [sleepData, activityData, readinessData] = await Promise.all([
+        fetchJson<Record<string, OuraSleepData>>(
+          `https://anandchowdhary.github.io/life/data/oura-sleep/summary/days.json`
+        ),
+        fetchJson<Record<string, OuraActivity>>(
+          `https://anandchowdhary.github.io/life/data/oura-activity/summary/days.json`
+        ),
+        fetchJson<Record<string, OuraReadiness>>(
+          `https://anandchowdhary.github.io/life/data/oura-readiness/summary/days.json`
+        ),
+      ]);
       if (contributionsApi)
         contributionsGraph =
           `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
@@ -108,6 +115,7 @@ export const handler: Handlers<LifeData> = {
       music = lastWeekMusicApi.split("\n").map((line) => {
         return {
           name: line
+            .split("▋")[0]
             .split("▌")[0]
             .split("▌")[0]
             .split("░")[0]

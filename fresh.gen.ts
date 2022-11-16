@@ -22,6 +22,8 @@ import * as $15 from "./routes/projects/[year]/index.tsx";
 import * as $16 from "./routes/projects/index.tsx";
 import * as $17 from "./routes/sitemap.tsx";
 import * as $18 from "./routes/sitemap.xml.tsx";
+import * as $19 from "./routes/travel/[year]/index.tsx";
+import * as $20 from "./routes/travel/index.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Filters.tsx";
 import * as $$2 from "./islands/TimeAgo.tsx";
@@ -47,6 +49,8 @@ const manifest = {
     "./routes/projects/index.tsx": $16,
     "./routes/sitemap.tsx": $17,
     "./routes/sitemap.xml.tsx": $18,
+    "./routes/travel/[year]/index.tsx": $19,
+    "./routes/travel/index.tsx": $20,
   },
   islands: {
     "./islands/Age.tsx": $$0,

@@ -4,9 +4,7 @@ export const BarChart: FunctionComponent<{
   rgb: string;
 }> = ({ data, rgb }) => {
   return (
-    <div
-      className="rounded bg-white shadow-sm flex items-end justify-between p-4 text-center"
-    >
+    <div className="rounded bg-white shadow-sm flex items-end justify-between p-4 text-center">
       {data.map(({ date, label, value }, _, array) => (
         <div
           key={date}

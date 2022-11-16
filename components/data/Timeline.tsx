@@ -398,6 +398,18 @@ export const Timeline: FunctionComponent<{
                           height={256}
                           className="w-full rounded-lg shadow"
                         />
+                      ) : item.type === "travel" &&
+                        item.data?.approximateCoordinates ? (
+                        <img
+                          alt=""
+                          src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${item.data?.approximateCoordinates
+                            .reverse()
+                            .join()},9/512x256?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                          loading="lazy"
+                          width={512}
+                          height={256}
+                          className="w-full rounded-lg shadow"
+                        />
                       ) : (
                         item.type === "video" &&
                         item.data?.img && (
