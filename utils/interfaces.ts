@@ -17,12 +17,13 @@ export type Timeline = {
     emoji?: string;
     stars?: number;
     issues?: number;
+    label?: string;
     forks?: number;
     watchers?: number;
     language?: string;
     languageColor?: string;
     city?: string;
-    country?: string;
+    country?: string | { code: string; name: string };
     img?: string;
     duration?: string;
     embed?: string;

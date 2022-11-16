@@ -2,6 +2,7 @@ import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { ComponentChildren, FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";
+import { getFlagUrl } from "../../utils/flagpack.ts";
 import { t } from "../../utils/i18n.tsx";
 import type { Timeline as ITimeline } from "../../utils/interfaces.ts";
 import { render } from "../../utils/markdown.ts";
@@ -112,7 +113,9 @@ export const Timeline: FunctionComponent<{
                         <h4 className="text-lg font-medium leading-6">
                           <h4 className="text-lg font-medium leading-6">
                             <a href={new URL(item.url).pathname}>
-                              {smartquotes(item.title)}
+                              {item.type === "travel"
+                                ? smartquotes(item.data?.label ?? item.title)
+                                : smartquotes(item.title)}
                             </a>
                           </h4>
                         </h4>
@@ -121,6 +124,22 @@ export const Timeline: FunctionComponent<{
                           {smartquotes(item.title)}
                         </h4>
                       )}
+                      {item.type === "travel" &&
+                        item.data?.country &&
+                        typeof item.data.country === "object" && (
+                          <div class="flex items-start space-x-2 text-gray-500">
+                            <img
+                              alt=""
+                              src={getFlagUrl(item.data.country.code)}
+                              class="rounded-sm mt-1.5"
+                            />
+                            <p>
+                              {item.data.country.name
+                                .replace(" of America", "")
+                                .replace("Netherlands", "The Netherlands")}
+                            </p>
+                          </div>
+                        )}
                       {item.data?.authors && (
                         <p>
                           {smartquotes(`by ${item.data.authors.join(", ")}`)}
@@ -135,12 +154,18 @@ export const Timeline: FunctionComponent<{
                           )}
                         </p>
                       )}
-                      {item.data?.emoji && item.data?.location && (
-                        <p className="text-gray-500">
-                          <span className="mr-1">{item.data.emoji}</span>
-                          <span>{smartquotes(` ${item.data.location}`)}</span>
-                        </p>
-                      )}
+                      {item.data?.country &&
+                        item.data?.location &&
+                        typeof item.data.country === "string" && (
+                          <div class="flex items-start space-x-2 text-gray-500">
+                            <img
+                              alt=""
+                              src={getFlagUrl(item.data.country)}
+                              class="rounded-sm mt-1.5"
+                            />
+                            <p>{item.data.location}</p>
+                          </div>
+                        )}
                       {item.data?.publisher && (
                         <p className="text-gray-500">
                           {smartquotes(item.data.publisher)}

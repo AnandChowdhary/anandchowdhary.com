@@ -6,6 +6,7 @@ import { OKRCards } from "../../components/data/OKRs.tsx";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
 import { fetchJson, fetchText } from "../../utils/data.tsx";
+import { getFlagUrl } from "../../utils/flagpack.ts";
 import type {
   LifeData,
   OptionalItemSummaryValue,
@@ -243,7 +244,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                     {gyroscope.location.values[4] && (
                       <img
                         alt=""
-                        src={`https://cdn.jsdelivr.net/gh/Yummygum/flagpack-core@v2.0.0/svg/m/${gyroscope.location.values[4].toUpperCase()}.svg`}
+                        src={getFlagUrl(gyroscope.location.values[4])}
                         class="rounded-sm"
                       />
                     )}
