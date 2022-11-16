@@ -9,6 +9,7 @@ import { fetchJson, fetchText } from "../../utils/data.tsx";
 import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
 import type {
   LifeData,
+  LocationApiResult,
   OptionalItemSummaryValue,
   OuraActivity,
   OuraReadiness,
@@ -44,10 +45,13 @@ export const handler: Handlers<LifeData> = {
     let lastWeekMusicApi: string | undefined = undefined;
 
     try {
-      const [_timeline, _contributionsApi, _lastWeekMusicApi] =
+      const [_timeline, _location, _contributionsApi, _lastWeekMusicApi] =
         await Promise.all([
           fetchJson<ITimeline>(
             "https://anandchowdhary.github.io/everything/api.json"
+          ),
+          fetchJson<LocationApiResult>(
+            "https://anandchowdhary.github.io/location/api.json"
           ),
           fetchText("https://github.com/users/AnandChowdhary/contributions"),
           fetchText(
@@ -57,27 +61,26 @@ export const handler: Handlers<LifeData> = {
       timeline = _timeline;
       contributionsApi = _contributionsApi;
       lastWeekMusicApi = _lastWeekMusicApi;
+      if (_location)
+        location = {
+          values: [
+            _location.label,
+            _location.country.name.replace(" of America", ""),
+            toHoursAndMinutes(_location.timezone?.utcOffset ?? 0),
+            new Date()
+              .toLocaleTimeString("en-US", {
+                timeStyle: "short",
+                timeZone: _location?.timezone?.name,
+              })
+              .toLowerCase(),
+            _location.country.code,
+            _location.approximateCoordinates.join(),
+          ],
+          timeAgo: _location.updatedAt,
+        };
     } catch (error) {
       //
     }
-    const locationData = timeline.find((i) => i.type === "travel")?.data as any;
-    if (locationData)
-      location = {
-        values: [
-          locationData.label,
-          locationData.country.name.replace(" of America", ""),
-          toHoursAndMinutes(locationData.timezone?.utcOffset ?? 0),
-          new Date()
-            .toLocaleTimeString("en-US", {
-              timeStyle: "short",
-              timeZone: locationData?.timezone?.name,
-            })
-            .toLowerCase(),
-          locationData.country.code,
-          locationData.approximateCoordinates.join(),
-        ],
-        timeAgo: locationData.updatedAt,
-      };
 
     const okr = timeline?.find(({ type }) => type === "okr") as
       | LifeData["okr"]
@@ -170,7 +173,13 @@ export default function Home({ data }: PageProps<LifeData>) {
       <header class="space-y-2">
         <h1 class="text-4xl font-semibold font-display">Life</h1>
         <p class="text-xl leading-relaxed">
-          You can get in touch with me by filling the form below.
+          For several years, I've been tracking all my life data (health,
+          activity, location, etc.) using automated tools and microservices,
+          which is available here.
+        </p>
+        <p>
+          All data is also available as a publicly-available JSON API and under
+          the Open Data License on GitHub.
         </p>
       </header>
       <section class="grid md:grid-cols-2 gap-8">
@@ -233,7 +242,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                 src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${gyroscope.location.values[5]
                   .split(",")
                   .reverse()
-                  .join()},13/368x200?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                  .join()},12/368x200?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
                 class="w-full rounded-t"
               />
             )}
@@ -245,7 +254,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                       <img
                         alt=""
                         src={getFlagUrl(gyroscope.location.values[4])}
-                        class="rounded-sm"
+                        class="rounded-sm w-5"
                       />
                     )}
                     <strong class="font-medium">
@@ -270,6 +279,143 @@ export default function Home({ data }: PageProps<LifeData>) {
             apiUrl="https://anandchowdhary.github.io/location/api.json"
             githubUrl="https://github.com/AnandChowdhary/location"
             links={[{ label: "View past location", href: "/life/location" }]}
+          />
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">🛩️</span>
+              <SectionLink label="Travel" href="/life/travel" />
+            </h2>
+            <p class="text-gray-500">Most recently visited new countries</p>
+          </header>
+          <div class="space-y-2">
+            {Array.from(
+              new Set(
+                [...data.timeline.filter((i) => i.type === "travel")]
+                  .reverse()
+                  .map((i) =>
+                    typeof i.data?.country === "object"
+                      ? i.data?.country?.code?.toLowerCase()
+                      : undefined
+                  )
+              )
+            )
+              .map((key) =>
+                data.timeline.findLast(
+                  (i) =>
+                    i.type === "travel" &&
+                    typeof i.data?.country === "object" &&
+                    i.data?.country?.code?.toLowerCase() === key
+                )
+              )
+              .filter((item) => !!item)
+              .reverse()
+              .slice(0, 5)
+              .sort(
+                (a, b) =>
+                  new Date(b?.date ?? 0).getTime() -
+                  new Date(a?.date ?? 0).getTime()
+              )
+              .map((location) => {
+                if (!location) return null;
+                return (
+                  <div
+                    key={location.url}
+                    class="flex bg-white rounded-lg shadow-sm items-center"
+                  >
+                    <div class="min-w-12 relative">
+                      <img
+                        alt=""
+                        src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${location.data?.approximateCoordinates
+                          ?.reverse()
+                          ?.join(
+                            ","
+                          )},6/48x48?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                        width={48}
+                        height={48}
+                        loading="lazy"
+                        class="object-cover w-12 h-full rounded-l-lg opacity-50"
+                      />
+                      <div class="absolute right-0 bottom-0 left-0 top-0 flex items-center justify-center">
+                        <img
+                          alt=""
+                          src={getFlagUrl(Object(location.data?.country)?.code)}
+                          class="rounded-sm w-5"
+                        />
+                      </div>
+                    </div>
+                    <div class="flex items-center justify-between flex-grow h-12 px-4">
+                      <div>{Object(location.data?.country)?.name}</div>
+                      <div
+                        class="text-gray-500 text-right"
+                        style={{ minWidth: "6rem" }}
+                      >
+                        {new Date(location.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+          <DataFooterLinks
+            apiUrl="https://api.github.com/gists/14a66f452302d199c4abde0ffe891922"
+            githubUrl="https://gist.github.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922"
+          />
+        </article>
+        <article class="space-y-4">
+          <header>
+            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <span aria-hidden="true">📕</span>
+              <SectionLink label="Books" href="/life/books" />
+            </h2>
+            <p class="text-gray-500">Most recently completed books</p>
+          </header>
+          <div class="space-y-2">
+            {data.timeline
+              .filter((i) => i.type === "book")
+              .slice(0, 5)
+              .map((book) => (
+                <div
+                  key={book.url}
+                  class="flex bg-white rounded-lg shadow-sm items-center"
+                >
+                  <div class="min-w-12">
+                    <img
+                      alt=""
+                      src={imageUrl(
+                        `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
+                          `${book.title} audiobook cover`
+                        )}&w=48&h=48&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`,
+                        { w: "48", h: "48", fit: "cover" }
+                      )}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      class="object-cover w-12 h-full rounded-l-lg"
+                    />
+                  </div>
+                  <div class="flex items-center justify-between flex-grow h-12 px-4">
+                    <div>{book.title}</div>
+                    <div
+                      class="text-gray-500 text-right"
+                      style={{ minWidth: "6rem" }}
+                    >
+                      {new Date(book.date).toLocaleDateString("en-US", {
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+          <DataFooterLinks
+            apiUrl="https://api.github.com/gists/14a66f452302d199c4abde0ffe891922"
+            githubUrl="https://gist.github.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922"
           />
         </article>
         <article class="space-y-4">
@@ -335,7 +481,7 @@ export default function Home({ data }: PageProps<LifeData>) {
               <span aria-hidden="true">🔥</span>
               <SectionLink label="Calories burned" href="/life/calories" />
             </h2>
-            <p class="text-gray-500">Tracked with Oura</p>
+            <p class="text-gray-500">Tracked every day with Oura</p>
           </header>
           <div class="flex relative -mx-2 h-64">
             <div

@@ -90,7 +90,7 @@ export const Timeline: FunctionComponent<{
                 </div>
                 <div className="flex-grow">
                   <div class="grid md:grid-cols-5 gap-8">
-                    <div class="col-span-3 space-y-1">
+                    <div class="col-span-3 space-y-2">
                       <div className="text-gray-500">
                         <span>
                           <span
