@@ -634,6 +634,7 @@ export default function Home({ data }: PageProps<I>) {
             )}
             maxItems={10}
             hasMoreHref="special://last-archive-year"
+            yearHrefPrefix="/archive"
           />
         ) : (
           <LoadError items="changelog" />

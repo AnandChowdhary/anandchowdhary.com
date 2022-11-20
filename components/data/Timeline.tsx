@@ -17,6 +17,7 @@ export const Timeline: FunctionComponent<{
   hasMoreHref?: string;
   hasMoreLabel?: string;
   hideFilters?: boolean;
+  yearHrefPrefix: string;
 }> = ({
   timeline,
   hideYearHeading,
@@ -26,6 +27,7 @@ export const Timeline: FunctionComponent<{
   hasMoreHref,
   hasMoreLabel,
   hideFilters,
+  yearHrefPrefix,
 }) => {
   selected ??= Object.keys(categoryData);
   try {
@@ -71,7 +73,13 @@ export const Timeline: FunctionComponent<{
                   </div>
                   <div>
                     <h3 className="mb-6 text-xl font-semibold">
-                      {new Date(item.date).getFullYear()}
+                      <a
+                        href={`${yearHrefPrefix}/${new Date(
+                          item.date
+                        ).getFullYear()}`}
+                      >
+                        {new Date(item.date).getFullYear()}
+                      </a>
                     </h3>
                   </div>
                 </div>

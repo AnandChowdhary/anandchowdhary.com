@@ -118,7 +118,12 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
             </div>
           </article>
         </section>
-        <Timeline hideFilters timeline={travel} query={query} />
+        <Timeline
+          hideFilters
+          timeline={travel}
+          query={query}
+          yearHrefPrefix="/travel"
+        />
       </section>
     </div>
   );

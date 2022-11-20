@@ -75,6 +75,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
           query={query}
           hasMoreHref={previousYear ? `/travel/${previousYear}` : undefined}
           hasMoreLabel={previousYear}
+          yearHrefPrefix="/travel"
         />
       </section>
     </div>

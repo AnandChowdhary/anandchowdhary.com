@@ -31,6 +31,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
           hideFilters
           timeline={timeline.filter(({ type }) => type === "project")}
           query={query}
+          yearHrefPrefix="/projects"
         />
       </section>
     </div>
