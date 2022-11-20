@@ -161,3 +161,33 @@ export interface HomeData {
 }
 
 export type LifeData = HomeData & { contributionsGraph?: string };
+
+export interface IOkr {
+  title: string;
+  description: string;
+  data: {
+    name: number;
+    progress: number;
+    success: number;
+    objectives: [
+      {
+        name: string;
+        progress: number;
+        success: number;
+        key_results: {
+          name: string;
+          current_result: number;
+          target_result: number;
+          progress: number;
+          success: number;
+        }[];
+      }
+    ];
+  };
+}
+
+export interface ITheme {
+  year: string;
+  title: string;
+  description: string;
+}

@@ -8,3 +8,10 @@ export const humanizeMmSs = (duration: string) => {
       : "Less than 1 minute"
   }`;
 };
+
+export const countryName = (countryName: string) =>
+  countryName === "United States of America"
+    ? "United States"
+    : countryName === "Netherlands"
+    ? "The Netherlands"
+    : countryName;

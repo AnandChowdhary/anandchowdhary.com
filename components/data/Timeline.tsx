@@ -6,7 +6,7 @@ import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
 import { t } from "../../utils/i18n.tsx";
 import type { Timeline as ITimeline } from "../../utils/interfaces.ts";
 import { render } from "../../utils/markdown.ts";
-import { humanizeMmSs } from "../../utils/string.ts";
+import { countryName, humanizeMmSs } from "../../utils/string.ts";
 
 export const Timeline: FunctionComponent<{
   timeline: ITimeline;
@@ -133,11 +133,7 @@ export const Timeline: FunctionComponent<{
                               src={getFlagUrl(item.data.country.code)}
                               class="rounded-sm mt-1.5"
                             />
-                            <p>
-                              {item.data.country.name
-                                .replace(" of America", "")
-                                .replace("Netherlands", "The Netherlands")}
-                            </p>
+                            <p>{countryName(item.data.country.name)}</p>
                           </div>
                         )}
                       {item.data?.authors && (

@@ -62,16 +62,17 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
             <header>
               <h2 className="text-xl font-semibold font-display">{`${countries.length.toLocaleString()} countries`}</h2>
             </header>
-            <div class="flex flex-wrap md:justify-between -ml-2">
+            <div class="flex justify-between space-x-3">
               {countries
                 .filter((code) => code != null)
                 .map((code) => (
-                  <img
-                    key={code}
-                    alt=""
-                    src={getFlagUrl(code ?? "")}
-                    class="rounded-sm m-2 h-8"
-                  />
+                  <div key={code} class="w-full">
+                    <img
+                      alt=""
+                      src={getFlagUrl(code ?? "")}
+                      class="rounded-sm w-full"
+                    />
+                  </div>
                 ))}
             </div>
           </article>

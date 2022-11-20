@@ -16,6 +16,7 @@ import type {
   OuraSleepData,
   Timeline as ITimeline,
 } from "../../utils/interfaces.ts";
+import { countryName } from "../../utils/string.ts";
 function toHoursAndMinutes(totalMinutes: number) {
   const minutes = totalMinutes % 60;
   const hours = Math.floor(totalMinutes / 60);
@@ -65,7 +66,7 @@ export const handler: Handlers<LifeData> = {
         location = {
           values: [
             _location.label,
-            _location.country.name.replace(" of America", ""),
+            countryName(_location.country.name),
             toHoursAndMinutes(_location.timezone?.utcOffset ?? 0),
             new Date()
               .toLocaleTimeString("en-US", {

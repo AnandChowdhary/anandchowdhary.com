@@ -1,11 +1,10 @@
 import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
+import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
-import { GitHub, Instagram, LinkedIn, Twitter } from "../components/Icons.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { LoadError } from "../components/text/LoadError.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
@@ -15,7 +14,8 @@ import { categoryData, fetchJson } from "../utils/data.tsx";
 import { t } from "../utils/i18n.tsx";
 import type {
   ApiWeeklyValues,
-  HomeData,
+  IOkr,
+  ITheme,
   LocationApiResult,
   OptionalItemSummaryValue,
   OuraActivity,
@@ -23,6 +23,7 @@ import type {
   OuraSleepData,
   Timeline as ITimeline,
 } from "../utils/interfaces.ts";
+import { countryName } from "../utils/string.ts";
 
 const birthdayThisYear = new Date("1997-12-29");
 birthdayThisYear.setUTCFullYear(new Date().getUTCFullYear());
@@ -31,7 +32,18 @@ const nextBirthday =
     ? birthdayThisYear
     : new Date(birthdayThisYear.getTime() + 31536000000);
 
-export const handler: Handlers<HomeData> = {
+interface I {
+  okr?: IOkr;
+  timeline: ITimeline;
+  query: string;
+  theme: ITheme;
+  location: OptionalItemSummaryValue;
+  heart: OptionalItemSummaryValue;
+  steps: OptionalItemSummaryValue;
+  sleep: OptionalItemSummaryValue;
+}
+
+export const handler: Handlers<I> = {
   async GET(request, context) {
     let heart: OptionalItemSummaryValue = undefined;
     let sleep: OptionalItemSummaryValue = undefined;
@@ -67,7 +79,7 @@ export const handler: Handlers<HomeData> = {
     }
 
     const okr = timeline?.find(({ type }) => type === "okr") as
-      | HomeData["okr"]
+      | I["okr"]
       | undefined;
 
     const sleepApiYear = Number(
@@ -144,7 +156,7 @@ export const handler: Handlers<HomeData> = {
       location = {
         values: [
           locationData.label,
-          locationData.country.name.replace(" of America", ""),
+          countryName(locationData.country.name),
           locationData.timezone?.utcOffsetStr ?? "",
           new Date()
             .toLocaleTimeString("en-US", {
@@ -162,12 +174,10 @@ export const handler: Handlers<HomeData> = {
     const props = {
       timeline,
       okr,
-      gyroscope: {
-        location,
-        heart,
-        steps,
-        sleep,
-      },
+      location,
+      heart,
+      steps,
+      sleep,
       theme: {
         year: "2022",
         title: "Year of Teamwork",
@@ -182,30 +192,49 @@ export const handler: Handlers<HomeData> = {
   },
 };
 
-export default function Home({ data }: PageProps<HomeData>) {
-  const { timeline, okr, theme, gyroscope, query } = data;
+export default function Home({ data }: PageProps<I>) {
+  const { timeline, okr, theme, query, location, steps, sleep, heart } = data;
+  const book = timeline.find(({ type }) => type === "book");
+  const countries = Array.from(
+    new Set(
+      [...timeline]
+        .reverse()
+        .filter(({ type }) => type === "travel")
+        .map((i) =>
+          typeof i.data?.country === "object"
+            ? i.data?.country?.code?.toLowerCase()
+            : undefined
+        )
+    )
+  );
+  const travel = timeline.find(
+    ({ type, data }) =>
+      type === "travel" &&
+      typeof data?.country === "object" &&
+      data.country.code.toLowerCase() === countries[countries.length - 1]
+  );
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
-      <section className="grid-cols-2 gap-8 gap-y-12 sm:grid">
-        <div className="items-start justify-center mb-6 sm:flex">
+      <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
+        <div class="items-start justify-center mb-6 sm:flex">
           <img
             alt="Illustrated portrait of Anand in comic-book style"
             src={asset("anand.svg")}
-            className="object-contain object-bottom w-1/2 sm:w-2/3"
+            class="object-contain object-bottom w-1/2 sm:w-2/3"
             width={198}
             height={198}
             loading="eager"
           />
         </div>
-        <div className="space-y-4">
-          <h2 className="space-x-2 text-2xl font-semibold font-display">
-            <span className="wave" aria-hidden="true">
+        <div class="space-y-4">
+          <h2 class="space-x-2 text-2xl font-semibold font-display">
+            <span class="wave" aria-hidden="true">
               👋
             </span>
-            <span>{smartquotes(" Hi, I'm Anand")}</span>
+            <span>{smartQuotes(" Hi, I'm Anand")}</span>
           </h2>
-          <p className="text-lg text-gray-500">
+          <p class="text-lg text-gray-500">
             {t(
               "I'm a creative technologist and entrepreneur currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture with interior design company in Europe.",
               {},
@@ -213,7 +242,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 ({ children }: { children: ComponentChildren }) => (
                   <ExternalLink
                     href="https://pabio.com"
-                    className="underline"
+                    class="underline"
                     children={children}
                   />
                 ),
@@ -221,16 +250,16 @@ export default function Home({ data }: PageProps<HomeData>) {
             )}
           </p>
           <p>
-            {smartquotes(
+            {smartQuotes(
               "I'm also an award-winning open source contributor and Y Combinator and Forbes 30 Under 30 alum."
             )}
           </p>
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      <section className="overflow-auto">
+      <section class="overflow-auto">
         <div
-          className="grid grid-cols-5 gap-12 overflow-auto text-center"
+          class="grid grid-cols-5 gap-12 overflow-auto text-center"
           style={{ minWidth: "700px" }}
         >
           {[
@@ -263,17 +292,17 @@ export default function Home({ data }: PageProps<HomeData>) {
             <a
               key={award.title}
               href="#"
-              className="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
+              class="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
             >
               <div
-                className="absolute top-0 bottom-0 left-0 h-12 bg-left bg-no-repeat bg-contain"
+                class="absolute top-0 bottom-0 left-0 h-12 bg-left bg-no-repeat bg-contain"
                 style={{
                   backgroundImage: "url(/awards/leaf.svg)",
                   aspectRatio: "86 / 150",
                 }}
               />
               <div
-                className="absolute top-0 bottom-0 right-0 h-12 bg-right bg-no-repeat bg-contain"
+                class="absolute top-0 bottom-0 right-0 h-12 bg-right bg-no-repeat bg-contain"
                 style={{
                   backgroundImage: "url(/awards/leaf.svg)",
                   transform: "scaleX(-1)",
@@ -281,42 +310,42 @@ export default function Home({ data }: PageProps<HomeData>) {
                 }}
               />
               <img alt="" src={`/awards/${award.logo}`} />
-              <div className="-mt-1 font-medium" style={{ fontSize: "60%" }}>
+              <div class="-mt-1 font-medium" style={{ fontSize: "60%" }}>
                 {award.title}
               </div>
             </a>
           ))}
         </div>
       </section>
-      <section className="grid-cols-2 gap-8 gap-y-12 sm:grid">
-        <div className="space-y-8">
-          <article className="space-y-4">
+      <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
+        <div class="space-y-8">
+          <article class="space-y-4">
             <header>
-              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">🌈</span>
                 <SectionLink
                   label={`Theme for ${theme.year}`}
                   href="/life/themes"
                 />
               </h2>
-              <p className="text-gray-500">
+              <p class="text-gray-500">
                 Yearly theme that dictates quarterly goals
               </p>
             </header>
-            <div className="relative p-4 space-y-2 bg-white rounded shadow-sm">
-              <p className="text-2xl">{theme.title}</p>
-              <p className="h-20 overflow-hidden text-sm text-gray-500">
+            <div class="relative p-4 space-y-2 bg-white rounded shadow-sm">
+              <p class="text-2xl">{theme.title}</p>
+              <p class="h-20 overflow-hidden text-sm text-gray-500">
                 {theme.description}
               </p>
               <div
-                className="absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none"
+                class="absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none"
                 style={{
                   backgroundImage:
                     "linear-gradient(to bottom, rgba(255, 255, 255, 0.001), rgba(255, 255, 255, 1))",
                 }}
               />
             </div>
-            <div className="pt-1">
+            <div class="pt-1">
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/everything/api.json"
                 githubUrl="https://github.com/AnandChowdhary/everything"
@@ -324,21 +353,19 @@ export default function Home({ data }: PageProps<HomeData>) {
               />
             </div>
           </article>
-          <article className="space-y-4">
+          <article class="space-y-4">
             <header>
-              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">📊</span>
                 <SectionLink
                   label={okr ? `OKRs for Q${okr.data.name}` : "OKRs"}
                   href="/life/okrs"
                 />
               </h2>
-              <p className="text-gray-500">
-                Personal Objectives and Key Results
-              </p>
+              <p class="text-gray-500">Personal Objectives and Key Results</p>
             </header>
             {okr ? <OKRCards okr={okr} /> : <LoadError items="OKRs" />}
-            <div className="pt-1">
+            <div class="pt-1">
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/okrs/api.json"
                 githubUrl="https://github.com/AnandChowdhary/okrs"
@@ -347,116 +374,155 @@ export default function Home({ data }: PageProps<HomeData>) {
             </div>
           </article>
         </div>
-        <div className="space-y-8">
-          <article className="space-y-4">
+        <div class="space-y-8">
+          <article class="space-y-4 sm:h-full flex flex-col">
             <header>
-              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
-                <span aria-hidden="true">🌍</span>
-                <SectionLink label={`Live`} href="/life" />
+              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+                <span aria-hidden="true">🧬</span>
+                <SectionLink label={`Life`} href="/life" />
               </h2>
-              <p className="text-gray-500">
-                Tracking my life data in real time
-              </p>
+              <p class="text-gray-500">Tracking my life data in real time</p>
             </header>
-            <div className="relative space-y-4">
-              <div className="p-4 space-y-4 bg-white rounded shadow-sm">
-                <div className="flex space-x-2">
-                  <span aria-hidden="true">🎂</span>
-                  <div>
-                    <p>
-                      <Age />
-                      {" years old"}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Next birthday{" "}
-                      <TimeAgo date={nextBirthday.toISOString()} />
-                    </p>
-                  </div>
-                </div>
-                <div className="flex space-x-2">
-                  <span aria-hidden="true">📍</span>
-                  {gyroscope.location ? (
-                    <div>
-                      <p className="mb-1 leading-5">
-                        Last seen in{" "}
-                        <strong className="font-medium">
-                          {gyroscope.location.values[0]}
-                        </strong>
-                        {`, ${gyroscope.location.values[1]}`}
-                      </p>
-                      {gyroscope.location.values[2] && (
-                        <p className="text-sm text-gray-500">
-                          {smartquotes(
-                            `It's ${gyroscope.location.values[3]} (UTC ${gyroscope.location.values[2]})`
-                          )}
-                        </p>
-                      )}
-                    </div>
-                  ) : (
-                    <LoadError items="location" />
-                  )}
-                </div>
-                <div className="flex space-x-2">
-                  <span aria-hidden="true">🛌</span>
-                  {gyroscope.sleep ? (
-                    <div>
-                      <p className="mb-1 leading-5">
-                        <span className="mr-2">
-                          {"Slept "}
-                          <strong className="font-medium">
-                            {`${gyroscope.sleep.values[0]} hours`}
-                          </strong>
-                        </span>
-                        <p className="text-sm text-gray-500">
-                          {`${gyroscope.sleep.values[1]} hours REM sleep, ${gyroscope.sleep.values[2]}% efficient`}
-                        </p>
-                      </p>
-                    </div>
-                  ) : (
-                    <LoadError items="sleep data" />
-                  )}
-                </div>
-                <div className="flex space-x-2">
-                  <span aria-hidden="true">🏃‍♂️</span>
-                  {gyroscope.steps ? (
-                    <div>
-                      <p className="mb-1 leading-5">
-                        <strong className="font-medium">
-                          {`${gyroscope.steps.values[0]} steps`}
-                        </strong>
-                        {" walked"}
-                      </p>
-                      <p className="text-sm text-gray-500">
-                        {`${gyroscope.steps.values[1]} active calories of ${gyroscope.steps.values[2]} total`}
-                      </p>
-                    </div>
-                  ) : (
-                    <LoadError items="step count" />
-                  )}
-                </div>
-                <div className="flex space-x-2">
-                  <span aria-hidden="true">🫀</span>
-                  {gyroscope.heart ? (
-                    <div>
-                      <p className="mb-1 leading-5">
-                        <span className="mr-2">
-                          {"Readiness score is "}
-                          <strong className="font-medium">
-                            {`${gyroscope.heart.values[0]}%`}
-                          </strong>
-                        </span>
-                        <p className="text-sm text-gray-500">
-                          {`Was ${gyroscope.heart.values[1]}% on the previous day`}
-                        </p>
-                      </p>
-                    </div>
-                  ) : (
-                    <LoadError items="heart rate" />
-                  )}
+            <div class="p-4 bg-white rounded shadow-sm sm:h-full sm:flex sm:flex-col sm:justify-between space-y-4 sm:space-y-0">
+              <div class="flex space-x-2">
+                <span aria-hidden="true">🎂</span>
+                <div>
+                  <p>
+                    <Age />
+                    {" years old"}
+                  </p>
+                  <p class="text-sm text-gray-500">
+                    Next birthday <TimeAgo date={nextBirthday.toISOString()} />
+                  </p>
                 </div>
               </div>
+              <div class="flex space-x-2">
+                <span aria-hidden="true">📍</span>
+                {location ? (
+                  <div>
+                    <p class="mb-1 leading-5">
+                      Last seen in{" "}
+                      <strong class="font-medium">{location.values[0]}</strong>
+                      {`, ${location.values[1]}`}
+                    </p>
+                    {location.values[2] && (
+                      <p class="text-sm text-gray-500">
+                        {smartQuotes(
+                          `It's ${location.values[3]} (UTC ${location.values[2]})`
+                        )}
+                      </p>
+                    )}
+                  </div>
+                ) : (
+                  <LoadError items="location" />
+                )}
+              </div>
+              <div class="flex space-x-2">
+                <span aria-hidden="true">🛌</span>
+                {sleep ? (
+                  <div>
+                    <p class="mb-1 leading-5">
+                      <span class="mr-2">
+                        {"Slept "}
+                        <strong class="font-medium">
+                          {`${sleep.values[0]} hours`}
+                        </strong>
+                      </span>
+                      <p class="text-sm text-gray-500">
+                        {`${sleep.values[1]} hours REM sleep, ${sleep.values[2]}% efficient`}
+                      </p>
+                    </p>
+                  </div>
+                ) : (
+                  <LoadError items="sleep data" />
+                )}
+              </div>
+              <div class="flex space-x-2">
+                <span aria-hidden="true">🏃‍♂️</span>
+                {steps ? (
+                  <div>
+                    <p class="mb-1 leading-5">
+                      <strong class="font-medium">
+                        {`${steps.values[0]} steps`}
+                      </strong>
+                      {" walked"}
+                    </p>
+                    <p class="text-sm text-gray-500">
+                      {`${steps.values[1]} active calories of ${steps.values[2]} total`}
+                    </p>
+                  </div>
+                ) : (
+                  <LoadError items="step count" />
+                )}
+              </div>
+              <div class="flex space-x-2">
+                <span aria-hidden="true">🫀</span>
+                {heart ? (
+                  <div>
+                    <p class="mb-1 leading-5">
+                      <span class="mr-2">
+                        {"Readiness score is "}
+                        <strong class="font-medium">
+                          {`${heart.values[0]}%`}
+                        </strong>
+                      </span>
+                      <p class="text-sm text-gray-500">
+                        {`Was ${heart.values[1]}% on the previous day`}
+                      </p>
+                    </p>
+                  </div>
+                ) : (
+                  <LoadError items="heart rate" />
+                )}
+              </div>
+              <div class="flex space-x-2">
+                <span aria-hidden="true">📚</span>
+                {book ? (
+                  <div>
+                    <p class="mb-1 leading-5">
+                      <span class="mr-2">
+                        {"Finished reading "}
+                        <strong class="font-medium">{book.title}</strong>
+                      </span>
+                      <p class="text-sm text-gray-500">
+                        {`Completed in ${new Date(book.date).toLocaleDateString(
+                          "en-US",
+                          {
+                            month: "long",
+                            year: "numeric",
+                          }
+                        )}`}
+                      </p>
+                    </p>
+                  </div>
+                ) : (
+                  <LoadError items="heart rate" />
+                )}
+              </div>
+              <div class="flex space-x-2">
+                <span aria-hidden="true">🛩️</span>
+                {travel ? (
+                  <div>
+                    <p class="mb-1 leading-5">
+                      <span class="mr-2">
+                        {"Traveled to "}
+                        <strong class="font-medium">{`${countries.length} countries`}</strong>
+                      </span>
+                      <p class="text-sm text-gray-500">
+                        {`Most recently to ${
+                          typeof travel.data?.country === "object"
+                            ? countryName(travel.data.country.name)
+                            : travel.title
+                        }`}
+                      </p>
+                    </p>
+                  </div>
+                ) : (
+                  <LoadError items="heart rate" />
+                )}
+              </div>
             </div>
-            <div className="pt-1">
+            <div class="pt-1">
               <DataFooterLinks
                 apiUrl="https://github.com/AnandChowdhary/life"
                 githubUrl="https://github.com/AnandChowdhary/life"
@@ -464,14 +530,14 @@ export default function Home({ data }: PageProps<HomeData>) {
               />
             </div>
           </article>
-          <article className="space-y-2">
+          {/* <article class="space-y-2">
             <header>
-              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">📇</span>
                 <SectionLink label={`Connect`} href="/contact" />
               </h2>
             </header>
-            <div className="flex flex-wrap items-center -mx-1 space-x-4">
+            <div class="flex flex-wrap items-center -mx-1 space-x-4">
               <a
                 href="https://github.com/AnandChowdhary"
                 target="_blank"
@@ -502,15 +568,15 @@ export default function Home({ data }: PageProps<HomeData>) {
               </a>
             </div>
           </article>
-          {/* <article className="space-y-4">
+          <article class="space-y-4">
             <header>
-              <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">🥷</span>
                 <span>Hacker News feed</span>
               </h2>
-              <p className="text-gray-500">My top projects on the top of HN</p>
+              <p class="text-gray-500">My top projects on the top of HN</p>
             </header>
-            <ul className="block p-4 space-y-4 bg-white rounded shadow-sm">
+            <ul class="block p-4 space-y-4 bg-white rounded shadow-sm">
               {[
                 {
                   id: 30468793,
@@ -534,9 +600,9 @@ export default function Home({ data }: PageProps<HomeData>) {
                     "Launch HN: Pabio (YC S21) – Interior design and furniture rental as a service",
                 },
               ].map(({ id, title, points, comments }) => (
-                <li className="space-y-2" key={id}>
-                  <div className="leading-6">{smartquotes(title)}</div>
-                  <footer className="flex flex-wrap space-x-3 text-sm text-gray-500">
+                <li class="space-y-2" key={id}>
+                  <div class="leading-6">{smartQuotes(title)}</div>
+                  <footer class="flex flex-wrap space-x-3 text-sm text-gray-500">
                     <span>{points} points</span>
                     <span>{comments} comments</span>
                   </footer>
@@ -546,16 +612,16 @@ export default function Home({ data }: PageProps<HomeData>) {
           </article> */}
         </div>
       </section>
-      <section className="space-y-4">
+      <section class="space-y-4">
         <header>
-          <h2 className="flex items-center space-x-2 text-xl font-semibold font-display">
+          <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">🕰</span>
             <SectionLink
               label={`Changelog`}
               href={`/archive/${new Date(timeline[0].date).getUTCFullYear()}`}
             />
           </h2>
-          <p className="text-gray-500">
+          <p class="text-gray-500">
             {"The latest from my desk, curated from different sources."}
           </p>
         </header>
