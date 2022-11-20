@@ -1,23 +1,17 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
+import { TimelineTravel } from "https://esm.sh/timeline-types@2.0.0/index.d.ts";
 import * as colors from "twind/colors";
 import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../../components/data/OKRs.tsx";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
-import { fetchJson, fetchText } from "../../utils/data.tsx";
-import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
-import type {
-  LifeData,
-  LocationApiResult,
-  OptionalItemSummaryValue,
-  OuraActivity,
-  OuraReadiness,
-  OuraSleepData,
-  Timeline as ITimeline,
-} from "../../utils/interfaces.ts";
+import { fetchLifeData, fetchText } from "../../utils/data.tsx";
+import type { AllLifeDataSummary } from "../../utils/interfaces.ts";
 import { countryName } from "../../utils/string.ts";
-function toHoursAndMinutes(totalMinutes: number) {
+import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
+
+export function toHoursAndMinutes(totalMinutes: number) {
   const minutes = totalMinutes % 60;
   const hours = Math.floor(totalMinutes / 60);
   return `${hours > 0 ? "+" : ""}${padTo2Digits(hours)}:${padTo2Digits(
@@ -28,137 +22,81 @@ function padTo2Digits(num: number) {
   return num.toString().padStart(2, "0");
 }
 
-const birthdayThisYear = new Date("1997-12-29");
-birthdayThisYear.setUTCFullYear(new Date().getUTCFullYear());
-const nextBirthday =
-  Date.now() < birthdayThisYear.getTime()
-    ? birthdayThisYear
-    : new Date(birthdayThisYear.getTime() + 31536000000);
+interface LifeData extends AllLifeDataSummary {
+  query: string;
+  music?: {
+    name: string;
+    plays: number;
+    percent: number;
+  }[];
+  contributionsGraph?: string;
+}
 
 export const handler: Handlers<LifeData> = {
   async GET(request, context) {
-    const heart: OptionalItemSummaryValue = undefined;
-    let sleep: Record<string, OuraSleepData> | undefined = undefined;
-    let activity: Record<string, OuraActivity> | undefined = undefined;
-    let location: OptionalItemSummaryValue = undefined;
-    let timeline: ITimeline = [];
-    let contributionsApi: string | undefined = undefined;
-    let lastWeekMusicApi: string | undefined = undefined;
+    let lifeData: AllLifeDataSummary | undefined = undefined;
+    let music: LifeData["music"] = undefined;
+    let contributionsGraph: LifeData["contributionsGraph"] = undefined;
 
     try {
-      const [_timeline, _location, _contributionsApi, _lastWeekMusicApi] =
-        await Promise.all([
-          fetchJson<ITimeline>(
-            "https://anandchowdhary.github.io/everything/api.json"
-          ),
-          fetchJson<LocationApiResult>(
-            "https://anandchowdhary.github.io/location/api.json"
-          ),
+      const [_lifeData, _contributionsApi, _lastWeekMusicApi] =
+        await Promise.allSettled([
+          fetchLifeData(),
           fetchText("https://github.com/users/AnandChowdhary/contributions"),
           fetchText(
             "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
           ),
         ]);
-      timeline = _timeline;
-      contributionsApi = _contributionsApi;
-      lastWeekMusicApi = _lastWeekMusicApi;
-      if (_location)
-        location = {
-          values: [
-            _location.label,
-            countryName(_location.country.name),
-            toHoursAndMinutes(_location.timezone?.utcOffset ?? 0),
-            new Date()
-              .toLocaleTimeString("en-US", {
-                timeStyle: "short",
-                timeZone: _location?.timezone?.name,
-              })
-              .toLowerCase(),
-            _location.country.code,
-            _location.approximateCoordinates.join(),
-          ],
-          timeAgo: _location.updatedAt,
-        };
-    } catch (error) {
-      //
-    }
 
-    const okr = timeline?.find(({ type }) => type === "okr") as
-      | LifeData["okr"]
-      | undefined;
-    let contributionsGraph: string | undefined = undefined;
+      if (_lifeData.status !== "fulfilled")
+        throw new Error("Failed to fetch life data");
+      lifeData = _lifeData.value;
 
-    try {
-      const [sleepData, activityData, readinessData] = await Promise.all([
-        fetchJson<Record<string, OuraSleepData>>(
-          `https://anandchowdhary.github.io/life/data/oura-sleep/summary/days.json`
-        ),
-        fetchJson<Record<string, OuraActivity>>(
-          `https://anandchowdhary.github.io/life/data/oura-activity/summary/days.json`
-        ),
-        fetchJson<Record<string, OuraReadiness>>(
-          `https://anandchowdhary.github.io/life/data/oura-readiness/summary/days.json`
-        ),
-      ]);
-      if (contributionsApi)
+      if (_contributionsApi.status === "fulfilled")
         contributionsGraph =
           `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
-          contributionsApi
+          _contributionsApi.value
             .split(
               `<svg width="717" height="112" class="js-calendar-graph-svg">`
             )[1]
             .split("</svg>")[0] +
           "</svg>";
-      sleep = sleepData;
-      activity = activityData;
+
+      if (_lastWeekMusicApi.status === "fulfilled") {
+        music = _lastWeekMusicApi.value.split("\n").map((line) => {
+          return {
+            name: line
+              .split("▋")[0]
+              .split("▌")[0]
+              .split("▌")[0]
+              .split("░")[0]
+              .split("█")[0]
+              .split("▊")[0]
+              .split("▍")[0]
+              .trim(),
+            plays: parseInt(line.replace(" plays", "").split(" ").pop() ?? "0"),
+            percent:
+              parseInt(line.replace(" plays", "").split(" ").pop() ?? "0") /
+              (_lastWeekMusicApi.value ?? "")
+                .split("\n")
+                .map((line) =>
+                  parseInt(line.replace(" plays", "").split(" ").pop() ?? "0")
+                )
+                .reduce((a, b) => a + b, 0),
+          };
+        });
+      }
     } catch (error) {
-      //
+      // Ignore errors for now
     }
 
-    let music: LifeData["music"] | undefined = undefined;
-    if (lastWeekMusicApi) {
-      music = lastWeekMusicApi.split("\n").map((line) => {
-        return {
-          name: line
-            .split("▋")[0]
-            .split("▌")[0]
-            .split("▌")[0]
-            .split("░")[0]
-            .split("█")[0]
-            .split("▊")[0]
-            .split("▍")[0]
-            .trim(),
-          plays: parseInt(line.replace(" plays", "").split(" ").pop() ?? "0"),
-          percent:
-            parseInt(line.replace(" plays", "").split(" ").pop() ?? "0") /
-            (lastWeekMusicApi ?? "")
-              .split("\n")
-              .map((line) =>
-                parseInt(line.replace(" plays", "").split(" ").pop() ?? "0")
-              )
-              .reduce((a, b) => a + b, 0),
-        };
-      });
-    }
+    if (!lifeData) throw new Error("Failed to fetch life data");
 
-    const props = {
-      timeline,
-      okr,
-      gyroscope: {
-        location,
-        heart,
-        activity,
-        sleep,
-      },
-      theme: {
-        year: "2022",
-        title: "Year of Teamwork",
-        description:
-          "I want to delegate more and plan for further into the future, do a better job at internalizing feedback, and continue to do the things I did right while investing more in my support system.",
-      },
+    const props: LifeData = {
+      ...lifeData,
+      music,
       contributionsGraph,
       query: new URL(request.url).search,
-      music,
     };
     const response = await context.render(props);
     response.headers.set("Cache-Control", "public, max-age=600");
@@ -167,7 +105,8 @@ export const handler: Handlers<LifeData> = {
 };
 
 export default function Home({ data }: PageProps<LifeData>) {
-  const { okr, theme, gyroscope, contributionsGraph, music } = data;
+  const { okr, theme, contributionsGraph, music, location, activity, sleep } =
+    data;
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
@@ -197,7 +136,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <div class="relative space-y-2 bg-white p-4 rounded shadow-sm">
             <p class="text-2xl">{theme.title}</p>
             <p class="h-20 overflow-hidden text-sm text-gray-500">
-              {theme.description}
+              {theme.data.description}
             </p>
             <div
               class="absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none"
@@ -208,9 +147,8 @@ export default function Home({ data }: PageProps<LifeData>) {
             />
           </div>
           <DataFooterLinks
-            apiUrl="https://anandchowdhary.github.io/everything/api.json"
-            githubUrl="https://github.com/AnandChowdhary/everything"
-            links={[{ label: "View past themes", href: "/life/themes" }]}
+            apiUrl="https://anandchowdhary.github.io/themes/api.json"
+            githubUrl="https://github.com/AnandChowdhary/themes"
           />
         </article>
         <article class="space-y-4">
@@ -225,7 +163,6 @@ export default function Home({ data }: PageProps<LifeData>) {
           <DataFooterLinks
             apiUrl="https://anandchowdhary.github.io/okrs/api.json"
             githubUrl="https://github.com/AnandChowdhary/okrs"
-            links={[{ label: "View past OKRs", href: "/life/okrs" }]}
           />
         </article>
         <article class="space-y-4">
@@ -237,10 +174,11 @@ export default function Home({ data }: PageProps<LifeData>) {
             <p class="text-gray-500">Tracking my location in real time</p>
           </header>
           <div class="relative bg-white rounded shadow-sm">
-            {gyroscope.location && (
+            {location && (
               <img
                 alt=""
-                src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${gyroscope.location.values[5]
+                src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${location.approximateCoordinates
+                  .join()
                   .split(",")
                   .reverse()
                   .join()},12/368x200?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
@@ -248,25 +186,28 @@ export default function Home({ data }: PageProps<LifeData>) {
               />
             )}
             <div class="p-4">
-              {gyroscope.location ? (
+              {location ? (
                 <div class="space-y-2">
                   <p class="flex items-center mb-1 space-x-3 leading-5">
-                    {gyroscope.location.values[4] && (
-                      <img
-                        alt=""
-                        src={getFlagUrl(gyroscope.location.values[4])}
-                        class="rounded-sm w-5"
-                      />
-                    )}
-                    <strong class="font-medium">
-                      {gyroscope.location.values[0]}
-                    </strong>
-                    {`, ${gyroscope.location.values[1]}`}
+                    <img
+                      alt=""
+                      src={getFlagUrl(location.country.code)}
+                      class="rounded-sm w-5"
+                    />
+                    <strong class="font-medium">{location.label}</strong>
+                    {`, ${countryName(location.country.name)}`}
                   </p>
-                  {gyroscope.location.values[2] && (
+                  {location.timezone && (
                     <p class="text-sm text-gray-500">
                       {smartquotes(
-                        `It's ${gyroscope.location.values[3]} (UTC ${gyroscope.location.values[2]})`
+                        `It's ${new Date()
+                          .toLocaleTimeString("en-US", {
+                            timeStyle: "short",
+                            timeZone: location.timezone?.name,
+                          })
+                          .toLowerCase()} (UTC ${toHoursAndMinutes(
+                          location.timezone.utcOffset ?? 0
+                        )})`
                       )}
                     </p>
                   )}
@@ -279,7 +220,6 @@ export default function Home({ data }: PageProps<LifeData>) {
           <DataFooterLinks
             apiUrl="https://anandchowdhary.github.io/location/api.json"
             githubUrl="https://github.com/AnandChowdhary/location"
-            links={[{ label: "View past location", href: "/life/location" }]}
           />
         </article>
         <article class="space-y-4">
@@ -291,26 +231,27 @@ export default function Home({ data }: PageProps<LifeData>) {
             <p class="text-gray-500">Most recently visited new countries</p>
           </header>
           <div class="space-y-2">
-            {Array.from(
-              new Set(
-                [...data.timeline.filter((i) => i.type === "travel")]
-                  .reverse()
-                  .map((i) =>
-                    typeof i.data?.country === "object"
-                      ? i.data?.country?.code?.toLowerCase()
-                      : undefined
+            {(
+              Array.from(
+                new Set(
+                  (
+                    [
+                      ...data.timeline.filter((i) => i.type === "travel"),
+                    ] as TimelineTravel[]
                   )
-              )
-            )
-              .map((key) =>
-                data.timeline.findLast(
-                  (i) =>
-                    i.type === "travel" &&
-                    typeof i.data?.country === "object" &&
-                    i.data?.country?.code?.toLowerCase() === key
+                    .reverse()
+                    .map((i) => i.data.country.code.toLowerCase())
                 )
               )
-              .filter((item) => !!item)
+                .map((key) =>
+                  data.timeline.findLast(
+                    (i) =>
+                      i.type === "travel" &&
+                      i.data.country.code.toLowerCase() === key
+                  )
+                )
+                .filter((item) => !!item) as TimelineTravel[]
+            )
               .reverse()
               .slice(0, 5)
               .sort(
@@ -328,9 +269,9 @@ export default function Home({ data }: PageProps<LifeData>) {
                     <div class="min-w-12 relative">
                       <img
                         alt=""
-                        src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${location.data?.approximateCoordinates
-                          ?.reverse()
-                          ?.join(
+                        src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${location.data.approximateCoordinates
+                          .reverse()
+                          .join(
                             ","
                           )},6/48x48?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
                         width={48}
@@ -509,8 +450,8 @@ export default function Home({ data }: PageProps<LifeData>) {
                 <span>Active</span>
               </div>
             </div>
-            {gyroscope.activity ? (
-              Object.entries(gyroscope.activity)
+            {activity ? (
+              Object.entries(activity)
                 .filter(([_, { cal_total }]) => cal_total > 0)
                 .slice(-7)
                 .map(([date, { cal_total, cal_active }]) => (
@@ -523,7 +464,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                           height: `${Math.round(
                             (100 * cal_total) /
                               Math.max(
-                                ...Object.values(gyroscope.activity ?? {}).map(
+                                ...Object.values(activity ?? {}).map(
                                   (x) => x.cal_total ?? 0
                                 )
                               )
@@ -604,8 +545,8 @@ export default function Home({ data }: PageProps<LifeData>) {
                 <span>REM</span>
               </div>
             </div>
-            {gyroscope.sleep ? (
-              Object.entries(gyroscope.sleep)
+            {sleep ? (
+              Object.entries(sleep)
                 .filter(([_, { total }]) => total > 0)
                 .slice(-7)
                 .map(([date, { deep, rem, total }]) => (
@@ -618,7 +559,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                           height: `${Math.round(
                             (100 * total) /
                               Math.max(
-                                ...Object.values(gyroscope.sleep ?? {}).map(
+                                ...Object.values(sleep ?? {}).map(
                                   (x) => x.total ?? 0
                                 )
                               )
@@ -676,8 +617,8 @@ export default function Home({ data }: PageProps<LifeData>) {
             <p class="text-gray-500">Tracked every day using Oura</p>
           </header>
           <div class="flex relative -mx-2 h-64">
-            {gyroscope.activity ? (
-              Object.entries(gyroscope.activity)
+            {activity ? (
+              Object.entries(activity)
                 .filter(([_, { steps }]) => steps > 0)
                 .slice(-7)
                 .map(([date, { steps }]) => (
@@ -690,7 +631,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                           height: `${Math.round(
                             (100 * steps) /
                               Math.max(
-                                ...Object.values(gyroscope.activity ?? {}).map(
+                                ...Object.values(activity ?? {}).map(
                                   (x) => x.steps ?? 0
                                 )
                               )
@@ -731,8 +672,8 @@ export default function Home({ data }: PageProps<LifeData>) {
             <p class="text-gray-500">Tracked every day using Oura</p>
           </header>
           <div class="flex relative -mx-2 h-64">
-            {gyroscope.activity ? (
-              Object.entries(gyroscope.activity)
+            {activity ? (
+              Object.entries(activity)
                 .filter(([_, { score }]) => score > 0)
                 .slice(-7)
                 .map(([date, { score }]) => (

@@ -1,70 +1,8 @@
-export type Timeline = {
-  type: string;
-  url: string;
-  source: string;
-  title: string;
-  date: string;
-  description?: string;
-  data?: {
-    publisher?: string;
-    author?: string;
-    description?: string;
-    image?: string;
-    authors?: string[];
-    excerpt?: string;
-    words?: number;
-    location?: string;
-    emoji?: string;
-    stars?: number;
-    issues?: number;
-    label?: string;
-    forks?: number;
-    watchers?: number;
-    language?: string;
-    languageColor?: string;
-    city?: string;
-    country?: string | { code: string; name: string };
-    img?: string;
-    duration?: string;
-    embed?: string;
-    name?: number;
-    progress?: number;
-    success?: number;
-    coordinates?: number[];
-    approximateCoordinates?: number[];
-    objectives?: {
-      name: string;
-      progress: number;
-      success: number;
-      key_results: {
-        name: string;
-        current_result: number;
-        target_result: number;
-        progress: number;
-        success: number;
-      }[];
-    }[];
-  };
-}[];
-
-interface Summary {
-  count: number;
-  average: number;
-  sum: number;
-  minimum: number;
-  maximum: number;
-  breakdown: ({ start: string; end: string } & Omit<Summary, "breakdown">)[];
-}
-
-export interface Item {
-  id: number;
-  synced_at: string;
-  hash: string;
-  date: string;
-  type: string;
-  value: number;
-  unit: string;
-}
+import type {
+  Timeline,
+  TimelineOkr,
+  TimelineTheme,
+} from "https://esm.sh/timeline-types@2.0.0/index.d.ts";
 
 interface ItemSummaryValue {
   values: string[];
@@ -122,72 +60,12 @@ export interface LocationApiResult {
   };
 }
 
-export interface HomeData {
-  okr?: {
-    title: string;
-    description: string;
-    data: {
-      name: number;
-      progress: number;
-      success: number;
-      objectives: {
-        name: string;
-        progress: number;
-        success: number;
-        key_results: {
-          name: string;
-          current_result: number;
-          target_result: number;
-          progress: number;
-          success: number;
-        }[];
-      }[];
-    };
-  };
-  gyroscope: {
-    location: OptionalItemSummaryValue;
-    heart: OptionalItemSummaryValue;
-    activity?: Record<string, OuraActivity>;
-    sleep?: Record<string, OuraSleepData>;
-  };
-  theme: { year: string; title: string; description: string };
+export interface AllLifeDataSummary {
   timeline: Timeline;
-  query: string;
-  music?: {
-    name: string;
-    plays: number;
-    percent: number;
-  }[];
-}
-
-export type LifeData = HomeData & { contributionsGraph?: string };
-
-export interface IOkr {
-  title: string;
-  description: string;
-  data: {
-    name: number;
-    progress: number;
-    success: number;
-    objectives: [
-      {
-        name: string;
-        progress: number;
-        success: number;
-        key_results: {
-          name: string;
-          current_result: number;
-          target_result: number;
-          progress: number;
-          success: number;
-        }[];
-      }
-    ];
-  };
-}
-
-export interface ITheme {
-  year: string;
-  title: string;
-  description: string;
+  okr: TimelineOkr;
+  theme: TimelineTheme;
+  sleep?: Record<string, OuraSleepData>;
+  activity?: Record<string, OuraActivity>;
+  readiness?: Record<string, OuraReadiness>;
+  location?: LocationApiResult;
 }

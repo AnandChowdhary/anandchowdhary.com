@@ -1,6 +1,12 @@
 import { asset } from "$fresh/runtime.ts";
+import { toHoursAndMinutes } from "./life/index.tsx";
+import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
+import {
+  TimelineBook,
+  TimelineTravel,
+} from "https://esm.sh/timeline-types@2.0.0/index.d.ts";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
@@ -10,19 +16,9 @@ import { LoadError } from "../components/text/LoadError.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
 import Age from "../islands/Age.tsx";
 import TimeAgo from "../islands/TimeAgo.tsx";
-import { categoryData, fetchJson } from "../utils/data.tsx";
+import { categoryData, fetchLifeData } from "../utils/data.tsx";
 import { t } from "../utils/i18n.tsx";
-import type {
-  ApiWeeklyValues,
-  IOkr,
-  ITheme,
-  LocationApiResult,
-  OptionalItemSummaryValue,
-  OuraActivity,
-  OuraReadiness,
-  OuraSleepData,
-  Timeline as ITimeline,
-} from "../utils/interfaces.ts";
+import type { AllLifeDataSummary } from "../utils/interfaces.ts";
 import { countryName } from "../utils/string.ts";
 
 const birthdayThisYear = new Date("1997-12-29");
@@ -32,158 +28,28 @@ const nextBirthday =
     ? birthdayThisYear
     : new Date(birthdayThisYear.getTime() + 31536000000);
 
-interface I {
-  okr?: IOkr;
-  timeline: ITimeline;
+interface HomeData extends AllLifeDataSummary {
   query: string;
-  theme: ITheme;
-  location: OptionalItemSummaryValue;
-  heart: OptionalItemSummaryValue;
-  steps: OptionalItemSummaryValue;
-  sleep: OptionalItemSummaryValue;
 }
 
-export const handler: Handlers<I> = {
+export const handler: Handlers<HomeData> = {
   async GET(request, context) {
-    let heart: OptionalItemSummaryValue = undefined;
-    let sleep: OptionalItemSummaryValue = undefined;
-    let steps: OptionalItemSummaryValue = undefined;
-    let location: OptionalItemSummaryValue = undefined;
-    let timeline: ITimeline = [];
-    let sleepApi: ApiWeeklyValues = { weeks: {} };
-    let activityApi: ApiWeeklyValues = { weeks: {} };
-    let readinessApi: ApiWeeklyValues = { weeks: {} };
+    let lifeData: AllLifeDataSummary | undefined = undefined;
 
     try {
-      const [_timeline, _sleepApi, _activityApi, _readinessApi] =
-        await Promise.all([
-          fetchJson<ITimeline>(
-            "https://anandchowdhary.github.io/everything/api.json"
-          ),
-          fetchJson<ApiWeeklyValues>(
-            "https://anandchowdhary.github.io/life/data/oura-sleep/api.json"
-          ),
-          fetchJson<ApiWeeklyValues>(
-            "https://anandchowdhary.github.io/life/data/oura-activity/api.json"
-          ),
-          fetchJson<ApiWeeklyValues>(
-            "https://anandchowdhary.github.io/life/data/oura-readiness/api.json"
-          ),
-        ]);
-      timeline = _timeline;
-      sleepApi = _sleepApi;
-      activityApi = _activityApi;
-      readinessApi = _readinessApi;
+      const [_lifeData] = await Promise.allSettled([fetchLifeData()]);
+
+      if (_lifeData.status !== "fulfilled")
+        throw new Error("Failed to fetch life data");
+      lifeData = _lifeData.value;
     } catch (error) {
-      //
+      // Ignore errors for now
     }
 
-    const okr = timeline?.find(({ type }) => type === "okr") as
-      | I["okr"]
-      | undefined;
+    if (!lifeData) throw new Error("Failed to fetch life data");
 
-    const sleepApiYear = Number(
-      Object.keys(sleepApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
-    );
-    const activityApiYear = Number(
-      Object.keys(activityApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
-    );
-    const readinessApiYear = Number(
-      Object.keys(readinessApi.weeks).sort((a, b) => Number(b) - Number(a))[0]
-    );
-
-    try {
-      const [sleepData, activityData, readinessData, locationData] =
-        await Promise.all([
-          fetchJson<Record<string, OuraSleepData>>(
-            `https://anandchowdhary.github.io/life/data/oura-sleep/summary/weeks/2022/${sleepApi.weeks[
-              sleepApiYear
-            ].pop()}`
-          ),
-          fetchJson<Record<string, OuraActivity>>(
-            `https://anandchowdhary.github.io/life/data/oura-activity/summary/weeks/2022/${activityApi.weeks[
-              activityApiYear
-            ].pop()}`
-          ),
-          fetchJson<Record<string, OuraReadiness>>(
-            `https://anandchowdhary.github.io/life/data/oura-readiness/summary/weeks/2022/${readinessApi.weeks[
-              readinessApiYear
-            ].pop()}`
-          ),
-          fetchJson<LocationApiResult>(
-            "https://anandchowdhary.github.io/location/api.json"
-          ),
-        ]);
-      const sleepDataLast = Object.entries(sleepData)
-        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-        .find((item) => item[1].total > 1);
-      const activityDataLast = Object.entries(activityData)
-        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-        .find((item) => item[1].total > 1);
-      const readinessDataLast = Object.entries(readinessData)
-        .sort((a, b) => new Date(b[0]).getTime() - new Date(a[0]).getTime())
-        .find((item) => item[1].score_resting_hr > 1);
-
-      if (sleepDataLast)
-        sleep = {
-          values: [
-            (sleepDataLast[1].total / 3600).toLocaleString("en-US", {
-              maximumFractionDigits: 1,
-            }),
-            (sleepDataLast[1].rem / 3600).toLocaleString("en-US", {
-              maximumFractionDigits: 1,
-            }),
-            sleepDataLast[1].efficiency.toLocaleString("en-US"),
-          ],
-        };
-      if (activityDataLast)
-        steps = {
-          values: [
-            Math.round(activityDataLast[1].steps).toLocaleString("en-US"),
-            Math.round(activityDataLast[1].cal_active).toLocaleString("en-US"),
-            Math.round(activityDataLast[1].cal_total).toLocaleString("en-US"),
-          ],
-        };
-      if (readinessDataLast)
-        heart = {
-          values: [
-            Math.round(readinessDataLast[1].score).toLocaleString("en-US"),
-            Math.round(readinessDataLast[1].score_previous_day).toLocaleString(
-              "en-US"
-            ),
-          ],
-        };
-      location = {
-        values: [
-          locationData.label,
-          countryName(locationData.country.name),
-          locationData.timezone?.utcOffsetStr ?? "",
-          new Date()
-            .toLocaleTimeString("en-US", {
-              timeStyle: "short",
-              timeZone: locationData?.timezone?.name,
-            })
-            .toLowerCase(),
-        ],
-        timeAgo: locationData.updatedAt,
-      };
-    } catch (error) {
-      //
-    }
-
-    const props = {
-      timeline,
-      okr,
-      location,
-      heart,
-      steps,
-      sleep,
-      theme: {
-        year: "2022",
-        title: "Year of Teamwork",
-        description:
-          "I want to delegate more and plan for further into the future, do a better job at internalizing feedback, and continue to do the things I did right while investing more in my support system.",
-      },
+    const props: HomeData = {
+      ...lifeData,
       query: new URL(request.url).search,
     };
     const response = await context.render(props);
@@ -192,27 +58,45 @@ export const handler: Handlers<I> = {
   },
 };
 
-export default function Home({ data }: PageProps<I>) {
-  const { timeline, okr, theme, query, location, steps, sleep, heart } = data;
-  const book = timeline.find(({ type }) => type === "book");
+const getLastKey = (obj: Record<string, unknown>) =>
+  Object.keys(obj)
+    .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
+    .filter((item) => Object.values(Object(obj)[item]).length > 0)[0];
+
+export default function Home({ data }: PageProps<HomeData>) {
+  const {
+    timeline,
+    okr,
+    theme,
+    query,
+    location,
+    activity: activityData,
+    readiness: readinessData,
+    sleep: sleepData,
+  } = data;
+  const sleep = sleepData ? sleepData[getLastKey(sleepData)] : undefined;
+  const activity = activityData
+    ? activityData[getLastKey(activityData)]
+    : undefined;
+  const readiness = readinessData
+    ? readinessData[getLastKey(readinessData)]
+    : undefined;
+  const book = timeline.find(({ type }) => type === "book") as TimelineBook;
   const countries = Array.from(
     new Set(
-      [...timeline]
-        .reverse()
-        .filter(({ type }) => type === "travel")
-        .map((i) =>
-          typeof i.data?.country === "object"
-            ? i.data?.country?.code?.toLowerCase()
-            : undefined
-        )
+      (
+        [...timeline]
+          .reverse()
+          .filter(({ type }) => type === "travel") as TimelineTravel[]
+      ).map((i) => i.data.country.code.toLowerCase())
     )
   );
   const travel = timeline.find(
     ({ type, data }) =>
       type === "travel" &&
-      typeof data?.country === "object" &&
+      typeof data.country === "object" &&
       data.country.code.toLowerCase() === countries[countries.length - 1]
-  );
+  ) as TimelineTravel;
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
@@ -324,7 +208,7 @@ export default function Home({ data }: PageProps<I>) {
               <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
                 <span aria-hidden="true">🌈</span>
                 <SectionLink
-                  label={`Theme for ${theme.year}`}
+                  label={`Theme for ${theme.data.year}`}
                   href="/life/themes"
                 />
               </h2>
@@ -335,7 +219,7 @@ export default function Home({ data }: PageProps<I>) {
             <div class="relative p-4 space-y-2 bg-white rounded shadow-sm">
               <p class="text-2xl">{theme.title}</p>
               <p class="h-20 overflow-hidden text-sm text-gray-500">
-                {theme.description}
+                {theme.data.description}
               </p>
               <div
                 class="absolute bottom-0 left-0 right-0 h-24 rounded-b pointer-events-none"
@@ -347,9 +231,8 @@ export default function Home({ data }: PageProps<I>) {
             </div>
             <div class="pt-1">
               <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/everything/api.json"
-                githubUrl="https://github.com/AnandChowdhary/everything"
-                // links={[{ label: "View past themes", href: "/life/themes" }]}
+                apiUrl="https://anandchowdhary.github.io/themes/api.json"
+                githubUrl="https://github.com/AnandChowdhary/themes"
               />
             </div>
           </article>
@@ -369,7 +252,6 @@ export default function Home({ data }: PageProps<I>) {
               <DataFooterLinks
                 apiUrl="https://anandchowdhary.github.io/okrs/api.json"
                 githubUrl="https://github.com/AnandChowdhary/okrs"
-                // links={[{ label: "View past OKRs", href: "/life/okrs" }]}
               />
             </div>
           </article>
@@ -384,7 +266,7 @@ export default function Home({ data }: PageProps<I>) {
               <p class="text-gray-500">Tracking my life data in real time</p>
             </header>
             <div class="p-4 bg-white rounded shadow-sm sm:h-full sm:flex sm:flex-col sm:justify-between space-y-4 sm:space-y-0">
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">🎂</span>
                 <div>
                   <p>
@@ -396,19 +278,26 @@ export default function Home({ data }: PageProps<I>) {
                   </p>
                 </div>
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">📍</span>
                 {location ? (
                   <div>
                     <p class="mb-1 leading-5">
                       Last seen in{" "}
-                      <strong class="font-medium">{location.values[0]}</strong>
-                      {`, ${location.values[1]}`}
+                      <strong class="font-medium">{location.label}</strong>
+                      {`, ${countryName(location.country.name)}`}
                     </p>
-                    {location.values[2] && (
+                    {location.timezone && (
                       <p class="text-sm text-gray-500">
-                        {smartQuotes(
-                          `It's ${location.values[3]} (UTC ${location.values[2]})`
+                        {smartquotes(
+                          `It's ${new Date()
+                            .toLocaleTimeString("en-US", {
+                              timeStyle: "short",
+                              timeZone: location.timezone?.name,
+                            })
+                            .toLowerCase()} (UTC ${toHoursAndMinutes(
+                            location.timezone.utcOffset ?? 0
+                          )})`
                         )}
                       </p>
                     )}
@@ -417,7 +306,7 @@ export default function Home({ data }: PageProps<I>) {
                   <LoadError items="location" />
                 )}
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">🛌</span>
                 {sleep ? (
                   <div>
@@ -425,11 +314,17 @@ export default function Home({ data }: PageProps<I>) {
                       <span class="mr-2">
                         {"Slept "}
                         <strong class="font-medium">
-                          {`${sleep.values[0]} hours`}
+                          {`${(sleep.total / 3600).toLocaleString("en-US", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 1,
+                          })} hours`}
                         </strong>
                       </span>
                       <p class="text-sm text-gray-500">
-                        {`${sleep.values[1]} hours REM sleep, ${sleep.values[2]}% efficient`}
+                        {`${(sleep.rem / 3600).toLocaleString("en-US", {
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 1,
+                        })} hours REM sleep, ${sleep.efficiency}% efficient`}
                       </p>
                     </p>
                   </div>
@@ -437,37 +332,41 @@ export default function Home({ data }: PageProps<I>) {
                   <LoadError items="sleep data" />
                 )}
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">🏃‍♂️</span>
-                {steps ? (
+                {activity ? (
                   <div>
                     <p class="mb-1 leading-5">
                       <strong class="font-medium">
-                        {`${steps.values[0]} steps`}
+                        {`${activity.steps.toLocaleString("en-US")} steps`}
                       </strong>
                       {" walked"}
                     </p>
                     <p class="text-sm text-gray-500">
-                      {`${steps.values[1]} active calories of ${steps.values[2]} total`}
+                      {`${activity.cal_active.toLocaleString(
+                        "en-US"
+                      )} active calories of ${activity.cal_total.toLocaleString(
+                        "en-US"
+                      )} total`}
                     </p>
                   </div>
                 ) : (
                   <LoadError items="step count" />
                 )}
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">🫀</span>
-                {heart ? (
+                {readiness ? (
                   <div>
                     <p class="mb-1 leading-5">
                       <span class="mr-2">
                         {"Readiness score is "}
                         <strong class="font-medium">
-                          {`${heart.values[0]}%`}
+                          {`${readiness.score}%`}
                         </strong>
                       </span>
                       <p class="text-sm text-gray-500">
-                        {`Was ${heart.values[1]}% on the previous day`}
+                        {`Was ${readiness.score_previous_day}% on the previous day`}
                       </p>
                     </p>
                   </div>
@@ -475,7 +374,7 @@ export default function Home({ data }: PageProps<I>) {
                   <LoadError items="heart rate" />
                 )}
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">📚</span>
                 {book ? (
                   <div>
@@ -499,7 +398,7 @@ export default function Home({ data }: PageProps<I>) {
                   <LoadError items="heart rate" />
                 )}
               </div>
-              <div class="flex space-x-2">
+              <div class="flex space-x-3">
                 <span aria-hidden="true">🛩️</span>
                 {travel ? (
                   <div>
@@ -509,11 +408,9 @@ export default function Home({ data }: PageProps<I>) {
                         <strong class="font-medium">{`${countries.length} countries`}</strong>
                       </span>
                       <p class="text-sm text-gray-500">
-                        {`Most recently to ${
-                          typeof travel.data?.country === "object"
-                            ? countryName(travel.data.country.name)
-                            : travel.title
-                        }`}
+                        {`Most recently to ${countryName(
+                          travel.data.country.name
+                        )}`}
                       </p>
                     </p>
                   </div>
@@ -526,7 +423,6 @@ export default function Home({ data }: PageProps<I>) {
               <DataFooterLinks
                 apiUrl="https://github.com/AnandChowdhary/life"
                 githubUrl="https://github.com/AnandChowdhary/life"
-                // links={[{ label: "View past themes", href: "/life/themes" }]}
               />
             </div>
           </article>
