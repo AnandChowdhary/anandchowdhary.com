@@ -114,12 +114,13 @@ export default function Home({ data }: PageProps<LifeData>) {
         <h1 class="text-4xl font-semibold font-display">Life</h1>
         <p class="text-xl leading-relaxed">
           For several years, I've been tracking all my life data (health,
-          activity, location, etc.) using automated tools and microservices,
-          which is available here.
+          activity, location, etc.) in near-real time using automated tools and
+          microservices.
         </p>
         <p>
           All data is also available as a publicly-available JSON API and under
-          the Open Data License on GitHub.
+          permissive licenses on GitHub. In the (near?) future, I will write a
+          blog post on how I set this up.
         </p>
       </header>
       <section class="grid md:grid-cols-2 gap-8">
@@ -127,7 +128,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🌈</span>
-              <SectionLink label="Yearly themes" href="/life/themes" />
+              <SectionLink label="Yearly themes" href="/themes" />
             </h2>
             <p class="text-gray-500">
               Yearly theme that dictates quarterly goals
@@ -155,7 +156,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">📊</span>
-              <SectionLink label="Quarterly OKRs" href="/life/okrs" />
+              <SectionLink label="Quarterly OKRs" href="/okrs" />
             </h2>
             <p class="text-gray-500">Personal Objectives and Key Results</p>
           </header>
@@ -169,9 +170,9 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">📍</span>
-              <SectionLink label="Location" href="/life/location" />
+              <SectionLink label="Location" href="/travel" />
             </h2>
-            <p class="text-gray-500">Tracking my location in real time</p>
+            <p class="text-gray-500">Find me where I currently am</p>
           </header>
           <div class="relative bg-white rounded shadow-sm">
             {location && (
@@ -226,7 +227,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🛩️</span>
-              <SectionLink label="Travel" href="/life/travel" />
+              <SectionLink label="Travel" href="/travel" />
             </h2>
             <p class="text-gray-500">Most recently visited new countries</p>
           </header>
@@ -304,15 +305,15 @@ export default function Home({ data }: PageProps<LifeData>) {
               })}
           </div>
           <DataFooterLinks
-            apiUrl="https://api.github.com/gists/14a66f452302d199c4abde0ffe891922"
-            githubUrl="https://gist.github.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922"
+            apiUrl="https://anandchowdhary.github.io/location/history-unique.json"
+            githubUrl="https://github.com/AnandChowdhary/location"
           />
         </article>
         <article class="space-y-4">
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">📕</span>
-              <SectionLink label="Books" href="/life/books" />
+              <SectionLink label="Books" href="/books" />
             </h2>
             <p class="text-gray-500">Most recently completed books</p>
           </header>
@@ -356,15 +357,15 @@ export default function Home({ data }: PageProps<LifeData>) {
               ))}
           </div>
           <DataFooterLinks
-            apiUrl="https://api.github.com/gists/14a66f452302d199c4abde0ffe891922"
-            githubUrl="https://gist.github.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922"
+            apiUrl="https://anandchowdhary.github.io/books/api.json"
+            githubUrl="https://github.com/AnandChowdhary/books"
           />
         </article>
         <article class="space-y-4">
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🎵</span>
-              <SectionLink label="Music" href="/life/music" />
+              <SectionLink label="Music" href="/music" />
             </h2>
             <p class="text-gray-500">Last week in Spotify listening history</p>
           </header>
@@ -421,7 +422,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🔥</span>
-              <SectionLink label="Calories burned" href="/life/calories" />
+              <SectionLink label="Calories burned" href="/health/calories" />
             </h2>
             <p class="text-gray-500">Tracked every day with Oura</p>
           </header>
@@ -511,7 +512,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🛌</span>
-              <SectionLink label="Sleep" href="/life/sleep" />
+              <SectionLink label="Sleep" href="/health/sleep" />
             </h2>
             <p class="text-gray-500">Different stages of sleep</p>
           </header>
@@ -612,7 +613,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🏃‍♂️</span>
-              <SectionLink label="Steps" href="/life/steps" />
+              <SectionLink label="Steps" href="/health/steps" />
             </h2>
             <p class="text-gray-500">Tracked every day using Oura</p>
           </header>
@@ -667,9 +668,9 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">🏃‍♂️</span>
-              <SectionLink label="Score" href="/life/steps" />
+              <SectionLink label="Readiness" href="/health/readiness" />
             </h2>
-            <p class="text-gray-500">Tracked every day using Oura</p>
+            <p class="text-gray-500">How ready am I for the day?</p>
           </header>
           <div class="flex relative -mx-2 h-64">
             {activity ? (
@@ -716,7 +717,7 @@ export default function Home({ data }: PageProps<LifeData>) {
         <header>
           <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">👨‍💻</span>
-            <SectionLink label="Contributions" href="/life/location" />
+            <SectionLink label="Contributions" href="/open-source" />
           </h2>
           <p class="text-gray-500">Last year in GitHub activity</p>
         </header>

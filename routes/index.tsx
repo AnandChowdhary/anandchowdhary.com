@@ -58,10 +58,25 @@ export const handler: Handlers<HomeData> = {
   },
 };
 
-const getLastKey = (obj: Record<string, unknown>) =>
+const getLast7Keys = (obj: Record<string, unknown>) =>
   Object.keys(obj)
     .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
-    .filter((item) => Object.values(Object(obj)[item]).length > 0)[0];
+    .filter((item) => Object.values(Object(obj)[item]).length > 0)
+    .slice(0, 7);
+
+const averageObjectKeys = (objects: Record<string, number>[]) => {
+  const result: Record<string, number> = {};
+  objects.forEach((item) => {
+    Object.entries(item).forEach(([key, value]) => {
+      result[key] = result[key] ?? 0;
+      result[key] += value;
+    });
+  });
+  Object.entries(result).forEach(([key, value]) => {
+    result[key] = value / objects.length;
+  });
+  return result;
+};
 
 export default function Home({ data }: PageProps<HomeData>) {
   const {
@@ -74,12 +89,20 @@ export default function Home({ data }: PageProps<HomeData>) {
     readiness: readinessData,
     sleep: sleepData,
   } = data;
-  const sleep = sleepData ? sleepData[getLastKey(sleepData)] : undefined;
+  const sleep = sleepData
+    ? averageObjectKeys(
+        getLast7Keys(sleepData).map((key) => Object(sleepData[key]))
+      )
+    : undefined;
   const activity = activityData
-    ? activityData[getLastKey(activityData)]
+    ? averageObjectKeys(
+        getLast7Keys(activityData).map((key) => Object(activityData[key]))
+      )
     : undefined;
   const readiness = readinessData
-    ? readinessData[getLastKey(readinessData)]
+    ? averageObjectKeys(
+        getLast7Keys(readinessData).map((key) => Object(readinessData[key]))
+      )
     : undefined;
   const book = timeline.find(({ type }) => type === "book") as TimelineBook;
   const countries = Array.from(
@@ -324,7 +347,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                         {`${(sleep.rem / 3600).toLocaleString("en-US", {
                           minimumFractionDigits: 0,
                           maximumFractionDigits: 1,
-                        })} hours REM sleep, ${sleep.efficiency}% efficient`}
+                        })} hours REM sleep, ${sleep.efficiency.toLocaleString(
+                          "en-US",
+                          { maximumFractionDigits: 0 }
+                        )}% efficient`}
                       </p>
                     </p>
                   </div>
@@ -343,10 +369,11 @@ export default function Home({ data }: PageProps<HomeData>) {
                       {" walked"}
                     </p>
                     <p class="text-sm text-gray-500">
-                      {`${activity.cal_active.toLocaleString(
-                        "en-US"
-                      )} active calories of ${activity.cal_total.toLocaleString(
-                        "en-US"
+                      {`${activity.cal_active.toLocaleString("en-US", {
+                        maximumFractionDigits: 0,
+                      })} active calories of ${activity.cal_total.toLocaleString(
+                        "en-US",
+                        { maximumFractionDigits: 0 }
                       )} total`}
                     </p>
                   </div>
@@ -362,11 +389,16 @@ export default function Home({ data }: PageProps<HomeData>) {
                       <span class="mr-2">
                         {"Readiness score is "}
                         <strong class="font-medium">
-                          {`${readiness.score}%`}
+                          {`${readiness.score.toLocaleString("en-US", {
+                            maximumFractionDigits: 0,
+                          })}%`}
                         </strong>
                       </span>
                       <p class="text-sm text-gray-500">
-                        {`Was ${readiness.score_previous_day}% on the previous day`}
+                        {`Was ${readiness.score_previous_day.toLocaleString(
+                          "en-US",
+                          { maximumFractionDigits: 0 }
+                        )}% on the previous day`}
                       </p>
                     </p>
                   </div>
