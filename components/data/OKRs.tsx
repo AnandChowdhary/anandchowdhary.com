@@ -1,13 +1,13 @@
+import { TimelineOkr } from "https://esm.sh/timeline-types@3.0.0/index.d.ts";
 import type { ComponentChildren, FunctionComponent } from "preact";
 import { orange } from "twind/colors";
 import TimeAgo from "../../islands/TimeAgo.tsx";
 import { t } from "../../utils/i18n.tsx";
-import type { IOkr } from "../../utils/interfaces.ts";
 import { ExternalLink } from "../text/ExternalLink.tsx";
 import { SectionLink } from "../text/SectionLink.tsx";
 
 export const OKRCards: FunctionComponent<{
-  okr: IOkr;
+  okr: TimelineOkr;
 }> = ({ okr }) => {
   const { data } = okr;
 
@@ -118,7 +118,7 @@ export const OKRCards: FunctionComponent<{
 };
 
 export const OKRs: FunctionComponent<{
-  okr: IOkr;
+  okr: TimelineOkr;
 }> = ({ okr }) => {
   const { title } = okr;
 

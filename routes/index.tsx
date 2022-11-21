@@ -6,7 +6,7 @@ import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import {
   TimelineBook,
   TimelineTravel,
-} from "https://esm.sh/timeline-types@2.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@3.0.0/index.d.ts";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";

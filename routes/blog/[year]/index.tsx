@@ -58,7 +58,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
                 <a href={`/blog/${previousYear}`}>{`← ${previousYear}`}</a>
               )}
             </div>
-            <h1 className="space-x-2 text-2xl font-semibold font-display text-center">
+            <h1 className="space-x-2 text-2xl font-semibold text-center font-display">
               <span>{year}</span>
             </h1>
             <div className="text-right">
@@ -67,13 +67,12 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
           </header>
         )}
         <Timeline
-          hideFilters
           hideYearHeading={year !== undefined}
           timeline={timeline.filter(({ type }) => type === "blog-post")}
           query={query}
           hasMoreHref={previousYear ? `/blog/${previousYear}` : undefined}
           hasMoreLabel={previousYear}
-          yearHrefPrefix="/blog"
+          y
         />
       </section>
     </div>

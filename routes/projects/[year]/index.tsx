@@ -69,7 +69,6 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
           </header>
         )}
         <Timeline
-          hideFilters
           hideYearHeading={year !== undefined}
           timeline={timeline.filter(({ type }) => type === "project")}
           query={query}

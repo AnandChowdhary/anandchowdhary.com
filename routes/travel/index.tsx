@@ -7,6 +7,7 @@ import {
   LocationApiResult,
   Timeline as ITimeline,
 } from "../../utils/interfaces.ts";
+import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 
 interface ArchiveData {
   timeline: ITimeline;
@@ -65,15 +66,26 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
             <div class="flex justify-between space-x-3">
               {countries
                 .filter((code) => code != null)
-                .map((code) => (
-                  <div key={code} class="w-full">
-                    <img
-                      alt=""
-                      src={getFlagUrl(code ?? "")}
-                      class="rounded-sm w-full"
-                    />
-                  </div>
-                ))}
+                .map((code) => {
+                  const countryName = travel.find(
+                    (item) => item.data.country.code === code
+                  ).data.country.name;
+                  return (
+                    <a
+                      href={`/travel/countries/${slugify(countryName, {
+                        lower: true,
+                      })}`}
+                      key={code}
+                      class="block w-full"
+                    >
+                      <img
+                        alt={countryName}
+                        src={getFlagUrl(code ?? "")}
+                        class="rounded-sm w-full"
+                      />
+                    </a>
+                  );
+                })}
             </div>
           </article>
           <article className="space-y-4">
@@ -118,12 +130,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
             </div>
           </article>
         </section>
-        <Timeline
-          hideFilters
-          timeline={travel}
-          query={query}
-          yearHrefPrefix="/travel"
-        />
+        <Timeline timeline={travel} query={query} yearHrefPrefix="/travel" />
       </section>
     </div>
   );
