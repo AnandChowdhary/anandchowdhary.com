@@ -13,7 +13,7 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@3.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@5.0.0/index.d.ts";
 import { FunctionalComponent } from "preact";
 import { imageUrl } from "../../../utils/urls.ts";
 
@@ -58,7 +58,33 @@ export const TimelineEventVisual: FunctionalComponent<{
 
 export const TimelineProjectVisual: FunctionalComponent<{
   item: TimelineProject;
-}> = ({ item }) => null;
+}> = ({ item }) =>
+  item.data.image ? (
+    <div
+      class="bg-white w-full rounded-lg shadow flex items-center justify-center"
+      style={{
+        aspectRatio: "2/1",
+        padding: item.data.image.attachment === "padded" ? "0.5rem" : 0,
+        backgroundColor: item.data.image.color,
+      }}
+    >
+      {item.data.image.attachment === "padded" ? (
+        <img
+          alt=""
+          src={imageUrl(item.data.image.url, { w: "512" })}
+          loading="lazy"
+          class="w-full"
+        />
+      ) : (
+        <img
+          alt=""
+          src={imageUrl(item.data.image.url, { w: "512" })}
+          loading="lazy"
+          class="bg-red-100 w-full rounded-lg"
+        />
+      )}
+    </div>
+  ) : null;
 
 export const TimelineVersionVisual: FunctionalComponent<{
   item: TimelineVersion;

@@ -15,13 +15,13 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@3.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@5.0.0/index.d.ts";
 import type { ComponentChildren, FunctionalComponent } from "preact";
 import { Fragment } from "preact";
 import { t } from "../../../utils/i18n.tsx";
 import { render } from "../../../utils/markdown.ts";
 import { countryName, humanizeMmSs } from "../../../utils/string.ts";
-import { getFlagUrl } from "../../../utils/urls.ts";
+import { getFlagUrl, imageUrl } from "../../../utils/urls.ts";
 import { OKRCards } from "../OKRs.tsx";
 
 export const TimelineAwardContent: FunctionalComponent<{
@@ -110,7 +110,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
               href={`/projects/tags/${slugify(topic, { lower: true })}`}
               class="bg-white px-3 py-1 rounded-full border m-0.5 flex text-sm"
             >
-              {topic}
+              {slugify(topic, { lower: true })}
             </a>
           </li>
         ))}
@@ -130,7 +130,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
             <use href="#circle"></use>
           </svg>
           <a
-            href={`/projects/language/${slugify(item.data.language, {
+            href={`/projects/tags/${slugify(item.data.language, {
               lower: true,
             })}`}
           >
@@ -260,7 +260,60 @@ export const TimelinePressFeatureContent: FunctionalComponent<{
 
 export const TimelineProjectContent: FunctionalComponent<{
   item: TimelineProject;
-}> = ({ item }) => null;
+}> = ({ item }) => (
+  <Fragment>
+    <h4 className="flex items-center space-x-2 text-lg font-medium leading-6">
+      {item.data.icon &&
+        (item.data.icon.requiresBackground ? (
+          <div class="w-6 h-6 bg-white rounded-full shadow p-1">
+            <img
+              class="w-full"
+              alt=""
+              src={imageUrl(item.data.icon.url, {
+                w: "48",
+                h: "48",
+                fit: "cover",
+              })}
+            />
+          </div>
+        ) : (
+          <img
+            class="w-6 h-6 rounded-lg"
+            alt=""
+            src={imageUrl(item.data.icon.url, {
+              w: "48",
+              h: "48",
+              fit: "cover",
+            })}
+          />
+        ))}
+      <span>
+        <a href={new URL(item.url).pathname}>{smartQuotes(item.title)}</a>
+      </span>
+    </h4>
+    {item.data.description && (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: render(item.data.description),
+        }}
+      />
+    )}
+    {item.data.tags.length > 0 && (
+      <ul class="flex flex-wrap -ml-0.5">
+        {item.data.tags.map((topic) => (
+          <li key={topic}>
+            <a
+              href={`/projects/tags/${slugify(topic, { lower: true })}`}
+              class="bg-white px-3 py-1 rounded-full border m-0.5 flex text-sm"
+            >
+              {slugify(topic, { lower: true })}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </Fragment>
+);
 
 export const TimelineThemeContent: FunctionalComponent<{
   item: TimelineTheme;

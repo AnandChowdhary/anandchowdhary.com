@@ -1,5 +1,5 @@
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@3.0.0/index.d.ts";
+import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@5.0.0/index.d.ts";
 import { FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";
@@ -141,22 +141,23 @@ export const Timeline: FunctionComponent<{
                           )}`}
                         </span>
                       </div>
-                      {"url" in item &&
-                      item.url &&
-                      item.url.startsWith("https://anandchowdhary.com/") &&
-                      item.type !== "life-event" ? (
-                        <h4 className="text-lg font-medium leading-6">
-                          <a href={new URL(item.url).pathname}>
-                            {item.type === "travel"
-                              ? smartQuotes(item.data?.label ?? item.title)
-                              : smartQuotes(item.title)}
-                          </a>
-                        </h4>
-                      ) : (
-                        <h4 className="text-lg font-medium leading-6">
-                          {smartQuotes(item.title)}
-                        </h4>
-                      )}
+                      {item.type !== "project" &&
+                        ("url" in item &&
+                        item.url &&
+                        item.url.startsWith("https://anandchowdhary.com/") &&
+                        item.type !== "life-event" ? (
+                          <h4 className="text-lg font-medium leading-6">
+                            <a href={new URL(item.url).pathname}>
+                              {item.type === "travel"
+                                ? smartQuotes(item.data?.label ?? item.title)
+                                : smartQuotes(item.title)}
+                            </a>
+                          </h4>
+                        ) : (
+                          <h4 className="text-lg font-medium leading-6">
+                            {smartQuotes(item.title)}
+                          </h4>
+                        ))}
                       {item.type === "okr" ? (
                         <TimelineOkrContent item={item} />
                       ) : item.type === "event" ? (
