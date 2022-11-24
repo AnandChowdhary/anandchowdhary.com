@@ -1,5 +1,4 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
-import { Calendar, Location } from "../../../components/Icons.tsx";
 import frontMatter from "https://esm.sh/front-matter@4.0.2";
 import { render } from "../../../utils/markdown.ts";
 
@@ -96,27 +95,9 @@ export default function Project({ data, params }: PageProps<ProjectData>) {
       </nav>
       <header class="post-header">
         <h1>{meta?.title ?? title}</h1>
-        <ul class="text-gray-500">
-          <li class="flex items-center space-x-2">
-            <Calendar class="h-4 w-4" />
-            <span>
-              {new Date(date).toLocaleDateString("en-US", {
-                dateStyle: "long",
-              })}
-            </span>
-          </li>
-          {meta?.venue && (
-            <li class="flex items-center space-x-2">
-              <Location class="h-4 w-4" />
-              <span>
-                {meta.venue} ({meta.country})
-              </span>
-            </li>
-          )}
-        </ul>
       </header>
       <div className="longform" dangerouslySetInnerHTML={{ __html: content }} />
-      <footer className="grid md:grid-cols-2 gap-4 mt-8">
+      <footer className="grid gap-4 mt-8 md:grid-cols-2">
         {previous && (
           <div>
             <div>&larr; Previous project</div>

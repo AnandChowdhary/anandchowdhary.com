@@ -1,6 +1,9 @@
 import { render } from "../utils/markdown.ts";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
-import { GitHub, Instagram, LinkedIn, Twitter } from "../components/Icons.tsx";
+import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import IconBrandLinkedin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-linkedin.tsx";
+import IconBrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-twitter.tsx";
+import IconBrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-instagram.tsx";
 
 export default function Contact() {
   return (
@@ -83,10 +86,14 @@ export default function Contact() {
                 }`}
               >
                 <span class="flex items-center space-x-2">
-                  {label === "GitHub" && <GitHub class="w-4 h-4" />}
-                  {label === "LinkedIn" && <LinkedIn class="w-4 h-4" />}
-                  {label === "Twitter" && <Twitter class="w-4 h-4" />}
-                  {label === "Instagram" && <Instagram class="w-4 h-4" />}
+                  {label === "GitHub" && <IconBrandGithub class="w-4 h-4" />}
+                  {label === "LinkedIn" && (
+                    <IconBrandLinkedin class="w-4 h-4" />
+                  )}
+                  {label === "Twitter" && <IconBrandTwitter class="w-4 h-4" />}
+                  {label === "Instagram" && (
+                    <IconBrandInstagram class="w-4 h-4" />
+                  )}
                   <ExternalLink href={href} class="inset-link">
                     {label}
                   </ExternalLink>

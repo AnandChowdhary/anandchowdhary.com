@@ -1,4 +1,6 @@
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
+import IconMapPin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/map-pin.tsx";
+import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type {
   TimelineAward,
@@ -15,13 +17,14 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@5.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
 import type { ComponentChildren, FunctionalComponent } from "preact";
 import { Fragment } from "preact";
 import { t } from "../../../utils/i18n.tsx";
 import { render } from "../../../utils/markdown.ts";
 import { countryName, humanizeMmSs } from "../../../utils/string.ts";
 import { getFlagUrl, imageUrl } from "../../../utils/urls.ts";
+import { ExternalLink } from "../../text/ExternalLink.tsx";
 import { OKRCards } from "../OKRs.tsx";
 
 export const TimelineAwardContent: FunctionalComponent<{
@@ -72,10 +75,42 @@ export const TimelineBookContent: FunctionalComponent<{
 export const TimelineEventContent: FunctionalComponent<{
   item: TimelineEvent;
 }> = ({ item }) => (
-  <div class="flex items-start space-x-2 text-gray-500">
-    <img alt="" src={getFlagUrl(item.data.country)} class="rounded-sm mt-1.5" />
-    <p>{item.data.location}</p>
-  </div>
+  <Fragment>
+    <ul>
+      {item.data.video && (
+        <li class="flex items-center space-x-2">
+          <IconVideo class="h-4 w-4" />
+          <ExternalLink href={item.data.video}>{`Watch video on ${new URL(
+            item.data.video
+          ).hostname.replace(/^www\./, "")}`}</ExternalLink>
+        </li>
+      )}
+      {(item.data.remote || item.data.venue) && (
+        <li class="flex items-center space-x-2">
+          <IconMapPin class="h-4 w-4" />
+          <span>
+            {item.data.venue
+              ? `${item.data.venue}${item.data.remote ? " (remote)" : ""}`
+              : item.data.remote
+              ? "Remote"
+              : ""}
+          </span>
+        </li>
+      )}
+      {item.data.city && (
+        <li class="flex items-center space-x-2">
+          {item.data.country && (
+            <img
+              alt=""
+              src={getFlagUrl(item.data.country)}
+              class="rounded-sm w-4"
+            />
+          )}
+          <span>{item.data.city}</span>
+        </li>
+      )}
+    </ul>
+  </Fragment>
 );
 
 export const TimelineLifeEventContent: FunctionalComponent<{

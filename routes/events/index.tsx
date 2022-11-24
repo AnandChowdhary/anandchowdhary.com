@@ -26,7 +26,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
       <section className="space-y-4">
-        <h1 class="font-semibold text-3xl">Blog</h1>
+        <h1 class="font-semibold text-3xl">Events</h1>
         <Timeline
           timeline={timeline.filter(({ type }) => type === "event")}
           query={query}

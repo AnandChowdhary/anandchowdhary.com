@@ -1,5 +1,7 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
 import { render } from "../utils/markdown.ts";
+import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import { ExternalLink } from "../components/text/ExternalLink.tsx";
 
 interface AboutData {
   readme: string;
@@ -16,12 +18,16 @@ export const handler: Handlers<AboutData> = {
   },
 };
 
-import { GitHub } from "../components/Icons.tsx";
-import { ExternalLink } from "../components/text/ExternalLink.tsx";
-
 const STARTUPS = [
   {
-    icon: "pabio",
+    icon: (
+      <svg viewBox="0 0 900 256">
+        <path
+          d="M0 11v241h55v-82h45c56 0 81-39 81-79s-25-80-81-80H0zm55 111V59h42c21 0 29 16 29 32 0 15-8 31-29 31H55zm270-14a65 65 0 00-52-23c-46 0-78 34-78 85s32 86 78 86c20 0 40-9 52-25v21h51V89h-51v19zm-40 100c-22 0-38-18-38-38 0-21 16-38 38-38 21 0 38 17 38 38 0 20-17 38-38 38zM522 85c-16 0-38 6-50 22V0h-52v252h52v-18c12 15 34 22 50 22 41 0 80-33 80-86s-39-85-80-85zm-10 123c-20 0-38-17-38-38s18-38 38-38 37 17 37 38-17 38-37 38zM662 64c18 0 32-13 32-30S680 4 662 4c-17 0-32 13-32 30s15 30 32 30zm26 188V89h-52v163h52zm123 4c47 0 89-34 89-86 0-51-42-85-89-85s-89 34-89 85c0 52 42 86 89 86zm0-48c-20 0-36-15-36-38 0-22 16-38 36-38s36 16 36 38c0 23-16 38-36 38z"
+          fill="#ff6b6b"
+        />
+      </svg>
+    ),
     name: "Pabio",
     position: "co-founder & CTO",
     href: "https://pabio.com",
@@ -31,7 +37,14 @@ const STARTUPS = [
       "Rent-to-own furniture in Europe with personalized interior design",
   },
   {
-    icon: "oswald-labs",
+    icon: (
+      <svg viewBox="0 0 116 116">
+        <g fill="#007bff" fill-rule="evenodd">
+          <path d="M58 116A58 58 0 1 1 58 0a58 58 0 0 1 0 116zm1-11a47 47 0 1 0 0-95 47 47 0 0 0 0 95z" />
+          <circle cx="58.5" cy="57.5" r="35.5" />
+        </g>
+      </svg>
+    ),
     name: "Oswald Labs",
     position: "co-founder & CEO",
     href: "https://oswaldlabs.com",
@@ -40,7 +53,20 @@ const STARTUPS = [
     description: "Accessibility technology for the next billion Internet users",
   },
   {
-    icon: "melangebox",
+    icon: (
+      <svg viewBox="0 0 350 350">
+        <path
+          style="opacity: 0.948"
+          fill="#4c9bd8"
+          d="M350 76v3l-41 20-102-47-1 1 28 37a16655 16655 0 0 1-28 14l-51-9-1 1-32-5 102 49-1 3-47 24A20730 20730 0 0 1 0 80v-3l59-25c35 6 69 12 104 16a1028 1028 0 0 1-31-47 1468 1468 0 0 0 52-20l166 75Z"
+        />
+        <path
+          style="opacity: 0.983"
+          fill="#374a5d"
+          d="M0 99c56 27 112 54 168 83l1 168h-4c-55-29-110-56-165-82V99ZM350 99v169c-56 26-111 53-165 82h-4c-1-57 0-113 1-168 55-29 111-56 168-83Z"
+        />
+      </svg>
+    ),
     name: "Melangebox",
     position: "co-founder & CTO",
     href: "https://melangebox.com",
@@ -49,7 +75,15 @@ const STARTUPS = [
     description: "Sustainable, high-quality, and affordable fashion for India",
   },
   {
-    icon: "class-rebels",
+    icon: (
+      <svg viewBox="0 0 256 256">
+        <path
+          style="fill-rule: evenodd"
+          fill="#00c3a0"
+          d="M87 0h86c-3 8-6 15-11 22l-26 1v66c16-8 33-13 51-15 16-3 32 0 47 8 6 7 11 16 13 26v30l-7 31c-4 8-8 16-13 22-12 7-24 7-36 0v1l27 31 1 33h-4l-67-85c4-7 9-12 15-16l14 8c33 18 46 8 39-29-5-29-22-40-50-35-11 3-21 7-30 12l-1 127c-8 5-14 11-20 18h-3l-1-90c-18 15-37 26-59 34-25 6-39-3-44-27v-42c6-35 26-53 60-54 15 0 29 3 43 9l1-63H75l2-7L87 0ZM70 102c14-1 28 1 42 5l-1 39c-16 13-34 23-53 30-18 5-27-1-27-18 0-14 3-28 10-42 8-9 17-14 29-14Z"
+        />
+      </svg>
+    ),
     name: "Class Rebels",
     position: "co-founder & CEO",
     start: "2014",
@@ -57,7 +91,25 @@ const STARTUPS = [
     description: "Collaborative e-learning platform for CBSE K-12",
   },
   {
-    icon: "pickquick",
+    icon: (
+      <svg viewBox="0 0 492 202">
+        <circle cx="101" cy="101" r="101" fill="#bcd878" />
+        <circle cx="246" cy="101" r="101" fill="#e17359" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M174 172a101 101 0 0 0 0-141 101 101 0 0 0 0 141Z"
+          fill="#cba567"
+        />
+        <circle cx="391" cy="101" r="101" fill="#8fcae2" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M319 172a101 101 0 0 0 0-141 101 101 0 0 0 0 141Z"
+          fill="#b39d9c"
+        />
+      </svg>
+    ),
     name: "PickQuick",
     position: "co-founder & CTO",
     start: "2012",
@@ -77,7 +129,7 @@ export default function About({ data }: PageProps<AboutData>) {
             src="https://d33wubrfki0l68.cloudfront.net/41df0551175f4c6716aad2988c37ceb83a342b9e/7b5dc/images/photos/anand-chowdhary.jpg"
             width={2450}
             height={1633}
-            className="rounded-lg w-full bg-white border shadow-sm"
+            className="w-full bg-white border rounded-lg shadow-sm"
           />
           <figcaption class="text-center text-gray-500 text-xs mt-2 inline-flex items-center justify-center w-full">
             <span>
@@ -141,9 +193,7 @@ export default function About({ data }: PageProps<AboutData>) {
                   className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow"
                   role="presentation"
                 >
-                  <svg aria-hidden="true">
-                    <use href={`#${icon}`}></use>
-                  </svg>
+                  {icon}
                 </div>
 
                 <div>
@@ -170,7 +220,7 @@ export default function About({ data }: PageProps<AboutData>) {
         <div class="bg-gray-100 border-b border-gray-100 px-6 py-3 shadow-sm rounded-t flex items-center justify-between mt-5">
           <div class="font-semibold font-mono">README.md</div>
           <div class="flex items-center justify-between space-x-2">
-            <GitHub class="w-4 h-4" />
+            <IconBrandGithub class="w-4 h-4" />
             <ExternalLink href="https://github.com/AnandChowdhary/readme">
               AnandChowdhary/readme on GitHub
             </ExternalLink>

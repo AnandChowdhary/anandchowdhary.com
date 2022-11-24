@@ -13,8 +13,9 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@5.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
 import { FunctionalComponent } from "preact";
+import IconPlayerPlay from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/player-play.tsx";
 import { imageUrl } from "../../../utils/urls.ts";
 
 export const TimelineOkrVisual: FunctionalComponent<{ item: TimelineOkr }> = ({
@@ -43,7 +44,29 @@ export const TimelineOkrVisual: FunctionalComponent<{ item: TimelineOkr }> = ({
 export const TimelineEventVisual: FunctionalComponent<{
   item: TimelineEvent;
 }> = ({ item }) =>
-  item.data.coordinates ? (
+  item.data.video &&
+  new URL(item.data.video).hostname.endsWith("youtube.com") ? (
+    <div class="relative">
+      <IconPlayerPlay
+        class="w-12 h-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white"
+        style={{
+          filter: "drop-shadow(0 0 0.5rem rgba(100, 100, 100, 0.5))",
+        }}
+      />
+      <img
+        alt=""
+        src={imageUrl(
+          `https://img.youtube.com/vi/${new URL(
+            item.data.video
+          ).searchParams.get("v")}/hqdefault.jpg`,
+          { w: "512", h: "256", fit: "cover" }
+        )}
+        width={512}
+        height={256}
+        className="w-full rounded-lg shadow"
+      />
+    </div>
+  ) : item.data.coordinates ? (
     <img
       alt=""
       src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${item.data.coordinates
@@ -164,14 +187,12 @@ export const TimelineVideoVisual: FunctionalComponent<{
   item: TimelineVideo;
 }> = ({ item }) => (
   <div className="relative w-full">
-    <svg
-      aria-hidden="true"
-      width="2rem"
-      height="2rem"
-      className="absolute text-white -translate-x-1/2 -translate-y-1/2 drop-shadow left-1/2 top-1/2"
-    >
-      <use href="#triangle"></use>
-    </svg>
+    <IconPlayerPlay
+      class="w-12 h-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white"
+      style={{
+        filter: "drop-shadow(0 0 0.5rem rgba(100, 100, 100, 0.5))",
+      }}
+    />
     <img
       alt=""
       src={imageUrl(item.data.img.split("//")[1], {

@@ -1,5 +1,19 @@
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@5.0.0/index.d.ts";
+import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
+import IconRainbow from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/rainbow.tsx";
+import IconTarget from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/target.tsx";
+import IconPaint from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/paint.tsx";
+import IconPencil from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/pencil.tsx";
+import IconDeviceLaptop from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/device-laptop.tsx";
+import IconPlaneTilt from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/plane-tilt.tsx";
+import IconMicrophone2 from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/microphone-2.tsx";
+import IconBook from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/book.tsx";
+import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
+import IconAward from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/award.tsx";
+import IconBrandApplePodcast from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-apple-podcast.tsx";
+import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
+import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
 import { FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";
@@ -116,10 +130,38 @@ export const Timeline: FunctionComponent<{
                 <div className="shrink-0" style={{ minWidth: "3rem" }}>
                   <div>
                     <div
-                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-white`}
+                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-white -mt-1`}
                       style={{ backgroundColor: categoryData[item.type].color }}
                     >
-                      {categoryData[item.type].icon}
+                      {item.type === "theme" ? (
+                        <IconRainbow class="w-4 h-4" />
+                      ) : item.type === "okr" ? (
+                        <IconTarget class="w-4 h-4" />
+                      ) : item.type === "version" ? (
+                        <IconPaint class="w-4 h-4" />
+                      ) : item.type === "blog-post" ? (
+                        <IconPencil class="w-4 h-4" />
+                      ) : item.type === "project" ? (
+                        <IconDeviceLaptop class="w-4 h-4" />
+                      ) : item.type === "travel" ? (
+                        <IconPlaneTilt class="w-4 h-4" />
+                      ) : item.type === "event" ? (
+                        <IconMicrophone2 class="w-4 h-4" />
+                      ) : item.type === "book" ? (
+                        <IconBook class="w-4 h-4" />
+                      ) : item.type === "life-event" ? (
+                        <IconStar class="w-4 h-4" />
+                      ) : item.type === "video" ? (
+                        <IconVideo class="w-4 h-4" />
+                      ) : item.type === "award" ? (
+                        <IconAward class="w-4 h-4" />
+                      ) : item.type === "podcast-interview" ? (
+                        <IconBrandApplePodcast class="w-4 h-4" />
+                      ) : item.type === "press-feature" ? (
+                        <IconNews class="w-4 h-4" />
+                      ) : item.type === "open-source-project" ? (
+                        <IconBrandGithub class="w-4 h-4" />
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -129,15 +171,14 @@ export const Timeline: FunctionComponent<{
                       <div className="text-gray-500">
                         <span>
                           <span
+                            class="font-medium"
                             style={{ color: categoryData[item.type].color }}
                           >
                             {categoryData[item.type].prefix}
                           </span>
                           {` on ${new Date(item.date).toLocaleDateString(
                             "en-US",
-                            {
-                              dateStyle: "long",
-                            }
+                            { dateStyle: "long" }
                           )}`}
                         </span>
                       </div>

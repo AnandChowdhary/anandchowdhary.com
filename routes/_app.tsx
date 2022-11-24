@@ -1,6 +1,5 @@
 import { asset, Head } from "$fresh/runtime.ts";
 import { AppProps } from "$fresh/src/server/types.ts";
-import { Icons } from "../components/Icons.tsx";
 import { Footer, Navbar } from "../components/layout/Layout.tsx";
 import { render } from "../utils/markdown.ts";
 
@@ -56,7 +55,6 @@ export default function App({ Component }: AppProps) {
             <Component />
           </main>
           <Footer />
-          <Icons />
         </div>
       </body>
     </html>

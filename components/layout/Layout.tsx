@@ -1,4 +1,4 @@
-import { InfoCircleOutline } from "../Icons.tsx";
+import IconInfoCircle from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/info-circle.tsx";
 import { Socials } from "../text/Socials.tsx";
 
 const NAV = [
@@ -72,7 +72,7 @@ export function Footer() {
   return (
     <footer className="text-gray-400">
       <div className="max-w-screen-md px-6 pt-16 pb-8 mx-auto leading-none md:px-0">
-        <div className="flex items-center justify-between text-sm mb-2">
+        <div className="flex items-center justify-between mb-2 text-sm">
           <p className="flex items-center space-x-1">
             <span>
               0.06g of{" "}
@@ -87,7 +87,7 @@ export function Footer() {
               aria-label="Carbon emission details"
               title="Carbon emission details"
             >
-              <InfoCircleOutline class="w-4 h-4" />
+              <IconInfoCircle class="w-4 h-4" />
             </a>
           </p>
           <p>Made with 🧡 in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>
