@@ -2,6 +2,9 @@ import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import IconMapPin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/map-pin.tsx";
 import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
+import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
+import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
+import IconEye from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/eye.tsx";
 import type {
   TimelineAward,
   TimelineBlogPost,
@@ -151,19 +154,13 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         ))}
       </ul>
     )}
-    <ul className="flex flex-wrap space-x-4">
+    <ul className="flex flex-wrap space-x-5">
       {item.data.language && item.data.languageColor && (
-        <li className="flex flex-wrap items-center space-x-1">
-          <svg
-            aria-hidden="true"
-            width="1em"
-            height="1em"
-            style={{
-              color: item.data.languageColor ?? "#aaa",
-            }}
-          >
-            <use href="#circle"></use>
-          </svg>
+        <li className="flex flex-wrap items-center space-x-2">
+          <span
+            class="w-4 h-4 rounded-full"
+            style={{ backgroundColor: item.data.languageColor ?? "#aaa" }}
+          ></span>
           <a
             href={`/projects/tags/${slugify(item.data.language, {
               lower: true,
@@ -174,10 +171,8 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         </li>
       )}
       {item.data.stars > 0 && (
-        <li className="flex flex-wrap items-center space-x-1">
-          <svg aria-hidden="true" width="1em" height="1em">
-            <use href="#star"></use>
-          </svg>
+        <li className="flex flex-wrap items-center space-x-2">
+          <IconStar class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.stars.toLocaleString()}</0> stars`, {}, [
               ({ children }: { children: ComponentChildren }) => (
@@ -188,10 +183,8 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         </li>
       )}
       {item.data.watchers > 0 && (
-        <li className="flex flex-wrap items-center space-x-1">
-          <svg aria-hidden="true" width="1em" height="1em">
-            <use href="#watchers"></use>
-          </svg>
+        <li className="flex flex-wrap items-center space-x-2">
+          <IconGitFork class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.watchers.toLocaleString()}</0> watchers`, {}, [
               ({ children }: { children: ComponentChildren }) => (
@@ -202,10 +195,8 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         </li>
       )}
       {item.data.forks > 0 && (
-        <li className="flex flex-wrap items-center space-x-1">
-          <svg aria-hidden="true" width="1em" height="1em">
-            <use href="#forks"></use>
-          </svg>
+        <li className="flex flex-wrap items-center space-x-2">
+          <IconEye class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.forks.toLocaleString()}</0> forks`, {}, [
               ({ children }: { children: ComponentChildren }) => (

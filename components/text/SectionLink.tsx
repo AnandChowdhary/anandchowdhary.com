@@ -1,4 +1,6 @@
 import { FunctionComponent } from "preact";
+import IconChevronRight from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/chevron-right.tsx";
+
 export const SectionLink: FunctionComponent<{
   label: string;
   href: string;
@@ -6,18 +8,10 @@ export const SectionLink: FunctionComponent<{
   return (
     <a
       href={href}
-      className="inline-flex items-center space-x-1 font-medium text-gray-800 transition hover:text-gray-500 group no-underline"
+      className="inline-flex items-center space-x-1 font-medium text-gray-800 no-underline transition hover:text-gray-500 group"
     >
       <span>{label}</span>
-      <svg
-        aria-hidden="true"
-        width="1rem"
-        height="1rem"
-        className="text-gray-600 transition group-hover:ml-2"
-        transform="rotate(-90)"
-      >
-        <use href="#chevron"></use>
-      </svg>
+      <IconChevronRight class="w-4 h-4" />
     </a>
   );
 };
