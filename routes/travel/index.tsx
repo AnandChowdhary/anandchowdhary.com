@@ -130,7 +130,12 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
             </div>
           </article>
         </section>
-        <Timeline timeline={travel} query={query} yearHrefPrefix="/travel" />
+        <Timeline
+          timeline={timeline}
+          show={travel}
+          query={query}
+          yearHrefPrefix="/travel"
+        />
       </section>
     </div>
   );

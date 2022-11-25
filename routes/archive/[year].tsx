@@ -61,6 +61,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
         <Timeline
           hideYearHeading={year !== undefined}
           timeline={timeline}
+          show={timeline}
           query={query}
           hasMoreHref={previousYear ? `/archive/${previousYear}` : undefined}
           hasMoreLabel={previousYear}

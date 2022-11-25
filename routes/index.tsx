@@ -6,7 +6,7 @@ import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import {
   TimelineBook,
   TimelineTravel,
-} from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
@@ -364,7 +364,9 @@ export default function Home({ data }: PageProps<HomeData>) {
                   <div>
                     <p class="mb-1 leading-5">
                       <strong class="font-medium">
-                        {`${activity.steps.toLocaleString("en-US")} steps`}
+                        {`${activity.steps.toLocaleString("en-US", {
+                          maximumFractionDigits: 0,
+                        })} steps`}
                       </strong>
                       {" walked"}
                     </p>
@@ -556,6 +558,7 @@ export default function Home({ data }: PageProps<HomeData>) {
         {timeline.length ? (
           <Timeline
             timeline={timeline}
+            show={timeline}
             query={query}
             selected={Object.keys(categoryData).filter(
               (item) => item !== "book"

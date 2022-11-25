@@ -28,7 +28,8 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
       <section className="space-y-4">
         <h1 class="font-semibold text-3xl">Events</h1>
         <Timeline
-          timeline={timeline.filter(({ type }) => type === "event")}
+          timeline={timeline}
+          show={timeline.filter(({ type }) => type === "event")}
           query={query}
           yearHrefPrefix="/events"
         />

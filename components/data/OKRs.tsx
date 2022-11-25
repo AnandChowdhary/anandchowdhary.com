@@ -1,4 +1,4 @@
-import { TimelineOkr } from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
+import { TimelineOkr } from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
 import type { ComponentChildren, FunctionComponent } from "preact";
 import { orange } from "twind/colors";
 import TimeAgo from "../../islands/TimeAgo.tsx";
@@ -148,7 +148,7 @@ export const OKRs: FunctionComponent<{
         )}
       </p>
       <OKRCards okr={okr} />
-      <SectionLink label="See past OKRs" href="/life/okrs" />
+      <SectionLink label="See past OKRs" href="/okrs" />
     </section>
   );
 };

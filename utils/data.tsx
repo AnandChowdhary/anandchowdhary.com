@@ -3,7 +3,7 @@ import type {
   TimeLineItem,
   TimelineOkr,
   TimelineTheme,
-} from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
 import type {
   AllLifeDataSummary,
   LocationApiResult,

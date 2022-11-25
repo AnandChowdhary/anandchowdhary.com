@@ -68,11 +68,11 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
         )}
         <Timeline
           hideYearHeading={year !== undefined}
-          timeline={timeline.filter(({ type }) => type === "blog-post")}
+          timeline={timeline}
+          show={timeline.filter(({ type }) => type === "blog-post")}
           query={query}
           hasMoreHref={previousYear ? `/blog/${previousYear}` : undefined}
           hasMoreLabel={previousYear}
-          y
         />
       </section>
     </div>

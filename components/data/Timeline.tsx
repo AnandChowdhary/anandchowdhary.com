@@ -13,7 +13,7 @@ import IconAward from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/award.tsx"
 import IconBrandApplePodcast from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-apple-podcast.tsx";
 import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
-import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
+import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
 import { FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";
@@ -52,6 +52,7 @@ import {
 
 export const Timeline: FunctionComponent<{
   timeline: ITimeline;
+  show: ITimeline;
   query: string;
   hideYearHeading?: boolean;
   maxItems?: number;
@@ -61,6 +62,7 @@ export const Timeline: FunctionComponent<{
   yearHrefPrefix: string;
 }> = ({
   timeline,
+  show,
   hideYearHeading,
   query,
   selected,
@@ -78,13 +80,13 @@ export const Timeline: FunctionComponent<{
     // Ignore errors
   }
 
-  const items = timeline.filter(({ type }) => selected?.includes(type));
+  const items = show.filter(({ type }) => selected?.includes(type));
   const visible = maxItems ? items.slice(0, maxItems) : items;
   const filteredCategories = Object.keys(categoryData).filter((key) =>
-    timeline.find(({ type }) => type === key)
+    show.find(({ type }) => type === key)
   );
 
-  if (timeline.length === 0)
+  if (show.length === 0)
     return (
       <div className="py-8 text-lg text-center text-gray-400">
         <p>No items found</p>
@@ -202,7 +204,7 @@ export const Timeline: FunctionComponent<{
                       {item.type === "okr" ? (
                         <TimelineOkrContent item={item} />
                       ) : item.type === "event" ? (
-                        <TimelineEventContent item={item} />
+                        <TimelineEventContent item={item} timeline={timeline} />
                       ) : item.type === "project" ? (
                         <TimelineProjectContent item={item} />
                       ) : item.type === "version" ? (
@@ -276,7 +278,7 @@ export const Timeline: FunctionComponent<{
                     ).getUTCFullYear()}`
                   : hasMoreHref
               }
-              className="relative flex items-center py-2 pr-4 text-sm no-underline bg-white rounded rounded-full shadow opacity-100"
+              className="relative flex items-center py-2 pr-4 text-sm bg-white rounded rounded-full shadow opacity-100"
             >
               <span className="text-lg text-center w-9">↓</span>
               <span>{hasMoreLabel ?? "View older entries"}</span>

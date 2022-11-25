@@ -1,11 +1,15 @@
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
-import IconMapPin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/map-pin.tsx";
-import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
-import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
-import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
+import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
 import IconEye from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/eye.tsx";
+import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
+import IconMapPin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/map-pin.tsx";
+import IconPresentation from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/presentation.tsx";
+import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
+import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
+import IconBrandZoom from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-zoom.tsx";
+import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type {
+  Timeline,
   TimelineAward,
   TimelineBlogPost,
   TimelineBook,
@@ -20,7 +24,7 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@6.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
 import type { ComponentChildren, FunctionalComponent } from "preact";
 import { Fragment } from "preact";
 import { t } from "../../../utils/i18n.tsx";
@@ -77,44 +81,95 @@ export const TimelineBookContent: FunctionalComponent<{
 
 export const TimelineEventContent: FunctionalComponent<{
   item: TimelineEvent;
-}> = ({ item }) => (
-  <Fragment>
-    <ul>
-      {item.data.video && (
-        <li class="flex items-center space-x-2">
-          <IconVideo class="h-4 w-4" />
-          <ExternalLink href={item.data.video}>{`Watch video on ${new URL(
-            item.data.video
-          ).hostname.replace(/^www\./, "")}`}</ExternalLink>
-        </li>
-      )}
-      {(item.data.remote || item.data.venue) && (
-        <li class="flex items-center space-x-2">
-          <IconMapPin class="h-4 w-4" />
-          <span>
-            {item.data.venue
-              ? `${item.data.venue}${item.data.remote ? " (remote)" : ""}`
-              : item.data.remote
-              ? "Remote"
-              : ""}
-          </span>
-        </li>
-      )}
-      {item.data.city && (
-        <li class="flex items-center space-x-2">
-          {item.data.country && (
-            <img
-              alt=""
-              src={getFlagUrl(item.data.country)}
-              class="rounded-sm w-4"
-            />
-          )}
-          <span>{item.data.city}</span>
-        </li>
-      )}
-    </ul>
-  </Fragment>
-);
+  timeline: Timeline;
+}> = ({ item, timeline }) => {
+  const cityTravel = timeline.find(
+    (found) =>
+      item.data.country &&
+      found.type === "travel" &&
+      found.data.country.code.toLowerCase() ===
+        item.data.country.toLowerCase() &&
+      found.data.label === item.data.city
+  );
+  const countryTravel = (
+    timeline.find(
+      (found) =>
+        item.data.country &&
+        found.type === "travel" &&
+        found.data.country.code.toLowerCase() ===
+          item.data.country.toLowerCase()
+    ) as TimelineTravel | undefined
+  )?.data?.country;
+
+  return (
+    <Fragment>
+      <ul>
+        {item.data.event && (
+          <li class="flex items-center space-x-2">
+            <IconCalendarEvent class="h-4 w-4" />
+            <span>{item.data.event}</span>
+          </li>
+        )}
+        {item.data.talk && (
+          <li class="flex items-center space-x-2">
+            <IconPresentation class="h-4 w-4" />
+            <a
+              href={`/events/talks/${slugify(item.data.talk, { lower: true })}`}
+            >
+              {item.data.talk}
+            </a>
+          </li>
+        )}
+        {item.data.video && (
+          <li class="flex items-center space-x-2">
+            <IconVideo class="h-4 w-4" />
+            <ExternalLink href={item.data.video}>{`Watch video on ${new URL(
+              item.data.video
+            ).hostname.replace(/^www\./, "")}`}</ExternalLink>
+          </li>
+        )}
+        {item.data.venue && (
+          <li class="flex items-center space-x-2">
+            <IconMapPin class="h-4 w-4" />
+            <span>{item.data.venue}</span>
+          </li>
+        )}
+        {item.data.remote && (
+          <li class="flex items-center space-x-2">
+            <IconBrandZoom class="h-4 w-4" />
+            <span>Remote/virtual event</span>
+          </li>
+        )}
+        {item.data.city && (
+          <li class="flex items-center space-x-2">
+            {item.data.country && (
+              <img
+                alt=""
+                src={getFlagUrl(item.data.country)}
+                class="rounded-sm w-4"
+              />
+            )}
+            {cityTravel ? (
+              <a href={new URL(cityTravel.url).pathname}>{item.data.city}</a>
+            ) : (
+              <span>{item.data.city}</span>
+            )}
+            {countryTravel && (
+              <a
+                href={`/travel/countries/${slugify(
+                  countryName(countryTravel.name),
+                  { lower: true }
+                )}`}
+              >
+                {countryName(countryTravel.name)}
+              </a>
+            )}
+          </li>
+        )}
+      </ul>
+    </Fragment>
+  );
+};
 
 export const TimelineLifeEventContent: FunctionalComponent<{
   item: TimelineLifeEvent;
