@@ -220,7 +220,7 @@ export const Timeline: FunctionComponent<{
                       ) : item.type === "life-event" ? (
                         <TimelineLifeEventContent item={item} />
                       ) : item.type === "video" ? (
-                        <TimelineVideoContent item={item} />
+                        <TimelineVideoContent item={item} timeline={timeline} />
                       ) : item.type === "award" ? (
                         <TimelineAwardContent item={item} />
                       ) : item.type === "podcast-interview" ? (

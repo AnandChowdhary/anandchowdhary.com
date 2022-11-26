@@ -28,25 +28,32 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
       <SectionTitle
-        title="Projects"
-        description="As a creative technologist (interdisciplinary designer + engineer) and entrepreneur, I love building products that solve problems."
+        emoji="🌈"
+        title="Themes"
+        description="Every year on my birthday, I reflect on the past year and set a theme for the next year."
       >
         <p>
-          My projects, like all sections of this site, are open source and
+          The idea is simple — an overarching theme acts as a North Star and
+          guides you in making microdecisions. To learn more about how I think
+          about themes, read my blog post{" "}
+          <a href="/blog/2021/year-of-teamwork">
+            2022 will be the Year of Teamwork
+          </a>
+          . My themes, like all sections of this site, are open source and
           available on{" "}
-          <ExternalLink href="https://github.com/AnandChowdhary/projects">
+          <ExternalLink href="https://github.com/AnandChowdhary/themes">
             GitHub
           </ExternalLink>{" "}
-          as raw markdown files.
+          as raw markdown files. All thumbnails are generated using Stable
+          Diffusion.
         </p>
       </SectionTitle>
       <Timeline
         timeline={timeline}
-        show={timeline.filter(
-          ({ type }) => type === "project" || type === "open-source-project"
-        )}
+        show={timeline.filter(({ type }) => type === "theme")}
         query={query}
-        yearHrefPrefix="/projects"
+        hideYearHeading
+        yearHrefPrefix="/themes"
       />
     </div>
   );

@@ -1,4 +1,5 @@
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
+import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
 import IconEye from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/eye.tsx";
 import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
@@ -38,7 +39,16 @@ export const TimelineAwardContent: FunctionalComponent<{
   item: TimelineAward;
 }> = ({ item }) => (
   <p className="text-gray-500">
-    {smartQuotes(`Awarded by ${item.data.publisher}`)}
+    <span>{"Awarded by "}</span>
+    <a
+      key={1}
+      className="font-medium"
+      href={`/press/publications/${slugify(item.data.publisher, {
+        lower: true,
+      })}`}
+    >
+      {item.data.publisher}
+    </a>
   </p>
 );
 
@@ -398,7 +408,17 @@ export const TimelineProjectContent: FunctionalComponent<{
 
 export const TimelineThemeContent: FunctionalComponent<{
   item: TimelineTheme;
-}> = ({ item }) => null;
+}> = ({ item }) => (
+  <Fragment>
+    <ul className="text-gray-500">
+      <li class="flex items-center space-x-2">
+        <IconCalendarEvent class="h-4 w-4" />
+        <span>{`Theme for ${item.data.year}`}</span>
+      </li>
+    </ul>
+    <p>{item.data.description}</p>
+  </Fragment>
+);
 
 export const TimelineTravelContent: FunctionalComponent<{
   item: TimelineTravel;
@@ -428,13 +448,72 @@ export const TimelineVersionContent: FunctionalComponent<{
 
 export const TimelineVideoContent: FunctionalComponent<{
   item: TimelineVideo;
-}> = ({ item }) => (
-  <ul className="text-gray-500">
-    {item.data.publisher && item.data.city && (
-      <li>{smartQuotes(`${item.data.publisher}, ${item.data.city}`)}</li>
-    )}
-    {item.data.duration && (
-      <li>{smartQuotes(`Watch time: ${humanizeMmSs(item.data.duration)}`)}</li>
-    )}
-  </ul>
-);
+  timeline: Timeline;
+}> = ({ item, timeline }) => {
+  const cityTravel = timeline.find(
+    (found) =>
+      item.data.country &&
+      found.type === "travel" &&
+      found.data.country.code.toLowerCase() ===
+        item.data.country.toLowerCase() &&
+      found.data.label === item.data.city
+  );
+  const countryTravel = (
+    timeline.find(
+      (found) =>
+        item.data.country &&
+        found.type === "travel" &&
+        found.data.country.code.toLowerCase() ===
+          item.data.country.toLowerCase()
+    ) as TimelineTravel | undefined
+  )?.data?.country;
+
+  return (
+    <ul>
+      {item.data.publisher && (
+        <li class="flex items-center space-x-2">
+          <IconMapPin class="h-4 w-4" />
+          <span>{item.data.publisher}</span>
+        </li>
+      )}
+      {item.data.duration && (
+        <li class="flex items-center space-x-2">
+          <IconClock class="h-4 w-4" />
+          <span>{humanizeMmSs(item.data.duration)}</span>
+        </li>
+      )}
+      <li class="flex items-center space-x-2">
+        <IconVideo class="h-4 w-4" />
+        <ExternalLink href={item.data.href}>{`Watch video on ${new URL(
+          item.data.href
+        ).hostname.replace(/^www\./, "")}`}</ExternalLink>
+      </li>
+      {item.data.city && (
+        <li class="flex items-center space-x-2">
+          {item.data.country && (
+            <img
+              alt=""
+              src={getFlagUrl(item.data.country)}
+              class="rounded-sm w-4"
+            />
+          )}
+          {cityTravel ? (
+            <a href={new URL(cityTravel.url).pathname}>{item.data.city}</a>
+          ) : (
+            <span>{item.data.city}</span>
+          )}
+          {countryTravel && (
+            <a
+              href={`/travel/countries/${slugify(
+                countryName(countryTravel.name),
+                { lower: true }
+              )}`}
+            >
+              {countryName(countryTravel.name)}
+            </a>
+          )}
+        </li>
+      )}
+    </ul>
+  );
+};

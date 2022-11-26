@@ -158,9 +158,13 @@ export default function About({ data }: PageProps<AboutData>) {
           <p>
             Anand Chowdhary is an engineer, designer, and entrepreneur from New
             Delhi, India. He lives in Groningen, the Netherlands, with his
-            fianceé <a href="https://sukritikapoor.com">Sukriti Kapoor</a>, and
-            is the co-founder &amp; CTO of <a href="https://pabio.com">Pabio</a>
-            , an interior design and rent-to-own furniture company.
+            fianceé{" "}
+            <ExternalLink href="https://sukritikapoor.com">
+              Sukriti Kapoor
+            </ExternalLink>
+            , and is the co-founder &amp; CTO of{" "}
+            <ExternalLink href="https://pabio.com">Pabio</ExternalLink>, an
+            interior design and rent-to-own furniture company.
           </p>
           <p>
             As an engineer, he's focused on web standards and the JavaScript
@@ -170,16 +174,27 @@ export default function About({ data }: PageProps<AboutData>) {
             around the world.
           </p>
           <p>
-            He is also an open source contributor, awarded by GitHub as a GitHub
-            Star (2021 &amp; 2022), and was listed in Forbes 30 Under 30 (2018)
-            and in Het Financieele Dagblad's list of most-innovative
+            He is also an open source contributor, awarded by GitHub as a{" "}
+            <a href="/press/2021/github-stars">GitHub Star</a> (2021 &amp;
+            2022), and was listed in{" "}
+            <a href="/press/2018/forbes-30-under-30">Forbes 30 Under 30</a>{" "}
+            (Asia 2018) and in Het Financieele Dagblad's list of most-innovative
             entrepreneurs and professionals in the Netherlands.
           </p>
           <p>
             From time to time, he speaks at events and writes articles about
             entrepreneurship and technology. He has been featured in
-            publications like TechCrunch, Forbes, The Next Web, Hindustan Times,
-            and CSS Tricks.
+            publications like{" "}
+            <a href="/press/publications/techcrunch">TechCrunch</a>,{" "}
+            <a href="/press/publications/forbes-asia">Forbes</a>,{" "}
+            <a href="/press/publications/the-next-web">The Next Web</a>
+            {", "}
+            <a href="/press/publications/hindustan-times">Hindustan Times</a>,
+            and{" "}
+            <ExternalLink href="https://css-tricks.com/author/anandchowdhary/">
+              CSS Tricks
+            </ExternalLink>
+            .
           </p>
         </div>
       </section>

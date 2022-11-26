@@ -28,25 +28,27 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
       <SectionTitle
-        title="Projects"
-        description="As a creative technologist (interdisciplinary designer + engineer) and entrepreneur, I love building products that solve problems."
+        title="Videos"
+        description="I use Objectives and Key Results (the OKR framework) both for my personal and professional life."
       >
         <p>
-          My projects, like all sections of this site, are open source and
-          available on{" "}
-          <ExternalLink href="https://github.com/AnandChowdhary/projects">
+          My OKRs and progress, like all sections of this site, are open source
+          and available on{" "}
+          <ExternalLink href="https://github.com/AnandChowdhary/videos">
             GitHub
           </ExternalLink>{" "}
-          as raw markdown files.
+          as raw markdown files. All thumbnails are generated using Stable
+          Diffusion.
         </p>
       </SectionTitle>
       <Timeline
         timeline={timeline}
         show={timeline.filter(
-          ({ type }) => type === "project" || type === "open-source-project"
+          ({ type, data }) =>
+            type === "video" || (data && "video" in data && data.video)
         )}
         query={query}
-        yearHrefPrefix="/projects"
+        yearHrefPrefix="/videos"
       />
     </div>
   );

@@ -11,7 +11,7 @@ const NAV = [
   { label: "Mentoring", href: "/mentoring" },
   { label: "Press", href: "/press" },
   { label: "Videos", href: "/videos" },
-  { label: "Travel", href: "/travel" },
+  { label: "Versions", href: "/versions" },
   { label: "Contact", href: "/contact" },
 ];
 

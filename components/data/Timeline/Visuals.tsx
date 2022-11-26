@@ -96,7 +96,7 @@ export const TimelineProjectVisual: FunctionalComponent<{
           alt=""
           src={imageUrl(item.data.image.url, { w: "512" })}
           loading="lazy"
-          class="w-full"
+          class="max-w-full max-h-48"
         />
       ) : (
         <img
@@ -133,7 +133,21 @@ export const TimelineBlogPostVisual: FunctionalComponent<{
 
 export const TimelineThemeVisual: FunctionalComponent<{
   item: TimelineTheme;
-}> = ({ item }) => null;
+}> = ({ item }) => (
+  <img
+    alt=""
+    src={imageUrl(
+      `https://raw.githubusercontent.com/AnandChowdhary/themes/main/assets/${new Date(
+        item.date
+      ).getFullYear()}.png`,
+      { w: "512", h: "256", fit: "cover" }
+    )}
+    loading="lazy"
+    width={512}
+    height={256}
+    className="w-full rounded-lg shadow"
+  />
+);
 
 export const TimelineBookVisual: FunctionalComponent<{
   item: TimelineBook;

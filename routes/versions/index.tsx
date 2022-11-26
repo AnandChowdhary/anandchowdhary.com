@@ -28,13 +28,19 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
       <SectionTitle
-        title="Projects"
-        description="As a creative technologist (interdisciplinary designer + engineer) and entrepreneur, I love building products that solve problems."
+        title="Versions"
+        description="Over the years, I've designed and redesigned my personal website several times; I ﬁnd it to be a great way to explore new technologies. Looking back, I can connect the dots for what I was interested in way back when."
       >
         <p>
-          My projects, like all sections of this site, are open source and
-          available on{" "}
-          <ExternalLink href="https://github.com/AnandChowdhary/projects">
+          In fact, one of my first repositories on GitHub was my personal
+          website,{" "}
+          <ExternalLink href="https://github.com/AnandChowdhary/anandchowdhary.com">
+            AnandChowdhary/anandchowdhary.com
+          </ExternalLink>
+          , where you can see the git history to track each version. The summary
+          of these redesigns, like all sections of this site, are open source
+          and available on{" "}
+          <ExternalLink href="https://github.com/AnandChowdhary/versions">
             GitHub
           </ExternalLink>{" "}
           as raw markdown files.
@@ -42,11 +48,9 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
       </SectionTitle>
       <Timeline
         timeline={timeline}
-        show={timeline.filter(
-          ({ type }) => type === "project" || type === "open-source-project"
-        )}
+        show={timeline.filter(({ type }) => type === "version")}
         query={query}
-        yearHrefPrefix="/projects"
+        yearHrefPrefix="/versions"
       />
     </div>
   );

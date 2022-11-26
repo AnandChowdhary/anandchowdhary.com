@@ -4,6 +4,7 @@ import { TimelineTravel } from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
 import * as colors from "twind/colors";
 import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../../components/data/OKRs.tsx";
+import { Timeline } from "../../components/data/Timeline.tsx";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
 import { fetchLifeData, fetchText } from "../../utils/data.tsx";
@@ -754,6 +755,16 @@ export default function Home({ data }: PageProps<LifeData>) {
         ) : (
           <LoadError items="contributions" />
         )}
+      </section>
+      <section>
+        <h2 class="text-xl font-medium font-display">Timeline</h2>
+        <Timeline
+          timeline={data.timeline}
+          show={data.timeline.filter(({ type }) => type === "life-event")}
+          query={data.query}
+          yearHrefPrefix=""
+          hideYearHeading
+        />
       </section>
     </div>
   );

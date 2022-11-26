@@ -232,7 +232,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <span aria-hidden="true">🌈</span>
                 <SectionLink
                   label={`Theme for ${theme.data.year}`}
-                  href="/life/themes"
+                  href="/themes"
                 />
               </h2>
               <p class="text-gray-500">
@@ -265,7 +265,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <span aria-hidden="true">📊</span>
                 <SectionLink
                   label={okr ? `OKRs for Q${okr.data.name}` : "OKRs"}
-                  href="/life/okrs"
+                  href="/okrs"
                 />
               </h2>
               <p class="text-gray-500">Personal Objectives and Key Results</p>
