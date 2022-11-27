@@ -139,8 +139,13 @@ details[open] .rotate-on-open {
   opacity: 0.8;
 }
 
-.longform p:first-child {
+.longform > p:first-child {
   font-size: 110%;
+}
+
+.longform blockquote {
+  border-left: 0.5rem solid rgba(0, 0, 0, 0.1);
+  padding-left: 1.25rem;
 }
 
 .breadcrumbs li + li:not(:first-child)::after {
@@ -226,7 +231,7 @@ a[data-footnote-ref] {
 .readme {
   font-size: 90%;
 }
-.readme p:first-child {
+.readme > p:first-child {
   font-size: 95%;
   opacity: 75%;
 }

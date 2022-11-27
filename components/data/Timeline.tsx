@@ -103,14 +103,16 @@ export const Timeline: FunctionComponent<{
         />
       )}
       <div className="relative space-y-8">
-        <div className="absolute top-0 w-1 bg-orange-200 bottom-6 left-4" />
+        <div className="absolute top-0 w-1 bg-orange-200 bottom-6 -left-8" />
         {visible.map((item, index) => (
           <div key={item.title}>
             {(index === 0 ||
               new Date(item.date).getFullYear() !==
                 new Date(visible[index - 1].date).getFullYear()) &&
               !hideYearHeading && (
-                <div className={`flex flex-grow ${index > 0 && "pt-6"}`}>
+                <div
+                  className={`flex flex-grow -ml-12 ${index > 0 ? "pt-6" : ""}`}
+                >
                   <div className="shrink-0" style={{ minWidth: "3rem" }}>
                     <div className="relative w-5 h-5 ml-2 bg-orange-600 border-4 rounded-full border-orange-50" />
                   </div>
@@ -127,12 +129,12 @@ export const Timeline: FunctionComponent<{
                   </div>
                 </div>
               )}
-            <article className="sm:flex">
+            <article className="sm:flex relative -ml-12">
               <div className="flex flex-grow">
                 <div className="shrink-0" style={{ minWidth: "3rem" }}>
                   <div>
                     <div
-                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-white -mt-1`}
+                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-white -mt-1 z-10`}
                       style={{ backgroundColor: categoryData[item.type].color }}
                     >
                       {item.type === "theme" ? (
@@ -264,12 +266,15 @@ export const Timeline: FunctionComponent<{
                     </div>
                   </div>
                 </div>
+                {index === visible.length - 1 && !hasMoreHref && (
+                  <div class="bg-orange-50 w-9 absolute left-0 h-full top-0" />
+                )}
               </div>
             </article>
           </div>
         ))}
         {hasMoreHref && (
-          <div className="flex pt-4">
+          <div className="flex pt-4 -ml-12">
             <a
               href={
                 hasMoreHref === "special://last-archive-year"

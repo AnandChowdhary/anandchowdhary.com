@@ -74,6 +74,7 @@ export const handler: Handlers<LifeData> = {
               .split("█")[0]
               .split("▊")[0]
               .split("▍")[0]
+              .split("▎")[0]
               .trim(),
             plays: parseInt(line.replace(" plays", "").split(" ").pop() ?? "0"),
             percent:

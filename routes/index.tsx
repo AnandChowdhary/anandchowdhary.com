@@ -122,7 +122,7 @@ export default function Home({ data }: PageProps<HomeData>) {
   ) as TimelineTravel;
 
   return (
-    <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+    <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
       <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
         <div class="items-start justify-center mb-6 sm:flex">
           <img
@@ -164,7 +164,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      <section class="overflow-auto">
+      {/* <section class="overflow-auto">
         <div
           class="grid grid-cols-5 gap-12 overflow-auto text-center"
           style={{ minWidth: "700px" }}
@@ -223,7 +223,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             </a>
           ))}
         </div>
-      </section>
+      </section> */}
       <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
         <div class="space-y-8">
           <article class="space-y-4">

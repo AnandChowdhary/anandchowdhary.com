@@ -37,7 +37,7 @@ export default function App({ Component }: AppProps) {
             <div class="max-w-screen-md px-6 mx-auto md:px-0 mt-4">
               <div class="border-2 border-dashed px-4 py-3 rounded-lg bg-gray-100 space-y-1 text-sm">
                 <p class="uppercase text-xs">
-                  <a href="/about/versions/alameda/">
+                  <a href="/versions/2022/alameda/">
                     <strong>Public redesign</strong>
                   </a>
                 </p>
