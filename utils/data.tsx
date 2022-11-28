@@ -12,6 +12,34 @@ import type {
   OuraSleepData,
 } from "./interfaces.ts";
 
+const DESTINATION_HEADER_NAME = "x-ah-origin";
+const PROJECT_KEY_HEADER_NAME = "x-ah-pk";
+const PROTOCOL_HEADER_NAME = "x-ah-proto";
+const PAYLOAD_HEADER_NAME = "x-ah-payload";
+const PROXY_URL = "https://proxy.apihero.run";
+const API_HERO_PROJECT_KEY = Deno.env.get("API_HERO_PROJECT_KEY");
+
+const transformAndFetch = async (url: string) => {
+  if (!API_HERO_PROJECT_KEY) {
+    const res = await fetch(url);
+    if (!res.ok) throw new HttpError(res.status, res.statusText);
+    return res;
+  }
+  const originalUrl = new URL(url);
+  const newUrl = new URL(originalUrl.pathname + originalUrl.search, PROXY_URL);
+  const res = await fetch(newUrl, {
+    headers: {
+      [DESTINATION_HEADER_NAME]: originalUrl.host,
+      [PROTOCOL_HEADER_NAME]: originalUrl.protocol,
+      [PROJECT_KEY_HEADER_NAME]: API_HERO_PROJECT_KEY,
+      [PAYLOAD_HEADER_NAME]: `{ "env": "production" }`,
+    },
+  });
+  console.log(res.url, Deno.env.get("API_HERO_PROJECT_KEY"), res.status);
+  if (!res.ok) throw new HttpError(res.status, res.statusText);
+  return res;
+};
+
 export class HttpError extends Error {
   constructor(public status: number, message: string) {
     super(message);
@@ -19,15 +47,14 @@ export class HttpError extends Error {
 }
 
 export const fetchJson = async <T = unknown,>(url: string): Promise<T> => {
-  const res = await fetch(url);
-  if (!res.ok) throw new HttpError(res.status, res.statusText);
+  const res = await transformAndFetch(url);
   return res.json();
 };
 
 export const fetchText = async (url: string): Promise<string> => {
-  const res = await fetch(url);
-  if (!res.ok) throw new HttpError(res.status, res.statusText);
-  return (await res.blob()).text();
+  const res = await transformAndFetch(url);
+  const blob = await res.blob();
+  return blob.text();
 };
 
 export const fetchLifeData = async (): Promise<AllLifeDataSummary> => {
