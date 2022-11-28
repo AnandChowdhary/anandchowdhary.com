@@ -338,7 +338,7 @@ export const TimelinePressFeatureContent: FunctionalComponent<{
       ) : (
         <a
           className="font-medium"
-          href={`/press/publications/${slugify(String(item.data.publisher), {
+          href={`/press/publications/${slugify(item.data.publisher, {
             lower: true,
           })}`}
         >

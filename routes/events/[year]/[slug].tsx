@@ -167,7 +167,7 @@ export default function Event({
           </div>
         )}
       {item.talk && (
-        <div class="mt-8">
+        <section class="mt-8">
           <h2 class="text-2xl font-semibold font-display mb-4">
             {smartQuotes(`About the talk "${item.data.talk}"`)}
           </h2>
@@ -227,9 +227,9 @@ export default function Event({
               />
             </div>
           )}
-        </div>
+        </section>
       )}
-      <PreviousNext type="event" previous={previous} next={next} />
+      <PreviousNext typeLabel="event" previous={previous} next={next} />
     </div>
   );
 }

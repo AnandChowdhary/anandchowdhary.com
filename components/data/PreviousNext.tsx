@@ -1,11 +1,11 @@
 import type { TimeLineItem } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
 
 export function PreviousNext({
-  type,
+  typeLabel,
   previous,
   next,
 }: {
-  type: string;
+  typeLabel: string;
   previous?: TimeLineItem;
   next?: TimeLineItem;
 }) {
@@ -13,7 +13,7 @@ export function PreviousNext({
     <footer className="grid gap-4 mt-8 md:grid-cols-2">
       {previous && (
         <div>
-          <div>&larr; Previous {type}</div>
+          <div>&larr; Previous {typeLabel}</div>
           <div className="font-medium">
             <a href={new URL(previous.url).pathname}>{previous.title}</a>
           </div>
@@ -26,7 +26,7 @@ export function PreviousNext({
       )}
       {next && (
         <div className="text-right">
-          <div>Next {type} &rarr;</div>
+          <div>Next {typeLabel} &rarr;</div>
           <div className="font-medium">
             <a href={new URL(next.url).pathname}>{next.title}</a>
           </div>
