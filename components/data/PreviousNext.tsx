@@ -1,4 +1,4 @@
-import type { TimeLineItem } from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
+import type { TimeLineItem } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
 
 export function PreviousNext({
   type,

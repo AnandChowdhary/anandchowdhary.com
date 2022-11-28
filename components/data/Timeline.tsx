@@ -13,7 +13,7 @@ import IconAward from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/award.tsx"
 import IconBrandApplePodcast from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-apple-podcast.tsx";
 import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
-import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
+import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
 import { FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";

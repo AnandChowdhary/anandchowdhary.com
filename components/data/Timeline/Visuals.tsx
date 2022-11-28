@@ -13,7 +13,7 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
 import { FunctionalComponent } from "preact";
 import IconPlayerPlay from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/player-play.tsx";
 import { imageUrl } from "../../../utils/urls.ts";

@@ -3,7 +3,7 @@ import type {
   TimeLineItem,
   TimelineOkr,
   TimelineTheme,
-} from "https://esm.sh/timeline-types@7.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
 import type {
   AllLifeDataSummary,
   LocationApiResult,
@@ -12,13 +12,22 @@ import type {
   OuraSleepData,
 } from "./interfaces.ts";
 
+export class HttpError extends Error {
+  constructor(public status: number, message: string) {
+    super(message);
+  }
+}
+
 export const fetchJson = async <T = unknown,>(url: string): Promise<T> => {
-  const data = await fetch(url);
-  return data.json();
+  const res = await fetch(url);
+  if (!res.ok) throw new HttpError(res.status, res.statusText);
+  return res.json();
 };
 
 export const fetchText = async (url: string): Promise<string> => {
-  return (await (await fetch(url)).blob()).text();
+  const res = await fetch(url);
+  if (!res.ok) throw new HttpError(res.status, res.statusText);
+  return (await res.blob()).text();
 };
 
 export const fetchLifeData = async (): Promise<AllLifeDataSummary> => {
