@@ -30,7 +30,7 @@ const BOLD_REPLACERS: Record<string, string> = {
   ",": ",",
   h: "𝗵",
 };
-const chartOptions: ChartOptions = {
+export const chartOptions: ChartOptions = {
   legend: {
     align: "end",
     labels: {
@@ -57,7 +57,7 @@ const chartOptions: ChartOptions = {
   },
 };
 
-const replaceToBold = (str: string) => {
+export const replaceToBold = (str: string) => {
   return str.replace(/[0-9h,]/g, (match) => BOLD_REPLACERS[match]);
 };
 

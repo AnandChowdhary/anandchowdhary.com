@@ -29,6 +29,7 @@ export function Breadcrumbs({
             itemProp="itemListElement"
             itemScope
             itemType="https://schema.org/ListItem"
+            hidden={index === items.length - 1}
           >
             <a itemProp="item" href={item.href}>
               <span itemProp="name">{item.title}</span>
