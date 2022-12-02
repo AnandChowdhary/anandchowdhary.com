@@ -9,7 +9,7 @@ import type { OuraActivity } from "../../utils/interfaces.ts";
 import { chartOptions, replaceToBold } from "../life/index.tsx";
 
 interface ActivityData {
-  activity: [string, OuraActivity][];
+  readiness: [string, OuraActivity][];
   cursor: string;
   take: number;
   previousDate?: string;
@@ -30,12 +30,12 @@ export const handler: Handlers<ActivityData> = {
       new Date().toISOString().substring(0, 10);
 
     const activityData = await fetchJson<Record<string, OuraActivity>>(
-      `https://anandchowdhary.github.io/life/data/oura-activity/summary/days.json`
+      `https://anandchowdhary.github.io/life/data/oura-readiness/summary/days.json`
     );
-    const activity = Object.entries(activityData).filter(
-      ([_, { cal_total }]) => cal_total > 0
+    const readiness = Object.entries(activityData).filter(
+      ([_, { score }]) => score > 0
     );
-    const filteredActivity = activity
+    const filteredActivity = readiness
       .filter(([key]) => new Date(key).getTime() < new Date(cursor).getTime())
       .slice(-1 * take);
 
@@ -53,7 +53,7 @@ export const handler: Handlers<ActivityData> = {
     }
 
     const props: ActivityData = {
-      activity: filteredActivity,
+      readiness: filteredActivity,
       previousDate,
       cursor: cursor,
       take,
@@ -63,7 +63,7 @@ export const handler: Handlers<ActivityData> = {
 };
 
 export default function Home({ data }: PageProps<ActivityData>) {
-  const { activity, previousDate, cursor, take } = data;
+  const { readiness, previousDate, cursor, take } = data;
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
@@ -71,63 +71,62 @@ export default function Home({ data }: PageProps<ActivityData>) {
         <Breadcrumbs
           items={[
             { title: "Health", href: "/health" },
-            { title: "Calories", href: "/health/calories" },
+            { title: "Readiness", href: "/health/readiness" },
           ]}
         />
         <SectionTitle
-          title="Calories"
+          title="Readiness"
           description="I occasionally pen down my thoughts about technology, productivity, and design."
         />
-        {activity.length ? (
+        {readiness.length ? (
           <Fragment>
             <nav class="flex justify-between">
               {previousDate && (
                 <a
-                  href={`/health/calories?take=${take}&cursor=${previousDate}`}
+                  href={`/health/readiness?take=${take}&cursor=${previousDate}`}
                 >{`← ${new Date(previousDate).toLocaleDateString("en-US", {
                   dateStyle: "long",
                 })}`}</a>
               )}
               <ul class="flex flex-wrap space-x-4">
                 <li>
-                  <a href={`/health/calories?take=7&cursor=${cursor}`}>
+                  <a href={`/health/readiness?take=7&cursor=${cursor}`}>
                     7 days
                   </a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=30&cursor=${cursor}`}>
+                  <a href={`/health/readiness?take=30&cursor=${cursor}`}>
                     30 days
                   </a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=90&cursor=${cursor}`}>
+                  <a href={`/health/readiness?take=90&cursor=${cursor}`}>
                     90 days
                   </a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=365&cursor=${cursor}`}>
+                  <a href={`/health/readiness?take=365&cursor=${cursor}`}>
                     365 days
                   </a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=all&cursor=${cursor}`}>
+                  <a href={`/health/readiness?take=all&cursor=${cursor}`}>
                     All time
                   </a>
                 </li>
               </ul>
             </nav>
             <div class="col-span-2 text-center">
-              <time dateTime={activity[0][0]}>
-                {new Date(activity[0][0]).toLocaleDateString("en-US", {
+              <time dateTime={readiness[0][0]}>
+                {new Date(readiness[0][0]).toLocaleDateString("en-US", {
                   dateStyle: "long",
                 })}
               </time>
               <span>{"–"}</span>
-              <time dateTime={activity[activity.length - 1][0]}>
-                {new Date(activity[activity.length - 1][0]).toLocaleDateString(
-                  "en-US",
-                  { dateStyle: "long" }
-                )}
+              <time dateTime={readiness[readiness.length - 1][0]}>
+                {new Date(
+                  readiness[readiness.length - 1][0]
+                ).toLocaleDateString("en-US", { dateStyle: "long" })}
               </time>
             </div>
             <div class="chart-container">
@@ -137,27 +136,27 @@ export default function Home({ data }: PageProps<ActivityData>) {
                 type="bar"
                 options={chartOptions}
                 data={{
-                  labels: activity.map(([date, { cal_total }]) => [
+                  labels: readiness.map(([date, { score }]) => [
                     `${new Date(date).toLocaleString("en-US", {
                       weekday: "short",
                       month: "short",
                       day: "numeric",
                     })}`,
                     replaceToBold(
-                      Number(cal_total).toLocaleString("en-US", {
+                      Number(score).toLocaleString("en-US", {
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 1,
                       })
                     ),
                   ]),
                   datasets: [
-                    ...(activity.length > 10
+                    ...(readiness.length > 10
                       ? [
                           {
                             type: "line",
                             label: "Trend line",
-                            data: activity
-                              .map(([_, { cal_total }]) => cal_total)
+                            data: readiness
+                              .map(([_, { score }]) => score)
                               .map((value, index, array) => {
                                 const trend =
                                   array.length < 40
@@ -181,14 +180,9 @@ export default function Home({ data }: PageProps<ActivityData>) {
                       : []),
                     ...[
                       {
-                        label: "Active",
-                        data: activity.map(([_, { cal_active }]) => cal_active),
-                        backgroundColor: "#ef4444",
-                      },
-                      {
-                        label: "Total",
-                        data: activity.map(([_, { cal_total }]) => cal_total),
-                        backgroundColor: "#fca5a5",
+                        label: "Score",
+                        data: readiness.map(([_, { score }]) => score),
+                        backgroundColor: "#fbbf24",
                       },
                     ],
                   ],
@@ -199,7 +193,7 @@ export default function Home({ data }: PageProps<ActivityData>) {
         ) : (
           <Fragment>
             <EmptyError items="data" />
-            <a href="/health/calories">Remove all filters</a>
+            <a href="/health/readiness">Remove all filters</a>
           </Fragment>
         )}
       </div>

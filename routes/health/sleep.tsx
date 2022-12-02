@@ -5,11 +5,11 @@ import { Breadcrumbs } from "../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { EmptyError } from "../../components/text/LoadError.tsx";
 import { fetchJson } from "../../utils/data.tsx";
-import type { OuraActivity } from "../../utils/interfaces.ts";
+import type { OuraSleepData } from "../../utils/interfaces.ts";
 import { chartOptions, replaceToBold } from "../life/index.tsx";
 
 interface ActivityData {
-  activity: [string, OuraActivity][];
+  sleep: [string, OuraSleepData][];
   cursor: string;
   take: number;
   previousDate?: string;
@@ -29,13 +29,13 @@ export const handler: Handlers<ActivityData> = {
       url.searchParams.get("cursor") ??
       new Date().toISOString().substring(0, 10);
 
-    const activityData = await fetchJson<Record<string, OuraActivity>>(
-      `https://anandchowdhary.github.io/life/data/oura-activity/summary/days.json`
+    const activityData = await fetchJson<Record<string, OuraSleepData>>(
+      `https://anandchowdhary.github.io/life/data/oura-sleep/summary/days.json`
     );
-    const activity = Object.entries(activityData).filter(
-      ([_, { cal_total }]) => cal_total > 0
+    const sleep = Object.entries(activityData).filter(
+      ([_, { total }]) => total > 0
     );
-    const filteredActivity = activity
+    const filteredActivity = sleep
       .filter(([key]) => new Date(key).getTime() < new Date(cursor).getTime())
       .slice(-1 * take);
 
@@ -53,7 +53,7 @@ export const handler: Handlers<ActivityData> = {
     }
 
     const props: ActivityData = {
-      activity: filteredActivity,
+      sleep: filteredActivity,
       previousDate,
       cursor: cursor,
       take,
@@ -63,7 +63,7 @@ export const handler: Handlers<ActivityData> = {
 };
 
 export default function Home({ data }: PageProps<ActivityData>) {
-  const { activity, previousDate, cursor, take } = data;
+  const { sleep, previousDate, cursor, take } = data;
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
@@ -71,60 +71,54 @@ export default function Home({ data }: PageProps<ActivityData>) {
         <Breadcrumbs
           items={[
             { title: "Health", href: "/health" },
-            { title: "Calories", href: "/health/calories" },
+            { title: "Sleep", href: "/health/sleep" },
           ]}
         />
         <SectionTitle
-          title="Calories"
+          title="Sleep"
           description="I occasionally pen down my thoughts about technology, productivity, and design."
         />
-        {activity.length ? (
+        {sleep.length ? (
           <Fragment>
             <nav class="flex justify-between">
               {previousDate && (
                 <a
-                  href={`/health/calories?take=${take}&cursor=${previousDate}`}
+                  href={`/health/sleep?take=${take}&cursor=${previousDate}`}
                 >{`← ${new Date(previousDate).toLocaleDateString("en-US", {
                   dateStyle: "long",
                 })}`}</a>
               )}
               <ul class="flex flex-wrap space-x-4">
                 <li>
-                  <a href={`/health/calories?take=7&cursor=${cursor}`}>
-                    7 days
-                  </a>
+                  <a href={`/health/sleep?take=7&cursor=${cursor}`}>7 days</a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=30&cursor=${cursor}`}>
-                    30 days
-                  </a>
+                  <a href={`/health/sleep?take=30&cursor=${cursor}`}>30 days</a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=90&cursor=${cursor}`}>
-                    90 days
-                  </a>
+                  <a href={`/health/sleep?take=90&cursor=${cursor}`}>90 days</a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=365&cursor=${cursor}`}>
+                  <a href={`/health/sleep?take=365&cursor=${cursor}`}>
                     365 days
                   </a>
                 </li>
                 <li>
-                  <a href={`/health/calories?take=all&cursor=${cursor}`}>
+                  <a href={`/health/sleep?take=all&cursor=${cursor}`}>
                     All time
                   </a>
                 </li>
               </ul>
             </nav>
             <div class="col-span-2 text-center">
-              <time dateTime={activity[0][0]}>
-                {new Date(activity[0][0]).toLocaleDateString("en-US", {
+              <time dateTime={sleep[0][0]}>
+                {new Date(sleep[0][0]).toLocaleDateString("en-US", {
                   dateStyle: "long",
                 })}
               </time>
               <span>{"–"}</span>
-              <time dateTime={activity[activity.length - 1][0]}>
-                {new Date(activity[activity.length - 1][0]).toLocaleDateString(
+              <time dateTime={sleep[sleep.length - 1][0]}>
+                {new Date(sleep[sleep.length - 1][0]).toLocaleDateString(
                   "en-US",
                   { dateStyle: "long" }
                 )}
@@ -137,27 +131,27 @@ export default function Home({ data }: PageProps<ActivityData>) {
                 type="bar"
                 options={chartOptions}
                 data={{
-                  labels: activity.map(([date, { cal_total }]) => [
+                  labels: sleep.map(([date, { total }]) => [
                     `${new Date(date).toLocaleString("en-US", {
                       weekday: "short",
                       month: "short",
                       day: "numeric",
                     })}`,
                     replaceToBold(
-                      Number(cal_total).toLocaleString("en-US", {
+                      `${Number(total / 3600).toLocaleString("en-US", {
                         minimumFractionDigits: 0,
                         maximumFractionDigits: 1,
-                      })
+                      })}h`
                     ),
                   ]),
                   datasets: [
-                    ...(activity.length > 10
+                    ...(sleep.length > 10
                       ? [
                           {
                             type: "line",
                             label: "Trend line",
-                            data: activity
-                              .map(([_, { cal_total }]) => cal_total)
+                            data: sleep
+                              .map(([_, { total }]) => total)
                               .map((value, index, array) => {
                                 const trend =
                                   array.length < 40
@@ -181,14 +175,19 @@ export default function Home({ data }: PageProps<ActivityData>) {
                       : []),
                     ...[
                       {
-                        label: "Active",
-                        data: activity.map(([_, { cal_active }]) => cal_active),
-                        backgroundColor: "#ef4444",
+                        label: "REM",
+                        data: sleep.map(([_, { rem }]) => rem),
+                        backgroundColor: "#3730a3",
                       },
                       {
-                        label: "Total",
-                        data: activity.map(([_, { cal_total }]) => cal_total),
-                        backgroundColor: "#fca5a5",
+                        label: "Deep",
+                        data: sleep.map(([_, { deep }]) => deep),
+                        backgroundColor: "#6366f1",
+                      },
+                      {
+                        label: "Light",
+                        data: sleep.map(([_, { light }]) => light),
+                        backgroundColor: "#818cf8",
                       },
                     ],
                   ],
@@ -199,7 +198,7 @@ export default function Home({ data }: PageProps<ActivityData>) {
         ) : (
           <Fragment>
             <EmptyError items="data" />
-            <a href="/health/calories">Remove all filters</a>
+            <a href="/health/sleep">Remove all filters</a>
           </Fragment>
         )}
       </div>
