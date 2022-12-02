@@ -35,7 +35,6 @@ const transformAndFetch = async (url: string) => {
       [PAYLOAD_HEADER_NAME]: `{ "env": "production" }`,
     },
   });
-  console.log(res.url, Deno.env.get("API_HERO_PROJECT_KEY"), res.status);
   if (!res.ok) throw new HttpError(res.status, res.statusText);
   return res;
 };

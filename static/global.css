@@ -20,6 +20,12 @@ html {
   height: 100%;
 }
 
+.chart-container svg {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
 a {
   font-weight: 500;
   text-decoration: underline;
