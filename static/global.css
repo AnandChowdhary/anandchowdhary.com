@@ -133,7 +133,7 @@ details[open] .rotate-on-open {
   font-size: 100%;
 }
 
-.longform * + * {
+.longform > * + * {
   margin-top: 1rem;
 }
 

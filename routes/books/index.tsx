@@ -46,7 +46,7 @@ export const handler: Handlers<ArchiveData> = {
   },
 };
 
-function BookCover({ book }: { book: ArchiveData["books"][0] }) {
+export function BookCover({ book }: { book: ArchiveData["books"][0] }) {
   return (
     <img
       alt={`${book.title} by ${book.authors.join(", ")}`}
@@ -62,7 +62,7 @@ function BookCover({ book }: { book: ArchiveData["books"][0] }) {
     />
   );
 }
-function Book({ book }: { book: ArchiveData["books"][0] }) {
+export function Book({ book }: { book: ArchiveData["books"][0] }) {
   return (
     <a
       href={`/books/${new Date(book.startedAt).getFullYear()}/${slugify(
@@ -95,42 +95,48 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
           <a href="/projects/2021/bookshelf-action">Bookshelf Action</a>.
         </p>
       </SectionTitle>
-      <section class="space-y-4">
-        <h2 class="text-2xl font-semibold font-display">Currently reading</h2>
-        <div class="grid grid-cols-5 gap-6">
-          {books
-            .filter(({ state }) => state === "reading")
-            .map((book) => (
-              <div key={book.issueNumber}>
-                <Book book={book} />
-              </div>
-            ))}
-        </div>
-      </section>
-      <section class="space-y-4">
-        <h2 class="text-2xl font-semibold font-display">Finished reading</h2>
-        <div class="grid grid-cols-5 gap-6">
-          {books
-            .filter(({ state }) => state === "completed")
-            .map((book) => (
-              <div key={book.issueNumber}>
-                <Book book={book} />
-              </div>
-            ))}
-        </div>
-      </section>
-      <section class="space-y-4">
-        <h2 class="text-2xl font-semibold font-display">Want to read</h2>
-        <div class="grid grid-cols-5 gap-6">
-          {books
-            .filter(({ state }) => state === "want-to-read")
-            .map((book) => (
-              <div key={book.issueNumber}>
-                <Book book={book} />
-              </div>
-            ))}
-        </div>
-      </section>
+      {books.filter(({ state }) => state === "reading").length > 0 && (
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold font-display">Currently reading</h2>
+          <div class="grid grid-cols-5 gap-6">
+            {books
+              .filter(({ state }) => state === "reading")
+              .map((book) => (
+                <div key={book.issueNumber}>
+                  <Book book={book} />
+                </div>
+              ))}
+          </div>
+        </section>
+      )}
+      {books.filter(({ state }) => state === "completed").length > 0 && (
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold font-display">Finished reading</h2>
+          <div class="grid grid-cols-5 gap-6">
+            {books
+              .filter(({ state }) => state === "completed")
+              .map((book) => (
+                <div key={book.issueNumber}>
+                  <Book book={book} />
+                </div>
+              ))}
+          </div>
+        </section>
+      )}
+      {books.filter(({ state }) => state === "want-to-read").length > 0 && (
+        <section class="space-y-4">
+          <h2 class="text-2xl font-semibold font-display">Want to read</h2>
+          <div class="grid grid-cols-5 gap-6">
+            {books
+              .filter(({ state }) => state === "want-to-read")
+              .map((book) => (
+                <div key={book.issueNumber}>
+                  <Book book={book} />
+                </div>
+              ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
