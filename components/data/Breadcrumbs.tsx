@@ -8,12 +8,12 @@ export function Breadcrumbs({
   return (
     <nav {...props}>
       <ol
-        className="flex flex-wrap breadcrumbs -mb-3"
+        class="flex flex-wrap breadcrumbs -mb-3"
         itemScope
         itemType="https://schema.org/BreadcrumbList"
       >
         <li
-          className="hidden"
+          class="hidden"
           itemProp="itemListElement"
           itemScope
           itemType="https://schema.org/ListItem"

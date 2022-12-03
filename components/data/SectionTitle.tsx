@@ -3,7 +3,7 @@ import type { ComponentChildren } from "preact";
 interface SectionTitleProps {
   emoji?: string;
   title: string;
-  description: string;
+  description?: string;
   children?: ComponentChildren;
 }
 
@@ -19,7 +19,7 @@ export function SectionTitle({
         {emoji && <span aria-hidden="true">{emoji}</span>}
         <span>{title}</span>
       </h1>
-      <p class="text-xl leading-relaxed">{description}</p>
+      {description && <p class="text-xl leading-relaxed">{description}</p>}
       {children}
     </header>
   );

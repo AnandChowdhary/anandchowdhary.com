@@ -22,7 +22,10 @@ const API_HERO_PROJECT_KEY = Deno.env.get("API_HERO_PROJECT_KEY");
 const transformAndFetch = async (url: string) => {
   if (!API_HERO_PROJECT_KEY) {
     const res = await fetch(url);
-    if (!res.ok) throw new HttpError(res.status, res.statusText);
+    if (!res.ok) {
+      console.log(url);
+      throw new HttpError(res.status, res.statusText);
+    }
     return res;
   }
   const originalUrl = new URL(url);
@@ -186,6 +189,6 @@ export const categoryData: Record<
   "open-source-project": {
     color: "#26de81",
     prefix: "Launched an open source project",
-    title: "Open source",
+    title: "Open source project",
   },
 };

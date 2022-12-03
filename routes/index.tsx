@@ -127,7 +127,7 @@ export default function Home({ data }: PageProps<HomeData>) {
         <div class="items-start justify-center mb-6 sm:flex">
           <img
             alt="Illustrated portrait of Anand in comic-book style"
-            src={asset("anand.svg")}
+            src={asset("/anand.svg")}
             class="object-contain object-bottom w-1/2 sm:w-2/3"
             width={198}
             height={198}
