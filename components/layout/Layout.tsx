@@ -1,4 +1,5 @@
 import IconInfoCircle from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/info-circle.tsx";
+import Search from "../../islands/Search.tsx";
 import { Socials } from "../text/Socials.tsx";
 
 const NAV = [
@@ -29,6 +30,7 @@ export function Navbar() {
           {label}
         </a>
       ))}
+      {/* <Search /> */}
       <details className="w-6 appearance-none">
         <summary className="relative text-gray-500 list-none transition hover:text-gray-700">
           <svg
