@@ -214,7 +214,7 @@ export default function Event({
             <div class="mt-8">
               <h3 class="text-xl font-semibold font-display">Presentations</h3>
               <p class="text-gray-500">
-                This talk was presented as{" "}
+                This talk was presented at{" "}
                 <strong>{alsoShownAt.length - 1}</strong> other{" "}
                 {alsoShownAt.length === 2 ? "event" : "events"}.
               </p>

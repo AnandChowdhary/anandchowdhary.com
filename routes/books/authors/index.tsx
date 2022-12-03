@@ -3,7 +3,6 @@ import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../../components/data/SectionTitle.tsx";
 import { fetchJson } from "../../../utils/data.tsx";
-import { Book } from "../index.tsx";
 
 interface ArchiveData {
   books: {
@@ -60,16 +59,15 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
       <SectionTitle title="Authors" />
       <div class="space-y-8">
         <ul class="grid grid-cols-4">
-          {books
-            .map((book) => book.authors)
-            .flat()
-            .map((author) => (
+          {Array.from(new Set(books.map((book) => book.authors).flat())).map(
+            (author) => (
               <li>
                 <a href={`/books/authors/${slugify(author, { lower: true })}`}>
                   {author}
                 </a>
               </li>
-            ))}
+            )
+          )}
         </ul>
       </div>
     </div>
