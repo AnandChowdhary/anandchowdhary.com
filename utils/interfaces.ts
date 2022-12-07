@@ -2,7 +2,7 @@ import type {
   Timeline,
   TimelineOkr,
   TimelineTheme,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 
 interface ItemSummaryValue {
   values: string[];

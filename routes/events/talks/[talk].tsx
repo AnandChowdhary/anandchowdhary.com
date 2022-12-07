@@ -5,7 +5,7 @@ import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import {
   Timeline as ITimeline,
   TimelineEvent,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../../components/data/SectionTitle.tsx";
 import { Timeline } from "../../../components/data/Timeline.tsx";

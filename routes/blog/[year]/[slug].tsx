@@ -1,7 +1,7 @@
 import type { PageProps } from "$fresh/server.ts";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
 import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
-import type { TimelineBlogPost } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+import type { TimelineBlogPost } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
 import { About } from "../../../components/text/About.tsx";

@@ -9,7 +9,7 @@ import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type {
   TimelineEvent,
   TimelineTravel,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
 import { Timeline } from "../../../components/data/Timeline.tsx";

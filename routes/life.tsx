@@ -4,7 +4,7 @@ import {
   ChartOptions,
 } from "https://deno.land/x/fresh_charts@0.1.1/mod.ts";
 import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import { TimelineTravel } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+import { TimelineTravel } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import * as colors from "twind/colors";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";

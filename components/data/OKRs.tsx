@@ -1,4 +1,4 @@
-import { TimelineOkr } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+import { TimelineOkr } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import type { ComponentChildren, FunctionComponent } from "preact";
 import { orange } from "twind/colors";
 import TimeAgo from "../../islands/TimeAgo.tsx";

@@ -2,7 +2,7 @@ import type { PageProps } from "$fresh/server.ts";
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
-import type { TimelineTravel } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+import type { TimelineTravel } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
 import {

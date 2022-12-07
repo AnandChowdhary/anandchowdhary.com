@@ -7,7 +7,7 @@ import {
 import {
   TimelineBook,
   TimelineTravel,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { ComponentChildren } from "preact";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";

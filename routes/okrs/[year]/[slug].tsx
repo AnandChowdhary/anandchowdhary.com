@@ -4,7 +4,7 @@ import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/ca
 import IconApiApp from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/api-app.tsx";
 import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
 import IconSquareCheck from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/square-check.tsx";
-import type { TimelineOkr } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+import type { TimelineOkr } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { OKRCards } from "../../../components/data/OKRs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";

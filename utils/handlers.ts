@@ -3,7 +3,7 @@ import frontMatter from "https://esm.sh/front-matter@4.0.2";
 import type {
   Timeline,
   TimeLineItem,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { fetchJson, fetchText } from "./data.tsx";
 import { render } from "./markdown.ts";
 

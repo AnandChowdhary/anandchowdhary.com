@@ -25,7 +25,7 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import type { ComponentChildren, FunctionalComponent } from "preact";
 import { Fragment } from "preact";
 import { t } from "../../../utils/i18n.tsx";

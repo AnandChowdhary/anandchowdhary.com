@@ -3,7 +3,7 @@ import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import {
   Timeline as ITimeline,
   TimelineEvent,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../../components/data/SectionTitle.tsx";
 import { fetchJson } from "../../../utils/data.tsx";

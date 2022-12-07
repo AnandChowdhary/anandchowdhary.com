@@ -13,7 +13,7 @@ import type {
   TimelineTravel,
   TimelineVersion,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { FunctionalComponent } from "preact";
 import IconPlayerPlay from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/player-play.tsx";
 import { imageUrl } from "../../../utils/urls.ts";
@@ -236,13 +236,27 @@ export const TimelinePressFeatureVisual: FunctionalComponent<{
 
 export const TimelineOpenSourceProjectVisual: FunctionalComponent<{
   item: TimelineOpenSourceProject;
-}> = ({ item }) => (
-  <div
-    class="bg-white w-full rounded-lg shadow flex items-center justify-center py-4 text-6xl leading-none"
-    style={{ aspectRatio: "2/1" }}
-  >
-    <div>
-      {item.data.description?.match(/\p{Emoji}+/gu)?.[0] ?? item.title[0]}
+}> = ({ item }) =>
+  item.data.openGraphImageUrl ? (
+    <img
+      alt=""
+      src={imageUrl(item.data.openGraphImageUrl, {
+        w: "512",
+        h: "256",
+        fit: "cover",
+      })}
+      loading="lazy"
+      width={512}
+      height={256}
+      className="w-full rounded-lg shadow"
+    />
+  ) : (
+    <div
+      class="bg-white w-full rounded-lg shadow flex items-center justify-center py-4 text-6xl leading-none"
+      style={{ aspectRatio: "2/1" }}
+    >
+      <div>
+        {item.data.description?.match(/\p{Emoji}+/gu)?.[0] ?? item.title[0]}
+      </div>
     </div>
-  </div>
-);
+  );

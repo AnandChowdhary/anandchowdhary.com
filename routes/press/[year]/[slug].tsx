@@ -8,7 +8,7 @@ import type {
   TimelinePressFeature,
   TimelineTravel,
   TimelineVideo,
-} from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
+} from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
 import {
