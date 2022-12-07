@@ -1,8 +1,9 @@
 import { asset } from "$fresh/runtime.ts";
-import { toHoursAndMinutes } from "./life/index.tsx";
-import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
+import {
+  default as smartquotes,
+  default as smartQuotes,
+} from "https://esm.sh/smartquotes-ts@0.0.2";
 import {
   TimelineBook,
   TimelineTravel,
@@ -20,6 +21,7 @@ import { categoryData, fetchLifeData } from "../utils/data.tsx";
 import { t } from "../utils/i18n.tsx";
 import type { AllLifeDataSummary } from "../utils/interfaces.ts";
 import { countryName } from "../utils/string.ts";
+import { toHoursAndMinutes } from "./health/index.tsx";
 
 const birthdayThisYear = new Date("1997-12-29");
 birthdayThisYear.setUTCFullYear(new Date().getUTCFullYear());

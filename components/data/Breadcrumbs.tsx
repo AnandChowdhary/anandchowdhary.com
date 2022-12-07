@@ -1,3 +1,6 @@
+import { Head } from "$fresh/runtime.ts";
+import { Fragment } from "preact";
+
 export function Breadcrumbs({
   items,
   ...props
@@ -6,38 +9,48 @@ export function Breadcrumbs({
   class?: string;
 }) {
   return (
-    <nav {...props}>
-      <ol
-        class="flex flex-wrap breadcrumbs -mb-3"
-        itemScope
-        itemType="https://schema.org/BreadcrumbList"
-      >
-        <li
-          class="hidden"
-          itemProp="itemListElement"
+    <Fragment>
+      <Head>
+        <title>
+          {[
+            ...items.map((item) => item.title).reverse(),
+            "Anand Chowdhary",
+          ].join(" ‹ ")}
+        </title>
+      </Head>
+      <nav {...props}>
+        <ol
+          class="flex flex-wrap breadcrumbs -mb-3"
           itemScope
-          itemType="https://schema.org/ListItem"
+          itemType="https://schema.org/BreadcrumbList"
         >
-          <a itemProp="item" href="/">
-            <span itemProp="name">Anand Chowdhary</span>
-            <meta itemProp="position" content="1" />
-          </a>
-        </li>
-        {items.map((item, index) => (
           <li
-            key={item.href}
+            class="hidden"
             itemProp="itemListElement"
             itemScope
             itemType="https://schema.org/ListItem"
-            hidden={index === items.length - 1}
           >
-            <a itemProp="item" href={item.href}>
-              <span itemProp="name">{item.title}</span>
-              <meta itemProp="position" content={(index + 2).toString()} />
+            <a itemProp="item" href="/">
+              <span itemProp="name">Anand Chowdhary</span>
+              <meta itemProp="position" content="1" />
             </a>
           </li>
-        ))}
-      </ol>
-    </nav>
+          {items.map((item, index) => (
+            <li
+              key={item.href}
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ListItem"
+              hidden={index === items.length - 1}
+            >
+              <a itemProp="item" href={item.href}>
+                <span itemProp="name">{item.title}</span>
+                <meta itemProp="position" content={(index + 2).toString()} />
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </Fragment>
   );
 }

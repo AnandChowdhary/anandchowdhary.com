@@ -8,13 +8,14 @@ import { SectionLink } from "../text/SectionLink.tsx";
 
 export const OKRCards: FunctionComponent<{
   okr: TimelineOkr;
-}> = ({ okr }) => {
+  isOpen?: boolean;
+}> = ({ okr, isOpen }) => {
   const { data } = okr;
 
   return (
     <div class="space-y-3">
       {data.objectives.map(({ name, success, progress, key_results }) => (
-        <details key={name} class="appearance-none">
+        <details key={name} class="appearance-none" open={isOpen}>
           <summary
             class="flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm"
             style={{

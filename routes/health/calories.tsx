@@ -6,7 +6,7 @@ import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { EmptyError } from "../../components/text/LoadError.tsx";
 import { fetchJson } from "../../utils/data.tsx";
 import type { OuraActivity } from "../../utils/interfaces.ts";
-import { chartOptions, replaceToBold } from "../life/index.tsx";
+import { chartOptions, replaceToBold } from "../life.tsx";
 
 interface ActivityData {
   activity: [string, OuraActivity][];

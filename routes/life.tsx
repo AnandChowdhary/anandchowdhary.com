@@ -6,15 +6,15 @@ import {
 import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { TimelineTravel } from "https://esm.sh/timeline-types@8.0.0/index.d.ts";
 import * as colors from "twind/colors";
-import { DataFooterLinks } from "../../components/data/DataFooterLinks.tsx";
-import { OKRCards } from "../../components/data/OKRs.tsx";
-import { Timeline } from "../../components/data/Timeline.tsx";
-import { LoadError } from "../../components/text/LoadError.tsx";
-import { SectionLink } from "../../components/text/SectionLink.tsx";
-import { fetchLifeData, fetchText } from "../../utils/data.tsx";
-import type { AllLifeDataSummary } from "../../utils/interfaces.ts";
-import { countryName } from "../../utils/string.ts";
-import { getFlagUrl, imageUrl } from "../../utils/urls.ts";
+import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
+import { OKRCards } from "../components/data/OKRs.tsx";
+import { Timeline } from "../components/data/Timeline.tsx";
+import { LoadError } from "../components/text/LoadError.tsx";
+import { SectionLink } from "../components/text/SectionLink.tsx";
+import { fetchLifeData, fetchText } from "../utils/data.tsx";
+import type { AllLifeDataSummary } from "../utils/interfaces.ts";
+import { countryName } from "../utils/string.ts";
+import { getFlagUrl, imageUrl } from "../utils/urls.ts";
 
 const BOLD_REPLACERS: Record<string, string> = {
   "1": "𝟭",

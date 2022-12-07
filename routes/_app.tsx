@@ -7,7 +7,6 @@ export default function App({ Component }: AppProps) {
   return (
     <html class="bg-yellow-500 py-2">
       <Head>
-        <title>Anand Chowdhary</title>
         <link rel="prefetch" href={`/${asset("anand.svg")}`} />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
       </Head>
