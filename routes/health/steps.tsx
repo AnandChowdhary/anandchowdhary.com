@@ -6,7 +6,7 @@ import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { EmptyError } from "../../components/text/LoadError.tsx";
 import { fetchJson } from "../../utils/data.tsx";
 import type { OuraActivity } from "../../utils/interfaces.ts";
-import { chartOptions, replaceToBold } from "../life.tsx";
+import { chartOptions } from "../life.tsx";
 
 interface ActivityData {
   steps: [string, OuraActivity][];
@@ -129,22 +129,36 @@ export default function Home({ data }: PageProps<ActivityData>) {
                 width={720}
                 height={400}
                 type="bar"
-                options={chartOptions}
+                options={{
+                  ...chartOptions,
+                  scales: {
+                    ...chartOptions.scales,
+                    yAxes: [
+                      {
+                        stacked: false,
+                        gridLines: { display: false },
+                        ticks: { beginAtZero: true },
+                      },
+                    ],
+                  },
+                }}
                 data={{
-                  labels: steps.map(([date, { steps }]) => [
+                  labels: steps.map(([date]) => [
                     `${new Date(date).toLocaleString("en-US", {
                       weekday: "short",
                       month: "short",
                       day: "numeric",
                     })}`,
-                    replaceToBold(
-                      Number(steps).toLocaleString("en-US", {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 1,
-                      })
-                    ),
                   ]),
                   datasets: [
+                    {
+                      type: "line",
+                      label: "10k steps",
+                      data: steps.map(() => 10000),
+                      backgroundColor: "none",
+                      borderColor: "#2980b940",
+                      pointRadius: 1,
+                    },
                     ...(steps.length > 10
                       ? [
                           {
@@ -169,7 +183,8 @@ export default function Home({ data }: PageProps<ActivityData>) {
                                 return value;
                               }),
                             backgroundColor: "none",
-                            borderColor: "rgba(0, 0, 0, 0.3)",
+                            borderColor: "#2c3e5050",
+                            pointRadius: 1,
                           },
                         ]
                       : []),

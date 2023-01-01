@@ -6,7 +6,7 @@ import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { EmptyError } from "../../components/text/LoadError.tsx";
 import { fetchJson } from "../../utils/data.tsx";
 import type { OuraSleepData } from "../../utils/interfaces.ts";
-import { chartOptions, replaceToBold } from "../life.tsx";
+import { chartOptions } from "../life.tsx";
 
 interface ActivityData {
   sleep: [string, OuraSleepData][];
@@ -129,22 +129,36 @@ export default function Home({ data }: PageProps<ActivityData>) {
                 width={720}
                 height={400}
                 type="bar"
-                options={chartOptions}
+                options={{
+                  ...chartOptions,
+                  scales: {
+                    ...chartOptions.scales,
+                    yAxes: [
+                      {
+                        stacked: false,
+                        gridLines: { display: false },
+                        ticks: { beginAtZero: true },
+                      },
+                    ],
+                  },
+                }}
                 data={{
-                  labels: sleep.map(([date, { total }]) => [
+                  labels: sleep.map(([date]) => [
                     `${new Date(date).toLocaleString("en-US", {
-                      weekday: "short",
+                      year: "numeric",
                       month: "short",
                       day: "numeric",
                     })}`,
-                    replaceToBold(
-                      `${Number(total / 3600).toLocaleString("en-US", {
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 1,
-                      })}h`
-                    ),
                   ]),
                   datasets: [
+                    {
+                      type: "line",
+                      label: "8 hours",
+                      data: sleep.map(() => 8),
+                      backgroundColor: "none",
+                      borderColor: "#2980b940",
+                      pointRadius: 1,
+                    },
                     ...(sleep.length > 10
                       ? [
                           {
@@ -164,29 +178,35 @@ export default function Home({ data }: PageProps<ActivityData>) {
                                     array
                                       .slice(index - trend, index)
                                       .reduce((a, b) => a + b, 0) / trend;
-                                  return average;
+                                  return average / 3600;
                                 }
-                                return value;
+                                return value / 3600;
                               }),
                             backgroundColor: "none",
-                            borderColor: "rgba(0, 0, 0, 0.3)",
+                            borderColor: "#2c3e5050",
+                            pointRadius: 1,
                           },
                         ]
                       : []),
                     ...[
                       {
                         label: "REM",
-                        data: sleep.map(([_, { rem }]) => rem),
+                        data: sleep.map(([_, { rem }]) => rem / 3600),
                         backgroundColor: "#3730a3",
                       },
                       {
                         label: "Deep",
-                        data: sleep.map(([_, { deep }]) => deep),
+                        data: sleep.map(
+                          ([_, { rem, deep }]) => (rem + deep) / 3600
+                        ),
                         backgroundColor: "#6366f1",
                       },
                       {
                         label: "Light",
-                        data: sleep.map(([_, { light }]) => light),
+                        data: sleep.map(
+                          ([_, { rem, deep, light }]) =>
+                            (rem + deep + light) / 3600
+                        ),
                         backgroundColor: "#818cf8",
                       },
                     ],

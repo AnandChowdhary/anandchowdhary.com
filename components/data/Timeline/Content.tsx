@@ -221,7 +221,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
     )}
     <ul className="flex flex-wrap space-x-5">
       {item.data.language && item.data.languageColor && (
-        <li className="flex flex-wrap items-center space-x-2">
+        <li class="flex items-center space-x-2">
           <span
             class="w-4 h-4 rounded-full"
             style={{ backgroundColor: item.data.languageColor ?? "#aaa" }}
@@ -236,7 +236,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         </li>
       )}
       {item.data.stars > 0 && (
-        <li className="flex flex-wrap items-center space-x-2">
+        <li class="flex items-center space-x-2">
           <IconStar class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.stars.toLocaleString()}</0> stars`, {}, [
@@ -248,7 +248,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         </li>
       )}
       {item.data.watchers > 0 && (
-        <li className="flex flex-wrap items-center space-x-2">
+        <li class="flex items-center space-x-2">
           <IconGitFork class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.watchers.toLocaleString()}</0> watchers`, {}, [
@@ -260,7 +260,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
         </li>
       )}
       {item.data.forks > 0 && (
-        <li className="flex flex-wrap items-center space-x-2">
+        <li class="flex items-center space-x-2">
           <IconEye class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.forks.toLocaleString()}</0> forks`, {}, [

@@ -56,7 +56,6 @@ export const chartOptions: ChartOptions = {
     ],
   },
 };
-
 export const replaceToBold = (str: string) => {
   return str.replace(/[0-9h,]/g, (match) => BOLD_REPLACERS[match]);
 };
