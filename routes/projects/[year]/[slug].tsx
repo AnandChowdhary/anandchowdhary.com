@@ -1,26 +1,26 @@
 import type { Handlers, PageProps } from "$fresh/server.ts";
-import frontMatter from "https://esm.sh/front-matter@4.0.2";
-import { render } from "../../../utils/markdown.ts";
+import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
+import IconEye from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/eye.tsx";
+import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
+import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
+import frontMatter from "https://esm.sh/front-matter@4.0.2";
+import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type {
   Timeline,
   TimelineOpenSourceProject,
   TimelineProject,
 } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
-import { type ComponentChildren, Fragment } from "preact";
+import { Fragment, type ComponentChildren } from "preact";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
 import { ExternalLink } from "../../../components/text/ExternalLink.tsx";
 import { fetchJson, fetchText } from "../../../utils/data.tsx";
 import { SingleItemHandlerProps } from "../../../utils/handlers.ts";
-import { imageUrl } from "../../../utils/urls.ts";
-import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
-import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
 import { t } from "../../../utils/i18n.tsx";
-import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
-import IconEye from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/eye.tsx";
+import { render } from "../../../utils/markdown.ts";
+import { imageUrl } from "../../../utils/urls.ts";
 
 type TimelineProjectItem = TimelineOpenSourceProject | TimelineProject;
 
@@ -36,6 +36,7 @@ export const handler: Handlers = {
         url.endsWith(context.params.slug)
     );
     const item = timeline[currentIndex] as TimelineProjectItem;
+    console.log(item);
 
     let readme: string | undefined = undefined;
     if (item.type === "open-source-project") {

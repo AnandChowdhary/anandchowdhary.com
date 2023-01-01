@@ -1,38 +1,22 @@
-import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
-import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
-import IconRainbow from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/rainbow.tsx";
-import IconTarget from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/target.tsx";
+import IconAward from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/award.tsx";
+import IconBook from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/book.tsx";
+import IconBrandApplePodcast from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-apple-podcast.tsx";
+import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import IconDeviceLaptop from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/device-laptop.tsx";
+import IconMicrophone2 from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/microphone-2.tsx";
+import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
 import IconPaint from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/paint.tsx";
 import IconPencil from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/pencil.tsx";
-import IconDeviceLaptop from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/device-laptop.tsx";
 import IconPlaneTilt from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/plane-tilt.tsx";
-import IconMicrophone2 from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/microphone-2.tsx";
-import IconBook from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/book.tsx";
+import IconRainbow from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/rainbow.tsx";
 import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
-import IconAward from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/award.tsx";
-import IconBrandApplePodcast from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-apple-podcast.tsx";
-import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
-import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import IconTarget from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/target.tsx";
+import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
+import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type { Timeline as ITimeline } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { FunctionComponent } from "preact";
 import Filters from "../../islands/Filters.tsx";
 import { categoryData } from "../../utils/data.tsx";
-import {
-  TimelineAwardVisual,
-  TimelineBlogPostVisual,
-  TimelineBookVisual,
-  TimelineEventVisual,
-  TimelineLifeEventVisual,
-  TimelineOkrVisual,
-  TimelineOpenSourceProjectVisual,
-  TimelinePodcastInterviewVisual,
-  TimelinePressFeatureVisual,
-  TimelineProjectVisual,
-  TimelineThemeVisual,
-  TimelineTravelVisual,
-  TimelineVersionVisual,
-  TimelineVideoVisual,
-} from "./Timeline/Visuals.tsx";
 import {
   TimelineAwardContent,
   TimelineBlogPostContent,
@@ -49,6 +33,22 @@ import {
   TimelineVersionContent,
   TimelineVideoContent,
 } from "./Timeline/Content.tsx";
+import {
+  TimelineAwardVisual,
+  TimelineBlogPostVisual,
+  TimelineBookVisual,
+  TimelineEventVisual,
+  TimelineLifeEventVisual,
+  TimelineOkrVisual,
+  TimelineOpenSourceProjectVisual,
+  TimelinePodcastInterviewVisual,
+  TimelinePressFeatureVisual,
+  TimelineProjectVisual,
+  TimelineThemeVisual,
+  TimelineTravelVisual,
+  TimelineVersionVisual,
+  TimelineVideoVisual,
+} from "./Timeline/Visuals.tsx";
 
 export const Timeline: FunctionComponent<{
   timeline: ITimeline;
@@ -103,7 +103,7 @@ export const Timeline: FunctionComponent<{
         />
       )}
       <div className="relative space-y-8">
-        <div className="absolute top-0 w-1 bg-orange-200 bottom-6 -left-8" />
+        <div className="absolute top-0 w-1 bg-rose-200 bottom-6 -left-8" />
         {visible.map((item, index) => (
           <div key={item.title}>
             {(index === 0 ||
@@ -114,7 +114,7 @@ export const Timeline: FunctionComponent<{
                   className={`flex flex-grow -ml-12 ${index > 0 ? "pt-6" : ""}`}
                 >
                   <div className="shrink-0" style={{ minWidth: "3rem" }}>
-                    <div className="relative w-5 h-5 ml-2 bg-orange-600 border-4 rounded-full border-orange-50" />
+                    <div className="relative w-5 h-5 ml-2 bg-rose-600 border-4 rounded-full border-rose-50" />
                   </div>
                   <div>
                     <h3 className="mb-6 text-xl font-semibold">
@@ -134,7 +134,7 @@ export const Timeline: FunctionComponent<{
                 <div className="shrink-0" style={{ minWidth: "3rem" }}>
                   <div>
                     <div
-                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-orange-50 bg-white -mt-1 z-10`}
+                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-rose-50 bg-white -mt-1 z-10`}
                       style={{ backgroundColor: categoryData[item.type].color }}
                     >
                       {item.type === "theme" ? (
@@ -267,7 +267,7 @@ export const Timeline: FunctionComponent<{
                   </div>
                 </div>
                 {index === visible.length - 1 && !hasMoreHref && (
-                  <div class="bg-orange-50 w-9 absolute left-0 h-full top-0" />
+                  <div class="bg-rose-50 w-9 absolute left-0 h-full top-0" />
                 )}
               </div>
             </article>

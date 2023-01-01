@@ -6,9 +6,8 @@ export default {
   theme: {
     colors: {
       white: colors.white,
-      orange: colors.orange,
+      rose: colors.rose,
       gray: colors.gray,
-      yellow: colors.yellow,
     },
   },
 } as Options;

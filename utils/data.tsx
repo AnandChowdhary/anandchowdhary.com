@@ -119,76 +119,91 @@ export const categoryData: Record<
     color: string;
     prefix: string;
     title: string;
+    slug: string;
   }
 > = {
   theme: {
     color: "#1abc9c",
     prefix: "New yearly theme",
     title: "Theme",
+    slug: "themes",
   },
   okr: {
     color: "#ff5252",
     prefix: "New quarterly OKRs",
     title: "OKR",
+    slug: "okrs",
   },
   version: {
     color: "#ff793f",
     prefix: "Redesigned website",
     title: "Redesign",
+    slug: "redesigns",
   },
   "blog-post": {
     color: "#ffb142",
     prefix: "Wrote a blog post",
     title: "Blog post",
+    slug: "blog",
   },
   project: {
     color: "#33d9b2",
     prefix: "Published a project",
     title: "Project",
+    slug: "projects",
   },
   travel: {
     color: "#706fd3",
     prefix: "Traveled to a new place",
     title: "Travel",
+    slug: "travel",
   },
   event: {
     color: "#34ace0",
     prefix: "Spoke at an event",
     title: "Event",
+    slug: "events",
   },
   book: {
     color: "#4b7bec",
     prefix: "Finished a book",
     title: "Book",
+    slug: "books",
   },
   "life-event": {
     color: "#a55eea",
     prefix: "Life milestone",
     title: "Life event",
+    slug: "life-events",
   },
   video: {
     color: "#eb3b5a",
     prefix: "Featured in a video",
     title: "Video",
+    slug: "videos",
   },
   award: {
     color: "#f7b731",
     prefix: "Received an award",
     title: "Award",
+    slug: "press",
   },
   "podcast-interview": {
     color: "#0fb9b1",
     prefix: "Featured in a podcast",
     title: "Podcast",
+    slug: "press",
   },
   "press-feature": {
     color: "#2bcbba",
     prefix: "Featured in the press",
     title: "Press",
+    slug: "press",
   },
   "open-source-project": {
     color: "#26de81",
     prefix: "Launched an open source project",
     title: "Open source project",
+    slug: "projects",
   },
 };

@@ -5,12 +5,15 @@ import { render } from "../utils/markdown.ts";
 
 export default function App({ Component }: AppProps) {
   return (
-    <html class="bg-yellow-500 py-2">
+    <html class="py-2" style={{ backgroundColor: "#ef8286" }}>
       <Head>
-        <link rel="prefetch" href={`/${asset("anand.svg")}`} />
+        <link rel="prefetch" href={`/${asset("anand.png")}`} />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
       </Head>
-      <body class="min-h-screen text-gray-700 bg-orange-50">
+      <body
+        class="min-h-screen text-gray-700"
+        style={{ backgroundColor: "#fbf1f2" }}
+      >
         <div>
           <header class="pt-6 pb-8">
             <div class="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">

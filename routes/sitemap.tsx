@@ -16,7 +16,7 @@ interface SitemapData {
 }
 
 export const handler: Handlers<SitemapData> = {
-  async GET(request, context) {
+  async GET(_, context) {
     const timeline = (await (
       await fetch("https://anandchowdhary.github.io/everything/api.json")
     ).json()) as {
@@ -62,8 +62,22 @@ export default function Sitemap({ data }: PageProps<SitemapData>) {
         {types.sort().map((type) => (
           <article key={type}>
             <h2 class="text-2xl font-semibold font-display mb-2">
-              {categoryData[type].title}
+              {Object(categoryData)[type].title}
             </h2>
+            <h3 class="text-xl font-semibold font-display mb-2">Years</h3>
+            <ul class="space-y-4">
+              {Array.from(
+                { length: new Date().getUTCFullYear() - 2009 + 1 },
+                (_, index) => index + 2009
+              ).map((year) => (
+                <li key={year}>
+                  <a href={`/${Object(categoryData)[type].slug}/${year}`}>
+                    {year}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <h3 class="text-xl font-semibold font-display mt-4 mb-2">Items</h3>
             <ul class="space-y-4">
               {timeline
                 .filter(({ type: t }) => t === type)

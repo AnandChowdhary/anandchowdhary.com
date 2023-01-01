@@ -437,7 +437,7 @@ export default function Home({ data }: PageProps<LifeData>) {
                   class="flex bg-white rounded-lg shadow-sm"
                   style={{
                     backgroundImage: `linear-gradient(to right, ${
-                      colors.orange[400]
+                      colors.rose[400]
                     } ${Math.round(artist.percent * 100)}%, white ${
                       Math.round(artist.percent * 100) + 0.01
                     }%)`,

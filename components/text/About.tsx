@@ -5,8 +5,8 @@ export function About() {
     <section class="bg-white mt-8 p-8 rounded shadow-sm grid grid-cols-6 gap-8">
       <div>
         <img
-          alt="Illustrated portrait of Anand in comic-book style"
-          src={asset("/anand.svg")}
+          alt="Illustrated portrait of Anand"
+          src={asset("/anand.png")}
           class="object-contain object-bottom w-full"
           width={198}
           height={198}

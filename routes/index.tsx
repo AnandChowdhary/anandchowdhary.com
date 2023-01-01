@@ -128,8 +128,8 @@ export default function Home({ data }: PageProps<HomeData>) {
       <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
         <div class="items-start justify-center mb-6 sm:flex">
           <img
-            alt="Illustrated portrait of Anand in comic-book style"
-            src={asset("/anand.svg")}
+            alt="Illustrated portrait of Anand"
+            src={asset("/anand.png")}
             class="object-contain object-bottom w-1/2 sm:w-2/3"
             width={198}
             height={198}

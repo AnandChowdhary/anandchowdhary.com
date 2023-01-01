@@ -5,6 +5,9 @@
 
 No content is hosted in this repository. Instead, all content is fetched from source-of-truth GitHub repositories:
 
+- [ ] Add 2x image URLs
+- [ ] Add cover photos as OG images
+
 ## 💻 Development
 
 ### Stack

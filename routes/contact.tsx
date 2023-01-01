@@ -1,9 +1,9 @@
-import { render } from "../utils/markdown.ts";
-import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import IconBrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-instagram.tsx";
 import IconBrandLinkedin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-linkedin.tsx";
 import IconBrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-twitter.tsx";
-import IconBrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-instagram.tsx";
+import { ExternalLink } from "../components/text/ExternalLink.tsx";
+import { render } from "../utils/markdown.ts";
 
 export default function Contact() {
   return (
@@ -47,10 +47,7 @@ export default function Contact() {
               required
             />
           </label>
-          <button
-            type="submit"
-            class="px-6 py-2 bg-orange-200 rounded shadow-sm"
-          >
+          <button type="submit" class="px-6 py-2 bg-rose-200 rounded shadow-sm">
             Send message
           </button>
         </form>

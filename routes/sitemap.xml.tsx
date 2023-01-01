@@ -14,6 +14,10 @@ export const pages = {
   "/contact": "Contact",
   "/colophon": "Colophon",
   "/colophon/versions": "Versions",
+  "/health/calories": "Calories",
+  "/health/sleep": "Sleep",
+  "/health/steps": "Steps",
+  "/health/readiness": "Readiness",
   "/sitemap": "Sitemap",
 };
 

@@ -166,7 +166,7 @@ function Records({
           <div key={i.end} className="w-full">
             <div className="h-64 flex flex-col justify-end">
               <div
-                className="bg-orange-100 text-center text-xs overflow-hidden p-4 rounded"
+                className="bg-rose-100 text-center text-xs overflow-hidden p-4 rounded"
                 style={{ height: `${Math.round((100 * i.sum) / max)}%` }}
               >
                 {format?.(Math.round(i.sum))}

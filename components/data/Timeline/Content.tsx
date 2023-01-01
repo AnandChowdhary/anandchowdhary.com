@@ -1,13 +1,13 @@
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
-import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
+import IconBrandZoom from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-zoom.tsx";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
+import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
 import IconEye from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/eye.tsx";
 import IconGitFork from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/git-fork.tsx";
 import IconMapPin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/map-pin.tsx";
 import IconPresentation from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/presentation.tsx";
 import IconStar from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/star.tsx";
 import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
-import IconBrandZoom from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-zoom.tsx";
 import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type {
   Timeline,
@@ -249,7 +249,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
       )}
       {item.data.watchers > 0 && (
         <li class="flex items-center space-x-2">
-          <IconGitFork class="w-4 h-4" />
+          <IconEye class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.watchers.toLocaleString()}</0> watchers`, {}, [
               ({ children }: { children: ComponentChildren }) => (
@@ -261,7 +261,7 @@ export const TimelineOpenSourceProjectContent: FunctionalComponent<{
       )}
       {item.data.forks > 0 && (
         <li class="flex items-center space-x-2">
-          <IconEye class="w-4 h-4" />
+          <IconGitFork class="w-4 h-4" />
           <span>
             {t(`<0>${item.data.forks.toLocaleString()}</0> forks`, {}, [
               ({ children }: { children: ComponentChildren }) => (

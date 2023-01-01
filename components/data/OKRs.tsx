@@ -1,6 +1,6 @@
 import { TimelineOkr } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import type { ComponentChildren, FunctionComponent } from "preact";
-import { orange } from "twind/colors";
+import { rose } from "twind/colors";
 import TimeAgo from "../../islands/TimeAgo.tsx";
 import { t } from "../../utils/i18n.tsx";
 import { ExternalLink } from "../text/ExternalLink.tsx";
@@ -20,7 +20,7 @@ export const OKRCards: FunctionComponent<{
             class="flex flex-col px-4 py-2 bg-white rounded-lg shadow-sm"
             style={{
               backgroundImage: `linear-gradient(to right, ${
-                orange[400]
+                rose[400]
               } ${Math.round(success * 100)}%, white ${
                 Math.round(success * 100) + 0.01
               }%)`,
@@ -64,7 +64,7 @@ export const OKRCards: FunctionComponent<{
                 class="flex justify-between px-4 py-2 bg-white rounded-lg shadow-sm"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${
-                    orange[400]
+                    rose[400]
                   } ${Math.round(success * 100)}%, white ${
                     Math.round(success * 100) + 0.01
                   }%)`,
