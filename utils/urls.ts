@@ -8,5 +8,7 @@ export const getFlagUrl = (countryCode: string) => {
 export const imageUrl = (url: string, search: Record<string, string>) => {
   return `https://wsrv.nl/?url=${encodeURIComponent(
     url
-  )}?maxage=1y&${new URLSearchParams(search).toString()}`;
+  )}?maxage=1y&${new URLSearchParams(
+    search
+  ).toString()}&cacheBuster=1672578584753`;
 };
