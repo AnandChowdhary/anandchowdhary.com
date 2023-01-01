@@ -11,7 +11,7 @@ import {
 } from "../../../utils/handlers.ts";
 
 export const handler = singleItemHandler(
-  "AnandChowdhary/blog/master/blog",
+  "AnandChowdhary/blog/main/blog",
   "blog-post"
 );
 
