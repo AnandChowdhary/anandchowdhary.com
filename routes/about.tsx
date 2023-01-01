@@ -1,7 +1,7 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
-import { render } from "../utils/markdown.ts";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
+import { render } from "../utils/markdown.ts";
 
 interface AboutData {
   readme: string;
@@ -199,7 +199,7 @@ export default function About({ data }: PageProps<AboutData>) {
         </div>
       </section>
       <section>
-        <h2 className="mt-8 text-2xl font-semibold font-display">Work</h2>
+        <h2 className="mt-8 text-2xl font-semibold font-display">Startups</h2>
         <ul className="mt-6">
           {STARTUPS.map(
             ({ name, position, description, start, end, icon, href }) => (
@@ -230,17 +230,18 @@ export default function About({ data }: PageProps<AboutData>) {
           )}
         </ul>
       </section>
-      <section class="readme">
-        <h2 className="mt-8 text-2xl font-semibold font-display">README</h2>
-        <div class="bg-gray-100 border-b border-gray-100 px-6 py-3 shadow-sm rounded-t flex items-center justify-between mt-5">
-          <div class="font-semibold font-mono">README.md</div>
-          <div class="flex items-center justify-between space-x-2">
-            <IconBrandGithub class="w-4 h-4" />
-            <ExternalLink href="https://github.com/AnandChowdhary/readme">
-              AnandChowdhary/readme on GitHub
-            </ExternalLink>
+      <details>
+        <summary class="bg-gray-100 border-b border-gray-100 px-6 py-3 shadow-sm rounded-t mt-5">
+          <div class="flex items-center justify-between">
+            <div class="font-semibold font-mono">README.md</div>
+            <div class="flex items-center justify-between space-x-2">
+              <IconBrandGithub class="w-4 h-4" />
+              <ExternalLink href="https://github.com/AnandChowdhary/readme">
+                AnandChowdhary/readme on GitHub
+              </ExternalLink>
+            </div>
           </div>
-        </div>
+        </summary>
         <div
           class="bg-white shadow-sm rounded-b p-6 longform"
           dangerouslySetInnerHTML={{
@@ -255,7 +256,7 @@ export default function About({ data }: PageProps<AboutData>) {
             ),
           }}
         />
-      </section>
+      </details>
     </div>
   );
 }
