@@ -7,7 +7,6 @@ export default function App({ Component }: AppProps) {
   return (
     <html class="py-2" style={{ backgroundColor: "#ef8286" }}>
       <Head>
-        <link rel="prefetch" href={`/${asset("anand.png")}`} />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
         <script
           async

@@ -232,7 +232,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           <header>
             <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
               <span aria-hidden="true">📍</span>
-              <SectionLink label="Location" href="/travel" />
+              <SectionLink label="Location" href="/location" />
             </h2>
             <p class="text-gray-500">Find me where I currently am</p>
           </header>

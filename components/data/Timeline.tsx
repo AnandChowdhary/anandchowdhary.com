@@ -278,7 +278,7 @@ export const Timeline: FunctionComponent<{
             <a
               href={
                 hasMoreHref === "special://last-archive-year"
-                  ? `/archive/${new Date(
+                  ? `${yearHrefPrefix}/${new Date(
                       [...visible].pop()?.date ?? 0
                     ).getUTCFullYear()}`
                   : hasMoreHref

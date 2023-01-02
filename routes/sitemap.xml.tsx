@@ -11,6 +11,7 @@ export const pages = {
   "/press": "Press",
   "/videos": "Videos",
   "/travel": "Travel",
+  "/location": "Location",
   "/contact": "Contact",
   "/colophon": "Colophon",
   "/colophon/versions": "Versions",

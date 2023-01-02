@@ -1,4 +1,3 @@
-import { asset } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import {
   default as smartquotes,
@@ -22,6 +21,7 @@ import { categoryData, fetchLifeData } from "../utils/data.tsx";
 import { t } from "../utils/i18n.tsx";
 import type { AllLifeDataSummary } from "../utils/interfaces.ts";
 import { countryName } from "../utils/string.ts";
+import { imageUrl } from "../utils/urls.ts";
 import { toHoursAndMinutes } from "./health/index.tsx";
 
 const birthdayThisYear = new Date("1997-12-29");
@@ -131,7 +131,17 @@ export default function Home({ data }: PageProps<HomeData>) {
         <div class="items-start justify-center mb-6 sm:flex">
           <img
             alt="Illustrated portrait of Anand"
-            src={asset("/anand.png")}
+            src={imageUrl("https://anandchowdhary.com/anand.png", {
+              w: "245",
+              h: "245",
+            })}
+            srcSet={`${imageUrl("https://anandchowdhary.com/anand.png", {
+              w: "245",
+              h: "245",
+            })} 1x, ${imageUrl("https://anandchowdhary.com/anand.png", {
+              w: "490",
+              h: "490",
+            })} 2x`}
             class="object-contain object-bottom w-1/2 sm:w-2/3"
             width={198}
             height={198}

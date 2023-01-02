@@ -1,4 +1,4 @@
-import { asset } from "$fresh/runtime.ts";
+import { imageUrl } from "../../utils/urls.ts";
 
 export function About() {
   return (
@@ -6,7 +6,17 @@ export function About() {
       <div>
         <img
           alt="Illustrated portrait of Anand"
-          src={asset("/anand.png")}
+          src={imageUrl("https://anandchowdhary.com/anand.png", {
+            w: "245",
+            h: "245",
+          })}
+          srcSet={`${imageUrl("https://anandchowdhary.com/anand.png", {
+            w: "245",
+            h: "245",
+          })} 1x, ${imageUrl("https://anandchowdhary.com/anand.png", {
+            w: "490",
+            h: "490",
+          })} 2x`}
           class="object-contain object-bottom w-full"
           width={198}
           height={198}
