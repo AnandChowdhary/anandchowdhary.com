@@ -39,7 +39,9 @@ export const getSingleItemData = async <T extends TimeLineItem>(
   );
   const title = timeline[currentIndex].title;
   const { body } = frontMatter(markdown);
-  const content = render(body.replace(`# ${title}`, ""));
+  const content = render(body.replace(`# ${title}`, ""), {
+    repository: repositoryPath.split("/").slice(0, 2).join("/"),
+  });
 
   const previous = timeline
     .slice(currentIndex + 1)

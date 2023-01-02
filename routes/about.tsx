@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
 import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
+import { SectionTitle } from "../components/data/SectionTitle.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { render } from "../utils/markdown.ts";
 
@@ -146,17 +147,12 @@ export default function About({ data }: PageProps<AboutData>) {
             </span>
           </figcaption>
         </figure>
-        <header className="mb-5 space-y-5">
-          <Breadcrumbs items={[{ href: "/about", title: "About" }]} />
-          <h1 className="text-4xl font-semibold font-display">About</h1>
-          <p className="text-xl leading-relaxed">
-            Anand Chowdhary is a creative technologist and entrepreneur.
-          </p>
-        </header>
-        <div
-          className="space-y-5"
-          style={{ columnCount: 2, columnGap: "2rem" }}
-        >
+        <Breadcrumbs items={[{ href: "/about", title: "About" }]} />
+        <SectionTitle
+          title="About"
+          description="Anand Chowdhary is a creative technologist and entrepreneur."
+        />
+        <div className="space-y-5 mt-6 two-columns">
           <p>
             Anand Chowdhary is an engineer, designer, and entrepreneur from New
             Delhi, India. He lives in Groningen, the Netherlands, with his

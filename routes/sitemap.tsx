@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
+import { SectionTitle } from "../components/data/SectionTitle.tsx";
 import { categoryData } from "../utils/data.tsx";
-import { render } from "../utils/markdown.ts";
 import { pages } from "./sitemap.xml.tsx";
 
 interface SitemapData {
@@ -37,17 +37,10 @@ export default function Sitemap({ data }: PageProps<SitemapData>) {
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
-      <header class="mb-5 space-y-5">
-        <h1 class="text-4xl font-semibold font-display">Sitemap</h1>
-        <div
-          class="text-xl leading-relaxed"
-          dangerouslySetInnerHTML={{
-            __html: render(
-              `Hello robot, here's where you should go next... if you're a human, you should probably use the main navigation, it's much more intuitive!`
-            ),
-          }}
-        />
-      </header>
+      <SectionTitle
+        title="Sitemap"
+        description="Hello robot, here's where you should go next... if you're a human, you should probably use the main navigation, it's much more intuitive!"
+      />
       <section class="grid md:grid-cols-2 gap-8">
         <article>
           <h2 class="text-2xl font-semibold font-display mb-2">Pages</h2>

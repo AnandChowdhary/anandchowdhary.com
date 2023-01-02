@@ -24,7 +24,7 @@ export const handler: Handlers<ArchiveData> = {
         "https://anandchowdhary.github.io/everything/api.json"
       ),
       fetchJson<LocationApiResult[]>(
-        "https://raw.githubusercontent.com/AnandChowdhary/location/gh-pages/history.json"
+        "https://anandchowdhary.github.io/location/history.json"
       ),
     ]);
     const summary: Record<string, number> = {};

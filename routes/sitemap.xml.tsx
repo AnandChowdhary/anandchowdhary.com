@@ -1,7 +1,7 @@
 import { Handlers } from "https://deno.land/x/fresh@1.1.1/server.ts";
 
 export const pages = {
-  "": "Homepage",
+  "/": "Homepage",
   "/about": "About",
   "/life": "Life",
   "/blog": "Blog",

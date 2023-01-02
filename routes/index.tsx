@@ -239,7 +239,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           ))}
         </div>
       </section> */}
-      <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
+      <section class="grid-cols-2 gap-8 gap-y-12 sm:grid space-y-8 sm:space-y-0">
         <div class="space-y-8">
           <article class="space-y-4">
             <header>

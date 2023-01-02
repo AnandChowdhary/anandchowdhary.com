@@ -66,6 +66,28 @@ export default function App({ Component }: AppProps) {
           </main>
           <Footer />
         </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          if(window.navigator && navigator.serviceWorker) {
+            navigator.serviceWorker.getRegistrations()
+            .then(function(registrations) {
+              for(let registration of registrations) {
+                registration.unregister();
+              }
+            });
+          }
+          if ('caches' in window) {
+            caches.keys()
+              .then(function(keyList) {
+                  return Promise.all(keyList.map(function(key) {
+                      return caches.delete(key);
+                  }));
+              })
+        }
+`,
+          }}
+        />
       </body>
     </html>
   );

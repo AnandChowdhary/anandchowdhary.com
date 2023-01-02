@@ -9,6 +9,7 @@ import * as colors from "twind/colors";
 import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
+import { SectionTitle } from "../components/data/SectionTitle.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
 import { LoadError } from "../components/text/LoadError.tsx";
 import { SectionLink } from "../components/text/SectionLink.tsx";
@@ -171,20 +172,19 @@ export default function Home({ data }: PageProps<LifeData>) {
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
-      <header class="space-y-2">
-        <Breadcrumbs items={[{ href: "/life", title: "Life" }]} />
-        <h1 class="text-4xl font-semibold font-display">Life</h1>
-        <p class="text-xl leading-relaxed">
-          For several years, I've been tracking all my life data (health,
+      <Breadcrumbs items={[{ href: "/life", title: "Life" }]} />
+      <SectionTitle
+        title="Life"
+        description="For several years, I've been tracking all my life data (health,
           activity, location, etc.) in near-real time using automated tools and
-          microservices.
-        </p>
+          microservices."
+      >
         <p>
           All data is also available as a publicly-available JSON API and under
           permissive licenses on GitHub. In the (near?) future, I will write a
           blog post on how I set this up.
         </p>
-      </header>
+      </SectionTitle>
       <section class="grid md:grid-cols-2 gap-8">
         <article class="space-y-4">
           <header>
