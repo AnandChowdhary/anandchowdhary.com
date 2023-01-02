@@ -6,6 +6,7 @@ import {
 import smartquotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { TimelineTravel } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import * as colors from "twind/colors";
+import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
@@ -171,6 +172,7 @@ export default function Home({ data }: PageProps<LifeData>) {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
       <header class="space-y-2">
+        <Breadcrumbs items={[{ href: "/life", title: "Life" }]} />
         <h1 class="text-4xl font-semibold font-display">Life</h1>
         <p class="text-xl leading-relaxed">
           For several years, I've been tracking all my life data (health,

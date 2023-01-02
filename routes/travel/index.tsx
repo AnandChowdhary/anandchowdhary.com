@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
+import { Breadcrumbs } from "../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { Timeline } from "../../components/data/Timeline.tsx";
 import { ExternalLink } from "../../components/text/ExternalLink.tsx";
@@ -57,6 +58,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
+      <Breadcrumbs items={[{ href: "/travel", title: "Travel" }]} />
       <SectionTitle
         title="Travel"
         description="For over ten years, I've been tracking my location in real time. This page is a list of my trips to new cities and countries over the years."

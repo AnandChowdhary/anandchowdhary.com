@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
+import { Breadcrumbs } from "../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { ExternalLink } from "../../components/text/ExternalLink.tsx";
 import { fetchJson } from "../../utils/data.tsx";
@@ -79,6 +80,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   const { books } = data;
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
+      <Breadcrumbs items={[{ href: "/books", title: "Books" }]} />
       <SectionTitle
         emoji="📕"
         title="Books"

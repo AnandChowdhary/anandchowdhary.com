@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Timeline as ITimeline } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
+import { Breadcrumbs } from "../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { Timeline } from "../../components/data/Timeline.tsx";
 import { ExternalLink } from "../../components/text/ExternalLink.tsx";
@@ -27,6 +28,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   const { timeline, query } = data;
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
+      <Breadcrumbs items={[{ href: "/versions", title: "Versions" }]} />
       <SectionTitle
         title="Versions"
         description="Over the years, I've designed and redesigned my personal website several times; I ﬁnd it to be a great way to explore new technologies. Looking back, I can connect the dots for what I was interested in way back when."

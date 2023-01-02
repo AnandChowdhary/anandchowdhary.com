@@ -3,6 +3,7 @@ import {
   Chart,
   ChartOptions,
 } from "https://deno.land/x/fresh_charts@0.1.1/mod.ts";
+import { Breadcrumbs } from "../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { LoadError } from "../../components/text/LoadError.tsx";
 import { SectionLink } from "../../components/text/SectionLink.tsx";
@@ -164,6 +165,7 @@ export default function Home({ data }: PageProps<LifeData>) {
 
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+      <Breadcrumbs items={[{ href: "/health", title: "Health" }]} />
       <SectionTitle
         title="Health"
         description="I occasionally pen down my thoughts about technology, productivity, and design."

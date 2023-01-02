@@ -1,8 +1,8 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { Timeline as ITimeline } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
+import { Breadcrumbs } from "../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../components/data/SectionTitle.tsx";
 import { Timeline } from "../../components/data/Timeline.tsx";
-import { ExternalLink } from "../../components/text/ExternalLink.tsx";
 import { fetchJson } from "../../utils/data.tsx";
 
 interface ArchiveData {
@@ -27,20 +27,8 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
   const { timeline, query } = data;
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
-      <SectionTitle
-        title="Videos"
-        description="I use Objectives and Key Results (the OKR framework) both for my personal and professional life."
-      >
-        <p>
-          My OKRs and progress, like all sections of this site, are open source
-          and available on{" "}
-          <ExternalLink href="https://github.com/AnandChowdhary/videos">
-            GitHub
-          </ExternalLink>{" "}
-          as raw markdown files. All thumbnails are generated using Stable
-          Diffusion.
-        </p>
-      </SectionTitle>
+      <Breadcrumbs items={[{ href: "/videos", title: "Videos" }]} />
+      <SectionTitle title="Videos" />
       <Timeline
         timeline={timeline}
         show={timeline.filter(

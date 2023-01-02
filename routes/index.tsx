@@ -9,6 +9,7 @@ import {
   TimelineTravel,
 } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { ComponentChildren } from "preact";
+import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
 import { DataFooterLinks } from "../components/data/DataFooterLinks.tsx";
 import { OKRCards } from "../components/data/OKRs.tsx";
 import { Timeline } from "../components/data/Timeline.tsx";
@@ -119,6 +120,7 @@ export default function Home({ data }: PageProps<HomeData>) {
   const travel = timeline.find(
     ({ type, data }) =>
       type === "travel" &&
+      "country" in data &&
       typeof data.country === "object" &&
       data.country.code.toLowerCase() === countries[countries.length - 1]
   ) as TimelineTravel;
@@ -137,6 +139,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           />
         </div>
         <div class="space-y-4">
+          <Breadcrumbs items={[]} />
           <h2 class="space-x-2 text-2xl font-semibold font-display">
             <span class="wave" aria-hidden="true">
               👋

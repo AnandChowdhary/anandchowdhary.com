@@ -1,8 +1,10 @@
+import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../components/data/SectionTitle.tsx";
 
 export default function Mentoring() {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
+      <Breadcrumbs items={[{ href: "/mentoring", title: "Mentoring" }]} />
       <SectionTitle
         title="Mentoring"
         description="I spend one to two hours every week mentoring early-stage entrepreneurs and helping them build technology-focused startups."

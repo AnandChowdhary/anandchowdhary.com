@@ -2,18 +2,19 @@ import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/bran
 import IconBrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-instagram.tsx";
 import IconBrandLinkedin from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-linkedin.tsx";
 import IconBrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-twitter.tsx";
+import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
+import { SectionTitle } from "../components/data/SectionTitle.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { render } from "../utils/markdown.ts";
 
 export default function Contact() {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
-      <header class="mb-5 space-y-5">
-        <h1 class="text-4xl font-semibold font-display">Contact</h1>
-        <p class="text-xl leading-relaxed">
-          You can get in touch with me by filling the form below.
-        </p>
-      </header>
+      <Breadcrumbs items={[{ href: "/contact", title: "Contact" }]} />
+      <SectionTitle
+        title="Contact"
+        description="You can get in touch with me by filling the form below."
+      />
       <section class="grid gap-12 md:grid-cols-2">
         <form
           class="space-y-4"
@@ -99,7 +100,7 @@ export default function Contact() {
               </li>
             ))}
           </ul>
-          <h2 class="text-xl font-medium">PGP</h2>
+          <h2 class="text-xl font-medium pt-2">PGP</h2>
           <p
             dangerouslySetInnerHTML={{
               __html: render(

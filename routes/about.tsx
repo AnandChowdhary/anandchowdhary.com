@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
+import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
 import { render } from "../utils/markdown.ts";
 
@@ -146,6 +147,7 @@ export default function About({ data }: PageProps<AboutData>) {
           </figcaption>
         </figure>
         <header className="mb-5 space-y-5">
+          <Breadcrumbs items={[{ href: "/about", title: "About" }]} />
           <h1 className="text-4xl font-semibold font-display">About</h1>
           <p className="text-xl leading-relaxed">
             Anand Chowdhary is a creative technologist and entrepreneur.
