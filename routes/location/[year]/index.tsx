@@ -20,6 +20,7 @@ export type Datapoint = TimelineTravel["data"] & {
 export const handler: Handlers<ArchiveData> = {
   async GET(request, context) {
     const year = Number(context.params.year);
+    if (isNaN(year)) return context.renderNotFound();
     const locationHistory = await fetchJson<Datapoint[]>(
       "https://anandchowdhary.github.io/location/history.json"
     );

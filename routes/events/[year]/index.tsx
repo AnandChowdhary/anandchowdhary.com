@@ -18,6 +18,7 @@ export const handler: Handlers<ArchiveData> = {
     );
 
     const year = Number(context.params.year);
+    if (isNaN(year)) return context.renderNotFound();
     const props = {
       year,
       timeline: year

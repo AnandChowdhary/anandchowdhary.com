@@ -36,6 +36,7 @@ export const handler: Handlers = {
         url.endsWith(context.params.slug)
     );
     const item = timeline[currentIndex] as TimelineProjectItem;
+    if (!item) return context.renderNotFound();
 
     let readme: string | undefined = undefined;
     if (item.type === "open-source-project") {

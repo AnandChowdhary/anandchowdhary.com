@@ -94,12 +94,18 @@ export const singleItemHandler = <T extends TimeLineItem>(
 ): Handlers<SingleItemHandlerProps<T>> => {
   return {
     async GET(_, context) {
-      const data = await getSingleItemData(
-        context,
-        repositoryPath,
-        timelineType
-      );
-      return context.render(data);
+      try {
+        const data = await getSingleItemData(
+          context,
+          repositoryPath,
+          timelineType
+        );
+        return context.render(data);
+      } catch (error) {
+        if (String(error).toLowerCase().includes("not found"))
+          return context.renderNotFound();
+        throw error;
+      }
     },
   };
 };

@@ -39,6 +39,7 @@ export const handler: Handlers<ArchiveData> = {
       "https://anandchowdhary.github.io/books/api.json"
     );
     const year = Number(context.params.year);
+    if (isNaN(year)) return context.renderNotFound();
     const props = {
       year,
       books: books.filter(

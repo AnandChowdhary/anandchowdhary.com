@@ -150,9 +150,7 @@ export const handler: Handlers<LifeData> = {
       contributionsGraph,
       query: new URL(request.url).search,
     };
-    const response = await context.render(props);
-    response.headers.set("Cache-Control", "public, max-age=600");
-    return response;
+    return context.render(props);
   },
 };
 

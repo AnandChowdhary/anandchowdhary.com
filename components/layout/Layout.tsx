@@ -177,7 +177,7 @@ export function Footer() {
         </div>
         <div className="pt-4 border-t-2 border-rose-100"></div>
         <div>
-          <nav className="flex flex-wrap justify-between mb-2 space-x-3">
+          <nav className="sm:flex flex-wrap justify-between mb-2 space-x-3 overflow-auto">
             {Array.from(
               { length: new Date().getUTCFullYear() - 2009 + 1 },
               (_, index) => index + 2009
