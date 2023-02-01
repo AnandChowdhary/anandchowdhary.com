@@ -41,7 +41,7 @@ export const handler: Handlers = {
     let readme: string | undefined = undefined;
     if (item.type === "open-source-project") {
       readme = await fetchText(
-        `https://raw.githubusercontent.com/${
+        `https://raw.githubusercontent.com${
           new URL(item.source).pathname
         }/HEAD/README.md`
       );
