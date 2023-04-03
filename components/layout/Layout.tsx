@@ -146,12 +146,12 @@ export function Footer() {
                       </label>
                     </fieldset>
                   </form>
-                  <a
+                  {/* <a
                     className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
                     href="/colophon"
                   >
                     Colophon
-                  </a>
+                  </a> */}
                   <a
                     className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
                     href="/sitemap"
@@ -160,16 +160,24 @@ export function Footer() {
                   </a>
                   <a
                     className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
+                    href="https://github.com/AnandChowdhary/anandchowdhary.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                  {/* <a
+                    className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
                     href="#"
                   >
                     View page history
-                  </a>
-                  <a
+                  </a> */}
+                  {/* <a
                     className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
                     href="#"
                   >
                     Edit on GitHub
-                  </a>
+                  </a> */}
                 </div>
               </details>
             </div>
