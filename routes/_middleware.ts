@@ -24,7 +24,6 @@ export async function handler(
       item.url.endsWith(url.pathname.split("/").pop())
     );
     if (foundFuzzy) return Response.redirect(foundFuzzy.url, 301);
-    return context.renderNotFound();
   }
   return resp;
 }
