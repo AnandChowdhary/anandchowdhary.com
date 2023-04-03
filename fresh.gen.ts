@@ -3,9 +3,9 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/[...slug].tsx";
-import * as $1 from "./routes/_404.tsx";
-import * as $2 from "./routes/_app.tsx";
+import * as $0 from "./routes/_404.tsx";
+import * as $1 from "./routes/_app.tsx";
+import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/about.tsx";
 import * as $4 from "./routes/about/versions/[version].tsx";
 import * as $5 from "./routes/about/versions/index.tsx";
@@ -49,19 +49,18 @@ import * as $42 from "./routes/projects/[year]/[slug].tsx";
 import * as $43 from "./routes/projects/[year]/index.tsx";
 import * as $44 from "./routes/projects/index.tsx";
 import * as $45 from "./routes/projects/tags/[tag].tsx";
-import * as $46 from "./routes/redirect/[path].tsx";
-import * as $47 from "./routes/sitemap.tsx";
-import * as $48 from "./routes/sitemap.xml.tsx";
-import * as $49 from "./routes/themes/[slug].tsx";
-import * as $50 from "./routes/themes/index.tsx";
-import * as $51 from "./routes/travel/[year]/[slug].tsx";
-import * as $52 from "./routes/travel/[year]/index.tsx";
-import * as $53 from "./routes/travel/countries/[country].tsx";
-import * as $54 from "./routes/travel/index.tsx";
-import * as $55 from "./routes/versions/[year]/[slug].tsx";
-import * as $56 from "./routes/versions/[year]/index.tsx";
-import * as $57 from "./routes/versions/index.tsx";
-import * as $58 from "./routes/videos/index.tsx";
+import * as $46 from "./routes/sitemap.tsx";
+import * as $47 from "./routes/sitemap.xml.tsx";
+import * as $48 from "./routes/themes/[slug].tsx";
+import * as $49 from "./routes/themes/index.tsx";
+import * as $50 from "./routes/travel/[year]/[slug].tsx";
+import * as $51 from "./routes/travel/[year]/index.tsx";
+import * as $52 from "./routes/travel/countries/[country].tsx";
+import * as $53 from "./routes/travel/index.tsx";
+import * as $54 from "./routes/versions/[year]/[slug].tsx";
+import * as $55 from "./routes/versions/[year]/index.tsx";
+import * as $56 from "./routes/versions/index.tsx";
+import * as $57 from "./routes/videos/index.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Filters.tsx";
 import * as $$2 from "./islands/Search.tsx";
@@ -69,9 +68,9 @@ import * as $$3 from "./islands/TimeAgo.tsx";
 
 const manifest = {
   routes: {
-    "./routes/[...slug].tsx": $0,
-    "./routes/_404.tsx": $1,
-    "./routes/_app.tsx": $2,
+    "./routes/_404.tsx": $0,
+    "./routes/_app.tsx": $1,
+    "./routes/_middleware.ts": $2,
     "./routes/about.tsx": $3,
     "./routes/about/versions/[version].tsx": $4,
     "./routes/about/versions/index.tsx": $5,
@@ -115,19 +114,18 @@ const manifest = {
     "./routes/projects/[year]/index.tsx": $43,
     "./routes/projects/index.tsx": $44,
     "./routes/projects/tags/[tag].tsx": $45,
-    "./routes/redirect/[path].tsx": $46,
-    "./routes/sitemap.tsx": $47,
-    "./routes/sitemap.xml.tsx": $48,
-    "./routes/themes/[slug].tsx": $49,
-    "./routes/themes/index.tsx": $50,
-    "./routes/travel/[year]/[slug].tsx": $51,
-    "./routes/travel/[year]/index.tsx": $52,
-    "./routes/travel/countries/[country].tsx": $53,
-    "./routes/travel/index.tsx": $54,
-    "./routes/versions/[year]/[slug].tsx": $55,
-    "./routes/versions/[year]/index.tsx": $56,
-    "./routes/versions/index.tsx": $57,
-    "./routes/videos/index.tsx": $58,
+    "./routes/sitemap.tsx": $46,
+    "./routes/sitemap.xml.tsx": $47,
+    "./routes/themes/[slug].tsx": $48,
+    "./routes/themes/index.tsx": $49,
+    "./routes/travel/[year]/[slug].tsx": $50,
+    "./routes/travel/[year]/index.tsx": $51,
+    "./routes/travel/countries/[country].tsx": $52,
+    "./routes/travel/index.tsx": $53,
+    "./routes/versions/[year]/[slug].tsx": $54,
+    "./routes/versions/[year]/index.tsx": $55,
+    "./routes/versions/index.tsx": $56,
+    "./routes/videos/index.tsx": $57,
   },
   islands: {
     "./islands/Age.tsx": $$0,
