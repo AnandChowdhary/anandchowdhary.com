@@ -8,6 +8,7 @@ import {
   singleItemHandler,
   SingleItemHandlerProps,
 } from "../../../utils/handlers.ts";
+import { imageUrl } from "../../../utils/urls.ts";
 
 export const handler = singleItemHandler(
   "AnandChowdhary/versions/main/versions",
@@ -21,6 +22,18 @@ export default function Event({
 
   return (
     <div className="max-w-screen-md px-4 mx-auto md:px-0">
+      <img
+        alt=""
+        src={imageUrl(
+          `https://anandchowdhary.github.io/versions/assets/${item.url
+            .split("/")
+            .pop()}/home.png`,
+          { w: "1024", h: "512", fit: "cover", a: "top" }
+        )}
+        width={1024}
+        height={512}
+        className="w-full rounded-lg shadow mb-4"
+      />
       <Breadcrumbs
         items={[
           { title: "Versions", href: "/versions" },

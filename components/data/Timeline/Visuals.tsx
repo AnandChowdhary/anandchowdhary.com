@@ -154,7 +154,32 @@ export const TimelineProjectVisual: FunctionalComponent<{
 
 export const TimelineVersionVisual: FunctionalComponent<{
   item: TimelineVersion;
-}> = ({ item }) => null;
+}> = ({ item }) => (
+  <img
+    alt=""
+    src={imageUrl(
+      `https://anandchowdhary.github.io/versions/assets/${item.url
+        .split("/")
+        .pop()}/home.png`,
+      { w: "288", h: "144", fit: "cover", a: "top" }
+    )}
+    srcSet={`${imageUrl(
+      `https://anandchowdhary.github.io/versions/assets/${item.url
+        .split("/")
+        .pop()}/home.png`,
+      { w: "288", h: "144", fit: "cover", a: "top" }
+    )} 1x, ${imageUrl(
+      `https://anandchowdhary.github.io/versions/assets/${item.url
+        .split("/")
+        .pop()}/home.png`,
+      { w: "576", h: "288", fit: "cover", a: "top" }
+    )} 2x`}
+    loading="lazy"
+    width={288}
+    height={144}
+    className="w-full rounded-lg shadow"
+  />
+);
 
 export const TimelineBlogPostVisual: FunctionalComponent<{
   item: TimelineBlogPost;
