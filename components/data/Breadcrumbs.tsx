@@ -17,6 +17,12 @@ export function Breadcrumbs({
             "Anand Chowdhary",
           ].join(" ‹ ")}
         </title>
+        <link
+          rel="canonical"
+          href={`https://anandchowdhary.com${
+            items[items.length - 1]?.href ?? ""
+          }`}
+        />
       </Head>
       <nav {...props}>
         <ol
