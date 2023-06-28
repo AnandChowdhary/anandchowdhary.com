@@ -499,26 +499,31 @@ export default function Home({ data }: PageProps<HomeData>) {
         >
           {[
             {
+              href: "/press/2018/21-under-21",
               logo: "yourstory.svg",
               title: "20 Under 20",
               publication: "YourStory 20 Under 20",
             },
             {
+              href: "/press/2019/the-next-web-t500",
               logo: "the-next-web.svg",
               title: "TNW T500",
               publication: "The Next Web T500",
             },
             {
+              href: "/press/2021/github-stars",
               logo: "github-stars.svg",
               title: "GitHub Stars",
               publication: "GitHub",
             },
             {
+              href: "/press/2018/forbes-30-under-30",
               logo: "forbes.svg",
               title: "30 Under 30",
               publication: "Forbes 30 Under 30",
             },
             {
+              href: "/press/2018/50-talents-under-the-age-of-35",
               logo: "het-financieele-dagblad.svg",
               title: "50 Under 25",
               publication: "FD Persoonlijk",
@@ -526,7 +531,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           ].map((award) => (
             <a
               key={award.title}
-              href="#"
+              href={award.href}
               class="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
             >
               <div
