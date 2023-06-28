@@ -1,11 +1,10 @@
 import { asset, Head } from "$fresh/runtime.ts";
 import { AppProps } from "$fresh/src/server/types.ts";
 import { Footer, Navbar } from "../components/layout/Layout.tsx";
-import { render } from "../utils/markdown.ts";
 
 export default function App({ Component }: AppProps) {
   return (
-    <html class="py-2" style={{ backgroundColor: "#ef8286" }}>
+    <html lang="en" class="py-2" style={{ backgroundColor: "#ef8286" }}>
       <Head>
         <link
           rel="apple-touch-icon"
@@ -64,22 +63,6 @@ export default function App({ Component }: AppProps) {
                 <span>Anand Chowdhary</span>
               </a>
               <Navbar />
-            </div>
-            <div class="max-w-screen-md px-6 mx-auto md:px-0 mt-4">
-              <div class="border-2 border-dashed px-4 py-3 rounded-lg bg-gray-100 space-y-1 text-sm">
-                <p class="uppercase text-xs">
-                  <a href="/versions/2022/alameda/">
-                    <strong>Public redesign</strong>
-                  </a>
-                </p>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: render(
-                      `I'm currently and very publicly redesigning my personal website, so some things might be a little janky!`
-                    ),
-                  }}
-                />
-              </div>
             </div>
           </header>
           <main>

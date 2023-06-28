@@ -1,4 +1,5 @@
 import IconInfoCircle from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/info-circle.tsx";
+import Emissions from "../../islands/Emissions.tsx";
 import { Socials } from "../text/Socials.tsx";
 
 const NAV = [
@@ -76,14 +77,14 @@ export function Footer() {
         <div className="flex items-center justify-between mb-2 text-sm">
           <p className="flex items-center space-x-1">
             <span>
-              0.06g of{" "}
+              <Emissions />{" "}
               <abbr title="Carbon dioxide equivalent">
                 CO<sub>2</sub>
               </abbr>{" "}
               emitted
             </span>
             <a
-              href="#"
+              href="/versions/2022/alameda/#emissions"
               className="flex items-center opacity-100"
               aria-label="Carbon emission details"
               title="Carbon emission details"
@@ -116,42 +117,12 @@ export function Footer() {
                   </svg>
                 </summary>
                 <div className="absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 bg-white rounded shadow backdrop-blur bottom-10">
-                  <form className="p-3 mb-1 border-b border-gray-100">
-                    <fieldset className="flex flex-col space-y-1">
-                      <legend className="mb-1 font-medium">Theme</legend>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="radio"
-                          name="theme"
-                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none-300 checked:border-rose-600"
-                        />
-                        <span>Light</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="radio"
-                          name="theme"
-                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none-300 checked:border-rose-600"
-                        />
-                        <span>Dark</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="radio"
-                          name="theme"
-                          className="w-3 h-3 transition bg-white border-4 border-gray-300 rounded-full appearance-none-300 checked:border-rose-600"
-                          checked
-                        />
-                        <span>System</span>
-                      </label>
-                    </fieldset>
-                  </form>
-                  {/* <a
+                  <a
                     className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
                     href="/colophon"
                   >
                     Colophon
-                  </a> */}
+                  </a>
                   <a
                     className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
                     href="/sitemap"

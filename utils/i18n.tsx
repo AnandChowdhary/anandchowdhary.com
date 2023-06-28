@@ -1,3 +1,5 @@
+import { default as smartQuotes } from "https://esm.sh/smartquotes-ts@0.0.2";
+
 function replaceJSX(str: string, find: string, replace: any): any[] {
   const parts = str.split(find);
   const result = [];
@@ -27,7 +29,7 @@ export const t = (
           .map((item) => {
             if (typeof item !== "string" || !item.includes(tag)) return item;
             return replaceJSX(
-              item,
+              String(smartQuotes(item)),
               `${tag}${item.split(tag)[1].split("<")[0]}${tag.replace(
                 "<",
                 "</"

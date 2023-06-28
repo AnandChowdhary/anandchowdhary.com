@@ -62,9 +62,10 @@ import * as $55 from "./routes/versions/[year]/index.tsx";
 import * as $56 from "./routes/versions/index.tsx";
 import * as $57 from "./routes/videos/index.tsx";
 import * as $$0 from "./islands/Age.tsx";
-import * as $$1 from "./islands/Filters.tsx";
-import * as $$2 from "./islands/Search.tsx";
-import * as $$3 from "./islands/TimeAgo.tsx";
+import * as $$1 from "./islands/Emissions.tsx";
+import * as $$2 from "./islands/Filters.tsx";
+import * as $$3 from "./islands/Search.tsx";
+import * as $$4 from "./islands/TimeAgo.tsx";
 
 const manifest = {
   routes: {
@@ -129,9 +130,10 @@ const manifest = {
   },
   islands: {
     "./islands/Age.tsx": $$0,
-    "./islands/Filters.tsx": $$1,
-    "./islands/Search.tsx": $$2,
-    "./islands/TimeAgo.tsx": $$3,
+    "./islands/Emissions.tsx": $$1,
+    "./islands/Filters.tsx": $$2,
+    "./islands/Search.tsx": $$3,
+    "./islands/TimeAgo.tsx": $$4,
   },
   baseUrl: import.meta.url,
   config,

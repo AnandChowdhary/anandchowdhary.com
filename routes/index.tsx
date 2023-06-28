@@ -1,8 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import {
-  default as smartquotes,
-  default as smartQuotes,
-} from "https://esm.sh/smartquotes-ts@0.0.2";
+import { default as smartQuotes } from "https://esm.sh/smartquotes-ts@0.0.2";
 import {
   TimelineBook,
   TimelineTravel,
@@ -148,11 +145,11 @@ export default function Home({ data }: PageProps<HomeData>) {
         </div>
         <div class="space-y-4">
           <Breadcrumbs items={[]} />
-          <h2 class="space-x-2 text-2xl font-semibold font-display">
+          <h2 class="space-x-3 text-2xl font-semibold font-display">
             <span class="wave" aria-hidden="true">
-              👋
+              {"👋 "}
             </span>
-            <span>{smartQuotes(" Hi, I'm Anand")}</span>
+            <span>{smartQuotes("Hi, I'm Anand")}</span>
           </h2>
           <p class="text-lg text-gray-500">
             {t(
@@ -177,66 +174,6 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      {/* <section class="overflow-auto">
-        <div
-          class="grid grid-cols-5 gap-12 overflow-auto text-center"
-          style={{ minWidth: "700px" }}
-        >
-          {[
-            {
-              logo: "yourstory.svg",
-              title: "20 Under 20",
-              publication: "YourStory 20 Under 20",
-            },
-            {
-              logo: "the-next-web.svg",
-              title: "TNW T500",
-              publication: "The Next Web T500",
-            },
-            {
-              logo: "github-stars.svg",
-              title: "GitHub Star",
-              publication: "GitHub Stars",
-            },
-            {
-              logo: "forbes.svg",
-              title: "30 Under 30",
-              publication: "Forbes 30 Under 30",
-            },
-            {
-              logo: "het-financieele-dagblad.svg",
-              title: "50 Under 25",
-              publication: "FD Persoonlijk",
-            },
-          ].map((award) => (
-            <a
-              key={award.title}
-              href="#"
-              class="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
-            >
-              <div
-                class="absolute top-0 bottom-0 left-0 h-12 bg-left bg-no-repeat bg-contain"
-                style={{
-                  backgroundImage: "url(/awards/leaf.svg)",
-                  aspectRatio: "86 / 150",
-                }}
-              />
-              <div
-                class="absolute top-0 bottom-0 right-0 h-12 bg-right bg-no-repeat bg-contain"
-                style={{
-                  backgroundImage: "url(/awards/leaf.svg)",
-                  transform: "scaleX(-1)",
-                  aspectRatio: "86 / 150",
-                }}
-              />
-              <img alt="" src={`/awards/${award.logo}`} />
-              <div class="-mt-1 font-medium" style={{ fontSize: "60%" }}>
-                {award.title}
-              </div>
-            </a>
-          ))}
-        </div>
-      </section> */}
       <section class="grid-cols-2 gap-8 gap-y-12 sm:grid space-y-8 sm:space-y-0">
         <div class="space-y-8">
           <article class="space-y-4">
@@ -325,7 +262,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                     </p>
                     {location.timezone && (
                       <p class="text-sm text-gray-500">
-                        {smartquotes(
+                        {smartQuotes(
                           `It's ${new Date()
                             .toLocaleTimeString("en-US", {
                               timeStyle: "short",
@@ -553,6 +490,66 @@ export default function Home({ data }: PageProps<HomeData>) {
               ))}
             </ul>
           </article> */}
+        </div>
+      </section>
+      <section class="overflow-auto pb-8 pt-4">
+        <div
+          class="grid grid-cols-5 gap-12 overflow-auto text-center"
+          style={{ minWidth: "700px" }}
+        >
+          {[
+            {
+              logo: "yourstory.svg",
+              title: "20 Under 20",
+              publication: "YourStory 20 Under 20",
+            },
+            {
+              logo: "the-next-web.svg",
+              title: "TNW T500",
+              publication: "The Next Web T500",
+            },
+            {
+              logo: "github-stars.svg",
+              title: "GitHub Stars",
+              publication: "GitHub",
+            },
+            {
+              logo: "forbes.svg",
+              title: "30 Under 30",
+              publication: "Forbes 30 Under 30",
+            },
+            {
+              logo: "het-financieele-dagblad.svg",
+              title: "50 Under 25",
+              publication: "FD Persoonlijk",
+            },
+          ].map((award) => (
+            <a
+              key={award.title}
+              href="#"
+              class="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
+            >
+              <div
+                class="absolute top-0 bottom-0 left-0 h-12 bg-left bg-no-repeat bg-contain"
+                style={{
+                  backgroundImage: "url(/awards/leaf.svg)",
+                  aspectRatio: "86 / 150",
+                }}
+              />
+              <div
+                class="absolute top-0 bottom-0 right-0 h-12 bg-right bg-no-repeat bg-contain"
+                style={{
+                  backgroundImage: "url(/awards/leaf.svg)",
+                  transform: "scaleX(-1)",
+                  aspectRatio: "86 / 150",
+                }}
+              />
+              <img alt="" src={`/awards/${award.logo}`} />
+              <div class="-mt-1 font-medium" style={{ fontSize: "60%" }}>
+                {award.title}
+              </div>
+            </a>
+          ))}
         </div>
       </section>
       <section class="space-y-4">
