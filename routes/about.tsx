@@ -155,8 +155,7 @@ export default function About({ data }: PageProps<AboutData>) {
         <div className="space-y-5 mt-6 two-columns">
           <p>
             Anand Chowdhary is an engineer, designer, and entrepreneur from New
-            Delhi, India. He lives in Groningen, the Netherlands, with his
-            wife{" "}
+            Delhi, India. He lives in Utrecht, the Netherlands, with his wife{" "}
             <ExternalLink href="https://sukritikapoor.com">
               Sukriti Kapoor
             </ExternalLink>
@@ -173,8 +172,8 @@ export default function About({ data }: PageProps<AboutData>) {
           </p>
           <p>
             He is also an open source contributor, awarded by GitHub as a{" "}
-            <a href="/press/2021/github-stars">GitHub Star</a> (2021–2023),
-            and was listed in{" "}
+            <a href="/press/2021/github-stars">GitHub Star</a> (2021–2023), and
+            was listed in{" "}
             <a href="/press/2018/forbes-30-under-30">Forbes 30 Under 30</a>{" "}
             (Asia 2018) and in Het Financieele Dagblad's list of most-innovative
             entrepreneurs and professionals in the Netherlands.

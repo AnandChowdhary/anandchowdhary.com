@@ -32,7 +32,7 @@ export function About() {
         <p class="text-gray-500 mb-2">
           Anand Chowdhary is a creative technologist and entrepreneur. He is the
           co-founder and CTO of Pabio, an interior design and rent-to-own
-          furniture company funded by Y Combinator. He lives in Groningen, the
+          furniture company funded by Y Combinator. He lives in Utrecht, the
           Netherlands.
         </p>
         <a href="/about">Read more about Anand &rarr;</a>
