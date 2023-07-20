@@ -56,11 +56,6 @@ export const TimelineBlogPostContent: FunctionalComponent<{
   item: TimelineBlogPost;
 }> = ({ item }) => (
   <Fragment>
-    <p className="text-gray-500">
-      {smartQuotes(
-        `Reading time: ${humanizeMmSs(String(item.data.words / 250))}`
-      )}
-    </p>
     {item.data.excerpt && (
       <div
         dangerouslySetInnerHTML={{

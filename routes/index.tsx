@@ -174,7 +174,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      <section class="grid-cols-2 gap-8 gap-y-12 sm:grid space-y-8 sm:space-y-0">
+      <section class="grid-cols-2 gap-12 gap-y-12 sm:grid space-y-8 sm:space-y-0">
         <div class="space-y-8">
           <article class="space-y-4">
             <header>

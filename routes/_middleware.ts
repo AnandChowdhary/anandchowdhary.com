@@ -10,7 +10,6 @@ export async function handler(
 ) {
   const resp = await context.next();
   if (resp.status === 404) {
-    console.log("got here");
     const url = new URL(request.url);
     console.log(url.pathname);
     const timeline = await fetchJson<Timeline>(
