@@ -282,7 +282,7 @@ export const TimelinePodcastInterviewContent: FunctionalComponent<{
           loading="lazy"
           scrolling="no"
           className="w-full overflow-hidden rounded-lg"
-          style={{ height: "152px" }}
+          style={{ height: "80px" }}
         />
       </div>
     )}

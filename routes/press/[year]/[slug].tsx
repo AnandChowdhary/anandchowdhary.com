@@ -1,7 +1,10 @@
 import type { PageProps } from "$fresh/server.ts";
-import IconUser from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/user.tsx";
-import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
+import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
+import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
+import IconNews from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/news.tsx";
+import IconUser from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/user.tsx";
+import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
 import type {
   TimelineAward,
   TimelinePodcastInterview,
@@ -11,15 +14,12 @@ import type {
 } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
+import { ExternalLink } from "../../../components/text/ExternalLink.tsx";
 import {
   SingleItemHandlerProps,
   timelineItemHandler,
 } from "../../../utils/handlers.ts";
-import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
-import IconClock from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/clock.tsx";
 import { countryName, humanizeMmSs } from "../../../utils/string.ts";
-import IconVideo from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/video.tsx";
-import { ExternalLink } from "../../../components/text/ExternalLink.tsx";
 import { getFlagUrl } from "../../../utils/urls.ts";
 
 type TimelinePressItem =
@@ -72,7 +72,7 @@ export default function SingleVideo({
       />
       <header class="post-header">
         <h1>{item.title}</h1>
-        <ul class="text-gray-500">
+        <ul class="text-gray-500 space-y-2">
           <li class="flex items-center space-x-2">
             <IconCalendarEvent class="h-4 w-4" />
             <span>

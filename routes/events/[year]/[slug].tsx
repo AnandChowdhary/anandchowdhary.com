@@ -14,10 +14,10 @@ import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
 import { Timeline } from "../../../components/data/Timeline.tsx";
 import { ExternalLink } from "../../../components/text/ExternalLink.tsx";
-import { fetchText, HttpError } from "../../../utils/data.tsx";
+import { HttpError, fetchText } from "../../../utils/data.tsx";
 import {
-  getSingleItemData,
   SingleItemHandlerProps,
+  getSingleItemData,
 } from "../../../utils/handlers.ts";
 import { render } from "../../../utils/markdown.ts";
 import { countryName } from "../../../utils/string.ts";
@@ -91,7 +91,7 @@ export default function Event({
       />
       <header class="post-header">
         <h1>{item.title}</h1>
-        <ul class="text-gray-500">
+        <ul class="text-gray-500 space-y-2">
           {item.data.event && (
             <li class="flex items-center space-x-2">
               <IconCalendarEvent class="h-4 w-4" />
@@ -176,9 +176,9 @@ export default function Event({
             dangerouslySetInnerHTML={{ __html: item.talk.content }}
           />
           {(item.data.slides || item.talk.attributes.slides) && (
-            <div class="mt-8">
-              <h3 class="text-xl font-semibold font-display">Slides</h3>
-              <p class="mb-4 text-gray-500">
+            <div class="mt-16">
+              <h3 class="text-xl font-semibold font-display mb-2">Slides</h3>
+              <p class="mb-12 text-gray-500">
                 {smartQuotes(
                   "The most recent version of this talk's slides are available on "
                 )}
@@ -211,9 +211,9 @@ export default function Event({
             </div>
           )}
           {alsoShownAt.length > 1 && (
-            <div class="mt-8">
+            <div class="mt-16">
               <h3 class="text-xl font-semibold font-display">Presentations</h3>
-              <p class="text-gray-500">
+              <p class="text-gray-500 mt-2 mb-12">
                 This talk was presented at{" "}
                 <strong>{alsoShownAt.length - 1}</strong> other{" "}
                 {alsoShownAt.length === 2 ? "event" : "events"}.

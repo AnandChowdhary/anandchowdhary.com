@@ -32,7 +32,7 @@ export const TimelineOkrVisual: FunctionalComponent<{ item: TimelineOkr }> = ({
         .split("/")
         .reverse()
         .join("-")}.png`,
-      { w: "288", h: "144", fit: "cover" }
+      { w: "288", h: "216", fit: "cover" }
     )}
     srcSet={`${imageUrl(
       `https://raw.githubusercontent.com/AnandChowdhary/okrs/main/assets/${item.url
@@ -43,7 +43,7 @@ export const TimelineOkrVisual: FunctionalComponent<{ item: TimelineOkr }> = ({
         .split("/")
         .reverse()
         .join("-")}.png`,
-      { w: "288", h: "144", fit: "cover" }
+      { w: "288", h: "216", fit: "cover" }
     )} 1x, ${imageUrl(
       `https://raw.githubusercontent.com/AnandChowdhary/okrs/main/assets/${item.url
         .split("/")

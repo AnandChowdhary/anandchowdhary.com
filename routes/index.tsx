@@ -121,7 +121,7 @@ export default function Home({ data }: PageProps<HomeData>) {
   ) as TimelineTravel;
 
   return (
-    <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+    <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
       <section class="grid-cols-2 gap-16 sm:grid">
         <div class="items-start justify-center mb-6 mt-7 sm:flex">
           <img
@@ -143,7 +143,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             loading="eager"
           />
         </div>
-        <div class="space-y-5 py-5">
+        <div class="space-y-5">
           <Breadcrumbs items={[]} />
           <h2 class="space-x-3 text-3xl font-semibold font-display">
             <span class="wave" aria-hidden="true">
@@ -558,7 +558,7 @@ export default function Home({ data }: PageProps<HomeData>) {
         </div>
       </section>
       <section class="space-y-4">
-        <header>
+        <header class="mb-12">
           <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
             <span aria-hidden="true">🕰</span>
             <SectionLink

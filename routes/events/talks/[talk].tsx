@@ -10,7 +10,7 @@ import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../../../components/data/SectionTitle.tsx";
 import { Timeline } from "../../../components/data/Timeline.tsx";
 import { ExternalLink } from "../../../components/text/ExternalLink.tsx";
-import { fetchJson, fetchText, HttpError } from "../../../utils/data.tsx";
+import { HttpError, fetchJson, fetchText } from "../../../utils/data.tsx";
 import { render } from "../../../utils/markdown.ts";
 
 interface TalkData {
@@ -88,9 +88,9 @@ export default function Archive({ data }: PageProps<TalkData>) {
           />
         )}
         {attributes && attributes.slides && (
-          <div class="mt-8">
-            <h3 class="text-xl font-semibold font-display">Slides</h3>
-            <p class="mb-4 text-gray-500">
+          <div class="mt-16">
+            <h3 class="text-xl mb-2 font-semibold font-display">Slides</h3>
+            <p class="mb-12 text-gray-500">
               {smartQuotes(
                 "The most recent version of this talk's slides are available on "
               )}
@@ -115,9 +115,9 @@ export default function Archive({ data }: PageProps<TalkData>) {
           </div>
         )}
         {alsoShownAt.length > 0 && (
-          <div class="mt-8">
+          <div class="mt-16">
             <h3 class="text-xl font-semibold font-display">Presentations</h3>
-            <p class="text-gray-500">
+            <p class="text-gray-500 mt-2 mb-12">
               This talk was presented at <strong>{alsoShownAt.length}</strong>{" "}
               {alsoShownAt.length === 1 ? "event" : "events"}.
             </p>

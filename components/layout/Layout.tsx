@@ -16,11 +16,12 @@ const NAV = [
   { label: "Versions", href: "/versions" },
   { label: "Contact", href: "/contact" },
 ];
+const VISIBLE = 4;
 
 export function Navbar() {
   return (
     <nav className="relative flex space-x-8">
-      {NAV.slice(0, 4).map(({ label, href }, index) => (
+      {NAV.slice(0, VISIBLE).map(({ label, href }, index) => (
         <a
           href={href}
           className={`hidden text-gray-500 font-normal transition no-underline hover:text-gray-700 md:block ${
@@ -58,7 +59,9 @@ export function Navbar() {
               key={label}
               href={href}
               className={`px-3 py-2 font-normal transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800 ${
-                index < 3 ? "sm:hidden md:hidden" : index < 5 && "md:hidden"
+                index < VISIBLE - 1
+                  ? "sm:hidden md:hidden"
+                  : index < VISIBLE && "md:hidden"
               }`}
               aria-current="false"
             >
@@ -73,7 +76,7 @@ export function Navbar() {
 
 export function Footer() {
   return (
-    <footer className="text-gray-400">
+    <footer className="text-gray-400 pt-8">
       <div className="max-w-screen-md px-6 pt-16 pb-8 mx-auto leading-none md:px-0">
         <div className="flex items-center justify-between mb-2 text-sm">
           <p className="flex items-center space-x-1">
@@ -93,7 +96,7 @@ export function Footer() {
               <IconInfoCircle class="w-4 h-4" />
             </a>
           </p>
-          <p>Made with 🧡 in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>
+          <p>Made with ♥️ in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>
           <div className="flex items-center space-x-4">
             <div className="relative flex items-center space-x-1">
               <Socials />

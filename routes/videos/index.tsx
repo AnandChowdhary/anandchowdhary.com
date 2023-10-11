@@ -26,18 +26,20 @@ export const handler: Handlers<ArchiveData> = {
 export default function Archive({ data }: PageProps<ArchiveData>) {
   const { timeline, query } = data;
   return (
-    <div class="max-w-screen-md px-4 mx-auto space-y-4 md:px-0">
+    <>
       <Breadcrumbs items={[{ href: "/videos", title: "Videos" }]} />
-      <SectionTitle title="Videos" />
-      <Timeline
-        timeline={timeline}
-        show={timeline.filter(
-          ({ type, data }) =>
-            type === "video" || (data && "video" in data && data.video)
-        )}
-        query={query}
-        yearHrefPrefix="/videos"
-      />
-    </div>
+      <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
+        <SectionTitle title="Videos" />
+        <Timeline
+          timeline={timeline}
+          show={timeline.filter(
+            ({ type, data }) =>
+              type === "video" || (data && "video" in data && data.video)
+          )}
+          query={query}
+          yearHrefPrefix="/videos"
+        />
+      </div>
+    </>
   );
 }

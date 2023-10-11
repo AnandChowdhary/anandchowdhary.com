@@ -1,5 +1,5 @@
-import IconSquare from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/square.tsx";
 import IconSquareCheck from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/square-check.tsx";
+import IconSquare from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/square.tsx";
 
 export default function Filters({
   categoryData,
@@ -32,7 +32,7 @@ export default function Filters({
   return (
     <form
       id="filters"
-      class="flex flex-wrap text-sm"
+      class="flex flex-wrap text-sm mb-12"
       onSubmit={(event) => updateChangelog(event)}
     >
       {Object.entries(categoryData)

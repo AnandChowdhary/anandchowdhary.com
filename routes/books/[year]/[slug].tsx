@@ -77,7 +77,7 @@ export default function Archive({ data }: PageProps<ArchiveData>) {
         ]}
       />
       <SectionTitle title={item.title} />
-      <ul class="text-gray-500">
+      <ul class="text-gray-500 space-y-2">
         <li class="flex items-center space-x-2">
           <IconCalendarEvent class="h-4 w-4" />
           <time value={new Date(item.startedAt).toISOString().substring(0, 10)}>

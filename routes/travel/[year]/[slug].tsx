@@ -1,17 +1,17 @@
 import type { PageProps } from "$fresh/server.ts";
-import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import { slugify } from "https://deno.land/x/slugify@0.3.0/mod.ts";
 import IconCalendarEvent from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/calendar-event.tsx";
+import smartQuotes from "https://esm.sh/smartquotes-ts@0.0.2";
 import type { TimelineTravel } from "https://esm.sh/timeline-types@9.0.0/index.d.ts";
 import { Breadcrumbs } from "../../../components/data/Breadcrumbs.tsx";
 import { PreviousNext } from "../../../components/data/PreviousNext.tsx";
+import { Timeline } from "../../../components/data/Timeline.tsx";
 import {
   SingleItemHandlerProps,
   timelineItemHandler,
 } from "../../../utils/handlers.ts";
 import { countryName } from "../../../utils/string.ts";
 import { getFlagUrl } from "../../../utils/urls.ts";
-import { Timeline } from "../../../components/data/Timeline.tsx";
 
 export const handler = timelineItemHandler<TimelineTravel>("travel");
 
@@ -45,7 +45,7 @@ export default function Event({
       />
       <header class="post-header">
         <h1>{item.data.label}</h1>
-        <ul class="text-gray-500">
+        <ul class="text-gray-500 space-y-2">
           <li class="flex items-center space-x-2">
             <IconCalendarEvent class="h-4 w-4" />
             <span>

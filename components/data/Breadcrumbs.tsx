@@ -26,7 +26,7 @@ export function Breadcrumbs({
       </Head>
       <nav {...props}>
         <ol
-          class="flex flex-wrap breadcrumbs -mb-3"
+          class="flex flex-wrap breadcrumbs"
           itemScope
           itemType="https://schema.org/BreadcrumbList"
         >

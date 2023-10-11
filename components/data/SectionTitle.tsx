@@ -14,7 +14,7 @@ export function SectionTitle({
   children,
 }: SectionTitleProps) {
   return (
-    <header class="space-y-2">
+    <header class="space-y-6">
       <h1 class="text-4xl font-semibold font-display space-x-3">
         {emoji && <span aria-hidden="true">{emoji}</span>}
         <span>{title}</span>
