@@ -26,7 +26,7 @@ export default function Contact() {
             <input
               name="name"
               type="text"
-              class="w-full px-4 py-2 text-xl rounded shadow-sm"
+              class="w-full px-4 py-2 text-xl rounded shadow-sm focus-visible:outline-none focus-visible:ring-2 ring-gray-500"
               required
             />
           </label>
@@ -35,7 +35,7 @@ export default function Contact() {
             <input
               name="email"
               type="email"
-              class="w-full px-4 py-2 text-xl rounded shadow-sm"
+              class="w-full px-4 py-2 text-xl rounded shadow-sm focus-visible:outline-none focus-visible:ring-2 ring-gray-500"
               required
             />
           </label>
@@ -43,12 +43,12 @@ export default function Contact() {
             <span class="block">Message</span>
             <textarea
               name="message"
-              class="w-full px-4 py-2 text-xl rounded shadow-sm"
+              class="w-full px-4 py-2 text-xl rounded shadow-sm focus-visible:outline-none focus-visible:ring-2 ring-gray-500"
               rows={4}
               required
             />
           </label>
-          <button type="submit" class="px-6 py-2 bg-rose-200 rounded shadow-sm">
+          <button type="submit" class="px-6 py-2 bg-gray-200 rounded shadow-sm">
             Send message
           </button>
         </form>

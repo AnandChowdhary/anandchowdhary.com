@@ -4,6 +4,7 @@ import { Socials } from "../text/Socials.tsx";
 
 const NAV = [
   { label: "Home", href: "/" },
+  { label: "Archive", href: "/archive/2023" },
   { label: "About", href: "/about" },
   { label: "Life", href: "/life" },
   { label: "Blog", href: "/blog" },
@@ -18,11 +19,11 @@ const NAV = [
 
 export function Navbar() {
   return (
-    <nav className="relative flex space-x-6">
-      {NAV.slice(0, 5).map(({ label, href }, index) => (
+    <nav className="relative flex space-x-8">
+      {NAV.slice(0, 4).map(({ label, href }, index) => (
         <a
           href={href}
-          className={`hidden text-gray-500 transition hover:text-gray-700 md:block ${
+          className={`hidden text-gray-500 font-normal transition no-underline hover:text-gray-700 md:block ${
             index < 3 && "sm:block"
           }`}
           aria-current="false"
@@ -56,7 +57,7 @@ export function Navbar() {
             <a
               key={label}
               href={href}
-              className={`px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800 ${
+              className={`px-3 py-2 font-normal transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800 ${
                 index < 3 ? "sm:hidden md:hidden" : index < 5 && "md:hidden"
               }`}
               aria-current="false"
@@ -97,7 +98,7 @@ export function Footer() {
             <div className="relative flex items-center space-x-1">
               <Socials />
               <details className="appearance-none">
-                <summary className="p-1 list-none transition rounded-lg cursor-default hover:bg-rose-100 hover:text-rose-700">
+                <summary className="p-1 list-none transition rounded-lg cursor-default hover:bg-gray-100 hover:text-gray-700">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48"
@@ -118,19 +119,19 @@ export function Footer() {
                 </summary>
                 <div className="absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 bg-white rounded shadow backdrop-blur bottom-10">
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
+                    className="px-3 py-2 transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800"
                     href="/colophon"
                   >
                     Colophon
                   </a>
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
+                    className="px-3 py-2 transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800"
                     href="/sitemap"
                   >
                     Sitemap
                   </a>
                   <a
-                    className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
+                    className="px-3 py-2 transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800"
                     href="https://github.com/AnandChowdhary/anandchowdhary.com"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -138,13 +139,13 @@ export function Footer() {
                     GitHub
                   </a>
                   {/* <a
-                    className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
+                    className="px-3 py-2 transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800"
                     href="#"
                   >
                     View page history
                   </a> */}
                   {/* <a
-                    className="px-3 py-2 transition rounded hover:bg-rose-50 hover:text-rose-800"
+                    className="px-3 py-2 transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800"
                     href="#"
                   >
                     Edit on GitHub
@@ -154,7 +155,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="pt-4 border-t-2 border-rose-100"></div>
+        <div className="pt-4 border-t-2 border-gray-100"></div>
         <div>
           <nav className="sm:flex flex-wrap justify-between mb-2 space-x-3 overflow-auto">
             {Array.from(

@@ -93,7 +93,12 @@ export default function Event({
 }: PageProps<
   SingleItemHandlerProps<TimelineProjectItem> & { readme?: string }
 >) {
-  const { timeline, item, content, previous, next, readme } = data;
+  const { item, content, previous, next, readme } = data;
+  const __html = readme
+    ? render(readme, {
+        repository: "AnandChowdhary/projects",
+      })
+    : content;
 
   return (
     <div className="max-w-screen-md px-4 mx-auto md:px-0">
@@ -252,16 +257,7 @@ export default function Event({
           )}
         </ul>
       </header>
-      <div
-        className="longform"
-        dangerouslySetInnerHTML={{
-          __html: readme
-            ? render(readme, {
-                repository: new URL(item.source).pathname.replace("/", ""),
-              })
-            : content,
-        }}
-      />
+      <div className="longform" dangerouslySetInnerHTML={{ __html }} />
       <PreviousNext typeLabel="project" previous={previous} next={next} />
     </div>
   );

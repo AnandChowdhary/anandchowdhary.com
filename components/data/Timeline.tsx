@@ -102,8 +102,8 @@ export const Timeline: FunctionComponent<{
           options={filteredCategories}
         />
       )}
-      <div className="relative space-y-8">
-        <div className="absolute top-0 w-1 bg-rose-200 bottom-6 -left-8" />
+      <div className="relative space-y-24">
+        <div className="absolute top-0 w-1 bg-gray-200 bottom-6 -left-8" />
         {visible.map((item, index) => (
           <div key={item.title}>
             {(index === 0 ||
@@ -114,7 +114,7 @@ export const Timeline: FunctionComponent<{
                   className={`flex flex-grow -ml-12 ${index > 0 ? "pt-6" : ""}`}
                 >
                   <div className="shrink-0" style={{ minWidth: "3rem" }}>
-                    <div className="relative w-5 h-5 ml-2 bg-rose-600 border-4 rounded-full border-rose-50" />
+                    <div className="relative w-5 h-5 ml-2 bg-gray-600 border-4 rounded-full border-gray-100" />
                   </div>
                   <div>
                     <h3 className="mb-6 text-xl font-semibold">
@@ -134,7 +134,7 @@ export const Timeline: FunctionComponent<{
                 <div className="shrink-0" style={{ minWidth: "3rem" }}>
                   <div>
                     <div
-                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-rose-50 bg-white -mt-1 z-10`}
+                      className={`relative flex items-center justify-center text-center text-white border-4 rounded-full h-9 w-9 border-gray-100 bg-white -mt-1 z-10`}
                       style={{ backgroundColor: categoryData[item.type].color }}
                     >
                       {item.type === "theme" ? (
@@ -171,7 +171,7 @@ export const Timeline: FunctionComponent<{
                 </div>
                 <div className="flex-grow">
                   <div class="grid md:grid-cols-5 gap-8">
-                    <div class="col-span-3 space-y-2">
+                    <div class="col-span-3 space-y-3">
                       <div className="text-gray-500">
                         <span>
                           <span
@@ -267,7 +267,7 @@ export const Timeline: FunctionComponent<{
                   </div>
                 </div>
                 {index === visible.length - 1 && !hasMoreHref && (
-                  <div class="bg-rose-50 w-9 absolute left-0 h-full top-0" />
+                  <div class="bg-gray-100 w-9 absolute left-0 h-full top-0" />
                 )}
               </div>
             </article>

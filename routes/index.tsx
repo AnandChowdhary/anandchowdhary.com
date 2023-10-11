@@ -121,9 +121,9 @@ export default function Home({ data }: PageProps<HomeData>) {
   ) as TimelineTravel;
 
   return (
-    <div class="max-w-screen-md px-4 mx-auto space-y-8 md:px-0">
-      <section class="grid-cols-2 gap-8 gap-y-12 sm:grid">
-        <div class="items-start justify-center mb-6 sm:flex">
+    <div class="max-w-screen-md px-4 mx-auto space-y-12 md:px-0">
+      <section class="grid-cols-2 gap-16 sm:grid">
+        <div class="items-start justify-center mb-6 mt-7 sm:flex">
           <img
             alt="Illustrated portrait of Anand"
             src={imageUrl("https://anandchowdhary.com/anand.png", {
@@ -143,9 +143,9 @@ export default function Home({ data }: PageProps<HomeData>) {
             loading="eager"
           />
         </div>
-        <div class="space-y-4">
+        <div class="space-y-5 py-5">
           <Breadcrumbs items={[]} />
-          <h2 class="space-x-3 text-2xl font-semibold font-display">
+          <h2 class="space-x-3 text-3xl font-semibold font-display">
             <span class="wave" aria-hidden="true">
               {"👋 "}
             </span>
@@ -174,7 +174,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           <SectionLink label="Learn more about me" href="/about" />
         </div>
       </section>
-      <section class="grid-cols-2 gap-12 gap-y-12 sm:grid space-y-8 sm:space-y-0">
+      <section class="grid-cols-2 gap-16 sm:grid space-y-8 sm:space-y-0">
         <div class="space-y-8">
           <article class="space-y-4">
             <header>
@@ -532,7 +532,7 @@ export default function Home({ data }: PageProps<HomeData>) {
             <a
               key={award.title}
               href={award.href}
-              class="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100"
+              class="relative flex flex-col items-center justify-center h-12 px-6 transition opacity-70 hover:opacity-100 no-underline"
             >
               <div
                 class="absolute top-0 bottom-0 left-0 h-12 bg-left bg-no-repeat bg-contain"

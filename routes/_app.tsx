@@ -4,7 +4,7 @@ import { Footer, Navbar } from "../components/layout/Layout.tsx";
 
 export default function App({ Component }: AppProps) {
   return (
-    <html lang="en" class="py-2" style={{ backgroundColor: "#ef8286" }}>
+    <html lang="en" class="py-2" style={{ backgroundColor: "#333333" }}>
       <Head>
         <link
           rel="apple-touch-icon"
@@ -24,10 +24,16 @@ export default function App({ Component }: AppProps) {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ef8286" />
-        <meta name="msapplication-TileColor" content="#ef8286" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#333333" />
+        <meta name="msapplication-TileColor" content="#333333" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="stylesheet" href={`/${asset("global.css")}`} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&family=Inter:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-EJW713RCKV"
@@ -38,16 +44,13 @@ export default function App({ Component }: AppProps) {
           }}
         />
       </Head>
-      <body
-        class="min-h-screen text-gray-700"
-        style={{ backgroundColor: "#fbf1f2" }}
-      >
+      <body class="min-h-screen text-gray-900 bg-gray-100">
         <div>
           <header class="pt-6 pb-8">
             <div class="flex justify-between max-w-screen-md px-6 mx-auto md:px-0">
               <a
                 href="/"
-                class="flex items-center space-x-2 font-medium whitespace-nowrap"
+                class="flex items-center space-x-2 font-medium whitespace-nowrap no-underline"
               >
                 <svg
                   viewBox="0 0 700 700"
