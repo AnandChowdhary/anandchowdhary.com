@@ -10,5 +10,5 @@ export const imageUrl = (url: string, search: Record<string, string>) => {
     url
   )}?maxage=1y&${new URLSearchParams(
     search
-  ).toString()}&cacheBuster=1672578584754`;
+  ).toString()}&cacheBuster=1672578584751`;
 };

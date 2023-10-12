@@ -163,6 +163,26 @@ details[open] .rotate-on-open {
   padding-left: 1.25rem;
 }
 
+.longform p > img {
+  border: 0.05rem solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .longform p:has(img) {
+    margin: 5rem -7.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 2rem;
+  }
+  .longform p:has(img) + p:has(img) {
+    margin-top: -2.5rem;
+  }
+  .longform p:has(img):last-child {
+    margin-bottom: 0;
+  }
+}
+
 code {
   font-size: 95%;
 }
