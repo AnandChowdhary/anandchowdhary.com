@@ -211,25 +211,6 @@ export default function Home({ data }: PageProps<HomeData>) {
           <article class="space-y-4">
             <header class="space-y-1">
               <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
-                <span aria-hidden="true">📊</span>
-                <SectionLink
-                  label={okr ? `OKRs for Q${okr.data.name}` : "OKRs"}
-                  href="/okrs"
-                />
-              </h2>
-              <p class="text-gray-500">Personal Objectives and Key Results</p>
-            </header>
-            {okr ? <OKRCards okr={okr} /> : <LoadError items="OKRs" />}
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/okrs/api.json"
-                githubUrl="https://github.com/AnandChowdhary/okrs"
-              />
-            </div>
-          </article>
-          <article class="space-y-4">
-            <header class="space-y-1">
-              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">💻</span>
                 <SectionLink label="Projects" href="/projects" />
               </h2>
@@ -396,6 +377,25 @@ export default function Home({ data }: PageProps<HomeData>) {
           <article class="space-y-4">
             <header class="space-y-1">
               <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
+                <span aria-hidden="true">📊</span>
+                <SectionLink
+                  label={okr ? `OKRs for Q${okr.data.name}` : "OKRs"}
+                  href="/okrs"
+                />
+              </h2>
+              <p class="text-gray-500">Personal Objectives and Key Results</p>
+            </header>
+            {okr ? <OKRCards okr={okr} /> : <LoadError items="OKRs" />}
+            <div class="pt-1">
+              <DataFooterLinks
+                apiUrl="https://anandchowdhary.github.io/okrs/api.json"
+                githubUrl="https://github.com/AnandChowdhary/okrs"
+              />
+            </div>
+          </article>
+          <article class="space-y-4">
+            <header class="space-y-1">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">✍️</span>
                 <SectionLink label="Blog" href="/blog" />
               </h2>
@@ -404,16 +404,35 @@ export default function Home({ data }: PageProps<HomeData>) {
             <div class="space-y-3 flex flex-col">
               {timeline
                 .filter((i) => i.type === "blog-post")
-                .slice(0, 5)
+                .slice(0, 3)
                 .map((item) => (
-                  <div key={item.url} class="space-y-1">
-                    <div class="leading-snug">
-                      <a href={item.url}>{item.title}</a>
+                  <div
+                    key={item.url}
+                    class="bg-white shadow rounded-md text-sm grid grid-cols-3 gap-2"
+                  >
+                    <div class="overflow-hidden rounded-l-md flex">
+                      <img
+                        alt=""
+                        src={imageUrl(
+                          `https://anandchowdhary.github.io/blog/assets/${item.url
+                            .split("/")
+                            .pop()}.png`,
+                          { w: "112", h: "90", fit: "cover" }
+                        )}
+                        width={112}
+                        height={90}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div class="text-gray-500 text-sm">
-                      {new Date(item.date).toLocaleString("en-US", {
-                        dateStyle: "long",
-                      })}
+                    <div class="p-4 col-span-2 space-y-1.5">
+                      <div class="leading-snug">
+                        <a href={item.url}>{item.title}</a>
+                      </div>
+                      <div class="text-gray-500 text-sm">
+                        {new Date(item.date).toLocaleString("en-US", {
+                          dateStyle: "long",
+                        })}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -600,7 +619,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 .map((item) => (
                   <div
                     key={item.url}
-                    class="bg-white rounded shadow-sm p-3 text-sm grid grid-cols-5 space-x-4"
+                    class="bg-white rounded shadow-sm p-3 text-sm grid grid-cols-6 space-x-4"
                   >
                     <div class="flex flex-col justify-center items-center space-y-1">
                       <div class="text-2xl font-display">
@@ -614,7 +633,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                         })}
                       </div>
                     </div>
-                    <div class="space-y-1.5 col-span-4">
+                    <div class="space-y-1.5 col-span-5">
                       <div class="leading-snug mt-0.5">
                         <a href={item.url} class="no-underline">
                           {item.title}
