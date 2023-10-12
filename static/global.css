@@ -9,6 +9,10 @@ html {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.aspect-square {
+  aspect-ratio: 1;
+}
+
 @media screen and (min-width: 768px) {
   .two-columns {
     column-count: 2;

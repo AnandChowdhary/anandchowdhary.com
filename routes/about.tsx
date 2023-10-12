@@ -20,19 +20,20 @@ export const handler: Handlers<AboutData> = {
   },
 };
 
-const STARTUPS = [
+export const STARTUPS = [
   {
     icon: (
       <svg viewBox="0 0 900 256">
         <path
           d="M0 11v241h55v-82h45c56 0 81-39 81-79s-25-80-81-80H0zm55 111V59h42c21 0 29 16 29 32 0 15-8 31-29 31H55zm270-14a65 65 0 00-52-23c-46 0-78 34-78 85s32 86 78 86c20 0 40-9 52-25v21h51V89h-51v19zm-40 100c-22 0-38-18-38-38 0-21 16-38 38-38 21 0 38 17 38 38 0 20-17 38-38 38zM522 85c-16 0-38 6-50 22V0h-52v252h52v-18c12 15 34 22 50 22 41 0 80-33 80-86s-39-85-80-85zm-10 123c-20 0-38-17-38-38s18-38 38-38 37 17 37 38-17 38-37 38zM662 64c18 0 32-13 32-30S680 4 662 4c-17 0-32 13-32 30s15 30 32 30zm26 188V89h-52v163h52zm123 4c47 0 89-34 89-86 0-51-42-85-89-85s-89 34-89 85c0 52 42 86 89 86zm0-48c-20 0-36-15-36-38 0-22 16-38 36-38s36 16 36 38c0 23-16 38-36 38z"
-          fill="#ff6b6b"
+          fill="currentColor"
         />
       </svg>
     ),
+    color: "#ff6b6b",
     name: "Pabio",
     position: "co-founder & CTO",
-    href: "https://pabio.com",
+    href: "/projects/tags/pabio",
     start: "2020",
     end: "present",
     description:
@@ -41,15 +42,16 @@ const STARTUPS = [
   {
     icon: (
       <svg viewBox="0 0 116 116">
-        <g fill="#007bff" fill-rule="evenodd">
+        <g fill="currentColor" fill-rule="evenodd">
           <path d="M58 116A58 58 0 1 1 58 0a58 58 0 0 1 0 116zm1-11a47 47 0 1 0 0-95 47 47 0 0 0 0 95z" />
           <circle cx="58.5" cy="57.5" r="35.5" />
         </g>
       </svg>
     ),
+    color: "#007bff",
     name: "Oswald Labs",
     position: "co-founder & CEO",
-    href: "https://oswaldlabs.com",
+    href: "/projects/tags/oswald-labs",
     start: "2016",
     end: "2020",
     description: "Accessibility technology for the next billion Internet users",
@@ -71,7 +73,7 @@ const STARTUPS = [
     ),
     name: "Melangebox",
     position: "co-founder & CTO",
-    href: "https://melangebox.com",
+    href: "/projects/2017/melangebox",
     start: "2017",
     end: "2020",
     description: "Sustainable, high-quality, and affordable fashion for India",
@@ -88,6 +90,7 @@ const STARTUPS = [
     ),
     name: "Class Rebels",
     position: "co-founder & CEO",
+    href: "/projects/2014/classrebels",
     start: "2014",
     end: "2016",
     description: "Collaborative e-learning platform for CBSE K-12",
@@ -114,6 +117,7 @@ const STARTUPS = [
     ),
     name: "PickQuick",
     position: "co-founder & CTO",
+    href: "/projects/2012/pickquick",
     start: "2012",
     end: "2013",
     description:
@@ -160,8 +164,8 @@ export default function About({ data }: PageProps<AboutData>) {
               Sukriti Kapoor
             </ExternalLink>
             , and is the co-founder &amp; CTO of{" "}
-            <ExternalLink href="https://pabio.com">Pabio</ExternalLink>, an
-            interior design and rent-to-own furniture company.
+            <a href="/projects/tags/pabio">Pabio</a>, an interior design and
+            rent-to-own furniture company.
           </p>
           <p>
             As an engineer, he's focused on web standards and the JavaScript
@@ -199,20 +203,30 @@ export default function About({ data }: PageProps<AboutData>) {
         <h2 className="mt-8 text-2xl font-semibold font-display">Startups</h2>
         <ul className="mt-6">
           {STARTUPS.map(
-            ({ name, position, description, start, end, icon, href }) => (
-              <li key={name} className="flex mt-6">
+            ({
+              name,
+              position,
+              description,
+              start,
+              end,
+              color,
+              icon,
+              href,
+            }) => (
+              <li key={name} className="flex mt-6" style={{ color }}>
                 <div
                   className="flex items-center justify-center w-12 h-12 p-2 mr-5 bg-white rounded shadow"
                   role="presentation"
                 >
                   {icon}
                 </div>
-
-                <div>
+                <div class="text-gray-900">
                   <h3>
                     <strong className="font-medium">
-                      {href ? (
+                      {href && href.startsWith("http") ? (
                         <ExternalLink href={href}>{name}</ExternalLink>
+                      ) : href ? (
+                        <a href={href}>{name}</a>
                       ) : (
                         name
                       )}

@@ -4,8 +4,8 @@ import { Socials } from "../text/Socials.tsx";
 
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "Archive", href: "/archive/2023" },
   { label: "About", href: "/about" },
+  { label: "Archive", href: `/archive/${new Date().getUTCFullYear()}` },
   { label: "Life", href: "/life" },
   { label: "Blog", href: "/blog" },
   { label: "Events", href: "/events" },
@@ -123,7 +123,7 @@ export function Footer() {
                 <div className="absolute right-0 z-40 flex flex-col w-48 p-1 text-sm text-gray-600 bg-white rounded shadow backdrop-blur bottom-10">
                   <a
                     className="px-3 py-2 transition no-underline rounded hover:bg-gray-100 font-normal hover:text-gray-800"
-                    href="/colophon"
+                    href="/versions/2022/alameda"
                   >
                     Colophon
                   </a>

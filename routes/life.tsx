@@ -187,7 +187,7 @@ export default function Home({ data }: PageProps<LifeData>) {
         <section class="grid md:grid-cols-2 gap-16">
           <article class="space-y-4">
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🌈</span>
                 <SectionLink label="Yearly themes" href="/themes" />
               </h2>
@@ -215,7 +215,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article class="space-y-4">
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">📊</span>
                 <SectionLink label="Quarterly OKRs" href="/okrs" />
               </h2>
@@ -229,7 +229,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article class="space-y-4">
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">📍</span>
                 <SectionLink label="Location" href="/location" />
               </h2>
@@ -286,7 +286,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article class="space-y-4">
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🛩️</span>
                 <SectionLink label="Travel" href="/travel" />
               </h2>
@@ -376,7 +376,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article class="space-y-4">
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">📕</span>
                 <SectionLink label="Books" href="/books" />
               </h2>
@@ -428,7 +428,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article class="space-y-4">
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🎵</span>
                 <SectionLink label="Music" href="/music" />
               </h2>
@@ -487,7 +487,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article>
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🔥</span>
                 <SectionLink label="Calories burned" href="/health/calories" />
               </h2>
@@ -539,7 +539,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article>
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🛌</span>
                 <SectionLink label="Sleep" href="/health/sleep" />
               </h2>
@@ -592,7 +592,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article>
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🏃‍♂️</span>
                 <SectionLink label="Steps" href="/health/steps" />
               </h2>
@@ -634,7 +634,7 @@ export default function Home({ data }: PageProps<LifeData>) {
           </article>
           <article>
             <header class="space-y-2">
-              <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+              <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
                 <span aria-hidden="true">🤾‍♀️</span>
                 <SectionLink label="Readiness" href="/health/readiness" />
               </h2>
@@ -678,7 +678,7 @@ export default function Home({ data }: PageProps<LifeData>) {
         </section>
         <section class="space-y-4">
           <header class="space-y-2">
-            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+            <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
               <span aria-hidden="true">👨‍💻</span>
               <SectionLink label="Contributions" href="/open-source" />
             </h2>

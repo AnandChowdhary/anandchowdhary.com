@@ -170,8 +170,8 @@ export default function Home({ data }: PageProps<LifeData>) {
       />
       <section class="grid md:grid-cols-2 gap-8">
         <article>
-          <header>
-            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+          <header class="space-y-1">
+            <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
               <span aria-hidden="true">🔥</span>
               <SectionLink label="Calories burned" href="/health/calories" />
             </h2>
@@ -220,8 +220,8 @@ export default function Home({ data }: PageProps<LifeData>) {
           )}
         </article>
         <article>
-          <header>
-            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+          <header class="space-y-1">
+            <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
               <span aria-hidden="true">🛌</span>
               <SectionLink label="Sleep" href="/health/sleep" />
             </h2>
@@ -273,8 +273,8 @@ export default function Home({ data }: PageProps<LifeData>) {
           )}
         </article>
         <article>
-          <header>
-            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+          <header class="space-y-1">
+            <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
               <span aria-hidden="true">🏃‍♂️</span>
               <SectionLink label="Steps" href="/health/steps" />
             </h2>
@@ -315,8 +315,8 @@ export default function Home({ data }: PageProps<LifeData>) {
           )}
         </article>
         <article>
-          <header>
-            <h2 class="flex items-center space-x-2 text-xl font-semibold font-display">
+          <header class="space-y-1">
+            <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
               <span aria-hidden="true">🤾‍♀️</span>
               <SectionLink label="Readiness" href="/health/readiness" />
             </h2>
