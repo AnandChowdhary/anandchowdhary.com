@@ -123,24 +123,32 @@ export default function Home({ data }: PageProps<HomeData>) {
     <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
       <section class="grid-cols-2 gap-16 sm:grid">
         <div class="items-start justify-center mb-6 mt-7 sm:flex">
-          <img
-            alt="Illustrated portrait of Anand"
-            src={imageUrl("https://anandchowdhary.com/anand.png", {
-              w: "245",
-              h: "245",
-            })}
-            srcSet={`${imageUrl("https://anandchowdhary.com/anand.png", {
-              w: "245",
-              h: "245",
-            })} 1x, ${imageUrl("https://anandchowdhary.com/anand.png", {
-              w: "490",
-              h: "490",
-            })} 2x`}
-            class="object-contain object-bottom w-1/2 sm:w-2/3"
-            width={198}
-            height={198}
-            loading="eager"
-          />
+          <figure>
+            <img
+              alt="Portrait of Anand looking towards the right, smiling with his hands crossed"
+              src="/anand.jpg"
+              class="object-contain object-bottom w-full rounded-xl shadow"
+              width={1067}
+              height={1317}
+              loading="eager"
+            />
+            <figcaption class="text-center text-gray-500 text-xs mt-2 inline-flex items-center justify-center w-full">
+              <span>
+                &copy;{" "}
+                <a href="http://www.jimmyontherun.com">
+                  Jimmy on the Run Studio
+                </a>
+              </span>
+              <span
+                aria-hidden="true"
+                title="Portrait of Anand looking towards the right, smiling with his hands crossed"
+                class="bg-gray-200 rounded uppercase px-1 ml-2 font-medium cursor-default"
+                style={{ fontSize: "80%" }}
+              >
+                Alt
+              </span>
+            </figcaption>
+          </figure>
         </div>
         <div class="space-y-5">
           <Breadcrumbs items={[]} />
@@ -152,7 +160,7 @@ export default function Home({ data }: PageProps<HomeData>) {
           </h2>
           <p class="text-lg text-gray-500">
             {t(
-              "I'm a creative technologist and entrepreneur currently working remotely as the co-founder and CTO of <0>Pabio</0>, a rent-to-own furniture with interior design company in Europe.",
+              "I'm currently working on a new startup in the AI sales space. More information will be available later in Q1 2024.",
               {},
               [
                 ({ children }: { children: ComponentChildren }) => (
@@ -166,8 +174,25 @@ export default function Home({ data }: PageProps<HomeData>) {
             )}
           </p>
           <p>
-            {smartQuotes(
-              "I'm also an award-winning open source contributor and Y Combinator and Forbes 30 Under 30 alum."
+            {t(
+              "Previously, I founded rent-to-own furniture with interior design company <0>Pabio</0> and accessibility technology company <1>Oswald Labs</1>. I'm also an award-winning open source contributor and Y Combinator and Forbes 30 Under 30 alum.",
+              {},
+              [
+                ({ children }: { children: ComponentChildren }) => (
+                  <a
+                    href="/projects/tags/pabio"
+                    class="underline"
+                    children={children}
+                  />
+                ),
+                ({ children }: { children: ComponentChildren }) => (
+                  <a
+                    href="/projects/tags/oswald-labs"
+                    class="underline"
+                    children={children}
+                  />
+                ),
+              ]
             )}
           </p>
           <SectionLink label="Learn more about me" href="/about" />
@@ -201,12 +226,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                 }}
               />
             </div>
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/themes/api.json"
-                githubUrl="https://github.com/AnandChowdhary/themes"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/themes/api.json"
+              githubUrl="https://github.com/AnandChowdhary/themes"
+            />
           </article>
           <article class="space-y-4">
             <header class="space-y-1">
@@ -218,24 +241,21 @@ export default function Home({ data }: PageProps<HomeData>) {
             </header>
             <div class="grid grid-cols-4 gap-4 text-xs text-center">
               <div class="space-y-3 text-gray-500">
-                <a
-                  href="/projects/tags/pabio"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-3 text-white"
-                  style={{ backgroundColor: STARTUPS[0].color }}
-                >
-                  {STARTUPS[0].icon}
-                </a>
-                <div>Pabio</div>
-              </div>
-              <div class="space-y-3 text-gray-500">
-                <a
-                  href="/projects/tags/oswald-labs"
+                <div
                   class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
-                  style={{ backgroundColor: STARTUPS[1].color }}
+                  style={{ backgroundColor: "#333333" }}
                 >
-                  {STARTUPS[1].icon}
-                </a>
-                <div>Oswald Labs</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 144 144"
+                    fill="none"
+                  >
+                    <path fill="currentColor" d="M62 0h20v144H62z" />
+                    <path fill="currentColor" d="M144 62v20H0V62z" />
+                    <path fill="currentColor" d="m119 11 14 14-51 51-14-14z" />
+                  </svg>
+                </div>
+                <div>Coming soon</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
@@ -265,6 +285,26 @@ export default function Home({ data }: PageProps<HomeData>) {
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
+                  href="/projects/tags/pabio"
+                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-3 text-white"
+                  style={{ backgroundColor: STARTUPS[0].color }}
+                >
+                  {STARTUPS[0].icon}
+                </a>
+                <div>Pabio</div>
+              </div>
+              <div class="space-y-3 text-gray-500">
+                <a
+                  href="/projects/tags/oswald-labs"
+                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
+                  style={{ backgroundColor: STARTUPS[1].color }}
+                >
+                  {STARTUPS[1].icon}
+                </a>
+                <div>Oswald Labs</div>
+              </div>
+              <div class="space-y-3 text-gray-500">
+                <a
                   href="/projects/2020/uppload"
                   class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
                   style={{ backgroundColor: "#f74041" }}
@@ -278,19 +318,6 @@ export default function Home({ data }: PageProps<HomeData>) {
                   </svg>
                 </a>
                 <div>Uppload</div>
-              </div>
-              <div class="space-y-3 text-gray-500">
-                <a
-                  href="/projects/2022/redirect-russia"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square text-white overflow-hidden"
-                  style={{ backgroundColor: "#f74041" }}
-                >
-                  <img
-                    alt=""
-                    src="https://raw.githubusercontent.com/pabio/redirect-russia/main/img/logo.png"
-                  />
-                </a>
-                <div>Redirect Russia</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
@@ -367,12 +394,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <div>Chowdhary .org</div>
               </div>
             </div>
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/projects/api.json"
-                githubUrl="https://github.com/AnandChowdhary/projects"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/projects/api.json"
+              githubUrl="https://github.com/AnandChowdhary/projects"
+            />
           </article>
           <article class="space-y-4">
             <header class="space-y-1">
@@ -386,12 +411,10 @@ export default function Home({ data }: PageProps<HomeData>) {
               <p class="text-gray-500">Personal Objectives and Key Results</p>
             </header>
             {okr ? <OKRCards okr={okr} /> : <LoadError items="OKRs" />}
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/okrs/api.json"
-                githubUrl="https://github.com/AnandChowdhary/okrs"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/okrs/api.json"
+              githubUrl="https://github.com/AnandChowdhary/okrs"
+            />
           </article>
           <article class="space-y-4">
             <header class="space-y-1">
@@ -408,7 +431,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 .map((item) => (
                   <div
                     key={item.url}
-                    class="bg-white shadow rounded-md text-sm grid grid-cols-3 gap-2"
+                    class="bg-white shadow rounded-md text-sm grid grid-cols-3 gap-2 relative"
                   >
                     <div class="overflow-hidden rounded-l-md flex">
                       <img
@@ -424,9 +447,11 @@ export default function Home({ data }: PageProps<HomeData>) {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div class="p-4 col-span-2 space-y-1.5">
+                    <div class="p-3 col-span-2 space-y-1.5">
                       <div class="leading-snug">
-                        <a href={item.url}>{item.title}</a>
+                        <a href={item.url} className="full-link no-underline">
+                          {item.title}
+                        </a>
                       </div>
                       <div class="text-gray-500 text-sm">
                         {new Date(item.date).toLocaleString("en-US", {
@@ -437,12 +462,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                   </div>
                 ))}
             </div>
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/blog/api.json"
-                githubUrl="https://github.com/AnandChowdhary/blog"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/blog/api.json"
+              githubUrl="https://github.com/AnandChowdhary/blog"
+            />
           </article>
         </div>
         <div class="space-y-12">
@@ -595,12 +618,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                 )}
               </div>
             </div>
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://github.com/AnandChowdhary/life"
-                githubUrl="https://github.com/AnandChowdhary/life"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://github.com/AnandChowdhary/life"
+              githubUrl="https://github.com/AnandChowdhary/life"
+            />
           </article>
           <article class="space-y-4">
             <header class="space-y-1">
@@ -608,9 +629,7 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <span aria-hidden="true">🗓️</span>
                 <SectionLink label="Events" href="/events" />
               </h2>
-              <p class="text-gray-500">
-                Startup events and technical conferences
-              </p>
+              <p class="text-gray-500">Speaking engagements at conferences</p>
             </header>
             <div class="space-y-2 flex flex-col">
               {timeline
@@ -650,12 +669,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                   </div>
                 ))}
             </div>
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/events/api.json"
-                githubUrl="https://github.com/AnandChowdhary/events"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/events/api.json"
+              githubUrl="https://github.com/AnandChowdhary/events"
+            />
           </article>
           <article class="space-y-4">
             <header class="space-y-1">
@@ -688,12 +705,10 @@ export default function Home({ data }: PageProps<HomeData>) {
                   </a>
                 ))}
             </div>
-            <div class="pt-1">
-              <DataFooterLinks
-                apiUrl="https://anandchowdhary.github.io/books/api.json"
-                githubUrl="https://github.com/AnandChowdhary/books"
-              />
-            </div>
+            <DataFooterLinks
+              apiUrl="https://anandchowdhary.github.io/books/api.json"
+              githubUrl="https://github.com/AnandChowdhary/books"
+            />
           </article>
         </div>
       </section>
@@ -706,8 +721,8 @@ export default function Home({ data }: PageProps<HomeData>) {
             {
               href: "/press/2018/21-under-21",
               logo: "yourstory.svg",
-              title: "20 Under 20",
-              publication: "YourStory 20 Under 20",
+              title: "21 Under 21",
+              publication: "YourStory 21 Under 21",
             },
             {
               href: "/press/2019/the-next-web-t500",

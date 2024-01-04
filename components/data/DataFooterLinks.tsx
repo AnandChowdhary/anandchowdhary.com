@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "preact";
-import { ExternalLink } from "../text/ExternalLink.tsx";
 import TimeAgo from "../../islands/TimeAgo.tsx";
+import { ExternalLink } from "../text/ExternalLink.tsx";
 
 export const DataFooterLinks: FunctionComponent<{
   updatedAt?: string;
@@ -8,14 +8,14 @@ export const DataFooterLinks: FunctionComponent<{
   githubUrl: string;
 }> = ({ updatedAt, apiUrl, githubUrl }) => {
   return (
-    <footer class="flex space-x-4 text-sm">
+    <footer class="flex space-x-4 text-xs">
       <div>
-        <ExternalLink href={apiUrl} class="underline">
+        <ExternalLink href={apiUrl} class="no-underline">
           API
         </ExternalLink>
       </div>
       <div>
-        <ExternalLink href={githubUrl} class="underline">
+        <ExternalLink href={githubUrl} class="no-underline">
           GitHub
         </ExternalLink>
       </div>

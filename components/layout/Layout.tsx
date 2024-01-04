@@ -78,8 +78,8 @@ export function Footer() {
   return (
     <footer className="text-gray-400 pt-8">
       <div className="max-w-screen-md px-6 pt-16 pb-8 mx-auto leading-none md:px-0">
-        <div className="flex items-center justify-between mb-2 text-sm">
-          <p className="flex items-center space-x-1">
+        <div className="sm:flex items-center justify-between mb-2 text-sm space-y-2 sm:space-y-0">
+          <p className="flex items-center justify-center space-x-1">
             <span>
               <Emissions />{" "}
               <abbr title="Carbon dioxide equivalent">
@@ -96,8 +96,11 @@ export function Footer() {
               <IconInfoCircle class="w-4 h-4" />
             </a>
           </p>
-          <p>Made with ♥️ in 🇮🇳🇳🇱🇺🇸 by Anand Chowdhary</p>
-          <div className="flex items-center space-x-4">
+          <p className="text-center">
+            <a href="https://madewithloveinindia.org">Made with ♥️</a> in 🇮🇳🇳🇱🇺🇸
+            by Anand Chowdhary
+          </p>
+          <div className="flex items-center justify-center space-x-4">
             <div className="relative flex items-center space-x-1">
               <Socials />
               <details className="appearance-none">
@@ -160,7 +163,7 @@ export function Footer() {
         </div>
         <div className="pt-4 border-t-2 border-gray-100"></div>
         <div>
-          <nav className="sm:flex flex-wrap justify-between mb-2 space-x-3 overflow-auto">
+          <nav className="flex gap-3 sm:gap-0 flex-wrap sm:justify-between sm:overflow-auto">
             {Array.from(
               { length: new Date().getUTCFullYear() - 2009 + 1 },
               (_, index) => index + 2009
