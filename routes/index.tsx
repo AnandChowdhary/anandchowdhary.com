@@ -160,12 +160,13 @@ export default function Home({ data }: PageProps<HomeData>) {
           </h2>
           <p class="text-lg text-gray-500">
             {t(
-              "I'm currently working on a new startup in the AI sales space. More information will be available later in Q1 2024.",
+              "I'm currently building <0>FirstQuadrant</0>, an AI sales platform that encompasses a complete suite of tools for inbound, outbound, and nurturing sales.",
               {},
               [
                 ({ children }: { children: ComponentChildren }) => (
                   <a
-                    href="/projects/tags/pabio"
+                    href="https://firstquadrant.ai"
+                    target="_blank"
                     class="underline"
                     children={children}
                   />
@@ -241,7 +242,9 @@ export default function Home({ data }: PageProps<HomeData>) {
             </header>
             <div class="grid grid-cols-4 gap-4 text-xs text-center">
               <div class="space-y-3 text-gray-500">
-                <div
+                <a
+                  href="https://firstquadrant.ai"
+                  target="_blank"
                   class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
                   style={{ backgroundColor: "#333333" }}
                 >
@@ -254,8 +257,8 @@ export default function Home({ data }: PageProps<HomeData>) {
                     <path fill="currentColor" d="M144 62v20H0V62z" />
                     <path fill="currentColor" d="m119 11 14 14-51 51-14-14z" />
                   </svg>
-                </div>
-                <div>Coming soon</div>
+                </a>
+                <div>FirstQuadrant</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
