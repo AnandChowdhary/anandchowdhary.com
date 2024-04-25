@@ -179,9 +179,11 @@ export default function About({ data }: PageProps<AboutData>) {
             <ExternalLink href="https://sukritikapoor.com">
               Sukriti Kapoor
             </ExternalLink>
-            , and is the co-founder &amp; CTO of{" "}
-            <a href="/projects/tags/pabio">Pabio</a>, an interior design and
-            rent-to-own furniture company.
+            . He is the co-founder, CTO, and CPO of AI sales platform{" "}
+            <ExternalLink href="https://firstquadrant.ai">
+              FirstQuadrant
+            </ExternalLink>
+            .
           </p>
           <p>
             As an engineer, he's focused on web standards and the JavaScript
@@ -197,6 +199,17 @@ export default function About({ data }: PageProps<AboutData>) {
             <a href="/press/2018/forbes-30-under-30">Forbes 30 Under 30</a>{" "}
             (Asia 2018) and in Het Financieele Dagblad's list of most-innovative
             entrepreneurs and professionals in the Netherlands.
+          </p>
+          <p>
+            He also makes angel investments through{" "}
+            <ExternalLink href="https://chowdhary.co">
+              Chowdhary.co
+            </ExternalLink>{" "}
+            and does non-profit work through{" "}
+            <ExternalLink href="https://chowdhary.org">
+              Chowdhary.org
+            </ExternalLink>
+            .
           </p>
           <p>
             From time to time, he speaks at events and writes articles about

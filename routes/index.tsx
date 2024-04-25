@@ -176,9 +176,23 @@ export default function Home({ data }: PageProps<HomeData>) {
           </p>
           <p>
             {t(
-              "Previously, I founded rent-to-own furniture with interior design company <0>Pabio</0> and accessibility technology company <1>Oswald Labs</1>. I'm also an award-winning open source contributor and Y Combinator and Forbes 30 Under 30 alum.",
+              "I also make <0>angel investments</0> and do <1>nonprofit work</1>. Previously, I founded rent-to-own furniture with interior design company <2>Pabio</2> and accessibility technology company <3>Oswald Labs</3>. I'm also an award-winning open source contributor and Y Combinator and Forbes 30 Under 30 alum.",
               {},
               [
+                ({ children }: { children: ComponentChildren }) => (
+                  <a
+                    href="https://chowdhary.co"
+                    class="underline"
+                    children={children}
+                  />
+                ),
+                ({ children }: { children: ComponentChildren }) => (
+                  <a
+                    href="https://chowdhary.org"
+                    class="underline"
+                    children={children}
+                  />
+                ),
                 ({ children }: { children: ComponentChildren }) => (
                   <a
                     href="/projects/tags/pabio"
@@ -244,55 +258,28 @@ export default function Home({ data }: PageProps<HomeData>) {
               <div class="space-y-3 text-gray-500">
                 <a
                   href="https://firstquadrant.ai"
-                  target="_blank"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
-                  style={{ backgroundColor: "#333333" }}
+                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square text-white"
+                  style={{ backgroundColor: STARTUPS[0].color }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 144 144"
-                    fill="none"
-                  >
-                    <path fill="currentColor" d="M62 0h20v144H62z" />
-                    <path fill="currentColor" d="M144 62v20H0V62z" />
-                    <path fill="currentColor" d="m119 11 14 14-51 51-14-14z" />
-                  </svg>
+                  <img
+                    alt=""
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://avatars.githubusercontent.com/u/122780401?s=200&v=4"
+                  />
                 </a>
                 <div>FirstQuadrant</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
-                  href="/projects/2020/upptime"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
-                  style={{ backgroundColor: "#1abc9c" }}
-                >
-                  <svg
-                    viewBox="0 0 54 54"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M53.7565 32.9637L33.9514 10.8852L26.8782 3L19.805 10.8852L0 32.9637L7.07316 40.8488L26.8782 18.7703L46.6833 40.8488L53.7565 32.9637Z"
-                      fill="currentColor"
-                    />
-                    <ellipse
-                      cx="26.5659"
-                      cy="42.375"
-                      rx="7.81344"
-                      ry="7.63081"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </a>
-                <div>Upptime</div>
-              </div>
-              <div class="space-y-3 text-gray-500">
-                <a
                   href="/projects/tags/pabio"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-3 text-white"
-                  style={{ backgroundColor: STARTUPS[0].color }}
+                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-1 text-white"
+                  style={{ backgroundColor: STARTUPS[1].color }}
                 >
-                  {STARTUPS[0].icon}
+                  <img
+                    alt=""
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://avatars.githubusercontent.com/u/81462859?s=200&v=4"
+                  />
                 </a>
                 <div>Pabio</div>
               </div>
@@ -300,101 +287,71 @@ export default function Home({ data }: PageProps<HomeData>) {
                 <a
                   href="/projects/tags/oswald-labs"
                   class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
-                  style={{ backgroundColor: STARTUPS[1].color }}
+                  style={{ backgroundColor: STARTUPS[2].color }}
                 >
-                  {STARTUPS[1].icon}
+                  <img
+                    alt=""
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://avatars.githubusercontent.com/u/21421587?s=200&v=4"
+                    style={{ filter: "brightness(0) invert(1)" }}
+                  />
                 </a>
                 <div>Oswald Labs</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
-                  href="/projects/2020/uppload"
+                  href="/projects/2020/upptime"
                   class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square p-4 text-white"
-                  style={{ backgroundColor: "#f74041" }}
-                >
-                  <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M107.275 135.57c16.512.0686 31.5322-9.5443 38.3858-24.567 6.8536-15.0227 4.2687-32.6674-6.6059-45.093a42.29 42.29 0 00-22.8-13.6 43.7799 43.7799 0 00-1.26-5.37c3.33-2.11 13.17-9.3 13.17-20.81 0-6.86-3.64-11.13-9.48-11.13-6.9 0-19.66 8.63-21.09 9.62l.2.29a27.69 27.69 0 00-19-2.88 20.19 20.19 0 01-8.12 0 27.66 27.66 0 00-19 2.88l.2-.29c-.14-.1-3.48-2.38-7.64-4.7-6.01-3.31-10.41-4.92-13.53-4.92-5.84 0-9.47 4.27-9.47 11.13 0 11.51 9.83 18.7 13.16 20.8a44.38 44.38 0 00-1.26 5.38C14.0711 56.551.3832 73.2838.005 92.81c-.2281 14.9413 7.4772 28.885 20.2488 36.6425 12.7716 7.7576 28.6974 8.1676 41.8512 1.0775a26 26 0 015.67-2.25c4.163 2.8947 9.6871 2.8947 13.85 0a26.1 26.1 0 015.66 2.25 42.15 42.15 0 0019.99 5.04zm11.41-114.88c.94 0 3.78 0 3.78 5.44 0 7.69-6.39 13.13-9.55 15.34a37.06 37.06 0 00-10.3-13.36c5.05-3.26 12.63-7.42 16.07-7.42zm-91.76 5.44c0-5.44 2.85-5.44 3.78-5.44 3.44 0 11 4.16 16.07 7.42a37.17 37.17 0 00-10.3 13.36c-3.16-2.22-9.55-7.66-9.55-15.34zm47.77 98.62c-4.13 0-7.58-3.93-8.37-9.13a18.4 18.4 0 008.37-2.41 18.43 18.43 0 008.37 2.41c-.78 5.2-4.24 9.13-8.37 9.13zm21.77-25.32c-1.074 6.1168-6.3898 10.576-12.6 10.57a12.63 12.63 0 01-6.32-1.68V97.61c2.86-1.75 6.86-4.79 6.86-8.21 0-3.42-3.54-6.19-9.74-6.19s-9.74 2.65-9.74 6.19c0 3.54 4 6.46 6.9 8.21v10.67a12.79 12.79 0 01-18.93-8.85l-5.6 1c1.2391 7.0011 6.389 12.6683 13.24 14.57a19.09 19.09 0 002.85 8.76 32.3299 32.3299 0 00-4 1.8c-12.7143 6.803-28.2455 5.4615-39.605-3.4208C8.4205 113.257 3.3732 98.5077 6.9093 84.5282c3.536-13.9797 14.989-24.5553 29.2056-26.9682l2.1-.35.26-2.12c1.89-15.91 13.29-27.9 26.52-27.9 1.5014 0 2.9989.1504 4.47.45a25.75 25.75 0 0010.42 0 22.3978 22.3978 0 014.47-.45c13.23 0 24.64 12 26.52 27.9l.26 2.12 2.1.35c17.3167 2.9471 30.0997 17.778 30.46 35.34.1997 12.9213-6.4627 24.9808-17.5075 31.6899-11.0447 6.7091-24.8177 7.063-36.1925.9301a32.4599 32.4599 0 00-4-1.8 19.1 19.1 0 002.86-8.76c6.8267-1.9042 11.9579-7.5525 13.2-14.53l-5.59-1z"
-                      fill="currentColor"
-                      fill-rule="nonzero"
-                    />
-                  </svg>
-                </a>
-                <div>Uppload</div>
-              </div>
-              <div class="space-y-3 text-gray-500">
-                <a
-                  href="/projects/2015/saga-music"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square text-white overflow-hidden p-3"
-                  style={{ backgroundColor: "#57bed4" }}
+                  style={{ backgroundColor: "#1abc9c" }}
                 >
                   <img
                     alt=""
-                    src="https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/saga-music/icon.png"
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://avatars.githubusercontent.com/u/72692977?s=200&v=4"
                     style={{ filter: "brightness(0) invert(1)" }}
                   />
                 </a>
-                <div>Saga Music</div>
+                <div>Upptime</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
-                  href="/projects/2014/made-with-love-in-india"
-                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square text-white overflow-hidden p-4"
-                  style={{ backgroundColor: "#e14f62" }}
+                  href="https://chowdhary.co"
+                  class="opacity-100 flex items-center justify-center rounded-2xl p-1 shadow aspect-square text-white overflow-hidden bg-white"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 197 168"
-                    fill="none"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M98 30s14-30 45-30c35 0 53 29 53 59 0 48-98 108-98 108S0 108 0 59C0 29 19 0 52 0s46 30 46 30Z"
-                    />
-                  </svg>
+                  <img
+                    alt=""
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://chowdhary.co/apple-touch-icon.png"
+                  />
                 </a>
-                <div>Made with &hearts; in India</div>
+                <div>Chowdhary Holdings</div>
               </div>
               <div class="space-y-3 text-gray-500">
                 <a
                   href="https://chowdhary.org"
-                  class="opacity-100 flex items-center justify-center rounded-2xl p-3 shadow aspect-square text-white overflow-hidden bg-white"
-                  style={{ color: "#00ec97" }}
+                  class="opacity-100 flex items-center justify-center rounded-2xl p-1 shadow aspect-square text-white overflow-hidden bg-white"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 577 577"
-                    fill="none"
-                  >
-                    <path
-                      fill="currentColor"
-                      fill-rule="evenodd"
-                      d="M289 0h-73v70h-72v74H72v73H0v145h72v71h72v72h74v72h145v-72h70v-72h72v-72h72V216h-72v-72h-72V70h-72V0h-72Z"
-                      clip-rule="evenodd"
-                    />
-                    <path
-                      fill="currentColor"
-                      d="M146 505h72v72h-72z"
-                      opacity=".6"
-                    />
-                    <path
-                      fill="currentColor"
-                      d="M72 433h72v72H72zM72 72h72v72H72zM433 433h72v72h-72z"
-                      opacity=".9"
-                    />
-                    <path
-                      fill="currentColor"
-                      d="M363 505h72v72h-72zM144 0h72v72h-72zM361 0h72v72h-72zM72 145v72H0v-72zM72 361v72H0v-72zM577 144v72h-72v-72zM577 361v72h-72v-72z"
-                      opacity=".6"
-                    />
-                    <path
-                      fill="currentColor"
-                      d="M433 72h72v72h-72z"
-                      opacity=".9"
-                    />
-                  </svg>
+                  <img
+                    alt=""
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://chowdhary.org/apple-touch-icon.png"
+                  />
                 </a>
-                <div>Chowdhary .org</div>
+                <div>Chowdhary Foundation</div>
+              </div>
+              <div class="space-y-3 text-gray-500">
+                <a
+                  href="/projects/2014/made-with-love-in-india"
+                  class="opacity-100 flex items-center justify-center rounded-2xl shadow aspect-square text-white overflow-hidden p-3"
+                  style={{ backgroundColor: "#f43f5f" }}
+                >
+                  <img
+                    alt=""
+                    class="rounded-2xl w-full aspect-square object-cover"
+                    src="https://avatars.githubusercontent.com/u/67188469?s=200&v=4"
+                  />
+                </a>
+                <div>Made with &hearts; in India</div>
               </div>
             </div>
             <DataFooterLinks
