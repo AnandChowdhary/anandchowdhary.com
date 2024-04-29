@@ -39,28 +39,29 @@ import * as $32 from "./routes/location/[year]/[slug].tsx";
 import * as $33 from "./routes/location/[year]/index.tsx";
 import * as $34 from "./routes/location/index.tsx";
 import * as $35 from "./routes/mentoring.tsx";
-import * as $36 from "./routes/okrs/[year]/[slug].tsx";
-import * as $37 from "./routes/okrs/[year]/index.tsx";
-import * as $38 from "./routes/okrs/index.tsx";
-import * as $39 from "./routes/press/[year]/[slug].tsx";
-import * as $40 from "./routes/press/[year]/index.tsx";
-import * as $41 from "./routes/press/index.tsx";
-import * as $42 from "./routes/projects/[year]/[slug].tsx";
-import * as $43 from "./routes/projects/[year]/index.tsx";
-import * as $44 from "./routes/projects/index.tsx";
-import * as $45 from "./routes/projects/tags/[tag].tsx";
-import * as $46 from "./routes/sitemap.tsx";
-import * as $47 from "./routes/sitemap.xml.tsx";
-import * as $48 from "./routes/themes/[slug].tsx";
-import * as $49 from "./routes/themes/index.tsx";
-import * as $50 from "./routes/travel/[year]/[slug].tsx";
-import * as $51 from "./routes/travel/[year]/index.tsx";
-import * as $52 from "./routes/travel/countries/[country].tsx";
-import * as $53 from "./routes/travel/index.tsx";
-import * as $54 from "./routes/versions/[year]/[slug].tsx";
-import * as $55 from "./routes/versions/[year]/index.tsx";
-import * as $56 from "./routes/versions/index.tsx";
-import * as $57 from "./routes/videos/index.tsx";
+import * as $36 from "./routes/now.tsx";
+import * as $37 from "./routes/okrs/[year]/[slug].tsx";
+import * as $38 from "./routes/okrs/[year]/index.tsx";
+import * as $39 from "./routes/okrs/index.tsx";
+import * as $40 from "./routes/press/[year]/[slug].tsx";
+import * as $41 from "./routes/press/[year]/index.tsx";
+import * as $42 from "./routes/press/index.tsx";
+import * as $43 from "./routes/projects/[year]/[slug].tsx";
+import * as $44 from "./routes/projects/[year]/index.tsx";
+import * as $45 from "./routes/projects/index.tsx";
+import * as $46 from "./routes/projects/tags/[tag].tsx";
+import * as $47 from "./routes/sitemap.tsx";
+import * as $48 from "./routes/sitemap.xml.tsx";
+import * as $49 from "./routes/themes/[slug].tsx";
+import * as $50 from "./routes/themes/index.tsx";
+import * as $51 from "./routes/travel/[year]/[slug].tsx";
+import * as $52 from "./routes/travel/[year]/index.tsx";
+import * as $53 from "./routes/travel/countries/[country].tsx";
+import * as $54 from "./routes/travel/index.tsx";
+import * as $55 from "./routes/versions/[year]/[slug].tsx";
+import * as $56 from "./routes/versions/[year]/index.tsx";
+import * as $57 from "./routes/versions/index.tsx";
+import * as $58 from "./routes/videos/index.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Emissions.tsx";
 import * as $$2 from "./islands/Filters.tsx";
@@ -105,28 +106,29 @@ const manifest = {
     "./routes/location/[year]/index.tsx": $33,
     "./routes/location/index.tsx": $34,
     "./routes/mentoring.tsx": $35,
-    "./routes/okrs/[year]/[slug].tsx": $36,
-    "./routes/okrs/[year]/index.tsx": $37,
-    "./routes/okrs/index.tsx": $38,
-    "./routes/press/[year]/[slug].tsx": $39,
-    "./routes/press/[year]/index.tsx": $40,
-    "./routes/press/index.tsx": $41,
-    "./routes/projects/[year]/[slug].tsx": $42,
-    "./routes/projects/[year]/index.tsx": $43,
-    "./routes/projects/index.tsx": $44,
-    "./routes/projects/tags/[tag].tsx": $45,
-    "./routes/sitemap.tsx": $46,
-    "./routes/sitemap.xml.tsx": $47,
-    "./routes/themes/[slug].tsx": $48,
-    "./routes/themes/index.tsx": $49,
-    "./routes/travel/[year]/[slug].tsx": $50,
-    "./routes/travel/[year]/index.tsx": $51,
-    "./routes/travel/countries/[country].tsx": $52,
-    "./routes/travel/index.tsx": $53,
-    "./routes/versions/[year]/[slug].tsx": $54,
-    "./routes/versions/[year]/index.tsx": $55,
-    "./routes/versions/index.tsx": $56,
-    "./routes/videos/index.tsx": $57,
+    "./routes/now.tsx": $36,
+    "./routes/okrs/[year]/[slug].tsx": $37,
+    "./routes/okrs/[year]/index.tsx": $38,
+    "./routes/okrs/index.tsx": $39,
+    "./routes/press/[year]/[slug].tsx": $40,
+    "./routes/press/[year]/index.tsx": $41,
+    "./routes/press/index.tsx": $42,
+    "./routes/projects/[year]/[slug].tsx": $43,
+    "./routes/projects/[year]/index.tsx": $44,
+    "./routes/projects/index.tsx": $45,
+    "./routes/projects/tags/[tag].tsx": $46,
+    "./routes/sitemap.tsx": $47,
+    "./routes/sitemap.xml.tsx": $48,
+    "./routes/themes/[slug].tsx": $49,
+    "./routes/themes/index.tsx": $50,
+    "./routes/travel/[year]/[slug].tsx": $51,
+    "./routes/travel/[year]/index.tsx": $52,
+    "./routes/travel/countries/[country].tsx": $53,
+    "./routes/travel/index.tsx": $54,
+    "./routes/versions/[year]/[slug].tsx": $55,
+    "./routes/versions/[year]/index.tsx": $56,
+    "./routes/versions/index.tsx": $57,
+    "./routes/videos/index.tsx": $58,
   },
   islands: {
     "./islands/Age.tsx": $$0,
