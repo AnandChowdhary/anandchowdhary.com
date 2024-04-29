@@ -31,7 +31,7 @@ export const STARTUPS = [
     ),
     color: "#333333",
     name: "FirstQuadrant",
-    position: "co-founder, CTO, CPO",
+    position: "co-founder",
     href: "https://firstquadrant.ai",
     start: "2023",
     end: "present",
