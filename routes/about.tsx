@@ -170,7 +170,7 @@ export default function About({ data }: PageProps<AboutData>) {
         <Breadcrumbs items={[{ href: "/about", title: "About" }]} />
         <SectionTitle
           title="About"
-          description="Anand Chowdhary is a creative technologist and entrepreneur."
+          description="Anand Chowdhary is a technology entrepreneur, enginner, and designer."
         />
         <div className="space-y-5 mt-6 two-columns">
           <p>
