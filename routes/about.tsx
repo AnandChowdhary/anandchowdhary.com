@@ -1,24 +1,6 @@
-import { Handlers, PageProps } from "https://deno.land/x/fresh@1.1.1/server.ts";
-import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/brand-github.tsx";
 import { Breadcrumbs } from "../components/data/Breadcrumbs.tsx";
 import { SectionTitle } from "../components/data/SectionTitle.tsx";
 import { ExternalLink } from "../components/text/ExternalLink.tsx";
-import { render } from "../utils/markdown.ts";
-
-interface AboutData {
-  readme: string;
-}
-
-export const handler: Handlers<AboutData> = {
-  async GET(_, context) {
-    const readme = await (
-      await fetch(
-        "https://raw.githubusercontent.com/AnandChowdhary/readme/main/README.md"
-      )
-    ).text();
-    return context.render({ readme });
-  },
-};
 
 export const STARTUPS = [
   {
@@ -141,7 +123,7 @@ export const STARTUPS = [
   },
 ];
 
-export default function About({ data }: PageProps<AboutData>) {
+export default function About() {
   return (
     <div class="max-w-screen-md px-4 mx-auto space-y-16 md:px-0">
       <section>
@@ -270,33 +252,6 @@ export default function About({ data }: PageProps<AboutData>) {
           )}
         </ul>
       </section>
-      <details>
-        <summary class="bg-gray-100 border-b border-gray-100 px-6 py-3 shadow-sm rounded-t mt-5">
-          <div class="flex items-center justify-between">
-            <div class="font-semibold font-mono">README.md</div>
-            <div class="flex items-center justify-between space-x-2">
-              <IconBrandGithub class="w-4 h-4" />
-              <ExternalLink href="https://github.com/AnandChowdhary/readme">
-                AnandChowdhary/readme on GitHub
-              </ExternalLink>
-            </div>
-          </div>
-        </summary>
-        <div
-          class="bg-white shadow-sm rounded-b p-6 longform"
-          dangerouslySetInnerHTML={{
-            __html: render(
-              data.readme
-                .split("\n")
-                .filter(
-                  (line) =>
-                    !line.startsWith("# ") && !line.startsWith("> **Note**")
-                )
-                .join("\n")
-            ),
-          }}
-        />
-      </details>
     </div>
   );
 }

@@ -90,28 +90,16 @@ export const handler: Handlers<LifeData> = {
     let contributionsGraph: LifeData["contributionsGraph"] = undefined;
 
     try {
-      const [_lifeData, _contributionsApi, _lastWeekMusicApi] =
-        await Promise.allSettled([
-          fetchLifeData(),
-          fetchText("https://github.com/users/AnandChowdhary/contributions"),
-          fetchText(
-            "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
-          ),
-        ]);
+      const [_lifeData, _lastWeekMusicApi] = await Promise.allSettled([
+        fetchLifeData(),
+        fetchText(
+          "https://gist.githubusercontent.com/AnandChowdhary/14a66f452302d199c4abde0ffe891922/raw"
+        ),
+      ]);
 
       if (_lifeData.status !== "fulfilled")
         throw new Error("Failed to fetch life data");
       lifeData = _lifeData.value;
-
-      if (_contributionsApi.status === "fulfilled")
-        contributionsGraph =
-          `<svg viewbox="0 0 717 112" class="js-calendar-graph-svg">` +
-          _contributionsApi.value
-            .split(
-              `<svg width="717" height="112" class="js-calendar-graph-svg">`
-            )[1]
-            .split("</svg>")[0] +
-          "</svg>";
 
       if (_lastWeekMusicApi.status === "fulfilled") {
         music = _lastWeekMusicApi.value.split("\n").map((line) => {
@@ -139,7 +127,7 @@ export const handler: Handlers<LifeData> = {
         });
       }
     } catch (error) {
-      // Ignore errors for now
+      console.error(error);
     }
 
     if (!lifeData) throw new Error("Failed to fetch life data");
@@ -675,48 +663,6 @@ export default function Home({ data }: PageProps<LifeData>) {
               <LoadError items="activity" />
             )}
           </article>
-        </section>
-        <section class="space-y-4">
-          <header class="space-y-2">
-            <h2 class="flex items-center space-x-3 text-xl font-semibold font-display">
-              <span aria-hidden="true">👨‍💻</span>
-              <SectionLink label="Contributions" href="/open-source" />
-            </h2>
-            <p class="text-gray-500">Last year in GitHub activity</p>
-          </header>
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-.js-calendar-graph-svg {
-  width: 100%;
-}
-.ContributionCalendar-label {
-  font-size: 70%;
-  opacity: 0.5;
-}
-.ContributionCalendar-day[data-level="0"] {
-  fill: white;
-}
-.ContributionCalendar-day[data-level="1"] {
-  fill: ${colors.green[300]};
-}
-.ContributionCalendar-day[data-level="2"] {
-  fill: ${colors.green[500]};
-}
-.ContributionCalendar-day[data-level="3"] {
-  fill: ${colors.green[700]};
-}
-.ContributionCalendar-day[data-level="4"] {
-  fill: ${colors.green[900]};
-}
-`,
-            }}
-          />
-          {contributionsGraph ? (
-            <div dangerouslySetInnerHTML={{ __html: contributionsGraph }} />
-          ) : (
-            <LoadError items="contributions" />
-          )}
         </section>
         <section>
           <h2 class="mb-8 text-xl font-medium font-display">Timeline</h2>
