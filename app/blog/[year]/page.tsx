@@ -10,11 +10,9 @@ export default async function BlogYear({
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-
   const blogDataFiltered = await getAllBlogPosts();
   const yearBlogData = blogDataFiltered.filter(
     (post) => new Date(post.date).getUTCFullYear() === yearNumber
   );
-
   return <BlogContent blogDataFiltered={yearBlogData} year={year} />;
 }

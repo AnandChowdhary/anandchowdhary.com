@@ -44,7 +44,7 @@ export function GenericSection<T extends GenericItem>({
             <div className="truncate">{getItemTitle(item)}</div>
             <div className="text-sm text-neutral-500 overflow-hidden">
               <div
-                className="whitespace-nowrap"
+                className="whitespace-nowrap pointer-events-none"
                 style={{
                   maskImage:
                     "linear-gradient(to right, black 70%, transparent 100%)",

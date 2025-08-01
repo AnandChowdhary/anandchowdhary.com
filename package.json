@@ -13,6 +13,7 @@
     "marked": "^16.1.1",
     "marked-smartypants": "^1.1.10",
     "next": "15.4.4",
+    "rand-seed": "^3.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

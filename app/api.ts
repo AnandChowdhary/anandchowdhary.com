@@ -4,6 +4,8 @@ export interface BlogPost extends GenericItem {
   attributes: { date: string; draft?: boolean };
 }
 
+export interface Note extends GenericItem {}
+
 export interface Repository {
   name: string;
   full_name: string;
@@ -71,13 +73,33 @@ export interface Country extends GenericItem {
   date: string;
   hash: string;
   country_code: string;
-  timezone_name: string;
+  full_label?: string;
+  timezone: {
+    name: string;
+    countries: string[];
+    utcOffset: number;
+    utcOffsetStr: string;
+    dstOffset: number;
+    dstOffsetStr: string;
+    aliasOf: string | null;
+  };
+  country_emoji?: string;
 }
 
 export interface Work extends GenericItem {
   label: string;
   icon: string;
   url: string;
+}
+
+export async function getAllNotes(): Promise<Note[]> {
+  const notes = await fetch("https://anandchowdhary.github.io/notes/api.json", {
+    next: { revalidate: 36000 },
+  });
+  const notesData = (await notes.json()) as Note[];
+  return notesData.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
@@ -118,9 +140,11 @@ export async function getBlogPostContent(
     postContentText = postContentText.slice(frontMatterEnd + 4).trim();
   }
 
-  // Remove heading if it's the same as the title
-  if (postContentText.startsWith(`# ${slug}`))
-    postContentText = postContentText.slice(slug.length + 2).trim();
+  // Remove heading
+  if (postContentText.startsWith("# ")) {
+    const lines = postContentText.split("\n");
+    postContentText = lines.slice(1).join("\n");
+  }
 
   return postContentText;
 }
@@ -282,4 +306,13 @@ export async function getAllCountries(): Promise<Country[]> {
   return countriesDataWithRequiredProps.sort(
     (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
   );
+}
+
+export async function getLocation(): Promise<Country> {
+  const countries = await fetch(
+    "https://anandchowdhary.github.io/location/api.json",
+    { next: { revalidate: 36000 } }
+  );
+  const locationData = (await countries.json()) as Country;
+  return locationData;
 }

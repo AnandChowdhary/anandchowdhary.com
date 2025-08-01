@@ -5,6 +5,7 @@ import { Header } from "@/app/components/header";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
+import Rand from "rand-seed";
 
 marked.use(markedSmartypants());
 
@@ -22,16 +23,16 @@ export default async function BlogContent({
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
         )}
-        {blogDataFiltered.slice(0, 3).map((item, index) => (
+        {blogDataFiltered.slice(0, 3).map((item) => (
           <article
             key={item.slug}
             className="grid grid-cols-3 gap-8 items-center pb-2.5 relative"
           >
             <div className="aspect-video rounded-lg shadow-sm relative">
               <img
-                src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${
-                  (index + 1) % 100 || 100
-                }.png`}
+                src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+                  new Rand(item.slug).next() * 100 + 1
+                )}.png`}
                 alt=""
                 className="w-full h-full object-cover rounded-lg dark:brightness-60"
               />
@@ -78,13 +79,13 @@ export default async function BlogContent({
         {blogDataFiltered.length > 3 && (
           <div className="space-y-6 pt-8">
             <h2 className="text-lg font-medium text-neutral-500">More</h2>
-            {blogDataFiltered.slice(3).map((item, index) => (
+            {blogDataFiltered.slice(3).map((item) => (
               <article key={item.slug} className="flex gap-5 relative">
                 <div className="aspect-square w-6 rounded-full shadow-sm shrink-0">
                   <img
-                    src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${
-                      (index + 1 + 3) % 100 || 100
-                    }.png`}
+                    src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+                      new Rand(item.slug).next() * 100 + 1
+                    )}.png`}
                     alt=""
                     className="w-full h-full object-cover rounded-full dark:brightness-60"
                   />
