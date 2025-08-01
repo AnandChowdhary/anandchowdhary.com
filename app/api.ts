@@ -274,6 +274,43 @@ export async function getAllEvents(): Promise<Event[]> {
   );
 }
 
+export async function getEventByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Event | null> {
+  const eventsData = await getAllEvents();
+  return (
+    eventsData
+      .filter((event) => new Date(event.date).getUTCFullYear() === year)
+      .find((event) => event.slug.replace(".md", "") === slug) || null
+  );
+}
+
+export async function getEventContent(
+  year: string,
+  slug: string
+): Promise<string> {
+  const eventContent = await fetch(
+    `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/events/${year}/${slug}`
+  );
+  if (!eventContent.ok) throw new Error("Event content not found");
+  let eventContentText = await eventContent.text();
+
+  // Remove front-matter if there is any
+  if (eventContentText.startsWith("---")) {
+    const frontMatterEnd = eventContentText.indexOf("\n---");
+    eventContentText = eventContentText.slice(frontMatterEnd + 4).trim();
+  }
+
+  // Remove heading
+  if (eventContentText.startsWith("# ")) {
+    const lines = eventContentText.split("\n");
+    eventContentText = lines.slice(1).join("\n");
+  }
+
+  return eventContentText;
+}
+
 export async function getAllThemes(): Promise<Theme[]> {
   const themes = await fetch(
     "https://anandchowdhary.github.io/themes/api.json",
