@@ -13,7 +13,7 @@ import { WorkSection } from "@/app/components/work-section";
 export default async function Home() {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header />
+      <Header pathname="/" />
       <NowSection />
       <LifeSection />
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-18 max-w-5xl mx-auto">

@@ -51,7 +51,7 @@ export default async function BlogYearSlug({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header title="/blog" />
+      <Header pathname={`/blog/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <img
           src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${

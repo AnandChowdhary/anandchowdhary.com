@@ -19,7 +19,7 @@ export default async function BlogContent({
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header />
+      <Header pathname="/blog" />
       <main className="max-w-2xl mx-auto space-y-4">
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
