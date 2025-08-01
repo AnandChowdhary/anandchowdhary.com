@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 
 interface TimelineItemProps {
@@ -21,9 +22,9 @@ export function TimelineItem({
     <>
       <div className="grow space-y-1">
         {href ? (
-          <a href={href} className={focusStyles}>
+          <Link href={href} className={focusStyles}>
             {title}
-          </a>
+          </Link>
         ) : (
           <div>{title}</div>
         )}

@@ -14,12 +14,14 @@ interface BlogPost extends GenericItem {
 
 export default async function BlogContent({
   blogDataFiltered,
+  year,
 }: {
   blogDataFiltered: BlogPost[];
+  year?: string;
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname="/blog" />
+      <Header pathname={year ? `/blog/${year}` : "/blog"} />
       <main className="max-w-2xl mx-auto space-y-4">
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
@@ -29,7 +31,7 @@ export default async function BlogContent({
             key={item.slug}
             className="grid grid-cols-3 gap-8 items-center pb-2.5 relative"
           >
-            <div className="aspect-video rounded-lg shadow-sm">
+            <div className="aspect-video rounded-lg shadow-sm relative">
               <img
                 src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${
                   (index + 1) % 100 || 100
@@ -37,6 +39,9 @@ export default async function BlogContent({
                 alt=""
                 className="w-full h-full object-cover rounded-lg dark:brightness-60"
               />
+              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-2xl tracking-widest">
+                {item.emoji}
+              </div>
             </div>
             <div className="col-span-2">
               <Link
@@ -60,7 +65,7 @@ export default async function BlogContent({
                 })}
               </p>
               <p
-                className="line-clamp-2 text-sm text-neutral-500"
+                className="line-clamp-2 text-sm text-neutral-500 pointer-events-none"
                 style={{
                   maskImage:
                     "linear-gradient(to bottom, black 0%, black 50%, transparent 50%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)",
@@ -82,7 +87,7 @@ export default async function BlogContent({
                 <div className="aspect-square w-6 rounded-full shadow-sm shrink-0">
                   <img
                     src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${
-                      (index + 1) % 100 || 100
+                      (index + 1 + 3) % 100 || 100
                     }.png`}
                     alt=""
                     className="w-full h-full object-cover rounded-full dark:brightness-60"

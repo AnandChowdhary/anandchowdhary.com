@@ -24,5 +24,5 @@ export default async function BlogYear({
     .filter((post) => new Date(post.date).getUTCFullYear() === yearNumber)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  return <BlogContent blogDataFiltered={blogDataFiltered} />;
+  return <BlogContent blogDataFiltered={blogDataFiltered} year={year} />;
 }

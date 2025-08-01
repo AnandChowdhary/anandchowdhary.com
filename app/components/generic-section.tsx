@@ -1,4 +1,5 @@
 import { focusStyles } from "@/app/components/external-link";
+import Link from "next/link";
 
 export interface GenericItem {
   slug: string;
@@ -7,6 +8,7 @@ export interface GenericItem {
   title: string;
   date: string;
   excerpt: string;
+  emoji: string;
   attributes: Record<string, unknown>;
 }
 
@@ -76,12 +78,12 @@ export function GenericSectionContainer<T extends GenericItem>({
     <section className="space-y-4 relative group">
       <div className="absolute -z-10 -top-4 -bottom-8 -right-8 -left-8 bg-neutral-100 dark:bg-neutral-900 rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
-        <a
+        <Link
           href={`/${title.toLowerCase()}`}
           className={`${focusStyles} full-link z-10`}
         >
           {subtitle}
-        </a>
+        </Link>
       </h2>
       {children}
       <p className="text-xs text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity z-10">
