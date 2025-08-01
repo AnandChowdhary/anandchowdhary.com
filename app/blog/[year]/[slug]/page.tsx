@@ -1,15 +1,15 @@
+import {
+  getAllBlogPosts,
+  getBlogPostByYearAndSlug,
+  getBlogPostContent,
+} from "@/app/api";
 import { Footer } from "@/app/components/footer";
-import { GenericItem } from "@/app/components/generic-section";
 import { Header } from "@/app/components/header";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { notFound } from "next/navigation";
 
 marked.use(markedSmartypants());
-
-interface BlogPost extends GenericItem {
-  attributes: { date: string; draft?: boolean };
-}
 
 export default async function BlogYearSlug({
   params,
@@ -20,35 +20,13 @@ export default async function BlogYearSlug({
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
 
-  const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
-    next: { revalidate: 36000 },
-  });
-  const blogData = (await blog.json()) as BlogPost[];
-  const blogDataFiltered = blogData
-    .filter((post) => !post.attributes.draft)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const post = blogDataFiltered
-    .filter((post) => new Date(post.date).getUTCFullYear() === yearNumber)
-    .find((post) => post.slug.replace(".md", "") === slug);
+  const post = await getBlogPostByYearAndSlug(yearNumber, slug);
   if (!post) notFound();
 
-  const postContent = await fetch(
-    `https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main/blog/${year}/${post.slug}`
-  );
-  if (!postContent.ok) notFound();
-  let postContentText = await postContent.text();
-
-  // Remove front-matter if there is any
-  if (postContentText.startsWith("---")) {
-    const frontMatterEnd = postContentText.indexOf("\n---");
-    postContentText = postContentText.slice(frontMatterEnd + 4).trim();
-  }
-
-  // Remove heading if it's the same as the title
-  if (postContentText.startsWith(`# ${post.title}`))
-    postContentText = postContentText.slice(post.title.length + 2).trim();
+  const postContentText = await getBlogPostContent(year, post.slug);
 
   const postContentHtml = await Promise.resolve(marked.parse(postContentText));
+  const blogDataFiltered = await getAllBlogPosts();
   const index = blogDataFiltered.findIndex(({ slug }) => slug === post.slug);
 
   return (

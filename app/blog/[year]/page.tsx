@@ -1,10 +1,6 @@
+import { getAllBlogPosts } from "@/app/api";
 import BlogContent from "@/app/blog/component";
-import { GenericItem } from "@/app/components/generic-section";
 import { notFound } from "next/navigation";
-
-interface BlogPost extends GenericItem {
-  attributes: { date: string; draft?: boolean };
-}
 
 export default async function BlogYear({
   params,
@@ -15,14 +11,10 @@ export default async function BlogYear({
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
 
-  const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
-    next: { revalidate: 36000 },
-  });
-  const blogData = (await blog.json()) as BlogPost[];
-  const blogDataFiltered = blogData
-    .filter((post) => !post.attributes.draft)
-    .filter((post) => new Date(post.date).getUTCFullYear() === yearNumber)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const blogDataFiltered = await getAllBlogPosts();
+  const yearBlogData = blogDataFiltered.filter(
+    (post) => new Date(post.date).getUTCFullYear() === yearNumber
+  );
 
-  return <BlogContent blogDataFiltered={blogDataFiltered} year={year} />;
+  return <BlogContent blogDataFiltered={yearBlogData} year={year} />;
 }

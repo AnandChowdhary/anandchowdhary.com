@@ -1,38 +1,8 @@
-import {
-  GenericItem,
-  GenericSectionContainer,
-} from "@/app/components/generic-section";
-
-interface Country extends GenericItem {
-  label: string;
-  coordinates: [number, number];
-  date: string;
-  hash: string;
-  country_code: string;
-  timezone_name: string;
-}
+import { getAllCountries } from "@/app/api";
+import { GenericSectionContainer } from "@/app/components/generic-section";
 
 export async function TravelSection() {
-  const countries = await fetch(
-    "https://anandchowdhary.github.io/location/history-countries.json",
-    { next: { revalidate: 36000 } }
-  );
-  const countriesData = (await countries.json()) as Country[];
-
-  const countriesDataWithRequiredProps = countriesData.map((country) => ({
-    ...country,
-    slug: country.country_code,
-    path: `/travel/${country.country_code}`,
-    source: "",
-    date: country.date,
-    excerpt: `Visited ${country.label} on ${new Date(
-      country.date
-    ).toLocaleDateString()}`,
-  }));
-
-  const countriesDataSorted = countriesDataWithRequiredProps.sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-  );
+  const countriesDataSorted = await getAllCountries();
 
   return (
     <GenericSectionContainer

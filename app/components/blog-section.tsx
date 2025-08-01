@@ -1,17 +1,8 @@
-import { GenericItem, GenericSection } from "@/app/components/generic-section";
-
-interface BlogPost extends GenericItem {
-  attributes: { date: string; draft?: boolean };
-}
+import { BlogPost, getAllBlogPosts } from "@/app/api";
+import { GenericSection } from "@/app/components/generic-section";
 
 export async function BlogSection() {
-  const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
-    next: { revalidate: 36000 },
-  });
-  const blogData = (await blog.json()) as BlogPost[];
-  const blogDataFiltered = blogData
-    .filter((post) => !post.attributes.draft)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const blogDataFiltered = await getAllBlogPosts();
 
   const getBlogTitle = (post: BlogPost) => post.title;
 

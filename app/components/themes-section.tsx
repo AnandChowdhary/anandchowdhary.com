@@ -1,16 +1,8 @@
-import { GenericItem, GenericSection } from "@/app/components/generic-section";
-
-interface Theme extends GenericItem {}
+import { getAllThemes, Theme } from "@/app/api";
+import { GenericSection } from "@/app/components/generic-section";
 
 export async function ThemesSection() {
-  const themes = await fetch(
-    "https://anandchowdhary.github.io/themes/api.json",
-    { next: { revalidate: 36000 } }
-  );
-  const themesData = (await themes.json()) as Theme[];
-  const themesDataSorted = themesData.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const themesDataSorted = await getAllThemes();
   const getThemeTitle = (theme: Theme) => theme.title;
   const getThemeSubtitle = (theme: Theme) =>
     `Year of ${theme.title.replace("Year of ", "")}`;

@@ -1,13 +1,4 @@
-import {
-  GenericItem,
-  GenericSectionContainer,
-} from "@/app/components/generic-section";
-
-interface Work extends GenericItem {
-  label: string;
-  icon: string;
-  url: string;
-}
+import { GenericSectionContainer } from "@/app/components/generic-section";
 
 export async function WorkSection() {
   return (

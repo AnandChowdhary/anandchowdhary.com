@@ -1,16 +1,12 @@
+import { BlogPost } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
-import { GenericItem } from "@/app/components/generic-section";
 import { Header } from "@/app/components/header";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
 
 marked.use(markedSmartypants());
-
-interface BlogPost extends GenericItem {
-  attributes: { date: string; draft?: boolean };
-}
 
 export default async function BlogContent({
   blogDataFiltered,

@@ -1,28 +1,8 @@
-import { GenericItem, GenericSection } from "@/app/components/generic-section";
-
-interface Event extends GenericItem {
-  attributes: {
-    date: string;
-    remote?: boolean;
-    video?: string;
-    talk?: string;
-    event?: string;
-    venue?: string;
-    coordinates?: [number, number];
-    city?: string;
-    country?: string;
-  };
-}
+import { Event, getAllEvents } from "@/app/api";
+import { GenericSection } from "@/app/components/generic-section";
 
 export async function Events() {
-  const events = await fetch(
-    "https://anandchowdhary.github.io/events/api.json",
-    { next: { revalidate: 36000 } }
-  );
-  const eventsData = (await events.json()) as Event[];
-  const eventsDataSorted = eventsData.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const eventsDataSorted = await getAllEvents();
 
   const getEventTitle = (event: Event) => (
     <>
