@@ -6,7 +6,6 @@ import {
   IconBuilding,
   IconCalendarEvent,
   IconMapPin,
-  IconSpeakerphone,
   IconTicket,
 } from "@tabler/icons-react";
 import { marked } from "marked";
@@ -85,7 +84,7 @@ export default async function EventsContent({
                         }}
                       />
                     </Link>
-                    <div className="grid grid-cols-2 gap-1.5 pt-2">
+                    <div className="grid grid-cols-2 gap-2.5 pt-2.5">
                       <div className="text-sm text-neutral-500 flex items-center gap-1.5">
                         <IconCalendarEvent
                           className="shrink-0"
@@ -135,18 +134,6 @@ export default async function EventsContent({
                             {item.attributes.city}
                             {item.attributes.country &&
                               `, ${item.attributes.country}`}
-                          </div>
-                        </div>
-                      )}
-                      {item.attributes.talk && (
-                        <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-                          <IconSpeakerphone
-                            className="shrink-0"
-                            size={16}
-                            strokeWidth={1.5}
-                          />
-                          <div className="grow truncate">
-                            {item.attributes.talk}
                           </div>
                         </div>
                       )}

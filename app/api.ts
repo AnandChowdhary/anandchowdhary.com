@@ -156,8 +156,23 @@ export async function getAllRepositories(): Promise<Repository[]> {
   );
   const reposData = (await repos.json()) as Repository[];
 
-  const formatRepoTitle = (name: string): string =>
-    name.replace(/[-_]/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+  const formatRepoTitle = (name: string): string => {
+    // First replace dashes and underscores with spaces
+    let formatted = name.replace(/[-_]/g, " ");
+
+    // Split by dots to handle file extensions
+    const parts = formatted.split(".");
+
+    if (parts.length > 1) {
+      // If there's a file extension, capitalize only the main part
+      const mainPart = parts[0].replace(/\b\w/g, (char) => char.toUpperCase());
+      const extension = parts.slice(1).join(".").toLowerCase();
+      return `${mainPart}.${extension}`;
+    } else {
+      // No file extension, capitalize all word boundaries
+      return formatted.replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+  };
 
   const cleanSubtitle = (text: string, projectName: string): string => {
     if (!text) return text;
@@ -352,4 +367,23 @@ export async function getLocation(): Promise<Country> {
   );
   const locationData = (await countries.json()) as Country;
   return locationData;
+}
+
+export async function getAllOpenSource(): Promise<Repository[]> {
+  const repos = await getAllRepositories();
+  return repos.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+
+export async function getOpenSourceByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Repository | null> {
+  const reposData = await getAllOpenSource();
+  return (
+    reposData
+      .filter((repo) => new Date(repo.date).getUTCFullYear() === year)
+      .find((repo) => repo.slug === slug) || null
+  );
 }
