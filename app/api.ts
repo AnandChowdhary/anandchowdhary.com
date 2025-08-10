@@ -360,6 +360,29 @@ export async function getAllCountries(): Promise<Country[]> {
   );
 }
 
+export async function getAllLocations(): Promise<Country[]> {
+  const countries = await fetch(
+    "https://anandchowdhary.github.io/location/history.json",
+    { next: { revalidate: 36000 } }
+  );
+  const countriesData = (await countries.json()) as Country[];
+
+  const countriesDataWithRequiredProps = countriesData.map((country) => ({
+    ...country,
+    slug: country.country_code,
+    path: `/travel/${country.country_code}`,
+    source: "",
+    date: country.date,
+    excerpt: `Visited ${country.label} on ${new Date(
+      country.date
+    ).toLocaleDateString()}`,
+  }));
+
+  return countriesDataWithRequiredProps.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+}
+
 export async function getLocation(): Promise<Country> {
   const countries = await fetch(
     "https://anandchowdhary.github.io/location/api.json",
@@ -385,5 +408,29 @@ export async function getOpenSourceByYearAndSlug(
     reposData
       .filter((repo) => new Date(repo.date).getUTCFullYear() === year)
       .find((repo) => repo.slug === slug) || null
+  );
+}
+
+export async function getLocationByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Country | null> {
+  const countriesData = await getAllCountries();
+  return (
+    countriesData
+      .filter((country) => new Date(country.date).getUTCFullYear() === year)
+      .find((country) => country.slug === slug) || null
+  );
+}
+
+export async function getBookByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Book | null> {
+  const booksData = await getAllBooks();
+  return (
+    booksData
+      .filter((book) => new Date(book.date).getUTCFullYear() === year)
+      .find((book) => book.slug === slug) || null
   );
 }
