@@ -434,3 +434,36 @@ export async function getBookByYearAndSlug(
       .find((book) => book.slug === slug) || null
   );
 }
+
+export async function getAllCodingTime(): Promise<Record<string, number>> {
+  const codingTime = await fetch(
+    "https://anandchowdhary.github.io/life/data/wakatime-time-tracking/summary/days.json",
+    { next: { revalidate: 36000 } }
+  );
+  const codingTimeData = (await codingTime.json()) as Record<string, number>;
+  return codingTimeData ?? {};
+}
+
+export async function getLastDayCodingTime(): Promise<Record<
+  string,
+  number
+> | null> {
+  const codingTime = await getAllCodingTime();
+  const sortedDates = Object.keys(codingTime).sort(
+    (a, b) => new Date(b).getTime() - new Date(a).getTime()
+  );
+  for (const date of sortedDates)
+    if (codingTime[date] > 0) return { [date]: codingTime[date] };
+  return null;
+}
+
+export async function getTotalLastMonthCodingTime(): Promise<number> {
+  const codingTime = await getAllCodingTime();
+  const sortedDates = Object.keys(codingTime).sort(
+    (a, b) => new Date(b).getTime() - new Date(a).getTime()
+  );
+  const lastMonthCodingTime = sortedDates
+    .slice(0, 30)
+    .reduce((acc, date) => acc + codingTime[date], 0);
+  return lastMonthCodingTime;
+}

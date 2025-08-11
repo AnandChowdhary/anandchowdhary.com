@@ -1,5 +1,7 @@
 import { TimelineItemBirthday } from "@/app/components/timeline-item-birthday";
+import { TimelineItemCodingTime } from "@/app/components/timeline-item-code";
 import { TimelineItemFitness } from "@/app/components/timeline-item-fitness";
+import { TimelineItemGitHub } from "@/app/components/timeline-item-github";
 import { TimelineItemLocation } from "@/app/components/timeline-item-location";
 import { TimelineItemMusic } from "@/app/components/timeline-item-music";
 import { TimelineItemSleep } from "@/app/components/timeline-item-sleep";
@@ -17,19 +19,9 @@ export function LifeSection() {
         <TimelineItemTheme />
         <TimelineItemFitness />
         <TimelineItemSleep />
-        {/* <TimelineItem
-          icon="📘"
-          title="Reading Nick Bostrom"
-          subtitle="Finished 2 books this year"
-          hoverLabel="Reading"
-        /> */}
+        <TimelineItemCodingTime />
         <TimelineItemMusic />
-        {/* <TimelineItem
-          icon="🗺️"
-          title="Traveled to 16 countries"
-          subtitle="Most recently to Italy"
-          hoverLabel="Travel"
-        /> */}
+        <TimelineItemGitHub />
       </ul>
     </section>
   );

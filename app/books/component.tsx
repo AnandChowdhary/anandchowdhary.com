@@ -18,7 +18,7 @@ function BookItem({ book }: { book: Book }) {
         <img
           src={book.image}
           alt={`Cover of ${book.title}`}
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-cover rounded-lg aspect-[3/4] shadow-sm"
         />
       </Link>
     </article>
