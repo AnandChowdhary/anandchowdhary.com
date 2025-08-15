@@ -96,6 +96,12 @@ export default async function BlogContent({
                       item.date
                     ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
                     className={`${focusStyles} full-link flex grow truncate hover:text-neutral-500`}
+                    style={{
+                      maskImage:
+                        "linear-gradient(to right, black 70%, transparent 100%)",
+                      WebkitMaskImage:
+                        "linear-gradient(to right, black 70%, transparent 100%)",
+                    }}
                   >
                     <h3
                       className="truncate"

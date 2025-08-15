@@ -30,63 +30,178 @@ export default async function EventsContent({
         From time to time, I speak at startup events and technical conferences
         about engineering, design, and entrepreneurship.
       </Header>
-      <main className="max-w-2xl mx-auto space-y-8">
-        {Object.entries(eventsDataByYear)
-          .sort((a, b) => b[0].localeCompare(a[0]))
-          .map(([year, events]) => (
-            <div key={year} className="space-y-4">
-              <h2 className="text-lg font-medium text-neutral-500">
-                <Link
-                  href={`/events/${year}`}
-                  className={`${focusStyles} flex`}
-                >
-                  {year}
-                </Link>
-              </h2>
-              {events.map((item) => (
-                <article
-                  key={`${item.date}-${item.slug}`}
-                  className="grid grid-cols-3 gap-8 items-center pb-2.5 relative"
-                >
-                  <div className="aspect-video rounded-lg shadow-sm relative">
-                    <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none text-2xl tracking-widest">
-                      {item.emoji}
-                    </div>
-                    {item.attributes.coordinates && (
-                      <img
-                        src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/${item.attributes.coordinates[1]},${item.attributes.coordinates[0]},14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
-                        alt=""
-                        className="w-full h-full object-cover rounded-lg dark:brightness-40 absolute inset-0 z-10 mix-blend-overlay"
-                      />
-                    )}
-                    <img
-                      src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
-                        new Rand(item.slug).next() * 100 + 1
-                      )}.png`}
-                      alt=""
-                      className="w-full h-full object-cover rounded-lg dark:brightness-60"
-                    />
-                  </div>
-                  <div className="col-span-2">
+      <main className="max-w-2xl mx-auto space-y-4">
+        {year ? (
+          // Year-specific view: show events grouped by year
+          <div className="space-y-8">
+            {Object.entries(eventsDataByYear)
+              .sort((a, b) => b[0].localeCompare(a[0]))
+              .map(([year, events]) => (
+                <div key={year} className="space-y-4">
+                  <h2 className="text-lg font-medium text-neutral-500">
                     <Link
-                      href={`/events/${new Date(
-                        item.date
-                      ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
-                      className={`${focusStyles} full-link flex`}
+                      href={`/events/${year}`}
+                      className={`${focusStyles} flex`}
                     >
-                      <h3
-                        className="truncate text-lg font-medium"
-                        dangerouslySetInnerHTML={{
-                          __html: marked.parseInline(item.title),
-                        }}
-                      />
+                      {year}
                     </Link>
-                    <EventMetadata item={item} />
-                  </div>
-                </article>
+                  </h2>
+                  {events.map((item) => (
+                    <article
+                      key={`${item.date}-${item.slug}`}
+                      className="grid grid-cols-3 gap-8 items-center pb-2.5 relative"
+                    >
+                      <div className="aspect-video rounded-lg shadow-sm relative">
+                        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none text-2xl tracking-widest">
+                          {item.emoji}
+                        </div>
+                        {item.attributes.coordinates && (
+                          <img
+                            src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/${item.attributes.coordinates[1]},${item.attributes.coordinates[0]},14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                            alt=""
+                            className="w-full h-full object-cover rounded-lg dark:brightness-40 absolute inset-0 z-10 mix-blend-overlay"
+                          />
+                        )}
+                        <img
+                          src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+                            new Rand(item.slug).next() * 100 + 1
+                          )}.png`}
+                          alt=""
+                          className="w-full h-full object-cover rounded-lg dark:brightness-60"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <Link
+                          href={`/events/${new Date(
+                            item.date
+                          ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
+                          className={`${focusStyles} full-link flex`}
+                          style={{
+                            maskImage:
+                              "linear-gradient(to right, black 70%, transparent 100%)",
+                            WebkitMaskImage:
+                              "linear-gradient(to right, black 70%, transparent 100%)",
+                          }}
+                        >
+                          <h3
+                            className="truncate text-lg font-medium"
+                            dangerouslySetInnerHTML={{
+                              __html: marked.parseInline(item.title),
+                            }}
+                          />
+                        </Link>
+                        <EventMetadata item={item} />
+                      </div>
+                    </article>
+                  ))}
+                </div>
               ))}
-            </div>
-          ))}
+          </div>
+        ) : (
+          // Main events page: show latest and more sections
+          <>
+            {eventsDataFiltered.length > 3 && (
+              <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
+            )}
+            {eventsDataFiltered.slice(0, 3).map((item) => (
+              <article
+                key={`${item.date}-${item.slug}`}
+                className="grid grid-cols-3 gap-8 items-center pb-2.5 relative"
+              >
+                <div className="aspect-video rounded-lg shadow-sm relative">
+                  <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none text-2xl tracking-widest">
+                    {item.emoji}
+                  </div>
+                  {item.attributes.coordinates && (
+                    <img
+                      src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/${item.attributes.coordinates[1]},${item.attributes.coordinates[0]},14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                      alt=""
+                      className="w-full h-full object-cover rounded-lg dark:brightness-40 absolute inset-0 z-10 mix-blend-overlay"
+                    />
+                  )}
+                  <img
+                    src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+                      new Rand(item.slug).next() * 100 + 1
+                    )}.png`}
+                    alt=""
+                    className="w-full h-full object-cover rounded-lg dark:brightness-60"
+                  />
+                </div>
+                <div className="col-span-2">
+                  <Link
+                    href={`/events/${new Date(
+                      item.date
+                    ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
+                    className={`${focusStyles} full-link flex`}
+                    style={{
+                      maskImage:
+                        "linear-gradient(to right, black 70%, transparent 100%)",
+                      WebkitMaskImage:
+                        "linear-gradient(to right, black 70%, transparent 100%)",
+                    }}
+                  >
+                    <h3
+                      className="truncate text-lg font-medium"
+                      dangerouslySetInnerHTML={{
+                        __html: marked.parseInline(item.title),
+                      }}
+                    />
+                  </Link>
+                  <EventMetadata item={item} />
+                </div>
+              </article>
+            ))}
+            {eventsDataFiltered.length > 3 && (
+              <div className="space-y-6 pt-8">
+                <h2 className="text-lg font-medium text-neutral-500">More</h2>
+                {eventsDataFiltered.slice(3).map((item) => (
+                  <article
+                    key={`${item.date}-${item.slug}`}
+                    className="flex gap-5 relative"
+                  >
+                    <div className="aspect-square w-6 rounded-full shadow-sm shrink-0 relative">
+                      <img
+                        src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+                          new Rand(item.slug).next() * 100 + 1
+                        )}.png`}
+                        alt=""
+                        className="w-full h-full object-cover rounded-full dark:brightness-60"
+                      />
+                    </div>
+                    <div className="grow flex items-center justify-between gap-8">
+                      <Link
+                        href={`/events/${new Date(
+                          item.date
+                        ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
+                        className={`${focusStyles} full-link flex grow truncate hover:text-neutral-500`}
+                        style={{
+                          maskImage:
+                            "linear-gradient(to right, black 70%, transparent 100%)",
+                          WebkitMaskImage:
+                            "linear-gradient(to right, black 70%, transparent 100%)",
+                        }}
+                      >
+                        <h3
+                          className="truncate"
+                          dangerouslySetInnerHTML={{
+                            __html: marked.parseInline(item.title),
+                          }}
+                        />
+                      </Link>
+                      <p className="text-sm text-neutral-500 shrink-0">
+                        {new Date(item.date).toLocaleDateString("en-US", {
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        })}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
+          </>
+        )}
       </main>
       <Footer />
     </div>
