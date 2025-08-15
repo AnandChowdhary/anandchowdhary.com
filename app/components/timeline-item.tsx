@@ -9,7 +9,7 @@ interface TimelineItemProps {
 export function TimelineItem({ icon, title, subtitle }: TimelineItemProps) {
   const content = (
     <>
-      <div className="grow space-y-1">
+      <div className="grow space-y-1 tabular-nums">
         <div>{title}</div>
         <div className="text-neutral-500">{subtitle}</div>
       </div>

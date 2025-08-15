@@ -27,7 +27,7 @@ export default function LocationContent({
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const countriesDataByYear = countriesDataFiltered.reduce((acc, item) => {
-    const year = new Date(item.date).getFullYear();
+    const year = new Date(item.date).getUTCFullYear();
     if (!acc[year]) acc[year] = [];
     acc[year].push(item);
     return acc;

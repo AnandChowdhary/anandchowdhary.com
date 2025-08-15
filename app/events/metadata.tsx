@@ -1,10 +1,12 @@
 import { Event } from "@/app/api";
+import { underlinedLink } from "@/app/components/external-link";
 import {
   IconBuilding,
   IconCalendarEvent,
   IconMapPin,
   IconTicket,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 export function EventMetadata({
   item,
@@ -19,13 +21,18 @@ export function EventMetadata({
     <div className={`grid grid-cols-2 gap-2.5 pt-2.5 ${className}`}>
       <div className="text-sm text-neutral-500 flex items-center gap-1.5">
         <IconCalendarEvent className="shrink-0" size={16} strokeWidth={1.5} />
-        <div className="grow truncate">
+        <Link
+          href={`/events/${new Date(
+            item.date
+          ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
+          className={`grow truncate ${underlinedLink}`}
+        >
           {new Date(item.date).toLocaleDateString("en-US", {
             day: "numeric",
             month: "long",
             year: "numeric",
           })}
-        </div>
+        </Link>
       </div>
       {item.attributes.event && (
         <div className="text-sm text-neutral-500 flex items-center gap-1.5">

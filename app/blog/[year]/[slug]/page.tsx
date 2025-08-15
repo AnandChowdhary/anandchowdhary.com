@@ -1,4 +1,5 @@
 import { getBlogPostByYearAndSlug, getBlogPostContent } from "@/app/api";
+import { BlogMetadata } from "@/app/blog/metadata";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { marked } from "marked";
@@ -43,13 +44,7 @@ export default async function BlogYearSlug({
             className="text-2xl font-medium"
             dangerouslySetInnerHTML={{ __html: marked.parseInline(post.title) }}
           />
-          <p className="text-neutral-500">
-            {new Date(post.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
+          <BlogMetadata item={post} postContentText={postContentText} />
         </header>
         <div
           className="prose dark:prose-invert prose-headings:font-medium"

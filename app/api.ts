@@ -209,7 +209,7 @@ export async function getAllRepositories(): Promise<Repository[]> {
         path: `/open-source/${repo.name.toLowerCase().replace(/\s+/g, "-")}`,
         source: repo.html_url,
         title: formatRepoTitle(repo.name),
-        date: repo.updated_at,
+        date: repo.created_at,
         excerpt: repo.description || "No description available",
         emoji: "📦",
       }))

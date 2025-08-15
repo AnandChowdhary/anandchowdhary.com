@@ -108,7 +108,7 @@ export default async function BooksYearSlug({
                     strokeWidth={1.5}
                   />
                   <div className="grow truncate">
-                    Published {new Date(book.publishedDate).getFullYear()}
+                    Published {new Date(book.publishedDate).getUTCFullYear()}
                   </div>
                 </div>
               )}
