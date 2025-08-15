@@ -6,7 +6,6 @@ export function TimelineItemTheme() {
       icon="🌈"
       title="Year of Gratitude"
       subtitle="Yearly theme for 2024"
-      hoverLabel="Theme"
     />
   );
 }

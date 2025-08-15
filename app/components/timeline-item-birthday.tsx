@@ -1,6 +1,5 @@
 "use client";
 
-import { focusStyles } from "@/app/components/external-link";
 import { TimelineItem } from "@/app/components/timeline-item";
 import NumberFlow from "@number-flow/react";
 import { useEffect, useState } from "react";
@@ -43,9 +42,6 @@ export function TimelineItemBirthday() {
         </>
       }
       subtitle="Next birthday in 5 months"
-      href="/"
-      hoverLabel="Timeline"
-      focusStyles={`${focusStyles} full-link`}
     />
   );
 }

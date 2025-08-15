@@ -28,7 +28,7 @@ export function Header({
               <Link
                 key={item}
                 href={`/${items.slice(0, index + 1).join("/")}`}
-                className={`${focusStyles} uppercase text-lg font-medium font-mono tracking-wider text-neutral-500`}
+                className={`${focusStyles} uppercase text-lg font-medium font-mono tracking-wider text-neutral-500 hover:text-neutral-600`}
               >
                 <span className="mx-2 text-neutral-300 dark:text-neutral-800">
                   /

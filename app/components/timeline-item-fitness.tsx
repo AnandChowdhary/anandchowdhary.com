@@ -21,7 +21,6 @@ export function TimelineItemFitness() {
         </>
       }
       subtitle="474 active calories of 2,648 total"
-      hoverLabel="Fitness"
     />
   );
 }

@@ -11,7 +11,6 @@ export async function TimelineItemLocation() {
         timeStyle: "short",
         timeZone: location.timezone.name,
       })} (UTC ${location.timezone.utcOffsetStr})`}
-      hoverLabel="Location"
     />
   );
 }

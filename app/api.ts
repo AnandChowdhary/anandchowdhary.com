@@ -1,4 +1,8 @@
 import { GenericItem } from "@/app/components/generic-section";
+import { marked } from "marked";
+import { markedSmartypants } from "marked-smartypants";
+
+marked.use(markedSmartypants());
 
 export interface BlogPost extends GenericItem {
   attributes: { date: string; draft?: boolean };
@@ -94,7 +98,7 @@ export interface Work extends GenericItem {
 
 export async function getAllNotes(): Promise<Note[]> {
   const notes = await fetch("https://anandchowdhary.github.io/notes/api.json", {
-    next: { revalidate: 36000 },
+    next: { revalidate: 3600 },
   });
   const notesData = (await notes.json()) as Note[];
   return notesData.sort(
@@ -104,7 +108,7 @@ export async function getAllNotes(): Promise<Note[]> {
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
-    next: { revalidate: 36000 },
+    next: { revalidate: 3600 },
   });
   const blogData = (await blog.json()) as BlogPost[];
   return blogData
@@ -152,7 +156,7 @@ export async function getBlogPostContent(
 export async function getAllRepositories(): Promise<Repository[]> {
   const repos = await fetch(
     "https://anandchowdhary.github.io/featured/repos.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const reposData = (await repos.json()) as Repository[];
 
@@ -214,7 +218,7 @@ export async function getAllRepositories(): Promise<Repository[]> {
         repo.attributes = repo.attributes ?? {};
         const readMe = await fetch(
           `https://raw.githubusercontent.com/${repo.full_name}/HEAD/README.md`,
-          { next: { revalidate: 36000 } }
+          { next: { revalidate: 3600 } }
         );
         const readMeText = await readMe.text();
 
@@ -260,7 +264,7 @@ export async function getAllRepositories(): Promise<Repository[]> {
 
 export async function getAllBooks(): Promise<Book[]> {
   const books = await fetch("https://anandchowdhary.github.io/books/api.json", {
-    next: { revalidate: 36000 },
+    next: { revalidate: 3600 },
   });
   const booksData = (await books.json()) as Book[];
 
@@ -281,7 +285,7 @@ export async function getAllBooks(): Promise<Book[]> {
 export async function getAllEvents(): Promise<Event[]> {
   const events = await fetch(
     "https://anandchowdhary.github.io/events/api.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const eventsData = (await events.json()) as Event[];
   return eventsData.sort(
@@ -326,10 +330,48 @@ export async function getEventContent(
   return eventContentText;
 }
 
+export async function getTalk(
+  title: string
+): Promise<{ content: string; slides?: string; embed?: string } | null> {
+  const eventContent = await fetch(
+    `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/talks/${title
+      .replaceAll(" ", "-")
+      .toLowerCase()}.md`
+  );
+  if (!eventContent.ok) return null;
+  let eventContentText = await eventContent.text();
+  let slides: string | undefined;
+  let embed: string | undefined;
+
+  // Remove front-matter if there is any
+  if (eventContentText.startsWith("---")) {
+    const frontMatterEnd = eventContentText.indexOf("\n---");
+    const frontMatter = eventContentText.slice(0, frontMatterEnd + 4).trim();
+    const frontMatterLines = frontMatter.split("\n");
+    frontMatterLines.forEach((line) => {
+      if (line.startsWith("slides:")) slides = line.slice(8).trim();
+      if (line.startsWith("embed:")) embed = line.slice(7).trim();
+    });
+    eventContentText = eventContentText.slice(frontMatterEnd + 4).trim();
+  }
+
+  // Remove heading
+  if (eventContentText.startsWith("# ")) {
+    const lines = eventContentText.split("\n");
+    eventContentText = lines.slice(1).join("\n");
+  }
+
+  return {
+    content: await marked.parse(eventContentText),
+    slides,
+    embed,
+  };
+}
+
 export async function getAllThemes(): Promise<Theme[]> {
   const themes = await fetch(
     "https://anandchowdhary.github.io/themes/api.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const themesData = (await themes.json()) as Theme[];
   return themesData.sort(
@@ -340,7 +382,7 @@ export async function getAllThemes(): Promise<Theme[]> {
 export async function getAllCountries(): Promise<Country[]> {
   const countries = await fetch(
     "https://anandchowdhary.github.io/location/history-countries.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const countriesData = (await countries.json()) as Country[];
 
@@ -363,7 +405,7 @@ export async function getAllCountries(): Promise<Country[]> {
 export async function getAllLocations(): Promise<Country[]> {
   const countries = await fetch(
     "https://anandchowdhary.github.io/location/history.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const countriesData = (await countries.json()) as Country[];
 
@@ -386,7 +428,7 @@ export async function getAllLocations(): Promise<Country[]> {
 export async function getLocation(): Promise<Country> {
   const countries = await fetch(
     "https://anandchowdhary.github.io/location/api.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const locationData = (await countries.json()) as Country;
   return locationData;
@@ -438,7 +480,7 @@ export async function getBookByYearAndSlug(
 export async function getAllCodingTime(): Promise<Record<string, number>> {
   const codingTime = await fetch(
     "https://anandchowdhary.github.io/life/data/wakatime-time-tracking/summary/days.json",
-    { next: { revalidate: 36000 } }
+    { next: { revalidate: 3600 } }
   );
   const codingTimeData = (await codingTime.json()) as Record<string, number>;
   return codingTimeData ?? {};

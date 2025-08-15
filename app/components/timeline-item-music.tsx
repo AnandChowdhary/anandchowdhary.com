@@ -6,7 +6,6 @@ export function TimelineItemMusic() {
       icon="🎧"
       title="Listening to Gracie Abrams"
       subtitle="Top artist this month"
-      hoverLabel="Music"
     />
   );
 }

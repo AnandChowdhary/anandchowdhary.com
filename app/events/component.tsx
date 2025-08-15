@@ -2,12 +2,7 @@ import { Event } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
-import {
-  IconBuilding,
-  IconCalendarEvent,
-  IconMapPin,
-  IconTicket,
-} from "@tabler/icons-react";
+import { EventMetadata } from "@/app/events/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -54,21 +49,23 @@ export default async function EventsContent({
                   className="grid grid-cols-3 gap-8 items-center pb-2.5 relative"
                 >
                   <div className="aspect-video rounded-lg shadow-sm relative">
-                    {item.attributes.coordinates ? (
+                    <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none text-2xl tracking-widest">
+                      {item.emoji}
+                    </div>
+                    {item.attributes.coordinates && (
                       <img
-                        src={`https://api.mapbox.com/styles/v1/anandchowdhary/cl91jzd61002q14pm7vtwfa2l/static/${item.attributes.coordinates[1]},${item.attributes.coordinates[0]},14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
+                        src={`https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/${item.attributes.coordinates[1]},${item.attributes.coordinates[0]},14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ`}
                         alt=""
-                        className="w-full h-full object-cover rounded-lg dark:brightness-60"
-                      />
-                    ) : (
-                      <img
-                        src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
-                          new Rand(item.slug).next() * 100 + 1
-                        )}.png`}
-                        alt=""
-                        className="w-full h-full object-cover rounded-lg dark:brightness-60"
+                        className="w-full h-full object-cover rounded-lg dark:brightness-40 absolute inset-0 z-10 mix-blend-overlay"
                       />
                     )}
+                    <img
+                      src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+                        new Rand(item.slug).next() * 100 + 1
+                      )}.png`}
+                      alt=""
+                      className="w-full h-full object-cover rounded-lg dark:brightness-60"
+                    />
                   </div>
                   <div className="col-span-2">
                     <Link
@@ -84,60 +81,7 @@ export default async function EventsContent({
                         }}
                       />
                     </Link>
-                    <div className="grid grid-cols-2 gap-2.5 pt-2.5">
-                      <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-                        <IconCalendarEvent
-                          className="shrink-0"
-                          size={16}
-                          strokeWidth={1.5}
-                        />
-                        <div className="grow truncate">
-                          {new Date(item.date).toLocaleDateString("en-US", {
-                            day: "numeric",
-                            month: "long",
-                            year: "numeric",
-                          })}
-                        </div>
-                      </div>
-                      {item.attributes.event && (
-                        <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-                          <IconTicket
-                            className="shrink-0"
-                            size={16}
-                            strokeWidth={1.5}
-                          />
-                          <div className="grow truncate">
-                            {item.attributes.event}
-                          </div>
-                        </div>
-                      )}
-                      {item.attributes.venue && (
-                        <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-                          <IconBuilding
-                            className="shrink-0"
-                            size={16}
-                            strokeWidth={1.5}
-                          />
-                          <div className="grow truncate">
-                            {item.attributes.venue}
-                          </div>
-                        </div>
-                      )}
-                      {item.attributes.city && (
-                        <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-                          <IconMapPin
-                            className="shrink-0"
-                            size={16}
-                            strokeWidth={1.5}
-                          />
-                          <div className="grow truncate">
-                            {item.attributes.city}
-                            {item.attributes.country &&
-                              `, ${item.attributes.country}`}
-                          </div>
-                        </div>
-                      )}
-                    </div>
+                    <EventMetadata item={item} />
                   </div>
                 </article>
               ))}
