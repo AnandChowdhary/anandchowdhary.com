@@ -171,6 +171,42 @@ export async function getPressItemByYearAndSlug(
   );
 }
 
+export interface LifeEvent {
+  date: string;
+  title: string;
+  description?: string;
+  slug?: string;
+}
+
+export async function getLifeEvents(): Promise<LifeEvent[]> {
+  const lifeEvents = await fetch(
+    "https://anandchowdhary.github.io/everything/data/life-events.json",
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+  const lifeEventsData = (await lifeEvents.json()) as LifeEvent[];
+
+  // Add slugs to each item
+  return lifeEventsData.map((item) => ({
+    ...item,
+    slug: generateSlug(item.title),
+  }));
+}
+
+export async function getLifeEventByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<LifeEvent | null> {
+  const allEvents = await getLifeEvents();
+  return (
+    allEvents.find(
+      (event) =>
+        new Date(event.date).getFullYear() === year && event.slug === slug
+    ) || null
+  );
+}
+
 export async function getAllNotes(): Promise<Note[]> {
   const notes = await fetch(
     "https://anandchowdhary.github.io/notes/threads/api.json",

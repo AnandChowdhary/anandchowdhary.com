@@ -1,5 +1,5 @@
 import { Press, PressItem } from "@/app/api";
-import { focusStyles } from "@/app/components/external-link";
+import { ExternalLink, focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import Link from "next/link";
@@ -66,8 +66,12 @@ export default async function PressContent({
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header pathname="/press">
-        Awards, recognitions, and media coverage from my journey in technology
-        and entrepreneurship.
+        I&rsquo;ve been very fortunate to have been featured in several
+        publications for my work. For press enquiries, please reach out to{" "}
+        <ExternalLink href="mailto:press@anandchowdhary.com">
+          press
+        </ExternalLink>{" "}
+        @ this domain.
       </Header>
       <main className="max-w-2xl mx-auto space-y-12">
         {sortedAwards.length > 0 && (
