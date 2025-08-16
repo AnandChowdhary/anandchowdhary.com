@@ -2,11 +2,16 @@ import { focusStyles } from "@/app/components/external-link";
 
 export function Footer() {
   return (
-    <footer className="text-center space-y-8 lg:space-y-4">
+    <footer className="text-center space-y-8">
       <p className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
         &copy; {new Date().getUTCFullYear()} Anand Chowdhary
       </p>
-      <div className="flex flex-wrap gap-2.5 lg:gap-4 justify-center text-sm">
+      <p className="text-sm text-neutral-500 max-w-sm mx-auto">
+        Anand Chowdhary is a technology entrepreneur, engineer, and designer
+        from New Delhi, India, based in Utrecht, the Netherlands and San
+        Francisco, California.
+      </p>
+      <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm max-w-xl mx-auto">
         <a className={focusStyles} href="/">
           Home
         </a>
@@ -21,6 +26,9 @@ export function Footer() {
         </a>
         <a className={focusStyles} href="/blog">
           Blog
+        </a>
+        <a className={focusStyles} href="/notes">
+          Notes
         </a>
         <a className={focusStyles} href="/events">
           Events
@@ -47,7 +55,7 @@ export function Footer() {
           Contact
         </a>
       </div>
-      <div className="flex flex-wrap gap-2.5 lg:gap-4 justify-center text-sm">
+      <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm">
         {Array.from({ length: 2025 - 2009 + 1 }, (_, i) => {
           const year = 2009 + i;
           return (

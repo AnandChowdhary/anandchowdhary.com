@@ -72,7 +72,7 @@ const RepoCard = ({ item }: { item: Repository }) => {
           href={`/open-source/${new Date(item.created_at).getUTCFullYear()}/${
             item.slug
           }`}
-          className={`${focusStyles} full-link flex hover:text-neutral-500`}
+          className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
         >
           <div
             className="w-full"
@@ -213,7 +213,7 @@ export default async function OpenSourceContent({
                         href={`/open-source/${new Date(
                           item.created_at
                         ).getUTCFullYear()}/${item.slug}`}
-                        className={`${focusStyles} full-link flex grow truncate hover:text-neutral-500`}
+                        className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                         style={{
                           maskImage:
                             "linear-gradient(to right, black 70%, transparent 100%)",

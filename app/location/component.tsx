@@ -150,7 +150,7 @@ export default function LocationContent({
                             href={`/location/${new Date(
                               item.date
                             ).getUTCFullYear()}/${item.slug}`}
-                            className={`${focusStyles} full-link flex`}
+                            className={`${focusStyles} min-w-0 full-link flex`}
                           >
                             <h3
                               className="truncate text-lg font-medium"

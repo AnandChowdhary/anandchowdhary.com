@@ -64,7 +64,7 @@ const EventCard = ({ item }: { item: Event }) => (
         href={`/events/${new Date(
           item.date
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
-        className={`${focusStyles} full-link flex hover:text-neutral-500`}
+        className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
         <div
           className="w-full"
@@ -152,7 +152,7 @@ export default async function EventsContent({
                         href={`/events/${new Date(
                           item.date
                         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
-                        className={`${focusStyles} full-link flex grow truncate hover:text-neutral-500`}
+                        className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                       >
                         <div
                           className="w-full"

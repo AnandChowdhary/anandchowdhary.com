@@ -13,7 +13,7 @@ function BookItem({ book }: { book: Book }) {
     <article key={`${book.date}-${book.slug}`} className="relative">
       <Link
         href={`/books/${new Date(book.date).getUTCFullYear()}/${book.slug}`}
-        className={`${focusStyles} full-link flex`}
+        className={`${focusStyles} min-w-0 full-link flex`}
       >
         <img
           src={book.image}

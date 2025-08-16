@@ -97,13 +97,50 @@ export interface Work extends GenericItem {
 }
 
 export async function getAllNotes(): Promise<Note[]> {
-  const notes = await fetch("https://anandchowdhary.github.io/notes/api.json", {
-    next: { revalidate: 3600 },
-  });
-  const notesData = (await notes.json()) as Note[];
-  return notesData.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  const notes = await fetch(
+    "https://anandchowdhary.github.io/notes/threads/api.json",
+    {
+      next: { revalidate: 3600 },
+    }
   );
+  const notesData = (await notes.json()) as Note[];
+  return notesData
+    .filter((note) => !note.attributes.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export async function getNoteByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Note | null> {
+  const notesData = await getAllNotes();
+  return (
+    notesData
+      .filter((note) => new Date(note.date).getUTCFullYear() === year)
+      .find((note) => note.slug.replace(".md", "") === slug) || null
+  );
+}
+
+export async function getNoteContent(slug: string): Promise<string> {
+  const noteContent = await fetch(
+    `https://raw.githubusercontent.com/AnandChowdhary/notes/refs/heads/main/threads/${slug}.md`
+  );
+  if (!noteContent.ok) throw new Error("Note content not found");
+  let noteContentText = await noteContent.text();
+
+  // Remove front-matter if there is any
+  if (noteContentText.startsWith("---")) {
+    const frontMatterEnd = noteContentText.indexOf("\n---");
+    noteContentText = noteContentText.slice(frontMatterEnd + 4).trim();
+  }
+
+  // Remove heading
+  if (noteContentText.startsWith("# ")) {
+    const lines = noteContentText.split("\n");
+    noteContentText = lines.slice(1).join("\n").trim();
+  }
+
+  return noteContentText;
 }
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {

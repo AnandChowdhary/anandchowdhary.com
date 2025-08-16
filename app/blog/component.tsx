@@ -52,7 +52,7 @@ const BlogCard = ({ item }: { item: BlogPost }) => (
         href={`/blog/${new Date(
           item.date
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
-        className={`${focusStyles} full-link flex hover:text-neutral-500`}
+        className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
         <div
           className="w-full"
@@ -102,7 +102,10 @@ export default async function BlogContent({
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/blog/${year}` : "/blog"} />
+      <Header pathname={year ? `/blog/${year}` : "/blog"}>
+        Thoughts and insights on technology, entrepreneurship, and building
+        products that matter.
+      </Header>
       <main className="max-w-2xl mx-auto space-y-4">
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
@@ -121,7 +124,7 @@ export default async function BlogContent({
                     href={`/blog/${new Date(
                       item.date
                     ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
-                    className={`${focusStyles} full-link flex grow truncate hover:text-neutral-500`}
+                    className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                     style={{
                       maskImage:
                         "linear-gradient(to right, black 70%, transparent 100%)",

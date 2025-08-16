@@ -80,7 +80,7 @@ export function GenericSectionContainer<T extends GenericItem>({
       <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
         <Link
           href={`/${title.toLowerCase()}`}
-          className={`${focusStyles} full-link z-10`}
+          className={`${focusStyles} min-w-0 full-link z-10`}
         >
           {subtitle}
         </Link>
