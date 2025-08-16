@@ -96,6 +96,81 @@ export interface Work extends GenericItem {
   url: string;
 }
 
+export interface PressItem {
+  date: string;
+  title: string;
+  publisher: string;
+  href?: string;
+  author?: string;
+  description?: string;
+  embed?: string;
+  slug?: string;
+  category?: "award" | "podcast" | "feature";
+}
+
+export interface Press {
+  awards: PressItem[];
+  podcasts: PressItem[];
+  features: PressItem[];
+}
+
+function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .trim();
+}
+
+export async function getPress(): Promise<Press> {
+  const press = await fetch(
+    "https://anandchowdhary.github.io/everything/data/press.json",
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+  const pressData = (await press.json()) as Press;
+
+  // Add slugs and categories to each item
+  pressData.awards = pressData.awards.map((item) => ({
+    ...item,
+    slug: generateSlug(item.publisher),
+    category: "award" as const,
+  }));
+
+  pressData.podcasts = pressData.podcasts.map((item) => ({
+    ...item,
+    slug: generateSlug(item.publisher),
+    category: "podcast" as const,
+  }));
+
+  pressData.features = pressData.features.map((item) => ({
+    ...item,
+    slug: generateSlug(item.publisher),
+    category: "feature" as const,
+  }));
+
+  return pressData;
+}
+
+export async function getAllPressItems(): Promise<PressItem[]> {
+  const pressData = await getPress();
+  return [...pressData.awards, ...pressData.podcasts, ...pressData.features];
+}
+
+export async function getPressItemByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<PressItem | null> {
+  const allItems = await getAllPressItems();
+  return (
+    allItems.find(
+      (item) => new Date(item.date).getFullYear() === year && item.slug === slug
+    ) || null
+  );
+}
+
 export async function getAllNotes(): Promise<Note[]> {
   const notes = await fetch(
     "https://anandchowdhary.github.io/notes/threads/api.json",

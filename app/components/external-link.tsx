@@ -1,5 +1,5 @@
 export const focusStyles =
-  "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-300 rounded";
+  "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-300 dark:focus-visible:ring-neutral-700 rounded";
 
 export const underlinedLink = `hover:text-neutral-400 underline underline-offset-2 decoration-1 ${focusStyles}`;
 

@@ -62,9 +62,10 @@ export default async function NotesContent({
         <article
           className="border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 shadow-sm relative overflow-hidden max-h-96"
           style={{
-            maskImage: "linear-gradient(to bottom, black 0%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, black 50%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, transparent 100%)",
+              "linear-gradient(to bottom, black 50%, transparent 100%)",
           }}
         >
           <Link
