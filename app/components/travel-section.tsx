@@ -6,10 +6,10 @@ export async function TravelSection() {
 
   return (
     <GenericSectionContainer
-      title="travel"
-      subtitle="/travel"
-      description="Countries I've visited around the world."
-      linkText="Go to travel"
+      title="location"
+      subtitle="/location"
+      description="For over ten years, I’ve been tracking my location as I travel around the world."
+      linkText="Go to /location"
     >
       <ul className="grid grid-cols-11 gap-2">
         {countriesDataSorted.map((country) => (

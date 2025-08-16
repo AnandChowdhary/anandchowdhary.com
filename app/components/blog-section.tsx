@@ -19,7 +19,7 @@ export async function BlogSection() {
       subtitle="/blog"
       items={blogDataFiltered}
       description="I write about technology, startups, and life lessons learned along the way."
-      linkText="Go to blog"
+      linkText="Go to /blog"
       getItemTitle={getBlogTitle}
       getItemSubtitle={getBlogSubtitle}
     />

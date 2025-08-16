@@ -14,7 +14,7 @@ export function Header({
 
   return (
     <div>
-      <div className="flex items-center justify-center mx-auto space-x-8">
+      <div className="flex items-center justify-center mx-auto space-x-4">
         <div className="w-48">
           <ViewTransition name="signature">
             <Link href="/" className={`${focusStyles} flex`}>

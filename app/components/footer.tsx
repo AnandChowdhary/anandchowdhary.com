@@ -1,3 +1,5 @@
+import { focusStyles } from "@/app/components/external-link";
+
 export function Footer() {
   return (
     <footer className="text-center space-y-8 lg:space-y-4">
@@ -5,37 +7,55 @@ export function Footer() {
         &copy; {new Date().getUTCFullYear()} Anand Chowdhary
       </p>
       <div className="flex flex-wrap gap-2.5 lg:gap-4 justify-center text-sm">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/archive">Archive</a>
-        <a href="/life">Life</a>
-        <a href="/blog">Blog</a>
-        <a href="/events">Events</a>
-        <a href="/projects">Projects</a>
-        <a href="/mentoring">Mentoring</a>
-        <a href="/press">Press</a>
-        <a href="/videos">Videos</a>
-        <a href="/versions">Versions</a>
-        <a href="/contact">Contact</a>
+        <a className={focusStyles} href="/">
+          Home
+        </a>
+        <a className={focusStyles} href="/about">
+          About
+        </a>
+        <a className={focusStyles} href="/archive">
+          Archive
+        </a>
+        <a className={focusStyles} href="/life">
+          Life
+        </a>
+        <a className={focusStyles} href="/blog">
+          Blog
+        </a>
+        <a className={focusStyles} href="/events">
+          Events
+        </a>
+        <a className={focusStyles} href="/open-source">
+          Open source
+        </a>
+        <a className={focusStyles} href="/projects">
+          Projects
+        </a>
+        <a className={focusStyles} href="/mentoring">
+          Mentoring
+        </a>
+        <a className={focusStyles} href="/press">
+          Press
+        </a>
+        <a className={focusStyles} href="/videos">
+          Videos
+        </a>
+        <a className={focusStyles} href="/versions">
+          Versions
+        </a>
+        <a className={focusStyles} href="/contact">
+          Contact
+        </a>
       </div>
       <div className="flex flex-wrap gap-2.5 lg:gap-4 justify-center text-sm">
-        <a href="/archive/2009">2009</a>
-        <a href="/archive/2010">2010</a>
-        <a href="/archive/2011">2011</a>
-        <a href="/archive/2012">2012</a>
-        <a href="/archive/2013">2013</a>
-        <a href="/archive/2014">2014</a>
-        <a href="/archive/2015">2015</a>
-        <a href="/archive/2016">2016</a>
-        <a href="/archive/2017">2017</a>
-        <a href="/archive/2018">2018</a>
-        <a href="/archive/2019">2019</a>
-        <a href="/archive/2020">2020</a>
-        <a href="/archive/2021">2021</a>
-        <a href="/archive/2022">2022</a>
-        <a href="/archive/2023">2023</a>
-        <a href="/archive/2024">2024</a>
-        <a href="/archive/2025">2025</a>
+        {Array.from({ length: 2025 - 2009 + 1 }, (_, i) => {
+          const year = 2009 + i;
+          return (
+            <a className={focusStyles} href={`/archive/${year}`} key={year}>
+              {year}
+            </a>
+          );
+        })}
       </div>
     </footer>
   );

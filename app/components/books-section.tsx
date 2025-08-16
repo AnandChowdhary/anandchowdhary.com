@@ -9,7 +9,7 @@ export async function BooksSection() {
       title="books"
       subtitle="/books"
       description="I read books about technology, philosophy, and personal development."
-      linkText="Go to books"
+      linkText="Go to /books"
     >
       <ul className="grid grid-cols-4 gap-4">
         {booksDataSorted.slice(0, 8).map((book) => (

@@ -21,8 +21,8 @@ export async function OpenSourceSection() {
       title="open-source"
       subtitle="/open-source"
       items={topRepos}
-      description="Open source projects I've contributed to and maintain."
-      linkText="Go to open source"
+      description="I build and maintain open source projects to scratch my own itch as a GitHub Star."
+      linkText="Go to /open-source"
       getItemTitle={getRepoTitle}
       getItemSubtitle={getRepoSubtitle}
     />

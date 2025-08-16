@@ -82,7 +82,7 @@ const EventCard = ({ item }: { item: Event }) => (
           />
         </div>
       </Link>
-      <EventMetadata item={item} />
+      <EventMetadata item={item} link={false} />
     </div>
   </article>
 );

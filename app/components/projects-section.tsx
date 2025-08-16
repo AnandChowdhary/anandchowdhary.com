@@ -6,7 +6,7 @@ export async function ProjectsSection() {
       title="projects"
       subtitle="/projects"
       description="I build software products and tools that help people be more productive and creative."
-      linkText="Go to projects"
+      linkText="Go to /projects"
     >
       <ul className="grid grid-cols-2 gap-4">
         {[

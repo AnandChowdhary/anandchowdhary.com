@@ -19,7 +19,7 @@ export async function NotesSection() {
       subtitle="/notes"
       items={noteDataFiltered}
       description="I write about technology, startups, and life lessons learned along the way."
-      linkText="Go to note"
+      linkText="Go to /note"
       getItemTitle={getNoteTitle}
       getItemSubtitle={getNoteSubtitle}
     />

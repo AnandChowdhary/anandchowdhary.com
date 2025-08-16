@@ -32,8 +32,8 @@ export async function Events() {
       title="events"
       subtitle="/events"
       items={eventsDataSorted}
-      description="From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship."
-      linkText="Go to events"
+      description="From time to time, I speak at startup events and technical conferences."
+      linkText="Go to /events"
       getItemTitle={getEventTitle}
       getItemSubtitle={getEventSubtitle}
     />
