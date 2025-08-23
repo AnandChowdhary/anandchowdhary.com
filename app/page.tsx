@@ -23,15 +23,15 @@ export default async function Home() {
         <Events />
         <BlogSection />
         <OpenSourceSection />
-        <NotesSection />
-        <PressSection />
-        <LifeEventsSection />
         <div className="space-y-6">
           <WorkSection />
           <TravelSection />
         </div>
         <BooksSection />
         <ProjectsSection />
+        <NotesSection />
+        <PressSection />
+        <LifeEventsSection />
       </div>
       <Footer />
     </div>

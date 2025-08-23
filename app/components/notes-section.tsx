@@ -1,27 +1,25 @@
 import { Note, getAllNotes } from "@/app/api";
-import { GenericSection } from "@/app/components/generic-section";
+import { underlinedLink } from "@/app/components/external-link";
+import { GenericSectionContainer } from "@/app/components/generic-section";
 
 export async function NotesSection() {
   const notesDataFiltered = await getAllNotes();
-
-  const getNoteTitle = (note: Note) =>
-    new Date(note.date).toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
-
-  const getNoteSubtitle = (note: Note) => note.excerpt;
+  const getNoteTitle = (note: Note) => note.title;
 
   return (
-    <GenericSection
+    <GenericSectionContainer
       title="notes"
       subtitle="/notes"
-      items={notesDataFiltered}
       description="Quick thoughts and insights captured from X, preserved for future reference."
       linkText="Go to /notes"
-      getItemTitle={getNoteTitle}
-      getItemSubtitle={getNoteSubtitle}
-    />
+    >
+      <div className="text-sm leading-6 line-clamp-3 text-neutral-500 dark:text-neutral-400">
+        {notesDataFiltered.slice(0, 5).map((note) => (
+          <span key={note.slug} className={`mr-2 ${underlinedLink}`}>
+            {getNoteTitle(note)}
+          </span>
+        ))}
+      </div>
+    </GenericSectionContainer>
   );
 }
