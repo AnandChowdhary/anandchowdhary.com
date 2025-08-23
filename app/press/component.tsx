@@ -11,14 +11,8 @@ const PressItemCard = ({ item }: { item: PressItem }) => {
   return (
     <article className="pb-4 relative">
       <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0 flex-1">
-          <Link
-            href={permalink}
-            className={`${focusStyles} full-link font-medium hover:text-neutral-500`}
-          >
-            {item.title}
-          </Link>
-          <p className="text-sm text-neutral-500 mt-1 flex items-center gap-1">
+        <div className="min-w-0 flex-1 space-y-1">
+          <div className="font-medium mt-1 flex items-center gap-1">
             <img
               alt=""
               src={
@@ -30,18 +24,33 @@ const PressItemCard = ({ item }: { item: PressItem }) => {
                       item.publisher
                     )}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
               }
-              className="w-4 h-4 rounded-md mr-0.5"
+              className="w-4 h-4 rounded-md mr-0.5 shrink-0"
             />
-            <span className="font-medium">{item.publisher}</span>
-            <span>{item.author && ` · ${item.author}`}</span>
-            <span>{" · "}</span>
+            <Link
+              href={permalink}
+              className={`${focusStyles} grow full-link hover:text-neutral-500 truncate`}
+            >
+              {item.publisher}
+            </Link>
+          </div>
+          <div
+            className="truncate text-sm text-neutral-500"
+            style={{
+              maskImage:
+                "linear-gradient(to right, black 70%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, black 70%, transparent 100%)",
+            }}
+          >
             <span>
               {new Date(item.date).toLocaleDateString("en-US", {
                 month: "long",
                 year: "numeric",
               })}
             </span>
-          </p>
+            <span>{" · "}</span>
+            <span>{item.title}</span>
+          </div>
         </div>
       </div>
     </article>
@@ -77,7 +86,7 @@ export default async function PressContent({
         {sortedAwards.length > 0 && (
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Awards</h2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
               {sortedAwards.map((item, index) => (
                 <PressItemCard key={`award-${index}`} item={item} />
               ))}
@@ -87,7 +96,7 @@ export default async function PressContent({
         {sortedFeatures.length > 0 && (
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Features</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
               {sortedFeatures.map((item, index) => (
                 <PressItemCard key={`feature-${index}`} item={item} />
               ))}
@@ -97,7 +106,7 @@ export default async function PressContent({
         {sortedPodcasts.length > 0 && (
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Podcasts</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
               {sortedPodcasts.map((item, index) => (
                 <PressItemCard key={`podcast-${index}`} item={item} />
               ))}

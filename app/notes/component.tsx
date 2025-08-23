@@ -87,7 +87,7 @@ export default async function NotesContent({
             link={false}
           />
           <div
-            className="prose dark:prose-invert prose-headings:font-medium mt-4 text-sm"
+            className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg mt-4 text-sm"
             dangerouslySetInnerHTML={{
               __html: await Promise.resolve(marked.parse(content)),
             }}

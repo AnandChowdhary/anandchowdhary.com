@@ -1,8 +1,16 @@
 import { focusStyles } from "@/app/components/external-link";
+import AnimatedSignature from "@/app/components/signature";
+import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="text-center space-y-8">
+      <div className="mx-auto w-px bg-neutral-700 h-16" />
+      <div className="w-24 mx-auto">
+        <Link href="/" className={`${focusStyles} flex`}>
+          <AnimatedSignature className="w-full" />
+        </Link>
+      </div>
       <p className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
         &copy; {new Date().getUTCFullYear()} Anand Chowdhary
       </p>

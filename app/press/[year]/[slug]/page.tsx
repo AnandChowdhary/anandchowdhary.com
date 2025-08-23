@@ -91,7 +91,7 @@ export default async function PressYearSlug({
         </header>
 
         {pressItem.description && (
-          <div className="prose dark:prose-invert prose-headings:font-medium">
+          <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
             <p>{pressItem.description}</p>
           </div>
         )}
@@ -108,7 +108,7 @@ export default async function PressYearSlug({
         )}
 
         {!pressItem.description && !pressItem.embed && (
-          <div className="prose dark:prose-invert prose-headings:font-medium">
+          <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
             <p className="text-neutral-500">
               This {pressItem.category} was featured in {pressItem.publisher}
               {pressItem.author && ` by ${pressItem.author}`} on{" "}

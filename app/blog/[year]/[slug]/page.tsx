@@ -47,7 +47,7 @@ export default async function BlogYearSlug({
           <BlogMetadata item={post} postContentText={postContentText} />
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium"
+          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
           dangerouslySetInnerHTML={{ __html: postContentHtml }}
         />
       </main>

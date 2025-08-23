@@ -39,7 +39,7 @@ export default async function LifeYearSlug({
         </header>
 
         {lifeEvent.description && (
-          <div className="prose dark:prose-invert prose-headings:font-medium">
+          <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
             <p>{lifeEvent.description}</p>
           </div>
         )}

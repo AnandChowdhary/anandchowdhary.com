@@ -37,7 +37,7 @@ export default async function NoteYearSlug({
           <NoteMetadata item={note} noteContentText={noteContentText} link />
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium"
+          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
           dangerouslySetInnerHTML={{ __html: noteContentHtml }}
         />
       </main>

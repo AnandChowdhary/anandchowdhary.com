@@ -81,7 +81,7 @@ export default async function OpenSourceYearSlug({
           </div>
         </div>
 
-        <div className="prose dark:prose-invert prose-headings:font-medium">
+        <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
           <p className="text-lg text-neutral-700 dark:text-neutral-300">
             {repo.description}
           </p>

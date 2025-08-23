@@ -123,7 +123,7 @@ export default async function EventsYearSlug({ params }: Props) {
           </EventMetadata>
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium"
+          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
           dangerouslySetInnerHTML={{ __html: eventContentHtml }}
         />
         {event.attributes.video &&
@@ -142,7 +142,7 @@ export default async function EventsYearSlug({ params }: Props) {
           <div className="space-y-4 mt-4">
             <h2 className="text-xl font-medium">Talk</h2>
             <div
-              className="prose dark:prose-invert prose-headings:font-medium"
+              className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
               dangerouslySetInnerHTML={{ __html: talk.content }}
             />
             {talk.embed && (
