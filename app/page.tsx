@@ -3,9 +3,12 @@ import { BooksSection } from "@/app/components/books-section";
 import { Events } from "@/app/components/events";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { LifeEventsSection } from "@/app/components/life-events-section";
 import { LifeSection } from "@/app/components/life-section";
+import { NotesSection } from "@/app/components/notes-section";
 import { NowSection } from "@/app/components/now-section";
 import { OpenSourceSection } from "@/app/components/open-source-section";
+import { PressSection } from "@/app/components/press-section";
 import { ProjectsSection } from "@/app/components/projects-section";
 import { TravelSection } from "@/app/components/travel-section";
 import { WorkSection } from "@/app/components/work-section";
@@ -20,6 +23,9 @@ export default async function Home() {
         <Events />
         <BlogSection />
         <OpenSourceSection />
+        <NotesSection />
+        <PressSection />
+        <LifeEventsSection />
         <div className="space-y-6">
           <WorkSection />
           <TravelSection />

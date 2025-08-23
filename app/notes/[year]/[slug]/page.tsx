@@ -20,7 +20,7 @@ export default async function NoteYearSlug({
   const note = await getNoteByYearAndSlug(yearNumber, slug);
   if (!note) notFound();
 
-  const noteContentText = await getNoteContent(note.slug);
+  const noteContentText = await getNoteContent(year, note.slug);
   const noteContentHtml = await Promise.resolve(marked.parse(noteContentText));
 
   return (
@@ -28,12 +28,13 @@ export default async function NoteYearSlug({
       <Header pathname={`/notes/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-2">
-          <h1 className="text-2xl font-medium">
-            {new Date(note.date).toLocaleDateString("en-US", {
-              dateStyle: "long",
-            })}
-          </h1>
-          <NoteMetadata item={note} noteContentText={noteContentText} />
+          <h1
+            className="text-2xl font-medium"
+            dangerouslySetInnerHTML={{
+              __html: marked.parseInline(note.title),
+            }}
+          />
+          <NoteMetadata item={note} noteContentText={noteContentText} link />
         </header>
         <div
           className="prose dark:prose-invert prose-headings:font-medium"

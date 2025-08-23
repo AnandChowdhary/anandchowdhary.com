@@ -210,9 +210,7 @@ export async function getLifeEventByYearAndSlug(
 export async function getAllNotes(): Promise<Note[]> {
   const notes = await fetch(
     "https://anandchowdhary.github.io/notes/threads/api.json",
-    {
-      next: { revalidate: 3600 },
-    }
+    { next: { revalidate: 3600 } }
   );
   const notesData = (await notes.json()) as Note[];
   return notesData
@@ -232,9 +230,13 @@ export async function getNoteByYearAndSlug(
   );
 }
 
-export async function getNoteContent(slug: string): Promise<string> {
+export async function getNoteContent(
+  year: string,
+  slug: string
+): Promise<string> {
   const noteContent = await fetch(
-    `https://raw.githubusercontent.com/AnandChowdhary/notes/refs/heads/main/threads/${slug}.md`
+    `https://raw.githubusercontent.com/AnandChowdhary/notes/refs/heads/main/threads/${year}/${slug}.md`,
+    { next: { revalidate: 3600 } }
   );
   if (!noteContent.ok) throw new Error("Note content not found");
   let noteContentText = await noteContent.text();

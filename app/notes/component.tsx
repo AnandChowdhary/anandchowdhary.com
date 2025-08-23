@@ -37,7 +37,10 @@ export default async function NotesContent({
   year?: string;
 }) {
   const slug = notesDataFiltered[0].slug;
-  const content = await getNoteContent(slug);
+  const content = await getNoteContent(
+    new Date(notesDataFiltered[0].date).getUTCFullYear().toString(),
+    notesDataFiltered[0].slug
+  );
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -75,12 +78,14 @@ export default async function NotesContent({
             className={`${focusStyles} flex hover:text-neutral-500 full-link`}
           >
             <h3 className="text-lg font-medium text-neutral-500">
-              {new Date(notesDataFiltered[0].date).toLocaleDateString("en-US", {
-                dateStyle: "long",
-              })}
+              {notesDataFiltered[0].title}
             </h3>
           </Link>
-          <NoteMetadata item={notesDataFiltered[0]} noteContentText={content} />
+          <NoteMetadata
+            item={notesDataFiltered[0]}
+            noteContentText={content}
+            link={false}
+          />
           <div
             className="prose dark:prose-invert prose-headings:font-medium mt-4 text-sm"
             dangerouslySetInnerHTML={{
