@@ -178,6 +178,19 @@ export interface LifeEvent {
   slug?: string;
 }
 
+export interface Video {
+  title: string;
+  date: string;
+  city?: string;
+  country?: string;
+  href?: string;
+  img?: string;
+  publisher?: string;
+  duration?: string;
+  description?: string;
+  slug?: string;
+}
+
 export async function getLifeEvents(): Promise<LifeEvent[]> {
   const lifeEvents = await fetch(
     "https://anandchowdhary.github.io/everything/data/life-events.json",
@@ -203,6 +216,35 @@ export async function getLifeEventByYearAndSlug(
     allEvents.find(
       (event) =>
         new Date(event.date).getFullYear() === year && event.slug === slug
+    ) || null
+  );
+}
+
+export async function getVideos(): Promise<Video[]> {
+  const videos = await fetch(
+    "https://anandchowdhary.github.io/everything/data/videos.json",
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+  const videosData = (await videos.json()) as Video[];
+
+  // Add slugs to each item
+  return videosData.map((item) => ({
+    ...item,
+    slug: generateSlug(item.title),
+  }));
+}
+
+export async function getVideoByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Video | null> {
+  const allVideos = await getVideos();
+  return (
+    allVideos.find(
+      (video) =>
+        new Date(video.date).getFullYear() === year && video.slug === slug
     ) || null
   );
 }
