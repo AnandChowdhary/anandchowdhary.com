@@ -12,15 +12,29 @@ import {
 } from "@tabler/icons-react";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 marked.use(markedSmartypants());
 
-export default async function BooksYearSlug({
-  params,
-}: {
+type Props = {
   params: Promise<{ year: string; slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const book = await getBookByYearAndSlug(yearNumber, slug);
+  if (!book) notFound();
+  return {
+    title: `${book.title} / ${year} / Books / Anand Chowdhary`,
+    description: book.excerpt || `Book read by Anand Chowdhary: ${book.title} by ${book.author}`,
+  };
+}
+
+export default async function BooksYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);

@@ -11,13 +11,27 @@ import {
   IconNews,
   IconUser,
 } from "@tabler/icons-react";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export default async function PressYearSlug({
-  params,
-}: {
+type Props = {
   params: Promise<{ year: string; slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const pressItem = await getPressItemByYearAndSlug(yearNumber, slug);
+  if (!pressItem) notFound();
+  return {
+    title: `${pressItem.title} / ${year} / Press / Anand Chowdhary`,
+    description: pressItem.excerpt || `Press coverage: ${pressItem.title}`,
+  };
+}
+
+export default async function PressYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);

@@ -12,6 +12,13 @@ import { PressSection } from "@/app/components/press-section";
 import { ProjectsSection } from "@/app/components/projects-section";
 import { TravelSection } from "@/app/components/travel-section";
 import { WorkSection } from "@/app/components/work-section";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Anand Chowdhary",
+  description:
+    "Anand Chowdhary is a creative technologist and entrepreneur. He is the co-founder and CEO of FirstQuadrant, a growth marketing agency for developer-first SaaS companies.",
+};
 
 export default async function Home() {
   return (

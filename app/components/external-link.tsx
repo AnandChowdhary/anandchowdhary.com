@@ -3,6 +3,8 @@ export const focusStyles =
 
 export const underlinedLink = `hover:text-neutral-400 underline underline-offset-2 decoration-1 ${focusStyles}`;
 
+export const hoverLink = "hover:text-neutral-400";
+
 export function ExternalLink({
   className,
   children,

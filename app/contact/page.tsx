@@ -7,6 +7,13 @@ import {
   IconBrandLinkedin,
   IconBrandX,
 } from "@tabler/icons-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact / Anand Chowdhary",
+  description:
+    "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries.",
+};
 
 export default async function Contact() {
   return (

@@ -2,13 +2,27 @@ import { getLifeEventByYearAndSlug } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { IconCalendarEvent } from "@tabler/icons-react";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export default async function LifeYearSlug({
-  params,
-}: {
+type Props = {
   params: Promise<{ year: string; slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const lifeEvent = await getLifeEventByYearAndSlug(yearNumber, slug);
+  if (!lifeEvent) notFound();
+  return {
+    title: `${lifeEvent.title} / ${year} / Life / Anand Chowdhary`,
+    description: lifeEvent.excerpt || `Life event: ${lifeEvent.title}`,
+  };
+}
+
+export default async function LifeYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);

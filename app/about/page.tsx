@@ -5,10 +5,17 @@ import {
 } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About / Anand Chowdhary",
+  description:
+    "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands.",
+};
 
 export default async function About() {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <div className="font-sans min-h-screen p-8 pb-20 gap-24 sm:p-20 space-y-32">
       <Header pathname="/about" />
       <div className="grid grid-cols-2 max-w-3xl mx-auto gap-10">
         <figure className="w-full">

@@ -1,19 +1,33 @@
-import { ExternalLink, focusStyles } from "@/app/components/external-link";
+import {
+  ExternalLink,
+  focusStyles,
+  hoverLink,
+} from "@/app/components/external-link";
 import AnimatedSignature from "@/app/components/signature";
-import { IconBrandX } from "@tabler/icons-react";
+import { IconBrandX, IconHeart } from "@tabler/icons-react";
 import Link from "next/link";
+
+const linkStyles = `${focusStyles} ${hoverLink}`;
 
 export function Footer() {
   return (
     <footer className="text-center space-y-8">
       <div className="mx-auto w-px bg-neutral-700 h-16" />
       <div className="w-24 mx-auto">
-        <Link href="/" className={`${focusStyles} flex`}>
+        <span className="sr-only">Anand Chowdhary</span>
+        <Link href="/" className={`${linkStyles} flex`}>
           <AnimatedSignature className="w-full" />
         </Link>
       </div>
       <p className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
-        &copy; {new Date().getUTCFullYear()} Anand Chowdhary
+        <ExternalLink href="https://madewithloveinindia.org" underline={false}>
+          Made with{" "}
+          <IconHeart
+            className="inline-block w-4 h-4 align-middle -mt-1"
+            aria-label="Love"
+          />{" "}
+          by Anand Chowdhary
+        </ExternalLink>
       </p>
       <p className="text-sm text-neutral-500 max-w-sm mx-auto">
         Anand Chowdhary is a technology entrepreneur, engineer, and designer
@@ -21,46 +35,46 @@ export function Footer() {
         Francisco, California.
       </p>
       <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm max-w-xl mx-auto">
-        <a className={focusStyles} href="/">
+        <a className={linkStyles} href="/">
           Home
         </a>
-        <a className={focusStyles} href="/about">
+        <a className={linkStyles} href="/about">
           About
         </a>
-        <a className={focusStyles} href="/archive">
+        <a className={linkStyles} href="/archive">
           Archive
         </a>
-        <a className={focusStyles} href="/life">
+        <a className={linkStyles} href="/life">
           Life
         </a>
-        <a className={focusStyles} href="/blog">
+        <a className={linkStyles} href="/blog">
           Blog
         </a>
-        <a className={focusStyles} href="/notes">
+        <a className={linkStyles} href="/notes">
           Notes
         </a>
-        <a className={focusStyles} href="/events">
+        <a className={linkStyles} href="/events">
           Events
         </a>
-        <a className={focusStyles} href="/open-source">
+        <a className={linkStyles} href="/open-source">
           Open source
         </a>
-        <a className={focusStyles} href="/projects">
+        <a className={linkStyles} href="/projects">
           Projects
         </a>
-        <a className={focusStyles} href="/mentoring">
+        <a className={linkStyles} href="/mentoring">
           Mentoring
         </a>
-        <a className={focusStyles} href="/press">
+        <a className={linkStyles} href="/press">
           Press
         </a>
-        <a className={focusStyles} href="/videos">
+        <a className={linkStyles} href="/videos">
           Videos
         </a>
-        <a className={focusStyles} href="/versions">
+        <a className={linkStyles} href="/versions">
           Versions
         </a>
-        <a className={focusStyles} href="/contact">
+        <a className={linkStyles} href="/contact">
           Contact
         </a>
         <ExternalLink href="https://x.com/AnandChowdhary" underline={false}>
@@ -75,7 +89,7 @@ export function Footer() {
         {Array.from({ length: 2025 - 2009 + 1 }, (_, i) => {
           const year = 2009 + i;
           return (
-            <a className={focusStyles} href={`/archive/${year}`} key={year}>
+            <a className={linkStyles} href={`/archive/${year}`} key={year}>
               {year}
             </a>
           );

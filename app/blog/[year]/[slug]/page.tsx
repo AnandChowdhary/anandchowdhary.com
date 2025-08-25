@@ -4,16 +4,30 @@ import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Rand from "rand-seed";
 
 marked.use(markedSmartypants());
 
-export default async function BlogYearSlug({
-  params,
-}: {
+type Props = {
   params: Promise<{ year: string; slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const post = await getBlogPostByYearAndSlug(yearNumber, slug);
+  if (!post) notFound();
+  return {
+    title: `${post.title} / ${year} / Blog / Anand Chowdhary`,
+    description: post.excerpt,
+  };
+}
+
+export default async function BlogYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);

@@ -9,16 +9,30 @@ import {
 } from "@tabler/icons-react";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Rand from "rand-seed";
 
 marked.use(markedSmartypants());
 
-export default async function LocationYearSlug({
-  params,
-}: {
+type Props = {
   params: Promise<{ year: string; slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const country = await getLocationByYearAndSlug(yearNumber, slug);
+  if (!country) notFound();
+  return {
+    title: `${country.name} / ${year} / Location / Anand Chowdhary`,
+    description: `Travel to ${country.name} by Anand Chowdhary`,
+  };
+}
+
+export default async function LocationYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);

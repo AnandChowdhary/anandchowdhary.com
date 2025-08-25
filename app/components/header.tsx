@@ -21,6 +21,7 @@ export function Header({
               <AnimatedSignature className="w-full" />
             </Link>
           </ViewTransition>
+          <span className="sr-only">Anand Chowdhary</span>
         </div>
         {items.length > 0 && (
           <div className="flex items-center">

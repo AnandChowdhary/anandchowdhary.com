@@ -4,9 +4,27 @@ import { Header } from "@/app/components/header";
 import { VideoMetadata } from "@/app/videos/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 marked.use(markedSmartypants());
+
+type Props = {
+  params: { year: string; slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const video = await getVideoByYearAndSlug(yearNumber, slug);
+  if (!video) notFound();
+  return {
+    title: `${video.title} / ${year} / Videos / Anand Chowdhary`,
+    description: video.excerpt || `Video: ${video.title}`,
+  };
+}
 
 export async function generateStaticParams() {
   const videos = await getVideos();
@@ -16,11 +34,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function VideoPage({
-  params,
-}: {
-  params: { year: string; slug: string };
-}) {
+export default async function VideoPage({ params }: Props) {
   const video = await getVideoByYearAndSlug(
     parseInt(params.year),
     params.slug

@@ -4,15 +4,29 @@ import { Header } from "@/app/components/header";
 import { NoteMetadata } from "@/app/notes/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 marked.use(markedSmartypants());
 
-export default async function NoteYearSlug({
-  params,
-}: {
+type Props = {
   params: Promise<{ year: string; slug: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const note = await getNoteByYearAndSlug(yearNumber, slug);
+  if (!note) notFound();
+  return {
+    title: `${note.title} / ${year} / Notes / Anand Chowdhary`,
+    description: note.excerpt || `Note by Anand Chowdhary: ${note.title}`,
+  };
+}
+
+export default async function NoteYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
