@@ -1,4 +1,4 @@
-import { getLocationByYearAndSlug } from "@/app/api";
+import { getAllLocations, getLocationByYearAndSlug } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import {
@@ -27,9 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const country = await getLocationByYearAndSlug(yearNumber, slug);
   if (!country) notFound();
   return {
-    title: `${country.name} / ${year} / Location / Anand Chowdhary`,
-    description: `Travel to ${country.name} by Anand Chowdhary`,
+    title: `${country.label} / ${year} / Location / Anand Chowdhary`,
+    description: `Travel to ${country.label} by Anand Chowdhary`,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const locations = await getAllLocations();
+  return locations.map((location) => ({
+    year: new Date(location.date).getUTCFullYear().toString(),
+    slug: location.slug.replace(".md", ""),
+  }));
 }
 
 export default async function LocationYearSlug({ params }: Props) {

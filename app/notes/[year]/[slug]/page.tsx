@@ -1,4 +1,8 @@
-import { getNoteByYearAndSlug, getNoteContent } from "@/app/api";
+import {
+  getAllNotes,
+  getNoteByYearAndSlug,
+  getNoteContent,
+} from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NoteMetadata } from "@/app/notes/metadata";
@@ -24,6 +28,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${note.title} / ${year} / Notes / Anand Chowdhary`,
     description: note.excerpt || `Note by Anand Chowdhary: ${note.title}`,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const notes = await getAllNotes();
+  return notes.map((note) => ({
+    year: new Date(note.date).getUTCFullYear().toString(),
+    slug: note.slug.replace(".md", ""),
+  }));
 }
 
 export default async function NoteYearSlug({ params }: Props) {

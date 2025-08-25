@@ -1,4 +1,4 @@
-import { getBookByYearAndSlug } from "@/app/api";
+import { getAllBooks, getBookByYearAndSlug } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import {
@@ -30,8 +30,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!book) notFound();
   return {
     title: `${book.title} / ${year} / Books / Anand Chowdhary`,
-    description: book.excerpt || `Book read by Anand Chowdhary: ${book.title} by ${book.author}`,
+    description:
+      book.excerpt ??
+      `Book read by Anand Chowdhary: ${book.title} by ${book.authors.join(
+        ", "
+      )}`,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const books = await getAllBooks();
+  return books.map((book) => ({
+    year: new Date(book.date).getUTCFullYear().toString(),
+    slug: book.slug,
+  }));
 }
 
 export default async function BooksYearSlug({ params }: Props) {

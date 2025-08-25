@@ -1,4 +1,4 @@
-import { getLifeEventByYearAndSlug } from "@/app/api";
+import { getLifeEventByYearAndSlug, getLifeEvents } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { IconCalendarEvent } from "@tabler/icons-react";
@@ -18,8 +18,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!lifeEvent) notFound();
   return {
     title: `${lifeEvent.title} / ${year} / Life / Anand Chowdhary`,
-    description: lifeEvent.excerpt || `Life event: ${lifeEvent.title}`,
+    description: lifeEvent.description ?? `Life event: ${lifeEvent.title}`,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const lifeEvents = await getLifeEvents();
+  return lifeEvents.map((event) => ({
+    year: new Date(event.date).getUTCFullYear().toString(),
+    slug: event.slug,
+  }));
 }
 
 export default async function LifeYearSlug({ params }: Props) {

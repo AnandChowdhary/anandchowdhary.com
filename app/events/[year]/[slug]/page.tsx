@@ -1,4 +1,9 @@
-import { getEventByYearAndSlug, getEventContent, getTalk } from "@/app/api";
+import {
+  getAllEvents,
+  getEventByYearAndSlug,
+  getEventContent,
+  getTalk,
+} from "@/app/api";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -31,6 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${event.title} / ${year} / Events / Anand Chowdhary`,
     description: event.excerpt,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const events = await getAllEvents();
+  return events.map((event) => ({
+    year: new Date(event.date).getUTCFullYear().toString(),
+    slug: event.slug.replace(".md", ""),
+  }));
 }
 
 export default async function EventsYearSlug({ params }: Props) {

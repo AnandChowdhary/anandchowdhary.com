@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!video) notFound();
   return {
     title: `${video.title} / ${year} / Videos / Anand Chowdhary`,
-    description: video.excerpt || `Video: ${video.title}`,
+    description: video.description ?? `Video: ${video.title}`,
   };
 }
 
@@ -35,10 +35,7 @@ export async function generateStaticParams() {
 }
 
 export default async function VideoPage({ params }: Props) {
-  const video = await getVideoByYearAndSlug(
-    parseInt(params.year),
-    params.slug
-  );
+  const video = await getVideoByYearAndSlug(parseInt(params.year), params.slug);
 
   if (!video) {
     notFound();
@@ -60,14 +57,18 @@ export default async function VideoPage({ params }: Props) {
         <header className="space-y-2">
           <h1
             className="text-2xl font-medium"
-            dangerouslySetInnerHTML={{ __html: marked.parseInline(video.title) }}
+            dangerouslySetInnerHTML={{
+              __html: marked.parseInline(video.title),
+            }}
           />
           <VideoMetadata item={video} />
         </header>
         {video.description && (
           <div
             className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
-            dangerouslySetInnerHTML={{ __html: marked.parse(video.description) }}
+            dangerouslySetInnerHTML={{
+              __html: marked.parse(video.description),
+            }}
           />
         )}
       </main>

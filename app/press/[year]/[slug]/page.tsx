@@ -1,4 +1,4 @@
-import { getPressItemByYearAndSlug } from "@/app/api";
+import { getPress, getPressItemByYearAndSlug } from "@/app/api";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -27,8 +27,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!pressItem) notFound();
   return {
     title: `${pressItem.title} / ${year} / Press / Anand Chowdhary`,
-    description: pressItem.excerpt || `Press coverage: ${pressItem.title}`,
+    description: pressItem.description ?? `Press coverage: ${pressItem.title}`,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const pressItems = await getPress();
+  return [
+    ...pressItems.awards.map((item) => ({
+      year: new Date(item.date).getUTCFullYear().toString(),
+      slug: item.slug,
+    })),
+    ...pressItems.podcasts.map((item) => ({
+      year: new Date(item.date).getUTCFullYear().toString(),
+      slug: item.slug,
+    })),
+    ...pressItems.features.map((item) => ({
+      year: new Date(item.date).getUTCFullYear().toString(),
+      slug: item.slug,
+    })),
+  ];
 }
 
 export default async function PressYearSlug({ params }: Props) {

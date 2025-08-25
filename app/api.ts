@@ -1,4 +1,5 @@
 import { GenericItem } from "@/app/components/generic-section";
+import slugify from "@sindresorhus/slugify";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 
@@ -123,13 +124,8 @@ export interface Press {
   features: PressItem[];
 }
 
-function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .trim();
+export function generateSlug(title: string): string {
+  return slugify(title, { lowercase: true, separator: "-" });
 }
 
 export async function getAllArchiveItems(): Promise<ArchiveItem[]> {
@@ -143,11 +139,11 @@ export async function getAllArchiveItems(): Promise<ArchiveItem[]> {
   );
 }
 
-export async function getArchiveItemsByYear(year: number): Promise<ArchiveItem[]> {
+export async function getArchiveItemsByYear(
+  year: number
+): Promise<ArchiveItem[]> {
   const allItems = await getAllArchiveItems();
-  return allItems.filter(
-    (item) => new Date(item.date).getFullYear() === year
-  );
+  return allItems.filter((item) => new Date(item.date).getFullYear() === year);
 }
 
 export async function getPress(): Promise<Press> {
@@ -424,8 +420,8 @@ export async function getAllRepositories(): Promise<Repository[]> {
     reposData
       .map((repo) => ({
         ...repo,
-        slug: repo.name.toLowerCase().replace(/\s+/g, "-"),
-        path: `/open-source/${repo.name.toLowerCase().replace(/\s+/g, "-")}`,
+        slug: generateSlug(repo.name),
+        path: `/open-source/${generateSlug(repo.name)}`,
         source: repo.html_url,
         title: formatRepoTitle(repo.name),
         date: repo.created_at,
@@ -489,8 +485,8 @@ export async function getAllBooks(): Promise<Book[]> {
 
   const booksDataWithRequiredProps = booksData.map((book) => ({
     ...book,
-    slug: book.title.toLowerCase().replace(/\s+/g, "-"),
-    path: `/books/${book.title.toLowerCase().replace(/\s+/g, "-")}`,
+    slug: generateSlug(book.title),
+    path: `/books/${generateSlug(book.title)}`,
     source: "",
     date: book.startedAt,
     excerpt: book.description,
@@ -553,9 +549,9 @@ export async function getTalk(
   title: string
 ): Promise<{ content: string; slides?: string; embed?: string } | null> {
   const eventContent = await fetch(
-    `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/talks/${title
-      .replaceAll(" ", "-")
-      .toLowerCase()}.md`
+    `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/talks/${generateSlug(
+      title
+    )}.md`
   );
   if (!eventContent.ok) return null;
   let eventContentText = await eventContent.text();

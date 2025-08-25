@@ -1,4 +1,4 @@
-import { getOpenSourceByYearAndSlug } from "@/app/api";
+import { getAllOpenSource, getOpenSourceByYearAndSlug } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import {
@@ -31,6 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${repo.name} / ${year} / Open Source / Anand Chowdhary`,
     description: repo.description || `Open source project: ${repo.name}`,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const repos = await getAllOpenSource();
+  return repos.map((repo) => ({
+    year: new Date(repo.date).getUTCFullYear().toString(),
+    slug: repo.slug,
+  }));
 }
 
 export default async function OpenSourceYearSlug({ params }: Props) {

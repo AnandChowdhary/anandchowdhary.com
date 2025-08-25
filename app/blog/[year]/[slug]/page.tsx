@@ -1,4 +1,8 @@
-import { getBlogPostByYearAndSlug, getBlogPostContent } from "@/app/api";
+import {
+  getAllBlogPosts,
+  getBlogPostByYearAndSlug,
+  getBlogPostContent,
+} from "@/app/api";
 import { BlogMetadata } from "@/app/blog/metadata";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -25,6 +29,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} / ${year} / Blog / Anand Chowdhary`,
     description: post.excerpt,
   };
+}
+
+export const revalidate = 60;
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts();
+  return posts.map((post) => ({
+    year: new Date(post.date).getUTCFullYear().toString(),
+    slug: post.slug.replace(".md", ""),
+  }));
 }
 
 export default async function BlogYearSlug({ params }: Props) {

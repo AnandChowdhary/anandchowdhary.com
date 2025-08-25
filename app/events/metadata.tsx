@@ -1,4 +1,4 @@
-import { Event } from "@/app/api";
+import { Event, generateSlug } from "@/app/api";
 import { underlinedLink } from "@/app/components/external-link";
 import {
   IconBuildings,
@@ -66,11 +66,9 @@ export function EventMetadata({
             <Link
               href={`/location/${new Date(
                 item.date
-              ).getUTCFullYear()}/${item.attributes.city
-                .toLowerCase()
-                .replace(/\s+/g, "-")}-${item.attributes.country
-                ?.toLowerCase()
-                .replace(/\s+/g, "-")}`}
+              ).getUTCFullYear()}/${generateSlug(
+                item.attributes.city
+              )}-${generateSlug(item.attributes.country ?? "")}`}
               className={`grow truncate ${underlinedLink}`}
             >
               {item.attributes.city}
