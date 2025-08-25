@@ -33,7 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const locations = await getAllLocations();
   return locations.map((location) => ({
     year: new Date(location.date).getUTCFullYear().toString(),
@@ -95,7 +97,9 @@ export default async function LocationYearSlug({ params }: Props) {
           <div className="text-sm text-neutral-500 flex items-center gap-1.5">
             <IconClock className="shrink-0" size={16} strokeWidth={1.5} />
             <div className="grow truncate">
-              {country.timezone.name} ({country.timezone.utcOffsetStr})
+              {country.timezone
+                ? `${country.timezone.name} (${country.timezone.utcOffsetStr})`
+                : "Unknown timezone"}
             </div>
           </div>
           <div className="text-sm text-neutral-500 flex items-center gap-1.5">

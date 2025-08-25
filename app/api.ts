@@ -525,9 +525,12 @@ export async function getEventContent(
   slug: string
 ): Promise<string> {
   const eventContent = await fetch(
-    `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/events/${year}/${slug}`
+    `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/events/${year}/${slug}.md`
   );
-  if (!eventContent.ok) throw new Error("Event content not found");
+  if (!eventContent.ok) {
+    // Return a default message instead of throwing an error
+    return `Content for this event is not available.`;
+  }
   let eventContentText = await eventContent.text();
 
   // Remove front-matter if there is any

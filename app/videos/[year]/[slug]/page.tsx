@@ -10,11 +10,11 @@ import { notFound } from "next/navigation";
 marked.use(markedSmartypants());
 
 type Props = {
-  params: { year: string; slug: string };
+  params: Promise<{ year: string; slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { year, slug } = params;
+  const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
 
@@ -26,7 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const videos = await getVideos();
   return videos.map((video) => ({
     year: new Date(video.date).getFullYear().toString(),
@@ -35,7 +37,8 @@ export async function generateStaticParams(): Promise<Props["params"][]> {
 }
 
 export default async function VideoPage({ params }: Props) {
-  const video = await getVideoByYearAndSlug(parseInt(params.year), params.slug);
+  const { year, slug } = await params;
+  const video = await getVideoByYearAndSlug(parseInt(year), slug);
 
   if (!video) {
     notFound();
@@ -43,7 +46,7 @@ export default async function VideoPage({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/videos/${params.year}`} />
+      <Header pathname={`/videos/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         {video.img && (
           <div className="relative">
