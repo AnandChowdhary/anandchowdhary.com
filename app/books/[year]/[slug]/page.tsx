@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
   const books = await getAllBooks();
   return books.map((book) => ({
     year: new Date(book.date).getUTCFullYear().toString(),

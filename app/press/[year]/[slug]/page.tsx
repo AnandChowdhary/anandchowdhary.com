@@ -32,20 +32,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const pressItems = await getPress();
   return [
     ...pressItems.awards.map((item) => ({
       year: new Date(item.date).getUTCFullYear().toString(),
-      slug: item.slug,
+      slug: item.slug ?? "",
     })),
     ...pressItems.podcasts.map((item) => ({
       year: new Date(item.date).getUTCFullYear().toString(),
-      slug: item.slug,
+      slug: item.slug ?? "",
     })),
     ...pressItems.features.map((item) => ({
       year: new Date(item.date).getUTCFullYear().toString(),
-      slug: item.slug,
+      slug: item.slug ?? "",
     })),
   ];
 }

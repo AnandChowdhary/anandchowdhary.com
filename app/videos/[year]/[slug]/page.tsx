@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Props["params"][]> {
   const videos = await getVideos();
   return videos.map((video) => ({
     year: new Date(video.date).getFullYear().toString(),
-    slug: video.slug,
+    slug: video.slug ?? "",
   }));
 }
 

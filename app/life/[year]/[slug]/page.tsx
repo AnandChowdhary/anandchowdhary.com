@@ -23,11 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const lifeEvents = await getLifeEvents();
   return lifeEvents.map((event) => ({
     year: new Date(event.date).getUTCFullYear().toString(),
-    slug: event.slug,
+    slug: event.slug ?? "",
   }));
 }
 
