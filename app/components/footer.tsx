@@ -1,5 +1,6 @@
-import { focusStyles } from "@/app/components/external-link";
+import { ExternalLink, focusStyles } from "@/app/components/external-link";
 import AnimatedSignature from "@/app/components/signature";
+import { IconBrandX } from "@tabler/icons-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -62,6 +63,13 @@ export function Footer() {
         <a className={focusStyles} href="/contact">
           Contact
         </a>
+        <ExternalLink href="https://x.com/AnandChowdhary" underline={false}>
+          <IconBrandX
+            className="inline-block w-4 h-4 align-middle -mt-1"
+            strokeWidth={1.5}
+          />
+          <span className="sr-only">X (formally Twitter)</span>
+        </ExternalLink>
       </div>
       <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm">
         {Array.from({ length: 2025 - 2009 + 1 }, (_, i) => {

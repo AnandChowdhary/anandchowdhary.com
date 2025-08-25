@@ -208,7 +208,7 @@ export default async function OpenSourceContent({
                     className="flex gap-5 relative"
                   >
                     <RepoThumbnail item={item} size="small" />
-                    <div className="grow flex items-center justify-between gap-8">
+                    <div className="grow flex items-center justify-between gap-8 min-w-0">
                       <Link
                         href={`/open-source/${new Date(
                           item.created_at

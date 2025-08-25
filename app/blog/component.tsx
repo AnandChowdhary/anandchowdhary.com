@@ -22,7 +22,7 @@ const BlogThumbnail = ({
     <div
       className={`pointer-events-none ${
         isLarge
-          ? "aspect-video rounded-lg"
+          ? "aspect-video rounded-lg w-full"
           : "aspect-square w-6 h-6 rounded-full"
       } shadow-sm relative`}
     >
@@ -45,9 +45,9 @@ const BlogThumbnail = ({
 };
 
 const BlogCard = ({ item }: { item: BlogPost }) => (
-  <article className="grid grid-cols-3 gap-8 items-center pb-2.5 relative">
+  <article className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 items-center pb-2.5 relative">
     <BlogThumbnail item={item} size="large" />
-    <div className="col-span-2">
+    <div className="md:col-span-2">
       <Link
         href={`/blog/${new Date(
           item.date
@@ -106,7 +106,7 @@ export default async function BlogContent({
         Thoughts and insights on technology, entrepreneurship, and building
         products that matter.
       </Header>
-      <main className="max-w-2xl mx-auto space-y-4">
+      <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
         )}
@@ -119,7 +119,7 @@ export default async function BlogContent({
             {blogDataFiltered.slice(3).map((item) => (
               <article key={item.slug} className="flex gap-5 relative">
                 <BlogThumbnail item={item} size="small" />
-                <div className="grow flex items-center justify-between gap-8">
+                <div className="grow flex items-center justify-between gap-8 min-w-0">
                   <Link
                     href={`/blog/${new Date(
                       item.date

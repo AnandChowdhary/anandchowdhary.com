@@ -147,7 +147,7 @@ export default async function EventsContent({
                     className="flex gap-5 relative"
                   >
                     <EventThumbnail item={item} size="small" />
-                    <div className="grow flex items-center justify-between gap-8">
+                    <div className="grow flex items-center justify-between gap-8 min-w-0">
                       <Link
                         href={`/events/${new Date(
                           item.date

@@ -31,7 +31,7 @@ export async function LifeEventsSection() {
               {getLifeEventSubtitle(item)}
             </div>
             {index !== 0 && (
-              <div className="w-px absolute left-1 -top-4 bottom-1 bg-neutral-300 -ml-[0.5px] -z-10" />
+              <div className="w-px absolute left-1 -top-1.5 bottom-3.5 bg-neutral-300 -ml-[0.5px] -z-10" />
             )}
           </li>
         ))}

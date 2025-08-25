@@ -22,7 +22,9 @@ export function BlogMetadata({
   ).getUTCFullYear()}/${item.slug}`;
 
   return (
-    <div className={`grid grid-cols-3 gap-2.5 pt-2.5 ${className}`}>
+    <div
+      className={`grid grid-cols-2 md:grid-cols-3 gap-1.5 md:gap-2.5 pt-2.5 ${className}`}
+    >
       <div className="text-sm text-neutral-500 flex items-center gap-1.5">
         <IconCalendarEvent className="shrink-0" size={16} strokeWidth={1.5} />
         <div className="grow truncate">

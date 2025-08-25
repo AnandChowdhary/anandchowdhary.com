@@ -96,6 +96,15 @@ export interface Work extends GenericItem {
   url: string;
 }
 
+export interface ArchiveItem {
+  date: string;
+  type: string;
+  url: string;
+  source?: string;
+  title: string;
+  data?: any;
+}
+
 export interface PressItem {
   date: string;
   title: string;
@@ -121,6 +130,24 @@ function generateSlug(title: string): string {
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
     .trim();
+}
+
+export async function getAllArchiveItems(): Promise<ArchiveItem[]> {
+  const response = await fetch(
+    "https://anandchowdhary.github.io/everything/api.json",
+    { next: { revalidate: 3600 } }
+  );
+  const archiveData = (await response.json()) as ArchiveItem[];
+  return archiveData.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+
+export async function getArchiveItemsByYear(year: number): Promise<ArchiveItem[]> {
+  const allItems = await getAllArchiveItems();
+  return allItems.filter(
+    (item) => new Date(item.date).getFullYear() === year
+  );
 }
 
 export async function getPress(): Promise<Press> {
