@@ -102,10 +102,10 @@ export default async function BlogContent({
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/blog/${year}` : "/blog"}>
-        Thoughts and insights on technology, entrepreneurship, and building
-        products that matter.
-      </Header>
+      <Header
+        pathname={year ? `/blog/${year}` : "/blog"}
+        description="Thoughts and insights on technology, entrepreneurship, and building products that matter."
+      />
       <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>

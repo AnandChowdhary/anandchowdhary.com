@@ -1,9 +1,8 @@
 import { getNoteContent, Note } from "@/app/api";
-import { ExternalLink, focusStyles } from "@/app/components/external-link";
+import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NoteMetadata } from "@/app/notes/metadata";
-import { IconBrandX } from "@tabler/icons-react";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -44,22 +43,10 @@ export default async function NotesContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/notes/${year}` : "/notes"}>
-        <span>
-          Quick notes curated from shower thoughts and articles with the help of
-          AI, also available on{" "}
-        </span>
-        <ExternalLink href="https://x.com/anandchowdhary">
-          <IconBrandX
-            aria-label="X"
-            size={12}
-            strokeWidth={1.5}
-            className="inline-block align-middle mr-1"
-          />
-          @AnandChowdhary
-        </ExternalLink>
-        .
-      </Header>
+      <Header
+        pathname={year ? `/notes/${year}` : "/notes"}
+        description="Quick notes curated from shower thoughts and articles with the help of AI, also available on X."
+      />
       <main className="max-w-2xl mx-auto">
         <h2 className="text-lg font-medium text-neutral-500 mb-4">Latest</h2>
         <article

@@ -39,7 +39,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const events = await getAllEvents();
   return events.map((event) => ({
     year: new Date(event.date).getUTCFullYear().toString(),
@@ -66,7 +68,10 @@ export default async function EventsYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/events/${year}`} />
+      <Header
+        pathname={`/events/${year}`}
+        description="From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           {event.attributes.coordinates && (

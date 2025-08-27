@@ -62,7 +62,10 @@ export default async function OpenSourceYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/open-source/${year}`} />
+      <Header
+        pathname={`/open-source/${year}`}
+        description="From time to time, I contribute to and maintain open-source projects related to engineering, design, and developer tools."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           <img

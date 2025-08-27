@@ -83,10 +83,10 @@ export default async function LifeContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname="/life">
-        Major milestones and meaningful moments that have shaped my personal and
-        professional journey.
-      </Header>
+      <Header
+        pathname="/life"
+        description="Major milestones and meaningful moments that have shaped my personal and professional journey."
+      />
       <main className="max-w-2xl mx-auto space-y-12">
         {sortedDecades.map((decade) => (
           <section key={decade} className="space-y-4">

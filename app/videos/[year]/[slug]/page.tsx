@@ -46,7 +46,10 @@ export default async function VideoPage({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/videos/${year}`} />
+      <Header
+        pathname={`/videos/${year}`}
+        description="A collection of videos featuring my talks, interviews, and appearances discussing technology, accessibility, and entrepreneurship."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         {video.img && (
           <div className="relative">

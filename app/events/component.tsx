@@ -103,10 +103,10 @@ export default async function EventsContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/events/${year}` : "/events"}>
-        From time to time, I speak at startup events and technical conferences
-        about engineering, design, and entrepreneurship.
-      </Header>
+      <Header
+        pathname={year ? `/events/${year}` : "/events"}
+        description="From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship."
+      />
       <main className="max-w-2xl mx-auto space-y-4">
         {year ? (
           // Year-specific view: show events grouped by year

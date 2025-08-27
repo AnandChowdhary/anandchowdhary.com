@@ -74,10 +74,15 @@ export default async function VersionContent({
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/versions/${year}` : "/versions"}>
-        Over the years, I&apos;ve designed and redesigned my personal website
-        several times; I ﬁnd it to be a great way to explore new technologies.
-      </Header>
+      <Header
+        pathname={year ? `/versions/${year}` : "/versions"}
+        source="https://github.com/AnandChowdhary/versions"
+        readme="https://anandchowdhary.github.io/versions/README.md"
+        api="https://anandchowdhary.github.io/versions/api.json"
+        description={`Over the years, I've designed and redesigned my personal website several times; I find it to be a great way to explore new technologies.
+
+Looking back, I can connect the dots for what I was interested in way back when. In fact, one of my first repositories on GitHub was [my personal website](https://github.com/AnandChowdhary/anandchowdhary.com), where you can see the git history to track each version.`}
+      />
       <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
         {versionDataFiltered.map((item) => (
           <VersionCard key={item.slug} item={item} />

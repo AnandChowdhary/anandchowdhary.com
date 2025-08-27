@@ -158,10 +158,10 @@ export default async function OpenSourceContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/open-source/${year}` : "/open-source"}>
-        From time to time, I contribute to and maintain open-source projects
-        related to engineering, design, and developer tools.
-      </Header>
+      <Header
+        pathname={year ? `/open-source/${year}` : "/open-source"}
+        description="From time to time, I contribute to and maintain open-source projects related to engineering, design, and developer tools."
+      />
       <main className="max-w-2xl mx-auto space-y-4">
         {year ? (
           <div className="space-y-8">

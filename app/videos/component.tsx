@@ -80,10 +80,10 @@ export default async function VideosContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname="/videos">
-        A collection of videos featuring my talks, interviews, and appearances
-        discussing technology, accessibility, and entrepreneurship.
-      </Header>
+      <Header
+        pathname="/videos"
+        description="A collection of videos featuring my talks, interviews, and appearances discussing technology, accessibility, and entrepreneurship."
+      />
 
       <main className="max-w-2xl mx-auto space-y-4">
         <div className="grid grid-cols-3 gap-8">

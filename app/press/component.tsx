@@ -80,11 +80,10 @@ export default async function PressContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname="/press">
-        I&rsquo;ve been very fortunate to have been featured in several
-        publications and media outlets for my work. For press enquiries, please
-        reach out to press (at) this domain.
-      </Header>
+      <Header
+        pathname="/press"
+        description="I've been very fortunate to have been featured in several publications and media outlets for my work. For press enquiries, please reach out to press (at) this domain."
+      />
       <main className="max-w-2xl mx-auto space-y-12">
         {sortedAwards.length > 0 && (
           <section className="space-y-4">

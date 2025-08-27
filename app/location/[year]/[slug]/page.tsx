@@ -54,7 +54,10 @@ export default async function LocationYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/location/${year}`} />
+      <Header
+        pathname={`/location/${year}`}
+        description="I love traveling and exploring new places. Here are the countries I've visited over the years."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           <img

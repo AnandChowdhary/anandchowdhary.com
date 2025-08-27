@@ -143,10 +143,10 @@ export default function ArchiveContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/archive/${year}` : "/archive"}>
-        Everything, everywhere, all at once: A comprehensive archive of all my
-        activities, projects, writing, events, and more, in one place.
-      </Header>
+      <Header
+        pathname={year ? `/archive/${year}` : "/archive"}
+        description="Everything, everywhere, all at once: A comprehensive archive of all my activities, projects, writing, events, and more, in one place."
+      />
       <main className="max-w-2xl mx-auto space-y-12">
         {Object.entries(groupedByYear)
           .sort(([a], [b]) => parseInt(b) - parseInt(a))

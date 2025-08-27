@@ -39,7 +39,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const books = await getAllBooks();
   return books.map((book) => ({
     year: new Date(book.date).getUTCFullYear().toString(),
@@ -57,7 +59,10 @@ export default async function BooksYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/books/${year}`} />
+      <Header
+        pathname={`/books/${year}`}
+        description="I love reading books and expanding my knowledge. Here are the books I've read and am currently reading."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">

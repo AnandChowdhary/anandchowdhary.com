@@ -32,7 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const posts = await getAllBlogPosts();
   return posts.map((post) => ({
     year: new Date(post.date).getUTCFullYear().toString(),
@@ -54,7 +56,10 @@ export default async function BlogYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/blog/${year}`} />
+      <Header
+        pathname={`/blog/${year}`}
+        description="Thoughts and insights on technology, entrepreneurship, and building products that matter."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           <img

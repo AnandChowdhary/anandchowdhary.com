@@ -70,7 +70,10 @@ export default async function PressYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/press`} />
+      <Header
+        pathname="/press"
+        description="I've been very fortunate to have been featured in several publications and media outlets for my work. For press enquiries, please reach out to press (at) this domain."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-4">
           <div className="flex items-center gap-2 text-neutral-500">

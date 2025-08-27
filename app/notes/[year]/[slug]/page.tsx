@@ -1,8 +1,4 @@
-import {
-  getAllNotes,
-  getNoteByYearAndSlug,
-  getNoteContent,
-} from "@/app/api";
+import { getAllNotes, getNoteByYearAndSlug, getNoteContent } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NoteMetadata } from "@/app/notes/metadata";
@@ -31,7 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export const revalidate = 60;
-export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const notes = await getAllNotes();
   return notes.map((note) => ({
     year: new Date(note.date).getUTCFullYear().toString(),
@@ -52,7 +50,10 @@ export default async function NoteYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={`/notes/${year}`} />
+      <Header
+        pathname={`/notes/${year}`}
+        description="Quick notes curated from shower thoughts and articles with the help of AI, also available on X."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-2">
           <h1

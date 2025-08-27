@@ -36,10 +36,10 @@ export default function LocationContent({
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header pathname={year ? `/location/${year}` : "/location"}>
-        I love traveling and exploring new places. Here are the countries I've
-        visited over the years.
-      </Header>
+      <Header
+        pathname={year ? `/location/${year}` : "/location"}
+        description="I love traveling and exploring new places. Here are the countries I've visited over the years."
+      />
       <main className="max-w-2xl mx-auto space-y-8">
         {Object.entries(countriesDataByYear)
           .sort((a, b) => b[0].localeCompare(a[0]))
