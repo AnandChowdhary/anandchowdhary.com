@@ -1,9 +1,9 @@
+import { ArchiveSection } from "@/app/components/archive-section";
 import { BlogSection } from "@/app/components/blog-section";
 import { BooksSection } from "@/app/components/books-section";
 import { Events } from "@/app/components/events";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
-import { LifeEventsSection } from "@/app/components/life-events-section";
 import { LifeSection } from "@/app/components/life-section";
 import { NotesSection } from "@/app/components/notes-section";
 import { NowSection } from "@/app/components/now-section";
@@ -38,7 +38,7 @@ export default async function Home() {
         <ProjectsSection />
         <NotesSection />
         <PressSection />
-        <LifeEventsSection />
+        <ArchiveSection />
       </div>
       <Footer />
     </div>

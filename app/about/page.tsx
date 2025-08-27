@@ -6,6 +6,7 @@ import {
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About / Anand Chowdhary",
@@ -71,13 +72,13 @@ export default async function About() {
             </p>
             <p>
               He is also an open source contributor, awarded by GitHub as a{" "}
-              <a className={underlinedLink} href="/press/2021/github">
+              <Link className={underlinedLink} href="/press/2021/github">
                 GitHub Star
-              </a>{" "}
+              </Link>{" "}
               (2021–2023), and was listed in{" "}
-              <a className={underlinedLink} href="/press/2018/forbes-asia">
+              <Link className={underlinedLink} href="/press/2018/forbes-asia">
                 Forbes 30 Under 30
-              </a>{" "}
+              </Link>{" "}
               (Asia 2018) and in Het Financieele Dagblad's list of
               most-innovative entrepreneurs and professionals in the
               Netherlands.

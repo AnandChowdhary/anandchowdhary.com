@@ -18,6 +18,7 @@ interface GenericSectionProps<T extends GenericItem> {
   items: T[];
   description: string;
   linkText: string;
+  href?: string;
   getItemTitle: (item: T) => React.ReactNode;
   getItemSubtitle: (item: T) => React.ReactNode;
 }
@@ -67,19 +68,20 @@ export function GenericSectionContainer<T extends GenericItem>({
   subtitle,
   children,
   description,
+  href,
   linkText,
 }: {
   children: React.ReactNode;
 } & Pick<
   GenericSectionProps<T>,
-  "title" | "subtitle" | "description" | "linkText"
+  "title" | "subtitle" | "description" | "href" | "linkText"
 >) {
   return (
     <section className="space-y-4 relative group">
       <div className="absolute -z-10 -top-4 -bottom-8 -right-8 -left-8 bg-neutral-100 dark:bg-neutral-900 rounded-lg pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
         <Link
-          href={`/${title.toLowerCase()}`}
+          href={href ?? `/${title.toLowerCase()}`}
           className={`${focusStyles} min-w-0 full-link z-10`}
         >
           {subtitle}

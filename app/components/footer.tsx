@@ -35,48 +35,48 @@ export function Footer() {
         Francisco, California.
       </p>
       <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm max-w-xl mx-auto">
-        <a className={linkStyles} href="/">
+        <Link className={linkStyles} href="/">
           Home
-        </a>
-        <a className={linkStyles} href="/about">
+        </Link>
+        <Link className={linkStyles} href="/about">
           About
-        </a>
-        <a className={linkStyles} href="/archive">
+        </Link>
+        <Link className={linkStyles} href="/archive">
           Archive
-        </a>
-        <a className={linkStyles} href="/life">
+        </Link>
+        <Link className={linkStyles} href="/life">
           Life
-        </a>
-        <a className={linkStyles} href="/blog">
+        </Link>
+        <Link className={linkStyles} href="/blog">
           Blog
-        </a>
-        <a className={linkStyles} href="/notes">
+        </Link>
+        <Link className={linkStyles} href="/notes">
           Notes
-        </a>
-        <a className={linkStyles} href="/events">
+        </Link>
+        <Link className={linkStyles} href="/events">
           Events
-        </a>
-        <a className={linkStyles} href="/open-source">
+        </Link>
+        <Link className={linkStyles} href="/open-source">
           Open source
-        </a>
-        <a className={linkStyles} href="/projects">
+        </Link>
+        <Link className={linkStyles} href="/projects">
           Projects
-        </a>
-        <a className={linkStyles} href="/mentoring">
+        </Link>
+        <Link className={linkStyles} href="/mentoring">
           Mentoring
-        </a>
-        <a className={linkStyles} href="/press">
+        </Link>
+        <Link className={linkStyles} href="/press">
           Press
-        </a>
-        <a className={linkStyles} href="/videos">
+        </Link>
+        <Link className={linkStyles} href="/videos">
           Videos
-        </a>
-        <a className={linkStyles} href="/versions">
+        </Link>
+        <Link className={linkStyles} href="/versions">
           Versions
-        </a>
-        <a className={linkStyles} href="/contact">
+        </Link>
+        <Link className={linkStyles} href="/contact">
           Contact
-        </a>
+        </Link>
         <ExternalLink href="https://x.com/AnandChowdhary" underline={false}>
           <IconBrandX
             className="inline-block w-4 h-4 align-middle -mt-1"
@@ -89,9 +89,9 @@ export function Footer() {
         {Array.from({ length: 2025 - 2009 + 1 }, (_, i) => {
           const year = 2009 + i;
           return (
-            <a className={linkStyles} href={`/archive/${year}`} key={year}>
+            <Link className={linkStyles} href={`/archive/${year}`} key={year}>
               {year}
-            </a>
+            </Link>
           );
         })}
       </div>
