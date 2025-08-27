@@ -252,7 +252,7 @@ export default function ArchiveContent({
           ))}
         {yearNavigation && (
           <footer className="flex items-center justify-between">
-            {yearNavigation.previous && (
+            {yearNavigation.previous ? (
               <Link
                 href={`/archive/${yearNavigation.previous}`}
                 className={`flex items-center gap-1 ${focusStyles} bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
@@ -260,8 +260,10 @@ export default function ArchiveContent({
                 <IconChevronLeft strokeWidth={1.5} className="h-4" />
                 {yearNavigation.previous}
               </Link>
+            ) : (
+              <div className="w-4" />
             )}
-            {yearNavigation.next && (
+            {yearNavigation.next ? (
               <Link
                 href={`/archive/${yearNavigation.next}`}
                 className={`flex items-center gap-1 ${focusStyles} bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
@@ -269,6 +271,8 @@ export default function ArchiveContent({
                 {yearNavigation.next}
                 <IconChevronRight strokeWidth={1.5} className="h-4" />
               </Link>
+            ) : (
+              <div className="w-4" />
             )}
           </footer>
         )}

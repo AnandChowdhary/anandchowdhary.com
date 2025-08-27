@@ -17,7 +17,8 @@ export function NowSection() {
             />
             <span>FirstQuadrant</span>
           </ExternalLink>
-          , an all-in-one AI sales execution platform backed by Y Combinator.
+          , an AI sales platform for founders and revenue teams, funded by Y
+          Combinator.
         </li>
         <li>
           Contributing to open source during nights and weekends as an

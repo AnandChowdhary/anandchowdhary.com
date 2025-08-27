@@ -1,3 +1,4 @@
+import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { Metadata } from "next";
@@ -17,14 +18,14 @@ export default async function Mentoring() {
           <div className="space-y-5">
             <p className="text-xl font-medium">
               I spend one hour every week mentoring early-stage entrepreneurs
-              and helping them build technology-focused startups.
+              and helping them build technology startups.
             </p>
             <p>
-              The easiest thing to do is write me an email at mentoring (at)
-              this domain with what I can help with. I try and respond to each
-              email.
+              If you are interested in having a conversation, please email me at
+              mentoring (at) this domain with what I can help with. I try and
+              respond to each email.
             </p>
-            <h2 className="text-lg font-medium">Testimonials</h2>
+            <h2 className="text-lg font-medium mt-8">Testimonials</h2>
             <p>
               Here are some of the nice things people have said about me (take
               them with a grain of salt):
@@ -60,6 +61,15 @@ export default async function Mentoring() {
                 Michael Taylor, co-founder and COO of Ladder
               </cite>
             </article>
+            <h2 className="text-lg font-medium mt-8">Angel investing</h2>
+            <p>
+              I sometimes invest in early-stage startups. Please visit my
+              personal holding company to learn more at{" "}
+              <ExternalLink href="https://chowdhary.co">
+                Chowdhary.co
+              </ExternalLink>
+              .
+            </p>
           </div>
         </section>
       </div>
