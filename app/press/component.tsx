@@ -1,10 +1,16 @@
 import { Press, PressItem } from "@/app/api";
-import { ExternalLink, focusStyles } from "@/app/components/external-link";
+import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import Link from "next/link";
 
-const PressItemCard = ({ item }: { item: PressItem }) => {
+const PressItemCard = ({
+  item,
+  award,
+}: {
+  item: PressItem;
+  award?: boolean;
+}) => {
   const year = new Date(item.date).getFullYear();
   const permalink = `/press/${year}/${item.slug}`;
 
@@ -30,7 +36,7 @@ const PressItemCard = ({ item }: { item: PressItem }) => {
               href={permalink}
               className={`${focusStyles} grow full-link hover:text-neutral-500 truncate`}
             >
-              {item.publisher}
+              {award ? item.title : item.publisher}
             </Link>
           </div>
           <div
@@ -49,7 +55,7 @@ const PressItemCard = ({ item }: { item: PressItem }) => {
               })}
             </span>
             <span>{" · "}</span>
-            <span>{item.title}</span>
+            <span>{award ? item.publisher : item.title}</span>
           </div>
         </div>
       </div>
@@ -76,11 +82,8 @@ export default async function PressContent({
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header pathname="/press">
         I&rsquo;ve been very fortunate to have been featured in several
-        publications for my work. For press enquiries, please reach out to{" "}
-        <ExternalLink href="mailto:press@anandchowdhary.com">
-          press
-        </ExternalLink>{" "}
-        @ this domain.
+        publications and media outlets for my work. For press enquiries, please
+        reach out to press (at) this domain.
       </Header>
       <main className="max-w-2xl mx-auto space-y-12">
         {sortedAwards.length > 0 && (
@@ -88,7 +91,7 @@ export default async function PressContent({
             <h2 className="text-lg font-medium text-neutral-500">Awards</h2>
             <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
               {sortedAwards.map((item, index) => (
-                <PressItemCard key={`award-${index}`} item={item} />
+                <PressItemCard key={`award-${index}`} item={item} award />
               ))}
             </div>
           </section>

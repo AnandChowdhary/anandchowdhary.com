@@ -97,7 +97,7 @@ const RepoCard = ({ item }: { item: Repository }) => {
             <div className="grow truncate">
               {new Date(item.created_at).toLocaleDateString("en-US", {
                 day: "numeric",
-                month: "long",
+                month: "short",
               })}
             </div>
           </div>
@@ -110,7 +110,8 @@ const RepoCard = ({ item }: { item: Repository }) => {
           <div className="text-sm text-neutral-500 flex items-center gap-1.5">
             <IconStar className="shrink-0" size={16} strokeWidth={1.5} />
             <div className="grow truncate">
-              {item.stargazers_count.toLocaleString()} stars
+              {item.stargazers_count.toLocaleString()}{" "}
+              {item.stargazers_count === 1 ? "star" : "stars"}
             </div>
           </div>
         </div>

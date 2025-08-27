@@ -9,7 +9,9 @@ export async function OpenSourceSection() {
     <>
       {repo.title}
       <span className="text-neutral-500">
-        {` · ${repo.stargazers_count.toLocaleString("en-US")} stars`}
+        {` · ${repo.stargazers_count.toLocaleString("en-US")} ${
+          repo.stargazers_count === 1 ? "star" : "stars"
+        }`}
       </span>
     </>
   );

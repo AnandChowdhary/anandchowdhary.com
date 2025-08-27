@@ -11,6 +11,18 @@ export interface BlogPost extends GenericItem {
 
 export interface Note extends GenericItem {}
 
+export interface Version extends GenericItem {
+  attributes: {
+    date: string;
+    draft?: boolean;
+    generator?: string;
+    archive?: string;
+    type?: string[];
+    stack?: string[];
+    domain?: string;
+  };
+}
+
 export interface Repository {
   name: string;
   full_name: string;
@@ -366,6 +378,22 @@ export async function getBlogPostContent(
   }
 
   return postContentText;
+}
+
+export async function getRepositoryDetails(
+  name: string
+): Promise<string | null> {
+  const readMe = await fetch(
+    `https://raw.githubusercontent.com/${name}/HEAD/README.md`,
+    { next: { revalidate: 3600 } }
+  );
+  const readMeText = await readMe.text();
+  if (readMeText.includes(`data-embed="anandchowdhary.com"`)) {
+    return (
+      readMeText.split("</summary>")[1]?.split("</details>")[0]?.trim() ?? null
+    );
+  }
+  return null;
 }
 
 export async function getAllRepositories(): Promise<Repository[]> {
@@ -724,4 +752,49 @@ export async function getTotalLastMonthCodingTime(): Promise<number> {
     .slice(0, 30)
     .reduce((acc, date) => acc + codingTime[date], 0);
   return lastMonthCodingTime;
+}
+
+export async function getAllVersions(): Promise<Version[]> {
+  const versions = await fetch(
+    "https://anandchowdhary.github.io/versions/api.json",
+    { next: { revalidate: 3600 } }
+  );
+  const versionsData = (await versions.json()) as Version[];
+  return versionsData
+    .filter((version) => !version.attributes.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export async function getVersionByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Version | null> {
+  const versionsData = await getAllVersions();
+  return (
+    versionsData
+      .filter((version) => new Date(version.date).getUTCFullYear() === year)
+      .find((version) => version.slug.replace(".md", "") === slug) || null
+  );
+}
+
+export async function getVersionContent(
+  year: string,
+  slug: string
+): Promise<string> {
+  const versionContent = await fetch(
+    `https://raw.githubusercontent.com/AnandChowdhary/versions/refs/heads/main/versions/${year}/${slug}`
+  );
+  if (!versionContent.ok) throw new Error("Version content not found");
+  let versionContentText = await versionContent.text();
+  // Remove front-matter if there is any
+  if (versionContentText.startsWith("---")) {
+    const frontMatterEnd = versionContentText.indexOf("\n---");
+    versionContentText = versionContentText.slice(frontMatterEnd + 4).trim();
+  }
+  // Remove heading
+  if (versionContentText.startsWith("# ")) {
+    const lines = versionContentText.split("\n");
+    versionContentText = lines.slice(1).join("\n").trim();
+  }
+  return versionContentText;
 }

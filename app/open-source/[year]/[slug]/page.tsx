@@ -1,10 +1,15 @@
-import { getAllOpenSource, getOpenSourceByYearAndSlug } from "@/app/api";
+import {
+  getAllOpenSource,
+  getOpenSourceByYearAndSlug,
+  getRepositoryDetails,
+} from "@/app/api";
+import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import {
   IconBrandGithub,
+  IconCalendar,
   IconCode,
-  IconExternalLink,
   IconGitFork,
   IconStar,
 } from "@tabler/icons-react";
@@ -28,13 +33,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const repo = await getOpenSourceByYearAndSlug(yearNumber, slug);
   if (!repo) notFound();
   return {
-    title: `${repo.name} / ${year} / Open Source / Anand Chowdhary`,
-    description: repo.description || `Open source project: ${repo.name}`,
+    title: `${repo.title} / ${year} / Open Source / Anand Chowdhary`,
+    description: repo.description || `Open source project: ${repo.title}`,
   };
 }
 
 export const revalidate = 60;
-export async function generateStaticParams(): Promise<{ year: string; slug: string }[]> {
+export async function generateStaticParams(): Promise<
+  { year: string; slug: string }[]
+> {
   const repos = await getAllOpenSource();
   return repos.map((repo) => ({
     year: new Date(repo.date).getUTCFullYear().toString(),
@@ -51,6 +58,8 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   const repo = await getOpenSourceByYearAndSlug(yearNumber, slug);
   if (!repo) notFound();
 
+  const details = await getRepositoryDetails(repo.full_name);
+
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header pathname={`/open-source/${year}`} />
@@ -65,79 +74,65 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             {repo.emoji}
           </div>
         </div>
-        <header className="space-y-2">
+        <header className="space-y-4">
           <h1
             className="text-2xl font-medium"
-            dangerouslySetInnerHTML={{
-              __html: marked.parseInline(repo.title),
-            }}
+            dangerouslySetInnerHTML={{ __html: marked.parseInline(repo.title) }}
           />
-          <p className="text-neutral-500">
-            {new Date(repo.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconCalendar className="shrink-0" size={16} strokeWidth={1.5} />
+              <div className="grow truncate">
+                {new Date(repo.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </div>
+            </div>
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconCode className="shrink-0" size={16} strokeWidth={1.5} />
+              <div className="grow truncate">{repo.language || "Unknown"}</div>
+            </div>
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconStar className="shrink-0" size={16} strokeWidth={1.5} />
+              <div className="grow truncate">
+                {repo.stargazers_count.toLocaleString()}{" "}
+                {repo.stargazers_count === 1 ? "star" : "stars"}
+              </div>
+            </div>
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconGitFork className="shrink-0" size={16} strokeWidth={1.5} />
+              <div className="grow truncate">
+                {repo.forks_count.toLocaleString()} forks
+              </div>
+            </div>
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconBrandGithub
+                className="shrink-0"
+                size={16}
+                strokeWidth={1.5}
+              />
+              <div className="grow truncate">{repo.full_name}</div>
+            </div>
+          </div>
         </header>
-
-        <div className="grid grid-cols-2 gap-4 py-4">
-          <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-            <IconCode className="shrink-0" size={16} strokeWidth={1.5} />
-            <div className="grow truncate">{repo.language || "Unknown"}</div>
-          </div>
-          <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-            <IconStar className="shrink-0" size={16} strokeWidth={1.5} />
-            <div className="grow truncate">
-              {repo.stargazers_count.toLocaleString()} stars
-            </div>
-          </div>
-          <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-            <IconGitFork className="shrink-0" size={16} strokeWidth={1.5} />
-            <div className="grow truncate">
-              {repo.forks_count.toLocaleString()} forks
-            </div>
-          </div>
-          <div className="text-sm text-neutral-500 flex items-center gap-1.5">
-            <IconBrandGithub className="shrink-0" size={16} strokeWidth={1.5} />
-            <div className="grow truncate">{repo.full_name}</div>
-          </div>
-        </div>
-
-        <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
-          <p className="text-lg text-neutral-700 dark:text-neutral-300">
-            {repo.description}
-          </p>
-          {repo.attributes.subtitle && (
-            <p className="text-neutral-600 dark:text-neutral-400">
-              {repo.attributes.subtitle}
-            </p>
-          )}
-        </div>
-
-        <div className="flex gap-4">
-          <a
+        <div
+          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(details ?? repo.description),
+          }}
+        />
+        <footer className="flex">
+          <ExternalLink
             href={repo.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors"
+            underline={false}
+            className="rounded-lg border border-neutral-200 dark:border-neutral-800 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 flex items-center gap-2"
           >
             <IconBrandGithub size={16} />
-            View on GitHub
-            <IconExternalLink size={14} />
-          </a>
-          {repo.homepage && (
-            <a
-              href={repo.homepage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
-            >
-              <IconExternalLink size={16} />
-              Visit Website
-            </a>
-          )}
-        </div>
+            <span className="font-medium">{repo.full_name}</span>
+          </ExternalLink>
+        </footer>
       </main>
       <Footer />
     </div>
