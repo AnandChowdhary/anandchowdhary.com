@@ -105,6 +105,9 @@ export default async function BlogContent({
       <Header
         pathname={year ? `/blog/${year}` : "/blog"}
         description="Thoughts and insights on technology, entrepreneurship, and building products that matter."
+        source="https://github.com/AnandChowdhary/blog"
+        readme="https://anandchowdhary.github.io/blog/README.md"
+        api="https://anandchowdhary.github.io/blog/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
         {blogDataFiltered.length > 3 && (

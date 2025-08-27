@@ -39,6 +39,9 @@ export default function LocationContent({
       <Header
         pathname={year ? `/location/${year}` : "/location"}
         description="I love traveling and exploring new places. Here are the countries I've visited over the years."
+        source="https://github.com/AnandChowdhary/location"
+        readme="https://anandchowdhary.github.io/location/README.md"
+        api="https://anandchowdhary.github.io/location/history-countries.json"
       />
       <main className="max-w-2xl mx-auto space-y-8">
         {Object.entries(countriesDataByYear)

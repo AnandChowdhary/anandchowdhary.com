@@ -59,6 +59,9 @@ export default async function BlogYearSlug({ params }: Props) {
       <Header
         pathname={`/blog/${year}`}
         description="Thoughts and insights on technology, entrepreneurship, and building products that matter."
+        source="https://github.com/AnandChowdhary/blog"
+        readme="https://anandchowdhary.github.io/blog/README.md"
+        api="https://anandchowdhary.github.io/blog/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">

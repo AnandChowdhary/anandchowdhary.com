@@ -1,4 +1,5 @@
 import {
+  getAllArchiveItems,
   getAllOpenSource,
   getOpenSourceByYearAndSlug,
   getRepositoryDetails,
@@ -58,6 +59,18 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   const repo = await getOpenSourceByYearAndSlug(yearNumber, slug);
   if (!repo) notFound();
 
+  const everything = await getAllArchiveItems();
+  const found = everything.find(
+    (item) =>
+      item.url === `https://anandchowdhary.com/open-source/${year}/${slug}`
+  );
+  let image = found?.data?.openGraphImageUrl;
+  if (
+    typeof image === "string" &&
+    image.startsWith("https://opengraph.githubassets.com") // Ignore default images
+  )
+    image = undefined;
+
   const details = await getRepositoryDetails(repo.full_name);
 
   return (
@@ -65,18 +78,28 @@ export default async function OpenSourceYearSlug({ params }: Props) {
       <Header
         pathname={`/open-source/${year}`}
         description="From time to time, I contribute to and maintain open-source projects related to engineering, design, and developer tools."
+        source="https://github.com/AnandChowdhary"
+        api="https://api.github.com/users/AnandChowdhary/repos"
       />
       <main className="max-w-2xl mx-auto space-y-8">
-        <div className="relative">
+        {image ? (
           <img
-            src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${rand}.png`}
+            src={image}
             alt=""
-            className="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60"
+            className="w-full h-full object-cover rounded-lg dark:brightness-60 object-top"
           />
-          <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-5xl tracking-widest">
-            {repo.emoji}
+        ) : (
+          <div className="relative">
+            <img
+              src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${rand}.png`}
+              alt=""
+              className="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60"
+            />
+            <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-5xl tracking-widest">
+              {repo.emoji}
+            </div>
           </div>
-        </div>
+        )}
         <header className="space-y-4">
           <h1
             className="text-2xl font-medium"

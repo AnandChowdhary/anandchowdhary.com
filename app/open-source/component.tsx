@@ -1,4 +1,4 @@
-import { Repository } from "@/app/api";
+import { getAllArchiveItems, Repository } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -25,7 +25,7 @@ const getEmojiFromDescription = (description: string | null) => {
   return { emoji, description: cleanDescription };
 };
 
-const RepoThumbnail = ({
+const RepoThumbnail = async ({
   item,
   size = "large",
 }: {
@@ -34,6 +34,40 @@ const RepoThumbnail = ({
 }) => {
   const isLarge = size === "large";
   const { emoji } = getEmojiFromDescription(item.description);
+
+  const everything = await getAllArchiveItems();
+  const found = everything.find(
+    ({ url }) =>
+      url ===
+      `https://anandchowdhary.com/open-source/${new Date(
+        item.created_at
+      ).getUTCFullYear()}/${item.slug.split("/").pop()}`
+  );
+  let image = found?.data?.openGraphImageUrl;
+  if (
+    typeof image === "string" &&
+    image.startsWith("https://opengraph.githubassets.com") // Ignore default images
+  )
+    image = undefined;
+
+  if (image)
+    return (
+      <div
+        className={`pointer-events-none ${
+          isLarge
+            ? "aspect-video rounded-lg"
+            : "aspect-square w-6 h-6 rounded-full"
+        } shadow-sm relative`}
+      >
+        <img
+          src={image}
+          alt=""
+          className={`w-full h-full object-cover ${
+            isLarge ? "rounded-lg" : "rounded-full"
+          } dark:brightness-60`}
+        />
+      </div>
+    );
 
   return (
     <div
@@ -161,6 +195,9 @@ export default async function OpenSourceContent({
       <Header
         pathname={year ? `/open-source/${year}` : "/open-source"}
         description="From time to time, I contribute to and maintain open-source projects related to engineering, design, and developer tools."
+        source="https://github.com/AnandChowdhary"
+        readme="https://anandchowdhary.github.io/featured/README.md"
+        api="https://anandchowdhary.github.io/featured/repos.json"
       />
       <main className="max-w-2xl mx-auto space-y-4">
         {year ? (

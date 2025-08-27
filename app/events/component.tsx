@@ -106,6 +106,9 @@ export default async function EventsContent({
       <Header
         pathname={year ? `/events/${year}` : "/events"}
         description="From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship."
+        source="https://github.com/AnandChowdhary/events"
+        readme="https://anandchowdhary.github.io/events/README.md"
+        api="https://anandchowdhary.github.io/events/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-4">
         {year ? (

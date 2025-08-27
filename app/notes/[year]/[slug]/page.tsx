@@ -53,6 +53,9 @@ export default async function NoteYearSlug({ params }: Props) {
       <Header
         pathname={`/notes/${year}`}
         description="Quick notes curated from shower thoughts and articles with the help of AI, also available on X."
+        source="https://github.com/AnandChowdhary/notes"
+        readme="https://anandchowdhary.github.io/notes/README.md"
+        api="https://anandchowdhary.github.io/notes/threads/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-2">

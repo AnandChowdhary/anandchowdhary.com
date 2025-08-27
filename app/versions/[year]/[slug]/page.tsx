@@ -10,7 +10,6 @@ import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Rand from "rand-seed";
 
 marked.use(markedSmartypants());
 
@@ -46,7 +45,6 @@ export default async function VersionYearSlug({ params }: Props) {
   const { year, slug } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const rand = Math.floor(new Rand(`${slug}.md`).next() * 100 + 1);
 
   const version = await getVersionByYearAndSlug(yearNumber, slug);
   if (!version) notFound();

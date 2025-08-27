@@ -62,6 +62,9 @@ export default async function BooksYearSlug({ params }: Props) {
       <Header
         pathname={`/books/${year}`}
         description="I love reading books and expanding my knowledge. Here are the books I've read and am currently reading."
+        source="https://github.com/AnandChowdhary/books"
+        readme="https://anandchowdhary.github.io/books/README.md"
+        api="https://anandchowdhary.github.io/books/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

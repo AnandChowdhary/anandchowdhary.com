@@ -44,6 +44,9 @@ export default async function BooksContent({
       <Header
         pathname={year ? `/books/${year}` : "/books"}
         description="I love reading books and expanding my knowledge. Here are the books I've read and am currently reading."
+        source="https://github.com/AnandChowdhary/books"
+        readme="https://anandchowdhary.github.io/books/README.md"
+        api="https://anandchowdhary.github.io/books/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-16">
         {currentlyReading.length > 0 && (

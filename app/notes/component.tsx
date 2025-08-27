@@ -46,6 +46,9 @@ export default async function NotesContent({
       <Header
         pathname={year ? `/notes/${year}` : "/notes"}
         description="Quick notes curated from shower thoughts and articles with the help of AI, also available on X."
+        source="https://github.com/AnandChowdhary/notes"
+        readme="https://anandchowdhary.github.io/notes/README.md"
+        api="https://anandchowdhary.github.io/notes/threads/api.json"
       />
       <main className="max-w-2xl mx-auto">
         <h2 className="text-lg font-medium text-neutral-500 mb-4">Latest</h2>
