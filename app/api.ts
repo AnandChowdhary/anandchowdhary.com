@@ -524,7 +524,7 @@ export async function getEventContent(
   year: string,
   slug: string
 ): Promise<string> {
-  const url = `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/events/${year}/${slug}.md`;
+  const url = `https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/events/${year}/${slug}`;
   const eventContent = await fetch(url);
   if (!eventContent.ok) {
     return `An error occurred while fetching the event content from ${url}.`;

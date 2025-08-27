@@ -88,7 +88,7 @@ export function EventMetadata({
             size={16}
             strokeWidth={1.5}
           />
-          <div className="grow truncate">Remote</div>
+          <div className="grow truncate">Online event</div>
         </div>
       )}
       {children}
