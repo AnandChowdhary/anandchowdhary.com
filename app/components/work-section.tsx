@@ -3,10 +3,10 @@ import { GenericSectionContainer } from "@/app/components/generic-section";
 export async function WorkSection() {
   return (
     <GenericSectionContainer
-      title="Work"
-      subtitle="/work"
+      title="About"
+      subtitle="/about"
       description="I’m a tech entrepreneur, engineer, and designer."
-      linkText="Go to /work"
+      linkText="Go to /about"
     >
       <ul className="grid grid-cols-5 gap-3 shadow-xs border border-neutral-100 dark:border-neutral-800 dark:bg-neutral-900 bg-neutral-50 px-4 py-3 rounded-xl">
         {[
@@ -82,13 +82,13 @@ export async function WorkSection() {
             url: "https://upptime.js.org",
             container: true,
           },
-        ].map((work) => (
+        ].map((about) => (
           <li
-            key={work.label}
+            key={about.label}
             className="rounded-xl shadow-xs p-2 bg-background flex items-center justify-center text-white"
-            style={{ backgroundColor: work.color }}
+            style={{ backgroundColor: about.color }}
           >
-            {work.icon}
+            {about.icon}
           </li>
         ))}
       </ul>

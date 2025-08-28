@@ -1,11 +1,14 @@
 import { getVideoByYearAndSlug, getVideos } from "@/app/api";
+import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { proseClassName } from "@/app/styles";
 import { VideoMetadata } from "@/app/videos/metadata";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 marked.use(markedSmartypants());
@@ -45,6 +48,15 @@ export default async function VideoPage({ params }: Props) {
     notFound();
   }
 
+  const allVideos = await getVideos();
+  const currentVideoIndex = allVideos.findIndex(
+    (v) => v.slug === video.slug
+  );
+  const previousVideo = allVideos[currentVideoIndex - 1];
+  const nextVideo = allVideos[currentVideoIndex + 1];
+
+  const yearNavigation = { previous: previousVideo, next: nextVideo };
+
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header
@@ -78,6 +90,34 @@ export default async function VideoPage({ params }: Props) {
             }}
           />
         )}
+        <footer className="flex flex-col md:flex-row items-stretch md:items-center justify-between pt-8 gap-4">
+          {yearNavigation.previous ? (
+            <Link
+              href={`/videos/${new Date(
+                yearNavigation.previous.date
+              ).getFullYear()}/${yearNavigation.previous.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
+            >
+              <IconChevronLeft strokeWidth={1.5} className="h-4" />
+              {yearNavigation.previous.title}
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+          {yearNavigation.next ? (
+            <Link
+              href={`/videos/${new Date(
+                yearNavigation.next.date
+              ).getFullYear()}/${yearNavigation.next.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
+            >
+              {yearNavigation.next.title}
+              <IconChevronRight strokeWidth={1.5} className="h-4" />
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+        </footer>
       </main>
       <Footer />
     </div>

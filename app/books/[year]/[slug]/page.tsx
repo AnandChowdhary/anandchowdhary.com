@@ -1,4 +1,5 @@
 import { getAllBooks, getBookByYearAndSlug } from "@/app/api";
+import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { proseClassName } from "@/app/styles";
@@ -7,6 +8,8 @@ import {
   IconBuilding,
   IconCalendar,
   IconCategory,
+  IconChevronLeft,
+  IconChevronRight,
   IconExternalLink,
   IconLanguage,
   IconUser,
@@ -14,6 +17,7 @@ import {
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 marked.use(markedSmartypants());
@@ -57,6 +61,15 @@ export default async function BooksYearSlug({ params }: Props) {
 
   const book = await getBookByYearAndSlug(yearNumber, slug);
   if (!book) notFound();
+
+  const allBooks = await getAllBooks();
+  const currentBookIndex = allBooks.findIndex(
+    (b) => b.slug === book.slug
+  );
+  const previousBook = allBooks[currentBookIndex - 1];
+  const nextBook = allBooks[currentBookIndex + 1];
+
+  const yearNavigation = { previous: previousBook, next: nextBook };
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -219,6 +232,34 @@ export default async function BooksYearSlug({ params }: Props) {
             </a>
           )}
         </div>
+        <footer className="flex flex-col md:flex-row items-stretch md:items-center justify-between pt-8 gap-4">
+          {yearNavigation.previous ? (
+            <Link
+              href={`/books/${new Date(
+                yearNavigation.previous.date
+              ).getUTCFullYear()}/${yearNavigation.previous.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
+            >
+              <IconChevronLeft strokeWidth={1.5} className="h-4" />
+              {yearNavigation.previous.title}
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+          {yearNavigation.next ? (
+            <Link
+              href={`/books/${new Date(
+                yearNavigation.next.date
+              ).getUTCFullYear()}/${yearNavigation.next.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
+            >
+              {yearNavigation.next.title}
+              <IconChevronRight strokeWidth={1.5} className="h-4" />
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+        </footer>
       </main>
       <Footer />
     </div>

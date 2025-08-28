@@ -1,5 +1,5 @@
 import { getPress, getPressItemByYearAndSlug } from "@/app/api";
-import { ExternalLink } from "@/app/components/external-link";
+import { ExternalLink, focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { proseClassName } from "@/app/styles";
@@ -7,12 +7,15 @@ import {
   IconAward,
   IconBuilding,
   IconCalendarEvent,
+  IconChevronLeft,
+  IconChevronRight,
   IconExternalLink,
   IconMicrophone,
   IconNews,
   IconUser,
 } from "@tabler/icons-react";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -61,6 +64,19 @@ export default async function PressYearSlug({ params }: Props) {
   const pressItem = await getPressItemByYearAndSlug(yearNumber, slug);
   if (!pressItem) notFound();
 
+  const press = await getPress();
+  const allPressItems = [
+    ...press.awards,
+    ...press.podcasts,
+    ...press.features,
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  
+  const currentPressIndex = allPressItems.findIndex(
+    (p) => p.slug === pressItem.slug
+  );
+  const previousPressItem = allPressItems[currentPressIndex - 1];
+  const nextPressItem = allPressItems[currentPressIndex + 1];
+
   // Get the appropriate icon based on category
   const CategoryIcon =
     pressItem.category === "award"
@@ -68,6 +84,8 @@ export default async function PressYearSlug({ params }: Props) {
       : pressItem.category === "podcast"
       ? IconMicrophone
       : IconNews;
+
+  const yearNavigation = { previous: previousPressItem, next: nextPressItem };
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -167,6 +185,34 @@ export default async function PressYearSlug({ params }: Props) {
             )}
           </div>
         )}
+        <footer className="flex flex-col md:flex-row items-stretch md:items-center justify-between pt-8 gap-4">
+          {yearNavigation.previous ? (
+            <Link
+              href={`/press/${new Date(
+                yearNavigation.previous.date
+              ).getUTCFullYear()}/${yearNavigation.previous.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
+            >
+              <IconChevronLeft strokeWidth={1.5} className="h-4" />
+              {yearNavigation.previous.title}
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+          {yearNavigation.next ? (
+            <Link
+              href={`/press/${new Date(
+                yearNavigation.next.date
+              ).getUTCFullYear()}/${yearNavigation.next.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
+            >
+              {yearNavigation.next.title}
+              <IconChevronRight strokeWidth={1.5} className="h-4" />
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+        </footer>
       </main>
       <Footer />
     </div>

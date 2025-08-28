@@ -5,13 +5,15 @@ import {
   getRepositoryDetails,
   getRepositoryReadMe,
 } from "@/app/api";
-import { ExternalLink } from "@/app/components/external-link";
+import { ExternalLink, focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
-import { proseClassName, proseClassNameWithoutLead } from "@/app/styles";
+import { proseClassName, proseClassNameWithoutImages } from "@/app/styles";
 import {
   IconBrandGithub,
   IconCalendar,
+  IconChevronLeft,
+  IconChevronRight,
   IconCode,
   IconGitFork,
   IconStar,
@@ -19,6 +21,7 @@ import {
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Rand from "rand-seed";
 
@@ -61,6 +64,11 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   const repo = await getOpenSourceByYearAndSlug(yearNumber, slug);
   if (!repo) notFound();
 
+  const allRepos = await getAllOpenSource();
+  const currentRepoIndex = allRepos.findIndex((r) => r.slug === repo.slug);
+  const previousRepo = allRepos[currentRepoIndex - 1];
+  const nextRepo = allRepos[currentRepoIndex + 1];
+
   const everything = await getAllArchiveItems();
   const found = everything.find(({ source }) => source === repo.html_url);
   let image = found?.data?.openGraphImageUrl;
@@ -72,6 +80,8 @@ export default async function OpenSourceYearSlug({ params }: Props) {
 
   const details = await getRepositoryDetails(repo.full_name);
   const readMe = await getRepositoryReadMe(repo.full_name);
+
+  const yearNavigation = { previous: previousRepo, next: nextRepo };
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -175,13 +185,41 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             }}
           >
             <div
-              className={`${proseClassNameWithoutLead} text-sm prose-h1:text-lg prose-h2:text-lg`}
+              className={`${proseClassNameWithoutImages} prose-img:hidden text-sm prose-h1:text-lg prose-h2:text-lg`}
               dangerouslySetInnerHTML={{
                 __html: await Promise.resolve(marked.parse(readMe)),
               }}
             />
           </article>
         </div>
+        <footer className="flex flex-col md:flex-row items-stretch md:items-center justify-between pt-8 gap-4">
+          {yearNavigation.previous ? (
+            <Link
+              href={`/open-source/${new Date(
+                yearNavigation.previous.date
+              ).getUTCFullYear()}/${yearNavigation.previous.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
+            >
+              <IconChevronLeft strokeWidth={1.5} className="h-4" />
+              {yearNavigation.previous.title}
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+          {yearNavigation.next ? (
+            <Link
+              href={`/open-source/${new Date(
+                yearNavigation.next.date
+              ).getUTCFullYear()}/${yearNavigation.next.slug}`}
+              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
+            >
+              {yearNavigation.next.title}
+              <IconChevronRight strokeWidth={1.5} className="h-4" />
+            </Link>
+          ) : (
+            <div className="w-4" />
+          )}
+        </footer>
       </main>
       <Footer />
     </div>
