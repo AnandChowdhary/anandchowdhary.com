@@ -4,6 +4,7 @@ import { Country } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { IconCalendar, IconFlag } from "@tabler/icons-react";
 import { getCountryData, type TCountryCode } from "countries-list";
 import { marked } from "marked";
@@ -15,9 +16,13 @@ marked.use(markedSmartypants());
 export default function LocationContent({
   countriesDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   countriesDataFiltered: Country[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const countriesDataByYear = countriesDataFiltered.reduce((acc, item) => {
     const year = new Date(item.date).getUTCFullYear();
@@ -131,6 +136,18 @@ export default function LocationContent({
                 })}
             </div>
           ))}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/location/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/location/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
+        )}
       </main>
       <Footer />
     </div>

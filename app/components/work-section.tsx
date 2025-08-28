@@ -5,7 +5,7 @@ export async function WorkSection() {
     <GenericSectionContainer
       title="About"
       subtitle="/about"
-      description="I’m a tech entrepreneur, engineer, and designer."
+      description="I’m a tech entrepreneur, engineer, and designer, who builds and advises startups."
       linkText="Go to /about"
     >
       <ul className="grid grid-cols-5 gap-3 shadow-xs border border-neutral-100 dark:border-neutral-800 dark:bg-neutral-900 bg-neutral-50 px-4 py-3 rounded-xl">

@@ -2,6 +2,7 @@ import { BlogPost } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -96,9 +97,13 @@ const BlogCard = ({ item }: { item: BlogPost }) => (
 export default async function BlogContent({
   blogDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   blogDataFiltered: BlogPost[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -153,6 +158,18 @@ export default async function BlogContent({
               </article>
             ))}
           </div>
+        )}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/blog/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/blog/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />

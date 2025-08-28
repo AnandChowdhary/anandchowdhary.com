@@ -2,14 +2,13 @@ import { getAllBooks, getBookByYearAndSlug } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { proseClassName } from "@/app/styles";
 import {
   IconBook,
   IconBuilding,
   IconCalendar,
   IconCategory,
-  IconChevronLeft,
-  IconChevronRight,
   IconExternalLink,
   IconLanguage,
   IconUser,
@@ -232,34 +231,28 @@ export default async function BooksYearSlug({ params }: Props) {
             </a>
           )}
         </div>
-        <footer className="flex flex-col md:flex-row items-stretch md:items-center justify-between pt-8 gap-4">
-          {yearNavigation.previous ? (
-            <Link
-              href={`/books/${new Date(
-                yearNavigation.previous.date
-              ).getUTCFullYear()}/${yearNavigation.previous.slug}`}
-              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
-            >
-              <IconChevronLeft strokeWidth={1.5} className="h-4" />
-              {yearNavigation.previous.title}
-            </Link>
-          ) : (
-            <div className="w-4" />
-          )}
-          {yearNavigation.next ? (
-            <Link
-              href={`/books/${new Date(
-                yearNavigation.next.date
-              ).getUTCFullYear()}/${yearNavigation.next.slug}`}
-              className={`flex items-center gap-1 ${focusStyles} justify-center bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
-            >
-              {yearNavigation.next.title}
-              <IconChevronRight strokeWidth={1.5} className="h-4" />
-            </Link>
-          ) : (
-            <div className="w-4" />
-          )}
-        </footer>
+        <NavigationFooter
+          previous={
+            yearNavigation.previous
+              ? {
+                  href: `/books/${new Date(
+                    yearNavigation.previous.date
+                  ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
+                  label: yearNavigation.previous.title,
+                }
+              : undefined
+          }
+          next={
+            yearNavigation.next
+              ? {
+                  href: `/books/${new Date(
+                    yearNavigation.next.date
+                  ).getUTCFullYear()}/${yearNavigation.next.slug}`,
+                  label: yearNavigation.next.title,
+                }
+              : undefined
+          }
+        />
       </main>
       <Footer />
     </div>

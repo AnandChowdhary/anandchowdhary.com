@@ -19,9 +19,25 @@ export default async function BooksYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const booksDataFiltered = await getAllBooks();
-  const yearBooksData = booksDataFiltered.filter(
+  const allBooks = await getAllBooks();
+  const yearBooksData = allBooks.filter(
     (book) => new Date(book.date).getUTCFullYear() === yearNumber
   );
-  return <BooksContent booksDataFiltered={yearBooksData} year={year} />;
+  
+  // Get all years that have books
+  const availableYears = Array.from(
+    new Set(allBooks.map((book) => new Date(book.date).getUTCFullYear()))
+  ).sort((a, b) => a - b);
+  
+  // Find previous and next years
+  const currentYearIndex = availableYears.indexOf(yearNumber);
+  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
+  
+  return <BooksContent 
+    booksDataFiltered={yearBooksData} 
+    year={year}
+    previousYear={previousYear}
+    nextYear={nextYear}
+  />;
 }

@@ -19,9 +19,25 @@ export default async function Page({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const eventsDataFiltered = await getAllEvents();
-  const yearEventsData = eventsDataFiltered.filter(
+  const allEvents = await getAllEvents();
+  const yearEventsData = allEvents.filter(
     (post) => new Date(post.date).getUTCFullYear() === yearNumber
   );
-  return <EventsContent eventsDataFiltered={yearEventsData} year={year} />;
+  
+  // Get all years that have events
+  const availableYears = Array.from(
+    new Set(allEvents.map((event) => new Date(event.date).getUTCFullYear()))
+  ).sort((a, b) => a - b);
+  
+  // Find previous and next years
+  const currentYearIndex = availableYears.indexOf(yearNumber);
+  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
+  
+  return <EventsContent 
+    eventsDataFiltered={yearEventsData} 
+    year={year}
+    previousYear={previousYear}
+    nextYear={nextYear}
+  />;
 }

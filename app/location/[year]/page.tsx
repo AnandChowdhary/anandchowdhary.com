@@ -19,11 +19,27 @@ export default async function LocationYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const countriesDataFiltered = await getAllCountries();
-  const yearCountriesData = countriesDataFiltered.filter(
+  const allCountries = await getAllCountries();
+  const yearCountriesData = allCountries.filter(
     (country) => new Date(country.date).getUTCFullYear() === yearNumber
   );
+  
+  // Get all years that have location data
+  const availableYears = Array.from(
+    new Set(allCountries.map((country) => new Date(country.date).getUTCFullYear()))
+  ).sort((a, b) => a - b);
+  
+  // Find previous and next years
+  const currentYearIndex = availableYears.indexOf(yearNumber);
+  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
+  
   return (
-    <LocationContent countriesDataFiltered={yearCountriesData} year={year} />
+    <LocationContent 
+      countriesDataFiltered={yearCountriesData} 
+      year={year}
+      previousYear={previousYear}
+      nextYear={nextYear}
+    />
   );
 }

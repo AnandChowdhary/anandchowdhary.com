@@ -19,9 +19,25 @@ export default async function ProjectYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const projectDataFiltered = await getAllProjects();
-  const yearProjectData = projectDataFiltered.filter(
+  const allProjects = await getAllProjects();
+  const yearProjectData = allProjects.filter(
     (project) => new Date(project.date).getUTCFullYear() === yearNumber
   );
-  return <ProjectContent projectDataFiltered={yearProjectData} year={year} />;
+  
+  // Get all years that have projects
+  const availableYears = Array.from(
+    new Set(allProjects.map((project) => new Date(project.date).getUTCFullYear()))
+  ).sort((a, b) => a - b);
+  
+  // Find previous and next years
+  const currentYearIndex = availableYears.indexOf(yearNumber);
+  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
+  
+  return <ProjectContent 
+    projectDataFiltered={yearProjectData} 
+    year={year}
+    previousYear={previousYear}
+    nextYear={nextYear}
+  />;
 }

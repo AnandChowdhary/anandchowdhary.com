@@ -2,13 +2,12 @@ import { ArchiveItem } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import {
   IconBook,
   IconBrandGithub,
   IconBriefcase,
   IconCalendar,
-  IconChevronLeft,
-  IconChevronRight,
   IconFileText,
   IconHeart,
   IconInfoCircle,
@@ -26,21 +25,16 @@ import Link from "next/link";
 interface ArchiveContentProps {
   archiveData: ArchiveItem[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }
 
 export default function ArchiveContent({
   archiveData,
   year,
+  previousYear,
+  nextYear,
 }: ArchiveContentProps) {
-  const yearNavigation = year
-    ? {
-        previous: year !== "2009" ? parseInt(year) - 1 : null,
-        next:
-          year !== new Date().getUTCFullYear().toString()
-            ? parseInt(year) + 1
-            : null,
-      }
-    : null;
 
   const groupedByYear = archiveData.reduce((acc, item) => {
     const itemYear = new Date(item.date).getFullYear().toString();
@@ -250,31 +244,17 @@ export default function ArchiveContent({
               ))}
             </div>
           ))}
-        {yearNavigation && (
-          <footer className="flex items-center justify-between">
-            {yearNavigation.previous ? (
-              <Link
-                href={`/archive/${yearNavigation.previous}`}
-                className={`flex items-center gap-1 ${focusStyles} bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pl-2 pr-4 rounded-full`}
-              >
-                <IconChevronLeft strokeWidth={1.5} className="h-4" />
-                {yearNavigation.previous}
-              </Link>
-            ) : (
-              <div className="w-4" />
-            )}
-            {yearNavigation.next ? (
-              <Link
-                href={`/archive/${yearNavigation.next}`}
-                className={`flex items-center gap-1 ${focusStyles} bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 py-1 pr-2 pl-4 rounded-full`}
-              >
-                {yearNavigation.next}
-                <IconChevronRight strokeWidth={1.5} className="h-4" />
-              </Link>
-            ) : (
-              <div className="w-4" />
-            )}
-          </footer>
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/archive/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/archive/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />

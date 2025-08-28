@@ -2,6 +2,7 @@ import { Project } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { proseClassName } from "@/app/styles";
 import slugify from "@sindresorhus/slugify";
 import { marked } from "marked";
@@ -115,10 +116,14 @@ export default async function ProjectContent({
   projectDataFiltered,
   year,
   tag,
+  previousYear,
+  nextYear,
 }: {
   projectDataFiltered: Project[];
   year?: string;
   tag?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   if (tag) {
     let tagContent: string | undefined = undefined;
@@ -165,6 +170,18 @@ export default async function ProjectContent({
             <ProjectCard key={item.slug} item={item} />
           ))}
         </main>
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/projects/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/projects/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
+        )}
         <Footer />
       </div>
     );
@@ -184,6 +201,18 @@ export default async function ProjectContent({
           <ProjectCard key={item.slug} item={item} />
         ))}
       </main>
+      {year && (previousYear || nextYear) && (
+        <NavigationFooter
+          previous={previousYear ? {
+            href: `/projects/${previousYear}`,
+            label: previousYear.toString()
+          } : undefined}
+          next={nextYear ? {
+            href: `/projects/${nextYear}`,
+            label: nextYear.toString()
+          } : undefined}
+        />
+      )}
       <Footer />
     </div>
   );

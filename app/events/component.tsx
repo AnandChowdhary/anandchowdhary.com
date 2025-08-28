@@ -2,6 +2,7 @@ import { Event } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { EventMetadata } from "@/app/events/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -90,9 +91,13 @@ const EventCard = ({ item }: { item: Event }) => (
 export default async function EventsContent({
   eventsDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   eventsDataFiltered: Event[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const eventsDataByYear = eventsDataFiltered.reduce((acc, item) => {
     const year = new Date(item.date).getUTCFullYear();
@@ -187,6 +192,18 @@ export default async function EventsContent({
               </div>
             )}
           </>
+        )}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/events/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/events/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />

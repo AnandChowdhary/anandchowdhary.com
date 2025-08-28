@@ -2,6 +2,7 @@ import { Version } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -68,9 +69,13 @@ const VersionCard = ({ item }: { item: Version }) => (
 export default async function VersionContent({
   versionDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   versionDataFiltered: Version[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -87,6 +92,18 @@ Looking back, I can connect the dots for what I was interested in way back when.
         {versionDataFiltered.map((item) => (
           <VersionCard key={item.slug} item={item} />
         ))}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/versions/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/versions/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
+        )}
       </main>
       <Footer />
     </div>

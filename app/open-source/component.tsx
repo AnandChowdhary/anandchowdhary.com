@@ -2,6 +2,7 @@ import { getAllArchiveItems, Repository } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { IconCalendar, IconCode, IconStar } from "@tabler/icons-react";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -162,9 +163,13 @@ const RepoCard = ({ item }: { item: Repository }) => {
 export default async function OpenSourceContent({
   reposDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   reposDataFiltered: Repository[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const reposDataByYear = reposDataFiltered.reduce((acc, item) => {
     const year = new Date(item.created_at).getUTCFullYear();
@@ -278,6 +283,18 @@ export default async function OpenSourceContent({
               </div>
             )}
           </>
+        )}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/open-source/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/open-source/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />

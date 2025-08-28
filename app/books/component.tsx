@@ -2,6 +2,7 @@ import { Book } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -28,9 +29,13 @@ function BookItem({ book }: { book: Book }) {
 export default async function BooksContent({
   booksDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   booksDataFiltered: Book[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const currentlyReading = booksDataFiltered.filter(
     (book) => book.state === "reading"
@@ -84,6 +89,18 @@ export default async function BooksContent({
                 ))}
             </div>
           </section>
+        )}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/books/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/books/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />

@@ -2,6 +2,7 @@ import { getNoteContent, Note } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { NoteMetadata } from "@/app/notes/metadata";
 import { proseClassNameWithoutLead } from "@/app/styles";
 import { marked } from "marked";
@@ -32,9 +33,13 @@ const NoteCard = ({ item }: { item: Note }) => (
 export default async function NotesContent({
   notesDataFiltered,
   year,
+  previousYear,
+  nextYear,
 }: {
   notesDataFiltered: Note[];
   year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const slug = notesDataFiltered[0].slug;
   const content = await getNoteContent(
@@ -120,6 +125,18 @@ export default async function NotesContent({
               </article>
             ))}
           </div>
+        )}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/notes/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/notes/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />
