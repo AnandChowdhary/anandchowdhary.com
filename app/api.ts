@@ -23,6 +23,35 @@ export interface Version extends GenericItem {
   };
 }
 
+export interface Project extends GenericItem {
+  type?: string;
+  url?: string;
+  attributes: {
+    date?: string;
+    draft?: boolean;
+    tags?: string;
+    intro?: string;
+    work?: string[];
+    bg?: string;
+    style?: string;
+    img_src?: string;
+    img_type?: string;
+    stack?: string[];
+    tools?: string[];
+    collaborators?: string[];
+    award?: string;
+    award_position?: number;
+    client?: string;
+    client_link?: string;
+    timeline?: string;
+    places?: string;
+    venue?: string;
+    icon?: string;
+    icon_bg?: boolean;
+    subcategory?: string;
+  };
+}
+
 export interface Repository {
   name: string;
   full_name: string;
@@ -380,14 +409,19 @@ export async function getBlogPostContent(
   return postContentText;
 }
 
-export async function getRepositoryDetails(
-  name: string
-): Promise<string | null> {
+export async function getRepositoryReadMe(name: string): Promise<string> {
   const readMe = await fetch(
     `https://raw.githubusercontent.com/${name}/HEAD/README.md`,
     { next: { revalidate: 3600 } }
   );
   const readMeText = await readMe.text();
+  return readMeText;
+}
+
+export async function getRepositoryDetails(
+  name: string
+): Promise<string | null> {
+  const readMeText = await getRepositoryReadMe(name);
   if (readMeText.includes(`data-embed="anandchowdhary.com"`)) {
     return (
       readMeText.split("</summary>")[1]?.split("</details>")[0]?.trim() ?? null
@@ -797,4 +831,49 @@ export async function getVersionContent(
     versionContentText = lines.slice(1).join("\n").trim();
   }
   return versionContentText;
+}
+
+export async function getAllProjects(): Promise<Project[]> {
+  const projects = await fetch(
+    "https://anandchowdhary.github.io/projects/api.json",
+    { next: { revalidate: 3600 } }
+  );
+  const projectsData = (await projects.json()) as Project[];
+  return projectsData
+    .filter((project) => !project.attributes?.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export async function getProjectByYearAndSlug(
+  year: number,
+  slug: string
+): Promise<Project | null> {
+  const projectsData = await getAllProjects();
+  return (
+    projectsData
+      .filter((project) => new Date(project.date).getUTCFullYear() === year)
+      .find((project) => project.slug.replace(".md", "") === slug) || null
+  );
+}
+
+export async function getProjectContent(
+  year: string,
+  slug: string
+): Promise<string> {
+  const projectContent = await fetch(
+    `https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/projects/${year}/${slug}`
+  );
+  if (!projectContent.ok) throw new Error("Project content not found");
+  let projectContentText = await projectContent.text();
+  // Remove front-matter if there is any
+  if (projectContentText.startsWith("---")) {
+    const frontMatterEnd = projectContentText.indexOf("\n---");
+    projectContentText = projectContentText.slice(frontMatterEnd + 4).trim();
+  }
+  // Remove heading
+  if (projectContentText.startsWith("# ")) {
+    const lines = projectContentText.split("\n");
+    projectContentText = lines.slice(1).join("\n").trim();
+  }
+  return projectContentText;
 }

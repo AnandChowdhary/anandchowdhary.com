@@ -3,6 +3,7 @@ import {
   getAllOpenSource,
   getOpenSourceByYearAndSlug,
   getRepositoryDetails,
+  getRepositoryReadMe,
 } from "@/app/api";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
@@ -60,10 +61,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   if (!repo) notFound();
 
   const everything = await getAllArchiveItems();
-  const found = everything.find(
-    (item) =>
-      item.url === `https://anandchowdhary.com/open-source/${year}/${slug}`
-  );
+  const found = everything.find(({ source }) => source === repo.html_url);
   let image = found?.data?.openGraphImageUrl;
   if (
     typeof image === "string" &&
@@ -72,6 +70,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
     image = undefined;
 
   const details = await getRepositoryDetails(repo.full_name);
+  const readMe = await getRepositoryReadMe(repo.full_name);
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -139,7 +138,9 @@ export default async function OpenSourceYearSlug({ params }: Props) {
                 size={16}
                 strokeWidth={1.5}
               />
-              <div className="grow truncate">{repo.full_name}</div>
+              <ExternalLink href={repo.html_url} className="grow truncate">
+                View on GitHub
+              </ExternalLink>
             </div>
           </div>
         </header>
@@ -149,16 +150,37 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             __html: marked.parse(details ?? repo.description),
           }}
         />
-        <footer className="flex">
-          <ExternalLink
-            href={repo.html_url}
-            underline={false}
-            className="rounded-lg border border-neutral-200 dark:border-neutral-800 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 flex items-center gap-2"
+        <div className="pt-8">
+          <div>
+            <ExternalLink
+              href={repo.html_url}
+              underline={false}
+              className="rounded-2xl rounded-b-none border border-neutral-200 dark:border-neutral-800 px-4 py-2 bg-neutral-100 dark:bg-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-800 flex items-center justify-between"
+            >
+              <span className="flex items-center gap-2">
+                <IconBrandGithub size={16} />
+                <span className="font-medium">{repo.full_name}</span>
+              </span>
+              <span className="text-neutral-500 font-normal">README</span>
+            </ExternalLink>
+          </div>
+          <article
+            className="border border-neutral-200 dark:border-neutral-800 rounded-2xl rounded-t-none border-t-0 p-8 shadow-sm relative overflow-hidden max-h-256"
+            style={{
+              maskImage:
+                "linear-gradient(to bottom, black 50%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, black 50%, transparent 100%)",
+            }}
           >
-            <IconBrandGithub size={16} />
-            <span className="font-medium">{repo.full_name}</span>
-          </ExternalLink>
-        </footer>
+            <div
+              className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-base text-sm prose-h1:text-lg prose-h2:text-lg"
+              dangerouslySetInnerHTML={{
+                __html: await Promise.resolve(marked.parse(readMe)),
+              }}
+            />
+          </article>
+        </div>
       </main>
       <Footer />
     </div>

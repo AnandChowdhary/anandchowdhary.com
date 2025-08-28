@@ -36,13 +36,7 @@ const RepoThumbnail = async ({
   const { emoji } = getEmojiFromDescription(item.description);
 
   const everything = await getAllArchiveItems();
-  const found = everything.find(
-    ({ url }) =>
-      url ===
-      `https://anandchowdhary.com/open-source/${new Date(
-        item.created_at
-      ).getUTCFullYear()}/${item.slug.split("/").pop()}`
-  );
+  const found = everything.find(({ source }) => source === item.html_url);
   let image = found?.data?.openGraphImageUrl;
   if (
     typeof image === "string" &&
