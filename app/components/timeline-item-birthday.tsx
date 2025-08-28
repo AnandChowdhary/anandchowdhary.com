@@ -16,7 +16,7 @@ export function TimelineItemBirthday() {
     const calculateAge = () => {
       const now = new Date();
       const ageInSeconds = Math.floor(
-        (now.getTime() - BIRTHDAY.getTime()) / 1000
+        (now.getTime() - BIRTHDAY.getTime()) / 1000,
       );
       setAge(ageInSeconds);
     };

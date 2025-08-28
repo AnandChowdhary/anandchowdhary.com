@@ -55,7 +55,7 @@ export default async function ProjectYearSlug({ params }: Props) {
 
   const allProjects = await getAllProjects();
   const currentProjectIndex = allProjects.findIndex(
-    (p) => p.slug === project.slug
+    (p) => p.slug === project.slug,
   );
   const previousProject = allProjects[currentProjectIndex - 1];
   const nextProject = allProjects[currentProjectIndex + 1];
@@ -81,7 +81,7 @@ export default async function ProjectYearSlug({ params }: Props) {
     /!\[([^\]]*)\]\((\/assets\/[^)]+)\)/g,
     (match, alt, path) => {
       return `![${alt}](https://github.com/AnandChowdhary/projects/blob/main${path}?raw=true)`;
-    }
+    },
   );
 
   // Also replace HTML img tags with relative src
@@ -89,11 +89,11 @@ export default async function ProjectYearSlug({ params }: Props) {
     /<img([^>]*)\ssrc="(\/assets\/[^"]+)"([^>]*)>/g,
     (match, before, path, after) => {
       return `<img${before} src="https://raw.githubusercontent.com/AnandChowdhary/projects/main${path}"${after}>`;
-    }
+    },
   );
 
   const projectContentHtml = await Promise.resolve(
-    marked.parse(processedContent)
+    marked.parse(processedContent),
   );
 
   const yearNavigation = { previous: previousProject, next: nextProject };
@@ -116,7 +116,7 @@ export default async function ProjectYearSlug({ params }: Props) {
                 alt=""
                 src={getImageUrl(
                   project.attributes.img_src,
-                  project.attributes.img_type
+                  project.attributes.img_type,
                 )}
                 className="max-w-full max-h-full object-contain"
               />
@@ -125,7 +125,7 @@ export default async function ProjectYearSlug({ params }: Props) {
                 alt=""
                 src={getImageUrl(
                   project.attributes.img_src,
-                  project.attributes.img_type
+                  project.attributes.img_type,
                 )}
                 className="w-full h-full rounded-2xl object-cover"
               />
@@ -134,7 +134,7 @@ export default async function ProjectYearSlug({ params }: Props) {
                 alt=""
                 src={getImageUrl(
                   project.attributes.img_src,
-                  project.attributes.img_type
+                  project.attributes.img_type,
                 )}
                 className="w-full h-full rounded-2xl object-cover"
               />
@@ -159,10 +159,10 @@ export default async function ProjectYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/projects/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    " "
+                    " ",
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -172,10 +172,10 @@ export default async function ProjectYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/projects/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    " "
+                    " ",
                   )}`,
                   label: yearNavigation.next.title,
                 }

@@ -38,10 +38,10 @@ export default async function BooksContent({
   nextYear?: number;
 }) {
   const currentlyReading = booksDataFiltered.filter(
-    (book) => book.state === "reading"
+    (book) => book.state === "reading",
   );
   const completed = booksDataFiltered.filter(
-    (book) => book.state === "completed"
+    (book) => book.state === "completed",
   );
 
   return (
@@ -63,7 +63,7 @@ export default async function BooksContent({
               {currentlyReading
                 .sort(
                   (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime()
+                    new Date(b.date).getTime() - new Date(a.date).getTime(),
                 )
                 .map((book) => (
                   <BookItem key={`${book.date}-${book.slug}`} book={book} />
@@ -82,7 +82,7 @@ export default async function BooksContent({
               {completed
                 .sort(
                   (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime()
+                    new Date(b.date).getTime() - new Date(a.date).getTime(),
                 )
                 .map((book) => (
                   <BookItem key={`${book.date}-${book.slug}`} book={book} />
@@ -92,14 +92,22 @@ export default async function BooksContent({
         )}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/books/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/books/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/books/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/books/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

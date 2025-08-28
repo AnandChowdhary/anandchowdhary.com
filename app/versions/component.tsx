@@ -15,7 +15,7 @@ const VersionCard = ({ item }: { item: Version }) => (
       <img
         src={`https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/${item.slug.replace(
           ".md",
-          ""
+          "",
         )}/home.png`}
         alt=""
         className="w-full h-full object-cover rounded-lg dark:brightness-60 object-top"
@@ -24,7 +24,7 @@ const VersionCard = ({ item }: { item: Version }) => (
     <div className="md:col-span-2">
       <Link
         href={`/versions/${new Date(
-          item.date
+          item.date,
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
         className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
@@ -94,14 +94,22 @@ Looking back, I can connect the dots for what I was interested in way back when.
         ))}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/versions/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/versions/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/versions/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/versions/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

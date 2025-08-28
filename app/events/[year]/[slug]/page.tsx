@@ -62,9 +62,7 @@ export default async function EventsYearSlug({ params }: Props) {
   if (!event) notFound();
 
   const allEvents = await getAllEvents();
-  const currentEventIndex = allEvents.findIndex(
-    (e) => e.slug === event.slug
-  );
+  const currentEventIndex = allEvents.findIndex((e) => e.slug === event.slug);
   const previousEvent = allEvents[currentEventIndex - 1];
   const nextEvent = allEvents[currentEventIndex + 1];
 
@@ -75,7 +73,7 @@ export default async function EventsYearSlug({ params }: Props) {
 
   const eventContentText = await getEventContent(year, event.slug);
   const eventContentHtml = await Promise.resolve(
-    marked.parse(eventContentText)
+    marked.parse(eventContentText),
   );
 
   return (
@@ -190,10 +188,10 @@ export default async function EventsYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/events/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -203,10 +201,10 @@ export default async function EventsYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/events/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.next.title,
                 }

@@ -19,7 +19,9 @@ export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
   const repos = await getAllOpenSource();
   const years = Array.from(
-    new Set(repos.map((repo) => new Date(repo.date).getUTCFullYear().toString()))
+    new Set(
+      repos.map((repo) => new Date(repo.date).getUTCFullYear().toString()),
+    ),
   );
   return years.map((year) => ({ year }));
 }
@@ -30,23 +32,29 @@ export default async function OpenSourceYear({ params }: Props) {
   const yearNumber = parseInt(year);
   const allRepos = await getAllOpenSource();
   const yearReposData = allRepos.filter(
-    (repo) => new Date(repo.date).getUTCFullYear() === yearNumber
+    (repo) => new Date(repo.date).getUTCFullYear() === yearNumber,
   );
-  
+
   // Get all years that have open source repos
   const availableYears = Array.from(
-    new Set(allRepos.map((repo) => new Date(repo.date).getUTCFullYear()))
+    new Set(allRepos.map((repo) => new Date(repo.date).getUTCFullYear())),
   ).sort((a, b) => a - b);
-  
+
   // Find previous and next years
   const currentYearIndex = availableYears.indexOf(yearNumber);
-  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
-  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
-  
-  return <OpenSourceContent 
-    reposDataFiltered={yearReposData} 
-    year={year}
-    previousYear={previousYear}
-    nextYear={nextYear}
-  />;
+  const previousYear =
+    currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear =
+    currentYearIndex < availableYears.length - 1
+      ? availableYears[currentYearIndex + 1]
+      : undefined;
+
+  return (
+    <OpenSourceContent
+      reposDataFiltered={yearReposData}
+      year={year}
+      previousYear={previousYear}
+      nextYear={nextYear}
+    />
+  );
 }

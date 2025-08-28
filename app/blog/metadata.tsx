@@ -18,7 +18,7 @@ export function BlogMetadata({
   postContentText: string;
 }) {
   const githubUrl = `https://github.com/AnandChowdhary/blog/blob/main/blog/${new Date(
-    item.date
+    item.date,
   ).getUTCFullYear()}/${item.slug}`;
 
   return (

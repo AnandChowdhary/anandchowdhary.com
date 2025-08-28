@@ -26,7 +26,7 @@ export function NoteMetadata({
   link: boolean;
 }) {
   const githubUrl = `https://github.com/AnandChowdhary/notes/blob/main/threads/${new Date(
-    item.date
+    item.date,
   ).getUTCFullYear()}/${item.slug}.md`;
 
   return (
@@ -38,7 +38,7 @@ export function NoteMetadata({
         {link ? (
           <Link
             href={`/notes/${new Date(
-              item.date
+              item.date,
             ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
             className={`grow truncate ${focusStyles} ${underlinedLink}`}
           >

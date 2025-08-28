@@ -49,9 +49,7 @@ export default async function VideoPage({ params }: Props) {
   }
 
   const allVideos = await getVideos();
-  const currentVideoIndex = allVideos.findIndex(
-    (v) => v.slug === video.slug
-  );
+  const currentVideoIndex = allVideos.findIndex((v) => v.slug === video.slug);
   const previousVideo = allVideos[currentVideoIndex - 1];
   const nextVideo = allVideos[currentVideoIndex + 1];
 
@@ -92,7 +90,7 @@ export default async function VideoPage({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/videos/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -102,7 +100,7 @@ export default async function VideoPage({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/videos/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }

@@ -19,7 +19,9 @@ export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
   const notes = await getAllNotes();
   const years = Array.from(
-    new Set(notes.map((note) => new Date(note.date).getUTCFullYear().toString()))
+    new Set(
+      notes.map((note) => new Date(note.date).getUTCFullYear().toString()),
+    ),
   );
   return years.map((year) => ({ year }));
 }
@@ -31,25 +33,31 @@ export default async function NotesYear({ params }: Props) {
 
   const allNotes = await getAllNotes();
   const notesDataFiltered = allNotes.filter(
-    (note) => new Date(note.date).getUTCFullYear() === yearNumber
+    (note) => new Date(note.date).getUTCFullYear() === yearNumber,
   );
 
   if (notesDataFiltered.length === 0) notFound();
-  
+
   // Get all years that have notes
   const availableYears = Array.from(
-    new Set(allNotes.map((note) => new Date(note.date).getUTCFullYear()))
+    new Set(allNotes.map((note) => new Date(note.date).getUTCFullYear())),
   ).sort((a, b) => a - b);
-  
+
   // Find previous and next years
   const currentYearIndex = availableYears.indexOf(yearNumber);
-  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
-  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
+  const previousYear =
+    currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear =
+    currentYearIndex < availableYears.length - 1
+      ? availableYears[currentYearIndex + 1]
+      : undefined;
 
-  return <NotesContent 
-    notesDataFiltered={notesDataFiltered} 
-    year={year}
-    previousYear={previousYear}
-    nextYear={nextYear}
-  />;
+  return (
+    <NotesContent
+      notesDataFiltered={notesDataFiltered}
+      year={year}
+      previousYear={previousYear}
+      nextYear={nextYear}
+    />
+  );
 }

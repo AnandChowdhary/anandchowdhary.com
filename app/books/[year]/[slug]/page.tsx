@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       book.excerpt ??
       `Book read by Anand Chowdhary: ${book.title} by ${book.authors.join(
-        ", "
+        ", ",
       )}`,
   };
 }
@@ -62,9 +62,7 @@ export default async function BooksYearSlug({ params }: Props) {
   if (!book) notFound();
 
   const allBooks = await getAllBooks();
-  const currentBookIndex = allBooks.findIndex(
-    (b) => b.slug === book.slug
-  );
+  const currentBookIndex = allBooks.findIndex((b) => b.slug === book.slug);
   const previousBook = allBooks[currentBookIndex - 1];
   const nextBook = allBooks[currentBookIndex + 1];
 
@@ -230,7 +228,7 @@ export default async function BooksYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/books/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -240,7 +238,7 @@ export default async function BooksYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/books/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }

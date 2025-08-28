@@ -19,7 +19,9 @@ export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
   const videos = await getVideos();
   const years = Array.from(
-    new Set(videos.map((video) => new Date(video.date).getFullYear().toString()))
+    new Set(
+      videos.map((video) => new Date(video.date).getFullYear().toString()),
+    ),
   );
   return years.map((year) => ({ year }));
 }
@@ -30,23 +32,29 @@ export default async function VideosYear({ params }: Props) {
   const yearNumber = parseInt(year);
   const allVideos = await getVideos();
   const yearVideosData = allVideos.filter(
-    (video) => new Date(video.date).getFullYear() === yearNumber
+    (video) => new Date(video.date).getFullYear() === yearNumber,
   );
-  
+
   // Get all years that have videos
   const availableYears = Array.from(
-    new Set(allVideos.map((video) => new Date(video.date).getFullYear()))
+    new Set(allVideos.map((video) => new Date(video.date).getFullYear())),
   ).sort((a, b) => a - b);
-  
+
   // Find previous and next years
   const currentYearIndex = availableYears.indexOf(yearNumber);
-  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
-  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
-  
-  return <VideosContent 
-    videosData={yearVideosData} 
-    year={year}
-    previousYear={previousYear}
-    nextYear={nextYear}
-  />;
+  const previousYear =
+    currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear =
+    currentYearIndex < availableYears.length - 1
+      ? availableYears[currentYearIndex + 1]
+      : undefined;
+
+  return (
+    <VideosContent
+      videosData={yearVideosData}
+      year={year}
+      previousYear={previousYear}
+      nextYear={nextYear}
+    />
+  );
 }

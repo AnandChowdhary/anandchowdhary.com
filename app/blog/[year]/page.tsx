@@ -19,7 +19,9 @@ export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
   const posts = await getAllBlogPosts();
   const years = Array.from(
-    new Set(posts.map((post) => new Date(post.date).getUTCFullYear().toString()))
+    new Set(
+      posts.map((post) => new Date(post.date).getUTCFullYear().toString()),
+    ),
   );
   return years.map((year) => ({ year }));
 }
@@ -30,23 +32,29 @@ export default async function BlogYear({ params }: Props) {
   const yearNumber = parseInt(year);
   const allBlogPosts = await getAllBlogPosts();
   const yearBlogData = allBlogPosts.filter(
-    (post) => new Date(post.date).getUTCFullYear() === yearNumber
+    (post) => new Date(post.date).getUTCFullYear() === yearNumber,
   );
-  
+
   // Get all years that have blog posts
   const availableYears = Array.from(
-    new Set(allBlogPosts.map((post) => new Date(post.date).getUTCFullYear()))
+    new Set(allBlogPosts.map((post) => new Date(post.date).getUTCFullYear())),
   ).sort((a, b) => a - b);
-  
+
   // Find previous and next years
   const currentYearIndex = availableYears.indexOf(yearNumber);
-  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
-  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
-  
-  return <BlogContent 
-    blogDataFiltered={yearBlogData} 
-    year={year}
-    previousYear={previousYear}
-    nextYear={nextYear}
-  />;
+  const previousYear =
+    currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear =
+    currentYearIndex < availableYears.length - 1
+      ? availableYears[currentYearIndex + 1]
+      : undefined;
+
+  return (
+    <BlogContent
+      blogDataFiltered={yearBlogData}
+      year={year}
+      previousYear={previousYear}
+      nextYear={nextYear}
+    />
+  );
 }

@@ -50,9 +50,7 @@ export default async function NoteYearSlug({ params }: Props) {
   if (!note) notFound();
 
   const allNotes = await getAllNotes();
-  const currentNoteIndex = allNotes.findIndex(
-    (n) => n.slug === note.slug
-  );
+  const currentNoteIndex = allNotes.findIndex((n) => n.slug === note.slug);
   const previousNote = allNotes[currentNoteIndex - 1];
   const nextNote = allNotes[currentNoteIndex + 1];
 
@@ -83,10 +81,10 @@ export default async function NoteYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/notes/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -96,10 +94,10 @@ export default async function NoteYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/notes/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.next.title,
                 }

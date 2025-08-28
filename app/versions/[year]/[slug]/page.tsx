@@ -55,14 +55,14 @@ export default async function VersionYearSlug({ params }: Props) {
 
   const allVersions = await getAllVersions();
   const currentVersionIndex = allVersions.findIndex(
-    (v) => v.slug === version.slug
+    (v) => v.slug === version.slug,
   );
   const previousVersion = allVersions[currentVersionIndex - 1];
   const nextVersion = allVersions[currentVersionIndex + 1];
 
   const versionContentText = await getVersionContent(year, version.slug);
   const versionContentHtml = await Promise.resolve(
-    marked.parse(versionContentText)
+    marked.parse(versionContentText),
   );
 
   const yearNavigation = { previous: previousVersion, next: nextVersion };
@@ -96,10 +96,10 @@ export default async function VersionYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/versions/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -109,10 +109,10 @@ export default async function VersionYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/versions/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.next.title,
                 }

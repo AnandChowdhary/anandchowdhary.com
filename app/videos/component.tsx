@@ -82,7 +82,7 @@ export default async function VideosContent({
   nextYear?: number;
 }) {
   const sortedVideos = [...videosData].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   return (
@@ -100,14 +100,22 @@ export default async function VideosContent({
         </div>
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/videos/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/videos/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/videos/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/videos/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

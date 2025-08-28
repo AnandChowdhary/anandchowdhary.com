@@ -36,12 +36,15 @@ export default function ArchiveContent({
   previousYear,
   nextYear,
 }: ArchiveContentProps) {
-  const groupedByYear = archiveData.reduce((acc, item) => {
-    const itemYear = new Date(item.date).getFullYear().toString();
-    if (!acc[itemYear]) acc[itemYear] = [];
-    acc[itemYear].push(item);
-    return acc;
-  }, {} as Record<string, ArchiveItem[]>);
+  const groupedByYear = archiveData.reduce(
+    (acc, item) => {
+      const itemYear = new Date(item.date).getFullYear().toString();
+      if (!acc[itemYear]) acc[itemYear] = [];
+      acc[itemYear].push(item);
+      return acc;
+    },
+    {} as Record<string, ArchiveItem[]>,
+  );
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -157,7 +160,7 @@ export default function ArchiveContent({
                     const weekStart = new Date(
                       itemYear ? parseInt(itemYear) : new Date().getFullYear(),
                       0,
-                      1
+                      1,
                     );
                     weekStart.setDate(weekStart.getDate() + index * 7);
                     const weekEnd = new Date(weekStart);
@@ -188,8 +191,8 @@ export default function ArchiveContent({
                           hasContributions.length > 0
                             ? "bg-neutral-500"
                             : hasPassed
-                            ? "bg-neutral-200 dark:bg-neutral-800"
-                            : "bg-neutral-50 dark:bg-neutral-900"
+                              ? "bg-neutral-200 dark:bg-neutral-800"
+                              : "bg-neutral-50 dark:bg-neutral-900"
                         }`}
                         style={{ width: `${(100 / 52).toFixed(2)}%` }}
                       >
@@ -219,7 +222,7 @@ export default function ArchiveContent({
                       <Link
                         href={item.url.replace(
                           "https://anandchowdhary.com",
-                          ""
+                          "",
                         )}
                         className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                         style={{

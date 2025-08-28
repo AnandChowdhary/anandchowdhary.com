@@ -93,10 +93,10 @@ export default async function BlogYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/blog/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -106,10 +106,10 @@ export default async function BlogYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/blog/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    ""
+                    "",
                   )}`,
                   label: yearNavigation.next.title,
                 }

@@ -191,7 +191,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/open-source/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -201,7 +201,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/open-source/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }

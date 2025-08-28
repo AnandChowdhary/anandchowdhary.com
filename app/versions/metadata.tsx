@@ -19,7 +19,7 @@ export async function VersionMetadata({
   children?: React.ReactNode;
 }) {
   const githubUrl = `https://github.com/AnandChowdhary/versions/blob/main/versions/${new Date(
-    item.date
+    item.date,
   ).getUTCFullYear()}/${item.slug}`;
   /*"attributes": {
     "date": "2022-10-08T00:00:00.000Z",

@@ -25,10 +25,10 @@ const PressItemCard = ({
               src={
                 item.href
                   ? `https://manifest.im/icon/${new URL(
-                      item.href
+                      item.href,
                     ).hostname.replace("www.", "")}`
                   : `https://tse2.mm.bing.net/th?q=${encodeURIComponent(
-                      item.publisher
+                      item.publisher,
                     )}+icon&w=70&h=70&c=7&rs=1&p=0&dpr=3&pid=1.7&mkt=en-IN&adlt=moderate`
               }
               className="w-4 h-4 rounded-md mr-0.5 shrink-0"
@@ -76,13 +76,13 @@ export default async function PressContent({
   nextYear?: number;
 }) {
   const sortedAwards = [...pressData.awards].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   const sortedPodcasts = [...pressData.podcasts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   const sortedFeatures = [...pressData.features].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   return (
@@ -124,14 +124,22 @@ export default async function PressContent({
         )}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/press/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/press/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/press/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/press/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

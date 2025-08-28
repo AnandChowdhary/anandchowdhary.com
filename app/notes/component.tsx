@@ -16,7 +16,7 @@ const NoteCard = ({ item }: { item: Note }) => (
     <Link
       href={`/notes/${new Date(item.date).getUTCFullYear()}/${item.slug.replace(
         ".md",
-        ""
+        "",
       )}`}
       className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
     >
@@ -44,7 +44,7 @@ export default async function NotesContent({
   const slug = notesDataFiltered[0].slug;
   const content = await getNoteContent(
     new Date(notesDataFiltered[0].date).getUTCFullYear().toString(),
-    notesDataFiltered[0].slug
+    notesDataFiltered[0].slug,
   );
 
   return (
@@ -69,7 +69,7 @@ export default async function NotesContent({
         >
           <Link
             href={`/notes/${new Date(
-              notesDataFiltered[0].date
+              notesDataFiltered[0].date,
             ).getUTCFullYear()}/${slug.replace(".md", "")}`}
             className={`${focusStyles} flex hover:text-neutral-500 full-link`}
           >
@@ -97,7 +97,7 @@ export default async function NotesContent({
                 <div className="grow flex items-center justify-between gap-8 min-w-0">
                   <Link
                     href={`/notes/${new Date(
-                      item.date
+                      item.date,
                     ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
                     className={`${focusStyles} min-w-0 full-link flex-1 truncate hover:text-neutral-500 overflow-hidden`}
                     style={{
@@ -128,14 +128,22 @@ export default async function NotesContent({
         )}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/notes/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/notes/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/notes/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/notes/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

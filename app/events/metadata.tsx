@@ -27,7 +27,7 @@ export function EventMetadata({
         {link ? (
           <Link
             href={`/events/${new Date(
-              item.date
+              item.date,
             ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
             className={`grow truncate ${underlinedLink}`}
           >
@@ -65,9 +65,9 @@ export function EventMetadata({
           {link ? (
             <Link
               href={`/location/${new Date(
-                item.date
+                item.date,
               ).getUTCFullYear()}/${generateSlug(
-                item.attributes.city
+                item.attributes.city,
               )}-${generateSlug(item.attributes.country ?? "")}`}
               className={`grow truncate ${underlinedLink}`}
             >

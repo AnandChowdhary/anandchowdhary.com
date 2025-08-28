@@ -69,9 +69,9 @@ export default async function PressYearSlug({ params }: Props) {
     ...press.podcasts,
     ...press.features,
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  
+
   const currentPressIndex = allPressItems.findIndex(
-    (p) => p.slug === pressItem.slug
+    (p) => p.slug === pressItem.slug,
   );
   const previousPressItem = allPressItems[currentPressIndex - 1];
   const nextPressItem = allPressItems[currentPressIndex + 1];
@@ -81,8 +81,8 @@ export default async function PressYearSlug({ params }: Props) {
     pressItem.category === "award"
       ? IconAward
       : pressItem.category === "podcast"
-      ? IconMicrophone
-      : IconNews;
+        ? IconMicrophone
+        : IconNews;
 
   const yearNavigation = { previous: previousPressItem, next: nextPressItem };
 
@@ -186,7 +186,7 @@ export default async function PressYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/press/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -196,7 +196,7 @@ export default async function PressYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/press/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }

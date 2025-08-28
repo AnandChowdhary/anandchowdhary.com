@@ -103,7 +103,7 @@ const ProjectCard = ({ item }: { item: Project }) => {
           }}
           dangerouslySetInnerHTML={{
             __html: marked.parseInline(
-              item.attributes?.intro || item.excerpt || ""
+              item.attributes?.intro || item.excerpt || "",
             ),
           }}
         />
@@ -130,8 +130,8 @@ export default async function ProjectContent({
     try {
       const response = await fetch(
         `https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/tags/${slugify(
-          tag.toLowerCase()
-        )}.md`
+          tag.toLowerCase(),
+        )}.md`,
       );
       tagContent = await response.text();
     } catch {
@@ -147,7 +147,7 @@ export default async function ProjectContent({
             <div className="aspect-5/3 shadow-sm border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden p-8 md:p-22 w-full">
               <img
                 src={`https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/assets/tags/${slugify(
-                  tag.toLowerCase()
+                  tag.toLowerCase(),
                 )}.svg`}
                 alt={tag}
                 className="w-full h-full object-contain"
@@ -172,14 +172,22 @@ export default async function ProjectContent({
         </main>
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/projects/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/projects/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/projects/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/projects/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
         <Footer />
@@ -203,14 +211,22 @@ export default async function ProjectContent({
       </main>
       {year && (previousYear || nextYear) && (
         <NavigationFooter
-          previous={previousYear ? {
-            href: `/projects/${previousYear}`,
-            label: previousYear.toString()
-          } : undefined}
-          next={nextYear ? {
-            href: `/projects/${nextYear}`,
-            label: nextYear.toString()
-          } : undefined}
+          previous={
+            previousYear
+              ? {
+                  href: `/projects/${previousYear}`,
+                  label: previousYear.toString(),
+                }
+              : undefined
+          }
+          next={
+            nextYear
+              ? {
+                  href: `/projects/${nextYear}`,
+                  label: nextYear.toString(),
+                }
+              : undefined
+          }
         />
       )}
       <Footer />

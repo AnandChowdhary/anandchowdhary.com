@@ -67,25 +67,28 @@ export default async function LifeContent({
   nextYear?: number;
 }) {
   // Group events by decade
-  const eventsByDecade = lifeEventsData.reduce((acc, event) => {
-    const year = new Date(event.date).getFullYear();
-    const decade = Math.floor(year / 10) * 10;
-    const decadeKey = `${decade}s`;
-    if (!acc[decadeKey]) acc[decadeKey] = [];
-    acc[decadeKey].push(event);
-    return acc;
-  }, {} as Record<string, LifeEvent[]>);
+  const eventsByDecade = lifeEventsData.reduce(
+    (acc, event) => {
+      const year = new Date(event.date).getFullYear();
+      const decade = Math.floor(year / 10) * 10;
+      const decadeKey = `${decade}s`;
+      if (!acc[decadeKey]) acc[decadeKey] = [];
+      acc[decadeKey].push(event);
+      return acc;
+    },
+    {} as Record<string, LifeEvent[]>,
+  );
 
   // Sort events within each decade by date (newest first)
   Object.keys(eventsByDecade).forEach((decade) => {
     eventsByDecade[decade].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
     );
   });
 
   // Sort decades (newest first)
   const sortedDecades = Object.keys(eventsByDecade).sort((a, b) =>
-    b.localeCompare(a)
+    b.localeCompare(a),
   );
 
   return (
@@ -111,14 +114,22 @@ export default async function LifeContent({
         ))}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/life/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/life/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/life/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/life/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

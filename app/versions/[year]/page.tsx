@@ -19,7 +19,11 @@ export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
   const versions = await getAllVersions();
   const years = Array.from(
-    new Set(versions.map((version) => new Date(version.date).getUTCFullYear().toString()))
+    new Set(
+      versions.map((version) =>
+        new Date(version.date).getUTCFullYear().toString(),
+      ),
+    ),
   );
   return years.map((year) => ({ year }));
 }
@@ -30,23 +34,31 @@ export default async function VersionYear({ params }: Props) {
   const yearNumber = parseInt(year);
   const allVersions = await getAllVersions();
   const yearVersionData = allVersions.filter(
-    (version) => new Date(version.date).getUTCFullYear() === yearNumber
+    (version) => new Date(version.date).getUTCFullYear() === yearNumber,
   );
-  
+
   // Get all years that have versions
   const availableYears = Array.from(
-    new Set(allVersions.map((version) => new Date(version.date).getUTCFullYear()))
+    new Set(
+      allVersions.map((version) => new Date(version.date).getUTCFullYear()),
+    ),
   ).sort((a, b) => a - b);
-  
+
   // Find previous and next years
   const currentYearIndex = availableYears.indexOf(yearNumber);
-  const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
-  const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
-  
-  return <VersionContent 
-    versionDataFiltered={yearVersionData} 
-    year={year}
-    previousYear={previousYear}
-    nextYear={nextYear}
-  />;
+  const previousYear =
+    currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
+  const nextYear =
+    currentYearIndex < availableYears.length - 1
+      ? availableYears[currentYearIndex + 1]
+      : undefined;
+
+  return (
+    <VersionContent
+      versionDataFiltered={yearVersionData}
+      year={year}
+      previousYear={previousYear}
+      nextYear={nextYear}
+    />
+  );
 }

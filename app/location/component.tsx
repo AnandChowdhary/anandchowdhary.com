@@ -24,19 +24,22 @@ export default function LocationContent({
   previousYear?: number;
   nextYear?: number;
 }) {
-  const countriesDataByYear = countriesDataFiltered.reduce((acc, item) => {
-    const year = new Date(item.date).getUTCFullYear();
-    if (!acc[year]) acc[year] = [];
-    acc[year].push(item);
-    return acc;
-  }, {} as Record<string, Country[]>);
+  const countriesDataByYear = countriesDataFiltered.reduce(
+    (acc, item) => {
+      const year = new Date(item.date).getUTCFullYear();
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(item);
+      return acc;
+    },
+    {} as Record<string, Country[]>,
+  );
 
   const allCountries = Object.entries(countriesDataByYear)
     .sort((a, b) => b[0].localeCompare(a[0]))
     .flatMap(([year, countries]) =>
       countries
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .map((country) => ({ ...country, year }))
+        .map((country) => ({ ...country, year })),
     );
 
   return (
@@ -64,11 +67,11 @@ export default function LocationContent({
               {countries
                 .sort(
                   (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime()
+                    new Date(b.date).getTime() - new Date(a.date).getTime(),
                 )
                 .map((item) => {
                   const countryData = getCountryData(
-                    item.country_code.toUpperCase() as TCountryCode
+                    item.country_code.toUpperCase() as TCountryCode,
                   );
                   if (!countryData) return null;
 
@@ -94,7 +97,7 @@ export default function LocationContent({
                       <div className="space-y-2">
                         <Link
                           href={`/location/${new Date(
-                            item.date
+                            item.date,
                           ).getUTCFullYear()}/${item.slug}`}
                           className={`${focusStyles} min-w-0 full-link flex`}
                         >
@@ -138,14 +141,22 @@ export default function LocationContent({
           ))}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/location/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/location/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/location/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/location/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

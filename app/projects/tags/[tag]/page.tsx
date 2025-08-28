@@ -28,7 +28,7 @@ export default async function ProjectYear({ params }: Props) {
   if (!found) notFound();
   const projectDataFiltered = await getAllProjects();
   const tagProjectData = projectDataFiltered.filter((project) =>
-    getProjectTags(project).includes(found)
+    getProjectTags(project).includes(found),
   );
   return <ProjectContent projectDataFiltered={tagProjectData} tag={found} />;
 }

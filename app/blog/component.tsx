@@ -29,7 +29,7 @@ const BlogThumbnail = ({
     >
       <img
         src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
-          new Rand(item.slug).next() * 100 + 1
+          new Rand(item.slug).next() * 100 + 1,
         )}.png`}
         alt=""
         className={`w-full h-full object-cover ${
@@ -51,7 +51,7 @@ const BlogCard = ({ item }: { item: BlogPost }) => (
     <div className="md:col-span-2">
       <Link
         href={`/blog/${new Date(
-          item.date
+          item.date,
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
         className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
@@ -130,7 +130,7 @@ export default async function BlogContent({
                 <div className="grow flex items-center justify-between gap-8 min-w-0">
                   <Link
                     href={`/blog/${new Date(
-                      item.date
+                      item.date,
                     ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
                     className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                     style={{
@@ -161,14 +161,22 @@ export default async function BlogContent({
         )}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/blog/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/blog/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/blog/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/blog/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

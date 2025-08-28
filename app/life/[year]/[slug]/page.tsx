@@ -47,7 +47,7 @@ export default async function LifeYearSlug({ params }: Props) {
 
   const allLifeEvents = await getLifeEvents();
   const currentEventIndex = allLifeEvents.findIndex(
-    (e) => e.slug === lifeEvent.slug
+    (e) => e.slug === lifeEvent.slug,
   );
   const previousEvent = allLifeEvents[currentEventIndex - 1];
   const nextEvent = allLifeEvents[currentEventIndex + 1];
@@ -86,7 +86,7 @@ export default async function LifeYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/life/${new Date(
-                    yearNavigation.previous.date
+                    yearNavigation.previous.date,
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -96,7 +96,7 @@ export default async function LifeYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/life/${new Date(
-                    yearNavigation.next.date
+                    yearNavigation.next.date,
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }

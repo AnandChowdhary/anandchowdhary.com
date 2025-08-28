@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export function ProjectMetadata({ item }: { item: Project }) {
   const githubUrl = `https://github.com/AnandChowdhary/projects/blob/main/projects/${new Date(
-    item.date
+    item.date,
   ).getUTCFullYear()}/${item.slug}`;
   const tags = getProjectTags(item);
 
@@ -25,7 +25,7 @@ export function ProjectMetadata({ item }: { item: Project }) {
         <div className="grow flex flex-col gap-1">
           <Link
             href={`/projects/${new Date(
-              item.date
+              item.date,
             ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
             className={`${underlinedLink} flex truncate w-full`}
           >
