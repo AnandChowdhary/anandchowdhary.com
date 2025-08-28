@@ -14,6 +14,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@tabler/icons-react": "^3.34.1",
     "@types/leaflet": "^1.9.20",
+    "@vercel/analytics": "^1.5.0",
     "countries-and-timezones": "^3.8.0",
     "countries-list": "^3.1.1",
     "humanize-duration": "^3.33.0",
