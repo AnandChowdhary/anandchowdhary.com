@@ -100,13 +100,7 @@ export default async function ProjectYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header
-        pathname={`/projects/${year}`}
-        source="https://github.com/AnandChowdhary/projects"
-        readme="https://anandchowdhary.github.io/projects/README.md"
-        api="https://anandchowdhary.github.io/projects/api.json"
-        description="Projects I've built over the years, from small experiments to full-scale products."
-      />
+      <Header pathname={`/projects/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         {project.attributes?.img_src && (
           <div

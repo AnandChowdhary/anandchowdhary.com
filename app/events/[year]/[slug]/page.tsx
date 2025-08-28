@@ -80,13 +80,7 @@ export default async function EventsYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header
-        pathname={`/events/${year}`}
-        description="From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship."
-        source="https://github.com/AnandChowdhary/events"
-        readme="https://anandchowdhary.github.io/events/README.md"
-        api="https://anandchowdhary.github.io/events/api.json"
-      />
+      <Header pathname={`/events/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           {event.attributes.coordinates && (

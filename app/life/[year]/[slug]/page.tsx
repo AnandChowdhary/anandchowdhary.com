@@ -56,10 +56,7 @@ export default async function LifeYearSlug({ params }: Props) {
 
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
-      <Header
-        pathname="/life"
-        description="Major milestones and meaningful moments that have shaped my personal and professional journey."
-      />
+      <Header pathname="/life" />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-4">
           <h1 className="text-2xl font-medium">{lifeEvent.title}</h1>
