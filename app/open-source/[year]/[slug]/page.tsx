@@ -5,7 +5,7 @@ import {
   getRepositoryDetails,
   getRepositoryReadMe,
 } from "@/app/api";
-import { ExternalLink, focusStyles } from "@/app/components/external-link";
+import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -20,7 +20,6 @@ import {
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Rand from "rand-seed";
 
@@ -70,7 +69,15 @@ export default async function OpenSourceYearSlug({ params }: Props) {
 
   const everything = await getAllArchiveItems();
   const found = everything.find(({ source }) => source === repo.html_url);
-  let image = found?.data?.openGraphImageUrl;
+  let image: string | undefined =
+    found !== undefined &&
+    typeof found?.data === "object" &&
+    found.data !== null &&
+    "openGraphImageUrl" in found.data &&
+    typeof found.data.openGraphImageUrl === "string"
+      ? found.data.openGraphImageUrl
+      : undefined;
+
   if (
     typeof image === "string" &&
     image.startsWith("https://opengraph.githubassets.com") // Ignore default images
@@ -191,7 +198,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/open-source/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -201,7 +208,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/open-source/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }
