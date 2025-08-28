@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects / Anand Chowdhary",
   description:
-    "Projects I've built over the years, from small experiments to full-scale products.",
+    "Projects I've built over the years, from small experiments to full-scale products for my startups.",
 };
 
 export default async function Projects() {

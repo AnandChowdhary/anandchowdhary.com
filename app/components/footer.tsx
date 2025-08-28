@@ -71,6 +71,9 @@ export function Footer() {
         <Link className={linkStyles} href="/videos">
           Videos
         </Link>
+        <Link className={linkStyles} href="/themes">
+          Themes
+        </Link>
         <Link className={linkStyles} href="/versions">
           Versions
         </Link>

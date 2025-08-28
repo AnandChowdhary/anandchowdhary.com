@@ -103,7 +103,7 @@ const ProjectCard = ({ item }: { item: Project }) => {
           }}
           dangerouslySetInnerHTML={{
             __html: marked.parseInline(
-              item.attributes?.intro || item.excerpt || "",
+              item.attributes?.intro || item.excerpt || ""
             ),
           }}
         />
@@ -130,8 +130,8 @@ export default async function ProjectContent({
     try {
       const response = await fetch(
         `https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/tags/${slugify(
-          tag.toLowerCase(),
-        )}.md`,
+          tag.toLowerCase()
+        )}.md`
       );
       tagContent = await response.text();
     } catch {
@@ -147,7 +147,7 @@ export default async function ProjectContent({
             <div className="aspect-5/3 shadow-sm border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden p-8 md:p-22 w-full">
               <img
                 src={`https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/assets/tags/${slugify(
-                  tag.toLowerCase(),
+                  tag.toLowerCase()
                 )}.svg`}
                 alt={tag}
                 className="w-full h-full object-contain"
@@ -202,7 +202,7 @@ export default async function ProjectContent({
         source="https://github.com/AnandChowdhary/projects"
         readme="https://anandchowdhary.github.io/projects/README.md"
         api="https://anandchowdhary.github.io/projects/api.json"
-        description={`Projects I've built over the years, from small experiments to full-scale products.`}
+        description={`Projects I've built over the years, from small experiments to full-scale products for my startups.`}
       />
       <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {projectDataFiltered.map((item) => (

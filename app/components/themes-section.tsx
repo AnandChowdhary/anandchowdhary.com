@@ -12,7 +12,7 @@ export async function ThemesSection() {
       title="themes"
       subtitle="/themes"
       items={themesDataSorted}
-      description="Each year I choose a theme to focus on and grow in different areas of my life."
+      description="Each year I choose a theme to focus on and grow in different areas of my life. Themes act as a North Star, guiding decisions throughout the year as an alternative to traditional resolutions."
       linkText="Go to /themes"
       getItemTitle={getThemeTitle}
       getItemSubtitle={getThemeSubtitle}

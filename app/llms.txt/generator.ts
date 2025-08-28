@@ -7,6 +7,7 @@ import {
   getAllOpenSource,
   getAllPressItems,
   getAllProjects,
+  getAllThemes,
   getAllVersions,
   getLifeEvents,
   getVideos,
@@ -16,6 +17,7 @@ import type { MetadataRoute } from "next";
 export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
   const videos = await getVideos();
   const versions = await getAllVersions();
+  const themes = await getAllThemes();
   const projects = await getAllProjects();
   const press = await getAllPressItems();
   const openSource = await getAllOpenSource();
@@ -53,6 +55,16 @@ export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
       new Set(versions.map((item) => new Date(item.date).getUTCFullYear()))
     ).map((year) => ({
       url: `https://anandchowdhary.com/versions/${year}`,
+    })),
+    ...themes.map((theme) => ({
+      url: `https://anandchowdhary.com/themes/${new Date(
+        theme.date
+      ).getUTCFullYear()}/${theme.slug.replace(".md", "")}`,
+    })),
+    ...Array.from(
+      new Set(themes.map((item) => new Date(item.date).getUTCFullYear()))
+    ).map((year) => ({
+      url: `https://anandchowdhary.com/themes/${year}`,
     })),
     ...projects.map((project) => ({
       url: `https://anandchowdhary.com/projects/${new Date(
