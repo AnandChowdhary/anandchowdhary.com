@@ -8,6 +8,7 @@ import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { EventMetadata } from "@/app/events/metadata";
+import { proseClassName } from "@/app/styles";
 import {
   IconBrandGithub,
   IconBrandYoutube,
@@ -145,7 +146,7 @@ export default async function EventsYearSlug({ params }: Props) {
           </EventMetadata>
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+          className={proseClassName}
           dangerouslySetInnerHTML={{ __html: eventContentHtml }}
         />
         {event.attributes.video &&
@@ -164,7 +165,7 @@ export default async function EventsYearSlug({ params }: Props) {
           <div className="space-y-4 mt-4">
             <h2 className="text-xl font-medium">Talk</h2>
             <div
-              className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+              className={proseClassName}
               dangerouslySetInnerHTML={{ __html: talk.content }}
             />
             {talk.embed && (

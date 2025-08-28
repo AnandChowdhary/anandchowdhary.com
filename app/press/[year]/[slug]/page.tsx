@@ -2,6 +2,7 @@ import { getPress, getPressItemByYearAndSlug } from "@/app/api";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import {
   IconAward,
   IconBuilding,
@@ -129,7 +130,7 @@ export default async function PressYearSlug({ params }: Props) {
         </header>
 
         {pressItem.description && (
-          <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
+          <div className={proseClassName}>
             <p>{pressItem.description}</p>
           </div>
         )}
@@ -146,7 +147,7 @@ export default async function PressYearSlug({ params }: Props) {
         )}
 
         {!pressItem.description && !pressItem.embed && (
-          <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
+          <div className={proseClassName}>
             <p className="text-neutral-500">
               This {pressItem.category} was featured in {pressItem.publisher}
               {pressItem.author && ` by ${pressItem.author}`} on{" "}

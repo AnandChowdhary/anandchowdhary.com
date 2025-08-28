@@ -112,9 +112,11 @@ const ProjectCard = ({ item }: { item: Project }) => {
 export default async function ProjectContent({
   projectDataFiltered,
   year,
+  tag,
 }: {
   projectDataFiltered: Project[];
   year?: string;
+  tag?: string;
 }) {
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
@@ -125,6 +127,11 @@ export default async function ProjectContent({
         api="https://anandchowdhary.github.io/projects/api.json"
         description={`Projects I've built over the years, from small experiments to full-scale products.`}
       />
+      {tag && (
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-2xl font-medium text-center">{tag}</h1>
+        </div>
+      )}
       <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {projectDataFiltered.map((item) => (
           <ProjectCard key={item.slug} item={item} />

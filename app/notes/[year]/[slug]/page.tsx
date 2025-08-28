@@ -2,6 +2,7 @@ import { getAllNotes, getNoteByYearAndSlug, getNoteContent } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NoteMetadata } from "@/app/notes/metadata";
+import { proseClassName } from "@/app/styles";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
@@ -68,7 +69,7 @@ export default async function NoteYearSlug({ params }: Props) {
           <NoteMetadata item={note} noteContentText={noteContentText} link />
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+          className={proseClassName}
           dangerouslySetInnerHTML={{ __html: noteContentHtml }}
         />
       </main>

@@ -1,6 +1,7 @@
 import { getVideoByYearAndSlug, getVideos } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import { VideoMetadata } from "@/app/videos/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -71,7 +72,7 @@ export default async function VideoPage({ params }: Props) {
         </header>
         {video.description && (
           <div
-            className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+            className={proseClassName}
             dangerouslySetInnerHTML={{
               __html: marked.parse(video.description),
             }}

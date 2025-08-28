@@ -8,6 +8,7 @@ import {
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName, proseClassNameWithoutLead } from "@/app/styles";
 import {
   IconBrandGithub,
   IconCalendar,
@@ -145,7 +146,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
           </div>
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+          className={proseClassName}
           dangerouslySetInnerHTML={{
             __html: marked.parse(details ?? repo.description),
           }}
@@ -174,7 +175,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             }}
           >
             <div
-              className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-base text-sm prose-h1:text-lg prose-h2:text-lg"
+              className={`${proseClassNameWithoutLead} text-sm prose-h1:text-lg prose-h2:text-lg`}
               dangerouslySetInnerHTML={{
                 __html: await Promise.resolve(marked.parse(readMe)),
               }}

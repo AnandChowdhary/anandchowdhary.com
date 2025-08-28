@@ -1,6 +1,7 @@
 import { getAllBooks, getBookByYearAndSlug } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import {
   IconBook,
   IconBuilding,
@@ -195,13 +196,7 @@ export default async function BooksYearSlug({ params }: Props) {
             )}
           </div>
         </div>
-
-        <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
-          <p className="text-lg text-neutral-700 dark:text-neutral-300">
-            {book.description}
-          </p>
-        </div>
-
+        <div className={proseClassName}>{book.description}</div>
         <div className="flex gap-4">
           <a
             href={book.googleBooks.info}

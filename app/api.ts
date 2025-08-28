@@ -166,7 +166,7 @@ export interface Press {
 }
 
 export function generateSlug(title: string): string {
-  return slugify(title, { lowercase: true, separator: "-" });
+  return slugify(title.toLowerCase(), { lowercase: true, separator: "-" });
 }
 
 export async function getAllArchiveItems(): Promise<ArchiveItem[]> {
@@ -843,6 +843,17 @@ export async function getAllProjects(): Promise<Project[]> {
     .filter((project) => !project.attributes?.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
+
+export const getProjectTags = (item: Project) => {
+  const tags: string[] = [];
+  if (Array.isArray(item.attributes.work)) tags.push(...item.attributes.work);
+  if (item.attributes.collaborators)
+    tags.push(...item.attributes.collaborators);
+  if (Array.isArray(item.attributes.tags)) tags.push(...item.attributes.tags);
+  if (Array.isArray(item.attributes.stack)) tags.push(...item.attributes.stack);
+  if (Array.isArray(item.attributes.tools)) tags.push(...item.attributes.tools);
+  return tags;
+};
 
 export async function getProjectByYearAndSlug(
   year: number,

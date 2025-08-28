@@ -1,6 +1,7 @@
 import { getAllLocations, getLocationByYearAndSlug } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import {
   IconCalendar,
   IconClock,
@@ -121,7 +122,7 @@ export default async function LocationYearSlug({ params }: Props) {
           </div>
         </div>
 
-        <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
+        <div className={proseClassName}>
           <p className="text-lg text-neutral-700 dark:text-neutral-300">
             {country.excerpt}
           </p>

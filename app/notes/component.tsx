@@ -3,6 +3,7 @@ import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NoteMetadata } from "@/app/notes/metadata";
+import { proseClassNameWithoutLead } from "@/app/styles";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -77,7 +78,7 @@ export default async function NotesContent({
             link={false}
           />
           <div
-            className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-base mt-4 text-sm"
+            className={`${proseClassNameWithoutLead} mt-4 text-sm`}
             dangerouslySetInnerHTML={{
               __html: await Promise.resolve(marked.parse(content)),
             }}

@@ -5,6 +5,7 @@ import {
 } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import { VersionMetadata } from "@/app/versions/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -75,7 +76,7 @@ export default async function VersionYearSlug({ params }: Props) {
           <VersionMetadata item={version} />
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg prose-img:border prose-img:border-neutral-200 dark:prose-img:border-neutral-800"
+          className={proseClassName}
           dangerouslySetInnerHTML={{ __html: versionContentHtml }}
         />
       </main>

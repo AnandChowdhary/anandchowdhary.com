@@ -6,6 +6,7 @@ import {
 import { BlogMetadata } from "@/app/blog/metadata";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
@@ -82,7 +83,7 @@ export default async function BlogYearSlug({ params }: Props) {
           <BlogMetadata item={post} postContentText={postContentText} />
         </header>
         <div
-          className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg"
+          className={proseClassName}
           dangerouslySetInnerHTML={{ __html: postContentHtml }}
         />
       </main>

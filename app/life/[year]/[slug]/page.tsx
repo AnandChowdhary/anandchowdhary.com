@@ -1,6 +1,7 @@
 import { getLifeEventByYearAndSlug, getLifeEvents } from "@/app/api";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { proseClassName } from "@/app/styles";
 import { IconCalendarEvent } from "@tabler/icons-react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -67,7 +68,7 @@ export default async function LifeYearSlug({ params }: Props) {
         </header>
 
         {lifeEvent.description && (
-          <div className="prose dark:prose-invert prose-headings:font-medium prose-p:first-of-type:text-lg">
+          <div className={proseClassName}>
             <p>{lifeEvent.description}</p>
           </div>
         )}
