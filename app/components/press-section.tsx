@@ -45,6 +45,7 @@ export async function PressSection() {
         ].map(({ icon, label }) => (
           <div key={label} className="flex items-center gap-2">
             <img
+              alt=""
               className="aspect-square rounded shadow-sm w-4 h-4 object-contain"
               src={icon}
             />

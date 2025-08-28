@@ -11,25 +11,6 @@ import Link from "next/link";
 
 marked.use(markedSmartypants());
 
-const NoteCard = ({ item }: { item: Note }) => (
-  <article className="pb-2.5 relative">
-    <Link
-      href={`/notes/${new Date(item.date).getUTCFullYear()}/${item.slug.replace(
-        ".md",
-        "",
-      )}`}
-      className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
-    >
-      {new Date(item.date).toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      })}
-    </Link>
-    <p dangerouslySetInnerHTML={{ __html: marked.parseInline(item.excerpt) }} />
-  </article>
-);
-
 export default async function NotesContent({
   notesDataFiltered,
   year,

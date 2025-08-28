@@ -1,5 +1,4 @@
 import { getAllLocations, getLocationByYearAndSlug } from "@/app/api";
-import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -13,7 +12,6 @@ import {
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Rand from "rand-seed";
 

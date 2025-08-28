@@ -34,14 +34,6 @@ export default function LocationContent({
     {} as Record<string, Country[]>,
   );
 
-  const allCountries = Object.entries(countriesDataByYear)
-    .sort((a, b) => b[0].localeCompare(a[0]))
-    .flatMap(([year, countries]) =>
-      countries
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .map((country) => ({ ...country, year })),
-    );
-
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header
