@@ -8,6 +8,7 @@ import {
   IconBrandGithub,
   IconBriefcase,
   IconCalendar,
+  IconChevronRight,
   IconFileText,
   IconHeart,
   IconInfoCircle,
@@ -35,7 +36,6 @@ export default function ArchiveContent({
   previousYear,
   nextYear,
 }: ArchiveContentProps) {
-
   const groupedByYear = archiveData.reduce((acc, item) => {
     const itemYear = new Date(item.date).getFullYear().toString();
     if (!acc[itemYear]) acc[itemYear] = [];
@@ -246,14 +246,22 @@ export default function ArchiveContent({
           ))}
         {year && (previousYear || nextYear) && (
           <NavigationFooter
-            previous={previousYear ? {
-              href: `/archive/${previousYear}`,
-              label: previousYear.toString()
-            } : undefined}
-            next={nextYear ? {
-              href: `/archive/${nextYear}`,
-              label: nextYear.toString()
-            } : undefined}
+            previous={
+              previousYear
+                ? {
+                    href: `/archive/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/archive/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
           />
         )}
       </main>

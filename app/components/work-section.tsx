@@ -12,6 +12,7 @@ export async function WorkSection() {
         {[
           {
             label: "FirstQuadrant",
+            years: [2023],
             color: "#333333",
             icon: (
               <svg viewBox="0 0 144 144">
@@ -21,9 +22,12 @@ export async function WorkSection() {
               </svg>
             ),
             url: "https://firstquadrant.ai",
+            description:
+              "AI sales platform that helps founders and revenue teams move faster, stay organized, and close more deals by streamlining behind-the-scenes sales work.",
           },
           {
             label: "Pabio",
+            years: [2020, 2022],
             color: "#ff6b6b",
             icon: (
               <svg viewBox="0 0 900 256">
@@ -33,10 +37,13 @@ export async function WorkSection() {
                 />
               </svg>
             ),
-            url: "https://pabio.com",
+            url: "/projects/tags/pabio",
+            description:
+              "Personalized interior design and high-quality furniture rental on a monthly subscription basis in Europe, enabling customers to furnish their homes affordably and flexibly.",
           },
           {
             label: "Oswald Labs",
+            years: [2016, 2019],
             color: "#007bff",
             icon: (
               <svg viewBox="0 0 116 116">
@@ -46,11 +53,13 @@ export async function WorkSection() {
                 </g>
               </svg>
             ),
-            url: "https://oswaldlabs.com",
-            container: true,
+            url: "/projects/tags/oswald-labs",
+            description:
+              "Award-winning accessibility technology company that builds products and platforms to promote digital inclusion for people with disabilities, like web accessibility tools.",
           },
           {
-            label: "Oswald Labs",
+            label: "Melangebox",
+            years: [2018, 2019],
             color: "#4c9bd8",
             icon: (
               <svg viewBox="0 0 350 350">
@@ -64,12 +73,14 @@ export async function WorkSection() {
                 />
               </svg>
             ),
-            url: "https://oswaldlabs.com",
-            container: true,
+            url: "/projects/2017/melangebox",
+            description:
+              "Sustainable fashion brand and ecommerce tech company offering affordable, high-quality apparel and lifestyle products, with a focus on eco-friendly practices and inclusivity.",
           },
           {
-            label: "Upptime",
+            label: "Class Rebels",
             color: "#00c3a0",
+            years: [2014, 2016],
             icon: (
               <svg viewBox="0 0 256 256">
                 <path
@@ -79,8 +90,9 @@ export async function WorkSection() {
                 />
               </svg>
             ),
-            url: "https://upptime.js.org",
-            container: true,
+            url: "/projects/2014/classrebels",
+            description:
+              "Edtech platform that aimed to connect students and teachers online, enabling remote class communication, updates on activities, and access to course and peer performance information.",
           },
         ].map((about) => (
           <li
