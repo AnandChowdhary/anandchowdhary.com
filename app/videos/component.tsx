@@ -2,6 +2,7 @@ import { Video } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import { VideoMetadata } from "@/app/videos/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -71,8 +72,14 @@ const VideoCard = ({ item }: { item: Video }) => (
 
 export default async function VideosContent({
   videosData,
+  year,
+  previousYear,
+  nextYear,
 }: {
   videosData: Video[];
+  year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const sortedVideos = [...videosData].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -81,7 +88,7 @@ export default async function VideosContent({
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header
-        pathname="/videos"
+        pathname={year ? `/videos/${year}` : "/videos"}
         description="A collection of videos featuring my talks, interviews, and appearances discussing technology, accessibility, and entrepreneurship."
       />
 
@@ -91,6 +98,18 @@ export default async function VideosContent({
             <VideoCard key={item.slug} item={item} />
           ))}
         </div>
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/videos/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/videos/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
+        )}
       </main>
 
       <Footer />

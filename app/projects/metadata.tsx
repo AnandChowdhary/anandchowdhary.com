@@ -52,6 +52,7 @@ export function ProjectMetadata({ item }: { item: Project }) {
         <div className="grow flex flex-wrap gap-y-1 gap-x-2">
           {tags.map((tag) => (
             <Link
+              key={tag}
               href={`/projects/tags/${slugify(tag.toLowerCase())}`}
               className={`${underlinedLink} flex truncate`}
             >

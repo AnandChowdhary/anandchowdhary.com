@@ -2,6 +2,7 @@ import { LifeEvent } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import Link from "next/link";
 
 const LifeEventCard = ({
@@ -56,8 +57,14 @@ const LifeEventCard = ({
 
 export default async function LifeContent({
   lifeEventsData,
+  year,
+  previousYear,
+  nextYear,
 }: {
   lifeEventsData: LifeEvent[];
+  year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   // Group events by decade
   const eventsByDecade = lifeEventsData.reduce((acc, event) => {
@@ -84,7 +91,7 @@ export default async function LifeContent({
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header
-        pathname="/life"
+        pathname={year ? `/life/${year}` : "/life"}
         description="Major milestones and meaningful moments that have shaped my personal and professional journey."
       />
       <main className="max-w-2xl mx-auto space-y-12">
@@ -102,6 +109,18 @@ export default async function LifeContent({
             </div>
           </section>
         ))}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/life/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/life/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
+        )}
       </main>
       <Footer />
     </div>

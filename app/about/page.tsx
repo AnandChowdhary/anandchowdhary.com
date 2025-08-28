@@ -66,11 +66,11 @@ export default async function About() {
               .
             </p>
             <p>
-              As an engineer, he's focused on web standards and the JavaScript
-              ecosystem. As a designer, he specializes in user interfaces,
-              branding, and design systems. And as a serial entrepreneur, he's
-              built, scaled, and advised several technology-focused startups
-              around the world.
+              As an engineer, he&rsquo;s focused on web standards and the
+              JavaScript ecosystem. As a designer, he specializes in user
+              interfaces, branding, and design systems. And as a serial
+              entrepreneur, he&rsquo;s built, scaled, and advised several
+              technology-focused startups around the world.
             </p>
             <p>
               He is also an open source contributor, awarded by GitHub as a{" "}
@@ -81,7 +81,7 @@ export default async function About() {
               <Link className={underlinedLink} href="/press/2018/forbes-asia">
                 Forbes 30 Under 30
               </Link>{" "}
-              (Asia 2018) and in Het Financieele Dagblad's list of
+              (Asia 2018) and in Het Financieele Dagblad&rsquo;s list of
               most-innovative entrepreneurs and professionals in the
               Netherlands.
             </p>

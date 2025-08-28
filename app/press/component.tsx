@@ -2,6 +2,7 @@ import { Press, PressItem } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { NavigationFooter } from "@/app/components/navigation-footer";
 import Link from "next/link";
 
 const PressItemCard = ({
@@ -65,8 +66,14 @@ const PressItemCard = ({
 
 export default async function PressContent({
   pressData,
+  year,
+  previousYear,
+  nextYear,
 }: {
   pressData: Press;
+  year?: string;
+  previousYear?: number;
+  nextYear?: number;
 }) {
   const sortedAwards = [...pressData.awards].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -81,7 +88,7 @@ export default async function PressContent({
   return (
     <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
       <Header
-        pathname="/press"
+        pathname={year ? `/press/${year}` : "/press"}
         description="I've been very fortunate to have been featured in several publications and media outlets for my work. For press enquiries, please reach out to press (at) this domain."
       />
       <main className="max-w-2xl mx-auto space-y-12">
@@ -114,6 +121,18 @@ export default async function PressContent({
               ))}
             </div>
           </section>
+        )}
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={previousYear ? {
+              href: `/press/${previousYear}`,
+              label: previousYear.toString()
+            } : undefined}
+            next={nextYear ? {
+              href: `/press/${nextYear}`,
+              label: nextYear.toString()
+            } : undefined}
+          />
         )}
       </main>
       <Footer />

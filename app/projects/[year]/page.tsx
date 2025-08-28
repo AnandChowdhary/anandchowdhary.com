@@ -15,6 +15,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+export const revalidate = 60;
+export async function generateStaticParams(): Promise<{ year: string }[]> {
+  const projects = await getAllProjects();
+  const years = Array.from(
+    new Set(projects.map((project) => new Date(project.date).getUTCFullYear().toString()))
+  );
+  return years.map((year) => ({ year }));
+}
+
 export default async function ProjectYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();

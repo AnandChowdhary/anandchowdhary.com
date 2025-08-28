@@ -15,6 +15,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+export const revalidate = 60;
+export async function generateStaticParams(): Promise<{ year: string }[]> {
+  const posts = await getAllBlogPosts();
+  const years = Array.from(
+    new Set(posts.map((post) => new Date(post.date).getUTCFullYear().toString()))
+  );
+  return years.map((year) => ({ year }));
+}
+
 export default async function BlogYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();

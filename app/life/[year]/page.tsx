@@ -1,5 +1,5 @@
-import { getAllVersions } from "@/app/api";
-import VersionContent from "@/app/versions/component";
+import { getLifeEvents } from "@/app/api";
+import LifeContent from "@/app/life/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -10,32 +10,32 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const year = (await params).year;
   return {
-    title: `${year} / Versions / Anand Chowdhary`,
-    description: `Over the years, I've designed and redesigned my personal website several times; I ﬁnd it to be a great way to explore new technologies. Looking back, I can connect the dots for what I was interested in way back when.`,
+    title: `${year} / Life / Anand Chowdhary`,
+    description: `Major milestones and meaningful moments from ${year} that have shaped my personal and professional journey.`,
   };
 }
 
 export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
-  const versions = await getAllVersions();
+  const events = await getLifeEvents();
   const years = Array.from(
-    new Set(versions.map((version) => new Date(version.date).getUTCFullYear().toString()))
+    new Set(events.map((event) => new Date(event.date).getUTCFullYear().toString()))
   );
   return years.map((year) => ({ year }));
 }
 
-export default async function VersionYear({ params }: Props) {
+export default async function LifeYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const allVersions = await getAllVersions();
-  const yearVersionData = allVersions.filter(
-    (version) => new Date(version.date).getUTCFullYear() === yearNumber
+  const allLifeEvents = await getLifeEvents();
+  const yearLifeData = allLifeEvents.filter(
+    (event) => new Date(event.date).getUTCFullYear() === yearNumber
   );
   
-  // Get all years that have versions
+  // Get all years that have life events
   const availableYears = Array.from(
-    new Set(allVersions.map((version) => new Date(version.date).getUTCFullYear()))
+    new Set(allLifeEvents.map((event) => new Date(event.date).getUTCFullYear()))
   ).sort((a, b) => a - b);
   
   // Find previous and next years
@@ -43,8 +43,8 @@ export default async function VersionYear({ params }: Props) {
   const previousYear = currentYearIndex > 0 ? availableYears[currentYearIndex - 1] : undefined;
   const nextYear = currentYearIndex < availableYears.length - 1 ? availableYears[currentYearIndex + 1] : undefined;
   
-  return <VersionContent 
-    versionDataFiltered={yearVersionData} 
+  return <LifeContent 
+    lifeEventsData={yearLifeData} 
     year={year}
     previousYear={previousYear}
     nextYear={nextYear}

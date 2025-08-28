@@ -53,8 +53,8 @@ export default async function Mentoring() {
             </article>
             <article className="pl-4 border-l-3 border-neutral-200 dark:border-neutral-800 space-y-1">
               <blockquote>
-                Anand just immediately gets what I'm trying to do, with minimal
-                explanation, and had some really solid advice on future
+                Anand just immediately gets what I&rsquo;m trying to do, with
+                minimal explanation, and had some really solid advice on future
                 direction. Super smart guy.
               </blockquote>
               <cite className="text-sm text-neutral-500 not-italic">

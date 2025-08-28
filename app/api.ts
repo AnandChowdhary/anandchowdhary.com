@@ -9,6 +9,7 @@ export interface BlogPost extends GenericItem {
   attributes: { date: string; draft?: boolean };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface Note extends GenericItem {}
 
 export interface Version extends GenericItem {
@@ -111,6 +112,7 @@ export interface Event extends GenericItem {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface Theme extends GenericItem {}
 
 export interface Country extends GenericItem {
@@ -144,7 +146,7 @@ export interface ArchiveItem {
   url: string;
   source?: string;
   title: string;
-  data?: any;
+  data?: unknown;
 }
 
 export interface PressItem {
@@ -190,9 +192,7 @@ export async function getArchiveItemsByYear(
 export async function getPress(): Promise<Press> {
   const press = await fetch(
     "https://anandchowdhary.github.io/everything/data/press.json",
-    {
-      next: { revalidate: 3600 },
-    }
+    { next: { revalidate: 3600 } }
   );
   const pressData = (await press.json()) as Press;
 
@@ -439,7 +439,7 @@ export async function getAllRepositories(): Promise<Repository[]> {
 
   const formatRepoTitle = (name: string): string => {
     // First replace dashes and underscores with spaces
-    let formatted = name.replace(/[-_]/g, " ");
+    const formatted = name.replace(/[-_]/g, " ");
 
     // Split by dots to handle file extensions
     const parts = formatted.split(".");

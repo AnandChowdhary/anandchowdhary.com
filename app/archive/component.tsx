@@ -167,7 +167,7 @@ export default function ArchiveContent({
                       const itemDate = new Date(item.date);
                       return itemDate >= weekStart && itemDate <= weekEnd;
                     });
-                    let labels = new Map<string, number>();
+                    const labels = new Map<string, number>();
                     hasContributions.forEach((item) => {
                       if (labels.has(item.type))
                         labels.set(item.type, (labels.get(item.type) ?? 0) + 1);
