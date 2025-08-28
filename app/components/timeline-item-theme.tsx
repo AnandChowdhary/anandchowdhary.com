@@ -1,11 +1,15 @@
+import { getAllThemes } from "@/app/api";
 import { TimelineItem } from "@/app/components/timeline-item";
 
-export function TimelineItemTheme() {
+export async function TimelineItemTheme() {
+  const themes = await getAllThemes();
+  const theme = themes[0];
+  if (!theme) return null;
   return (
     <TimelineItem
       icon="🌈"
-      title="Year of Gratitude"
-      subtitle="Yearly theme for 2024"
+      title={theme.title}
+      subtitle={`Yearly theme for ${new Date(theme.date).getFullYear()}`}
     />
   );
 }

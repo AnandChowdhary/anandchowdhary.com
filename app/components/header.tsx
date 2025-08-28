@@ -1,6 +1,6 @@
-import { ExternalLink, focusStyles } from "@/app/components/external-link";
+import { focusStyles } from "@/app/components/external-link";
+import { NavigationLinks } from "@/app/components/navigation-links";
 import AnimatedSignature from "@/app/components/signature";
-import { IconApi, IconBook2, IconBrandGithub } from "@tabler/icons-react";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
@@ -57,44 +57,7 @@ export function Header({
           dangerouslySetInnerHTML={{ __html: marked.parse(description) }}
         />
       )}
-      {(source || api || readme) && (
-        <nav className="text-xs text-neutral-500 max-w-md mx-auto mt-4 text-center flex items-center justify-center gap-4">
-          {source && (
-            <ExternalLink
-              href={source}
-              className="flex items-center gap-1 font-medium"
-              underline={false}
-            >
-              <IconBrandGithub
-                className="shrink-0"
-                size={16}
-                strokeWidth={1.5}
-              />
-              Source
-            </ExternalLink>
-          )}
-          {api && (
-            <ExternalLink
-              href={api}
-              className="flex items-center gap-1 font-medium"
-              underline={false}
-            >
-              <IconApi size={16} strokeWidth={1.5} />
-              API
-            </ExternalLink>
-          )}
-          {readme && (
-            <ExternalLink
-              href={readme}
-              className="flex items-center gap-1 font-medium"
-              underline={false}
-            >
-              <IconBook2 size={16} strokeWidth={1.5} />
-              LLMs
-            </ExternalLink>
-          )}
-        </nav>
-      )}
+      <NavigationLinks source={source} api={api} readme={readme} />
     </div>
   );
 }

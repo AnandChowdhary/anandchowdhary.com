@@ -4,8 +4,14 @@ import { TimelineItem } from "@/app/components/timeline-item";
 import NumberFlow from "@number-flow/react";
 import { useEffect, useState } from "react";
 
-export function TimelineItemFitness() {
-  const [steps, setSteps] = useState<number>(9882);
+export function TimelineItemFitness({
+  value,
+  total,
+}: {
+  value: number;
+  total: number;
+}) {
+  const [steps, setSteps] = useState<number>(value);
 
   useEffect(() => {
     const interval = setInterval(() => setSteps(steps + 1), 8800);
@@ -20,7 +26,9 @@ export function TimelineItemFitness() {
           <NumberFlow value={steps} /> steps walked today
         </>
       }
-      subtitle="474 active calories of 2,648 total"
+      subtitle={`${((total / 1000) * 0.762).toLocaleString("en-US", {
+        maximumFractionDigits: 0,
+      })} km walked this month`}
     />
   );
 }

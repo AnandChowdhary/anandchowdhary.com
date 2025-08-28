@@ -801,6 +801,65 @@ export async function getAllCodingTime(): Promise<Record<string, number>> {
   return codingTimeData ?? {};
 }
 
+export async function getAllWalkingSteps(): Promise<Record<string, number>> {
+  const walkingSteps = await fetch(
+    "https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-walking/summary/days.json",
+    { next: { revalidate: 3600 } }
+  );
+  const walkingStepsData = (await walkingSteps.json()) as Record<
+    string,
+    number
+  >;
+  return walkingStepsData ?? {};
+}
+
+export const getAverageWalkingSteps = async () => {
+  const walkingSteps = await getAllWalkingSteps();
+  const sortedDates = Object.keys(walkingSteps).sort(
+    (a, b) => new Date(b).getTime() - new Date(a).getTime()
+  );
+  const last30NonZero = sortedDates
+    .filter((date) => walkingSteps[date] > 0)
+    .slice(0, 30)
+    .map((date) => walkingSteps[date]);
+  if (last30NonZero.length === 0) return 0;
+  const sum = last30NonZero.reduce((acc, val) => acc + val, 0);
+  return Math.round(sum / last30NonZero.length);
+};
+
+export const getTotalWalkingSteps = async () => {
+  const walkingSteps = await getAllWalkingSteps();
+  const sortedDates = Object.keys(walkingSteps)
+    .filter((date) => walkingSteps[date] > 0)
+    .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
+  const last30NonZero = sortedDates.slice(0, 30);
+  const sum = last30NonZero.reduce((acc, date) => acc + walkingSteps[date], 0);
+  return sum;
+};
+
+export const getAverageSleepTime = async () => {
+  const sleepTime = await getAllSleepTime();
+  const sortedDates = Object.keys(sleepTime).sort(
+    (a, b) => new Date(b).getTime() - new Date(a).getTime()
+  );
+  const last30NonZero = sortedDates
+    .filter((date) => sleepTime[date] > 0)
+    .slice(0, 30)
+    .map((date) => sleepTime[date]);
+  if (last30NonZero.length === 0) return 0;
+  const sum = last30NonZero.reduce((acc, val) => acc + val, 0);
+  return Math.round(sum / last30NonZero.length);
+};
+
+export async function getAllSleepTime(): Promise<Record<string, number>> {
+  const sleepTime = await fetch(
+    "https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-sleep/summary/days.json",
+    { next: { revalidate: 3600 } }
+  );
+  const sleepTimeData = (await sleepTime.json()) as Record<string, number>;
+  return sleepTimeData ?? {};
+}
+
 export async function getLastDayCodingTime(): Promise<Record<
   string,
   number
@@ -924,4 +983,20 @@ export async function getProjectContent(
     projectContentText = lines.slice(1).join("\n").trim();
   }
   return projectContentText;
+}
+
+export interface TopArtist {
+  name: string;
+  href: string;
+  img: string;
+  rank: number;
+}
+
+export async function getAllTopArtists(): Promise<TopArtist[]> {
+  const topArtists = await fetch(
+    "https://raw.githubusercontent.com/AnandChowdhary/top-artists/refs/heads/main/api.json",
+    { next: { revalidate: 3600 } }
+  );
+  const topArtistsData = (await topArtists.json()) as TopArtist[];
+  return topArtistsData;
 }

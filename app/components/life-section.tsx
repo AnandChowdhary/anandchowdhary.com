@@ -1,3 +1,8 @@
+import {
+  getAverageSleepTime,
+  getAverageWalkingSteps,
+  getTotalWalkingSteps,
+} from "@/app/api";
 import { TimelineItemBirthday } from "@/app/components/timeline-item-birthday";
 import { TimelineItemCodingTime } from "@/app/components/timeline-item-code";
 import { TimelineItemFitness } from "@/app/components/timeline-item-fitness";
@@ -7,7 +12,11 @@ import { TimelineItemMusic } from "@/app/components/timeline-item-music";
 import { TimelineItemSleep } from "@/app/components/timeline-item-sleep";
 import { TimelineItemTheme } from "@/app/components/timeline-item-theme";
 
-export function LifeSection() {
+export async function LifeSection() {
+  const lastDayWalkingSteps = await getAverageWalkingSteps();
+  const totalWalkingSteps = await getTotalWalkingSteps();
+  const lastNightSleepTime = await getAverageSleepTime();
+
   return (
     <section className="space-y-4 max-w-5xl mx-auto">
       <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
@@ -17,8 +26,11 @@ export function LifeSection() {
         <TimelineItemBirthday />
         <TimelineItemLocation />
         <TimelineItemTheme />
-        <TimelineItemFitness />
-        <TimelineItemSleep />
+        <TimelineItemFitness
+          value={lastDayWalkingSteps}
+          total={totalWalkingSteps}
+        />
+        <TimelineItemSleep hours={lastNightSleepTime / 3600} />
         <TimelineItemCodingTime />
         <TimelineItemMusic />
         <TimelineItemGitHub />
