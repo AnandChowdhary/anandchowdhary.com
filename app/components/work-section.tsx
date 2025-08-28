@@ -36,7 +36,7 @@ export async function WorkSection() {
             url: "https://pabio.com",
           },
           {
-            label: "Chowdhary.org",
+            label: "Oswald Labs",
             color: "#007bff",
             icon: (
               <svg viewBox="0 0 116 116">
@@ -46,7 +46,7 @@ export async function WorkSection() {
                 </g>
               </svg>
             ),
-            url: "https://chowdhary.org",
+            url: "https://oswaldlabs.com",
             container: true,
           },
           {
