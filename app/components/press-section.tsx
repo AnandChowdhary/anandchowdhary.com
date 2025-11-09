@@ -19,7 +19,7 @@ export async function PressSection() {
             label: "TechCrunch",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1920465822650134528/ZAOtUO3g_400x400.jpg",
+            icon: "https://pbs.twimg.com/profile_images/1963012341110538240/UWT1Nr81_400x400.jpg",
             label: "HuffPost",
           },
           {

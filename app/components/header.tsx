@@ -4,7 +4,7 @@ import AnimatedSignature from "@/app/components/signature";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Link from "next/link";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { ViewTransition } from "react";
 
 marked.use(markedSmartypants());
 

@@ -82,7 +82,7 @@ export default async function VideosContent({
   nextYear?: number;
 }) {
   const sortedVideos = [...videosData].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   return (
@@ -92,7 +92,7 @@ export default async function VideosContent({
         description="A collection of videos featuring my talks, interviews, and appearances discussing technology, accessibility, and entrepreneurship."
       />
 
-      <main className="max-w-2xl mx-auto space-y-4">
+      <main className="max-w-5xl mx-auto space-y-4">
         <div className="grid grid-cols-3 gap-8">
           {sortedVideos.map((item) => (
             <VideoCard key={item.slug} item={item} />
