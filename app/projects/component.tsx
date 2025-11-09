@@ -133,6 +133,10 @@ export default async function ProjectContent({
           tag.toLowerCase()
         )}.md`
       );
+      if (!response.ok)
+        throw new Error(
+          `Tag content not found: ${tag}, ${response.statusText}`
+        );
       tagContent = await response.text();
     } catch {
       // Ignore 404s
