@@ -1,10 +1,13 @@
-import { ExternalLink } from "@/app/components/external-link";
+import { ExternalLink, focusStyles } from "@/app/components/external-link";
+import Link from "next/link";
 
 export function NowSection() {
   return (
     <section className="space-y-4 max-w-lg mx-auto">
       <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
-        /now
+        <Link href="/now" className={`${focusStyles}`}>
+          /now
+        </Link>
       </h2>
       <ul className="list-disc marker:text-neutral-400 space-y-4">
         <li>

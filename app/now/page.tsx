@@ -1,6 +1,7 @@
 import { getAllArchiveItems } from "@/app/api";
 import { ArchiveItemComponent } from "@/app/archive/item";
 import { Container } from "@/app/components/container";
+import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NowSection } from "@/app/components/now-section";
@@ -40,6 +41,14 @@ export default async function Now() {
           ))}
         </div>
         <p className="mt-12">
+          This page is made to answer the question "What are you up to these
+          days?" You can see more /now pages on{" "}
+          <ExternalLink href="https://nownownow.com/">
+            nownownow.com
+          </ExternalLink>
+          .
+        </p>
+        <p className="mt-4">
           This page was last updated on{" "}
           {new Date(recentArchiveItems[0].date).toLocaleDateString("en-US", {
             month: "long",

@@ -88,15 +88,18 @@ export function Footer() {
           <span className="sr-only">X (formerly Twitter)</span>
         </ExternalLink>
       </div>
-      <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm">
-        {Array.from({ length: 2025 - 2009 + 1 }, (_, i) => {
-          const year = 2009 + i;
-          return (
-            <Link className={linkStyles} href={`/archive/${year}`} key={year}>
-              {year}
-            </Link>
-          );
-        })}
+      <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-xs">
+        {Array.from(
+          { length: new Date().getUTCFullYear() - 2007 + 1 },
+          (_, i) => {
+            const year = 2007 + i;
+            return (
+              <Link className={linkStyles} href={`/archive/${year}`} key={year}>
+                {year}
+              </Link>
+            );
+          }
+        )}
       </div>
     </footer>
   );

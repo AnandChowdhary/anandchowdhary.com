@@ -147,7 +147,7 @@ export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
       url: `https://anandchowdhary.com/blog/${year}`,
     })),
     ...Array.from(
-      { length: new Date().getUTCFullYear() - 2009 + 1 },
+      { length: new Date().getUTCFullYear() - 2007 + 1 },
       (_, i) => ({
         url: `https://anandchowdhary.com/archive/${
           new Date().getUTCFullYear() - i
