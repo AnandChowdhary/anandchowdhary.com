@@ -1,4 +1,5 @@
 import { getAllNotes, getNoteByYearAndSlug, getNoteContent } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -26,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${note.title} / ${year} / Notes / Anand Chowdhary`,
     description: note.excerpt || `Note by Anand Chowdhary: ${note.title}`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/notes/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

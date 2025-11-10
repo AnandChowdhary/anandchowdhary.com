@@ -1,4 +1,5 @@
 import { getAllCountries } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import LocationContent from "@/app/location/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Location / Anand Chowdhary`,
     description: `Places visited by Anand Chowdhary in ${year}.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/location/${year}`),
+        },
+      ],
+    },
   };
 }
 

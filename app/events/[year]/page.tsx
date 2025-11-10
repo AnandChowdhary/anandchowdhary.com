@@ -1,4 +1,5 @@
 import { getAllEvents } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import EventsContent from "@/app/events/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Events / Anand Chowdhary`,
     description: `From time to time, Anand Chowdhary speaks at startup events and technical conferences about engineering, design, and entrepreneurship.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/events/${year}`),
+        },
+      ],
+    },
   };
 }
 

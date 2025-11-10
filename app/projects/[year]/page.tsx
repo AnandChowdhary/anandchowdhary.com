@@ -1,4 +1,5 @@
 import { getAllProjects } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import ProjectContent from "@/app/projects/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Projects / Anand Chowdhary`,
     description: `Projects I built in ${year}, from small experiments to full-scale products for my startups.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/projects/${year}`),
+        },
+      ],
+    },
   };
 }
 

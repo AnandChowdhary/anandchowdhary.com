@@ -1,4 +1,5 @@
 import { getArchiveItemsByYear, getAllArchiveItems } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import ArchiveContent from "@/app/archive/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Archive / Anand Chowdhary`,
     description: `Browse through archived content and past projects from ${year} by Anand Chowdhary.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/archive/${year}`),
+        },
+      ],
+    },
   };
 }
 

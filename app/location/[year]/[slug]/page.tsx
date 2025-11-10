@@ -1,4 +1,5 @@
 import { getAllLocations, getLocationByYearAndSlug } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -32,6 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${country.label} / ${year} / Location / Anand Chowdhary`,
     description: `Travel to ${country.label} by Anand Chowdhary`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/location/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

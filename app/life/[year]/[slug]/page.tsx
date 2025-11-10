@@ -1,4 +1,5 @@
 import { getLifeEventByYearAndSlug, getLifeEvents } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -22,6 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${lifeEvent.title} / ${year} / Life / Anand Chowdhary`,
     description: lifeEvent.description ?? `Life event: ${lifeEvent.title}`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/life/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

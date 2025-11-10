@@ -1,4 +1,5 @@
 import { getPress, getAllPressItems } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import PressContent from "@/app/press/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Press / Anand Chowdhary`,
     description: `Press coverage and media mentions from ${year} featuring Anand Chowdhary.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/press/${year}`),
+        },
+      ],
+    },
   };
 }
 

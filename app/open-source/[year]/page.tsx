@@ -1,4 +1,5 @@
 import { getAllOpenSource } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import OpenSourceContent from "@/app/open-source/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Open Source / Anand Chowdhary`,
     description: `Open source projects and contributions from ${year} by Anand Chowdhary.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/open-source/${year}`),
+        },
+      ],
+    },
   };
 }
 

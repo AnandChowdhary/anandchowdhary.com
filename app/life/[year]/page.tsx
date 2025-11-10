@@ -1,4 +1,5 @@
 import { getLifeEvents } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import LifeContent from "@/app/life/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Life / Anand Chowdhary`,
     description: `Major milestones and meaningful moments from ${year} that have shaped my personal and professional journey.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/life/${year}`),
+        },
+      ],
+    },
   };
 }
 

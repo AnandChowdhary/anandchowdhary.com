@@ -5,6 +5,7 @@ import {
   getRepositoryDetails,
   getRepositoryReadMe,
 } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
@@ -40,6 +41,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${repo.title} / ${year} / Open Source / Anand Chowdhary`,
     description: repo.description || `Open source project: ${repo.title}`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/open-source/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

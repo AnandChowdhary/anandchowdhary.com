@@ -1,4 +1,5 @@
 import { getAllNotes } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import NotesContent from "@/app/notes/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Notes / Anand Chowdhary`,
     description: `Personal notes and thoughts from ${year} by Anand Chowdhary.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/notes/${year}`),
+        },
+      ],
+    },
   };
 }
 

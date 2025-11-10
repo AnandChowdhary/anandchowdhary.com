@@ -1,4 +1,5 @@
 import { getAllBlogPosts } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import BlogContent from "@/app/blog/component";
 import { Metadata } from "next";
 
@@ -6,6 +7,13 @@ export const metadata: Metadata = {
   title: "Blog / Anand Chowdhary",
   description:
     "Read articles and blog posts by Anand Chowdhary about technology, entrepreneurship, design, and engineering.",
+  openGraph: {
+    images: [
+      {
+        url: buildScreenshotOpenGraphImageUrl("/blog"),
+      },
+    ],
+  },
 };
 
 export default async function Blog() {

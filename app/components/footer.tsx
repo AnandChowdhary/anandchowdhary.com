@@ -85,7 +85,7 @@ export function Footer() {
             className="inline-block w-4 h-4 align-middle -mt-1"
             strokeWidth={1.5}
           />
-          <span className="sr-only">X (formally Twitter)</span>
+          <span className="sr-only">X (formerly Twitter)</span>
         </ExternalLink>
       </div>
       <div className="flex flex-wrap gap-x-2.5 gap-y-2 lg:gap-x-4 justify-center text-sm">

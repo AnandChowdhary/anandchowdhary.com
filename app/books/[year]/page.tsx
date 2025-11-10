@@ -1,4 +1,5 @@
 import { getAllBooks } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import BooksContent from "@/app/books/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Books / Anand Chowdhary`,
     description: `Books read by Anand Chowdhary in ${year}.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/books/${year}`),
+        },
+      ],
+    },
   };
 }
 

@@ -1,4 +1,5 @@
 import { getVideos } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import VideosContent from "@/app/videos/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Videos / Anand Chowdhary`,
     description: `Videos featuring talks, interviews, and appearances from ${year} by Anand Chowdhary.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/videos/${year}`),
+        },
+      ],
+    },
   };
 }
 

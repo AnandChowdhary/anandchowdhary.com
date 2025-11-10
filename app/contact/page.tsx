@@ -2,6 +2,7 @@ import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import {
   IconBrandGithub,
   IconBrandInstagram,
@@ -14,6 +15,13 @@ export const metadata: Metadata = {
   title: "Contact / Anand Chowdhary",
   description:
     "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries.",
+  openGraph: {
+    images: [
+      {
+        url: buildScreenshotOpenGraphImageUrl("/contact"),
+      },
+    ],
+  },
 };
 
 export default async function Contact() {
@@ -53,7 +61,7 @@ export default async function Contact() {
                     className="inline-block mr-1 w-4 h-4 align-middle -mt-1"
                     strokeWidth={1.5}
                   />
-                  <span>@AnandChowdhary on X (formally Twitter)</span>
+                  <span>@AnandChowdhary on X (formerly Twitter)</span>
                 </ExternalLink>
               </li>
               <li>

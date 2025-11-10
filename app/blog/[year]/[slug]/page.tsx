@@ -8,6 +8,7 @@ import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { proseClassName } from "@/app/styles";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -31,6 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} / ${year} / Blog / Anand Chowdhary`,
     description: post.excerpt,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/blog/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

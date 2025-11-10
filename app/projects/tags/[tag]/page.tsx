@@ -1,4 +1,5 @@
 import { getAllProjects, getProjectTags } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import ProjectContent from "@/app/projects/component";
 import slugify from "@sindresorhus/slugify";
 import type { Metadata } from "next";
@@ -17,6 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${found} / Projects / Anand Chowdhary`,
     description: `Projects I built with the tag ${found}.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/projects/tags/${tag}`),
+        },
+      ],
+    },
   };
 }
 

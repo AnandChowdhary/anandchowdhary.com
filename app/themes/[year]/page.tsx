@@ -1,4 +1,5 @@
 import { getAllThemes } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import ThemesContent from "@/app/themes/component";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -12,6 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${year} / Themes / Anand Chowdhary`,
     description: `Year of focus from ${year} by Anand Chowdhary, chosen to grow in different areas of life.`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/themes/${year}`),
+        },
+      ],
+    },
   };
 }
 

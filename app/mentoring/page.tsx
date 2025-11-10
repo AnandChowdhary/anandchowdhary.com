@@ -2,12 +2,20 @@ import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mentoring / Anand Chowdhary",
   description:
     "Anand Chowdhary offers weekly mentoring sessions for early-stage entrepreneurs building technology-focused startups.",
+  openGraph: {
+    images: [
+      {
+        url: buildScreenshotOpenGraphImageUrl("/mentoring"),
+      },
+    ],
+  },
 };
 
 export default async function Mentoring() {

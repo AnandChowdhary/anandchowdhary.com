@@ -1,4 +1,5 @@
 import { getPress, getPressItemByYearAndSlug } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
@@ -31,6 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${pressItem.title} / ${year} / Press / Anand Chowdhary`,
     description: pressItem.description ?? `Press coverage: ${pressItem.title}`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/press/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

@@ -3,6 +3,7 @@ import {
   getThemeByYearAndSlug,
   getThemeContent,
 } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -31,6 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${theme.title} / ${year} / Themes / Anand Chowdhary`,
     description: theme.excerpt,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/themes/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 

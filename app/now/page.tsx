@@ -4,12 +4,20 @@ import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NowSection } from "@/app/components/now-section";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Now / Anand Chowdhary",
   description:
     "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands.",
+  openGraph: {
+    images: [
+      {
+        url: buildScreenshotOpenGraphImageUrl("/now"),
+      },
+    ],
+  },
 };
 
 export default async function Now() {

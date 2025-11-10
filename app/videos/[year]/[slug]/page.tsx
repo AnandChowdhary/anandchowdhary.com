@@ -1,4 +1,5 @@
 import { getVideoByYearAndSlug, getVideos } from "@/app/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -26,6 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${video.title} / ${year} / Videos / Anand Chowdhary`,
     description: video.description ?? `Video: ${video.title}`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/videos/${year}/${slug}`),
+        },
+      ],
+    },
   };
 }
 
