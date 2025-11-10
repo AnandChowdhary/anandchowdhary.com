@@ -362,21 +362,24 @@ export async function getNoteContent(
   return noteContentText;
 }
 
-export async function getAllBlogPosts(): Promise<BlogPost[]> {
+export async function getAllBlogPosts(
+  includeDrafts?: boolean
+): Promise<BlogPost[]> {
   const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
     next: { revalidate: 3600 },
   });
   const blogData = (await blog.json()) as BlogPost[];
   return blogData
-    .filter((post) => !post.attributes.draft)
+    .filter((post) => (includeDrafts ? true : !post.attributes.draft))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getBlogPostByYearAndSlug(
   year: number,
-  slug: string
+  slug: string,
+  includeDrafts?: boolean
 ): Promise<BlogPost | null> {
-  const blogData = await getAllBlogPosts();
+  const blogData = await getAllBlogPosts(includeDrafts);
   return (
     blogData
       .filter((post) => new Date(post.date).getUTCFullYear() === year)
@@ -405,6 +408,13 @@ export async function getBlogPostContent(
     const lines = postContentText.split("\n");
     postContentText = lines.slice(1).join("\n");
   }
+
+  // Convert relative asset paths to raw GitHub URLs
+  postContentText = postContentText.replace(
+    /!\[([^\]]*)\]\((\/assets\/[^)]+)\)/g,
+    (_match, alt, path) =>
+      `![${alt}](https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main${path})`
+  );
 
   return postContentText;
 }
