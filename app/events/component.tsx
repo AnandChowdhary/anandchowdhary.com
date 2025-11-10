@@ -1,4 +1,5 @@
 import { Event } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -46,7 +47,7 @@ const EventThumbnail = ({
       )}
       <img
         src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
-          new Rand(item.slug).next() * 100 + 1,
+          new Rand(item.slug).next() * 100 + 1
         )}.png`}
         alt=""
         className={`w-full h-full object-cover -z-10 ${
@@ -63,7 +64,7 @@ const EventCard = ({ item }: { item: Event }) => (
     <div className="col-span-2">
       <Link
         href={`/events/${new Date(
-          item.date,
+          item.date
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
         className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
@@ -99,18 +100,15 @@ export default async function EventsContent({
   previousYear?: number;
   nextYear?: number;
 }) {
-  const eventsDataByYear = eventsDataFiltered.reduce(
-    (acc, item) => {
-      const year = new Date(item.date).getUTCFullYear();
-      if (!acc[year]) acc[year] = [];
-      acc[year].push(item);
-      return acc;
-    },
-    {} as Record<string, Event[]>,
-  );
+  const eventsDataByYear = eventsDataFiltered.reduce((acc, item) => {
+    const year = new Date(item.date).getUTCFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(item);
+    return acc;
+  }, {} as Record<string, Event[]>);
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/events/${year}` : "/events"}
         description="From time to time, I speak at startup events and technical conferences about engineering, design, and entrepreneurship."
@@ -161,7 +159,7 @@ export default async function EventsContent({
                     <div className="grow flex items-center justify-between gap-8 min-w-0">
                       <Link
                         href={`/events/${new Date(
-                          item.date,
+                          item.date
                         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
                         className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                       >
@@ -218,6 +216,6 @@ export default async function EventsContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

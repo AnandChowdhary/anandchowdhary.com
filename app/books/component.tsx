@@ -1,4 +1,5 @@
 import { Book } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -38,14 +39,14 @@ export default async function BooksContent({
   nextYear?: number;
 }) {
   const currentlyReading = booksDataFiltered.filter(
-    (book) => book.state === "reading",
+    (book) => book.state === "reading"
   );
   const completed = booksDataFiltered.filter(
-    (book) => book.state === "completed",
+    (book) => book.state === "completed"
   );
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/books/${year}` : "/books"}
         description="I love reading books and expanding my knowledge. Here are the books I've read and am currently reading."
@@ -63,7 +64,7 @@ export default async function BooksContent({
               {currentlyReading
                 .sort(
                   (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime(),
+                    new Date(b.date).getTime() - new Date(a.date).getTime()
                 )
                 .map((book) => (
                   <BookItem key={`${book.date}-${book.slug}`} book={book} />
@@ -82,7 +83,7 @@ export default async function BooksContent({
               {completed
                 .sort(
                   (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime(),
+                    new Date(b.date).getTime() - new Date(a.date).getTime()
                 )
                 .map((book) => (
                   <BookItem key={`${book.date}-${book.slug}`} book={book} />
@@ -112,6 +113,6 @@ export default async function BooksContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

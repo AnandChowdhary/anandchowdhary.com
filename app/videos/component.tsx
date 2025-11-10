@@ -1,4 +1,5 @@
 import { Video } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -86,12 +87,11 @@ export default async function VideosContent({
   );
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/videos/${year}` : "/videos"}
         description="A collection of videos featuring my talks, interviews, and appearances discussing technology, accessibility, and entrepreneurship."
       />
-
       <main className="max-w-5xl mx-auto space-y-4">
         <div className="grid grid-cols-3 gap-8">
           {sortedVideos.map((item) => (
@@ -119,8 +119,7 @@ export default async function VideosContent({
           />
         )}
       </main>
-
       <Footer />
-    </div>
+    </Container>
   );
 }

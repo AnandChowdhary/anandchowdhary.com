@@ -4,6 +4,7 @@ import {
   getBlogPostContent,
 } from "@/app/api";
 import { BlogMetadata } from "@/app/blog/metadata";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -64,7 +65,7 @@ export default async function BlogYearSlug({ params }: Props) {
   const yearNavigation = { previous: previousPost, next: nextPost };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/blog/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
@@ -93,10 +94,10 @@ export default async function BlogYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/blog/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -106,10 +107,10 @@ export default async function BlogYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/blog/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.next.title,
                 }
@@ -118,6 +119,6 @@ export default async function BlogYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

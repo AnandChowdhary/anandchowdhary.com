@@ -1,4 +1,5 @@
 import { getLifeEventByYearAndSlug, getLifeEvents } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -45,7 +46,7 @@ export default async function LifeYearSlug({ params }: Props) {
 
   const allLifeEvents = await getLifeEvents();
   const currentEventIndex = allLifeEvents.findIndex(
-    (e) => e.slug === lifeEvent.slug,
+    (e) => e.slug === lifeEvent.slug
   );
   const previousEvent = allLifeEvents[currentEventIndex - 1];
   const nextEvent = allLifeEvents[currentEventIndex + 1];
@@ -53,7 +54,7 @@ export default async function LifeYearSlug({ params }: Props) {
   const yearNavigation = { previous: previousEvent, next: nextEvent };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname="/life" />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-4">
@@ -84,7 +85,7 @@ export default async function LifeYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/life/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -94,7 +95,7 @@ export default async function LifeYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/life/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }
@@ -103,6 +104,6 @@ export default async function LifeYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

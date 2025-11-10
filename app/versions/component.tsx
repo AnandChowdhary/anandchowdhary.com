@@ -1,4 +1,5 @@
 import { Version } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -15,7 +16,7 @@ const VersionCard = ({ item }: { item: Version }) => (
       <img
         src={`https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/${item.slug.replace(
           ".md",
-          "",
+          ""
         )}/home.png`}
         alt=""
         className="w-full h-full object-cover rounded-lg dark:brightness-60 object-top"
@@ -24,7 +25,7 @@ const VersionCard = ({ item }: { item: Version }) => (
     <div className="md:col-span-2">
       <Link
         href={`/versions/${new Date(
-          item.date,
+          item.date
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
         className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
@@ -78,7 +79,7 @@ export default async function VersionContent({
   nextYear?: number;
 }) {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/versions/${year}` : "/versions"}
         source="https://github.com/AnandChowdhary/versions"
@@ -114,6 +115,6 @@ Looking back, I can connect the dots for what I was interested in way back when.
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

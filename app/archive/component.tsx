@@ -1,5 +1,6 @@
 import { ArchiveItem } from "@/app/api";
 import { ArchiveItemComponent } from "@/app/archive/item";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -60,7 +61,7 @@ export default function ArchiveContent({
   };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/archive/${year}` : "/archive"}
         description="Everything, everywhere, all at once: A comprehensive archive of all my activities, projects, writing, events, and more, in one place."
@@ -158,6 +159,6 @@ export default function ArchiveContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

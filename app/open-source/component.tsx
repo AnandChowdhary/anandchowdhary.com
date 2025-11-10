@@ -1,4 +1,5 @@
 import { getAllArchiveItems, Repository } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -81,7 +82,7 @@ const RepoThumbnail = async ({
     >
       <img
         src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
-          new Rand(item.slug).next() * 100 + 1,
+          new Rand(item.slug).next() * 100 + 1
         )}.png`}
         alt=""
         className={`w-full h-full object-cover ${
@@ -178,29 +179,26 @@ export default async function OpenSourceContent({
   previousYear?: number;
   nextYear?: number;
 }) {
-  const reposDataByYear = reposDataFiltered.reduce(
-    (acc, item) => {
-      const year = new Date(item.created_at).getUTCFullYear();
-      if (!acc[year]) acc[year] = [];
-      acc[year].push(item);
-      return acc;
-    },
-    {} as Record<string, Repository[]>,
-  );
+  const reposDataByYear = reposDataFiltered.reduce((acc, item) => {
+    const year = new Date(item.created_at).getUTCFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(item);
+    return acc;
+  }, {} as Record<string, Repository[]>);
 
   const reposSortedByStars = [...reposDataFiltered].sort(
-    (a, b) => b.stargazers_count - a.stargazers_count,
+    (a, b) => b.stargazers_count - a.stargazers_count
   );
   const featuredRepos = reposSortedByStars.slice(0, 3);
   const moreRepos = reposSortedByStars
     .filter((repo) => !featuredRepos.includes(repo))
     .sort(
       (a, b) =>
-        new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     );
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/open-source/${year}` : "/open-source"}
         description="From time to time, I contribute to and maintain open-source projects related to engineering, design, and developer tools."
@@ -227,7 +225,7 @@ export default async function OpenSourceContent({
                     .sort(
                       (a, b) =>
                         new Date(b.created_at).getTime() -
-                        new Date(a.created_at).getTime(),
+                        new Date(a.created_at).getTime()
                     )
                     .map((item) => (
                       <RepoCard
@@ -258,7 +256,7 @@ export default async function OpenSourceContent({
                     <div className="grow flex items-center justify-between gap-8 min-w-0">
                       <Link
                         href={`/open-source/${new Date(
-                          item.created_at,
+                          item.created_at
                         ).getUTCFullYear()}/${item.slug}`}
                         className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                         style={{
@@ -283,7 +281,7 @@ export default async function OpenSourceContent({
                         <span>
                           {new Date(item.created_at).toLocaleDateString(
                             "en-US",
-                            { day: "numeric", month: "long", year: "numeric" },
+                            { day: "numeric", month: "long", year: "numeric" }
                           )}
                         </span>
                       </div>
@@ -316,6 +314,6 @@ export default async function OpenSourceContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

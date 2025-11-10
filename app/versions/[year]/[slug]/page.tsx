@@ -3,6 +3,7 @@ import {
   getVersionByYearAndSlug,
   getVersionContent,
 } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -53,20 +54,20 @@ export default async function VersionYearSlug({ params }: Props) {
 
   const allVersions = await getAllVersions();
   const currentVersionIndex = allVersions.findIndex(
-    (v) => v.slug === version.slug,
+    (v) => v.slug === version.slug
   );
   const previousVersion = allVersions[currentVersionIndex - 1];
   const nextVersion = allVersions[currentVersionIndex + 1];
 
   const versionContentText = await getVersionContent(year, version.slug);
   const versionContentHtml = await Promise.resolve(
-    marked.parse(versionContentText),
+    marked.parse(versionContentText)
   );
 
   const yearNavigation = { previous: previousVersion, next: nextVersion };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/versions/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
@@ -94,10 +95,10 @@ export default async function VersionYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/versions/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -107,10 +108,10 @@ export default async function VersionYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/versions/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.next.title,
                 }
@@ -119,6 +120,6 @@ export default async function VersionYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

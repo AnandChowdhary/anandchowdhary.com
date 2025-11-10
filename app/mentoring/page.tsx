@@ -1,3 +1,4 @@
+import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default async function Mentoring() {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname="/mentoring" />
       <div className="max-w-xl mx-auto">
         <section className="space-y-4">
@@ -74,6 +75,6 @@ export default async function Mentoring() {
         </section>
       </div>
       <Footer />
-    </div>
+    </Container>
   );
 }

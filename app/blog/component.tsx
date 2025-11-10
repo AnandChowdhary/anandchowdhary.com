@@ -1,4 +1,5 @@
 import { BlogPost } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -29,7 +30,7 @@ const BlogThumbnail = ({
     >
       <img
         src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
-          new Rand(item.slug).next() * 100 + 1,
+          new Rand(item.slug).next() * 100 + 1
         )}.png`}
         alt=""
         className={`w-full h-full object-cover ${
@@ -51,7 +52,7 @@ const BlogCard = ({ item }: { item: BlogPost }) => (
     <div className="md:col-span-2">
       <Link
         href={`/blog/${new Date(
-          item.date,
+          item.date
         ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
         className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
       >
@@ -106,7 +107,7 @@ export default async function BlogContent({
   nextYear?: number;
 }) {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/blog/${year}` : "/blog"}
         description="Thoughts and insights on technology, entrepreneurship, and building products that matter."
@@ -130,7 +131,7 @@ export default async function BlogContent({
                 <div className="grow flex items-center justify-between gap-8 min-w-0">
                   <Link
                     href={`/blog/${new Date(
-                      item.date,
+                      item.date
                     ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
                     className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
                     style={{
@@ -181,6 +182,6 @@ export default async function BlogContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

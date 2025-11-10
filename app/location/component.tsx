@@ -1,6 +1,7 @@
 "use client";
 
 import { Country } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -24,18 +25,15 @@ export default function LocationContent({
   previousYear?: number;
   nextYear?: number;
 }) {
-  const countriesDataByYear = countriesDataFiltered.reduce(
-    (acc, item) => {
-      const year = new Date(item.date).getUTCFullYear();
-      if (!acc[year]) acc[year] = [];
-      acc[year].push(item);
-      return acc;
-    },
-    {} as Record<string, Country[]>,
-  );
+  const countriesDataByYear = countriesDataFiltered.reduce((acc, item) => {
+    const year = new Date(item.date).getUTCFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(item);
+    return acc;
+  }, {} as Record<string, Country[]>);
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/location/${year}` : "/location"}
         description="I love traveling and exploring new places. Here are the countries I've visited over the years."
@@ -59,11 +57,11 @@ export default function LocationContent({
               {countries
                 .sort(
                   (a, b) =>
-                    new Date(b.date).getTime() - new Date(a.date).getTime(),
+                    new Date(b.date).getTime() - new Date(a.date).getTime()
                 )
                 .map((item) => {
                   const countryData = getCountryData(
-                    item.country_code.toUpperCase() as TCountryCode,
+                    item.country_code.toUpperCase() as TCountryCode
                   );
                   if (!countryData) return null;
 
@@ -89,7 +87,7 @@ export default function LocationContent({
                       <div className="space-y-2">
                         <Link
                           href={`/location/${new Date(
-                            item.date,
+                            item.date
                           ).getUTCFullYear()}/${item.slug}`}
                           className={`${focusStyles} min-w-0 full-link flex`}
                         >
@@ -153,6 +151,6 @@ export default function LocationContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

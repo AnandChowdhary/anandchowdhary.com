@@ -1,4 +1,5 @@
 import { Project } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -144,7 +145,7 @@ export default async function ProjectContent({
     }
 
     return (
-      <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+      <Container>
         <Header pathname="/projects" />
         {tagContent ? (
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 space-y-12 md:space-y-0 md:gap-12">
@@ -195,12 +196,12 @@ export default async function ProjectContent({
           />
         )}
         <Footer />
-      </div>
+      </Container>
     );
   }
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/projects/${year}` : "/projects"}
         source="https://github.com/AnandChowdhary/projects"
@@ -234,6 +235,6 @@ export default async function ProjectContent({
         />
       )}
       <Footer />
-    </div>
+    </Container>
   );
 }

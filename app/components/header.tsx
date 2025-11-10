@@ -24,7 +24,7 @@ export function Header({
   const items = pathname.split("/").filter(Boolean);
 
   return (
-    <div>
+    <header>
       <div className="flex items-center justify-center mx-auto space-x-4">
         <div className="w-48">
           <ViewTransition name="signature">
@@ -58,6 +58,6 @@ export function Header({
         />
       )}
       <NavigationLinks source={source} api={api} readme={readme} />
-    </div>
+    </header>
   );
 }

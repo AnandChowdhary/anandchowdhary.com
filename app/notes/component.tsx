@@ -1,4 +1,5 @@
 import { getNoteContent, Note } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -25,11 +26,11 @@ export default async function NotesContent({
   const slug = notesDataFiltered[0].slug;
   const content = await getNoteContent(
     new Date(notesDataFiltered[0].date).getUTCFullYear().toString(),
-    notesDataFiltered[0].slug,
+    notesDataFiltered[0].slug
   );
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/notes/${year}` : "/notes"}
         description="Quick notes curated from shower thoughts and articles with the help of AI, also available on X."
@@ -50,7 +51,7 @@ export default async function NotesContent({
         >
           <Link
             href={`/notes/${new Date(
-              notesDataFiltered[0].date,
+              notesDataFiltered[0].date
             ).getUTCFullYear()}/${slug.replace(".md", "")}`}
             className={`${focusStyles} flex hover:text-neutral-500 full-link`}
           >
@@ -78,7 +79,7 @@ export default async function NotesContent({
                 <div className="grow flex items-center justify-between gap-8 min-w-0">
                   <Link
                     href={`/notes/${new Date(
-                      item.date,
+                      item.date
                     ).getUTCFullYear()}/${item.slug.replace(".md", "")}`}
                     className={`${focusStyles} min-w-0 full-link flex-1 truncate hover:text-neutral-500 overflow-hidden`}
                     style={{
@@ -129,6 +130,6 @@ export default async function NotesContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

@@ -1,4 +1,5 @@
 import { getVideoByYearAndSlug, getVideos } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -54,7 +55,7 @@ export default async function VideoPage({ params }: Props) {
   const yearNavigation = { previous: previousVideo, next: nextVideo };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/videos/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         {video.img && (
@@ -88,7 +89,7 @@ export default async function VideoPage({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/videos/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -98,7 +99,7 @@ export default async function VideoPage({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/videos/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }
@@ -107,6 +108,6 @@ export default async function VideoPage({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

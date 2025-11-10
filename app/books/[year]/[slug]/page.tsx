@@ -1,4 +1,5 @@
 import { getAllBooks, getBookByYearAndSlug } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       book.excerpt ??
       `Book read by Anand Chowdhary: ${book.title} by ${book.authors.join(
-        ", ",
+        ", "
       )}`,
   };
 }
@@ -67,7 +68,7 @@ export default async function BooksYearSlug({ params }: Props) {
   const yearNavigation = { previous: previousBook, next: nextBook };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/books/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -226,7 +227,7 @@ export default async function BooksYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/books/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -236,7 +237,7 @@ export default async function BooksYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/books/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }
@@ -245,6 +246,6 @@ export default async function BooksYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

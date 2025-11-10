@@ -1,6 +1,7 @@
 import { ArchiveSection } from "@/app/components/archive-section";
 import { BlogSection } from "@/app/components/blog-section";
 import { BooksSection } from "@/app/components/books-section";
+import { Container } from "@/app/components/container";
 import { Events } from "@/app/components/events";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname="/" />
       <NowSection />
       <LifeSection />
@@ -41,6 +42,6 @@ export default async function Home() {
         <ArchiveSection />
       </div>
       <Footer />
-    </div>
+    </Container>
   );
 }

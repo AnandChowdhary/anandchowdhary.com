@@ -1,4 +1,5 @@
 import { Theme } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -106,7 +107,7 @@ export default async function ThemesContent({
   nextYear?: number;
 }) {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/themes/${year}` : "/themes"}
         description="Each year I choose a theme to focus on and grow in different areas of my life. Themes act as a North Star, guiding decisions throughout the year as an alternative to traditional resolutions."
@@ -137,6 +138,6 @@ export default async function ThemesContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

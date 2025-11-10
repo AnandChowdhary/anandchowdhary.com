@@ -1,4 +1,5 @@
 import { getPress, getPressItemByYearAndSlug } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -70,7 +71,7 @@ export default async function PressYearSlug({ params }: Props) {
   ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const currentPressIndex = allPressItems.findIndex(
-    (p) => p.slug === pressItem.slug,
+    (p) => p.slug === pressItem.slug
   );
   const previousPressItem = allPressItems[currentPressIndex - 1];
   const nextPressItem = allPressItems[currentPressIndex + 1];
@@ -80,13 +81,13 @@ export default async function PressYearSlug({ params }: Props) {
     pressItem.category === "award"
       ? IconAward
       : pressItem.category === "podcast"
-        ? IconMicrophone
-        : IconNews;
+      ? IconMicrophone
+      : IconNews;
 
   const yearNavigation = { previous: previousPressItem, next: nextPressItem };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname="/press" />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-4">
@@ -185,7 +186,7 @@ export default async function PressYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/press/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -195,7 +196,7 @@ export default async function PressYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/press/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }
@@ -204,6 +205,6 @@ export default async function PressYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

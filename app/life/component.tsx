@@ -5,6 +5,7 @@ import {
   getAllWalkingSteps,
   LifeEvent,
 } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -102,7 +103,7 @@ export default async function LifeContent({
   const walkingSteps = await getAllWalkingSteps();
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header
         pathname={year ? `/life/${year}` : "/life"}
         description="Major milestones and meaningful moments that have shaped my personal and professional journey."
@@ -272,6 +273,6 @@ export default async function LifeContent({
         )}
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

@@ -5,6 +5,7 @@ import {
   getRepositoryDetails,
   getRepositoryReadMe,
 } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -90,7 +91,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   const yearNavigation = { previous: previousRepo, next: nextRepo };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/open-source/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         {image ? (
@@ -198,7 +199,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/open-source/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
                   label: yearNavigation.previous.title,
                 }
@@ -208,7 +209,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/open-source/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug}`,
                   label: yearNavigation.next.title,
                 }
@@ -217,6 +218,6 @@ export default async function OpenSourceYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

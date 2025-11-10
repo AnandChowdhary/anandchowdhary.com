@@ -1,5 +1,6 @@
 import { getAllArchiveItems } from "@/app/api";
 import { ArchiveItemComponent } from "@/app/archive/item";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NowSection } from "@/app/components/now-section";
@@ -18,7 +19,7 @@ export default async function Now() {
     .slice(0, 10);
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-24 sm:p-20 space-y-32">
+    <Container>
       <Header pathname="/now" />
       <NowSection />
       <section className="space-y-4 max-w-lg mx-auto text-sm text-neutral-500 -mt-16">
@@ -41,6 +42,6 @@ export default async function Now() {
         </p>
       </section>
       <Footer />
-    </div>
+    </Container>
   );
 }

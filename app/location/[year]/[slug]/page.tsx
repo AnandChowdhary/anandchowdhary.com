@@ -1,4 +1,5 @@
 import { getAllLocations, getLocationByYearAndSlug } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -56,7 +57,7 @@ export default async function LocationYearSlug({ params }: Props) {
 
   const allLocations = await getAllLocations();
   const currentLocationIndex = allLocations.findIndex(
-    (l) => l.slug === country.slug,
+    (l) => l.slug === country.slug
   );
   const previousLocation = allLocations[currentLocationIndex - 1];
   const nextLocation = allLocations[currentLocationIndex + 1];
@@ -64,7 +65,7 @@ export default async function LocationYearSlug({ params }: Props) {
   const yearNavigation = { previous: previousLocation, next: nextLocation };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/location/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
@@ -153,10 +154,10 @@ export default async function LocationYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/location/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.previous.label,
                 }
@@ -166,10 +167,10 @@ export default async function LocationYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/location/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.next.label,
                 }
@@ -178,6 +179,6 @@ export default async function LocationYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }

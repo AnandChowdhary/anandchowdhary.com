@@ -1,4 +1,5 @@
 import { getAllNotes, getNoteByYearAndSlug, getNoteContent } from "@/app/api";
+import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
@@ -58,7 +59,7 @@ export default async function NoteYearSlug({ params }: Props) {
   const yearNavigation = { previous: previousNote, next: nextNote };
 
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-16 sm:p-20 space-y-32">
+    <Container>
       <Header pathname={`/notes/${year}`} />
       <main className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-2">
@@ -79,10 +80,10 @@ export default async function NoteYearSlug({ params }: Props) {
             yearNavigation.previous
               ? {
                   href: `/notes/${new Date(
-                    yearNavigation.previous.date,
+                    yearNavigation.previous.date
                   ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.previous.title,
                 }
@@ -92,10 +93,10 @@ export default async function NoteYearSlug({ params }: Props) {
             yearNavigation.next
               ? {
                   href: `/notes/${new Date(
-                    yearNavigation.next.date,
+                    yearNavigation.next.date
                   ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
                     ".md",
-                    "",
+                    ""
                   )}`,
                   label: yearNavigation.next.title,
                 }
@@ -104,6 +105,6 @@ export default async function NoteYearSlug({ params }: Props) {
         />
       </main>
       <Footer />
-    </div>
+    </Container>
   );
 }
