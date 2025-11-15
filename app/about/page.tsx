@@ -1,3 +1,4 @@
+import { Container } from "@/app/components/container";
 import {
   ExternalLink,
   focusStyles,
@@ -6,6 +7,7 @@ import {
 } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { marked } from "marked";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -14,11 +16,14 @@ export const metadata: Metadata = {
   title: "About / Anand Chowdhary",
   description:
     "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands.",
+  openGraph: {
+    images: [{ url: buildScreenshotOpenGraphImageUrl("/about") }],
+  },
 };
 
 export default async function About() {
   return (
-    <div className="font-sans min-h-screen p-8 pb-20 gap-24 sm:p-20 space-y-32">
+    <Container>
       <Header pathname="/about" />
       <div className="grid md:grid-cols-2 max-w-3xl mx-auto gap-10">
         <figure className="w-full">
@@ -38,8 +43,8 @@ export default async function About() {
             </span>
             <span
               aria-hidden="true"
-              title="Anand standing on a table with his MacBook at an office"
-              className="bg-gray-200 rounded uppercase px-1 ml-2 font-medium cursor-default"
+              title="Anand smiling with his hands crossed looking to the side"
+              className="bg-gray-200 dark:bg-gray-800 rounded uppercase px-1 ml-2 font-medium cursor-default"
               style={{ fontSize: "80%" }}
             >
               Alt
@@ -53,15 +58,18 @@ export default async function About() {
               designer.
             </p>
             <p>
-              He is from New Delhi, India, and lives in Utrecht, the
-              Netherlands, with his wife{" "}
+              <strong className="font-medium">
+                He is currently working on something new.
+              </strong>{" "}
+              Previously, he founded FirstQuadrant, an AI sales platform funded
+              by Y Combinator.
+            </p>
+            <p>
+              He is from New Delhi, India, and splits his time living in
+              Utrecht, the Netherlands, and San Francisco, California, with his
+              wife{" "}
               <ExternalLink href="https://sukritikapoor.com">
                 Sukriti Kapoor
-              </ExternalLink>
-              , and works in San Francisco, California. He is the co-founder,
-              CTO, and CPO of AI sales platform{" "}
-              <ExternalLink href="https://firstquadrant.ai">
-                FirstQuadrant
               </ExternalLink>
               .
             </p>
@@ -73,20 +81,15 @@ export default async function About() {
               technology-focused startups around the world.
             </p>
             <p>
-              He is also an open source contributor, awarded by GitHub as a{" "}
+              He is also an award-winning open source contributor (
               <Link className={underlinedLink} href="/press/2021/github">
-                GitHub Star
-              </Link>{" "}
-              (2021–2023), and was listed in{" "}
+                GitHub Stars
+              </Link>
+              , 2021–2025), and was listed in{" "}
               <Link className={underlinedLink} href="/press/2018/forbes-asia">
                 Forbes 30 Under 30
               </Link>{" "}
-              (Asia 2018) and in Het Financieele Dagblad&rsquo;s list of
-              most-innovative entrepreneurs and professionals in the
-              Netherlands.
-            </p>
-            <p>
-              He also makes angel investments through{" "}
+              (Asia 2018). He also makes angel investments through{" "}
               <ExternalLink href="https://chowdhary.co">
                 Chowdhary.co
               </ExternalLink>{" "}
@@ -100,7 +103,7 @@ export default async function About() {
               From time to time, he speaks at events and writes articles about
               entrepreneurship and technology. He has been featured in
               publications like TechCrunch, Forbes, The Next Web, Hindustan
-              Times, and CSS Tricks.
+              Times, het Financieele Dagblad, and CSS Tricks.
             </p>
           </div>
         </section>
@@ -111,7 +114,7 @@ export default async function About() {
           {[
             {
               label: "FirstQuadrant",
-              years: [2023],
+              years: [2023, 2025],
               color: "#333333",
               icon: (
                 <svg viewBox="0 0 144 144">
@@ -122,7 +125,7 @@ export default async function About() {
               ),
               url: "https://firstquadrant.ai",
               description:
-                "AI sales platform that helps founders and revenue teams move faster, stay organized, and close more deals by streamlining behind-the-scenes sales work.",
+                "All-in-one AI sales platform for automating prospecting, qualification, outbound campaigns, nurturing relationships, pipeline management, and more.",
             },
             {
               label: "Pabio",
@@ -138,7 +141,7 @@ export default async function About() {
               ),
               url: "/projects/tags/pabio",
               description:
-                "Personalized interior design and high-quality furniture rental on a monthly subscription basis in Europe, enabling customers to furnish their homes affordably and flexibly.",
+                "Personalized interior design with high-quality furniture rental paid monthly in Europe, enabling customers to furnish their homes affordably and flexibly, funded by Y Combinator.",
             },
             {
               label: "Oswald Labs",
@@ -196,11 +199,23 @@ export default async function About() {
           ].map((about) => (
             <li key={about.label} className="flex items-start gap-5 relative">
               <div
-                className="shrink-0 rounded-xl shadow-xs p-2 bg-background flex items-center justify-center text-white w-12 h-12"
+                className="shrink-0 rounded-xl shadow-xs p-2 bg-background flex items-center justify-center text-white size-12"
                 style={{ backgroundColor: about.color }}
               >
                 {about.icon}
               </div>
+              {"smallIcon" in about && typeof about.smallIcon === "string" && (
+                <div
+                  className="shrink-0 rounded shadow-xs bg-background flex items-center justify-center size-6 absolute top-8.5 left-8.5 z-10 border border-gray-200 dark:border-gray-800 overflow-hidden"
+                  style={{ backgroundColor: "#fff" }}
+                >
+                  <img
+                    alt=""
+                    src={about.smallIcon}
+                    className="size-full object-contain"
+                  />
+                </div>
+              )}
               <div className="space-y-1 grow">
                 <div className="flex items-center gap-4">
                   {about.url.startsWith("http") ? (
@@ -218,6 +233,11 @@ export default async function About() {
                     >
                       {about.label}
                     </Link>
+                  )}
+                  {"tag" in about && typeof about.tag === "string" && (
+                    <span className="bg-gray-200 dark:bg-gray-800 text-gray-500 rounded uppercase font-medium text-[70%] px-1 tracking-wider">
+                      {about.tag}
+                    </span>
                   )}
                   <p className="text-sm text-gray-500">
                     {about.years.length > 1
@@ -243,6 +263,6 @@ export default async function About() {
         </ul>
       </div>
       <Footer />
-    </div>
+    </Container>
   );
 }
