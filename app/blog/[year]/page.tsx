@@ -1,8 +1,8 @@
 import { getAllBlogPosts } from "@/app/api";
-import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import BlogContent from "@/app/blog/component";
+import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string }>;
@@ -14,11 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${year} / Blog / Anand Chowdhary`,
     description: `Read articles and blog posts from ${year} by Anand Chowdhary about technology, entrepreneurship, design, and engineering.`,
     openGraph: {
-      images: [
-        {
-          url: buildScreenshotOpenGraphImageUrl(`/blog/${year}`),
-        },
-      ],
+      images: [{ url: buildScreenshotOpenGraphImageUrl(`/blog/${year}`) }],
     },
   };
 }
@@ -28,24 +24,34 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
   const posts = await getAllBlogPosts();
   const years = Array.from(
     new Set(
-      posts.map((post) => new Date(post.date).getUTCFullYear().toString()),
-    ),
+      posts.map((post) => new Date(post.date).getUTCFullYear().toString())
+    )
   );
   return years.map((year) => ({ year }));
 }
 
 export default async function BlogYear({ params }: Props) {
   const { year } = await params;
+  const allBlogPosts = await getAllBlogPosts();
+  const foundBlogPost = allBlogPosts.find(
+    (post) => post.slug.replace(".md", "") === year
+  );
+  if (foundBlogPost)
+    redirect(
+      `/blog/${new Date(
+        foundBlogPost.date
+      ).getUTCFullYear()}/${foundBlogPost.slug.replace(".md", "")}`
+    );
+
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const allBlogPosts = await getAllBlogPosts();
   const yearBlogData = allBlogPosts.filter(
-    (post) => new Date(post.date).getUTCFullYear() === yearNumber,
+    (post) => new Date(post.date).getUTCFullYear() === yearNumber
   );
 
   // Get all years that have blog posts
   const availableYears = Array.from(
-    new Set(allBlogPosts.map((post) => new Date(post.date).getUTCFullYear())),
+    new Set(allBlogPosts.map((post) => new Date(post.date).getUTCFullYear()))
   ).sort((a, b) => a - b);
 
   // Find previous and next years

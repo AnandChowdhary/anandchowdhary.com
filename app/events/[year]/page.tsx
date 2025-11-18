@@ -2,7 +2,7 @@ import { getAllEvents } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import EventsContent from "@/app/events/component";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string }>;
@@ -36,9 +36,19 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
 
 export default async function Page({ params }: Props) {
   const { year } = await params;
+  const allEvents = await getAllEvents();
+  const foundEvent = allEvents.find(
+    (event) => event.slug.replace(".md", "") === year
+  );
+  if (foundEvent)
+    redirect(
+      `/events/${new Date(
+        foundEvent.date
+      ).getUTCFullYear()}/${foundEvent.slug.replace(".md", "")}`
+    );
+
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const allEvents = await getAllEvents();
   const yearEventsData = allEvents.filter(
     (post) => new Date(post.date).getUTCFullYear() === yearNumber,
   );

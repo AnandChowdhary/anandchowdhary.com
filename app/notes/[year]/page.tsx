@@ -2,7 +2,7 @@ import { getAllNotes } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import NotesContent from "@/app/notes/component";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string }>;
@@ -36,10 +36,19 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
 
 export default async function NotesYear({ params }: Props) {
   const { year } = await params;
+  const allNotes = await getAllNotes();
+  const foundNote = allNotes.find(
+    (note) => note.slug.replace(".md", "") === year
+  );
+  if (foundNote)
+    redirect(
+      `/notes/${new Date(
+        foundNote.date
+      ).getUTCFullYear()}/${foundNote.slug.replace(".md", "")}`
+    );
+
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-
-  const allNotes = await getAllNotes();
   const notesDataFiltered = allNotes.filter(
     (note) => new Date(note.date).getUTCFullYear() === yearNumber,
   );

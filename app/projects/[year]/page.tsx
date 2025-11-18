@@ -2,7 +2,7 @@ import { getAllProjects } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import ProjectContent from "@/app/projects/component";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string }>;
@@ -38,9 +38,19 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
 
 export default async function ProjectYear({ params }: Props) {
   const { year } = await params;
+  const allProjects = await getAllProjects();
+  const foundProject = allProjects.find(
+    (project) => project.slug.replace(".md", "") === year
+  );
+  if (foundProject)
+    redirect(
+      `/projects/${new Date(
+        foundProject.date
+      ).getUTCFullYear()}/${foundProject.slug.replace(".md", "")}`
+    );
+
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const allProjects = await getAllProjects();
   const yearProjectData = allProjects.filter(
     (project) => new Date(project.date).getUTCFullYear() === yearNumber
   );

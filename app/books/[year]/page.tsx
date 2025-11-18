@@ -2,7 +2,7 @@ import { getAllBooks } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import BooksContent from "@/app/books/component";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string }>;
@@ -36,9 +36,19 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
 
 export default async function BooksYear({ params }: Props) {
   const { year } = await params;
+  const allBooks = await getAllBooks();
+  const foundBook = allBooks.find(
+    (book) => book.slug.replace(".md", "") === year
+  );
+  if (foundBook)
+    redirect(
+      `/books/${new Date(
+        foundBook.date
+      ).getUTCFullYear()}/${foundBook.slug.replace(".md", "")}`
+    );
+
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const allBooks = await getAllBooks();
   const yearBooksData = allBooks.filter(
     (book) => new Date(book.date).getUTCFullYear() === yearNumber,
   );

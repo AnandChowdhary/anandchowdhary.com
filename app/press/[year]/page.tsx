@@ -2,7 +2,7 @@ import { getPress, getAllPressItems } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import PressContent from "@/app/press/component";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string }>;
@@ -38,11 +38,21 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
 
 export default async function PressYear({ params }: Props) {
   const { year } = await params;
+  const allPressItems = await getAllPressItems();
+  const foundPressItem = allPressItems.find(
+    (item) => item.slug.replace(".md", "") === year
+  );
+  if (foundPressItem)
+    redirect(
+      `/press/${new Date(
+        foundPressItem.date
+      ).getUTCFullYear()}/${foundPressItem.slug.replace(".md", "")}`
+    );
+
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
 
   const pressData = await getPress();
-  const allPressItems = await getAllPressItems();
 
   // Filter each category by year
   const yearPressData = {
