@@ -140,6 +140,23 @@ export interface Work extends GenericItem {
   url: string;
 }
 
+interface GitHubContributionsResponse {
+  totalContributions?: number;
+}
+
+export async function getGitHubContributionCount(): Promise<number | null> {
+  const response = await fetch(
+    "https://github-contributions-api.deno.dev/AnandChowdhary.json",
+    { next: { revalidate: 3600 } }
+  );
+  if (!response.ok) return null;
+  const data = (await response.json()) as
+    | GitHubContributionsResponse
+    | undefined;
+  if (typeof data?.totalContributions !== "number") return null;
+  return data.totalContributions;
+}
+
 export interface ArchiveItem {
   date: string;
   type: string;
