@@ -2,7 +2,7 @@
 
 import { TimelineItem } from "@/app/components/timeline-item";
 import NumberFlow from "@number-flow/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const BIRTHDAY = new Date("1997-12-29");
 
@@ -16,7 +16,7 @@ export function TimelineItemBirthday() {
     const calculateAge = () => {
       const now = new Date();
       const ageInSeconds = Math.floor(
-        (now.getTime() - BIRTHDAY.getTime()) / 1000,
+        (now.getTime() - BIRTHDAY.getTime()) / 1000
       );
       setAge(ageInSeconds);
     };
@@ -24,6 +24,30 @@ export function TimelineItemBirthday() {
     const interval = setInterval(calculateAge, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  const relativeFormatter = useMemo(
+    () => new Intl.RelativeTimeFormat("en", { numeric: "auto" }),
+    []
+  );
+  const daysSinceBirthday = Math.floor(age / 86400);
+
+  const nextBirthdaySubtitle = useMemo(() => {
+    const now = new Date(
+      BIRTHDAY.getTime() + daysSinceBirthday * 1000 * 60 * 60 * 24
+    );
+    const nextBirthday = new Date(
+      now.getFullYear(),
+      BIRTHDAY.getMonth(),
+      BIRTHDAY.getDate()
+    );
+    if (nextBirthday <= now)
+      nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+    const dayInMs = 1000 * 60 * 60 * 24;
+    const daysUntil = Math.ceil(
+      (nextBirthday.getTime() - now.getTime()) / dayInMs
+    );
+    return `Next birthday ${relativeFormatter.format(daysUntil, "day")}`;
+  }, [daysSinceBirthday, relativeFormatter]);
 
   return (
     <TimelineItem
@@ -41,7 +65,7 @@ export function TimelineItemBirthday() {
           years old
         </>
       }
-      subtitle="Next birthday in 5 months"
+      subtitle={nextBirthdaySubtitle}
     />
   );
 }
