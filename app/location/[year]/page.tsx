@@ -14,11 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${year} / Location / Anand Chowdhary`,
     description: `Places visited by Anand Chowdhary in ${year}.`,
     openGraph: {
-      images: [
-        {
-          url: buildScreenshotOpenGraphImageUrl(`/location/${year}`),
-        },
-      ],
+      images: [{ url: buildScreenshotOpenGraphImageUrl(`/location/${year}`) }],
     },
   };
 }
@@ -29,9 +25,9 @@ export async function generateStaticParams(): Promise<{ year: string }[]> {
   const years = Array.from(
     new Set(
       countries.map((country) =>
-        new Date(country.date).getUTCFullYear().toString(),
-      ),
-    ),
+        new Date(country.date).getUTCFullYear().toString()
+      )
+    )
   );
   return years.map((year) => ({ year }));
 }
@@ -42,14 +38,14 @@ export default async function LocationYear({ params }: Props) {
   const yearNumber = parseInt(year);
   const allCountries = await getAllCountries();
   const yearCountriesData = allCountries.filter(
-    (country) => new Date(country.date).getUTCFullYear() === yearNumber,
+    (country) => new Date(country.date).getUTCFullYear() === yearNumber
   );
 
   // Get all years that have location data
   const availableYears = Array.from(
     new Set(
-      allCountries.map((country) => new Date(country.date).getUTCFullYear()),
-    ),
+      allCountries.map((country) => new Date(country.date).getUTCFullYear())
+    )
   ).sort((a, b) => a - b);
 
   // Find previous and next years

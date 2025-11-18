@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   description:
     "Track Anand Chowdhary's travels and locations around the world.",
   openGraph: {
-    images: [
-      {
-        url: buildScreenshotOpenGraphImageUrl("/location"),
-      },
-    ],
+    images: [{ url: buildScreenshotOpenGraphImageUrl("/location") }],
   },
 };
 
