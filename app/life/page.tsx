@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   description:
     "Explore major life events and milestones in Anand Chowdhary's journey.",
   openGraph: {
-    images: [
-      {
-        url: buildScreenshotOpenGraphImageUrl("/life"),
-      },
-    ],
+    images: [{ url: buildScreenshotOpenGraphImageUrl("/life") }],
   },
 };
 

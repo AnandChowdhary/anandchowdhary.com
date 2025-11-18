@@ -3,9 +3,7 @@ import { GenericSection } from "@/app/components/generic-section";
 
 export async function BlogSection() {
   const blogDataFiltered = await getAllBlogPosts();
-
   const getBlogTitle = (post: BlogPost) => post.title;
-
   const getBlogSubtitle = (post: BlogPost) =>
     new Date(post.date).toLocaleDateString("en-US", {
       day: "numeric",
