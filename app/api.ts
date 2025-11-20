@@ -184,7 +184,8 @@ export interface Press {
   features: PressItem[];
 }
 
-export function generateSlug(title: string): string {
+export function generateSlug(title: string | undefined | null): string {
+  if (!title) return "";
   return slugify(title.toLowerCase(), { lowercase: true, separator: "-" });
 }
 
@@ -507,6 +508,7 @@ export async function getAllRepositories(): Promise<Repository[]> {
 
   const reposDataWithRequiredProps = await Promise.all(
     reposData
+      .filter((repo) => repo.name) // Filter out repos without names
       .map((repo) => ({
         ...repo,
         slug: generateSlug(repo.name),

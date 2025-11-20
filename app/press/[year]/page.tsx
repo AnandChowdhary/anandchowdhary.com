@@ -40,9 +40,9 @@ export default async function PressYear({ params }: Props) {
   const { year } = await params;
   const allPressItems = await getAllPressItems();
   const foundPressItem = allPressItems.find(
-    (item) => item.slug.replace(".md", "") === year
+    (item) => item.slug?.replace(".md", "") === year
   );
-  if (foundPressItem)
+  if (foundPressItem && foundPressItem.slug)
     redirect(
       `/press/${new Date(
         foundPressItem.date
