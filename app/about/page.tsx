@@ -59,7 +59,7 @@ export default async function About() {
             </p>
             <p>
               <strong className="font-medium">
-                He is currently working on something new.
+                He is currently on a short break.
               </strong>{" "}
               Previously, he founded FirstQuadrant, an AI sales platform funded
               by Y Combinator.

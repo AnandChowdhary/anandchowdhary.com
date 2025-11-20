@@ -10,7 +10,7 @@ export function NowSection() {
         </Link>
       </h2>
       <ul className="list-disc marker:text-neutral-400 space-y-4">
-        <li className="font-medium">Working on something new.</li>
+        <li className="font-medium">Currently on a short break.</li>
         <li>
           Most recently, founded{" "}
           <ExternalLink href="https://firstquadrant.ai" underline={false}>
