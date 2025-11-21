@@ -4,6 +4,7 @@ import {
   getBlogPostContent,
 } from "@/app/api";
 import { BlogMetadata } from "@/app/blog/metadata";
+import { BlogContentWithLightbox } from "@/app/components/blog-content-with-lightbox";
 import { Container } from "@/app/components/container";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
@@ -106,9 +107,9 @@ export default async function BlogYearSlug({ params }: Props) {
             />
             <BlogMetadata item={post} postContentText={postContentText} />
           </header>
-          <div
+          <BlogContentWithLightbox
+            html={postContentHtml}
             className={proseClassName}
-            dangerouslySetInnerHTML={{ __html: postContentHtml }}
           />
           <NavigationFooter
             previous={
