@@ -19,6 +19,10 @@ export function BlogContentWithLightbox({
     const images = contentRef.current.querySelectorAll("img");
     if (images.length === 0) return;
 
+    // Store reference to the source image for animation
+    let sourceImageRect: DOMRect | null = null;
+    let sourceImageElement: HTMLImageElement | null = null;
+
     const createLightbox = () => {
       const overlay = document.createElement("div");
       overlay.id = "image-lightbox";
@@ -35,7 +39,7 @@ export function BlogContentWithLightbox({
         z-index: 9999;
         cursor: pointer;
         opacity: 0;
-        transition: opacity 200ms ease-in-out;
+        transition: opacity 300ms ease-in-out;
       `;
 
       const img = document.createElement("img");
@@ -43,8 +47,7 @@ export function BlogContentWithLightbox({
         max-width: 90vw;
         max-height: 90vh;
         object-fit: contain;
-        transform: scale(0.975);
-        transition: transform 200ms ease-in-out;
+        transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
         border-radius: 10px;
         border: 1px solid #ccc;
       `;
@@ -72,11 +75,38 @@ export function BlogContentWithLightbox({
       document.body.appendChild(overlay);
 
       const closeLightbox = () => {
+        // Animate back to source position if available
+        if (sourceImageRect && sourceImageElement) {
+          const rect = sourceImageRect;
+          const currentRect = sourceImageElement.getBoundingClientRect();
+          const lightboxRect = img.getBoundingClientRect();
+
+          // Calculate the translation needed to move from center to source position
+          const translateX =
+            currentRect.left +
+            currentRect.width / 2 -
+            (lightboxRect.left + lightboxRect.width / 2);
+          const translateY =
+            currentRect.top +
+            currentRect.height / 2 -
+            (lightboxRect.top + lightboxRect.height / 2);
+
+          // Calculate scale to match source image size
+          const scaleX = currentRect.width / lightboxRect.width;
+          const scaleY = currentRect.height / lightboxRect.height;
+          const scale = Math.min(scaleX, scaleY);
+
+          img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+
         overlay.style.opacity = "0";
-        img.style.transform = "scale(0.975)";
+
         setTimeout(() => {
           overlay.style.display = "none";
           document.body.style.overflow = "";
+          img.style.transform = "";
+          sourceImageRect = null;
+          sourceImageElement = null;
         }, 300);
       };
 
@@ -96,16 +126,63 @@ export function BlogContentWithLightbox({
 
     const { overlay, img: lightboxImg } = createLightbox();
 
-    const handleImageClick = (imageSrc: string, imageAlt: string) => {
+    const handleImageClick = (
+      sourceImg: HTMLImageElement,
+      imageSrc: string,
+      imageAlt: string
+    ) => {
+      // Store source image reference and position
+      sourceImageElement = sourceImg;
+      const rect = sourceImg.getBoundingClientRect();
+      sourceImageRect = rect;
+
       lightboxImg.src = imageSrc;
       lightboxImg.alt = imageAlt;
       overlay.style.display = "flex";
       document.body.style.overflow = "hidden";
 
-      setTimeout(() => {
-        overlay.style.opacity = "1";
-        lightboxImg.style.transform = "scale(1)";
-      }, 10);
+      // Wait for image to load and get its natural dimensions
+      lightboxImg.onload = () => {
+        // Calculate the final size of the lightbox image
+        const maxWidth = window.innerWidth * 0.9;
+        const maxHeight = window.innerHeight * 0.9;
+
+        let finalWidth = lightboxImg.naturalWidth;
+        let finalHeight = lightboxImg.naturalHeight;
+
+        // Scale down if necessary
+        if (finalWidth > maxWidth || finalHeight > maxHeight) {
+          const widthRatio = maxWidth / finalWidth;
+          const heightRatio = maxHeight / finalHeight;
+          const ratio = Math.min(widthRatio, heightRatio);
+          finalWidth *= ratio;
+          finalHeight *= ratio;
+        }
+
+        // Calculate center position of the lightbox image
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        // Calculate translation needed to position at source
+        const translateX = rect.left + rect.width / 2 - centerX;
+        const translateY = rect.top + rect.height / 2 - centerY;
+
+        // Calculate scale to match source image size
+        const scaleX = rect.width / finalWidth;
+        const scaleY = rect.height / finalHeight;
+        const scale = Math.min(scaleX, scaleY);
+
+        // Set initial position (at source)
+        lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+        // Trigger animation to center
+        requestAnimationFrame(() => {
+          overlay.style.opacity = "1";
+          requestAnimationFrame(() => {
+            lightboxImg.style.transform = "translate(0, 0) scale(1)";
+          });
+        });
+      };
     };
 
     images.forEach((img) => {
@@ -121,7 +198,7 @@ export function BlogContentWithLightbox({
 
       img.addEventListener("click", (e) => {
         e.preventDefault();
-        handleImageClick(img.src, img.alt);
+        handleImageClick(img, img.src, img.alt);
       });
     });
 

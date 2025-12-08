@@ -3,6 +3,7 @@ import { focusStyles } from "@/app/components/external-link";
 import {
   IconBook,
   IconBrandGithub,
+  IconBrandYcombinator,
   IconBriefcase,
   IconCalendar,
   IconChevronRight,
@@ -45,6 +46,7 @@ export function ArchiveItemComponent({ item }: { item: ArchiveItem }) {
     if (type === "press-feature") return "Press";
     if (type === "award") return "Award";
     if (type === "video") return "Video";
+    if (type === "hacker-news") return "Hacker News";
     return type;
   };
 
@@ -75,8 +77,13 @@ export function ArchiveItemComponent({ item }: { item: ArchiveItem }) {
       return <IconTrophy strokeWidth={1.5} className="h-4" />;
     if (type === "video")
       return <IconVideo strokeWidth={1.5} className="h-4" />;
+    if (type === "hacker-news")
+      return <IconBrandYcombinator strokeWidth={1.5} className="h-4" />;
     return <IconInfoCircle strokeWidth={1.5} className="h-4" />;
   };
+
+  const url = item.url.replace("https://anandchowdhary.com", "");
+  const isExternal = url.startsWith("http://") || url.startsWith("https://");
 
   return (
     <article className="flex gap-2 relative">
@@ -88,7 +95,7 @@ export function ArchiveItemComponent({ item }: { item: ArchiveItem }) {
       <div className="grow flex items-center justify-between gap-8 min-w-0">
         {item.url ? (
           <Link
-            href={item.url.replace("https://anandchowdhary.com", "")}
+            href={url}
             className={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`}
             style={{
               maskImage:
@@ -96,6 +103,10 @@ export function ArchiveItemComponent({ item }: { item: ArchiveItem }) {
               WebkitMaskImage:
                 "linear-gradient(to right, black 70%, transparent 100%)",
             }}
+            {...(isExternal && {
+              target: "_blank",
+              rel: "noopener",
+            })}
           >
             <h3 className="truncate">{item.title}</h3>
           </Link>

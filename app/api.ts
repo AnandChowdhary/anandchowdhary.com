@@ -1029,3 +1029,8 @@ export async function getAllTopArtists(): Promise<TopArtist[]> {
   const topArtistsData = (await topArtists.json()) as TopArtist[];
   return topArtistsData;
 }
+
+export async function getHackerNewsItems(): Promise<ArchiveItem[]> {
+  const allArchiveItems = await getAllArchiveItems();
+  return allArchiveItems.filter((item) => item.type === "hacker-news");
+}

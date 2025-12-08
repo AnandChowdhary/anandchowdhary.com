@@ -17,6 +17,7 @@ const formatType = (type: string) => {
   if (type === "press-feature") return "Featured in";
   if (type === "award") return "Received award";
   if (type === "video") return "Featured in video";
+  if (type === "hacker-news") return "Featured on Hacker News";
   return type;
 };
 
