@@ -433,6 +433,11 @@ export async function getBlogPostContent(
     (_match, alt, path) =>
       `![${alt}](https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main${path})`
   );
+  postContentText = postContentText.replace(
+    /<img([^>]*)\ssrc="(\/assets\/[^"]+)"([^>]*)>/g,
+    (_match, before, path, after) =>
+      `<img${before} src="https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main${path}"${after}>`
+  );
 
   return postContentText;
 }
