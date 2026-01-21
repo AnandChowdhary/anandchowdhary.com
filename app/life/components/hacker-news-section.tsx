@@ -45,7 +45,13 @@ export function HackerNewsSection({
                 </a>
               </div>
               <div className="text-neutral-500 tabular-nums shrink-0">
-                {(item.data as any)?.points || 0} pts
+                {typeof item.data === "object" &&
+                item.data !== null &&
+                "points" in item.data &&
+                typeof item.data.points === "number"
+                  ? item.data.points
+                  : 0}{" "}
+                pts
               </div>
             </div>
           ))}

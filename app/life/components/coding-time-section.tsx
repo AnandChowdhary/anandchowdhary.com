@@ -11,7 +11,7 @@ export function CodingTimeSection({
       <h2 className="font-medium text-xl">Coding time</h2>
       <NavigationLinks
         source="https://github.com/AnandChowdhary/life"
-        api="https://raw.githubusercontent.com/AnandChowdhary/top-artists/refs/heads/main/api.json"
+        api="https://anandchowdhary.github.io/life/data/wakatime-time-tracking/summary/days.json"
         readme="https://github.com/AnandChowdhary/life/blob/refs/heads/main/README.md"
         className="mb-6 justify-start mx-0"
       />
