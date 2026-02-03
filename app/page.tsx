@@ -5,6 +5,7 @@ import { Container } from "@/app/components/container";
 import { Events } from "@/app/components/events";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
+import { InvestmentsSection } from "@/app/components/investments-section";
 import { LifeSection } from "@/app/components/life-section";
 import { NotesSection } from "@/app/components/notes-section";
 import { NowSection } from "@/app/components/now-section";
@@ -43,8 +44,11 @@ export default async function Home() {
           <WorkSection />
           <TravelSection />
         </div>
-        <BooksSection />
         <ProjectsSection />
+        <div className="space-y-6">
+          <BooksSection />
+          <InvestmentsSection />
+        </div>
         <NotesSection />
         <PressSection />
         <ArchiveSection />
