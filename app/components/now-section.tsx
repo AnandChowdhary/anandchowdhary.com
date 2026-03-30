@@ -10,9 +10,21 @@ export function NowSection() {
         </Link>
       </h2>
       <ul className="list-disc marker:text-neutral-400 space-y-4">
-        <li className="font-medium">Currently on a short break.</li>
         <li>
-          Most recently, founded{" "}
+          Building{" "}
+          <ExternalLink href="https://sycamore.so" underline={false}>
+            <img
+              alt="Sycamore logo"
+              src="https://avatars.githubusercontent.com/u/243040279?s=200&v=4"
+              className="w-4.5 h-4.5 rounded inline-block ml-0.5 mr-1 align-center -translate-y-px"
+            />
+            <span>Sycamore</span>
+          </ExternalLink>
+          , the enterprise OS for autonomous AI agents, as Head of Product
+          and founding team member.
+        </li>
+        <li>
+          Previously, founded and sold{" "}
           <ExternalLink href="https://firstquadrant.ai" underline={false}>
             <img
               alt="FirstQuadrant logo"

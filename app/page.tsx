@@ -20,7 +20,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Anand Chowdhary",
   description:
-    "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He previously founded FirstQuadrant, an AI sales platform funded by Y Combinator.",
+    "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator.",
   openGraph: {
     images: [
       {
