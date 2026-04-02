@@ -53,7 +53,7 @@ export default async function Mentoring() {
             <article className="pl-4 border-l-3 border-neutral-200 dark:border-neutral-800 space-y-1">
               <blockquote>
                 Anand gave good feedback from a business as well as from a
-                personal perspective. I wish I had talked to him a few month if
+                personal perspective. I wish I had talked to him a few months if
                 not years earlier.
               </blockquote>
               <cite className="text-sm text-neutral-500 not-italic">
