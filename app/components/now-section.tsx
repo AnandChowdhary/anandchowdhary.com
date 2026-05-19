@@ -25,14 +25,17 @@ export function NowSection() {
         </li>
         <li>
           Previously, founded and sold{" "}
-          <ExternalLink href="https://firstquadrant.ai" underline={false}>
+          <Link
+            href="/projects/tags/firstquadrant"
+            className={`hover:text-neutral-400 ${focusStyles} font-semibold`}
+          >
             <img
               alt="FirstQuadrant logo"
               src="https://avatars.githubusercontent.com/u/122780401?s=48&v=4"
               className="w-4.5 h-4.5 rounded inline-block ml-0.5 mr-1 align-center -translate-y-px"
             />
             <span>FirstQuadrant</span>
-          </ExternalLink>
+          </Link>
           , an AI sales platform for founders and revenue teams, funded by{" "}
           <ExternalLink
             href="https://www.ycombinator.com/companies/firstquadrant"

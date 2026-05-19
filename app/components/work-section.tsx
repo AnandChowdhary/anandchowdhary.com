@@ -13,7 +13,8 @@ export async function WorkSection() {
           {
             label: "Sycamore",
             years: [2026],
-            color: "#262626",
+            color: "#EFEDE5",
+            foregroundColor: "#262626",
             icon: (
               <svg viewBox="0 0 85 85">
                 <path fill="currentColor" d="M41.125 53.0905C41.4288 53.0906 41.6751 53.3407 41.6751 53.6493V64.9946C41.6751 65.0927 41.6495 65.1891 41.6012 65.274L30.551 84.7206C30.3391 85.0934 29.8095 85.0931 29.5981 84.72L24.2075 75.2074C24.1093 75.034 23.9272 74.9272 23.7303 74.9274L12.9269 74.9405C12.5032 74.9411 12.2381 74.4751 12.4499 74.1023L24.2309 53.3699C24.3292 53.197 24.5106 53.0905 24.7071 53.0905H41.125Z" />
@@ -39,7 +40,7 @@ export async function WorkSection() {
                 <path fill="currentColor" d="m119 11 14 14-51 51-14-14z" />
               </svg>
             ),
-            url: "https://firstquadrant.ai",
+            url: "/projects/tags/firstquadrant",
             description:
               "AI sales platform that helps founders and revenue teams move faster, stay organized, and close more deals by streamlining behind-the-scenes sales work.",
           },
@@ -116,7 +117,14 @@ export async function WorkSection() {
           <li
             key={about.label}
             className="rounded-xl shadow-xs p-2 bg-background flex items-center justify-center text-white"
-            style={{ backgroundColor: about.color }}
+            style={{
+              backgroundColor: about.color,
+              color:
+                "foregroundColor" in about &&
+                typeof about.foregroundColor === "string"
+                  ? about.foregroundColor
+                  : "#fff",
+            }}
           >
             {about.icon}
           </li>
