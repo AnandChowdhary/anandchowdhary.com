@@ -5,8 +5,8 @@ import {
 } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { TimelineItemBirthday } from "@/app/components/timeline-item-birthday";
-import { TimelineItemCodingTime } from "@/app/components/timeline-item-code";
 import { TimelineItemFitness } from "@/app/components/timeline-item-fitness";
+import { TimelineItemFood } from "@/app/components/timeline-item-food";
 import { TimelineItemGitHub } from "@/app/components/timeline-item-github";
 import { TimelineItemLocation } from "@/app/components/timeline-item-location";
 import { TimelineItemMusic } from "@/app/components/timeline-item-music";
@@ -35,7 +35,7 @@ export async function LifeSection() {
           total={totalWalkingSteps}
         />
         <TimelineItemSleep hours={lastNightSleepTime / 3600} />
-        <TimelineItemCodingTime />
+        <TimelineItemFood />
         <TimelineItemMusic />
         <TimelineItemGitHub />
       </ul>

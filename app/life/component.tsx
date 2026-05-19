@@ -1,5 +1,6 @@
 import {
   getAllCodingTime,
+  getAllDailyNutrition,
   getAllLocations,
   getAllSleepTime,
   getAllThemes,
@@ -13,6 +14,7 @@ import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
 import { CodingTimeSection } from "./components/coding-time-section";
+import { FoodSection } from "./components/food-section";
 import { GitHubSection } from "./components/github-section";
 import { HackerNewsSection } from "./components/hacker-news-section";
 import { LifeEventsSection } from "./components/life-events-section";
@@ -35,6 +37,7 @@ export default async function LifeContent({
 }) {
   const topArtists = await getAllTopArtists();
   const codingTime = await getAllCodingTime();
+  const dailyNutrition = await getAllDailyNutrition();
   const sleepTime = await getAllSleepTime();
   const walkingSteps = await getAllWalkingSteps();
   const countriesDataFiltered = await getAllLocations();
@@ -54,6 +57,7 @@ export default async function LifeContent({
           <ThemesSection themes={themes} />
           <HackerNewsSection hackerNewsItems={hackerNewsItems} />
           <CodingTimeSection codingTime={codingTime} />
+          <FoodSection dailyNutrition={dailyNutrition} />
           <MusicSection topArtists={topArtists} />
           <SleepSection sleepTime={sleepTime} />
           <StepsSection walkingSteps={walkingSteps} />

@@ -134,6 +134,20 @@ export interface Country extends GenericItem {
   country_emoji?: string;
 }
 
+export interface DailyNutrition {
+  date: string;
+  entries: number;
+  meals: number;
+  kcal: number;
+  proteinG: number;
+  fatG: number;
+  carbsG: number;
+  fiberG: number;
+  proteinGoalG: number;
+  kcalGoal: number;
+  proteinGoalPct: number;
+}
+
 export interface Work extends GenericItem {
   label: string;
   icon: string;
@@ -835,6 +849,91 @@ export async function getAllCodingTime(): Promise<Record<string, number>> {
   return codingTimeData ?? {};
 }
 
+const parseCsvRows = (csv: string): string[][] => {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let field = "";
+  let inQuotes = false;
+
+  for (let index = 0; index < csv.length; index += 1) {
+    const char = csv[index];
+    const nextChar = csv[index + 1];
+
+    if (inQuotes) {
+      if (char === '"' && nextChar === '"') {
+        field += '"';
+        index += 1;
+      } else if (char === '"') {
+        inQuotes = false;
+      } else {
+        field += char;
+      }
+    } else if (char === '"') {
+      inQuotes = true;
+    } else if (char === ",") {
+      row.push(field);
+      field = "";
+    } else if (char === "\n") {
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = "";
+    } else if (char !== "\r") {
+      field += char;
+    }
+  }
+
+  if (field || row.length > 0) {
+    row.push(field);
+    rows.push(row);
+  }
+
+  return rows.filter((row) => row.some((field) => field.trim()));
+};
+
+const csvNumber = (value: string | undefined) => {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : 0;
+};
+
+export async function getAllDailyNutrition(): Promise<DailyNutrition[]> {
+  const dailyNutrition = await fetch(
+    "https://anandchowdhary.github.io/food/data/daily.csv",
+    { next: { revalidate: 3600 } }
+  );
+  const csv = await dailyNutrition.text();
+  const [headers, ...rows] = parseCsvRows(csv);
+  if (!headers) return [];
+
+  return rows
+    .map((row) =>
+      Object.fromEntries(headers.map((header, index) => [header, row[index]]))
+    )
+    .filter((row) => typeof row.date === "string" && row.date)
+    .map((row) => ({
+      date: row.date,
+      entries: csvNumber(row.entries),
+      meals: csvNumber(row.meals),
+      kcal: csvNumber(row.kcal),
+      proteinG: csvNumber(row.protein_g),
+      fatG: csvNumber(row.fat_g),
+      carbsG: csvNumber(row.carbs_g),
+      fiberG: csvNumber(row.fiber_g),
+      proteinGoalG: csvNumber(row.protein_goal_g),
+      kcalGoal: csvNumber(row.kcal_goal),
+      proteinGoalPct: csvNumber(row.protein_goal_pct),
+    }));
+}
+
+export async function getLatestDailyNutrition(): Promise<DailyNutrition | null> {
+  const dailyNutrition = await getAllDailyNutrition();
+  return (
+    dailyNutrition.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    )[0] ?? null
+  );
+}
+
 export async function getAllWalkingSteps(): Promise<Record<string, number>> {
   const walkingSteps = await fetch(
     "https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-walking/summary/days.json",
@@ -892,30 +991,6 @@ export async function getAllSleepTime(): Promise<Record<string, number>> {
   );
   const sleepTimeData = (await sleepTime.json()) as Record<string, number>;
   return sleepTimeData ?? {};
-}
-
-export async function getLastDayCodingTime(): Promise<Record<
-  string,
-  number
-> | null> {
-  const codingTime = await getAllCodingTime();
-  const sortedDates = Object.keys(codingTime).sort(
-    (a, b) => new Date(b).getTime() - new Date(a).getTime()
-  );
-  for (const date of sortedDates)
-    if (codingTime[date] > 0) return { [date]: codingTime[date] };
-  return null;
-}
-
-export async function getTotalLastMonthCodingTime(): Promise<number> {
-  const codingTime = await getAllCodingTime();
-  const sortedDates = Object.keys(codingTime).sort(
-    (a, b) => new Date(b).getTime() - new Date(a).getTime()
-  );
-  const lastMonthCodingTime = sortedDates
-    .slice(0, 30)
-    .reduce((acc, date) => acc + codingTime[date], 0);
-  return lastMonthCodingTime;
 }
 
 export async function getAllVersions(): Promise<Version[]> {
