@@ -394,24 +394,21 @@ export async function getNoteContent(
   return noteContentText;
 }
 
-export async function getAllBlogPosts(
-  includeDrafts?: boolean
-): Promise<BlogPost[]> {
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
     next: { revalidate: 3600 },
   });
   const blogData = (await blog.json()) as BlogPost[];
   return blogData
-    .filter((post) => (includeDrafts ? true : !post.attributes.draft))
+    .filter((post) => !post.attributes.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getBlogPostByYearAndSlug(
   year: number,
-  slug: string,
-  includeDrafts?: boolean
+  slug: string
 ): Promise<BlogPost | null> {
-  const blogData = await getAllBlogPosts(includeDrafts);
+  const blogData = await getAllBlogPosts();
   return (
     blogData
       .filter((post) => new Date(post.date).getUTCFullYear() === year)
