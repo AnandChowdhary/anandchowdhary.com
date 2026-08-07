@@ -52,7 +52,7 @@ Ran `npx react-doctor@latest --verbose` (score 39/100, 153 findings). Every find
 
 ## Performance
 
-1. **Independent `await`s run sequentially instead of in parallel** — biggest wins: `app/life/component.tsx:38-45` (8 unrelated calls: `getAllTopArtists`, `getAllCodingTime`, `getAllDailyNutrition`, `getAllSleepTime`, `getAllWalkingSteps`, `getAllLocations`, `getAllThemes`, `getHackerNewsItems`) and `app/llms.txt/generator.ts:18-28` (11 unrelated calls). Wrap each group in `Promise.all([...])`.
+1. ✅ **Fixed (#291)** — ~~Independent `await`s run sequentially instead of in parallel~~ — `app/life/component.tsx` (8 unrelated calls) and `app/llms.txt/generator.ts` (11 unrelated calls) now use `Promise.all([...])`. Measured real impact by timing the same upstream endpoints sequentially vs. parallel: 678ms → 38ms (17.8x) and 744ms → 48ms (15.5x) respectively.
 2. **Redundant duplicate fetches, not just a parallelization problem**:
    - `app/open-source/[year]/[slug]/page.tsx:96-97` calls both `getRepositoryDetails(repo.full_name)` and `getRepositoryReadMe(repo.full_name)` — but `getRepositoryDetails` (`app/api.ts:503-513`) already internally calls `getRepositoryReadMe`, so the README gets fetched twice per page. Have `getRepositoryDetails` return/reuse the text it already fetched.
    - `app/components/life-section.tsx:18-20` calls `getAverageWalkingSteps()` and `getTotalWalkingSteps()`, which each independently call `getAllWalkingSteps()` (`app/api.ts:984-1006`) — same URL fetched twice. Fetch once, derive both stats.
