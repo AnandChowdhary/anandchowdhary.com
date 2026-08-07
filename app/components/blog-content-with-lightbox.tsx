@@ -22,6 +22,7 @@ export function BlogContentWithLightbox({
     // Store reference to the source image for animation
     let sourceImageRect: DOMRect | null = null;
     let sourceImageElement: HTMLImageElement | null = null;
+    let closeTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
     const createLightbox = () => {
       const overlay = document.createElement("div");
@@ -101,7 +102,7 @@ export function BlogContentWithLightbox({
 
         overlay.style.opacity = "0";
 
-        setTimeout(() => {
+        closeTimeoutId = setTimeout(() => {
           overlay.style.display = "none";
           document.body.style.overflow = "";
           img.style.transform = "";
@@ -116,15 +117,16 @@ export function BlogContentWithLightbox({
 
       closeButton.addEventListener("click", closeLightbox);
 
-      document.addEventListener("keydown", (e) => {
+      const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape" && overlay.style.display === "flex")
           closeLightbox();
-      });
+      };
+      document.addEventListener("keydown", handleKeyDown);
 
-      return { overlay, img };
+      return { overlay, img, handleKeyDown };
     };
 
-    const { overlay, img: lightboxImg } = createLightbox();
+    const { overlay, img: lightboxImg, handleKeyDown } = createLightbox();
 
     const handleImageClick = (
       sourceImg: HTMLImageElement,
@@ -203,6 +205,8 @@ export function BlogContentWithLightbox({
     });
 
     return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      if (closeTimeoutId !== null) clearTimeout(closeTimeoutId);
       const existingOverlay = document.getElementById("image-lightbox");
       if (existingOverlay) existingOverlay.remove();
     };
