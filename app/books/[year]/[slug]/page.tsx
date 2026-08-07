@@ -181,7 +181,7 @@ export default async function BooksYearSlug({ params }: Props) {
                 </div>
                 <div className="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-3">
                   <div
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    className="bg-blue-500 h-3 rounded-full transition-[width] duration-300"
                     style={{ width: `${book.progressPercent}%` }}
                   ></div>
                 </div>
