@@ -6,6 +6,7 @@ import {
   getRepositoryReadMe,
 } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
+import { createRepositoryLinkWalker } from "@/app/lib/markdown";
 import { Container } from "@/app/components/container";
 import { ExternalLink } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
@@ -168,7 +169,11 @@ export default async function OpenSourceYearSlug({ params }: Props) {
         <div
           className={proseClassName}
           dangerouslySetInnerHTML={{
-            __html: marked.parse(details ?? repo.description),
+            __html: await Promise.resolve(
+              marked.parse(details ?? repo.description, {
+                walkTokens: createRepositoryLinkWalker(repo.full_name),
+              })
+            ),
           }}
         />
         <div className="pt-8">
@@ -197,7 +202,11 @@ export default async function OpenSourceYearSlug({ params }: Props) {
             <div
               className={`${proseClassNameWithoutImages} prose-img:hidden text-sm prose-h1:text-lg prose-h2:text-lg`}
               dangerouslySetInnerHTML={{
-                __html: await Promise.resolve(marked.parse(readMe)),
+                __html: await Promise.resolve(
+                marked.parse(readMe, {
+                  walkTokens: createRepositoryLinkWalker(repo.full_name),
+                })
+              ),
               }}
             />
           </article>
