@@ -128,7 +128,10 @@ export default function LocationContent({
                         (item) =>
                           item.country_code === countryData.iso2.toLowerCase()
                       )[0].date
-                    ).toLocaleDateString("en-US", { year: "numeric" })}
+                    ).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      timeZone: "UTC",
+                    })}
                   </div>
                 </div>
               ))}
@@ -264,6 +267,7 @@ export default function LocationContent({
                         {new Date(item.date).toLocaleDateString("en-US", {
                           day: "numeric",
                           month: "long",
+                          timeZone: "UTC",
                         })}
                       </div>
                     </article>
