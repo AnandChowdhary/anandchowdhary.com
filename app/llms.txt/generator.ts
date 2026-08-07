@@ -15,17 +15,31 @@ import {
 import type { MetadataRoute } from "next";
 
 export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
-  const videos = await getVideos();
-  const versions = await getAllVersions();
-  const themes = await getAllThemes();
-  const projects = await getAllProjects();
-  const press = await getAllPressItems();
-  const openSource = await getAllOpenSource();
-  const notes = await getAllNotes();
-  const life = await getLifeEvents();
-  const events = await getAllEvents();
-  const books = await getAllBooks();
-  const blog = await getAllBlogPosts();
+  const [
+    videos,
+    versions,
+    themes,
+    projects,
+    press,
+    openSource,
+    notes,
+    life,
+    events,
+    books,
+    blog,
+  ] = await Promise.all([
+    getVideos(),
+    getAllVersions(),
+    getAllThemes(),
+    getAllProjects(),
+    getAllPressItems(),
+    getAllOpenSource(),
+    getAllNotes(),
+    getLifeEvents(),
+    getAllEvents(),
+    getAllBooks(),
+    getAllBlogPosts(),
+  ]);
 
   return [
     { url: "https://anandchowdhary.com" },
