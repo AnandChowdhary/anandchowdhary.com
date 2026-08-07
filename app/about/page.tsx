@@ -11,6 +11,7 @@ import { SycamoreLogo } from "@/app/components/sycamore-logo";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import { marked } from "marked";
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default async function About() {
       <Header pathname="/about" />
       <div className="grid md:grid-cols-2 max-w-3xl mx-auto gap-10">
         <figure className="w-full">
-          <img
+          <Image
             alt="Anand standing on a table with his MacBook in his hand at an office"
             src="/anand.jpg"
             width={1067}
