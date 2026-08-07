@@ -1,49 +1,70 @@
 # 404/500 audit
 
-Crawled the live site (anandchowdhary.com) starting from the homepage, following every internal link recursively (1,035 pages visited). Found **211 broken links**: 206 404s and 5 500s.
-
-Full raw crawl results (url, status, referring pages): see the bottom of this file for the summary; ping me if you want the complete JSON dump re-generated.
-
-## Fixable in this repo (do these as separate PRs, one at a time)
-
-### 1. ✅ Fixed (#278) — `/location/[year]` 500s for 2013, 2015, 2016, 2025, 2026 (the original bug report)
-
-- **Where**: `app/location/[year]/page.tsx`
-- **Root cause**: this route (and `app/location/component.tsx`) filters `getAllCountries()` (fed by `history-countries.json`, which only contains "first visit to a new country" milestones) by year. The `/location` index page instead uses `getAllLocations()` (fed by `history.json`, the full location history) to render the year headings/links. Years that have full-history entries but no "new country" milestone (2013, 2015, 2016, 2025, 2026) produce an empty filtered array; `component.tsx` then does `[...countriesDataFiltered].sort(...)​[0]` and dereferences the result unguarded (`location.country_code`), crashing with a 500.
-- **Affected URLs**: `/location/2013`, `/location/2015`, `/location/2016`, `/location/2025`, `/location/2026`
-- **Fix**: switch `app/location/[year]/page.tsx` to use `getAllLocations()` (matching the index page), and guard against an empty result with `notFound()` instead of crashing.
-
-### 2. ✅ Fixed (#279) — Every individual location detail link 404s (biggest bug, 142 URLs)
-
-- **Where**: `app/api.ts` (`getAllCountries`/`getAllLocations`, `slug: country.country_code`), `app/location/component.tsx` (link `href`), `app/location/[year]/[slug]/page.tsx` (`generateStaticParams`), `getLocationByYearAndSlug`
-- **Root cause**: `api.ts` sets each location's `slug` to just the **country code** (e.g. `"nl"`). But the actual links rendered in `component.tsx` use `` `${slugify(item.label)}-${item.country_code}` `` (e.g. `"utrecht-nl"`). `generateStaticParams` and `getLocationByYearAndSlug` both key off `location.slug` (country-code-only), so no statically generated page ever matches a link a user can actually click — 100% of location detail links are dead. It also means multiple visits to different cities in the same country in the same year would collide on one slug.
-- **Affected URLs**: e.g. `/location/2024/portugal-pt`, `/location/2026/san-francisco-us`, `/location/2021/amsterdam-nl`, and ~140 more across every year from 1997–2026 (full list in crawl output, category `locationSlug404`).
-- **Fix**: make the `slug` field match what the UI links to — set `slug: ${slugify(country.label)}-${country.country_code}` in `api.ts`, so `generateStaticParams`/`getLocationByYearAndSlug` line up with the rendered hrefs.
-
-### 3. ✅ Fixed — Open-source repo README embeds don't rewrite relative links (22 URLs)
-
-- **Where**: `app/open-source/[year]/[slug]/page.tsx` (renders `marked.parse(details ?? repo.description)` and `marked.parse(readMe)`), `getRepositoryReadMe`/`getRepositoryDetails` in `app/api.ts`
-- **Root cause**: READMEs fetched from GitHub contain relative links/paths (`./add_url.py`, `.github/workflows/x.yml`, `LICENSE`, `CNAME`, etc.). They're rendered as-is with `marked.parse`, so clicking them resolves against `anandchowdhary.com` instead of the actual GitHub repo. `getBlogPostContent` already does this kind of rewriting for blog post images — the open-source README renderer needs the same treatment for links (and ideally images).
-- **Affected URLs**: e.g. `/LICENSE`, `/CNAME`, `/agent.ts`, `/index.html`, `/script.js`, `/.github/workflows/*.yml`, `/portfolio.json`, and more (full list: category `openSourceReadme`), linked from various `/open-source/YYYY/slug` pages.
-- **Fix**: before rendering, rewrite relative link/image targets to `https://github.com/{full_name}/blob/HEAD/...` (or `raw.githubusercontent.com` for images), similar to the existing regex rewriting in `getBlogPostContent`.
+Crawled the live site (anandchowdhary.com) starting from the homepage, following every internal link recursively. Fixed the three bugs that were fixable in this repo (#278, #279, #280). What's left below is cross-repo content that needs editing elsewhere, not code in this repo.
 
 ## Not fixable in this repo (data lives elsewhere — flagging for awareness)
 
-### 4. `/archive` renders stale/incorrect links from the external "everything" feed (20 URLs)
+### `/archive` renders stale/incorrect links from the external "everything" feed
 
 - **Where**: `app/archive/item.tsx` — `const url = item.url.replace(...)` uses the URL verbatim from `https://anandchowdhary.github.io/everything/api.json`.
 - **Root cause**: that feed (from a separate `AnandChowdhary/everything` repo) has stale URLs: location links missing the country-code suffix (e.g. `/location/2018/belgium` instead of `/location/2018/brussels-be`), press links with mismatched slugs (`/press/2021/git-hub` used for two different years), and one video slug typo (`/videos/2017/bharat-hacks-live` vs. the real `bharathacks-live`).
-- **Fix requires editing the `AnandChowdhary/everything` repo**, not this one. Once bug #2 above is fixed, some of the location ones may need the feed regenerated too.
+- **Fix requires editing the `AnandChowdhary/everything` repo**, not this one.
 - Related: a few `/events/*` pages link to a specific location visit (e.g. `/location/2026/amsterdam-nl`, `/location/2017/gurugram-in`) that was simply never logged in the location history at all — no amount of slug fixing helps there, the visit itself doesn't exist in `history.json`. That's a data gap in the separate `AnandChowdhary/location` repo.
 
-### 5. Dead links baked into old blog/notes markdown content (5 URLs)
+### Dead links baked into old blog/notes markdown content
 
 - `/blog/state-of-the/podcasts/2018` — hardcoded inside `blog/2019/state-of-the-podcasts-2019.md` from a pre-migration URL scheme; should be `/blog/2018/state-of-the-podcasts-2018`.
 - `/projects/open-source/uppload` — hardcoded inside `blog/2020/introducing-uppload-v2.md`, same pre-migration scheme; should point at the current `/open-source/*/uppload` page.
 - `/blog/2025/move-fast-and-save-things` — linked from `/notes/2026/hidden-risks-baked-into-models`; no post with this slug/title exists in the blog feed at all (likely a typo or renamed/deleted post).
-- `/blog/2025/accidentally-founding-koj` and `/blog/2025/the-life-of-pabio` — linked from `/projects/tags/pabio`, but both posts are marked `draft: true` and are correctly excluded from the site per #277. They'll 404 until published (or the Pabio project content stops linking them early). The link itself lives in `tags/pabio.md` in the separate `AnandChowdhary/projects` repo (fetched by `app/projects/component.tsx:132-141`) — there's no `pabio.md` in this repo, so this needs editing there directly.
+- `/blog/2025/accidentally-founding-koj` and `/blog/2025/the-life-of-pabio` — linked from `/projects/tags/pabio`, but both posts are marked `draft: true` and are correctly excluded from the site per #277. They'll 404 until published. The link itself lives in `tags/pabio.md` in the separate `AnandChowdhary/projects` repo (fetched by `app/projects/component.tsx:132-141`) — there's no `pabio.md` in this repo.
 - **Fix requires editing the `AnandChowdhary/blog` / `AnandChowdhary/notes` / `AnandChowdhary/projects` repos**, not this one.
 
-## Plan
+# React Doctor audit
 
-#1, #2, and #3 are done. #4–#5 are cross-repo content issues; flagging here rather than fixing in this repo.
+Ran `npx react-doctor@latest --verbose` (score 39/100, 153 findings). Every finding below was independently re-checked against the actual code before being listed — anything that turned out to be a false positive on inspection was dropped (see bottom section for what was dismissed and why).
+
+## Security
+
+1. **Next.js is several patch versions behind on real, disclosed vulnerabilities.** `npm audit` shows the installed `next@16.2.1` is affected by ~20 GitHub Security Advisories fixed by `16.2.11`/`16.2.12` — several **high severity**: SSRF via Server Actions on custom servers (`GHSA-89xv-2m56-2m9x`), SSRF via rewrites with attacker-controlled hostname (`GHSA-p9j2-gv94-2wf4`), WebSocket-upgrade SSRF (`GHSA-c4j6-fc7j-m34r`, CVSS 8.6), middleware/proxy auth bypasses (`GHSA-492v-c6pp-mqqv` CVSS 8.1, `GHSA-36qx-fr4f-26g5`, `GHSA-267c-6grr-h53f`, `GHSA-6gpp-xcg3-4w24`), and multiple DoS advisories (`GHSA-mg66-mrh9-m8jx`, `GHSA-m99w-x7hq-7vfj`, `GHSA-q4gf-8mx6-v5v3`). All are within the `^16.2.1` range already declared in `package.json` — this is a stale lockfile, not a version-range problem. **Fix**: `npm install next@latest` (or pin `16.2.12`) and commit the updated lockfile; run `npm audit` after to confirm clean.
+2. **`<iframe>` missing `title`** (accessibility) — `app/events/[year]/[slug]/page.tsx:167` (YouTube recording embed), `app/events/[year]/[slug]/page.tsx:185` (talk slides embed), `app/press/[year]/[slug]/page.tsx:162` (press embed). Cheap, safe fix.
+3. **`<iframe>` missing `sandbox`** — `app/events/[year]/[slug]/page.tsx:185`. Source is author-controlled today, but adding `sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"` (verify against the actual embed provider) is cheap hardening against a future compromised/typo'd embed URL.
+4. **Open-source README rendering has no sanitization for third-party repo content** — `app/open-source/[year]/[slug]/page.tsx:199` renders `marked.parse(readMe)` for READMEs of repos the site owner listed but doesn't necessarily control the content of (forked/third-party repos in the featured list). Low real-world risk today, but adding `rehype-sanitize`/DOMPurify would be cheap defense-in-depth against a malicious README ever getting into that list.
+
+## Bugs
+
+1. **Event listener leak in the blog lightbox** — `app/components/blog-content-with-lightbox.tsx:16-209`. The effect's cleanup (lines 205-208) only removes the `#image-lightbox` overlay DOM node; it never calls `removeEventListener` for the `document`-level `keydown` listener registered at line 119, and never `clearTimeout`s the 300ms close animation timer (line 104). Every time the effect re-runs (dependency `[html]`, e.g. navigating between blog posts) or the component unmounts, a stray `keydown` listener persists on `document`. Fix: store the listener reference and remove it (and clear the timeout) in cleanup.
+2. **Mutating array methods called directly on props/hook results** — `.sort()` called in-place instead of on a copy in `app/life/components/hacker-news-section.tsx:20`, `app/life/components/location-section.tsx:30`, `app/life/components/themes-section.tsx:23`. Other components in the same codebase (`books/component.tsx`, `open-source/component.tsx`, `press/component.tsx`, `location/component.tsx`) already do this correctly via `[...prop].sort(...)` — these three are the outliers. Fix: spread before sorting.
+3. **Array index used as React `key` where a stable id already exists** — `app/archive/component.tsx:136` (sibling file already keys by `item.url`), `app/press/component.tsx:101,111,121` (data has `item.slug`), `app/life/components/life-events-section.tsx:98` (data has `item.slug`). Swap to the natural key.
+4. **Timezone-naive date formatting in a client component** — `app/location/component.tsx` (`"use client"`) calls `toLocaleDateString("en-US", ...)` at two spots (~line 126 and line 264) without pinning a `timeZone`, so server (container TZ) and the visitor's browser TZ can format a date differently right at a day boundary — a narrow but real hydration-mismatch source.
+5. **`setInterval` torn down and recreated every tick** — `app/components/timeline-item-fitness.tsx:17`: `setInterval(() => setSteps(steps + 1), 8800)` depends on `steps`, so the effect re-runs and recreates the interval every ~8.8s. Switch to the updater-function form (`setSteps(prev => prev + 1)`) with an empty dependency array.
+
+## Performance
+
+1. **Independent `await`s run sequentially instead of in parallel** — biggest wins: `app/life/component.tsx:38-45` (8 unrelated calls: `getAllTopArtists`, `getAllCodingTime`, `getAllDailyNutrition`, `getAllSleepTime`, `getAllWalkingSteps`, `getAllLocations`, `getAllThemes`, `getHackerNewsItems`) and `app/llms.txt/generator.ts:18-28` (11 unrelated calls). Wrap each group in `Promise.all([...])`.
+2. **Redundant duplicate fetches, not just a parallelization problem**:
+   - `app/open-source/[year]/[slug]/page.tsx:96-97` calls both `getRepositoryDetails(repo.full_name)` and `getRepositoryReadMe(repo.full_name)` — but `getRepositoryDetails` (`app/api.ts:503-513`) already internally calls `getRepositoryReadMe`, so the README gets fetched twice per page. Have `getRepositoryDetails` return/reuse the text it already fetched.
+   - `app/components/life-section.tsx:18-20` calls `getAverageWalkingSteps()` and `getTotalWalkingSteps()`, which each independently call `getAllWalkingSteps()` (`app/api.ts:984-1006`) — same URL fetched twice. Fetch once, derive both stats.
+3. **`fetch()` responses used without checking `.ok`/`.status`** — ~22 call sites in `app/api.ts` (every `getAllX()` function: `getAllArchiveItems`, `getPress`, `getLifeEvents`, `getVideos`, `getAllNotes`, `getAllBlogPosts`, `getRepositoryReadMe`, `getAllRepositories`, `getAllBooks`, `getAllEvents`, `getAllThemes`, `getAllCountries`, `getAllLocations`, `getLocation`, `getAllCodingTime`, `getAllDailyNutrition`, `getAllWalkingSteps`, `getAllSleepTime`, `getAllVersions`, `getAllProjects`, `getAllTopArtists`) plus `app/components/investments-section.tsx:15`. If any of these GitHub Pages/raw.githubusercontent.com endpoints ever 404s or is briefly down, `.json()` throws an opaque `SyntaxError: Unexpected token '<'` instead of a clean error. Low frequency (same-owner static content) but worth a shared `fetchJson(url, revalidate)` helper to fix all of these in one place rather than repeating the check 22 times. Note: the sibling `*Content`/`getTalk` functions in the same file already do this correctly — good pattern to copy.
+
+## Maintainability / cleanup
+
+1. **Pure helper functions redefined on every render instead of hoisted to module scope** — 19 instances, all genuinely pure (no closure over component-local state): `app/archive/component.tsx:28`, `app/archive/item.tsx:25,34,53`, `app/components/archive-section.tsx:29,31`, `app/components/blog-section.tsx:6,7`, `app/components/events.tsx:7,18`, `app/components/life-events-section.tsx:9,10`, `app/components/notes-section.tsx:7`, `app/components/open-source-section.tsx:8,19`, `app/components/themes-section.tsx:6,7`, `app/projects/[year]/[slug]/page.tsx:71`, `app/projects/component.tsx:20`. The last two (`getImageUrl`) are byte-for-byte duplicates of each other — worth extracting to a shared module while hoisting.
+2. **Dead duplicate component files** — `app/components/life-events-section.tsx`, `app/components/themes-section.tsx`, `app/components/videos-section.tsx` are stale duplicates with different implementations than the versions actually used (the real ones live in `app/life/components/`). Zero references anywhere in the repo — safe to delete. (Careful: same filenames as the live files in `app/life/components/` — don't delete those.)
+3. **Unused dependencies from a removed map feature** — `leaflet`, `maplibre-gl`, `react-leaflet`, `@maplibre/maplibre-gl-leaflet` (and `@types/leaflet`, not flagged but same story) have zero imports anywhere in app code. `app/life/components/location-section.tsx` just lists countries with flag icons, no map. `README.md` still has an "Interactive Maps" section describing a feature that no longer exists — update/remove that too when these are dropped.
+4. **Duplicate SVG logo with excessive path precision** — the same Sycamore logo (6 `<path>` elements, `viewBox="0 0 85 85"`) is duplicated verbatim in `app/about/page.tsx:128` and `app/components/work-section.tsx:20`, with 4–7 decimal places per coordinate (e.g. `-0.0933854`) in an 85-unit viewBox where 2 decimals is already sub-pixel. Round precision and consider extracting to a shared component to kill the duplication.
+
+## Accessibility / design (low priority)
+
+1. **`role="list"`/`role="listitem"` on generic `<div>`s instead of semantic `<ul>`/`<li>`** — `app/life/food/page.tsx:120-121` and `:134-135`. Tailwind's preflight already resets list styling elsewhere in this codebase, so swapping is a safe drop-in.
+2. **`transition-all` animating a single-property change** — `app/books/[year]/[slug]/page.tsx:183-186`, a reading-progress bar where only `width` actually changes. Negligible impact on this small element, but `transition-[width]` is a free one-line fix.
+3. **One genuine `next/image` candidate** — `app/about/page.tsx:30`, a local `/public` asset with known dimensions. (The other 36 `nextjs-no-img-element` hits are intentionally-plain `<img>` for hotlinked external images — see dismissed findings below.)
+
+## Reviewed and dismissed as false positives / not worth fixing
+
+- **`dangerous-html-sink` (10 of 11 hits)**: render markdown fetched from the site owner's own GitHub repos (blog/notes/projects/themes/versions/events content, plus static `countries-list` data) — not visitor-supplied input, no real XSS risk. The 11th (open-source READMEs) is the defense-in-depth item listed under Security above.
+- **`clickjacking-redirect-risk`**: same iframe as the sandbox finding; no actual `redirect()`/query-influenced URL exists anywhere in the file — the scanner's heuristic fired on "dynamic iframe src + no sandbox," duplicating that finding under a different label.
+- **`only-export-components`** (`app/life/components/food-section.tsx:84-87`): the re-exported constants/helpers are genuinely used elsewhere (`app/life/food/page.tsx`), and `FoodSection` holds no local state — nothing for Fast Refresh to actually lose.
+- **`js-combine-iterations` / `js-set-map-lookups`** (4 hits total): all operate on arrays of 3–65 items, cached hourly (`revalidate: 3600`) — not worth the added complexity for unmeasurable gain.
+- **`nextjs-no-img-element`** (36 of 37 hits): intentionally-plain `<img>` for hotlinked external images (country flags, GitHub avatars, book covers, video thumbnails, blog filler images) with no `remotePatterns` configured in `next.config.ts` — adopting `next/image` would need ~8 new remote host entries for negligible benefit on small/already-optimized external assets.
+- **7 of the "sequential await" findings** (`await params` immediately followed by `await getAllX()` in `blog/books/events/notes/press/projects/[year]/page.tsx` + `projects/tags/[tag]/page.tsx`): technically independent, but resolving `params` has no I/O cost — parallelizing saves ~0 in practice.
+- **`rendering-hydration-mismatch-time`** (2 of 3 hits): `app/archive/component.tsx:90` and `app/components/timeline-item-location.tsx:19` are both Server-Component-only code paths (the latter is an `async` component, which can't run on the client at all) — no real hydration mismatch is possible. The 3rd hit (`footer.tsx`) is real, listed under Bugs above, because `Footer` gets pulled into the client bundle via `location/component.tsx`.
