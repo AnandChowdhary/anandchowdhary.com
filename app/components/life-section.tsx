@@ -1,8 +1,4 @@
-import {
-  getAverageSleepTime,
-  getAverageWalkingSteps,
-  getTotalWalkingSteps,
-} from "@/app/api";
+import { getAverageSleepTime, getWalkingStepsSummary } from "@/app/api";
 import { focusStyles } from "@/app/components/external-link";
 import { TimelineItemBirthday } from "@/app/components/timeline-item-birthday";
 import { TimelineItemFitness } from "@/app/components/timeline-item-fitness";
@@ -15,8 +11,8 @@ import { TimelineItemTheme } from "@/app/components/timeline-item-theme";
 import Link from "next/link";
 
 export async function LifeSection() {
-  const lastDayWalkingSteps = await getAverageWalkingSteps();
-  const totalWalkingSteps = await getTotalWalkingSteps();
+  const { average: lastDayWalkingSteps, total: totalWalkingSteps } =
+    await getWalkingStepsSummary();
   const lastNightSleepTime = await getAverageSleepTime();
 
   return (
