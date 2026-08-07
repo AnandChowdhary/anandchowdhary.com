@@ -68,7 +68,7 @@ Ran `npx react-doctor@latest --verbose` (score 39/100, 153 findings). Every find
 
 ## Accessibility / design (low priority)
 
-1. **`role="list"`/`role="listitem"` on generic `<div>`s instead of semantic `<ul>`/`<li>`** — `app/life/food/page.tsx:120-121` and `:134-135`. Tailwind's preflight already resets list styling elsewhere in this codebase, so swapping is a safe drop-in.
+1. ✅ **Fixed (#298)** — ~~`role="list"`/`role="listitem"` on generic `<div>`s instead of semantic `<ul>`/`<li>`~~ — `app/life/food/page.tsx`. Verified via computed styles that Tailwind's preflight resets list styling to zero, and screenshotted the heatmap grid + hover tooltip before/after — no visual change.
 2. **`transition-all` animating a single-property change** — `app/books/[year]/[slug]/page.tsx:183-186`, a reading-progress bar where only `width` actually changes. Negligible impact on this small element, but `transition-[width]` is a free one-line fix.
 3. **One genuine `next/image` candidate** — `app/about/page.tsx:30`, a local `/public` asset with known dimensions. (The other 36 `nextjs-no-img-element` hits are intentionally-plain `<img>` for hotlinked external images — see dismissed findings below.)
 
