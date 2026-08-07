@@ -14,9 +14,9 @@ export function TimelineItemFitness({
   const [steps, setSteps] = useState<number>(value);
 
   useEffect(() => {
-    const interval = setInterval(() => setSteps(steps + 1), 8800);
+    const interval = setInterval(() => setSteps((prev) => prev + 1), 8800);
     return () => clearInterval(interval);
-  }, [steps]);
+  }, []);
 
   return (
     <TimelineItem
