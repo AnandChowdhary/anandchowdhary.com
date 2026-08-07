@@ -27,7 +27,6 @@ Personal website and portfolio of Anand Chowdhary, creative technologist and ent
 ### ⚡ Technical Features
 
 - **🎨 View Transitions** - Smooth page transitions using Next.js experimental view transitions
-- **🗺️ Interactive Maps** - MapLibre GL and Leaflet integration for location visualization
 - **📊 Analytics** - Vercel Analytics integration for visitor insights
 - **🔢 Number Animations** - Smooth number transitions with @number-flow/react
 - **🌐 Internationalization** - Country and timezone support
@@ -49,12 +48,6 @@ Personal website and portfolio of Anand Chowdhary, creative technologist and ent
 - **@tailwindcss/typography** - Beautiful typographic defaults
 - **@tabler/icons-react** - Icon library
 - **tailwind-scrollbar** - Custom scrollbar styling
-
-### 🗺️ Maps & Visualization
-
-- **MapLibre GL** - Open-source map rendering
-- **Leaflet** - Interactive maps
-- **React Leaflet** - React components for Leaflet
 
 ### 📝 Content Processing
 
