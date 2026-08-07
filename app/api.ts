@@ -748,7 +748,7 @@ export async function getAllCountries(): Promise<Country[]> {
 
   const countriesDataWithRequiredProps = countriesData.map((country) => ({
     ...country,
-    slug: country.country_code,
+    slug: `${slugify(country.label)}-${country.country_code}`,
     path: `/travel/${country.country_code}`,
     source: "",
     date: country.date,
@@ -771,7 +771,7 @@ export async function getAllLocations(): Promise<Country[]> {
 
   const countriesDataWithRequiredProps = countriesData.map((country) => ({
     ...country,
-    slug: country.country_code,
+    slug: `${slugify(country.label)}-${country.country_code}`,
     path: `/travel/${country.country_code}`,
     source: "",
     date: country.date,
@@ -817,11 +817,11 @@ export async function getLocationByYearAndSlug(
   year: number,
   slug: string
 ): Promise<Country | null> {
-  const countriesData = await getAllCountries();
+  const locationsData = await getAllLocations();
   return (
-    countriesData
-      .filter((country) => new Date(country.date).getUTCFullYear() === year)
-      .find((country) => country.slug === slug) || null
+    locationsData
+      .filter((location) => new Date(location.date).getUTCFullYear() === year)
+      .find((location) => location.slug === slug) || null
   );
 }
 
