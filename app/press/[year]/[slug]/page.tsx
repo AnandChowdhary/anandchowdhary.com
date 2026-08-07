@@ -162,6 +162,7 @@ export default async function PressYearSlug({ params }: Props) {
             <iframe
               src={pressItem.embed}
               className="w-full h-full"
+              title={pressItem.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

@@ -167,6 +167,7 @@ export default async function EventsYearSlug({ params }: Props) {
               <iframe
                 className="w-full aspect-video rounded-2xl"
                 src={event.attributes.video.replace("watch?v=", "embed/")}
+                title={`Recording: ${event.title}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -185,6 +186,7 @@ export default async function EventsYearSlug({ params }: Props) {
                 <iframe
                   className="w-full aspect-video rounded-2xl"
                   src={talk.embed}
+                  title={`Slides: ${event.title}`}
                   allowFullScreen
                 />
               </div>
