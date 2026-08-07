@@ -116,9 +116,8 @@ export default async function LifeFood() {
                   {year}
                 </h2>
                 <div className="overflow-visible pt-2">
-                  <div
+                  <ul
                     className="flex flex-wrap items-center gap-1.5 overflow-visible"
-                    role="list"
                     aria-label={`${year} food calories by day, newest first`}
                   >
                     {yearDays.map((nutrition) => {
@@ -128,11 +127,10 @@ export default async function LifeFood() {
                       );
 
                       return (
-                        <div
+                        <li
                           key={nutrition.date}
                           aria-label={title}
                           className="group relative z-0 size-7 rounded-md shadow-sm ring-1 ring-white/70 hover:z-50 focus:z-50 focus:outline-none focus:ring-2 focus:ring-neutral-500 dark:ring-black/40 sm:size-8"
-                          role="listitem"
                           style={{
                             backgroundColor: getCalorieColor(nutrition.kcal),
                           }}
@@ -148,10 +146,10 @@ export default async function LifeFood() {
                               {formatFullDate(nutrition.date)}
                             </div>
                           </div>
-                        </div>
+                        </li>
                       );
                     })}
-                  </div>
+                  </ul>
                 </div>
               </section>
             );
