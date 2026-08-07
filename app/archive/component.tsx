@@ -132,8 +132,11 @@ export default function ArchiveContent({
                   })}
                 </div>
               </header>
-              {items.map((item, index) => (
-                <ArchiveItemComponent key={index} item={item} />
+              {items.map((item) => (
+                <ArchiveItemComponent
+                  key={`${item.url}-${item.title}`}
+                  item={item}
+                />
               ))}
             </div>
           ))}

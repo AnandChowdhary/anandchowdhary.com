@@ -97,8 +97,12 @@ export default async function PressContent({
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Awards</h2>
             <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
-              {sortedAwards.map((item, index) => (
-                <PressItemCard key={`award-${index}`} item={item} award />
+              {sortedAwards.map((item) => (
+                <PressItemCard
+                  key={`${item.slug}-${item.title}`}
+                  item={item}
+                  award
+                />
               ))}
             </div>
           </section>
@@ -107,8 +111,8 @@ export default async function PressContent({
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Features</h2>
             <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
-              {sortedFeatures.map((item, index) => (
-                <PressItemCard key={`feature-${index}`} item={item} />
+              {sortedFeatures.map((item) => (
+                <PressItemCard key={`${item.slug}-${item.title}`} item={item} />
               ))}
             </div>
           </section>
@@ -117,8 +121,8 @@ export default async function PressContent({
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Podcasts</h2>
             <div className="grid grid-cols-1 gap-y-4 gap-x-8 md:grid-cols-2">
-              {sortedPodcasts.map((item, index) => (
-                <PressItemCard key={`podcast-${index}`} item={item} />
+              {sortedPodcasts.map((item) => (
+                <PressItemCard key={`${item.slug}-${item.title}`} item={item} />
               ))}
             </div>
           </section>

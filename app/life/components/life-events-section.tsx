@@ -95,7 +95,7 @@ export function LifeEventsSection({
           <div className="space-y-4">
             {eventsByDecade[decade].map((item, index, array) => (
               <LifeEventCard
-                key={`${decade}-${index}`}
+                key={item.slug ?? item.title}
                 item={item}
                 hasMore={index < array.length - 1}
               />
