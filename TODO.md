@@ -30,9 +30,9 @@ The genuinely broken ones, after verifying each against the source repo:
 - **Old-style GitHub Actions status badges** (`github.com/{repo}/workflows/{Name}/badge.svg`) 404 in a few READMEs (`rescuetime-slack`, `uppload`, `firebase-github-backup`) where that specific workflow name no longer exists in the repo — GitHub still resolves this URL format for repos where the name matches (most others in the crawl worked via redirect), so it's per-repo workflow drift, not a dead URL format.
 - **4 `github.com/user-attachments/assets/...` images 404** in a few newer READMEs/talk pages (`claude-code-slack-bot`, `chat`, `mintlify-slack-assistant`) — GitHub's issue/PR attachment CDN links aren't permanent and can expire independent of the repo content. Nothing to fix on this side.
 
-# React Doctor audit
+# React Doctor audit — ✅ complete (#282–#300)
 
-Ran `npx react-doctor@latest --verbose` (score 39/100, 153 findings). Every finding below was independently re-checked against the actual code before being listed — anything that turned out to be a false positive on inspection was dropped (see bottom section for what was dismissed and why).
+Ran `npx react-doctor@latest --verbose` (score 39/100, 153 findings). Every finding below was independently re-checked against the actual code before being listed — anything that turned out to be a false positive on inspection was dropped (see bottom section for what was dismissed and why). All fixable items across Security, Bugs, Performance, Maintainability, and Accessibility are now shipped and merged, one PR at a time. The one open item left is #5 under Security (the Mapbox token) — not a react-doctor finding, discovered along the way, and deliberately left as-is pending the site owner's call on the Mapbox dashboard.
 
 ## Security
 
@@ -70,7 +70,7 @@ Ran `npx react-doctor@latest --verbose` (score 39/100, 153 findings). Every find
 
 1. ✅ **Fixed (#298)** — ~~`role="list"`/`role="listitem"` on generic `<div>`s instead of semantic `<ul>`/`<li>`~~ — `app/life/food/page.tsx`. Verified via computed styles that Tailwind's preflight resets list styling to zero, and screenshotted the heatmap grid + hover tooltip before/after — no visual change.
 2. ✅ **Fixed (#299)** — ~~`transition-all` animating a single-property change~~ — `app/books/[year]/[slug]/page.tsx`, the reading-progress bar. Swapped to `transition-[width]`. Verified via computed styles and a forced mid-transition width measurement that the animation still works identically.
-3. **One genuine `next/image` candidate** — `app/about/page.tsx:30`, a local `/public` asset with known dimensions. (The other 36 `nextjs-no-img-element` hits are intentionally-plain `<img>` for hotlinked external images — see dismissed findings below.)
+3. ✅ **Fixed (#300)** — ~~One genuine `next/image` candidate~~ — `app/about/page.tsx`, the local `/anand.jpg` photo. Verified the file is exactly `1067x1317` before swapping, and confirmed against the production build that it loads through `/_next/image` with the exact expected natural dimensions. (The other 36 `nextjs-no-img-element` hits are intentionally-plain `<img>` for hotlinked external images — see dismissed findings below.)
 
 ## Reviewed and dismissed as false positives / not worth fixing
 
