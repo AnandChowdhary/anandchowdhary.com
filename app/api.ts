@@ -453,13 +453,51 @@ export async function getBlogPostContent(
   return postContentText;
 }
 
+function resolveRepositoryRelativeUrl(url: string, base: string): string {
+  if (url.startsWith("#") || /^[a-z][a-z0-9+.-]*:/i.test(url)) return url;
+  try {
+    return new URL(url, base).toString();
+  } catch {
+    return url;
+  }
+}
+
+// GitHub renders README links/images relative to the repository, but this
+// site renders the same markdown relative to anandchowdhary.com, so
+// relative URLs need rewriting to point back at the actual repository.
+function rewriteRepositoryRelativeUrls(markdown: string, name: string): string {
+  const blobBase = `https://github.com/${name}/blob/HEAD/`;
+  const rawBase = `https://raw.githubusercontent.com/${name}/HEAD/`;
+  return markdown
+    .replace(
+      /!\[([^\]]*)\]\((\S+?)((?:\s+"[^"]*")?)\)/g,
+      (_match, alt, url, title) =>
+        `![${alt}](${resolveRepositoryRelativeUrl(url, rawBase)}${title})`
+    )
+    .replace(
+      /(?<!!)\[([^\]]*)\]\((\S+?)((?:\s+"[^"]*")?)\)/g,
+      (_match, text, url, title) =>
+        `[${text}](${resolveRepositoryRelativeUrl(url, blobBase)}${title})`
+    )
+    .replace(
+      /<img([^>]*)\ssrc="([^"]+)"/g,
+      (_match, before, url) =>
+        `<img${before} src="${resolveRepositoryRelativeUrl(url, rawBase)}"`
+    )
+    .replace(
+      /<a([^>]*)\shref="([^"]+)"/g,
+      (_match, before, url) =>
+        `<a${before} href="${resolveRepositoryRelativeUrl(url, blobBase)}"`
+    );
+}
+
 export async function getRepositoryReadMe(name: string): Promise<string> {
   const readMe = await fetch(
     `https://raw.githubusercontent.com/${name}/HEAD/README.md`,
     { next: { revalidate: 3600 } }
   );
   const readMeText = await readMe.text();
-  return readMeText;
+  return rewriteRepositoryRelativeUrls(readMeText, name);
 }
 
 export async function getRepositoryDetails(
