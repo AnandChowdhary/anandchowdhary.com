@@ -21,67 +21,67 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+};
+
+const formatType = (type: string) => {
+  if (type === "open-source-project") return "Open source";
+  if (type === "event") return "Event";
+  if (type === "book") return "Book";
+  if (type === "travel") return "Travel";
+  if (type === "life-event") return "Life event";
+  if (type === "blog-post") return "Blog post";
+  if (type === "okr") return "OKR";
+  if (type === "theme") return "Theme";
+  if (type === "podcast-interview") return "Podcast";
+  if (type === "version") return "Version";
+  if (type === "project") return "Project";
+  if (type === "press-feature") return "Press";
+  if (type === "award") return "Award";
+  if (type === "video") return "Video";
+  if (type === "hacker-news") return "Hacker News";
+  return type;
+};
+
+const getIconForType = (type: string): React.ReactNode => {
+  if (type === "open-source-project")
+    return <IconBrandGithub strokeWidth={1.5} className="h-4" />;
+  if (type === "event")
+    return <IconCalendar strokeWidth={1.5} className="h-4" />;
+  if (type === "book") return <IconBook strokeWidth={1.5} className="h-4" />;
+  if (type === "travel")
+    return <IconPlane strokeWidth={1.5} className="h-4" />;
+  if (type === "life-event")
+    return <IconHeart strokeWidth={1.5} className="h-4" />;
+  if (type === "blog-post")
+    return <IconFileText strokeWidth={1.5} className="h-4" />;
+  if (type === "okr") return <IconTarget strokeWidth={1.5} className="h-4" />;
+  if (type === "theme")
+    return <IconPalette strokeWidth={1.5} className="h-4" />;
+  if (type === "podcast-interview")
+    return <IconPodium strokeWidth={1.5} className="h-4" />;
+  if (type === "version")
+    return <IconVersions strokeWidth={1.5} className="h-4" />;
+  if (type === "project")
+    return <IconBriefcase strokeWidth={1.5} className="h-4" />;
+  if (type === "press-feature")
+    return <IconNews strokeWidth={1.5} className="h-4" />;
+  if (type === "award")
+    return <IconTrophy strokeWidth={1.5} className="h-4" />;
+  if (type === "video")
+    return <IconVideo strokeWidth={1.5} className="h-4" />;
+  if (type === "hacker-news")
+    return <IconBrandYcombinator strokeWidth={1.5} className="h-4" />;
+  return <IconInfoCircle strokeWidth={1.5} className="h-4" />;
+};
+
 export function ArchiveItemComponent({ item }: { item: ArchiveItem }) {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    });
-  };
-
-  const formatType = (type: string) => {
-    if (type === "open-source-project") return "Open source";
-    if (type === "event") return "Event";
-    if (type === "book") return "Book";
-    if (type === "travel") return "Travel";
-    if (type === "life-event") return "Life event";
-    if (type === "blog-post") return "Blog post";
-    if (type === "okr") return "OKR";
-    if (type === "theme") return "Theme";
-    if (type === "podcast-interview") return "Podcast";
-    if (type === "version") return "Version";
-    if (type === "project") return "Project";
-    if (type === "press-feature") return "Press";
-    if (type === "award") return "Award";
-    if (type === "video") return "Video";
-    if (type === "hacker-news") return "Hacker News";
-    return type;
-  };
-
-  const getIconForType = (type: string): React.ReactNode => {
-    if (type === "open-source-project")
-      return <IconBrandGithub strokeWidth={1.5} className="h-4" />;
-    if (type === "event")
-      return <IconCalendar strokeWidth={1.5} className="h-4" />;
-    if (type === "book") return <IconBook strokeWidth={1.5} className="h-4" />;
-    if (type === "travel")
-      return <IconPlane strokeWidth={1.5} className="h-4" />;
-    if (type === "life-event")
-      return <IconHeart strokeWidth={1.5} className="h-4" />;
-    if (type === "blog-post")
-      return <IconFileText strokeWidth={1.5} className="h-4" />;
-    if (type === "okr") return <IconTarget strokeWidth={1.5} className="h-4" />;
-    if (type === "theme")
-      return <IconPalette strokeWidth={1.5} className="h-4" />;
-    if (type === "podcast-interview")
-      return <IconPodium strokeWidth={1.5} className="h-4" />;
-    if (type === "version")
-      return <IconVersions strokeWidth={1.5} className="h-4" />;
-    if (type === "project")
-      return <IconBriefcase strokeWidth={1.5} className="h-4" />;
-    if (type === "press-feature")
-      return <IconNews strokeWidth={1.5} className="h-4" />;
-    if (type === "award")
-      return <IconTrophy strokeWidth={1.5} className="h-4" />;
-    if (type === "video")
-      return <IconVideo strokeWidth={1.5} className="h-4" />;
-    if (type === "hacker-news")
-      return <IconBrandYcombinator strokeWidth={1.5} className="h-4" />;
-    return <IconInfoCircle strokeWidth={1.5} className="h-4" />;
-  };
-
   const url = item.url.replace("https://anandchowdhary.com", "");
   const isExternal = url.startsWith("http://") || url.startsWith("https://");
 

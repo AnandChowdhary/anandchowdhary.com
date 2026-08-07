@@ -12,6 +12,41 @@ interface ArchiveContentProps {
   nextYear?: number;
 }
 
+const formatLabel = (type: string): { singular: string; plural: string } => {
+  if (type === "open-source-project")
+    return {
+      singular: "new open source project",
+      plural: "new open source projects",
+    };
+  if (type === "event")
+    return { singular: "event spoken at", plural: "events spoken at" };
+  if (type === "book")
+    return { singular: "book finished", plural: "books finished" };
+  if (type === "travel")
+    return { singular: "place traveled to", plural: "places traveled to" };
+  if (type === "life-event")
+    return { singular: "life event", plural: "life events" };
+  if (type === "blog-post")
+    return { singular: "blog post written", plural: "blog posts written" };
+  if (type === "okr")
+    return { singular: "OKR published", plural: "OKRs published" };
+  if (type === "theme")
+    return { singular: "theme published", plural: "themes published" };
+  if (type === "podcast-interview")
+    return { singular: "podcast interview", plural: "podcast interviews" };
+  if (type === "version")
+    return { singular: "version created", plural: "versions created" };
+  if (type === "project")
+    return { singular: "project created", plural: "projects created" };
+  if (type === "press-feature")
+    return { singular: "press feature", plural: "press features" };
+  if (type === "award")
+    return { singular: "award won", plural: "awards won" };
+  if (type === "video")
+    return { singular: "video published", plural: "videos published" };
+  return { singular: type, plural: type };
+};
+
 export default function ArchiveContent({
   archiveData,
   year,
@@ -24,41 +59,6 @@ export default function ArchiveContent({
     acc[itemYear].push(item);
     return acc;
   }, {} as Record<string, ArchiveItem[]>);
-
-  const formatLabel = (type: string): { singular: string; plural: string } => {
-    if (type === "open-source-project")
-      return {
-        singular: "new open source project",
-        plural: "new open source projects",
-      };
-    if (type === "event")
-      return { singular: "event spoken at", plural: "events spoken at" };
-    if (type === "book")
-      return { singular: "book finished", plural: "books finished" };
-    if (type === "travel")
-      return { singular: "place traveled to", plural: "places traveled to" };
-    if (type === "life-event")
-      return { singular: "life event", plural: "life events" };
-    if (type === "blog-post")
-      return { singular: "blog post written", plural: "blog posts written" };
-    if (type === "okr")
-      return { singular: "OKR published", plural: "OKRs published" };
-    if (type === "theme")
-      return { singular: "theme published", plural: "themes published" };
-    if (type === "podcast-interview")
-      return { singular: "podcast interview", plural: "podcast interviews" };
-    if (type === "version")
-      return { singular: "version created", plural: "versions created" };
-    if (type === "project")
-      return { singular: "project created", plural: "projects created" };
-    if (type === "press-feature")
-      return { singular: "press feature", plural: "press features" };
-    if (type === "award")
-      return { singular: "award won", plural: "awards won" };
-    if (type === "video")
-      return { singular: "video published", plural: "videos published" };
-    return { singular: type, plural: type };
-  };
 
   return (
     <Container>

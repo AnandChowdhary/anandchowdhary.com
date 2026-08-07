@@ -8,6 +8,7 @@ import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
+import { getImageUrl } from "@/app/projects/get-image-url";
 import { ProjectMetadata } from "@/app/projects/metadata";
 import { proseClassName } from "@/app/styles";
 import { marked } from "marked";
@@ -66,20 +67,6 @@ export default async function ProjectYearSlug({ params }: Props) {
   );
   const previousProject = allProjects[currentProjectIndex - 1];
   const nextProject = allProjects[currentProjectIndex + 1];
-
-  // Convert relative paths to GitHub raw URLs
-  const getImageUrl = (src: string | undefined, type: string | undefined) => {
-    if (!src) return "";
-    if (src.startsWith("/assets")) {
-      // Add file extension from img_type if not already present
-      let fullPath = src;
-      if (!src.match(/\.(jpg|jpeg|png|gif|svg)$/i) && type) {
-        fullPath = `${src}.${type}`;
-      }
-      return `https://raw.githubusercontent.com/AnandChowdhary/projects/main${fullPath}`;
-    }
-    return src;
-  };
 
   const projectContentText = await getProjectContent(year, project.slug);
 
