@@ -1,4 +1,4 @@
-import { getAllCountries } from "@/app/api";
+import { getAllLocations } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
 import LocationContent from "@/app/location/component";
 import type { Metadata } from "next";
@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export const revalidate = 60;
 export async function generateStaticParams(): Promise<{ year: string }[]> {
-  const countries = await getAllCountries();
+  const locations = await getAllLocations();
   const years = Array.from(
     new Set(
-      countries.map((country) =>
-        new Date(country.date).getUTCFullYear().toString()
+      locations.map((location) =>
+        new Date(location.date).getUTCFullYear().toString()
       )
     )
   );
@@ -36,15 +36,16 @@ export default async function LocationYear({ params }: Props) {
   const { year } = await params;
   if (!/^\d{4}$/.test(year)) notFound();
   const yearNumber = parseInt(year);
-  const allCountries = await getAllCountries();
-  const yearCountriesData = allCountries.filter(
-    (country) => new Date(country.date).getUTCFullYear() === yearNumber
+  const allLocations = await getAllLocations();
+  const yearCountriesData = allLocations.filter(
+    (location) => new Date(location.date).getUTCFullYear() === yearNumber
   );
+  if (yearCountriesData.length === 0) notFound();
 
   // Get all years that have location data
   const availableYears = Array.from(
     new Set(
-      allCountries.map((country) => new Date(country.date).getUTCFullYear())
+      allLocations.map((location) => new Date(location.date).getUTCFullYear())
     )
   ).sort((a, b) => a - b);
 
