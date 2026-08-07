@@ -187,6 +187,7 @@ export default async function EventsYearSlug({ params }: Props) {
                   className="w-full aspect-video rounded-2xl"
                   src={talk.embed}
                   title={`Slides: ${event.title}`}
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
                   allowFullScreen
                 />
               </div>
