@@ -1,6 +1,6 @@
 # 404/500 audit
 
-Crawled the live site (anandchowdhary.com) starting from the homepage, following every internal link recursively. Fixed the three bugs that were fixable in this repo (#278, #279, #280). What's left below is cross-repo content that needs editing elsewhere, not code in this repo.
+Crawled the live site (anandchowdhary.com) starting from the homepage, following every internal link recursively. Fixed the bugs that were fixable in this repo (#278, #279, #280, plus a follow-up correctness fix in #281 after a second crawl that also checked `<img>` sources caught two more gaps in #280's regex). What's left below is cross-repo content that needs editing elsewhere, not code in this repo.
 
 ## Not fixable in this repo (data lives elsewhere — flagging for awareness)
 
@@ -18,6 +18,17 @@ Crawled the live site (anandchowdhary.com) starting from the homepage, following
 - `/blog/2025/move-fast-and-save-things` — linked from `/notes/2026/hidden-risks-baked-into-models`; no post with this slug/title exists in the blog feed at all (likely a typo or renamed/deleted post).
 - `/blog/2025/accidentally-founding-koj` and `/blog/2025/the-life-of-pabio` — linked from `/projects/tags/pabio`, but both posts are marked `draft: true` and are correctly excluded from the site per #277. They'll 404 until published. The link itself lives in `tags/pabio.md` in the separate `AnandChowdhary/projects` repo (fetched by `app/projects/component.tsx:132-141`) — there's no `pabio.md` in this repo.
 - **Fix requires editing the `AnandChowdhary/blog` / `AnandChowdhary/notes` / `AnandChowdhary/projects` repos**, not this one.
+
+### Broken images — also all external content gaps, not this repo's code
+
+Re-crawled the live site checking every `<img src>` in addition to links (994 pages, 1,222 unique images; 196 flagged, but ~150 of those — Mapbox static maps and Google Books covers — turned out to be false positives from the crawler itself: Mapbox 403s without a `Referer` header it enforces, and the concurrent check rate-limited against Google Books' API. Neither is broken for real visitors loading one page at a time with a normal browser).
+
+The genuinely broken ones, after verifying each against the source repo:
+
+- **~56 images 404 in old (2017–2019) blog posts** (e.g. `/blog/2018/state-of-the-dock-2018`, `/blog/2019/quarter-of-open-source`) — all reference `/images/blog/...` paths. Confirmed via the GitHub API that `AnandChowdhary/blog` has no `images/` directory at all (only `assets/`) — these source images were never migrated when the blog moved to its current repo structure. Not fixable here; would need the images re-uploaded to `AnandChowdhary/blog` and the posts' paths updated there.
+- **A handful of `/open-source/*` READMEs link to files that no longer exist in their own repo** (e.g. `unqueue`'s and `archiver`'s READMEs still say `[MIT](./LICENSE)` but neither repo has a `LICENSE` file anymore; `anand.link`'s README references `add_url.py` and `CNAME`, but the actual repo has `update_redirects.py` and no `CNAME`). Verified via each repo's GitHub file listing — genuinely stale READMEs in those repos, not a routing bug (confirmed after #281 shipped: the generated links now point at the *correct* repo/path, they just happen to reference files the repo owner removed or renamed there).
+- **Old-style GitHub Actions status badges** (`github.com/{repo}/workflows/{Name}/badge.svg`) 404 in a few READMEs (`rescuetime-slack`, `uppload`, `firebase-github-backup`) where that specific workflow name no longer exists in the repo — GitHub still resolves this URL format for repos where the name matches (most others in the crawl worked via redirect), so it's per-repo workflow drift, not a dead URL format.
+- **4 `github.com/user-attachments/assets/...` images 404** in a few newer READMEs/talk pages (`claude-code-slack-bot`, `chat`, `mintlify-slack-assistant`) — GitHub's issue/PR attachment CDN links aren't permanent and can expire independent of the repo content. Nothing to fix on this side.
 
 # React Doctor audit
 
