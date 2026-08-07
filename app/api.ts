@@ -203,12 +203,30 @@ export function generateSlug(title: string | undefined | null): string {
   return slugify(title.toLowerCase(), { lowercase: true, separator: "-" });
 }
 
+export async function fetchJson<T>(
+  url: string,
+  revalidate: number
+): Promise<T> {
+  const response = await fetch(url, { next: { revalidate } });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+  }
+  return response.json() as Promise<T>;
+}
+
+async function fetchText(url: string, revalidate: number): Promise<string> {
+  const response = await fetch(url, { next: { revalidate } });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+  }
+  return response.text();
+}
+
 export async function getAllArchiveItems(): Promise<ArchiveItem[]> {
-  const response = await fetch(
+  const archiveData = await fetchJson<ArchiveItem[]>(
     "https://anandchowdhary.github.io/everything/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const archiveData = (await response.json()) as ArchiveItem[];
   return archiveData
     .filter((item) => item.type !== "okr")
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -222,11 +240,10 @@ export async function getArchiveItemsByYear(
 }
 
 export async function getPress(): Promise<Press> {
-  const press = await fetch(
+  const pressData = await fetchJson<Press>(
     "https://anandchowdhary.github.io/everything/data/press.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const pressData = (await press.json()) as Press;
 
   // Add slugs and categories to each item
   pressData.awards = pressData.awards.map((item) => ({
@@ -288,13 +305,10 @@ export interface Video {
 }
 
 export async function getLifeEvents(): Promise<LifeEvent[]> {
-  const lifeEvents = await fetch(
+  const lifeEventsData = await fetchJson<LifeEvent[]>(
     "https://anandchowdhary.github.io/everything/data/life-events.json",
-    {
-      next: { revalidate: 3600 },
-    }
+    3600
   );
-  const lifeEventsData = (await lifeEvents.json()) as LifeEvent[];
 
   // Add slugs to each item
   return lifeEventsData.map((item) => ({
@@ -317,13 +331,10 @@ export async function getLifeEventByYearAndSlug(
 }
 
 export async function getVideos(): Promise<Video[]> {
-  const videos = await fetch(
+  const videosData = await fetchJson<Video[]>(
     "https://anandchowdhary.github.io/everything/data/videos.json",
-    {
-      next: { revalidate: 3600 },
-    }
+    3600
   );
-  const videosData = (await videos.json()) as Video[];
 
   // Add slugs to each item
   return videosData.map((item) => ({
@@ -346,11 +357,10 @@ export async function getVideoByYearAndSlug(
 }
 
 export async function getAllNotes(): Promise<Note[]> {
-  const notes = await fetch(
+  const notesData = await fetchJson<Note[]>(
     "https://anandchowdhary.github.io/notes/threads/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const notesData = (await notes.json()) as Note[];
   return notesData
     .filter((note) => !note.attributes.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -395,10 +405,10 @@ export async function getNoteContent(
 }
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const blog = await fetch("https://anandchowdhary.github.io/blog/api.json", {
-    next: { revalidate: 3600 },
-  });
-  const blogData = (await blog.json()) as BlogPost[];
+  const blogData = await fetchJson<BlogPost[]>(
+    "https://anandchowdhary.github.io/blog/api.json",
+    3600
+  );
   return blogData
     .filter((post) => !post.attributes.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -458,8 +468,10 @@ export async function getRepositoryReadMe(name: string): Promise<string> {
     `https://raw.githubusercontent.com/${name}/HEAD/README.md`,
     { next: { revalidate: 3600 } }
   );
-  const readMeText = await readMe.text();
-  return readMeText;
+  // Not every featured repo has a README (e.g. AnandChowdhary/citepls) —
+  // degrade to an empty string rather than throwing, since a missing
+  // README for one repo shouldn't take down its whole detail page.
+  return readMe.ok ? readMe.text() : "";
 }
 
 export function extractRepositoryDetails(readMeText: string): string | null {
@@ -472,11 +484,10 @@ export function extractRepositoryDetails(readMeText: string): string | null {
 }
 
 export async function getAllRepositories(): Promise<Repository[]> {
-  const repos = await fetch(
+  const reposData = await fetchJson<Repository[]>(
     "https://anandchowdhary.github.io/featured/repos.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const reposData = (await repos.json()) as Repository[];
 
   const formatRepoTitle = (name: string): string => {
     // First replace dashes and underscores with spaces
@@ -535,11 +546,7 @@ export async function getAllRepositories(): Promise<Repository[]> {
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .map(async (repo) => {
         repo.attributes = repo.attributes ?? {};
-        const readMe = await fetch(
-          `https://raw.githubusercontent.com/${repo.full_name}/HEAD/README.md`,
-          { next: { revalidate: 3600 } }
-        );
-        const readMeText = await readMe.text();
+        const readMeText = await getRepositoryReadMe(repo.full_name);
 
         // Some README files have a specific section for what I want to embed here
         /**
@@ -582,10 +589,10 @@ export async function getAllRepositories(): Promise<Repository[]> {
 }
 
 export async function getAllBooks(): Promise<Book[]> {
-  const books = await fetch("https://anandchowdhary.github.io/books/api.json", {
-    next: { revalidate: 3600 },
-  });
-  const booksData = (await books.json()) as Book[];
+  const booksData = await fetchJson<Book[]>(
+    "https://anandchowdhary.github.io/books/api.json",
+    3600
+  );
 
   const booksDataWithRequiredProps = booksData.map((book) => ({
     ...book,
@@ -602,11 +609,10 @@ export async function getAllBooks(): Promise<Book[]> {
 }
 
 export async function getAllEvents(): Promise<Event[]> {
-  const events = await fetch(
+  const eventsData = await fetchJson<Event[]>(
     "https://anandchowdhary.github.io/events/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const eventsData = (await events.json()) as Event[];
   return eventsData.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
@@ -689,11 +695,10 @@ export async function getTalk(
 }
 
 export async function getAllThemes(): Promise<Theme[]> {
-  const themes = await fetch(
+  const themesData = await fetchJson<Theme[]>(
     "https://anandchowdhary.github.io/themes/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const themesData = (await themes.json()) as Theme[];
   return themesData.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
@@ -737,11 +742,10 @@ export async function getThemeContent(
 }
 
 export async function getAllCountries(): Promise<Country[]> {
-  const countries = await fetch(
+  const countriesData = await fetchJson<Country[]>(
     "https://anandchowdhary.github.io/location/history-countries.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const countriesData = (await countries.json()) as Country[];
 
   const countriesDataWithRequiredProps = countriesData.map((country) => ({
     ...country,
@@ -760,11 +764,10 @@ export async function getAllCountries(): Promise<Country[]> {
 }
 
 export async function getAllLocations(): Promise<Country[]> {
-  const countries = await fetch(
+  const countriesData = await fetchJson<Country[]>(
     "https://anandchowdhary.github.io/location/history.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const countriesData = (await countries.json()) as Country[];
 
   const countriesDataWithRequiredProps = countriesData.map((country) => ({
     ...country,
@@ -783,12 +786,10 @@ export async function getAllLocations(): Promise<Country[]> {
 }
 
 export async function getLocation(): Promise<Country> {
-  const countries = await fetch(
+  return fetchJson<Country>(
     "https://anandchowdhary.github.io/location/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const locationData = (await countries.json()) as Country;
-  return locationData;
 }
 
 export async function getAllOpenSource(): Promise<Repository[]> {
@@ -835,11 +836,10 @@ export async function getBookByYearAndSlug(
 }
 
 export async function getAllCodingTime(): Promise<Record<string, number>> {
-  const codingTime = await fetch(
+  const codingTimeData = await fetchJson<Record<string, number>>(
     "https://anandchowdhary.github.io/life/data/wakatime-time-tracking/summary/days.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const codingTimeData = (await codingTime.json()) as Record<string, number>;
   return codingTimeData ?? {};
 }
 
@@ -891,11 +891,10 @@ const csvNumber = (value: string | undefined) => {
 };
 
 export async function getAllDailyNutrition(): Promise<DailyNutrition[]> {
-  const dailyNutrition = await fetch(
+  const csv = await fetchText(
     "https://anandchowdhary.github.io/food/data/daily.csv",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const csv = await dailyNutrition.text();
   const [headers, ...rows] = parseCsvRows(csv);
   if (!headers) return [];
 
@@ -929,14 +928,10 @@ export async function getLatestDailyNutrition(): Promise<DailyNutrition | null> 
 }
 
 export async function getAllWalkingSteps(): Promise<Record<string, number>> {
-  const walkingSteps = await fetch(
+  const walkingStepsData = await fetchJson<Record<string, number>>(
     "https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-walking/summary/days.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const walkingStepsData = (await walkingSteps.json()) as Record<
-    string,
-    number
-  >;
   return walkingStepsData ?? {};
 }
 
@@ -971,20 +966,18 @@ export const getAverageSleepTime = async () => {
 };
 
 export async function getAllSleepTime(): Promise<Record<string, number>> {
-  const sleepTime = await fetch(
+  const sleepTimeData = await fetchJson<Record<string, number>>(
     "https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-sleep/summary/days.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const sleepTimeData = (await sleepTime.json()) as Record<string, number>;
   return sleepTimeData ?? {};
 }
 
 export async function getAllVersions(): Promise<Version[]> {
-  const versions = await fetch(
+  const versionsData = await fetchJson<Version[]>(
     "https://anandchowdhary.github.io/versions/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const versionsData = (await versions.json()) as Version[];
   return versionsData
     .filter((version) => !version.attributes.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -1025,11 +1018,10 @@ export async function getVersionContent(
 }
 
 export async function getAllProjects(): Promise<Project[]> {
-  const projects = await fetch(
+  const projectsData = await fetchJson<Project[]>(
     "https://anandchowdhary.github.io/projects/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const projectsData = (await projects.json()) as Project[];
   return projectsData
     .filter((project) => !project.attributes?.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -1088,12 +1080,10 @@ export interface TopArtist {
 }
 
 export async function getAllTopArtists(): Promise<TopArtist[]> {
-  const topArtists = await fetch(
+  return fetchJson<TopArtist[]>(
     "https://raw.githubusercontent.com/AnandChowdhary/top-artists/refs/heads/main/api.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  const topArtistsData = (await topArtists.json()) as TopArtist[];
-  return topArtistsData;
 }
 
 export async function getHackerNewsItems(): Promise<ArchiveItem[]> {
