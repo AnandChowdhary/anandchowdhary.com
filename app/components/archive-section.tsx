@@ -21,19 +21,20 @@ const formatType = (type: string) => {
   return type;
 };
 
+const getArchiveItemTitle = (item: ArchiveItem) =>
+  formatType(item.type) + " " + item.title.replace("AnandChowdhary/", "");
+const getArchiveItemSubtitle = (item: ArchiveItem) =>
+  humanizeDuration(new Date().getTime() - new Date(item.date).getTime(), {
+    language: "en",
+    round: true,
+    units: ["y", "w", "d"],
+  }).split(",")[0] + " ago";
+
 export async function ArchiveSection() {
   const archiveItems = await getAllArchiveItems();
   const recentArchiveItems = archiveItems
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 10);
-  const getArchiveItemTitle = (item: ArchiveItem) =>
-    formatType(item.type) + " " + item.title.replace("AnandChowdhary/", "");
-  const getArchiveItemSubtitle = (item: ArchiveItem) =>
-    humanizeDuration(new Date().getTime() - new Date(item.date).getTime(), {
-      language: "en",
-      round: true,
-      units: ["y", "w", "d"],
-    }).split(",")[0] + " ago";
 
   return (
     <GenericSectionContainer

@@ -4,6 +4,7 @@ import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
+import { getImageUrl } from "@/app/projects/get-image-url";
 import { proseClassName } from "@/app/styles";
 import slugify from "@sindresorhus/slugify";
 import { marked } from "marked";
@@ -15,20 +16,6 @@ marked.use(markedSmartypants());
 const ProjectCard = ({ item }: { item: Project }) => {
   const slug = item.slug.replace(".md", "");
   const imageData = item.attributes;
-
-  // Convert relative paths to GitHub raw URLs
-  const getImageUrl = (src: string | undefined, type: string | undefined) => {
-    if (!src) return "";
-    if (src.startsWith("/assets")) {
-      // Add file extension from img_type if not already present
-      let fullPath = src;
-      if (!src.match(/\.(jpg|jpeg|png|gif|svg)$/i) && type) {
-        fullPath = `${src}.${type}`;
-      }
-      return `https://raw.githubusercontent.com/AnandChowdhary/projects/main${fullPath}`;
-    }
-    return src;
-  };
 
   return (
     <article className="relative space-y-4">

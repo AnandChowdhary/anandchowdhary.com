@@ -2,9 +2,10 @@ import { Note, getAllNotes } from "@/app/api";
 import { underlinedLink } from "@/app/components/external-link";
 import { GenericSectionContainer } from "@/app/components/generic-section";
 
+const getNoteTitle = (note: Note) => note.title;
+
 export async function NotesSection() {
   const notesDataFiltered = await getAllNotes();
-  const getNoteTitle = (note: Note) => note.title;
 
   return (
     <GenericSectionContainer
