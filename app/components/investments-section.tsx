@@ -1,3 +1,4 @@
+import { fetchJson } from "@/app/api";
 import { GenericSectionContainer } from "@/app/components/generic-section";
 
 interface Company {
@@ -12,11 +13,10 @@ interface Company {
 }
 
 async function getCompanies(): Promise<Company[]> {
-  const response = await fetch(
+  return fetchJson<Company[]>(
     "https://raw.githubusercontent.com/chowdhary-org/website/refs/heads/main/src/app/holdings/data/companies.json",
-    { next: { revalidate: 3600 } }
+    3600
   );
-  return response.json();
 }
 
 export async function InvestmentsSection() {
