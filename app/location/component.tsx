@@ -6,7 +6,6 @@ import { focusStyles } from "@/app/components/external-link";
 import { Footer } from "@/app/components/footer";
 import { Header } from "@/app/components/header";
 import { NavigationFooter } from "@/app/components/navigation-footer";
-import slugify from "@sindresorhus/slugify";
 import { getCountryData, type TCountryCode } from "countries-list";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
@@ -242,9 +241,7 @@ export default function LocationContent({
                         <Link
                           href={`/location/${new Date(
                             item.date
-                          ).getUTCFullYear()}/${slugify(item.label)}-${
-                            item.country_code
-                          }`}
+                          ).getUTCFullYear()}/${item.slug}`}
                           className={`${focusStyles} min-w-0 full-link flex items-center`}
                         >
                           <h3

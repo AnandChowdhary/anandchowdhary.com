@@ -34,6 +34,7 @@ Full raw crawl results (url, status, referring pages): see the bottom of this fi
 - **Where**: `app/archive/item.tsx` — `const url = item.url.replace(...)` uses the URL verbatim from `https://anandchowdhary.github.io/everything/api.json`.
 - **Root cause**: that feed (from a separate `AnandChowdhary/everything` repo) has stale URLs: location links missing the country-code suffix (e.g. `/location/2018/belgium` instead of `/location/2018/brussels-be`), press links with mismatched slugs (`/press/2021/git-hub` used for two different years), and one video slug typo (`/videos/2017/bharat-hacks-live` vs. the real `bharathacks-live`).
 - **Fix requires editing the `AnandChowdhary/everything` repo**, not this one. Once bug #2 above is fixed, some of the location ones may need the feed regenerated too.
+- Related: a few `/events/*` pages link to a specific location visit (e.g. `/location/2026/amsterdam-nl`, `/location/2017/gurugram-in`) that was simply never logged in the location history at all — no amount of slug fixing helps there, the visit itself doesn't exist in `history.json`. That's a data gap in the separate `AnandChowdhary/location` repo.
 
 ### 5. Dead links baked into old blog/notes markdown content (5 URLs)
 
