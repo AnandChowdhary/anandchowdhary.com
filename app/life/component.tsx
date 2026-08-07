@@ -35,14 +35,25 @@ export default async function LifeContent({
   previousYear?: number;
   nextYear?: number;
 }) {
-  const topArtists = await getAllTopArtists();
-  const codingTime = await getAllCodingTime();
-  const dailyNutrition = await getAllDailyNutrition();
-  const sleepTime = await getAllSleepTime();
-  const walkingSteps = await getAllWalkingSteps();
-  const countriesDataFiltered = await getAllLocations();
-  const themes = await getAllThemes();
-  const hackerNewsItems = await getHackerNewsItems();
+  const [
+    topArtists,
+    codingTime,
+    dailyNutrition,
+    sleepTime,
+    walkingSteps,
+    countriesDataFiltered,
+    themes,
+    hackerNewsItems,
+  ] = await Promise.all([
+    getAllTopArtists(),
+    getAllCodingTime(),
+    getAllDailyNutrition(),
+    getAllSleepTime(),
+    getAllWalkingSteps(),
+    getAllLocations(),
+    getAllThemes(),
+    getHackerNewsItems(),
+  ]);
 
   return (
     <Container>
