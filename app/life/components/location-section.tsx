@@ -27,7 +27,7 @@ export function LocationSection({
         />
       </div>
       <div className="grid grid-cols-5 gap-8">
-        {countriesDataFiltered
+        {[...countriesDataFiltered]
           .sort((a, b) => b.date.localeCompare(a.date))
           .slice(0, 4)
           .map((country, index) => (

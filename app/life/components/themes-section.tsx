@@ -20,7 +20,7 @@ export function ThemesSection({ themes }: { themes: ThemeData[] }) {
         className="mb-6 justify-start mx-0"
       />
       <div className="space-y-3">
-        {themes
+        {[...themes]
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )

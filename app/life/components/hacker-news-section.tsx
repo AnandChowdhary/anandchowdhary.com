@@ -17,7 +17,7 @@ export function HackerNewsSection({
         className="mb-6 justify-start mx-0"
       />
       <div className="space-y-3">
-        {hackerNewsItems
+        {[...hackerNewsItems]
           .sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
           )
