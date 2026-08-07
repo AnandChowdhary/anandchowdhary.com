@@ -1,4 +1,13 @@
+import DOMPurify from "isomorphic-dompurify";
 import type { Token } from "marked";
+
+// The featured open-source repo list is author-curated, but its READMEs
+// (rendered as HTML via dangerouslySetInnerHTML) aren't necessarily
+// author-written — some are third-party/forked repos. Sanitize before
+// injecting so a malicious or compromised README can't inject a script.
+export function sanitizeRepositoryHtml(html: string): string {
+  return DOMPurify.sanitize(html);
+}
 
 function resolveRelativeUrl(url: string, base: string): string {
   if (url.startsWith("#")) return url;
