@@ -6,21 +6,21 @@ Full raw crawl results (url, status, referring pages): see the bottom of this fi
 
 ## Fixable in this repo (do these as separate PRs, one at a time)
 
-### 1. `/location/[year]` 500s for 2013, 2015, 2016, 2025, 2026 (the original bug report)
+### 1. ✅ Fixed (#278) — `/location/[year]` 500s for 2013, 2015, 2016, 2025, 2026 (the original bug report)
 
 - **Where**: `app/location/[year]/page.tsx`
 - **Root cause**: this route (and `app/location/component.tsx`) filters `getAllCountries()` (fed by `history-countries.json`, which only contains "first visit to a new country" milestones) by year. The `/location` index page instead uses `getAllLocations()` (fed by `history.json`, the full location history) to render the year headings/links. Years that have full-history entries but no "new country" milestone (2013, 2015, 2016, 2025, 2026) produce an empty filtered array; `component.tsx` then does `[...countriesDataFiltered].sort(...)​[0]` and dereferences the result unguarded (`location.country_code`), crashing with a 500.
 - **Affected URLs**: `/location/2013`, `/location/2015`, `/location/2016`, `/location/2025`, `/location/2026`
 - **Fix**: switch `app/location/[year]/page.tsx` to use `getAllLocations()` (matching the index page), and guard against an empty result with `notFound()` instead of crashing.
 
-### 2. Every individual location detail link 404s (biggest bug, 142 URLs)
+### 2. ✅ Fixed (#279) — Every individual location detail link 404s (biggest bug, 142 URLs)
 
 - **Where**: `app/api.ts` (`getAllCountries`/`getAllLocations`, `slug: country.country_code`), `app/location/component.tsx` (link `href`), `app/location/[year]/[slug]/page.tsx` (`generateStaticParams`), `getLocationByYearAndSlug`
 - **Root cause**: `api.ts` sets each location's `slug` to just the **country code** (e.g. `"nl"`). But the actual links rendered in `component.tsx` use `` `${slugify(item.label)}-${item.country_code}` `` (e.g. `"utrecht-nl"`). `generateStaticParams` and `getLocationByYearAndSlug` both key off `location.slug` (country-code-only), so no statically generated page ever matches a link a user can actually click — 100% of location detail links are dead. It also means multiple visits to different cities in the same country in the same year would collide on one slug.
 - **Affected URLs**: e.g. `/location/2024/portugal-pt`, `/location/2026/san-francisco-us`, `/location/2021/amsterdam-nl`, and ~140 more across every year from 1997–2026 (full list in crawl output, category `locationSlug404`).
 - **Fix**: make the `slug` field match what the UI links to — set `slug: ${slugify(country.label)}-${country.country_code}` in `api.ts`, so `generateStaticParams`/`getLocationByYearAndSlug` line up with the rendered hrefs.
 
-### 3. Open-source repo README embeds don't rewrite relative links (22 URLs)
+### 3. ✅ Fixed — Open-source repo README embeds don't rewrite relative links (22 URLs)
 
 - **Where**: `app/open-source/[year]/[slug]/page.tsx` (renders `marked.parse(details ?? repo.description)` and `marked.parse(readMe)`), `getRepositoryReadMe`/`getRepositoryDetails` in `app/api.ts`
 - **Root cause**: READMEs fetched from GitHub contain relative links/paths (`./add_url.py`, `.github/workflows/x.yml`, `LICENSE`, `CNAME`, etc.). They're rendered as-is with `marked.parse`, so clicking them resolves against `anandchowdhary.com` instead of the actual GitHub repo. `getBlogPostContent` already does this kind of rewriting for blog post images — the open-source README renderer needs the same treatment for links (and ideally images).
@@ -41,9 +41,9 @@ Full raw crawl results (url, status, referring pages): see the bottom of this fi
 - `/blog/state-of-the/podcasts/2018` — hardcoded inside `blog/2019/state-of-the-podcasts-2019.md` from a pre-migration URL scheme; should be `/blog/2018/state-of-the-podcasts-2018`.
 - `/projects/open-source/uppload` — hardcoded inside `blog/2020/introducing-uppload-v2.md`, same pre-migration scheme; should point at the current `/open-source/*/uppload` page.
 - `/blog/2025/move-fast-and-save-things` — linked from `/notes/2026/hidden-risks-baked-into-models`; no post with this slug/title exists in the blog feed at all (likely a typo or renamed/deleted post).
-- `/blog/2025/accidentally-founding-koj` and `/blog/2025/the-life-of-pabio` — linked from `/projects/tags/pabio`, but both posts are marked `draft: true` and are correctly excluded from the site per #277. They'll 404 until published (or the Pabio project content stops linking them early).
-- **Fix requires editing the `AnandChowdhary/blog` / `AnandChowdhary/notes` repos**, not this one.
+- `/blog/2025/accidentally-founding-koj` and `/blog/2025/the-life-of-pabio` — linked from `/projects/tags/pabio`, but both posts are marked `draft: true` and are correctly excluded from the site per #277. They'll 404 until published (or the Pabio project content stops linking them early). The link itself lives in `tags/pabio.md` in the separate `AnandChowdhary/projects` repo (fetched by `app/projects/component.tsx:132-141`) — there's no `pabio.md` in this repo, so this needs editing there directly.
+- **Fix requires editing the `AnandChowdhary/blog` / `AnandChowdhary/notes` / `AnandChowdhary/projects` repos**, not this one.
 
 ## Plan
 
-Ship #1 (original bug report) first, then #2, then #3, each as its own PR — verify CI is green before merging each. #4–#6 are cross-repo content issues; flagging here rather than fixing in this repo.
+#1, #2, and #3 are done. #4–#5 are cross-repo content issues; flagging here rather than fixing in this repo.
