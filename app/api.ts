@@ -462,10 +462,7 @@ export async function getRepositoryReadMe(name: string): Promise<string> {
   return readMeText;
 }
 
-export async function getRepositoryDetails(
-  name: string
-): Promise<string | null> {
-  const readMeText = await getRepositoryReadMe(name);
+export function extractRepositoryDetails(readMeText: string): string | null {
   if (readMeText.includes(`data-embed="anandchowdhary.com"`)) {
     return (
       readMeText.split("</summary>")[1]?.split("</details>")[0]?.trim() ?? null
@@ -943,28 +940,20 @@ export async function getAllWalkingSteps(): Promise<Record<string, number>> {
   return walkingStepsData ?? {};
 }
 
-export const getAverageWalkingSteps = async () => {
+export const getWalkingStepsSummary = async (): Promise<{
+  average: number;
+  total: number;
+}> => {
   const walkingSteps = await getAllWalkingSteps();
-  const sortedDates = Object.keys(walkingSteps).sort(
-    (a, b) => new Date(b).getTime() - new Date(a).getTime()
-  );
-  const last30NonZero = sortedDates
+  const last30NonZero = Object.keys(walkingSteps)
     .filter((date) => walkingSteps[date] > 0)
+    .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
     .slice(0, 30)
     .map((date) => walkingSteps[date]);
-  if (last30NonZero.length === 0) return 0;
-  const sum = last30NonZero.reduce((acc, val) => acc + val, 0);
-  return Math.round(sum / last30NonZero.length);
-};
-
-export const getTotalWalkingSteps = async () => {
-  const walkingSteps = await getAllWalkingSteps();
-  const sortedDates = Object.keys(walkingSteps)
-    .filter((date) => walkingSteps[date] > 0)
-    .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
-  const last30NonZero = sortedDates.slice(0, 30);
-  const sum = last30NonZero.reduce((acc, date) => acc + walkingSteps[date], 0);
-  return sum;
+  if (last30NonZero.length === 0) return { average: 0, total: 0 };
+  const total = last30NonZero.reduce((acc, val) => acc + val, 0);
+  const average = Math.round(total / last30NonZero.length);
+  return { average, total };
 };
 
 export const getAverageSleepTime = async () => {

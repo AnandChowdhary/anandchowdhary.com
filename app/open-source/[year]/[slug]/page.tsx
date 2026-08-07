@@ -1,8 +1,8 @@
 import {
+  extractRepositoryDetails,
   getAllArchiveItems,
   getAllOpenSource,
   getOpenSourceByYearAndSlug,
-  getRepositoryDetails,
   getRepositoryReadMe,
 } from "@/app/api";
 import { buildScreenshotOpenGraphImageUrl } from "@/app/lib/opengraph";
@@ -97,8 +97,8 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   )
     image = undefined;
 
-  const details = await getRepositoryDetails(repo.full_name);
   const readMe = await getRepositoryReadMe(repo.full_name);
+  const details = extractRepositoryDetails(readMe);
 
   const yearNavigation = { previous: previousRepo, next: nextRepo };
 
