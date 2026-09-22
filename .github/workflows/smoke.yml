@@ -1,0 +1,32 @@
+# Smoke-tests production as soon as Vercel reports a deployment live.
+#
+# It has to run against the deployed site rather than a local build: the render
+# failure in #301 only ever happened inside the Vercel function, so `next build`
+# and `next start` both stayed green for the 45 days it was broken in
+# production. See scripts/smoke.mjs for what that means for the checks.
+#
+# Preview deployments are deliberately not covered — they sit behind Vercel
+# Authentication, and reaching them would mean keeping a protection-bypass
+# secret around. Production is checked on every merge instead.
+name: Smoke test
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment_status.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: node scripts/smoke.mjs https://anandchowdhary.com
