@@ -16,7 +16,7 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ year: string; slug: string }>;
@@ -70,6 +70,10 @@ export default async function PressYearSlug({ params }: Props) {
 
   const pressItem = await getPressItemByYearAndSlug(yearNumber, slug);
   if (!pressItem) notFound();
+  // Slug aliases (see `slugsMatch`) resolve to the same page, so send them on
+  // to the canonical URL instead of serving duplicate content.
+  if (pressItem.slug !== slug)
+    permanentRedirect(`/press/${year}/${pressItem.slug}`);
 
   const press = await getPress();
   const allPressItems = [

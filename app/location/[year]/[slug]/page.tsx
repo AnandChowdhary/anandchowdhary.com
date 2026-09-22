@@ -14,7 +14,7 @@ import {
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Rand from "rand-seed";
 
 marked.use(markedSmartypants());
@@ -62,6 +62,10 @@ export default async function LocationYearSlug({ params }: Props) {
 
   const country = await getLocationByYearAndSlug(yearNumber, slug);
   if (!country) notFound();
+  // Slug aliases (see `slugsMatch`) resolve to the same page, so send them on
+  // to the canonical URL instead of serving duplicate content.
+  if (country.slug !== slug)
+    permanentRedirect(`/location/${year}/${country.slug}`);
 
   const allLocations = await getAllLocations();
   const currentLocationIndex = allLocations.findIndex(

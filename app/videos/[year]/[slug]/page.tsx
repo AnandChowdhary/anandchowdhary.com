@@ -9,7 +9,7 @@ import { VideoMetadata } from "@/app/videos/metadata";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 marked.use(markedSmartypants());
 
@@ -54,6 +54,9 @@ export default async function VideoPage({ params }: Props) {
   if (!video) {
     notFound();
   }
+  // Slug aliases (see `slugsMatch`) resolve to the same page, so send them on
+  // to the canonical URL instead of serving duplicate content.
+  if (video.slug !== slug) permanentRedirect(`/videos/${year}/${video.slug}`);
 
   const allVideos = await getVideos();
   const currentVideoIndex = allVideos.findIndex((v) => v.slug === video.slug);

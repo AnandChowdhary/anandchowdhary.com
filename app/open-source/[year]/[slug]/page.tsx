@@ -26,7 +26,7 @@ import {
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Rand from "rand-seed";
 
 marked.use(markedSmartypants());
@@ -74,6 +74,10 @@ export default async function OpenSourceYearSlug({ params }: Props) {
 
   const repo = await getOpenSourceByYearAndSlug(yearNumber, slug);
   if (!repo) notFound();
+  // Slug aliases (see `slugsMatch`) resolve to the same page, so send them on
+  // to the canonical URL instead of serving duplicate content.
+  if (repo.slug !== slug)
+    permanentRedirect(`/open-source/${year}/${repo.slug}`);
 
   const allRepos = await getAllOpenSource();
   const currentRepoIndex = allRepos.findIndex((r) => r.slug === repo.slug);
