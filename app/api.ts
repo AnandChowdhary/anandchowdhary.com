@@ -203,6 +203,30 @@ export function generateSlug(title: string | undefined | null): string {
   return slugify(title.toLowerCase(), { lowercase: true, separator: "-" });
 }
 
+/**
+ * Links pointing at this site are also generated elsewhere — most notably the
+ * archive feed in `AnandChowdhary/everything` — and those slugs don't always
+ * match `generateSlug`. The feed slugifies without lowercasing first, so
+ * camelCase publishers/titles gain a separator this site doesn't have
+ * ("TechCrunch" → `tech-crunch` there, `techcrunch` here), and it links open
+ * source projects by raw repository name (`essential.css`, `NewsHaikusBot`).
+ * Ignoring word boundaries makes every one of those variants resolve to the
+ * same page, so lookups accept them and the page redirects to its canonical URL
+ * rather than 404ing.
+ */
+export function slugsMatch(
+  a: string | undefined | null,
+  b: string | undefined | null
+): boolean {
+  // Slugify first so accented labels transliterate the same way on both sides
+  // ("Türkiye" and the feed's `tuerkiye`), then drop separators so only the
+  // word boundaries differ.
+  const normalize = (value: string | undefined | null) =>
+    generateSlug(value).replaceAll("-", "");
+  const normalizedA = normalize(a);
+  return normalizedA.length > 0 && normalizedA === normalize(b);
+}
+
 export async function fetchJson<T>(
   url: string,
   revalidate: number
@@ -277,10 +301,13 @@ export async function getPressItemByYearAndSlug(
   slug: string
 ): Promise<PressItem | null> {
   const allItems = await getAllPressItems();
+  const itemsInYear = allItems.filter(
+    (item) => new Date(item.date).getUTCFullYear() === year
+  );
   return (
-    allItems.find(
-      (item) => new Date(item.date).getFullYear() === year && item.slug === slug
-    ) || null
+    itemsInYear.find((item) => item.slug === slug) ??
+    itemsInYear.find((item) => slugsMatch(item.slug, slug)) ??
+    null
   );
 }
 
@@ -348,11 +375,13 @@ export async function getVideoByYearAndSlug(
   slug: string
 ): Promise<Video | null> {
   const allVideos = await getVideos();
+  const videosInYear = allVideos.filter(
+    (video) => new Date(video.date).getUTCFullYear() === year
+  );
   return (
-    allVideos.find(
-      (video) =>
-        new Date(video.date).getFullYear() === year && video.slug === slug
-    ) || null
+    videosInYear.find((video) => video.slug === slug) ??
+    videosInYear.find((video) => slugsMatch(video.slug, slug)) ??
+    null
   );
 }
 
@@ -803,11 +832,15 @@ export async function getOpenSourceByYearAndSlug(
   year: number,
   slug: string
 ): Promise<Repository | null> {
-  const reposData = await getAllOpenSource();
+  const reposInYear = (await getAllOpenSource()).filter(
+    (repo) => new Date(repo.date).getUTCFullYear() === year
+  );
   return (
-    reposData
-      .filter((repo) => new Date(repo.date).getUTCFullYear() === year)
-      .find((repo) => repo.slug === slug) || null
+    reposInYear.find((repo) => repo.slug === slug) ??
+    reposInYear.find(
+      (repo) => slugsMatch(repo.slug, slug) || slugsMatch(repo.name, slug)
+    ) ??
+    null
   );
 }
 
@@ -815,11 +848,31 @@ export async function getLocationByYearAndSlug(
   year: number,
   slug: string
 ): Promise<Country | null> {
-  const locationsData = await getAllLocations();
+  const locationsInYear = (await getAllLocations()).filter(
+    (location) => new Date(location.date).getUTCFullYear() === year
+  );
+  const exactMatch =
+    locationsInYear.find((location) => location.slug === slug) ??
+    locationsInYear.find((location) => slugsMatch(location.slug, slug));
+  if (exactMatch) return exactMatch;
+
+  // These pages are one per city visit (`brussels-be`), but the archive feed
+  // links travel by country instead (`belgium`). Country visits come from the
+  // same commit history as city visits, so the commit hash maps a country
+  // straight back to the city the visit started in; the country code is the
+  // fallback for when that hash isn't in `history.json`.
+  const countryInYear = (await getAllCountries()).find(
+    (country) =>
+      new Date(country.date).getUTCFullYear() === year &&
+      (slugsMatch(country.slug, slug) || slugsMatch(country.label, slug))
+  );
+  if (!countryInYear) return null;
   return (
-    locationsData
-      .filter((location) => new Date(location.date).getUTCFullYear() === year)
-      .find((location) => location.slug === slug) || null
+    locationsInYear.find((location) => location.hash === countryInYear.hash) ??
+    locationsInYear.find(
+      (location) => location.country_code === countryInYear.country_code
+    ) ??
+    null
   );
 }
 

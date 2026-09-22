@@ -1,4 +1,4 @@
-import { Event, generateSlug } from "@/app/api";
+import { Event, generateSlug, getLocationByYearAndSlug } from "@/app/api";
 import { underlinedLink } from "@/app/components/external-link";
 import {
   IconBuildings,
@@ -9,7 +9,7 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 
-export function EventMetadata({
+export async function EventMetadata({
   item,
   link = true,
   className,
@@ -20,6 +20,23 @@ export function EventMetadata({
   className?: string;
   children?: React.ReactNode;
 }) {
+  // An event's city is its own field, so it can name a place that was never
+  // logged in the location history — linking to it unconditionally is where
+  // several /location 404s came from. Only link once the visit is known.
+  const locationSlug = item.attributes.city
+    ? `${generateSlug(item.attributes.city)}-${generateSlug(
+        item.attributes.country ?? "",
+      )}`
+    : undefined;
+  const locationYear = new Date(item.date).getUTCFullYear();
+  const location =
+    link && locationSlug
+      ? await getLocationByYearAndSlug(locationYear, locationSlug)
+      : null;
+  const locationHref = location
+    ? `/location/${locationYear}/${location.slug}`
+    : undefined;
+
   return (
     <div className={`grid grid-cols-2 gap-2.5 pt-2.5 ${className}`}>
       <div className="text-sm text-neutral-500 flex items-center gap-1.5">
@@ -62,13 +79,9 @@ export function EventMetadata({
       {item.attributes.city ? (
         <div className="text-sm text-neutral-500 flex items-center gap-1.5">
           <IconMapPin className="shrink-0" size={16} strokeWidth={1.5} />
-          {link ? (
+          {locationHref ? (
             <Link
-              href={`/location/${new Date(
-                item.date,
-              ).getUTCFullYear()}/${generateSlug(
-                item.attributes.city,
-              )}-${generateSlug(item.attributes.country ?? "")}`}
+              href={locationHref}
               className={`grow truncate ${underlinedLink}`}
             >
               {item.attributes.city}

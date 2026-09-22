@@ -1,15 +1,36 @@
 # 404/500 audit
 
-Crawled the live site (anandchowdhary.com) starting from the homepage, following every internal link recursively. Fixed the bugs that were fixable in this repo (#278, #279, #280, plus a follow-up correctness fix in #281 after a second crawl that also checked `<img>` sources caught two more gaps in #280's regex). What's left below is cross-repo content that needs editing elsewhere, not code in this repo.
+Crawled the live site (anandchowdhary.com) starting from the homepage, following every internal link recursively. Fixed the bugs that were fixable in this repo (#278, #279, #280, plus a follow-up correctness fix in #281 after a second crawl that also checked `<img>` sources caught two more gaps in #280's regex). A second pass then went through the links the archive itself renders — see below for what that turned up and what's still genuinely cross-repo.
+
+## Second pass: the archive's own links (now fixed here)
+
+Re-crawled every internal URL the `everything` feed points at (353 of them). 52 were broken: 41 404s and 11 500s. All but the 10 `/okrs/*` URLs are fixed in this repo — the previous pass filed these as "needs editing in `AnandChowdhary/everything`", but waiting on another repo leaves the links dead in the meantime, and this side can resolve them on its own.
+
+### `/open-source/*` returned 500, not 404 — the route had been failing on Vercel since August
+
+Every `/open-source/<year>/<slug>` page was frozen: `age` on the live responses was ~45 days while every other route revalidated within a day, and any path *not* prerendered by the last build (all four repos created since, e.g. `word-clock`) returned Vercel's static `/500` with no function headers at all. So the route's server render had been throwing since around the 6–7 August commits.
+
+The one thing that route did that no other route did was import `app/lib/markdown.ts` → `isomorphic-dompurify` → jsdom, added in #285. `sanitizeRepositoryHtml` now uses `sanitize-html` (htmlparser2, no DOM, no jsdom) instead, keeping the same security property. Verified by diffing both sanitizers over all 68 READMEs: identical tag and attribute output, except a `<tbody>` DOMPurify's DOM parser inserted by itself. The XSS battery (`<script>`, `onerror`, `javascript:`/`vbscript:` URLs, `<iframe>`/`<object>`/`<base>`/`<meta refresh>`, styled overlays) is still stripped; inline `style` is now allowed only for `text-align`/`width`/`height`/`max-width` with validated values.
+
+Worth confirming against the real deployment once this ships — the failure only reproduces on Vercel, never locally.
+
+### Slug mismatches between this site and the feed
+
+The feed slugifies *without* lowercasing first, so camelCase names keep a word boundary this site drops (`tech-crunch` vs. `techcrunch`, `bharat-hacks-live` vs. `bharathacks-live`), and it links open-source projects by raw repository name (`essential.css`, `NewsHaikusBot`). `slugsMatch` in `app/api.ts` compares the two forms after slugifying and dropping separators, and each detail page redirects an alias to its canonical URL with a 308, so there's still exactly one indexable URL per page. Covers 20 URLs across `/press`, `/videos` and `/open-source`.
+
+### `/location/*` linked by country, not by city
+
+The feed links travel as `/location/2026/greece`; these pages are one per city visit (`/location/2026/athens-gr`). Country visits and city visits come out of the same commit history, so `getLocationByYearAndSlug` maps the country back to the city visit by commit hash (falling back to the country code) and redirects. Covers all 18 travel links.
+
+### `/events/*` linking to location visits that don't exist
+
+An event's city is its own field in the events data, so it can name a place that was never logged in `history.json` (`/location/2026/amsterdam-nl`, `/location/2017/gurugram-in`, 8 in total). `EventMetadata` now looks the visit up and only renders a link when the page exists, falling back to plain text — the underlying data gap in `AnandChowdhary/location` is still real, but the site no longer links into it.
+
+### Still open: `/okrs/*` (10 URLs)
+
+`/okrs/2021/4` … `/okrs/2024/1` have no route here at all, and `getAllArchiveItems` filters `type === "okr"` out, so nothing on the site links to them — they 404 only if you follow the feed directly. Fixing it means either building an OKRs section or dropping those URLs from `everything`.
 
 ## Not fixable in this repo (data lives elsewhere — flagging for awareness)
-
-### `/archive` renders stale/incorrect links from the external "everything" feed
-
-- **Where**: `app/archive/item.tsx` — `const url = item.url.replace(...)` uses the URL verbatim from `https://anandchowdhary.github.io/everything/api.json`.
-- **Root cause**: that feed (from a separate `AnandChowdhary/everything` repo) has stale URLs: location links missing the country-code suffix (e.g. `/location/2018/belgium` instead of `/location/2018/brussels-be`), press links with mismatched slugs (`/press/2021/git-hub` used for two different years), and one video slug typo (`/videos/2017/bharat-hacks-live` vs. the real `bharathacks-live`).
-- **Fix requires editing the `AnandChowdhary/everything` repo**, not this one.
-- Related: a few `/events/*` pages link to a specific location visit (e.g. `/location/2026/amsterdam-nl`, `/location/2017/gurugram-in`) that was simply never logged in the location history at all — no amount of slug fixing helps there, the visit itself doesn't exist in `history.json`. That's a data gap in the separate `AnandChowdhary/location` repo.
 
 ### Dead links baked into old blog/notes markdown content
 
