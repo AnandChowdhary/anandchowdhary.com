@@ -103,6 +103,27 @@ npm run dev
 - **`npm run build`** - Build for production
 - **`npm run start`** - Start production server
 - **`npm run lint`** - Run ESLint
+- **`npm run smoke`** - Smoke-test production
+- **`npm run link-audit`** - Check every URL in the sitemap and the archive feed
+
+## ✅ Checks against production
+
+Both scripts run against the **live site**, not a local build, because that's
+the only place some failures show up — see `scripts/smoke.mjs` for the story.
+
+- **Smoke test** (`.github/workflows/smoke.yml`) runs automatically when Vercel
+  reports a production deployment live. It samples a few pages per section from
+  the sitemap, checks the known slug aliases still redirect, and requests a
+  deliberately nonexistent slug under each dynamic route — that last one is the
+  canary, since a slug the build never saw is the only cheap way to force a
+  runtime render and catch a route whose server render is throwing.
+- **Link audit** (`.github/workflows/link-audit.yml`) runs weekly against
+  production, checking every sitemap URL plus every link the external archive
+  feed points back at, and asserts pages are still revalidating.
+
+Preview deployments aren't covered: they sit behind Vercel Authentication, and
+reaching them would mean keeping a protection-bypass secret around. Production
+is checked on every merge instead.
 
 ## 📁 Project Structure
 

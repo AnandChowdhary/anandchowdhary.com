@@ -1,0 +1,30 @@
+# Weekly audit of production. Most of what breaks these links lands in *other*
+# repos — the archive feed, the location history, the press list — so there's no
+# commit here to hang a check off, and nothing notices until someone clicks a
+# dead link. #301 was 41 of those, accumulated over months.
+#
+# The freshness check that runs alongside it is the counterpart to the smoke
+# test's unknown-slug canary: once a broken route's pages are all in the
+# prerender cache they keep serving their last good copy, and the only outward
+# sign is that they stop revalidating.
+name: Link audit
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: node scripts/smoke.mjs https://anandchowdhary.com --check-freshness
+      - if: always()
+        run: node scripts/link-audit.mjs https://anandchowdhary.com

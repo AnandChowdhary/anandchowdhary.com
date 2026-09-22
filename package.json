@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "smoke": "node scripts/smoke.mjs",
+    "link-audit": "node scripts/link-audit.mjs"
   },
   "dependencies": {
     "@number-flow/react": "^0.6.0",
