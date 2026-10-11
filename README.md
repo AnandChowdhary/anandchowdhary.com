@@ -1,10 +1,10 @@
 # 🌟 anandchowdhary.com
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.4.6-black?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
-Personal website and portfolio of Anand Chowdhary, creative technologist and entrepreneur. Built with Next.js 15, TypeScript, and Tailwind CSS v4.
+Personal website and portfolio of Anand Chowdhary, creative technologist and entrepreneur. Built with Next.js 16, TypeScript, and Tailwind CSS v4.
 
 ## 🚀 Features
 
@@ -38,9 +38,9 @@ Personal website and portfolio of Anand Chowdhary, creative technologist and ent
 
 ### 🎯 Framework & Language
 
-- **Next.js 15.4.6** - React framework with App Router
-- **React 19.1.1** - UI library
-- **TypeScript 5** - Type-safe JavaScript
+- **Next.js 16.4** - React framework with App Router
+- **React 19.3** - UI library
+- **TypeScript 6** - Type-safe JavaScript
 
 ### 💅 Styling & UI
 
@@ -71,7 +71,7 @@ Personal website and portfolio of Anand Chowdhary, creative technologist and ent
 
 ### 📋 Prerequisites
 
-- Node.js 18+
+- Node.js 24 LTS (also used by Vercel and the production check workflows)
 - npm or yarn package manager
 
 ### 💻 Installation
@@ -86,7 +86,7 @@ cd anandchowdhary.com
 2. Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
 
 3. Run the development server:
