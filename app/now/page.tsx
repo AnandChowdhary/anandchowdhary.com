@@ -41,8 +41,8 @@ export default async function Now() {
           ))}
         </div>
         <p className="mt-12">
-          This page is made to answer the question "What are you up to these
-          days?" You can see more /now pages on{" "}
+          This page is made to answer the question &quot;What are you up to these
+          days?&quot; You can see more /now pages on{" "}
           <ExternalLink href="https://nownownow.com/">
             nownownow.com
           </ExternalLink>
