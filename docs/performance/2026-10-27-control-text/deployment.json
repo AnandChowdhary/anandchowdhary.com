@@ -1,0 +1,11 @@
+{
+  "deploymentId": "dpl_F99ftap5jDCDPbgk6pJ3N4uJeQcv",
+  "rehearsal": true,
+  "neverPromote": true,
+  "controlOf": "dpl_CrZ6mtm18TyJ5Umki8QwFfpiAhjX",
+  "modifications": [
+    "ResponsiveImage returns direct original img with no generated srcset",
+    "Project card loading restored to lazy with no fetchPriority"
+  ],
+  "note": "Other non-image migration fixes remain; no pure-framework causal attribution."
+}

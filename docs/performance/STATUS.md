@@ -157,21 +157,57 @@ masking missing deployed files. CI and Vercel builds both run this guard.
 The rehearsal deployment contains isolated test routes and **must never be
 promoted**. The normal candidate contains no injected rehearsal middleware/routes.
 
+## Final candidate measurements and source release
+
+The deferred-counter candidate is `dpl_BGKZKDxmnFUHQajm8Waed77vP4qD`; the same
+application is staged with production environment settings as
+`dpl_GtvrCfeU4whTETEfRTZqr2JLe7rK`, without moving either public custom domain.
+The source manifest is [lazy-counter-upload.json](2026-10-27-deployment/lazy-counter-upload.json).
+
+The [fresh deployed comparison](2026-10-27-deployment/COMPARISON.md) now contains
+48 candidate runs, 48 fresh production runs and 16 raw-image control runs.
+All automated timing/transfer gates pass: six mobile median LCP values
+**1.22–2.05 seconds**, performance **99–100**, every sample CLS below 0.1,
+project mobile image transfer **362,480 bytes** (about 354 KiB, 95.5% below the
+initial 7.71 MiB baseline), and no RSC requests. The
+[article script check](2026-10-27-deployment/article-script-budget.json) records
+1,570 compressed inline bytes per article and no application React script.
+
+The raw-image control is essential: projects still take about 10.6 seconds with
+original images, versus 1.38 seconds optimized. Most of that page's LCP gain comes
+from image delivery. The text article improves with framework/prefetch removal
+before image optimization as well. These are measured slices, not attribution of
+every improvement to Astro. Full reports retain ranges and audit limitations.
+
+Final Node 24 type checks and all 13 contracts pass. The staged production build
+passes smoke and strengthened browser checks, including deferred counter hydration,
+no-JS article content, all 17 restored images and lightbox interactions. The cloud
+build also passed output verification and the isolated packaged-runtime guard.
+See [rehearsal details](2026-10-27-deployment/REHEARSAL.md).
+
+GitHub rejected the initial branch push because the configured OAuth connection
+lacks the `workflow` scope required to create/update `.github/workflows/check.yml`
+and move existing CI to Node 24. The source is committed locally; no alternate
+credential has been used. The account owner must enable **Settings → Integrations
+→ GitHub → Allow workflow edits** before retrying this push.
+
 ## Remaining release work
 
-1. The final 48-sample deployed matrix passes mobile LCP/CLS budgets. Finish the fresh production matrix
-   using the same pinned sequential runner. Measure a separate image control to
-   distinguish framework behavior from responsive-image delivery.
-2. Review all release budgets and document measured regressions or limitations.
-3. Persist the migration source and align project framework/Node settings with
-   the Astro repository before the final production deployment.
-4. Deploy with production environment settings, verify that candidate, then promote
-   atomically and rerun smoke, browser interactions, image/query/error checks,
-   full inventory and observation through an ISR expiry.
+The staged production full inventory passes **801/801**. The final
+[homepage visual recheck](astro-deferred-home-parity/VISUAL.md) covers all eight
+desktop/mobile light/dark normal/screenshot modes; dimensions and metadata match,
+with at most 0.0632% pixel differences from live counters.
+[Verification record](2026-10-27-deployment/staged-verification.json).
+
+1. Publish the committed source once GitHub workflow access is enabled; run the
+   repository CI and align project framework/Node defaults with Astro/Node 24.
+2. Switch production atomically using the validated application source, then rerun
+   smoke, browser interactions, native image/query/error checks, full inventory,
+   crawlability checks and observation through an ISR expiry.
 
 Original production/rollback deployment remains
 `dpl_Hp4R8Z5uCBdUWdT1bdUPhnZCC14N`. Its immutable URL and original project settings
 are recorded in [before.json](2026-10-27-deployment/before.json). The original
-project defaults remain Next.js/Node 22; previews explicitly use Astro/Node 24.
+project defaults remain Next.js/Node 22; candidates explicitly use Astro/Node 24.
 Production has not yet been switched. No cost savings or field-metric improvement
 is claimed from these checks.

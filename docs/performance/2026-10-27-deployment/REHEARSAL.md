@@ -85,7 +85,27 @@ is excluded from this control because production has broken images.
 
 The deferred-counter matrix is complete: home mobile median LCP **2.036 seconds**
 (range 1.952–2.161), performance 99 in all five runs. Mobile medians across all
-six routes are 1.222–2.036 seconds; all sample CLS values are below 0.1. The
+six routes are 1.22–2.05 seconds; all sample CLS values are below 0.1. The
 counter runtime still downloads within these complete Lighthouse navigations
 when the visibility observer triggers; total home script bytes are not reduced.
 The change moves the fetch behind the observer rather than reducing bundle size.
+
+The fresh production and raw-image control runs are now complete; see
+[COMPARISON.md](COMPARISON.md) and [budgets.json](budgets.json). All automated
+release timing/transfer budgets pass. The raw-image project control has a desktop
+LCP regression (3.68 seconds versus 0.63 seconds on Next); this unoptimized
+experimental variant is not a release candidate. The responsive-image release
+candidate resolves it (0.36 seconds). Original lazy loading and different largest
+paint candidates make raw-image framework attribution unsuitable for a blanket
+speed claim.
+
+A production-target build is staged as `dpl_GtvrCfeU4whTETEfRTZqr2JLe7rK` (Node
+24/Astro), with no custom-domain promotion. Its building-to-ready interval was
+49.408 seconds. Both public custom domains were verified by the alias API to
+remain on the original Next deployment after staging. Its smoke, browser
+interactions and article script budgets pass.
+
+Source publication is currently blocked by GitHub OAuth workflow scope. The
+initial push was refused; no source was pushed and no substitute credential was
+used. The migration source is committed locally. The owner must enable workflow
+edits for this GitHub integration before source cutover and production promotion.

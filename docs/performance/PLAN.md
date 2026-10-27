@@ -59,7 +59,8 @@ production comparison on comparable hosting. See [status and evidence](STATUS.md
 
 The protected Vercel candidate now passes the 801-URL audit, browser interactions,
 48 visual comparisons, native image restrictions and a separate real cache/ISR
-rehearsal. Deployed Lighthouse and a fresh production comparison are in progress.
+rehearsal. The 48-run deployed candidate and 48-run fresh production comparison are complete,
+with 16 raw-image control runs; all automated release budgets pass.
 See [status](STATUS.md) for immutable deployment identities and rollback settings.
 Production has not been changed by this workspace.
 

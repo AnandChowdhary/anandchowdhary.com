@@ -1,0 +1,199 @@
+{
+  "startedAt": "2026-10-27T14:29:03.814Z",
+  "base": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app",
+  "counts": {
+    "mobile": 5,
+    "desktop": 3
+  },
+  "routes": [
+    {
+      "id": "projects",
+      "path": "/projects",
+      "purpose": "Project cards and lazy-loaded images"
+    }
+  ],
+  "sourceCommit": "7d3758efad3c7dbefb97329012169a9f73b29350",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "projects",
+      "attempt": 1,
+      "at": "2026-10-27T14:29:04.210Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "headersMs": 383.6571200000001,
+      "totalMs": 389.523539,
+      "decodedBodyBytes": 86188,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue, 27 Oct 2026 14:29:04 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-robots-tag": "noindex",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "pdx1::iad1::gqbd5-1793111344206-48029f4a48e0"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 2,
+      "at": "2026-10-27T14:29:04.645Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "headersMs": 432.621442,
+      "totalMs": 434.650176,
+      "decodedBodyBytes": 86188,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue, 27 Oct 2026 14:29:04 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-robots-tag": "noindex",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "pdx1::iad1::gqbd5-1793111344549-208899ce0ae1"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 3,
+      "at": "2026-10-27T14:29:04.684Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "headersMs": 35.752222000000074,
+      "totalMs": 37.946083000000044,
+      "decodedBodyBytes": 86188,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue, 27 Oct 2026 14:29:04 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-robots-tag": "noindex",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::q9tl9-1793111344984-fcd3b16e2c85"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "skipped": "Protected preview: public field-data service cannot authenticate to this deployment"
+    },
+    {
+      "strategy": "desktop",
+      "skipped": "Protected preview: public field-data service cannot authenticate to this deployment"
+    }
+  ],
+  "runs": [
+    {
+      "id": "projects-mobile-1",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-27T14:29:06.637Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-1",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-27T14:29:17.918Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-2",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-27T14:29:29.499Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-2",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-27T14:29:40.229Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-3",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-27T14:29:51.641Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-3",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-27T14:30:02.191Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-4",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-27T14:30:13.298Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-5",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-27T14:30:23.651Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/projects",
+      "report": "raw/projects-mobile-5.json.gz",
+      "warnings": []
+    }
+  ],
+  "previewAuthenticated": true,
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-27T14:30:32.537Z"
+}
