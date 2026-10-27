@@ -1,0 +1,19 @@
+{
+  "id": "prj_leZHso9Y5SOPbk3WcMWcHz69LQ73",
+  "name": "anandchowdhary-com",
+  "framework": "nextjs",
+  "nodeVersion": "22.x",
+  "rootDirectory": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": null,
+  "serverlessFunctionRegion": "iad1",
+  "ssoProtection": {
+    "deploymentType": "all_except_custom_domains"
+  },
+  "production": {
+    "id": "dpl_Hp4R8Z5uCBdUWdT1bdUPhnZCC14N",
+    "url": "anandchowdhary-aokkhqnob-anand-chowdharys-projects.vercel.app",
+    "createdAt": 1791684365386
+  }
+}

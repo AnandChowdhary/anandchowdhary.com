@@ -1,0 +1,227 @@
+[
+  {
+    "id": "about",
+    "path": "/about",
+    "template": "/about"
+  },
+  {
+    "id": "archive-year",
+    "path": "/archive/2026",
+    "template": "/archive/[year]"
+  },
+  {
+    "id": "archive",
+    "path": "/archive",
+    "template": "/archive"
+  },
+  {
+    "id": "blog-year-slug",
+    "path": "/blog/2026/future-ai-native-work",
+    "template": "/blog/[year]/[slug]"
+  },
+  {
+    "id": "blog-year",
+    "path": "/blog/2026",
+    "template": "/blog/[year]"
+  },
+  {
+    "id": "blog",
+    "path": "/blog",
+    "template": "/blog"
+  },
+  {
+    "id": "books-year-slug",
+    "path": "/books/2025/everything-is-tuberculosis-signed-edition",
+    "template": "/books/[year]/[slug]"
+  },
+  {
+    "id": "books-year",
+    "path": "/books/2025",
+    "template": "/books/[year]"
+  },
+  {
+    "id": "books",
+    "path": "/books",
+    "template": "/books"
+  },
+  {
+    "id": "contact",
+    "path": "/contact",
+    "template": "/contact"
+  },
+  {
+    "id": "events-year-slug",
+    "path": "/events/2026/devworld",
+    "template": "/events/[year]/[slug]"
+  },
+  {
+    "id": "events-year",
+    "path": "/events/2026",
+    "template": "/events/[year]"
+  },
+  {
+    "id": "events",
+    "path": "/events",
+    "template": "/events"
+  },
+  {
+    "id": "life-year-slug",
+    "path": "/life/1997/born-in-new-delhi-india",
+    "template": "/life/[year]/[slug]"
+  },
+  {
+    "id": "life-year",
+    "path": "/life/1997",
+    "template": "/life/[year]"
+  },
+  {
+    "id": "life-food",
+    "path": "/life/food",
+    "template": "/life/food"
+  },
+  {
+    "id": "life",
+    "path": "/life",
+    "template": "/life"
+  },
+  {
+    "id": "location-year-slug",
+    "path": "/location/2014/tokyo-jp",
+    "template": "/location/[year]/[slug]"
+  },
+  {
+    "id": "location-year",
+    "path": "/location/2014",
+    "template": "/location/[year]"
+  },
+  {
+    "id": "location",
+    "path": "/location",
+    "template": "/location"
+  },
+  {
+    "id": "mentoring",
+    "path": "/mentoring",
+    "template": "/mentoring"
+  },
+  {
+    "id": "notes-year-slug",
+    "path": "/notes/2026/chipotlai-max-exposes-interface-leaks",
+    "template": "/notes/[year]/[slug]"
+  },
+  {
+    "id": "notes-year",
+    "path": "/notes/2026",
+    "template": "/notes/[year]"
+  },
+  {
+    "id": "notes",
+    "path": "/notes",
+    "template": "/notes"
+  },
+  {
+    "id": "now",
+    "path": "/now",
+    "template": "/now"
+  },
+  {
+    "id": "open-source-year-slug",
+    "path": "/open-source/2026/codex-usage",
+    "template": "/open-source/[year]/[slug]"
+  },
+  {
+    "id": "open-source-year",
+    "path": "/open-source/2026",
+    "template": "/open-source/[year]"
+  },
+  {
+    "id": "open-source",
+    "path": "/open-source",
+    "template": "/open-source"
+  },
+  {
+    "id": "home",
+    "path": "/",
+    "template": "/"
+  },
+  {
+    "id": "press-year-slug",
+    "path": "/press/2018/het-financieele-dagblad",
+    "template": "/press/[year]/[slug]"
+  },
+  {
+    "id": "press-year",
+    "path": "/press/2018",
+    "template": "/press/[year]"
+  },
+  {
+    "id": "press",
+    "path": "/press",
+    "template": "/press"
+  },
+  {
+    "id": "projects-year-slug",
+    "path": "/projects/2024/firstquadrant-actions",
+    "template": "/projects/[year]/[slug]"
+  },
+  {
+    "id": "projects-year",
+    "path": "/projects/2024",
+    "template": "/projects/[year]"
+  },
+  {
+    "id": "projects",
+    "path": "/projects",
+    "template": "/projects"
+  },
+  {
+    "id": "projects-tags-tag",
+    "path": "/projects/tags/php",
+    "template": "/projects/tags/[tag]"
+  },
+  {
+    "id": "themes-year-slug",
+    "path": "/themes/2026/year-of-discovery",
+    "template": "/themes/[year]/[slug]"
+  },
+  {
+    "id": "themes-year",
+    "path": "/themes/2026",
+    "template": "/themes/[year]"
+  },
+  {
+    "id": "themes",
+    "path": "/themes",
+    "template": "/themes"
+  },
+  {
+    "id": "versions-year-slug",
+    "path": "/versions/2025/anchor",
+    "template": "/versions/[year]/[slug]"
+  },
+  {
+    "id": "versions-year",
+    "path": "/versions/2025",
+    "template": "/versions/[year]"
+  },
+  {
+    "id": "versions",
+    "path": "/versions",
+    "template": "/versions"
+  },
+  {
+    "id": "videos-year-slug",
+    "path": "/videos/2021/anand-chowdhary-on-his-new-startup-typescript-and-other-things",
+    "template": "/videos/[year]/[slug]"
+  },
+  {
+    "id": "videos-year",
+    "path": "/videos/2021",
+    "template": "/videos/[year]"
+  },
+  {
+    "id": "videos",
+    "path": "/videos",
+    "template": "/videos"
+  }
+]

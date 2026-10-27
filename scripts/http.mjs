@@ -2,6 +2,7 @@
 // both scripts run straight from a GitHub Actions runner with `node`.
 
 const TIMEOUT_MS = 20_000;
+import { previewFetch as fetch } from './preview-auth.mjs';
 
 /**
  * A single request, with one retry — a concurrent sweep of a few hundred URLs

@@ -1,0 +1,15 @@
+{
+  "id": "dpl_5VAYQnFnAMhW6zNt4b3gLf1LRjR9",
+  "url": "anandchowdhary-7edgfp9g2-anand-chowdharys-projects.vercel.app",
+  "readyState": "READY",
+  "target": null,
+  "regions": [
+    "iad1"
+  ],
+  "createdAt": 1793107582377,
+  "buildingAt": 1793107584474,
+  "ready": 1793107641669,
+  "framework": "astro",
+  "nodeVersion": "24.x",
+  "sourceDigest": "f4cad4f6c7d45bffb3708437e564719d940cddb168a864f401b9ccd0d60122a1"
+}

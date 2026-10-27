@@ -1,0 +1,58 @@
+---
+import type { Metadata } from '@/lib/metadata';
+import '@/views/globals.css';
+import '@/lib/fonts.css';
+interface Props { metadata: Metadata; pathname: string }
+const { metadata: m, pathname } = Astro.props;
+const og = m.openGraph ? { title: m.title, description: m.description, ...m.openGraph } : undefined;
+const twitter = m.twitter;
+const hasLightbox = pathname.startsWith('/blog/') && pathname.split('/').length === 4;
+const hasCounters = pathname === '/';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{m.title}</title>
+    {m.robots && <meta name="robots" content={m.robots} />}
+    <meta name="description" content={m.description} />
+    {m.authors?.filter(author => author.url).map(author => <link rel="author" href={author.url} />)}
+    {m.authors?.map(author => <meta name="author" content={author.name} />)}
+    {m.creator && <meta name="creator" content={m.creator} />}
+    {m.publisher && <meta name="publisher" content={m.publisher} />}
+    {og?.title && <meta property="og:title" content={og.title} />}
+    {og?.description && <meta property="og:description" content={og.description} />}
+    {og?.type && <meta property="og:type" content={og.type} />}
+    {og?.locale && <meta property="og:locale" content={og.locale} />}
+    {og?.url && <meta property="og:url" content={og.url} />}
+    {og?.siteName && <meta property="og:site_name" content={og.siteName} />}
+    {og?.images?.map(image => <meta property="og:image" content={image.url} />)}
+    {og?.images?.map(image => <meta name="twitter:image" content={image.url} />)}
+    {twitter && Object.entries(twitter).map(([key, value]) => <meta name={`twitter:${key}`} content={value} />)}
+    <link rel="icon" href="/favicon.ico" sizes="32x32" type="image/x-icon" />
+    <link rel="icon" href="/icon.png" type="image/png" sizes="481x481" />
+    <link rel="preload" href="/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2" as="font" type="font/woff2" crossorigin />
+    <script is:inline>
+      if (new URLSearchParams(location.search).get('screenshot') === 'true') document.documentElement.dataset.screenshot = 'true';
+    </script>
+  </head>
+  <body class="antialiased selection:bg-neutral-500/20">
+    <slot />
+    {hasLightbox && <script>import '@/scripts/lightbox';</script>}
+    {hasCounters && <script>import '@/scripts/counter-loader';</script>}
+  </body>
+</html>
+<style is:global>
+  html[data-screenshot='true'] .site-container { padding: 2rem; padding-bottom: 5rem; }
+  html[data-screenshot='true'] .site-container > :not(:last-child) { margin-block-end: 3rem; }
+  html[data-screenshot='true'] .home-main > :not(:last-child) { margin-block-end: 3rem; }
+  html[data-screenshot='true'] .site-container > header { zoom: 0.66; }
+  #image-lightbox::backdrop { background: transparent; }
+  @view-transition { navigation: auto; }
+  header a[href='/'] svg { view-transition-name: signature; }
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*) { animation-duration: 0s !important; }
+  }
+</style>

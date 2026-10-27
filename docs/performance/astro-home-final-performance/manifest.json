@@ -1,0 +1,260 @@
+{
+  "startedAt": "2026-10-26T14:19:24.326Z",
+  "base": "http://localhost:4322",
+  "counts": {
+    "mobile": 5,
+    "desktop": 3
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "purpose": "Homepage: shared shell, timeline and counters"
+    }
+  ],
+  "sourceCommit": "765268ff107ec4ea90f6dffd1b98bf93f5ad8e1c",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "home",
+      "attempt": 1,
+      "at": "2026-10-26T14:19:24.784Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/",
+      "headersMs": 438.42499399999997,
+      "totalMs": 447.6817510000001,
+      "decodedBodyBytes": 63735,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:19:24 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 2,
+      "at": "2026-10-26T14:19:24.887Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/",
+      "headersMs": 101.45837400000005,
+      "totalMs": 103.46668,
+      "decodedBodyBytes": 63735,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:19:24 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 3,
+      "at": "2026-10-26T14:19:24.984Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/",
+      "headersMs": 94.73803700000008,
+      "totalMs": 96.26996099999997,
+      "decodedBodyBytes": 63735,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:19:24 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_unit": "1/d/{project}",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_location": "global",
+              "consumer": "projects/583797351490",
+              "quota_limit_value": "0",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "service": "pagespeedonline.googleapis.com"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "desktop",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "consumer": "projects/583797351490",
+              "quota_location": "global",
+              "quota_limit_value": "0",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "quota_unit": "1/d/{project}",
+              "quota_limit": "defaultPerDayPerProject",
+              "service": "pagespeedonline.googleapis.com"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "home-mobile-1",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:19:26.908Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-1",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:19:35.676Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-2",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:19:44.333Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-2",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:19:52.610Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-3",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:20:01.123Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-3",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:20:09.360Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-4",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:20:17.898Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-5",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:20:26.078Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-5.json.gz",
+      "warnings": []
+    }
+  ],
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-26T14:20:32.763Z"
+}

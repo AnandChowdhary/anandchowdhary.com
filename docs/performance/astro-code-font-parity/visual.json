@@ -1,0 +1,860 @@
+{
+  "startedAt": "2026-10-26T14:25:04.265Z",
+  "base": "http://localhost:4322",
+  "reference": "https://anandchowdhary.com",
+  "browser": "Chrome/156.0.8078.47",
+  "scope": "full page",
+  "pixelThreshold": 20,
+  "results": [
+    {
+      "id": "open-source-year-slug-desktop-light-normal",
+      "route": "/open-source/2026/codex-usage",
+      "device": "desktop",
+      "theme": "light",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/open-source/2026/codex-usage",
+            "https://anandchowdhary.com/_next/static/immutable/media/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/17.png",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0-98hlk8_yzra.css",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3douyljdx_-l2.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0k46l0-jsw7tw.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3skiaz1a45t01.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/02l3x00wu1t6v.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/42cvjo40jrvy6.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/1a9hsb9p74o9f.js",
+            "https://github.com/AnandChowdhary/codex-usage/actions/workflows/ci.yml/badge.svg",
+            "https://pkg.go.dev/badge/github.com/AnandChowdhary/codex-usage.svg",
+            "https://img.shields.io/badge/license-MIT-blue.svg",
+            "https://anandchowdhary.com/9529094bc791c4cd/script.js",
+            "https://anandchowdhary.com/?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/open-source?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/open-source/2026?_rsc=yhDGt38pSd1zziUt",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://pbs.twimg.com/profile_images/1711185897415180288/lgwajQTW_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_400x400.png",
+            "https://pbs.twimg.com/profile_images/1963012341110538240/UWT1Nr81_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1618839278561398784/2kXt0tLH_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1306571874000830464/AZtkNMd-_400x400.png",
+            "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/731046562848071680/1bYZ7dkg_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1791535094122831872/eLwYJH7r_400x400.jpg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/?_rsc=buYtcY22otQJ75Zc",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/60.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/85.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/75.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/96.png",
+            "https://anandchowdhary.com/open-source/2026?_rsc=Y2f9trVLNx28Kub3",
+            "https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9",
+            "https://repository-images.githubusercontent.com/130227442/34995600-2f43-11ea-9dcd-8ffac16b392a",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/8.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/5.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/13.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/64.png",
+            "https://repository-images.githubusercontent.com/682574392/3130d028-0a0d-49c0-9158-89ea366d38ff",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/37.png",
+            "https://repository-images.githubusercontent.com/573333314/73be3851-2097-430e-bb2b-d4b85243b53e",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/48.png",
+            "https://repository-images.githubusercontent.com/492267193/82b137e2-78a6-4ea5-94cf-772bfc9ee1c4",
+            "https://repository-images.githubusercontent.com/465367050/848de093-5b6a-4c77-be9b-fe3ce0ab2827",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/25.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/23.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/97.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/6.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/81.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/78.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/100.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/26.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/38.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/91.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/79.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/40.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/49.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/52.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/65.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/86.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/29.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/34.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/89.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/51.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/84.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/21.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/99.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/19.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/59.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/45.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/76.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/77.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/20.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/43.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/3.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/57.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/12.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/54.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/56.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/50.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/69.png",
+            "https://anandchowdhary.com/open-source?_rsc=gx82wXcH8JuI6mOP",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/236-4ygfep9ua.js",
+            "https://anandchowdhary.com/favicon.ico?favicon.3yqwie9hjfz91.ico",
+            "https://anandchowdhary.com/open-source/2026/word-clock?_rsc=ALviktUfJmPGOVM3",
+            "https://anandchowdhary.com/about?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/archive?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/life?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/blog?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/notes?_rsc=yhDGt38pSd1zziUt",
+            "https://github-contributions-api.deno.dev/AnandChowdhary.svg",
+            "https://i.scdn.co/image/ab6761610000f178165be07847d7744f9ee9a3bc",
+            "https://i.scdn.co/image/ab6761610000f17818e3675ebfda9c29cfb2b57e",
+            "https://i.scdn.co/image/ab6761610000f178912df0c93a5dc290d3c8816e",
+            "https://i.scdn.co/image/ab6761610000f17878e45cfa4697ce3c437cb455",
+            "https://i.scdn.co/image/ab6761610000f178b14eb4dcfd2f3858bed06e44",
+            "https://anandchowdhary.com/events?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/projects?_rsc=yhDGt38pSd1zziUt",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/44.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/94.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/41.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/2.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/1.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/10.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/32.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/4.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/88.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/67.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/24.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/11.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/42.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/16.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/66.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/92.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/68.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/93.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/39.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/7.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/71.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/33.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/80.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/95.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/83.png",
+            "https://anandchowdhary.com/mentoring?_rsc=yhDGt38pSd1zziUt",
+            "https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/4.8860407,52.3411938,14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/18.png",
+            "https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/6.8956591,52.2170213,14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ",
+            "https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/-84.3927116,33.7603155,14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/53.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/30.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/70.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/14.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/15.png",
+            "https://anandchowdhary.com/press?_rsc=yhDGt38pSd1zziUt",
+            "https://manifest.im/icon/stars.github.com",
+            "https://manifest.im/icon/rexideas.com",
+            "https://manifest.im/icon/thenextweb.com",
+            "https://manifest.im/icon/yourstory.com",
+            "https://manifest.im/icon/forbes.com",
+            "https://manifest.im/icon/fd.nl",
+            "https://manifest.im/icon/techcrunch.com",
+            "https://manifest.im/icon/github.blog",
+            "https://manifest.im/icon/startupcityindia.com",
+            "https://manifest.im/icon/youtube.com",
+            "https://manifest.im/icon/open.spotify.com",
+            "https://manifest.im/icon/browserstack.com",
+            "https://manifest.im/icon/rtvoost.nl",
+            "https://manifest.im/icon/facebook.com",
+            "https://manifest.im/icon/utoday.nl",
+            "https://manifest.im/icon/tubantia.nl",
+            "https://manifest.im/icon/paper.hindustantimes.com",
+            "https://manifest.im/icon/paisawapas.com",
+            "https://manifest.im/icon/bwdisrupt.businessworld.in",
+            "https://manifest.im/icon/bizztor.com",
+            "https://manifest.im/icon/scoopwhoop.com",
+            "https://manifest.im/icon/huffingtonpost.in",
+            "https://manifest.im/icon/web.archive.org",
+            "https://manifest.im/icon/thebetterindia.com",
+            "https://manifest.im/icon/indianceo.in",
+            "https://manifest.im/icon/inshorts.com",
+            "https://manifest.im/icon/homegrown.co.in",
+            "https://manifest.im/icon/parentherald.com",
+            "https://manifest.im/icon/hindustantimes.com",
+            "https://manifest.im/icon/indianstartupshow.com",
+            "https://manifest.im/icon/overcast.fm",
+            "https://anandchowdhary.com/videos?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/themes?_rsc=yhDGt38pSd1zziUt",
+            "https://img.youtube.com/vi/O-bVJoWULBE/maxresdefault.jpg",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/going-to-school.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/rtvoost.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/aristotle.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/ut-india.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/bharathacks.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/startup-india-rocks.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/28.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/55.png"
+          ],
+          "file": "raw/open-source-year-slug-desktop-light-normal-reference.png",
+          "title": "Codex Usage / 2026 / Open Source / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Codex Usage / 2026 / Open Source / Anand Chowdhary"
+            ],
+            "og:description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": {
+            "x": 304,
+            "y": 293.609375,
+            "width": 672,
+            "height": 1698,
+            "top": 293.609375,
+            "right": 976,
+            "bottom": 1991.609375,
+            "left": 304
+          },
+          "footer": {
+            "x": 304,
+            "y": 1927.609375,
+            "width": 672,
+            "height": 64,
+            "top": 1927.609375,
+            "right": 976,
+            "bottom": 1991.609375,
+            "left": 304
+          },
+          "bodyHeight": 2606,
+          "scripts": [
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0k46l0-jsw7tw.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3skiaz1a45t01.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/02l3x00wu1t6v.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/42cvjo40jrvy6.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/1a9hsb9p74o9f.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+            "https://anandchowdhary.com/9529094bc791c4cd/script.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/236-4ygfep9ua.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3douyljdx_-l2.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/open-source/2026/codex-usage",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/not-found.DBBg3Dxr.css",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/17.png",
+            "https://github.com/AnandChowdhary/codex-usage/actions/workflows/ci.yml/badge.svg",
+            "https://pkg.go.dev/badge/github.com/AnandChowdhary/codex-usage.svg",
+            "https://img.shields.io/badge/license-MIT-blue.svg",
+            "http://localhost:4322/_vercel/insights/script.js",
+            "http://localhost:4322/favicon.ico"
+          ],
+          "file": "raw/open-source-year-slug-desktop-light-normal-candidate.png",
+          "title": "Codex Usage / 2026 / Open Source / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Codex Usage / 2026 / Open Source / Anand Chowdhary"
+            ],
+            "og:description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": {
+            "x": 304,
+            "y": 293.609375,
+            "width": 672,
+            "height": 1698,
+            "top": 293.609375,
+            "right": 976,
+            "bottom": 1991.609375,
+            "left": 304
+          },
+          "footer": {
+            "x": 304,
+            "y": 1927.609375,
+            "width": 672,
+            "height": 64,
+            "top": 1927.609375,
+            "right": 976,
+            "bottom": 1991.609375,
+            "left": 304
+          },
+          "bodyHeight": 2606,
+          "scripts": [
+            "http://localhost:4322/_vercel/insights/script.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open-source-year-slug-mobile-light-normal",
+      "route": "/open-source/2026/codex-usage",
+      "device": "mobile",
+      "theme": "light",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.0002860657379065709,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 304,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/open-source/2026/codex-usage",
+            "https://anandchowdhary.com/_next/static/immutable/media/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/17.png",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0-98hlk8_yzra.css",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3douyljdx_-l2.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0k46l0-jsw7tw.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3skiaz1a45t01.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/02l3x00wu1t6v.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/42cvjo40jrvy6.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/1a9hsb9p74o9f.js",
+            "https://github.com/AnandChowdhary/codex-usage/actions/workflows/ci.yml/badge.svg",
+            "https://pkg.go.dev/badge/github.com/AnandChowdhary/codex-usage.svg",
+            "https://img.shields.io/badge/license-MIT-blue.svg",
+            "https://anandchowdhary.com/9529094bc791c4cd/script.js",
+            "https://anandchowdhary.com/?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/open-source?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/open-source/2026?_rsc=yhDGt38pSd1zziUt",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://pbs.twimg.com/profile_images/1711185897415180288/lgwajQTW_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_400x400.png",
+            "https://pbs.twimg.com/profile_images/1963012341110538240/UWT1Nr81_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1618839278561398784/2kXt0tLH_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1306571874000830464/AZtkNMd-_400x400.png",
+            "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/731046562848071680/1bYZ7dkg_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1791535094122831872/eLwYJH7r_400x400.jpg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/?_rsc=buYtcY22otQJ75Zc",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/236-4ygfep9ua.js",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/60.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/85.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/75.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/96.png",
+            "https://anandchowdhary.com/open-source/2026?_rsc=Y2f9trVLNx28Kub3",
+            "https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9",
+            "https://repository-images.githubusercontent.com/130227442/34995600-2f43-11ea-9dcd-8ffac16b392a",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/8.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/5.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/13.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/64.png",
+            "https://repository-images.githubusercontent.com/682574392/3130d028-0a0d-49c0-9158-89ea366d38ff",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/37.png",
+            "https://repository-images.githubusercontent.com/573333314/73be3851-2097-430e-bb2b-d4b85243b53e",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/48.png",
+            "https://repository-images.githubusercontent.com/492267193/82b137e2-78a6-4ea5-94cf-772bfc9ee1c4",
+            "https://repository-images.githubusercontent.com/465367050/848de093-5b6a-4c77-be9b-fe3ce0ab2827",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/25.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/23.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/97.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/6.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/81.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/78.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/100.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/26.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/38.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/91.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/79.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/40.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/49.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/52.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/65.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/86.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/29.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/34.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/89.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/51.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/84.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/21.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/99.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/19.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/59.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/45.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/76.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/77.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/20.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/43.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/3.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/57.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/12.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/54.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/56.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/50.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/69.png",
+            "https://anandchowdhary.com/open-source?_rsc=gx82wXcH8JuI6mOP",
+            "https://anandchowdhary.com/about?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/archive?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/life?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/blog?_rsc=yhDGt38pSd1zziUt",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/44.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/94.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/41.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/2.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/1.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/10.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/32.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/4.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/88.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/67.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/24.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/11.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/42.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/16.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/66.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/92.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/68.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/93.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/39.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/7.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/71.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/33.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/80.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/95.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/83.png",
+            "https://anandchowdhary.com/notes?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/events?_rsc=yhDGt38pSd1zziUt",
+            "https://github-contributions-api.deno.dev/AnandChowdhary.svg",
+            "https://i.scdn.co/image/ab6761610000f178165be07847d7744f9ee9a3bc",
+            "https://i.scdn.co/image/ab6761610000f17818e3675ebfda9c29cfb2b57e",
+            "https://i.scdn.co/image/ab6761610000f178912df0c93a5dc290d3c8816e",
+            "https://i.scdn.co/image/ab6761610000f17878e45cfa4697ce3c437cb455",
+            "https://i.scdn.co/image/ab6761610000f178b14eb4dcfd2f3858bed06e44",
+            "https://anandchowdhary.com/projects?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/mentoring?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/press?_rsc=yhDGt38pSd1zziUt",
+            "https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/4.8860407,52.3411938,14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/18.png",
+            "https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/6.8956591,52.2170213,14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ",
+            "https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/-84.3927116,33.7603155,14/576x288?access_token=pk.eyJ1IjoiYW5hbmRjaG93ZGhhcnkiLCJhIjoiY2w5MWpxbXZ2MDdpMzN2bW92ZnRzZ2Q4bSJ9.WMWxq61EUjQfWtntvGGNKQ",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/53.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/30.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/70.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/14.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/15.png",
+            "https://anandchowdhary.com/videos?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/themes?_rsc=yhDGt38pSd1zziUt",
+            "https://manifest.im/icon/stars.github.com",
+            "https://manifest.im/icon/rexideas.com",
+            "https://manifest.im/icon/thenextweb.com",
+            "https://manifest.im/icon/yourstory.com",
+            "https://manifest.im/icon/forbes.com",
+            "https://manifest.im/icon/fd.nl",
+            "https://manifest.im/icon/techcrunch.com",
+            "https://manifest.im/icon/github.blog",
+            "https://manifest.im/icon/startupcityindia.com",
+            "https://manifest.im/icon/youtube.com",
+            "https://manifest.im/icon/open.spotify.com",
+            "https://manifest.im/icon/browserstack.com",
+            "https://manifest.im/icon/rtvoost.nl",
+            "https://manifest.im/icon/facebook.com",
+            "https://manifest.im/icon/utoday.nl",
+            "https://manifest.im/icon/tubantia.nl",
+            "https://manifest.im/icon/paper.hindustantimes.com",
+            "https://manifest.im/icon/paisawapas.com",
+            "https://manifest.im/icon/bwdisrupt.businessworld.in",
+            "https://manifest.im/icon/bizztor.com",
+            "https://manifest.im/icon/scoopwhoop.com",
+            "https://manifest.im/icon/huffingtonpost.in",
+            "https://manifest.im/icon/web.archive.org",
+            "https://manifest.im/icon/thebetterindia.com",
+            "https://manifest.im/icon/indianceo.in",
+            "https://manifest.im/icon/inshorts.com",
+            "https://manifest.im/icon/homegrown.co.in",
+            "https://manifest.im/icon/parentherald.com",
+            "https://manifest.im/icon/hindustantimes.com",
+            "https://manifest.im/icon/indianstartupshow.com",
+            "https://manifest.im/icon/overcast.fm",
+            "https://anandchowdhary.com/versions?_rsc=yhDGt38pSd1zziUt",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/anchor/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/alameda/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/amsterdam/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/abacus/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/access/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/assembly/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/altitude/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/airbrush/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/asterisk/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/arise/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/academia/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/artistic/home.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/atom/home.png",
+            "https://anandchowdhary.com/contact?_rsc=yhDGt38pSd1zziUt",
+            "https://anandchowdhary.com/archive/2007?_rsc=yhDGt38pSd1zziUt",
+            "https://img.youtube.com/vi/O-bVJoWULBE/maxresdefault.jpg",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/going-to-school.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/rtvoost.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/aristotle.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/ut-india.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/bharathacks.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/videos/startup-india-rocks.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/28.png",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/55.png"
+          ],
+          "file": "raw/open-source-year-slug-mobile-light-normal-reference.png",
+          "title": "Codex Usage / 2026 / Open Source / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Codex Usage / 2026 / Open Source / Anand Chowdhary"
+            ],
+            "og:description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 62.75,
+            "top": 32,
+            "right": 358,
+            "bottom": 94.75,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 222.75,
+            "width": 326,
+            "height": 1755.328125,
+            "top": 222.75,
+            "right": 358,
+            "bottom": 1978.078125,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 1898.078125,
+            "width": 326,
+            "height": 80,
+            "top": 1898.078125,
+            "right": 358,
+            "bottom": 1978.078125,
+            "left": 32
+          },
+          "bodyHeight": 2689,
+          "scripts": [
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0k46l0-jsw7tw.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3skiaz1a45t01.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/02l3x00wu1t6v.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/turbopack-1cvbnb3nlabgn.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/42cvjo40jrvy6.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/1a9hsb9p74o9f.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/0c0hxoamwjsbw.js",
+            "https://anandchowdhary.com/9529094bc791c4cd/script.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/236-4ygfep9ua.js",
+            "https://anandchowdhary.com/_next/static/immutable/chunks/3douyljdx_-l2.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/open-source/2026/codex-usage",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/not-found.DBBg3Dxr.css",
+            "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/17.png",
+            "https://github.com/AnandChowdhary/codex-usage/actions/workflows/ci.yml/badge.svg",
+            "https://pkg.go.dev/badge/github.com/AnandChowdhary/codex-usage.svg",
+            "https://img.shields.io/badge/license-MIT-blue.svg",
+            "http://localhost:4322/_vercel/insights/script.js"
+          ],
+          "file": "raw/open-source-year-slug-mobile-light-normal-candidate.png",
+          "title": "Codex Usage / 2026 / Open Source / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Codex Usage / 2026 / Open Source / Anand Chowdhary"
+            ],
+            "og:description": [
+              "See how much Codex and Claude Code usage is left across all your accounts, and switch to the one with the most left"
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fopen-source%2F2026%2Fcodex-usage%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 62.75,
+            "top": 32,
+            "right": 358,
+            "bottom": 94.75,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 222.75,
+            "width": 326,
+            "height": 1755.328125,
+            "top": 222.75,
+            "right": 358,
+            "bottom": 1978.078125,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 1898.078125,
+            "width": 326,
+            "height": 80,
+            "top": 1898.078125,
+            "right": 358,
+            "bottom": 1978.078125,
+            "left": 32
+          },
+          "bodyHeight": 2689,
+          "scripts": [
+            "http://localhost:4322/_vercel/insights/script.js"
+          ]
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-26T14:25:16.189Z"
+}

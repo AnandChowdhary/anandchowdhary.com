@@ -1,0 +1,341 @@
+{
+  "sourceCommit": "82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686",
+  "files": [
+    {
+      "path": "/images/blog/Screen_Shot_2018-07-28_at_11.27.45_PM.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/Screen_Shot_2018-07-28_at_11.27.45_PM.png",
+      "gitBlobSha1": "dcd8230fa2520694daa38cbfe9f9af3563b03973",
+      "bytes": 77138
+    },
+    {
+      "path": "/images/blog/google-play-badges/badge-proposal.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/google-play-badges/badge-proposal.png",
+      "gitBlobSha1": "e5f942d39821b476c8a53a41b5cab332040b22c9",
+      "bytes": 55655
+    },
+    {
+      "path": "/images/blog/google-play-badges/official-badges.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/google-play-badges/official-badges.png",
+      "gitBlobSha1": "61fe7cb4add3f0e3f10f481385527a88e39952c6",
+      "bytes": 25647
+    },
+    {
+      "path": "/images/blog/md5-pr_wav36p.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/md5-pr_wav36p.png",
+      "gitBlobSha1": "507fde631b590fcf27f2f94b418d28a602e1c1c9",
+      "bytes": 80068
+    },
+    {
+      "path": "/images/blog/quarter-of-open-source/2015.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/quarter-of-open-source/2015.png",
+      "gitBlobSha1": "4e7271ae9efef3645270633f5c21dfb72ba28450",
+      "bytes": 15907
+    },
+    {
+      "path": "/images/blog/quarter-of-open-source/2016.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/quarter-of-open-source/2016.png",
+      "gitBlobSha1": "0c7178f45f9e7dadb1dc95a163175c241177ba0e",
+      "bytes": 17631
+    },
+    {
+      "path": "/images/blog/quarter-of-open-source/2017.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/quarter-of-open-source/2017.png",
+      "gitBlobSha1": "ab6f96f132eb4b9808a89ba37b1c58e70e246bf0",
+      "bytes": 17458
+    },
+    {
+      "path": "/images/blog/quarter-of-open-source/2018.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/quarter-of-open-source/2018.png",
+      "gitBlobSha1": "329c63d0bb5eabc753b95e933486174be44604d1",
+      "bytes": 18562
+    },
+    {
+      "path": "/images/blog/quarter-of-open-source/2019.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/quarter-of-open-source/2019.png",
+      "gitBlobSha1": "aa30dc12e49a89dee67d8d57d74994d3fbaa7cef",
+      "bytes": 18407
+    },
+    {
+      "path": "/images/blog/quarter-of-open-source/contributions.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/quarter-of-open-source/contributions.png",
+      "gitBlobSha1": "5a9dd9df5740672e455a173d18a5c9bb9be38022",
+      "bytes": 73433
+    },
+    {
+      "path": "/images/blog/secure-endpoints_ddwwmr.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/secure-endpoints_ddwwmr.png",
+      "gitBlobSha1": "b01541019b2e4e64647a47717c6946b277cf7224",
+      "bytes": 154060
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/1password.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/1password.png",
+      "gitBlobSha1": "011353d562c76da89aa65f3fab6d2d3a0bd8fdf2",
+      "bytes": 28321
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/airmail.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/airmail.png",
+      "gitBlobSha1": "9acc685f0200b6d79217d8eb5a263f9ed8ee0077",
+      "bytes": 40815
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/arduino.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/arduino.png",
+      "gitBlobSha1": "e707395fe51c3cb3e821f70d6c6191c54eb49779",
+      "bytes": 8894
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/franz.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/franz.png",
+      "gitBlobSha1": "e967e9b110c7b2c6700466688b660f7733c05f3b",
+      "bytes": 17113
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/google-chrome.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/google-chrome.png",
+      "gitBlobSha1": "cbdaf353c169be63933b559113c0ab959b4f1c0d",
+      "bytes": 31782
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/iterm.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/iterm.png",
+      "gitBlobSha1": "59ad75a6c2125f3933f0c7bfddf898fcd22a3d37",
+      "bytes": 10014
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/navicat.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/navicat.png",
+      "gitBlobSha1": "fce0f0e14c4db88e1718b18cd4685e06c57c314d",
+      "bytes": 42992
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/photoshop.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/photoshop.png",
+      "gitBlobSha1": "888d7b1bd36347ce56436d833fe2fac7079f44a0",
+      "bytes": 11914
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/postman.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/postman.png",
+      "gitBlobSha1": "455d7bbad870f2b3263a8ea8042d69740931eca8",
+      "bytes": 34208
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/sketch.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/sketch.png",
+      "gitBlobSha1": "2e870a82a45d2646b09d5229b67665b3fe81fddf",
+      "bytes": 13803
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/spotify.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/spotify.png",
+      "gitBlobSha1": "801baf3799591fbd2ee97284eb2b32242243d5f8",
+      "bytes": 28161
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/termius.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/termius.png",
+      "gitBlobSha1": "fdc6bf81ae997cd2153251e01d6f4d9a83d6b668",
+      "bytes": 27509
+    },
+    {
+      "path": "/images/blog/state-of-the/dock/vs-code.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/dock/vs-code.png",
+      "gitBlobSha1": "e1138b5071189e3517099c24b5e2c64b0220e121",
+      "bytes": 34604
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/2019-0.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/2019-0.png",
+      "gitBlobSha1": "352b7217501cac5a750ce945e9fe03d6e5df8272",
+      "bytes": 244667
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/2019-1.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/2019-1.png",
+      "gitBlobSha1": "ac209b5446cbe5d7957a6a0662810bfa9c512f25",
+      "bytes": 192203
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/2019-2.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/2019-2.png",
+      "gitBlobSha1": "9d2fd833dbaeb85ced940ec1369f6c6de5bc81d7",
+      "bytes": 23270
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/99-invisible_pd4gdg.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/99-invisible_pd4gdg.png",
+      "gitBlobSha1": "d8b7ae457a28d63f27873ec92613a2d06f549c9e",
+      "bytes": 33310
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/a16z.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/a16z.png",
+      "gitBlobSha1": "b3e288c1b7dbc5475b6a5bc1d56035b981998b1d",
+      "bytes": 42701
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/build-your-saas_n90oca.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/build-your-saas_n90oca.png",
+      "gitBlobSha1": "592dc4b5733f0712ce4e18844a5593e414739276",
+      "bytes": 26346
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/character-count.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/character-count.png",
+      "gitBlobSha1": "76dda38d30b5112872dd4346b022bca098ca33b7",
+      "bytes": 42245
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/clockwise.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/clockwise.png",
+      "gitBlobSha1": "378760df7a67b8d59ab857cf982cf1d44fa26eba",
+      "bytes": 31268
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/codeish.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/codeish.png",
+      "gitBlobSha1": "1aae85246aa54e3af4b64af11129684513edfa53",
+      "bytes": 14943
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/connected.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/connected.png",
+      "gitBlobSha1": "f00ab200fc1dc53b8d2b2644cf27a836fe48ed92",
+      "bytes": 16901
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/cortex_fv6crb.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/cortex_fv6crb.png",
+      "gitBlobSha1": "47a3bb3a21d3966ac65d8228aced1ebe499b391c",
+      "bytes": 85601
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/embedded_c7m41c.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/embedded_c7m41c.png",
+      "gitBlobSha1": "c8a0bc8260b68d523b84ebc633ea47d2a7431b7f",
+      "bytes": 21057
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/heavyweight.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/heavyweight.png",
+      "gitBlobSha1": "9b36fa11c2eb5b7549c316fa2a0243decfae457e",
+      "bytes": 30763
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/hello-internet_a98ikc.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/hello-internet_a98ikc.png",
+      "gitBlobSha1": "79818dced3b0a3325fa8ae8ebdc4c9e059a603e2",
+      "bytes": 828
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/how-i-built-this_juo5co.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/how-i-built-this_juo5co.png",
+      "gitBlobSha1": "09448cc11b5a1917b64bf4df5eb0dc7f18d86e91",
+      "bytes": 15714
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/http-203.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/http-203.png",
+      "gitBlobSha1": "f93abfd5fa4b14cf620735f2e8c54c20238051a1",
+      "bytes": 52029
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/in-depth_cvhyxy.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/in-depth_cvhyxy.png",
+      "gitBlobSha1": "92ad27441a98e3aeea4bc7ab7c97bf84b33ab6bc",
+      "bytes": 45992
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/instant-message.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/instant-message.png",
+      "gitBlobSha1": "59f7cd48829ef18e7ec2356fcf7510a771267ee7",
+      "bytes": 27360
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/newslaundry-hafta_smvs1f.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/newslaundry-hafta_smvs1f.png",
+      "gitBlobSha1": "6bc5dd3eec9ae46270d20f3fd9f384788cbf9ff3",
+      "bytes": 26079
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/numberphile.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/numberphile.png",
+      "gitBlobSha1": "883a1675fe6f6748374e936945faea2cdc88eba6",
+      "bytes": 62931
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/relatively-prime_ada4tg.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/relatively-prime_ada4tg.png",
+      "gitBlobSha1": "b8818d9a2906144a37fe9144c94215ddf7a1163a",
+      "bytes": 18251
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/startup_hgrdxc.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/startup_hgrdxc.png",
+      "gitBlobSha1": "2ac6aadeff250cff9653389415559edcd3e74dcb",
+      "bytes": 22713
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/talkscript.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/talkscript.png",
+      "gitBlobSha1": "a4c1862158a151471c518d3dad56222b415ad82a",
+      "bytes": 17550
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/ted-radio-hour_kwaymj.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/ted-radio-hour_kwaymj.png",
+      "gitBlobSha1": "b3e2b850fb99063cda58db068b0131c99cd13eb9",
+      "bytes": 28945
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/the-daily_j51cfm.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/the-daily_j51cfm.png",
+      "gitBlobSha1": "6628fbebfb42e644d9ba82d13cb2ec90db6e209a",
+      "bytes": 36456
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/the-freecodecamp-podcast_m1bi3p.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/the-freecodecamp-podcast_m1bi3p.png",
+      "gitBlobSha1": "5f2aaf03379850b134f61d70f97c98a7fea8f96b",
+      "bytes": 35012
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/the-unmade-podcast_faatpk.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/the-unmade-podcast_faatpk.png",
+      "gitBlobSha1": "a2d817e364f4d2f2242b278ac0d1a20371446cd2",
+      "bytes": 23299
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/travel-genius.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/travel-genius.png",
+      "gitBlobSha1": "d29cf41d4f949d3feee37cc8ad17eff7b3c776eb",
+      "bytes": 20895
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/unbox.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/unbox.png",
+      "gitBlobSha1": "2980628987b32f9e6bc94a78116ea7817438ce57",
+      "bytes": 18393
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/where-should-we-begin_crlryb.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/where-should-we-begin_crlryb.png",
+      "gitBlobSha1": "e629582f464c8459828dd52e29f431a5a1448d73",
+      "bytes": 127978
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/without-fail.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/without-fail.png",
+      "gitBlobSha1": "ac8c61a34618fe1b3eeb444e89979836d6c3bd7e",
+      "bytes": 58474
+    },
+    {
+      "path": "/images/blog/state-of-the/podcasts/works-for-me.png",
+      "source": "https://raw.githubusercontent.com/AnandChowdhary/anandchowdhary.com/82c8a7a9cd1fd2ff9f0a4bed9e08bc3574c18686/static/images/blog/state-of-the/podcasts/works-for-me.png",
+      "gitBlobSha1": "fe130319d7fe28bfd51cb7c8bbf4834e2d499a5b",
+      "bytes": 9735
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "dpl_GtvrCfeU4whTETEfRTZqr2JLe7rK",
+  "url": "anandchowdhary-n0t8ntr8i-anand-chowdharys-projects.vercel.app",
+  "target": "production",
+  "status": "READY",
+  "framework": "astro",
+  "node": "24.x",
+  "alias": [
+    "anandchowdhary-com-anand-chowdharys-projects.vercel.app"
+  ],
+  "buildDurationMs": 49408
+}

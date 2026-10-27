@@ -1,0 +1,22 @@
+[
+  {
+    "route": "/blog/2026/future-ai-native-work",
+    "status": 200,
+    "externalScripts": [],
+    "inlineScriptCount": 3,
+    "inlineGzipBytes": 1570,
+    "containsApplicationReact": false,
+    "containsNextApp": false,
+    "passed": true
+  },
+  {
+    "route": "/blog/2019/state-of-the-podcasts-2019",
+    "status": 200,
+    "externalScripts": [],
+    "inlineScriptCount": 3,
+    "inlineGzipBytes": 1570,
+    "containsApplicationReact": false,
+    "containsNextApp": false,
+    "passed": true
+  }
+]

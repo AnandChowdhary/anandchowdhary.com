@@ -1,0 +1,1171 @@
+{
+  "startedAt": "2026-10-26T12:10:27.931Z",
+  "base": "https://anandchowdhary.com",
+  "counts": {
+    "mobile": 5,
+    "desktop": 3
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "purpose": "Homepage: shared shell, timeline and counters"
+    },
+    {
+      "id": "blog",
+      "path": "/blog",
+      "purpose": "Blog index: image-rich listing"
+    },
+    {
+      "id": "article-text",
+      "path": "/blog/2026/future-ai-native-work",
+      "purpose": "Text-heavy article: one hero image"
+    },
+    {
+      "id": "article-images",
+      "path": "/blog/2019/state-of-the-podcasts-2019",
+      "purpose": "Image-heavy article: 18 image elements at selection time"
+    },
+    {
+      "id": "projects",
+      "path": "/projects",
+      "purpose": "Project cards and lazy-loaded images"
+    },
+    {
+      "id": "life",
+      "path": "/life",
+      "purpose": "Data-rich dashboard"
+    }
+  ],
+  "sourceCommit": "765268ff107ec4ea90f6dffd1b98bf93f5ad8e1c",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "home",
+      "attempt": 1,
+      "at": "2026-10-26T12:10:28.050Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 100.51203199999998,
+      "totalMs": 108.69232099999999,
+      "decodedBodyBytes": 141574,
+      "headers": {
+        "age": "2002",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 26 Oct 2026 11:37:05 GMT",
+        "etag": "W/\"8w2wa6pbt9315e\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::qktf5-1793016628363-b6912487da8b"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 2,
+      "at": "2026-10-26T12:10:28.081Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 28.341813000000002,
+      "totalMs": 30.525619000000006,
+      "decodedBodyBytes": 141574,
+      "headers": {
+        "age": "2003",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 26 Oct 2026 11:37:05 GMT",
+        "etag": "W/\"8w2wa6pbt9315e\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::qktf5-1793016628414-e636f93104ed"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 3,
+      "at": "2026-10-26T12:10:28.101Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 18.064593999999943,
+      "totalMs": 19.867582999999968,
+      "decodedBodyBytes": 141574,
+      "headers": {
+        "age": "2003",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 26 Oct 2026 11:37:05 GMT",
+        "etag": "W/\"8w2wa6pbt9315e\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::qktf5-1793016628444-6a812b31cd06"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 1,
+      "at": "2026-10-26T12:10:28.125Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog",
+      "headersMs": 22.600704000000064,
+      "totalMs": 24.183313999999996,
+      "decodedBodyBytes": 168379,
+      "headers": {
+        "age": "1091",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 00:00:59 GMT",
+        "etag": "W/\"10mv7abutkz3lvv\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::bqxxx-1793016628464-06f8d8ea2ff3"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 2,
+      "at": "2026-10-26T12:10:28.156Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog",
+      "headersMs": 29.430511000000024,
+      "totalMs": 31.167405000000144,
+      "decodedBodyBytes": 168379,
+      "headers": {
+        "age": "1091",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 00:00:59 GMT",
+        "etag": "W/\"10mv7abutkz3lvv\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::qktf5-1793016628489-e788272c8695"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 3,
+      "at": "2026-10-26T12:10:28.182Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog",
+      "headersMs": 23.714249999999993,
+      "totalMs": 25.449382000000014,
+      "decodedBodyBytes": 168379,
+      "headers": {
+        "age": "1091",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 00:00:59 GMT",
+        "etag": "W/\"10mv7abutkz3lvv\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::8czk2-1793016628519-9c79ca37c938"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 1,
+      "at": "2026-10-26T12:10:28.204Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "headersMs": 20.837095999999974,
+      "totalMs": 22.11308400000007,
+      "decodedBodyBytes": 87470,
+      "headers": {
+        "age": "44",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 15:58:04 GMT",
+        "etag": "W/\"1599dh228j71vhe\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog/2026/future-ai-native-work",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::8czk2-1793016628545-6b731a4902da"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 2,
+      "at": "2026-10-26T12:10:28.229Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "headersMs": 23.181638999999905,
+      "totalMs": 24.65920499999993,
+      "decodedBodyBytes": 87470,
+      "headers": {
+        "age": "44",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 15:58:04 GMT",
+        "etag": "W/\"1599dh228j71vhe\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog/2026/future-ai-native-work",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::ss4k5-1793016628567-b4537d93b0fd"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 3,
+      "at": "2026-10-26T12:10:28.271Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "headersMs": 40.75317599999994,
+      "totalMs": 42.62090999999987,
+      "decodedBodyBytes": 87470,
+      "headers": {
+        "age": "44",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 15:58:04 GMT",
+        "etag": "W/\"1599dh228j71vhe\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog/2026/future-ai-native-work",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::pdvwq-1793016628609-28c01181cb3c"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 1,
+      "at": "2026-10-26T12:10:28.434Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "headersMs": 161.47684700000013,
+      "totalMs": 162.7509560000001,
+      "decodedBodyBytes": 72612,
+      "headers": {
+        "age": "129",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 17:01:24 GMT",
+        "etag": "W/\"9yo2yj613a1k08\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog/2019/state-of-the-podcasts-2019",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "STALE",
+        "x-vercel-id": "pdx1::iad1::pdvwq-1793016628636-a4d19cf92802"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 2,
+      "at": "2026-10-26T12:10:28.465Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "headersMs": 29.834588000000167,
+      "totalMs": 30.84088399999996,
+      "decodedBodyBytes": 72612,
+      "headers": {
+        "age": "129",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 17:01:24 GMT",
+        "etag": "W/\"9yo2yj613a1k08\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog/2019/state-of-the-podcasts-2019",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::v9v7x-1793016628797-e576883ccd09"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 3,
+      "at": "2026-10-26T12:10:28.501Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "headersMs": 34.85594200000014,
+      "totalMs": 35.903223000000025,
+      "decodedBodyBytes": 72612,
+      "headers": {
+        "age": "129",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 17:01:24 GMT",
+        "etag": "W/\"9yo2yj613a1k08\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/blog/2019/state-of-the-podcasts-2019",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::v9v7x-1793016628828-2743e126b189"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 1,
+      "at": "2026-10-26T12:10:28.538Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/projects",
+      "headersMs": 35.44941800000015,
+      "totalMs": 37.08059800000001,
+      "decodedBodyBytes": 198732,
+      "headers": {
+        "age": "3350",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 11 Oct 2026 04:14:27 GMT",
+        "etag": "W/\"11anamm6i0t49c8\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/projects",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::v9v7x-1793016628865-52f8e400ba7d"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 2,
+      "at": "2026-10-26T12:10:28.558Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/projects",
+      "headersMs": 18.157324000000017,
+      "totalMs": 19.683214000000135,
+      "decodedBodyBytes": 198732,
+      "headers": {
+        "age": "3350",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 11 Oct 2026 04:14:27 GMT",
+        "etag": "W/\"11anamm6i0t49c8\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/projects",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::v9v7x-1793016628901-04951cdedb6d"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 3,
+      "at": "2026-10-26T12:10:28.580Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/projects",
+      "headersMs": 20.67695599999979,
+      "totalMs": 22.157129999999825,
+      "decodedBodyBytes": 198732,
+      "headers": {
+        "age": "3350",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 11 Oct 2026 04:14:27 GMT",
+        "etag": "W/\"11anamm6i0t49c8\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/projects",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::pdvwq-1793016628921-82bedcdca17b"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 1,
+      "at": "2026-10-26T12:10:28.602Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/life",
+      "headersMs": 20.392409000000043,
+      "totalMs": 21.898893999999927,
+      "decodedBodyBytes": 173684,
+      "headers": {
+        "age": "1093",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 08:45:48 GMT",
+        "etag": "W/\"wwpih32y7v3q08\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/life",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::v9v7x-1793016628943-113a7aa35b50"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 2,
+      "at": "2026-10-26T12:10:28.626Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/life",
+      "headersMs": 22.63367900000003,
+      "totalMs": 24.161040000000185,
+      "decodedBodyBytes": 173684,
+      "headers": {
+        "age": "1093",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 08:45:48 GMT",
+        "etag": "W/\"wwpih32y7v3q08\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/life",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::ss4k5-1793016628965-96e2a3fdadd2"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 3,
+      "at": "2026-10-26T12:10:28.646Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/life",
+      "headersMs": 18.442949999999882,
+      "totalMs": 19.83873399999993,
+      "decodedBodyBytes": 173684,
+      "headers": {
+        "age": "1093",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 25 Oct 2026 08:45:48 GMT",
+        "etag": "W/\"wwpih32y7v3q08\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/life",
+        "x-nextjs-prerender": "1",
+        "x-nextjs-stale-time": "300",
+        "x-powered-by": "Next.js",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::ss4k5-1793016628989-5be6e065f7bf"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_unit": "1/d/{project}",
+              "quota_location": "global",
+              "service": "pagespeedonline.googleapis.com",
+              "consumer": "projects/583797351490",
+              "quota_limit_value": "0",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "quota_limit": "defaultPerDayPerProject"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "desktop",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_limit_value": "0",
+              "consumer": "projects/583797351490",
+              "quota_unit": "1/d/{project}",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_location": "global",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_metric": "pagespeedonline.googleapis.com/default"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "home-mobile-1",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:10:30.781Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-1",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:10:41.560Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-1",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:10:52.646Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-desktop-1",
+      "route": "blog",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:03.072Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-1",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:13.824Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-1",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:21.648Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-1",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:29.815Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-desktop-1",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:38.589Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-1",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:47.801Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-1",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:11:59.430Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-1",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:12:10.547Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-desktop-1",
+      "route": "life",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T12:12:18.446Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-2",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:12:26.707Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-2",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:12:36.905Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-2",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:12:47.608Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-desktop-2",
+      "route": "blog",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:12:57.771Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-2",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:13:08.397Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-2",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:13:16.123Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-2",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:13:24.314Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-desktop-2",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:13:32.866Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-2",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:13:41.794Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-2",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:13:52.942Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-2",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:14:04.581Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-desktop-2",
+      "route": "life",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T12:14:12.281Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-3",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:14:20.557Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-3",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:14:30.832Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-3",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:14:41.701Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-desktop-3",
+      "route": "blog",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:14:51.603Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-3",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:02.202Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-3",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:09.949Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-3",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:17.969Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-desktop-3",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:26.477Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-3",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:35.103Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-3",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:45.734Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-3",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:15:57.021Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-desktop-3",
+      "route": "life",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T12:16:04.836Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-4",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T12:16:12.983Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-4",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T12:16:23.373Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-4",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T12:16:33.514Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-4",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T12:16:41.539Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-4",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T12:16:50.121Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-4",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T12:17:01.086Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-5",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T12:17:09.059Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-5",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T12:17:19.315Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog",
+      "report": "raw/blog-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-5",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T12:17:29.308Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-5",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T12:17:36.929Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-5",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T12:17:45.395Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects",
+      "report": "raw/projects-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-5",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T12:17:56.034Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life",
+      "report": "raw/life-mobile-5.json.gz",
+      "warnings": []
+    }
+  ],
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-26T12:18:02.507Z"
+}
