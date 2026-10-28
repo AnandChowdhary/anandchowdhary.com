@@ -1,0 +1,231 @@
+import { ResponsiveImage } from "@/views/components/responsive-image";
+import { fetchSource as fetch } from "@/lib/source";
+import { type Project } from "@/views/api";
+import { Container } from "@/views/components/container";
+import { focusStyles } from "@/views/components/external-link";
+import { Footer } from "@/views/components/footer";
+import { Header } from "@/views/components/header";
+import { NavigationFooter } from "@/views/components/navigation-footer";
+import { getImageUrl } from "@/views/projects/get-image-url";
+import { proseClassName } from "@/views/styles";
+import slugify from "@sindresorhus/slugify";
+import { marked } from "marked";
+import { markedSmartypants } from "marked-smartypants";
+
+marked.use(markedSmartypants());
+
+const ProjectCard = ({ item, priority = false }: { item: Project; priority?: boolean }) => {
+  const slug = item.slug.replace(".md", "");
+  const imageData = item.attributes;
+
+  return (
+    <article className="relative space-y-4">
+      {imageData?.img_src ? (
+        <div
+          className="bg-white dark:bg-neutral-900 w-full rounded-lg shadow flex items-center justify-center pointer-events-none aspect-5/3"
+          style={{
+            padding: imageData.style === "padded" ? "0.5rem" : 0,
+            backgroundColor: imageData.bg || undefined,
+          }}
+        >
+          {imageData.style === "padded" ? (
+            <ResponsiveImage
+              alt=""
+              src={getImageUrl(imageData.img_src, imageData.img_type)}
+              loading={priority ? "eager" : "lazy"}
+              fetchPriority={priority ? "high" : undefined}
+              className="max-w-full max-h-full object-contain"
+            />
+          ) : imageData.style === "cover" ? (
+            <ResponsiveImage
+              alt=""
+              src={getImageUrl(imageData.img_src, imageData.img_type)}
+              loading={priority ? "eager" : "lazy"}
+              fetchPriority={priority ? "high" : undefined}
+              className="w-full h-full rounded-lg object-cover"
+            />
+          ) : (
+            <ResponsiveImage
+              alt=""
+              src={getImageUrl(imageData.img_src, imageData.img_type)}
+              loading={priority ? "eager" : "lazy"}
+              fetchPriority={priority ? "high" : undefined}
+              className="w-full h-full rounded-lg object-cover"
+            />
+          )}
+        </div>
+      ) : (
+        <div className="aspect-5/3 bg-neutral-100 dark:bg-neutral-900" />
+      )}
+      <div>
+        <a
+          href={`/projects/${new Date(item.date).getUTCFullYear()}/${slug}`}
+          className={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}
+        >
+          <div
+            className="w-full"
+            style={{
+              maskImage:
+                "linear-gradient(to right, black 70%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, black 70%, transparent 100%)",
+            }}
+          >
+            <h3
+              className="truncate text-lg font-medium"
+              dangerouslySetInnerHTML={{
+                __html: marked.parseInline(item.title),
+              }}
+            />
+          </div>
+        </a>
+        <p className="text-sm text-neutral-500 mt-1 mb-1.5">
+          {new Date(item.date).toLocaleDateString("en-US", {
+            month: "long",
+            year: "numeric",
+          })}
+        </p>
+        <p
+          className="line-clamp-2 text-sm text-neutral-500 pointer-events-none"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, black 0%, black 50%, transparent 50%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 0%, black 50%, transparent 50%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: marked.parseInline(
+              item.attributes?.intro || item.excerpt || ""
+            ),
+          }}
+        />
+      </div>
+    </article>
+  );
+};
+
+export default async function ProjectContent({
+  projectDataFiltered,
+  year,
+  tag,
+  previousYear,
+  nextYear,
+}: {
+  projectDataFiltered: Project[];
+  year?: string;
+  tag?: string;
+  previousYear?: number;
+  nextYear?: number;
+}) {
+  if (tag) {
+    let tagContent: string | undefined = undefined;
+    try {
+      const response = await fetch(
+        `https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/tags/${slugify(
+          tag.toLowerCase()
+        )}.md`
+      );
+      if (!response.ok)
+        throw new Error(
+          `Tag content not found: ${tag}, ${response.statusText}`
+        );
+      tagContent = await response.text();
+    } catch {
+      // Ignore 404s
+      tagContent = undefined;
+    }
+
+    return (
+      <Container>
+        <Header pathname="/projects" />
+        {tagContent ? (
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 space-y-12 md:space-y-0 md:gap-12">
+            <div className="aspect-5/3 shadow-sm border border-neutral-200 dark:border-neutral-800 rounded-lg overflow-hidden p-8 md:p-22 w-full">
+              <ResponsiveImage
+                src={`https://raw.githubusercontent.com/AnandChowdhary/projects/refs/heads/main/assets/tags/${slugify(
+                  tag.toLowerCase()
+                )}.svg`}
+                alt={tag}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div
+              className={`${proseClassName} col-span-2`}
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(tagContent),
+              }}
+            />
+          </div>
+        ) : (
+          <div className="max-w-2xl mx-auto">
+            <h1 className="text-2xl font-medium text-center">{tag}</h1>
+          </div>
+        )}
+        <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          {projectDataFiltered.map((item, index) => (
+            <ProjectCard key={item.slug} item={item} priority={index === 0} />
+          ))}
+        </main>
+        {year && (previousYear || nextYear) && (
+          <NavigationFooter
+            previous={
+              previousYear
+                ? {
+                    href: `/projects/${previousYear}`,
+                    label: previousYear.toString(),
+                  }
+                : undefined
+            }
+            next={
+              nextYear
+                ? {
+                    href: `/projects/${nextYear}`,
+                    label: nextYear.toString(),
+                  }
+                : undefined
+            }
+          />
+        )}
+        <Footer />
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      <Header
+        pathname={year ? `/projects/${year}` : "/projects"}
+        source="https://github.com/AnandChowdhary/projects"
+        readme="https://anandchowdhary.github.io/projects/README.md"
+        api="https://anandchowdhary.github.io/projects/api.json"
+        description={`Projects I've built over the years, from small experiments to full-scale products for my startups.`}
+      />
+      <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        {projectDataFiltered.map((item, index) => (
+          <ProjectCard key={item.slug} item={item} priority={index === 0} />
+        ))}
+      </main>
+      {year && (previousYear || nextYear) && (
+        <NavigationFooter
+          previous={
+            previousYear
+              ? {
+                  href: `/projects/${previousYear}`,
+                  label: previousYear.toString(),
+                }
+              : undefined
+          }
+          next={
+            nextYear
+              ? {
+                  href: `/projects/${nextYear}`,
+                  label: nextYear.toString(),
+                }
+              : undefined
+          }
+        />
+      )}
+      <Footer />
+    </Container>
+  );
+}

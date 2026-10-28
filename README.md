@@ -1,194 +1,96 @@
-# 🌟 anandchowdhary.com
+# anandchowdhary.com
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+Personal website and portfolio of Anand Chowdhary, built with Astro, TypeScript,
+React for server rendering, and Tailwind CSS v4. Deployed to Vercel with a
+60-second HTML ISR cache and an explicit cache for external content sources.
 
-Personal website and portfolio of Anand Chowdhary, creative technologist and entrepreneur. Built with Next.js 16, TypeScript, and Tailwind CSS v4.
+Pages are complete HTML. There is no Next.js dependency, RSC payload or browser
+router. Most existing JSX and Tailwind classes are retained to preserve the
+original design. Only the homepage's birthday and fitness counters hydrate React
+in the browser. Articles use a small keyboard-accessible image-lightbox script;
+screenshot mode uses a pre-paint script and CSS. Navigation uses ordinary links
+and native cross-document view transitions when supported.
 
-## 🚀 Features
+## Development
 
-### 📱 Core Sections
+Use **Node 24**, matching the Vercel function runtime and CI.
 
-- **🏠 Homepage** - Overview with dynamic sections showcasing life events, work, and projects
-- **📝 Blog** - Articles and thoughts organized by year
-- **💼 Projects** - Portfolio of creative and technical projects with tag filtering
-- **🌍 Travel** - Location history and travel experiences
-- **📚 Books** - Reading list and book reviews
-- **🎬 Videos** - Video content collection
-- **📓 Notes** - Quick thoughts and observations
-- **🎯 Now** - Current focus and activities
-- **💻 Open Source** - GitHub repositories and contributions
-- **📰 Press** - Media mentions and coverage
-- **🗓️ Events** - Speaking engagements and appearances
-- **🧬 Life** - Personal milestones and experiences
-- **📦 Archive** - Historical content and past versions
-
-### ⚡ Technical Features
-
-- **🎨 View Transitions** - Smooth page transitions using Next.js experimental view transitions
-- **📊 Analytics** - Vercel Analytics integration for visitor insights
-- **🔢 Number Animations** - Smooth number transitions with @number-flow/react
-- **🌐 Internationalization** - Country and timezone support
-- **📱 Responsive Design** - Mobile-first approach with Tailwind CSS
-- **🎭 Dynamic Content** - API-driven content management
-- **🔍 SEO Optimized** - Metadata and sitemap generation
-
-## 🛠️ Tech Stack
-
-### 🎯 Framework & Language
-
-- **Next.js 16.4** - React framework with App Router
-- **React 19.3** - UI library
-- **TypeScript 6** - Type-safe JavaScript
-
-### 💅 Styling & UI
-
-- **Tailwind CSS v4** - Utility-first CSS framework
-- **@tailwindcss/typography** - Beautiful typographic defaults
-- **@tabler/icons-react** - Icon library
-- **tailwind-scrollbar** - Custom scrollbar styling
-
-### 📝 Content Processing
-
-- **Marked** - Markdown parser
-- **marked-smartypants** - Smart typography for Markdown
-- **@sindresorhus/slugify** - URL slug generation
-
-### 🔧 Utilities
-
-- **countries-list** - Country data and information
-- **countries-and-timezones** - Timezone management
-- **humanize-duration** - Human-readable time durations
-- **rand-seed** - Seeded random number generation
-- **@number-flow/react** - Animated number transitions
-
-### 📊 Analytics & Monitoring
-
-- **@vercel/analytics** - Web analytics
-
-## 🚀 Getting Started
-
-### 📋 Prerequisites
-
-- Node.js 24 LTS (also used by Vercel and the production check workflows)
-- npm or yarn package manager
-
-### 💻 Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/AnandChowdhary/anandchowdhary.com.git
-cd anandchowdhary.com
-```
-
-2. Install dependencies:
-
-```bash
+```sh
 npm ci
-```
-
-3. Run the development server:
-
-```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+Astro serves development on port 4321. The commands are:
 
-## 📦 Available Scripts
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Astro development server |
+| `npm run check` / `npm run lint` | Astro and TypeScript diagnostics |
+| `npm test` | Deterministic cache, routing and content contracts |
+| `npm run build` | Build the Vercel function and static assets |
+| `npm run verify:build` | Verify emitted runtime, routes, images and original assets |
+| `npm run verify:runtime` | Execute the packaged function outside the repository with strict Node loading |
+| `npm start` | Serve the built Vercel bundle locally on port 4322 (`PORT` overrides) |
+| `npm run smoke -- https://example.com` | Index, detail, alias and unknown-slug checks |
+| `npm run link-audit -- https://example.com` | Every sitemap and external archive-feed URL |
 
-- **`npm run dev`** - Start development server with Turbopack
-- **`npm run build`** - Build for production
-- **`npm run start`** - Start production server
-- **`npm run lint`** - Run ESLint
-- **`npm run smoke`** - Smoke-test production
-- **`npm run link-audit`** - Check every URL in the sitemap and the archive feed
+The built-output local server is a verification tool. It runs the actual bundled
+function and serves emitted static assets; it does not emulate Vercel CDN caching,
+ISR regeneration or production Runtime Cache. Verify those on a deployment.
 
-## ✅ Checks against production
+## Structure
 
-Both scripts run against the **live site**, not a local build, because that's
-the only place some failures show up — see `scripts/smoke.mjs` for the story.
+- `src/pages/`: explicit Astro routes for all 45 original page templates, 404,
+  sitemap and LLM discovery endpoints.
+- `src/layouts/Document.astro`: document metadata, fonts, screenshot mode and
+  page-specific scripts.
+- `src/views/`: retained JSX page/content components and external data utilities.
+- `src/lib/render.tsx`: server-only HTML rendering bridge, including async JSX
+  sections, metadata and HTTP control flow. It emits no hydration payload.
+- `src/lib/source.ts`: request deduplication, timeouts, conditional requests,
+  source TTLs and bounded last-good fallback. Production uses Vercel Runtime Cache;
+  local development and deterministic tests use an injected/local cache.
+- `src/scripts/`: article lightbox and narrowly scoped counter hydration.
+- `public/fonts/`: the same Geist/Geist Mono font files and fallback metrics as
+  the original deployment, with their OFL license.
+- `scripts/`: smoke/link audits, built-output server and isolated performance tools.
 
-- **Smoke test** (`.github/workflows/smoke.yml`) runs automatically when Vercel
-  reports a production deployment live. It samples a few pages per section from
-  the sitemap, checks the known slug aliases still redirect, and requests a
-  deliberately nonexistent slug under each dynamic route — that last one is the
-  canary, since a slug the build never saw is the only cheap way to force a
-  runtime render and catch a route whose server render is throwing.
-- **Link audit** (`.github/workflows/link-audit.yml`) runs weekly against
-  production, checking every sitemap URL plus every link the external archive
-  feed points back at, and asserts pages are still revalidating.
+The site retains blog, books, projects/tags, events, notes, videos, press,
+open-source, location, themes, versions, life/food, archive and top-level pages.
+External content stays in the existing GitHub repositories. New detail URLs render
+on demand after data-cache expiry and do not require a site rebuild. Source caches
+are evictable and regional; they are not durable content storage.
 
-Preview deployments aren't covered: they sit behind Vercel Authentication, and
-reaching them would mean keeping a protection-bypass secret around. Production
-is checked on every merge instead.
+## Vercel deployment and production checks
 
-## 📁 Project Structure
+Use the **Astro** framework preset, repository root, Node **24.x**, the build/check command in `vercel.json`
+and the official Vercel adapter's Build Output API artifacts. Do not use the old
+Next.js preset or a nested migration directory. `astro.config.mjs` explicitly sets
+ISR expiration to 60 seconds; source helpers retain their existing one-hour TTLs
+where configured. TTLs are not an end-to-end publishing SLA, especially during
+upstream failures. See the migration document for the freshness/recovery checks.
 
-```
-anandchowdhary.com/
-├── app/                    # Next.js App Router
-│   ├── components/         # Reusable React components
-│   ├── blog/              # Blog section pages
-│   ├── projects/          # Projects section with tags
-│   ├── events/            # Events and speaking
-│   ├── books/             # Book reviews and reading list
-│   ├── notes/             # Quick notes and thoughts
-│   ├── open-source/       # GitHub repositories
-│   ├── life/              # Life events and milestones
-│   ├── location/          # Travel and location history
-│   ├── videos/            # Video content
-│   ├── press/             # Media mentions
-│   ├── archive/           # Historical content
-│   ├── api/               # API routes
-│   ├── api.ts             # API utilities
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Homepage
-│   └── globals.css        # Global styles
-├── public/                # Static assets
-├── next.config.ts         # Next.js configuration
-├── tailwind.config.js     # Tailwind CSS configuration
-├── tsconfig.json          # TypeScript configuration
-└── package.json           # Project dependencies
-```
+`?screenshot=true` preserves the compact Open Graph screenshot layout. It is a
+presentation-only flag applied before paint, so the same ISR HTML can safely serve
+both modes even though adapter ISR requests do not expose query parameters.
 
-## 🎨 Components Architecture
+The existing deployment-status workflow smoke-tests production after Vercel
+reports a successful Production deployment. The weekly link audit checks the
+sitemap plus external archive links; it preserves the known alias redirects and
+unknown-slug 404 canaries. These checks remain important: a previous runtime
+failure appeared only in the deployed function while build/local checks passed.
+Preview authentication must be respected when running candidate deployment checks.
 
-The site uses a modular component architecture with specialized sections:
+## Migration and performance evidence
 
-- **Timeline Components** - Display various life events (birthday, code, fitness, location, music, sleep, theme)
-- **Section Components** - Reusable sections for different content types (blog, books, projects, etc.)
-- **Navigation Components** - Header, footer, and navigation links
-- **Metadata Components** - Dynamic metadata generation for SEO
+The [migration plan and status](docs/performance/MIGRATION.md) describes architecture,
+parity requirements, release gates and rollback. The [performance status](docs/performance/PLAN.md)
+links the original [48-run production baseline](docs/performance/2026-10-26-baseline/REPORT.md)
+and the [visual comparison](docs/performance/astro-parity/VISUAL.md).
 
-## 🔄 API Structure
-
-The project includes API routes for:
-
-- `/api/blog/` - Blog post data
-- `/api/projects/` - Project information and filtering
-
-## 🌐 Deployment
-
-The site is optimized for deployment on Vercel:
-
-```bash
-npm run build
-```
-
-The build process:
-
-1. Compiles TypeScript
-2. Optimizes React components
-3. Generates static pages where possible
-4. Creates optimized production bundle
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+Install measurement dependencies independently with
+`npm ci --prefix scripts/performance`. The [runner instructions](scripts/performance/README.md)
+cover repeatable Lighthouse audits. `visual.mjs` compares production and a candidate
+across viewport, theme and screenshot mode; `interactions.mjs` checks browser
+behavior. Full local screenshots/Lighthouse reports live under ignored `raw/`
+folders; tracked summaries describe their scope and limitations.

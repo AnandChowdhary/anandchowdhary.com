@@ -1,0 +1,8 @@
+[
+  { "id": "home", "path": "/", "purpose": "Homepage: shared shell, timeline and counters" },
+  { "id": "blog", "path": "/blog", "purpose": "Blog index: image-rich listing" },
+  { "id": "article-text", "path": "/blog/2026/future-ai-native-work", "purpose": "Text-heavy article: one hero image" },
+  { "id": "article-images", "path": "/blog/2019/state-of-the-podcasts-2019", "purpose": "Image-heavy article: 18 image elements at selection time" },
+  { "id": "projects", "path": "/projects", "purpose": "Project cards and lazy-loaded images" },
+  { "id": "life", "path": "/life", "purpose": "Data-rich dashboard" }
+]

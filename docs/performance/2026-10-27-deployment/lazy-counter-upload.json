@@ -1,0 +1,1733 @@
+{
+  "sourceDigest": "33ffc5f00cb7e78d6b3cd2d3b06edc0aeb9eab09757cdd47502a8c634b3910fb",
+  "files": [
+    {
+      "path": ".github/workflows/check.yml",
+      "size": 459,
+      "mode": 33188,
+      "sha": "984c2fa59e6f610746759dfaa97d51a8316c78f9"
+    },
+    {
+      "path": ".github/workflows/link-audit.yml",
+      "size": 1017,
+      "mode": 33188,
+      "sha": "88b4be302077b34c83b79b4cf387e37a5a4540f9"
+    },
+    {
+      "path": ".github/workflows/smoke.yml",
+      "size": 1104,
+      "mode": 33188,
+      "sha": "a3c2e79bda8011066387fb3843ec4f419790990d"
+    },
+    {
+      "path": ".vercelignore",
+      "size": 90,
+      "mode": 33188,
+      "sha": "ca1f3cd180b9d4b2237bedb2fa95f87dfae255e3"
+    },
+    {
+      "path": "astro.config.mjs",
+      "size": 1143,
+      "mode": 33188,
+      "sha": "1734a2f7cac91a69db5a4de20d8b14bc748848a3"
+    },
+    {
+      "path": "docs/performance/DEPENDENCIES.md",
+      "size": 1942,
+      "mode": 33188,
+      "sha": "4ec7e26a674326051fa6520f558f1acf74895421"
+    },
+    {
+      "path": "docs/performance/legacy-assets.json",
+      "size": 19726,
+      "mode": 33188,
+      "sha": "53d65dd1bd22f31820046a79b6a4d7206a7c348b"
+    },
+    {
+      "path": "docs/performance/MIGRATION.md",
+      "size": 20178,
+      "mode": 33188,
+      "sha": "3efad0694bcf2a9cd8853d886ba4adb6c561286d"
+    },
+    {
+      "path": "docs/performance/PLAN.md",
+      "size": 4190,
+      "mode": 33188,
+      "sha": "092ef19e41518526ea092b2ff5b3520d5e1660e0"
+    },
+    {
+      "path": "docs/performance/STATUS.md",
+      "size": 12039,
+      "mode": 33188,
+      "sha": "03b99a30cf348083bad170bcbbfb4540c9cd75ee"
+    },
+    {
+      "path": "package-lock.json",
+      "size": 254441,
+      "mode": 33188,
+      "sha": "58dbb0c0f9b99fe8572028df530940edd7967699"
+    },
+    {
+      "path": "package.json",
+      "size": 1703,
+      "mode": 33188,
+      "sha": "e28a7cfe4ad21fba6a9c79af0be08309c801efae"
+    },
+    {
+      "path": "public/anand.jpg",
+      "size": 39521,
+      "mode": 33188,
+      "sha": "02c10d2f3d306d8493dacd44e9c4baf854176252"
+    },
+    {
+      "path": "public/favicon.ico",
+      "size": 4286,
+      "mode": 33188,
+      "sha": "be2d7ba32d331d33beca7f9a70bb3e446db225ff"
+    },
+    {
+      "path": "public/fonts/4fa387ec64143e14-s.3f4zuumv8svu0.woff2",
+      "size": 12872,
+      "mode": 33188,
+      "sha": "c2458988c25917f90fb76380aa01a2517d1aa12c"
+    },
+    {
+      "path": "public/fonts/53b9e256198e5412-s.2gwoz23eiro2t.woff2",
+      "size": 7968,
+      "mode": 33188,
+      "sha": "8ce1f5e06cbb4acfbd5d9a947e6e87604950459b"
+    },
+    {
+      "path": "public/fonts/5ce348bf30bf5439-s.27spqqad3wyeo.woff2",
+      "size": 6204,
+      "mode": 33188,
+      "sha": "e79d03bf3f306cb5f72e58da4e48a77a58d9e459"
+    },
+    {
+      "path": "public/fonts/6306c77e7c8268e4-s.34r5yzckw0h2s.woff2",
+      "size": 5892,
+      "mode": 33188,
+      "sha": "55e5a488c6929ad2a88a00c175ad81e3ea0a3ab1"
+    },
+    {
+      "path": "public/fonts/7178b3e590c64307-s.0i3h3th1vs4m7.woff2",
+      "size": 16540,
+      "mode": 33188,
+      "sha": "66a33f6a78ae71cd10e9cce31bd3c987af14297e"
+    },
+    {
+      "path": "public/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+      "size": 23108,
+      "mode": 33188,
+      "sha": "0e04bb6e7b54057d64c421b959c8c22774ae632d"
+    },
+    {
+      "path": "public/fonts/7d817b4c03b0c5f1-s.2jyz_zw3a8jit.woff2",
+      "size": 7728,
+      "mode": 33188,
+      "sha": "7881dbe72f7e536546e5ea03574bb6538c5d24ca"
+    },
+    {
+      "path": "public/fonts/8a480f0b521d4e75-s.3j-a226dh71aj.woff2",
+      "size": 14900,
+      "mode": 33188,
+      "sha": "c71bf42ee30cd73ffba5e13ee5a7454ca1269c42"
+    },
+    {
+      "path": "public/fonts/bbc41e54d2fcbd21-s.30bdpjkrtcces.woff2",
+      "size": 14712,
+      "mode": 33188,
+      "sha": "fbd56f5f92011dd1c11b39396cef32d44d8be3ab"
+    },
+    {
+      "path": "public/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+      "size": 29288,
+      "mode": 33188,
+      "sha": "9d846db84c501327431670fe23b1a8ea1d2a5349"
+    },
+    {
+      "path": "public/fonts/fef07dbb0973bf53-s.00az9qtie3ho1.woff2",
+      "size": 7252,
+      "mode": 33188,
+      "sha": "e05ad86bd3fd6e9e03980230930aedd9930b9839"
+    },
+    {
+      "path": "public/fonts/OFL.txt",
+      "size": 4383,
+      "mode": 33188,
+      "sha": "ccf0b8c809f68c77fbeae35fbba498854b8a813c"
+    },
+    {
+      "path": "public/icon.png",
+      "size": 10642,
+      "mode": 33188,
+      "sha": "1a136e65713bd3a406a6518fd713b9a2295ea56d"
+    },
+    {
+      "path": "public/images/blog/google-play-badges/badge-proposal.png",
+      "size": 55655,
+      "mode": 33188,
+      "sha": "efcc90781e44d9ad1891617cc6647e07d72ef4c4"
+    },
+    {
+      "path": "public/images/blog/google-play-badges/official-badges.png",
+      "size": 25647,
+      "mode": 33188,
+      "sha": "03ad6db3df70768e2663e4469a0f32ac9355f5f8"
+    },
+    {
+      "path": "public/images/blog/md5-pr_wav36p.png",
+      "size": 80068,
+      "mode": 33188,
+      "sha": "f6b9877e5110fa0170c8b943d1a0921faaab909b"
+    },
+    {
+      "path": "public/images/blog/quarter-of-open-source/2015.png",
+      "size": 15907,
+      "mode": 33188,
+      "sha": "8ec55d87cf48a1760e990ea420fc947c0a69be0d"
+    },
+    {
+      "path": "public/images/blog/quarter-of-open-source/2016.png",
+      "size": 17631,
+      "mode": 33188,
+      "sha": "c9dd4cd80cd40bacf55f618dabc0913c574d84de"
+    },
+    {
+      "path": "public/images/blog/quarter-of-open-source/2017.png",
+      "size": 17458,
+      "mode": 33188,
+      "sha": "b7136ac305c2bf270c8b23b8f8435c0f81b00e7a"
+    },
+    {
+      "path": "public/images/blog/quarter-of-open-source/2018.png",
+      "size": 18562,
+      "mode": 33188,
+      "sha": "e2ca7befeb998002850f7c4231b4f357f242afc0"
+    },
+    {
+      "path": "public/images/blog/quarter-of-open-source/2019.png",
+      "size": 18407,
+      "mode": 33188,
+      "sha": "54c5f195fc66eae7a210222ac061ed126c3120ed"
+    },
+    {
+      "path": "public/images/blog/quarter-of-open-source/contributions.png",
+      "size": 73433,
+      "mode": 33188,
+      "sha": "95fb00d25daf7447347dca0e4682701eb620d800"
+    },
+    {
+      "path": "public/images/blog/Screen_Shot_2018-07-28_at_11.27.45_PM.png",
+      "size": 77138,
+      "mode": 33188,
+      "sha": "9fc8fe75fdceb648e694cb61665526e263e8e49a"
+    },
+    {
+      "path": "public/images/blog/secure-endpoints_ddwwmr.png",
+      "size": 154060,
+      "mode": 33188,
+      "sha": "0af9e9efa1d2220ab424d82b8158417cd9f234e4"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/1password.png",
+      "size": 28321,
+      "mode": 33188,
+      "sha": "bed48434df6578d6b09a8f31bec55e3b5d26200b"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/airmail.png",
+      "size": 40815,
+      "mode": 33188,
+      "sha": "8b457de62912d87374978e88354c8d4d2dadf85c"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/arduino.png",
+      "size": 8894,
+      "mode": 33188,
+      "sha": "f260bb567c3ec9177acb4b636b22d04da4499e32"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/franz.png",
+      "size": 17113,
+      "mode": 33188,
+      "sha": "8c6c6d7659aec1e0da8501a044db57dc7cdb449a"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/google-chrome.png",
+      "size": 31782,
+      "mode": 33188,
+      "sha": "97d411046ab73435019b60cbf45f513c219d37e1"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/iterm.png",
+      "size": 10014,
+      "mode": 33188,
+      "sha": "d75a8cd4eee86657b9aba8363646c2afb2d3afa1"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/navicat.png",
+      "size": 42992,
+      "mode": 33188,
+      "sha": "0904146034cfd463240623ead06bf51a44987b93"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/photoshop.png",
+      "size": 11914,
+      "mode": 33188,
+      "sha": "b39a5925534b11c2ffe71bb62ef0f87dc3340f29"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/postman.png",
+      "size": 34208,
+      "mode": 33188,
+      "sha": "ea08ef31a4f52e2ae73d1c948f3e8b8caa0340c7"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/sketch.png",
+      "size": 13803,
+      "mode": 33188,
+      "sha": "b6ca06096e494754b974e33e65eac17ab6827e14"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/spotify.png",
+      "size": 28161,
+      "mode": 33188,
+      "sha": "9e7a01179970b294d70648ba440e5679c4fe3098"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/termius.png",
+      "size": 27509,
+      "mode": 33188,
+      "sha": "ee5e71a5ea482d8bf3d6f579645236c9969c39ba"
+    },
+    {
+      "path": "public/images/blog/state-of-the/dock/vs-code.png",
+      "size": 34604,
+      "mode": 33188,
+      "sha": "4cd54fda377b62f8954f2fc1dd675cc1d84d9445"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/2019-0.png",
+      "size": 244667,
+      "mode": 33188,
+      "sha": "48189629e19fe535875baf623163c67e026ef1d2"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/2019-1.png",
+      "size": 192203,
+      "mode": 33188,
+      "sha": "b23da522fbfd246d17337d1048235931271fd3ad"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/2019-2.png",
+      "size": 23270,
+      "mode": 33188,
+      "sha": "d190a6506cf1091984ab2565e549a6ae21fbed5e"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/99-invisible_pd4gdg.png",
+      "size": 33310,
+      "mode": 33188,
+      "sha": "dd44146a6c37c7856439e8f35ae31f865a8d9f0a"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/a16z.png",
+      "size": 42701,
+      "mode": 33188,
+      "sha": "33f34f3a868af75a72e514b6f3d7eab973cb7fcf"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/build-your-saas_n90oca.png",
+      "size": 26346,
+      "mode": 33188,
+      "sha": "043bf64c419403992229f655781bd5cfd3f68126"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/character-count.png",
+      "size": 42245,
+      "mode": 33188,
+      "sha": "931d0f62bd7da107218fb30b7446e2968ae0f989"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/clockwise.png",
+      "size": 31268,
+      "mode": 33188,
+      "sha": "ba585a00b9e830e7ec982aaf353d4475d63f9899"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/codeish.png",
+      "size": 14943,
+      "mode": 33188,
+      "sha": "5e458df75476be49a285b86cc4372f68af76d726"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/connected.png",
+      "size": 16901,
+      "mode": 33188,
+      "sha": "be414b4001c22d2b2c7c3035083e9e57b782493e"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/cortex_fv6crb.png",
+      "size": 85601,
+      "mode": 33188,
+      "sha": "47246e985fb1de75104fdad1d26ec8e70dcf179a"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/embedded_c7m41c.png",
+      "size": 21057,
+      "mode": 33188,
+      "sha": "4e883d32bfb78f90be688ebc4f45b4f34150be40"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/heavyweight.png",
+      "size": 30763,
+      "mode": 33188,
+      "sha": "19482e6a13c885fe3a06a2cb4137c0c0523ab59a"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/hello-internet_a98ikc.png",
+      "size": 828,
+      "mode": 33188,
+      "sha": "83d2872b76ea9084c77d3290fd0341125a314587"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/how-i-built-this_juo5co.png",
+      "size": 15714,
+      "mode": 33188,
+      "sha": "22ccf494604dbc1df4e2b219e76499964d9ed270"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/http-203.png",
+      "size": 52029,
+      "mode": 33188,
+      "sha": "51131752012c9d69df1f4bc1b79026e917ef7c1b"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/in-depth_cvhyxy.png",
+      "size": 45992,
+      "mode": 33188,
+      "sha": "95a6226b15e6c8a9340ea72c18b09265b49ec7a8"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/instant-message.png",
+      "size": 27360,
+      "mode": 33188,
+      "sha": "095821b3d70709bd4bdf4a721f6219f9a9f8c2a9"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/newslaundry-hafta_smvs1f.png",
+      "size": 26079,
+      "mode": 33188,
+      "sha": "1e1c5e7df7b68986aad1a351a66a736e96ca5dc5"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/numberphile.png",
+      "size": 62931,
+      "mode": 33188,
+      "sha": "e8b903ea362127a12d8b997afb98d038eace0ac0"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/relatively-prime_ada4tg.png",
+      "size": 18251,
+      "mode": 33188,
+      "sha": "be31511abd4628d9a8636d92d2c08c9e5f22258d"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/startup_hgrdxc.png",
+      "size": 22713,
+      "mode": 33188,
+      "sha": "c4635fa36d09dd707e064f9c0d53b3a560da826d"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/talkscript.png",
+      "size": 17550,
+      "mode": 33188,
+      "sha": "08092b511fdd278177721092dc974f3b2692141c"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/ted-radio-hour_kwaymj.png",
+      "size": 28945,
+      "mode": 33188,
+      "sha": "fd1e5ab2de1f4714e424c712c7606f6b2919c553"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/the-daily_j51cfm.png",
+      "size": 36456,
+      "mode": 33188,
+      "sha": "bf2f40daad26da3d084c4f2386933a15e947411e"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/the-freecodecamp-podcast_m1bi3p.png",
+      "size": 35012,
+      "mode": 33188,
+      "sha": "20a56ab9fc89ce0ae4b5ec73f3a6f118ca4f9245"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/the-unmade-podcast_faatpk.png",
+      "size": 23299,
+      "mode": 33188,
+      "sha": "a42c4370f1b624e796c9008c54fc77f87eedf2c8"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/travel-genius.png",
+      "size": 20895,
+      "mode": 33188,
+      "sha": "db0a9fc58bd0b8a9558bfd7789d2ead1ddfbcb90"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/unbox.png",
+      "size": 18393,
+      "mode": 33188,
+      "sha": "e0302bd7f6b4c8394b43ba8db7298e431a6877e2"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/where-should-we-begin_crlryb.png",
+      "size": 127978,
+      "mode": 33188,
+      "sha": "447ff9c7e2bb2901c3a8f21180b1945b1c9aff3a"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/without-fail.png",
+      "size": 58474,
+      "mode": 33188,
+      "sha": "b683717fcd1dd08f1f0f82722a511c7a057857eb"
+    },
+    {
+      "path": "public/images/blog/state-of-the/podcasts/works-for-me.png",
+      "size": 9735,
+      "mode": 33188,
+      "sha": "2ac852fd51ed77faa3aace4f367d72f3cf1a8b05"
+    },
+    {
+      "path": "README.md",
+      "size": 5379,
+      "mode": 33188,
+      "sha": "d1589616d523fd4e7d2fa9ac3979c8f22ac776f1"
+    },
+    {
+      "path": "scripts/cache-rehearsal.mjs",
+      "size": 4793,
+      "mode": 33188,
+      "sha": "e702885a287551eba8a42d58eecaa8e5fd1900da"
+    },
+    {
+      "path": "scripts/http.mjs",
+      "size": 2020,
+      "mode": 33188,
+      "sha": "042099f14cb8ea2f2c2470f0c3c1ac7afb6dc3d6"
+    },
+    {
+      "path": "scripts/link-audit.mjs",
+      "size": 2763,
+      "mode": 33188,
+      "sha": "1709349a3774946def6fb1c3db1e6d43d770dfab"
+    },
+    {
+      "path": "scripts/prepare-cache-rehearsal.mjs",
+      "size": 2006,
+      "mode": 33188,
+      "sha": "a47dce747bb53f27fc92744d6c3626b9d9b21f0b"
+    },
+    {
+      "path": "scripts/preview-auth.mjs",
+      "size": 2289,
+      "mode": 33188,
+      "sha": "3a1e36e2cfbd77677bba0ec629c5dccbbb4a9d79"
+    },
+    {
+      "path": "scripts/preview-image.mjs",
+      "size": 1818,
+      "mode": 33188,
+      "sha": "1c9dd0e3c10b9dbe20208d2c4145814c90f731ec"
+    },
+    {
+      "path": "scripts/serve-built.mjs",
+      "size": 3510,
+      "mode": 33188,
+      "sha": "1a564a197271c780ae238fd56abb52a52580d2dc"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "size": 6493,
+      "mode": 33188,
+      "sha": "d71d2c7edd3ae39293ea30693c6f86b5b3719611"
+    },
+    {
+      "path": "scripts/verify-built.mjs",
+      "size": 2018,
+      "mode": 33188,
+      "sha": "9d72b4356694478d78635fdefa8a17e1023b243f"
+    },
+    {
+      "path": "scripts/verify-runtime.mjs",
+      "size": 1877,
+      "mode": 33188,
+      "sha": "a22be52c7e8629f857424e61b228de72935eaeb9"
+    },
+    {
+      "path": "src/layouts/Document.astro",
+      "size": 3222,
+      "mode": 33188,
+      "sha": "b014f2eee35057e0b4ed45c23d0b5a7cd58fe19d"
+    },
+    {
+      "path": "src/lib/discovery.ts",
+      "size": 1412,
+      "mode": 33188,
+      "sha": "c09e2ecda0570874b322a3733ab11c37f6983390"
+    },
+    {
+      "path": "src/lib/fonts.css",
+      "size": 3427,
+      "mode": 33188,
+      "sha": "7826058af673f24e8b87b2ae50ea729d34bfc4ea"
+    },
+    {
+      "path": "src/lib/images.ts",
+      "size": 1027,
+      "mode": 33188,
+      "sha": "c9ecdd4ed9e95846ea5b7389bd295ff37a577692"
+    },
+    {
+      "path": "src/lib/legacy-image-sizes.json",
+      "size": 4453,
+      "mode": 33188,
+      "sha": "9811d1f8cd67e81ea1b92df32859ff3948fb830f"
+    },
+    {
+      "path": "src/lib/legacy-images.ts",
+      "size": 719,
+      "mode": 33188,
+      "sha": "718545a96020d9e002bdee5e7fffb44e703ed995"
+    },
+    {
+      "path": "src/lib/metadata.ts",
+      "size": 530,
+      "mode": 33188,
+      "sha": "d2d6bf29b7ff88182a615562a4429117b4ba47c1"
+    },
+    {
+      "path": "src/lib/navigation.ts",
+      "size": 508,
+      "mode": 33188,
+      "sha": "2272a4490bcae59a3f0dcba7c7251104f9d484f4"
+    },
+    {
+      "path": "src/lib/not-found.ts",
+      "size": 925,
+      "mode": 33188,
+      "sha": "da155259c920fbc17d0beba850db581d26aff5e0"
+    },
+    {
+      "path": "src/lib/render.tsx",
+      "size": 1959,
+      "mode": 33188,
+      "sha": "b1e31e2a5565f96bd282054d63a8e46b22b346dc"
+    },
+    {
+      "path": "src/lib/site-metadata.ts",
+      "size": 1421,
+      "mode": 33188,
+      "sha": "70a3076ed2d2d4ce5d7aeb47eef1f4b8b6565dcc"
+    },
+    {
+      "path": "src/lib/source.ts",
+      "size": 4559,
+      "mode": 33188,
+      "sha": "9193b519ee193260cd5e4771c7b99dc057792c7a"
+    },
+    {
+      "path": "src/pages/404.astro",
+      "size": 363,
+      "mode": 33188,
+      "sha": "1c3e2bf30ecf62f70c12a7f4af611bdbc72104ba"
+    },
+    {
+      "path": "src/pages/about/index.astro",
+      "size": 606,
+      "mode": 33188,
+      "sha": "f91475f0faf8109b5f085f09f1b4835a3a26d460"
+    },
+    {
+      "path": "src/pages/archive/[year]/index.astro",
+      "size": 615,
+      "mode": 33188,
+      "sha": "53943c7e929ccddb8eb488c489f6223b2cf99c5b"
+    },
+    {
+      "path": "src/pages/archive/index.astro",
+      "size": 608,
+      "mode": 33188,
+      "sha": "4b98c0e9b3a9d9d09204dcee6c3f2f756db027c5"
+    },
+    {
+      "path": "src/pages/blog/[year]/[slug]/index.astro",
+      "size": 619,
+      "mode": 33188,
+      "sha": "a62817bda452d8c4ea2a9da3eebdd9eb32afa201"
+    },
+    {
+      "path": "src/pages/blog/[year]/index.astro",
+      "size": 612,
+      "mode": 33188,
+      "sha": "8017b3a42a627769b3d1d3520d3c8195fcfdd90a"
+    },
+    {
+      "path": "src/pages/blog/index.astro",
+      "size": 605,
+      "mode": 33188,
+      "sha": "99d7e3f91b83310f06dde315479cd77f1e3179da"
+    },
+    {
+      "path": "src/pages/books/[year]/[slug]/index.astro",
+      "size": 620,
+      "mode": 33188,
+      "sha": "da7f3d555223d36ccfcb41b408c3df5e98206ad6"
+    },
+    {
+      "path": "src/pages/books/[year]/index.astro",
+      "size": 613,
+      "mode": 33188,
+      "sha": "63aa40cb4d17453fac6cae64ae2b3b51fe765a74"
+    },
+    {
+      "path": "src/pages/books/index.astro",
+      "size": 606,
+      "mode": 33188,
+      "sha": "11c28507134989f5197ebc397b94c50e5d99ac05"
+    },
+    {
+      "path": "src/pages/contact/index.astro",
+      "size": 608,
+      "mode": 33188,
+      "sha": "974c933d2c124c5d5f1ec3e51e0ebd36eb84d935"
+    },
+    {
+      "path": "src/pages/events/[year]/[slug]/index.astro",
+      "size": 621,
+      "mode": 33188,
+      "sha": "9ca2b32fc6038688a5a5de1d08a47d515a59a7b1"
+    },
+    {
+      "path": "src/pages/events/[year]/index.astro",
+      "size": 614,
+      "mode": 33188,
+      "sha": "116cf2ce4ac2a0c64583939a0e2ece72c69e1645"
+    },
+    {
+      "path": "src/pages/events/index.astro",
+      "size": 607,
+      "mode": 33188,
+      "sha": "ebaddaada571f537166fe907b555af32a881a6f1"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "size": 600,
+      "mode": 33188,
+      "sha": "83e11fb168c26ba0ba63aec73963762b28c5b5dc"
+    },
+    {
+      "path": "src/pages/life/[year]/[slug]/index.astro",
+      "size": 619,
+      "mode": 33188,
+      "sha": "71bf5f34e840fabd7493e305e570ee189edd7f33"
+    },
+    {
+      "path": "src/pages/life/[year]/index.astro",
+      "size": 612,
+      "mode": 33188,
+      "sha": "fd743bbbc4e004bb66bdb7aba2e5a63ea56c2364"
+    },
+    {
+      "path": "src/pages/life/food/index.astro",
+      "size": 610,
+      "mode": 33188,
+      "sha": "bcd98bd9ef7bb86d7f84989d13307d0c4f22777d"
+    },
+    {
+      "path": "src/pages/life/index.astro",
+      "size": 605,
+      "mode": 33188,
+      "sha": "d3b1d5fc400069c19e8cda5ead534da68563681e"
+    },
+    {
+      "path": "src/pages/llms.ts",
+      "size": 105,
+      "mode": 33188,
+      "sha": "0ca0fb873a3d71f9a7fbc3fa7e0da97cf29a0385"
+    },
+    {
+      "path": "src/pages/llms.txt.ts",
+      "size": 105,
+      "mode": 33188,
+      "sha": "4ab0501c0bab9bc3974315a22fbc06618dabf48a"
+    },
+    {
+      "path": "src/pages/location/[year]/[slug]/index.astro",
+      "size": 623,
+      "mode": 33188,
+      "sha": "5cfc5229f4d3552b38809fe8f9d1a9f2a77ac0f9"
+    },
+    {
+      "path": "src/pages/location/[year]/index.astro",
+      "size": 616,
+      "mode": 33188,
+      "sha": "5f656a8e20fc43fd7119d1852f6f4c98e88180e8"
+    },
+    {
+      "path": "src/pages/location/index.astro",
+      "size": 609,
+      "mode": 33188,
+      "sha": "24053b116c751e07981b38392865c2dcd15a1f3f"
+    },
+    {
+      "path": "src/pages/mentoring/index.astro",
+      "size": 610,
+      "mode": 33188,
+      "sha": "0b55184d42939cbedca39d019e1ced26ae6ba384"
+    },
+    {
+      "path": "src/pages/notes/[year]/[slug]/index.astro",
+      "size": 620,
+      "mode": 33188,
+      "sha": "25ce788ed2cfc17ab9a0dd5f635cd890e1ccf686"
+    },
+    {
+      "path": "src/pages/notes/[year]/index.astro",
+      "size": 613,
+      "mode": 33188,
+      "sha": "4ae175bddf29f964e936e16309206d48218353d1"
+    },
+    {
+      "path": "src/pages/notes/index.astro",
+      "size": 606,
+      "mode": 33188,
+      "sha": "c5906e00cf5977e8538e08dd999efcbe6a3f460f"
+    },
+    {
+      "path": "src/pages/now/index.astro",
+      "size": 604,
+      "mode": 33188,
+      "sha": "35c1697c34419daf90cf5646dc582cdab8f71bae"
+    },
+    {
+      "path": "src/pages/open-source/[year]/[slug]/index.astro",
+      "size": 626,
+      "mode": 33188,
+      "sha": "0dc736e6a675a0ded78915b397f285c893dc38d1"
+    },
+    {
+      "path": "src/pages/open-source/[year]/index.astro",
+      "size": 619,
+      "mode": 33188,
+      "sha": "d015e94643a3451c1f2d150a6b6d7f1318a9bc7f"
+    },
+    {
+      "path": "src/pages/open-source/index.astro",
+      "size": 612,
+      "mode": 33188,
+      "sha": "62e9673966f5856797a7f474aa3c0bd803805c74"
+    },
+    {
+      "path": "src/pages/press/[year]/[slug]/index.astro",
+      "size": 620,
+      "mode": 33188,
+      "sha": "3f2b777376d95093af05c4e0798ef87ee9691af8"
+    },
+    {
+      "path": "src/pages/press/[year]/index.astro",
+      "size": 613,
+      "mode": 33188,
+      "sha": "504b1ab0217202a01c42add0097a1132c33a874d"
+    },
+    {
+      "path": "src/pages/press/index.astro",
+      "size": 606,
+      "mode": 33188,
+      "sha": "3c00e506589b443ee8311ccc663518dcb688a2d1"
+    },
+    {
+      "path": "src/pages/projects/[year]/[slug]/index.astro",
+      "size": 623,
+      "mode": 33188,
+      "sha": "a719557c102e9457b343b3dba5a469e8ab4a0346"
+    },
+    {
+      "path": "src/pages/projects/[year]/index.astro",
+      "size": 616,
+      "mode": 33188,
+      "sha": "ed3b56c00f1bc1fed7a95e983c1f06897514f0a5"
+    },
+    {
+      "path": "src/pages/projects/index.astro",
+      "size": 609,
+      "mode": 33188,
+      "sha": "1e2c182edc669d228cb90523904963e5ac9ce9c3"
+    },
+    {
+      "path": "src/pages/projects/tags/[tag]/index.astro",
+      "size": 620,
+      "mode": 33188,
+      "sha": "5567a0d1c601cd28db1a90e202b69f657b1fd9af"
+    },
+    {
+      "path": "src/pages/sitemap.xml.ts",
+      "size": 104,
+      "mode": 33188,
+      "sha": "ddf0b9bd96801a151529b017c711f7bcd3f33cce"
+    },
+    {
+      "path": "src/pages/themes/[year]/[slug]/index.astro",
+      "size": 621,
+      "mode": 33188,
+      "sha": "41ee444bfd42de4bde72c2e36892dc059a377eb0"
+    },
+    {
+      "path": "src/pages/themes/[year]/index.astro",
+      "size": 614,
+      "mode": 33188,
+      "sha": "35a5859e54d94b5169d59251f7e3a82b4fa17a76"
+    },
+    {
+      "path": "src/pages/themes/index.astro",
+      "size": 607,
+      "mode": 33188,
+      "sha": "bd548047aec6cecba9d68d40cb0100ddae105e0a"
+    },
+    {
+      "path": "src/pages/versions/[year]/[slug]/index.astro",
+      "size": 623,
+      "mode": 33188,
+      "sha": "81c70a8a90d2294c3fe08132e576107be93427b9"
+    },
+    {
+      "path": "src/pages/versions/[year]/index.astro",
+      "size": 616,
+      "mode": 33188,
+      "sha": "d1388bb98ee410526d76b3fc76216d935e2f374f"
+    },
+    {
+      "path": "src/pages/versions/index.astro",
+      "size": 609,
+      "mode": 33188,
+      "sha": "97b1197889394ecadad61cc35bae01e8e68e6a51"
+    },
+    {
+      "path": "src/pages/videos/[year]/[slug]/index.astro",
+      "size": 621,
+      "mode": 33188,
+      "sha": "a9afba163c651aded4b0eb71458c0a349b92f7cf"
+    },
+    {
+      "path": "src/pages/videos/[year]/index.astro",
+      "size": 614,
+      "mode": 33188,
+      "sha": "850acd28a293a888e5235943192e2f2780ccd15c"
+    },
+    {
+      "path": "src/pages/videos/index.astro",
+      "size": 607,
+      "mode": 33188,
+      "sha": "d51c6b1550dbcf6bd1123d44322003d296f5851d"
+    },
+    {
+      "path": "src/scripts/counter-loader.ts",
+      "size": 646,
+      "mode": 33188,
+      "sha": "fa26ec0480f07182c5fe32f3deb8b90125d9f7f3"
+    },
+    {
+      "path": "src/scripts/counters.tsx",
+      "size": 626,
+      "mode": 33188,
+      "sha": "1e9b1066d3224d7ce9d8a893c8c8809215f1c127"
+    },
+    {
+      "path": "src/scripts/lightbox.ts",
+      "size": 4351,
+      "mode": 33188,
+      "sha": "fecefda4e1c229fa832ecd533c9bfab91660c1b7"
+    },
+    {
+      "path": "src/views/about/page.tsx",
+      "size": 13414,
+      "mode": 33188,
+      "sha": "83201318c9c55c765173895e285c91106efa507d"
+    },
+    {
+      "path": "src/views/api.ts",
+      "size": 34449,
+      "mode": 33188,
+      "sha": "921e1c90e1b93f575d2b7a0e614b356d1d8c846c"
+    },
+    {
+      "path": "src/views/archive/[year]/page.tsx",
+      "size": 1796,
+      "mode": 33188,
+      "sha": "45d7c38e4e74086c35166268f71894224732b48e"
+    },
+    {
+      "path": "src/views/archive/component.tsx",
+      "size": 6842,
+      "mode": 33188,
+      "sha": "759fe73cd306cc1dc9270c7b625993dd05e42b8d"
+    },
+    {
+      "path": "src/views/archive/item.tsx",
+      "size": 4211,
+      "mode": 33188,
+      "sha": "f9cdaa14aa79e0a421c5142337cdedfdf02ddcc0"
+    },
+    {
+      "path": "src/views/archive/page.tsx",
+      "size": 665,
+      "mode": 33188,
+      "sha": "b9fa2beb0963dcadc6fb0f0fa30d11a3765d4d24"
+    },
+    {
+      "path": "src/views/blog/[year]/[slug]/page.tsx",
+      "size": 4460,
+      "mode": 33188,
+      "sha": "f84e69e6840ad7e58379caf0963f7ecc32a5c706"
+    },
+    {
+      "path": "src/views/blog/[year]/page.tsx",
+      "size": 2024,
+      "mode": 33188,
+      "sha": "8c3603f7b802cafd690c3aa448ec1aaa412a433d"
+    },
+    {
+      "path": "src/views/blog/component.tsx",
+      "size": 6350,
+      "mode": 33188,
+      "sha": "7f58e73c8ddf4eb1a563f23aae9a35e4c9c928b9"
+    },
+    {
+      "path": "src/views/blog/metadata.tsx",
+      "size": 1638,
+      "mode": 33188,
+      "sha": "e515f60872d57821fc4c959e0d0561c3ea423e65"
+    },
+    {
+      "path": "src/views/blog/page.tsx",
+      "size": 695,
+      "mode": 33188,
+      "sha": "eaca8a1275167126c80d7bc3fae984aff61c4ff5"
+    },
+    {
+      "path": "src/views/books/[year]/[slug]/page.tsx",
+      "size": 9249,
+      "mode": 33188,
+      "sha": "c47fc6749c8a6365b35b87d61ca327d0a433f322"
+    },
+    {
+      "path": "src/views/books/[year]/page.tsx",
+      "size": 1947,
+      "mode": 33188,
+      "sha": "605b552b2afe6a1534c6dc2a9acb90b281dda4fd"
+    },
+    {
+      "path": "src/views/books/component.tsx",
+      "size": 3707,
+      "mode": 33188,
+      "sha": "d8166f2a481c21f82b2b574cc999fc000b233767"
+    },
+    {
+      "path": "src/views/books/page.tsx",
+      "size": 659,
+      "mode": 33188,
+      "sha": "8ccdbfda3c16e41e6ee1246e82665ba10e87b196"
+    },
+    {
+      "path": "src/views/components/archive-section.tsx",
+      "size": 2695,
+      "mode": 33188,
+      "sha": "258fea58a30fa839c1270c1558d321d86cb0e12a"
+    },
+    {
+      "path": "src/views/components/blog-content-with-lightbox.tsx",
+      "size": 208,
+      "mode": 33188,
+      "sha": "a82a96372943d22287eee75f70b204f88d85bcf0"
+    },
+    {
+      "path": "src/views/components/blog-section.tsx",
+      "size": 756,
+      "mode": 33188,
+      "sha": "ea1ec7cd64c2a82da8438363aa8170038d20ef76"
+    },
+    {
+      "path": "src/views/components/books-section.tsx",
+      "size": 806,
+      "mode": 33188,
+      "sha": "d9258900f285d12607771aa59ed4b724e779cb56"
+    },
+    {
+      "path": "src/views/components/container.tsx",
+      "size": 228,
+      "mode": 33188,
+      "sha": "33fcf747c8b516e7e877d7b419722efa0db99fce"
+    },
+    {
+      "path": "src/views/components/events.tsx",
+      "size": 1019,
+      "mode": 33188,
+      "sha": "d781047a85799245046b752c4b6a853e2dc096a0"
+    },
+    {
+      "path": "src/views/components/external-link.tsx",
+      "size": 916,
+      "mode": 33188,
+      "sha": "27baf85b42613c2f8b17d0455740bdb80a0972e3"
+    },
+    {
+      "path": "src/views/components/footer.tsx",
+      "size": 3395,
+      "mode": 33188,
+      "sha": "1a1b1c05b68fda551a6d575fd46c2597939f20dc"
+    },
+    {
+      "path": "src/views/components/generic-section.tsx",
+      "size": 2758,
+      "mode": 33188,
+      "sha": "9501c87c610daa76d90744a9bdc82026fe4aae9e"
+    },
+    {
+      "path": "src/views/components/header.tsx",
+      "size": 1910,
+      "mode": 33188,
+      "sha": "5b15dade44f5a0d898627d6e046f4c65158e33dc"
+    },
+    {
+      "path": "src/views/components/investments-section.tsx",
+      "size": 1510,
+      "mode": 33188,
+      "sha": "df1bcdf0fe96508b5ea795f92d6ebb1c2dfdc1ff"
+    },
+    {
+      "path": "src/views/components/life-section.tsx",
+      "size": 1699,
+      "mode": 33188,
+      "sha": "9a5290e03ee48d279af476610d6a6a444cccd344"
+    },
+    {
+      "path": "src/views/components/navigation-footer.tsx",
+      "size": 918,
+      "mode": 33188,
+      "sha": "07b7c7edc35b5e9ff831433f434b15da406e6245"
+    },
+    {
+      "path": "src/views/components/navigation-link.tsx",
+      "size": 1160,
+      "mode": 33188,
+      "sha": "32f79c8094f4aefbac68e5722dc09fcb501f85d1"
+    },
+    {
+      "path": "src/views/components/navigation-links.tsx",
+      "size": 1164,
+      "mode": 33188,
+      "sha": "523e924274fc328e19377d87a77ff0f7aed79551"
+    },
+    {
+      "path": "src/views/components/notes-section.tsx",
+      "size": 889,
+      "mode": 33188,
+      "sha": "6e6472e177826223e9bc2caa9cb854f2c797da3a"
+    },
+    {
+      "path": "src/views/components/now-section.tsx",
+      "size": 2944,
+      "mode": 33188,
+      "sha": "6e547484a377cbf36e5ad2dee370becd3185b272"
+    },
+    {
+      "path": "src/views/components/open-source-section.tsx",
+      "size": 975,
+      "mode": 33188,
+      "sha": "3138a7c1db7d6d07d85bb7af9b64ca303cc01cf0"
+    },
+    {
+      "path": "src/views/components/press-section.tsx",
+      "size": 2053,
+      "mode": 33188,
+      "sha": "2ae62bfeab3ba742bba7c6b39c50e7340f712c73"
+    },
+    {
+      "path": "src/views/components/projects-section.tsx",
+      "size": 1480,
+      "mode": 33188,
+      "sha": "8a1a1c0b25ee96628830669d86f577095426c71f"
+    },
+    {
+      "path": "src/views/components/responsive-image.tsx",
+      "size": 901,
+      "mode": 33188,
+      "sha": "acd678cc67812591d8632b95d6062ef84573607a"
+    },
+    {
+      "path": "src/views/components/signature.tsx",
+      "size": 2741,
+      "mode": 33188,
+      "sha": "dcd6cf6e26b4d8f6bd25d67d70f94bd8634e9962"
+    },
+    {
+      "path": "src/views/components/source-link.tsx",
+      "size": 424,
+      "mode": 33188,
+      "sha": "0dfb8690962efa9a131aaf6e3eba35ff7aea9f6b"
+    },
+    {
+      "path": "src/views/components/sycamore-logo.tsx",
+      "size": 2166,
+      "mode": 33188,
+      "sha": "4154f77de018753b87adfd3eb3c769ec0ef02757"
+    },
+    {
+      "path": "src/views/components/timeline-item-birthday.tsx",
+      "size": 2146,
+      "mode": 33188,
+      "sha": "8819dd33f53747e36cc8d6e1f64923b603a0ece2"
+    },
+    {
+      "path": "src/views/components/timeline-item-fitness.tsx",
+      "size": 928,
+      "mode": 33188,
+      "sha": "b63a27f90a9812db7440ddaa270d4d7b01d7c1da"
+    },
+    {
+      "path": "src/views/components/timeline-item-food.tsx",
+      "size": 845,
+      "mode": 33188,
+      "sha": "eeca7f50ae627762e73fcd1adf8d4bfd2185f396"
+    },
+    {
+      "path": "src/views/components/timeline-item-github.tsx",
+      "size": 509,
+      "mode": 33188,
+      "sha": "e64a81722d8dd2daa89a6f512efc3f0cff49edba"
+    },
+    {
+      "path": "src/views/components/timeline-item-location.tsx",
+      "size": 1015,
+      "mode": 33188,
+      "sha": "5a49f6680e88183a35570bc8b53df2a2ebe941e6"
+    },
+    {
+      "path": "src/views/components/timeline-item-music.tsx",
+      "size": 418,
+      "mode": 33188,
+      "sha": "949ba81279f2f4948fbc76f64a4cb3341d50143a"
+    },
+    {
+      "path": "src/views/components/timeline-item-sleep.tsx",
+      "size": 352,
+      "mode": 33188,
+      "sha": "a0146a90e1a78186a4b75365ecebf4d470e7a4dc"
+    },
+    {
+      "path": "src/views/components/timeline-item-theme.tsx",
+      "size": 408,
+      "mode": 33188,
+      "sha": "402b5fc7846c4beb4177a0a8d7df5ddc6829424d"
+    },
+    {
+      "path": "src/views/components/timeline-item.tsx",
+      "size": 840,
+      "mode": 33188,
+      "sha": "439c7a11f79ac0d2856bdbac7b2eaaade86cfd1d"
+    },
+    {
+      "path": "src/views/components/travel-section.tsx",
+      "size": 915,
+      "mode": 33188,
+      "sha": "daf032cc45281881f262ef0db5f749b6c2e91d4e"
+    },
+    {
+      "path": "src/views/components/work-section.tsx",
+      "size": 6288,
+      "mode": 33188,
+      "sha": "d8d3d4a77da66e9b0ae6cc222feddcb3ab50e7c9"
+    },
+    {
+      "path": "src/views/contact/page.tsx",
+      "size": 3372,
+      "mode": 33188,
+      "sha": "af047b932178f5655375dfa49bcb0431468cb4e3"
+    },
+    {
+      "path": "src/views/events/[year]/[slug]/page.tsx",
+      "size": 8222,
+      "mode": 33188,
+      "sha": "266aea2aad3bbad7ddf693516657d32a83521268"
+    },
+    {
+      "path": "src/views/events/[year]/page.tsx",
+      "size": 2059,
+      "mode": 33188,
+      "sha": "5f9f2752db766dcc38c2440375953043c4479b2b"
+    },
+    {
+      "path": "src/views/events/component.tsx",
+      "size": 7903,
+      "mode": 33188,
+      "sha": "a7560012bcd80c1e27d442ae6e55e99e8c476a48"
+    },
+    {
+      "path": "src/views/events/metadata.tsx",
+      "size": 3652,
+      "mode": 33188,
+      "sha": "4a2359a35536eb2bfdd652882f1dc49a71c549c4"
+    },
+    {
+      "path": "src/views/events/page.tsx",
+      "size": 733,
+      "mode": 33188,
+      "sha": "eb959acc98e54ac66e56be3890a0128c34cc7ff9"
+    },
+    {
+      "path": "src/views/favicon.ico",
+      "size": 4286,
+      "mode": 33188,
+      "sha": "be2d7ba32d331d33beca7f9a70bb3e446db225ff"
+    },
+    {
+      "path": "src/views/globals.css",
+      "size": 724,
+      "mode": 33188,
+      "sha": "26aea2ce9e4326593afe1573de0aa877239298c2"
+    },
+    {
+      "path": "src/views/icon.png",
+      "size": 10642,
+      "mode": 33188,
+      "sha": "1a136e65713bd3a406a6518fd713b9a2295ea56d"
+    },
+    {
+      "path": "src/views/lib/markdown.ts",
+      "size": 5669,
+      "mode": 33188,
+      "sha": "084c34bd4e699b8e5949b6e5681d3d025573a432"
+    },
+    {
+      "path": "src/views/lib/opengraph.ts",
+      "size": 505,
+      "mode": 33188,
+      "sha": "51dc8177bbbd126ce17cba8055b4e7a077d70c95"
+    },
+    {
+      "path": "src/views/life/[year]/[slug]/page.tsx",
+      "size": 3513,
+      "mode": 33188,
+      "sha": "233030a3e48a9d3d1d3aad58c7b86a80c042d926"
+    },
+    {
+      "path": "src/views/life/[year]/page.tsx",
+      "size": 1790,
+      "mode": 33188,
+      "sha": "48ad6633f92f0abf3762957ad2abf200c7f69d86"
+    },
+    {
+      "path": "src/views/life/component.tsx",
+      "size": 3168,
+      "mode": 33188,
+      "sha": "eeecbe2b3d3791ebd790f785b8dbf07eb27a24b5"
+    },
+    {
+      "path": "src/views/life/components/coding-time-section.tsx",
+      "size": 1457,
+      "mode": 33188,
+      "sha": "301d81cddf0507f171ad38681d8b1518c54e03a8"
+    },
+    {
+      "path": "src/views/life/components/food-section.tsx",
+      "size": 2755,
+      "mode": 33188,
+      "sha": "2d31eba01d8aeae7b5668085c44f324a856d9db5"
+    },
+    {
+      "path": "src/views/life/components/github-section.tsx",
+      "size": 314,
+      "mode": 33188,
+      "sha": "8e150ddba5b1e81e1581ca7f3124458322b54480"
+    },
+    {
+      "path": "src/views/life/components/hacker-news-section.tsx",
+      "size": 2026,
+      "mode": 33188,
+      "sha": "d3caa96e827eff3cfe413513d9490fc5f70d4019"
+    },
+    {
+      "path": "src/views/life/components/life-events-section.tsx",
+      "size": 3456,
+      "mode": 33188,
+      "sha": "527fa4e47a09925e6cf7c88b682ce54eadbd653f"
+    },
+    {
+      "path": "src/views/life/components/location-section.tsx",
+      "size": 2268,
+      "mode": 33188,
+      "sha": "a52e75bc26b863a3407e4e992fb6f992825ba4f7"
+    },
+    {
+      "path": "src/views/life/components/music-section.tsx",
+      "size": 1082,
+      "mode": 33188,
+      "sha": "57d52b61ee8cdd52067fde2901528fe5b6a35537"
+    },
+    {
+      "path": "src/views/life/components/sleep-section.tsx",
+      "size": 1450,
+      "mode": 33188,
+      "sha": "2e83b31942dcb47a8ed87931fa49ff99ca0f9141"
+    },
+    {
+      "path": "src/views/life/components/steps-section.tsx",
+      "size": 1272,
+      "mode": 33188,
+      "sha": "0edfef8b50579bec9d733c24fce49c9ab23612ae"
+    },
+    {
+      "path": "src/views/life/components/themes-section.tsx",
+      "size": 1672,
+      "mode": 33188,
+      "sha": "c54d7a492c50b37b09d75d41f7df4dd7efe42f4b"
+    },
+    {
+      "path": "src/views/life/food/page.tsx",
+      "size": 5855,
+      "mode": 33188,
+      "sha": "ccffd962b7402a93e6bb8d4c3c015adccca1f68d"
+    },
+    {
+      "path": "src/views/life/page.tsx",
+      "size": 619,
+      "mode": 33188,
+      "sha": "3c7b8c8e1af21a0a052d9744496471551c7abd87"
+    },
+    {
+      "path": "src/views/llms.txt/generator.ts",
+      "size": 5351,
+      "mode": 33188,
+      "sha": "e04dadb34707f9fa0a07e54c5b3cf222361ff74c"
+    },
+    {
+      "path": "src/views/location/[year]/[slug]/page.tsx",
+      "size": 7099,
+      "mode": 33188,
+      "sha": "ec217b74a59a0245abab4938e9a48783753b0c4b"
+    },
+    {
+      "path": "src/views/location/[year]/page.tsx",
+      "size": 1795,
+      "mode": 33188,
+      "sha": "e8ba41cb4153e421a3ed879a3be2bca1245ecffd"
+    },
+    {
+      "path": "src/views/location/component.tsx",
+      "size": 12001,
+      "mode": 33188,
+      "sha": "04fabf1a63c4fb01a76cbd61fa401bbb03a14fc9"
+    },
+    {
+      "path": "src/views/location/page.tsx",
+      "size": 661,
+      "mode": 33188,
+      "sha": "938710f5cf13845a043397707c3651a82ac33440"
+    },
+    {
+      "path": "src/views/mentoring/page.tsx",
+      "size": 3702,
+      "mode": 33188,
+      "sha": "76567d76214c0d1ec0bb4c59daac2e24722ff125"
+    },
+    {
+      "path": "src/views/notes/[year]/[slug]/page.tsx",
+      "size": 3575,
+      "mode": 33188,
+      "sha": "e5ed3915391ba821ddc0ceb9555f19760319dead"
+    },
+    {
+      "path": "src/views/notes/[year]/page.tsx",
+      "size": 2025,
+      "mode": 33188,
+      "sha": "fbd1a276758d326eea191b3d323b7984c5e1eb20"
+    },
+    {
+      "path": "src/views/notes/component.tsx",
+      "size": 4929,
+      "mode": 33188,
+      "sha": "dfa86a15e17761cba81423ef58f0812dba76da04"
+    },
+    {
+      "path": "src/views/notes/metadata.tsx",
+      "size": 2605,
+      "mode": 33188,
+      "sha": "5e573d9524accbe28a617cd8565e0bd83f9e79dd"
+    },
+    {
+      "path": "src/views/notes/page.tsx",
+      "size": 666,
+      "mode": 33188,
+      "sha": "fb6d2fa2c9e374bcce1c38f0334e94380b6b1785"
+    },
+    {
+      "path": "src/views/now/page.tsx",
+      "size": 2199,
+      "mode": 33188,
+      "sha": "0b42b20a291313063fcc5797641cbe2e0f481ce5"
+    },
+    {
+      "path": "src/views/open-source/[year]/[slug]/page.tsx",
+      "size": 9079,
+      "mode": 33188,
+      "sha": "1c8c56cb4b7a8767c02c6eb775d8c976fc46c8ce"
+    },
+    {
+      "path": "src/views/open-source/[year]/page.tsx",
+      "size": 1778,
+      "mode": 33188,
+      "sha": "7ffa55b2aad78cbfeb24cc5f343c4b255baca616"
+    },
+    {
+      "path": "src/views/open-source/component.tsx",
+      "size": 11119,
+      "mode": 33188,
+      "sha": "98c0c54cb575f68ec1d5109f8f7d1a923ca09013"
+    },
+    {
+      "path": "src/views/open-source/page.tsx",
+      "size": 707,
+      "mode": 33188,
+      "sha": "afd4350032ef629ec674408b54cbd0a181cb8173"
+    },
+    {
+      "path": "src/views/page.tsx",
+      "size": 2330,
+      "mode": 33188,
+      "sha": "cb1fe920f142b6d95cae83bc743e728b7f692f12"
+    },
+    {
+      "path": "src/views/press/[year]/[slug]/page.tsx",
+      "size": 6943,
+      "mode": 33188,
+      "sha": "5260266283ed67861306eeae0f26b6efe8b82094"
+    },
+    {
+      "path": "src/views/press/[year]/page.tsx",
+      "size": 2395,
+      "mode": 33188,
+      "sha": "3646206743ee69e5af4f7afda9a6ce2ceb2bc492"
+    },
+    {
+      "path": "src/views/press/component.tsx",
+      "size": 5126,
+      "mode": 33188,
+      "sha": "64bbc84857ae86db680038506f29e900de2d153c"
+    },
+    {
+      "path": "src/views/press/page.tsx",
+      "size": 634,
+      "mode": 33188,
+      "sha": "f16515e9f1411f5257a06a206b453ce16fc8699b"
+    },
+    {
+      "path": "src/views/projects/[year]/[slug]/page.tsx",
+      "size": 5735,
+      "mode": 33188,
+      "sha": "1bfed29008793f362572a868431532a678310c7f"
+    },
+    {
+      "path": "src/views/projects/[year]/page.tsx",
+      "size": 2082,
+      "mode": 33188,
+      "sha": "cb954f80fff8292aa0efe829159877a60658fbce"
+    },
+    {
+      "path": "src/views/projects/component.tsx",
+      "size": 8001,
+      "mode": 33188,
+      "sha": "3b02fbe4a5126e6cb39b000f7acd1f75ae87df46"
+    },
+    {
+      "path": "src/views/projects/get-image-url.ts",
+      "size": 494,
+      "mode": 33188,
+      "sha": "2572880bc376f08c469f7029247652bdffc19980"
+    },
+    {
+      "path": "src/views/projects/metadata.tsx",
+      "size": 2146,
+      "mode": 33188,
+      "sha": "8d4f3ecdba21da2722c9d6d7e6adb8f5c182eed2"
+    },
+    {
+      "path": "src/views/projects/page.tsx",
+      "size": 714,
+      "mode": 33188,
+      "sha": "0c6bd08e779e4672abae6c8563ce9fe6245c298d"
+    },
+    {
+      "path": "src/views/projects/tags/[tag]/page.tsx",
+      "size": 1491,
+      "mode": 33188,
+      "sha": "5b0a1102044e0f857268440332e28248eab2269d"
+    },
+    {
+      "path": "src/views/styles.tsx",
+      "size": 848,
+      "mode": 33188,
+      "sha": "b0a39463793a0ff0b5a121e803553f229091d093"
+    },
+    {
+      "path": "src/views/themes/[year]/[slug]/page.tsx",
+      "size": 4434,
+      "mode": 33188,
+      "sha": "92c98cfe35e6af3da24d48a6464b86450fe9cb9d"
+    },
+    {
+      "path": "src/views/themes/[year]/page.tsx",
+      "size": 1686,
+      "mode": 33188,
+      "sha": "71e67dabbf0cbdb5782d8dbf0087f89843d7c9aa"
+    },
+    {
+      "path": "src/views/themes/component.tsx",
+      "size": 4573,
+      "mode": 33188,
+      "sha": "2004d73cae4ce1c2961891b17c5f5d7dd475b78f"
+    },
+    {
+      "path": "src/views/themes/metadata.tsx",
+      "size": 1640,
+      "mode": 33188,
+      "sha": "87ba95a96632b7ee05253154ab15be2a48744069"
+    },
+    {
+      "path": "src/views/themes/page.tsx",
+      "size": 789,
+      "mode": 33188,
+      "sha": "9a27cc349832b6c358c48dc1b225cf48b6bef2a6"
+    },
+    {
+      "path": "src/views/versions/[year]/[slug]/page.tsx",
+      "size": 3964,
+      "mode": 33188,
+      "sha": "d3a2db29468b7465ce55a7f78e6b1055200c7452"
+    },
+    {
+      "path": "src/views/versions/[year]/page.tsx",
+      "size": 1934,
+      "mode": 33188,
+      "sha": "96e4d0909ac75382cce189514f155c15d8fec94d"
+    },
+    {
+      "path": "src/views/versions/component.tsx",
+      "size": 4286,
+      "mode": 33188,
+      "sha": "951af52e7eb0d55d682752d642173478bc9acb07"
+    },
+    {
+      "path": "src/views/versions/metadata.tsx",
+      "size": 3042,
+      "mode": 33188,
+      "sha": "93f715660ef48f8caeafca91f2b3ddcfc35adddc"
+    },
+    {
+      "path": "src/views/versions/page.tsx",
+      "size": 834,
+      "mode": 33188,
+      "sha": "73e5b40041692d92a3d84d603f1e1b6e52af58b0"
+    },
+    {
+      "path": "src/views/videos/[year]/[slug]/page.tsx",
+      "size": 3768,
+      "mode": 33188,
+      "sha": "6a9b306879934996c192eca93931d385402406a7"
+    },
+    {
+      "path": "src/views/videos/[year]/page.tsx",
+      "size": 1735,
+      "mode": 33188,
+      "sha": "7448de74dd6bcd9d34091e0930f7ee08233b85a3"
+    },
+    {
+      "path": "src/views/videos/component.tsx",
+      "size": 3842,
+      "mode": 33188,
+      "sha": "f6b182988c223f8f7fa7292f76b7b2e0c54bc180"
+    },
+    {
+      "path": "src/views/videos/metadata.tsx",
+      "size": 2142,
+      "mode": 33188,
+      "sha": "450a993be62f9536cea3c88979d63d878b3a8f41"
+    },
+    {
+      "path": "src/views/videos/page.tsx",
+      "size": 641,
+      "mode": 33188,
+      "sha": "15e87e1a2d8c82ce4bc04affd4fc272707c9e2e1"
+    },
+    {
+      "path": "tests/legacy-images.test.ts",
+      "size": 987,
+      "mode": 33188,
+      "sha": "fd8769a8aa04acb958897eb6b8de0110acd5b338"
+    },
+    {
+      "path": "tests/preview-auth.test.ts",
+      "size": 2099,
+      "mode": 33188,
+      "sha": "5d9a4a722902322b47f982a4a34a711e716bc584"
+    },
+    {
+      "path": "tests/routes.test.ts",
+      "size": 3860,
+      "mode": 33188,
+      "sha": "69b53c8f954347afb279851baa2a42937308d453"
+    },
+    {
+      "path": "tests/source.test.ts",
+      "size": 2847,
+      "mode": 33188,
+      "sha": "4bbcc34421aba24ccf8129ee8cadb93068d479c7"
+    },
+    {
+      "path": "tests/vercel-rehearsal/cache.ts",
+      "size": 1408,
+      "mode": 33188,
+      "sha": "1ebb7c9e02928aac2a0361c67ae14282c7b8b668"
+    },
+    {
+      "path": "tests/vercel-rehearsal/middleware.ts",
+      "size": 2075,
+      "mode": 33188,
+      "sha": "268411dde0420bda929fa93c33d4e8712c7fbcbe"
+    },
+    {
+      "path": "tests/vercel-rehearsal/state.ts",
+      "size": 1480,
+      "mode": 33188,
+      "sha": "abb3f734175c735387447027fae8f1ae59adab46"
+    },
+    {
+      "path": "TODO.md",
+      "size": 20917,
+      "mode": 33188,
+      "sha": "58bd1aa8fa96fdab5b8cc69afb1b8aaf5f696bb6"
+    },
+    {
+      "path": "tsconfig.json",
+      "size": 286,
+      "mode": 33188,
+      "sha": "ec7a21f56891c683675362f341f8b2435e14e6e0"
+    },
+    {
+      "path": "vercel.json",
+      "size": 196,
+      "mode": 33188,
+      "sha": "5e429d778e0ff600408e2f908549b7257db75114"
+    }
+  ]
+}

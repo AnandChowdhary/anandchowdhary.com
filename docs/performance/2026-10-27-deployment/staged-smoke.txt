@@ -1,0 +1,83 @@
+Smoke testing https://anandchowdhary-n0t8ntr8i-anand-chowdharys-projects.vercel.app
+
+Sitemap: 764 URLs
+
+Index pages
+  ok  / — HTTP 200
+  ok  /about — HTTP 200
+  ok  /events — HTTP 200
+  ok  /now — HTTP 200
+  ok  /books — HTTP 200
+  ok  /life — HTTP 200
+  ok  /blog — HTTP 200
+  ok  /location — HTTP 200
+  ok  /press — HTTP 200
+  ok  /archive — HTTP 200
+  ok  /notes — HTTP 200
+  ok  /versions — HTTP 200
+  ok  /videos — HTTP 200
+  ok  /themes — HTTP 200
+  ok  /projects — HTTP 200
+  ok  /location — HTTP 200
+  ok  /open-source — HTTP 200
+
+Sampled detail pages
+  ok  /versions/2022 — HTTP 200
+  ok  /videos/2020 — HTTP 200
+  ok  /videos/2018/in-conversation-with-anand-chowdhury — HTTP 200
+  ok  /versions/2016/airbrush — HTTP 200
+  ok  /videos/2021/anand-chowdhary-on-his-new-startup-typescript-and-other-things — HTTP 200
+  ok  /versions/2025/anchor — HTTP 200
+  ok  /themes/2025 — HTTP 200
+  ok  /projects/2024/firstquadrant-actions — HTTP 200
+  ok  /themes/2026/year-of-discovery — HTTP 200
+  ok  /projects/2018/blueboard — HTTP 200
+  ok  /projects/2014/unifiers — HTTP 200
+  ok  /themes/2022/year-of-teamwork — HTTP 200
+  ok  /press/2018/het-financieele-dagblad — HTTP 200
+  ok  /press/2019/startup-city-india — HTTP 200
+  ok  /press/2016/the-better-india — HTTP 200
+  ok  /notes/2026/chipotlai-max-exposes-interface-leaks — HTTP 200
+  ok  /notes/2025/i-got-a-password-reset-email-from-prcom-and-they — HTTP 200
+  ok  /notes/2025/skip-the-beacon-for-privacy — HTTP 200
+  ok  /life/1997/born-in-new-delhi-india — HTTP 200
+  ok  /life/2019/studied-at-santa-clara-university — HTTP 200
+  ok  /open-source/2020/twt — HTTP 200
+  ok  /open-source/2019/typestart — HTTP 200
+  ok  /events/2026/devworld — HTTP 200
+  ok  /life/2007 — HTTP 200
+  ok  /open-source/2026/codex-usage — HTTP 200
+  ok  /books/2025/everything-is-tuberculosis-signed-edition — HTTP 200
+  ok  /events/2020/ut-global-entrepreneurship-week — HTTP 200
+  ok  /books/2022/what-you-do-is-who-you-are — HTTP 200
+  ok  /events/2018/online-open-day — HTTP 200
+  ok  /books/2016/how-to-win-friends-and-influence-people — HTTP 200
+  ok  /blog/2026/future-ai-native-work — HTTP 200
+  ok  /archive/2026 — HTTP 200
+  ok  /archive/2020 — HTTP 200
+  ok  /blog/2014/fleksy-keyboard — HTTP 200
+  ok  /blog/2019/google-docs-github — HTTP 200
+  ok  /archive/2014 — HTTP 200
+
+Unknown slugs must 404, not 500 (forces a runtime render)
+  ok  /life/2026/zz-smoke-6h8ok304 — HTTP 404
+  ok  /location/2026/zz-smoke-a5zbc4gr — HTTP 404
+  ok  /blog/2026/zz-smoke-b8x508np — HTTP 404
+  ok  /notes/2026/zz-smoke-c7jd4fcq — HTTP 404
+  ok  /books/2026/zz-smoke-j7hk4jke — HTTP 404
+  ok  /events/2026/zz-smoke-q7voe6fg — HTTP 404
+  ok  /press/2026/zz-smoke-l40b0gma — HTTP 404
+  ok  /projects/2026/zz-smoke-c7v9962f — HTTP 404
+  ok  /themes/2026/zz-smoke-hnmu2m48 — HTTP 404
+  ok  /versions/2026/zz-smoke-r219k3rz — HTTP 404
+  ok  /videos/2026/zz-smoke-falckwu4 — HTTP 404
+  ok  /open-source/2026/zz-smoke-oq428p9x — HTTP 404
+
+Slug aliases still redirect
+  ok  /videos/2017/bharat-hacks-live — 308 → /videos/2017/bharathacks-live
+  ok  /press/2017/your-story — 308 → /press/2017/yourstory
+  ok  /location/2014/japan — 308 → /location/2014/tokyo-jp
+  ok  /open-source/2014/essential.css — 308 → /open-source/2014/essential-css
+
+note: Freshness check skipped — pass --check-freshness on the weekly run.
+All checks passed.

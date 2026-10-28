@@ -1,0 +1,203 @@
+import { getPress, getPressItemByYearAndSlug } from "@/views/api";
+import { buildScreenshotOpenGraphImageUrl } from "@/views/lib/opengraph";
+import { Container } from "@/views/components/container";
+import { ExternalLink } from "@/views/components/external-link";
+import { Footer } from "@/views/components/footer";
+import { Header } from "@/views/components/header";
+import { NavigationFooter } from "@/views/components/navigation-footer";
+import { proseClassName } from "@/views/styles";
+import {
+  IconAward,
+  IconBuilding,
+  IconCalendarEvent,
+  IconExternalLink,
+  IconMicrophone,
+  IconNews,
+  IconUser,
+} from "@tabler/icons-react";
+import type { Metadata } from "@/lib/metadata";
+import { notFound, permanentRedirect } from "@/lib/navigation";
+
+type Props = {
+  params: Promise<{ year: string; slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const pressItem = await getPressItemByYearAndSlug(yearNumber, slug);
+  if (!pressItem) notFound();
+  return {
+    title: `${pressItem.title} / ${year} / Press / Anand Chowdhary`,
+    description: pressItem.description ?? `Press coverage: ${pressItem.title}`,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/press/${year}/${slug}`),
+        },
+      ],
+    },
+  };
+}
+
+
+export default async function PressYearSlug({ params }: Props) {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const pressItem = await getPressItemByYearAndSlug(yearNumber, slug);
+  if (!pressItem) notFound();
+  // Slug aliases (see `slugsMatch`) resolve to the same page, so send them on
+  // to the canonical URL instead of serving duplicate content.
+  if (pressItem.slug !== slug)
+    permanentRedirect(`/press/${year}/${pressItem.slug}`);
+
+  const press = await getPress();
+  const allPressItems = [
+    ...press.awards,
+    ...press.podcasts,
+    ...press.features,
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const currentPressIndex = allPressItems.findIndex(
+    (p) => p.slug === pressItem.slug
+  );
+  const previousPressItem = allPressItems[currentPressIndex - 1];
+  const nextPressItem = allPressItems[currentPressIndex + 1];
+
+  // Get the appropriate icon based on category
+  const CategoryIcon =
+    pressItem.category === "award"
+      ? IconAward
+      : pressItem.category === "podcast"
+      ? IconMicrophone
+      : IconNews;
+
+  const yearNavigation = { previous: previousPressItem, next: nextPressItem };
+
+  return (
+    <Container>
+      <Header pathname="/press" />
+      <main className="max-w-2xl mx-auto space-y-8">
+        <header className="space-y-4">
+          <div className="flex items-center gap-2 text-neutral-500">
+            <CategoryIcon size={20} strokeWidth={1.5} />
+            <span className="text-sm font-medium capitalize">
+              {pressItem.category}
+            </span>
+          </div>
+
+          <h1 className="text-2xl font-medium">{pressItem.title}</h1>
+
+          <div className="grid grid-cols-2 gap-2.5 pt-2.5">
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconCalendarEvent
+                className="shrink-0"
+                size={16}
+                strokeWidth={1.5}
+              />
+              <div className="grow truncate">
+                {new Date(pressItem.date).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </div>
+            </div>
+
+            <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+              <IconBuilding className="shrink-0" size={16} strokeWidth={1.5} />
+              <div className="grow truncate">{pressItem.publisher}</div>
+            </div>
+
+            {pressItem.author && (
+              <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+                <IconUser className="shrink-0" size={16} strokeWidth={1.5} />
+                <div className="grow truncate">{pressItem.author}</div>
+              </div>
+            )}
+
+            {pressItem.href && (
+              <div className="text-sm text-neutral-500 flex items-center gap-1.5">
+                <IconExternalLink
+                  className="shrink-0"
+                  size={16}
+                  strokeWidth={1.5}
+                />
+                <ExternalLink href={pressItem.href} className="grow truncate">
+                  View on {new URL(pressItem.href).hostname.replace("www.", "")}
+                </ExternalLink>
+              </div>
+            )}
+          </div>
+        </header>
+
+        {pressItem.description && (
+          <div className={proseClassName}>
+            <p>{pressItem.description}</p>
+          </div>
+        )}
+
+        {pressItem.embed && (
+          <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src={pressItem.embed}
+              className="w-full h-full"
+              title={pressItem.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
+
+        {!pressItem.description && !pressItem.embed && (
+          <div className={proseClassName}>
+            <p className="text-neutral-500">
+              This {pressItem.category} was featured in {pressItem.publisher}
+              {pressItem.author && ` by ${pressItem.author}`} on{" "}
+              {new Date(pressItem.date).toLocaleDateString("en-US", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+              .
+            </p>
+            {pressItem.href && (
+              <p>
+                <ExternalLink href={pressItem.href}>
+                  View the original {pressItem.category} →
+                </ExternalLink>
+              </p>
+            )}
+          </div>
+        )}
+        <NavigationFooter
+          previous={
+            yearNavigation.previous
+              ? {
+                  href: `/press/${new Date(
+                    yearNavigation.previous.date
+                  ).getUTCFullYear()}/${yearNavigation.previous.slug}`,
+                  label: yearNavigation.previous.title,
+                }
+              : undefined
+          }
+          next={
+            yearNavigation.next
+              ? {
+                  href: `/press/${new Date(
+                    yearNavigation.next.date
+                  ).getUTCFullYear()}/${yearNavigation.next.slug}`,
+                  label: yearNavigation.next.title,
+                }
+              : undefined
+          }
+        />
+      </main>
+      <Footer />
+    </Container>
+  );
+}

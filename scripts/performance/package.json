@@ -1,0 +1,17 @@
+{
+  "name": "site-performance-audit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "baseline": "node run.mjs",
+    "summarize": "node summarize.mjs"
+  },
+  "engines": {
+    "node": ">=22.19"
+  },
+  "dependencies": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  }
+}

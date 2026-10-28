@@ -1,0 +1,173 @@
+import {
+  getAllProjects,
+  getProjectByYearAndSlug,
+  getProjectContent,
+} from "@/views/api";
+import { Container } from "@/views/components/container";
+import { Footer } from "@/views/components/footer";
+import { Header } from "@/views/components/header";
+import { NavigationFooter } from "@/views/components/navigation-footer";
+import { buildScreenshotOpenGraphImageUrl } from "@/views/lib/opengraph";
+import { getImageUrl } from "@/views/projects/get-image-url";
+import { ProjectMetadata } from "@/views/projects/metadata";
+import { proseClassName } from "@/views/styles";
+import { marked } from "marked";
+import { markedSmartypants } from "marked-smartypants";
+import type { Metadata } from "@/lib/metadata";
+import { notFound } from "@/lib/navigation";
+
+marked.use(markedSmartypants());
+
+type Props = {
+  params: Promise<{ year: string; slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const project = await getProjectByYearAndSlug(yearNumber, slug);
+  if (!project) notFound();
+  return {
+    title: `${project.title} / ${year} / Projects / Anand Chowdhary`,
+    description: project.excerpt,
+    openGraph: {
+      images: [
+        {
+          url: buildScreenshotOpenGraphImageUrl(`/projects/${year}/${slug}`),
+        },
+      ],
+    },
+  };
+}
+
+
+export default async function ProjectYearSlug({ params }: Props) {
+  const { year, slug } = await params;
+  if (!/^\d{4}$/.test(year)) notFound();
+  const yearNumber = parseInt(year);
+
+  const project = await getProjectByYearAndSlug(yearNumber, slug);
+  if (!project) notFound();
+
+  const allProjects = await getAllProjects();
+  const currentProjectIndex = allProjects.findIndex(
+    (p) => p.slug === project.slug
+  );
+  const previousProject = allProjects[currentProjectIndex - 1];
+  const nextProject = allProjects[currentProjectIndex + 1];
+
+  const projectContentText = await getProjectContent(year, project.slug);
+
+  // Replace relative image paths with GitHub raw URLs
+  let processedContent = projectContentText.replace(
+    /!\[([^\]]*)\]\((\/assets\/[^)]+)\)/g,
+    (_match, alt, path) => {
+      return `![${alt}](https://github.com/AnandChowdhary/projects/blob/main${path}?raw=true)`;
+    }
+  );
+
+  // Also replace HTML img tags with relative src
+  processedContent = processedContent.replace(
+    /<img([^>]*)\ssrc="(\/assets\/[^"]+)"([^>]*)>/g,
+    (_match, before, path, after) => {
+      return `<img${before} src="https://raw.githubusercontent.com/AnandChowdhary/projects/main${path}"${after}>`;
+    }
+  );
+
+  const projectContentHtml = await Promise.resolve(
+    marked.parse(processedContent)
+  );
+
+  const yearNavigation = { previous: previousProject, next: nextProject };
+
+  return (
+    <Container>
+      <Header pathname={`/projects/${year}`} />
+      <main className="max-w-2xl mx-auto space-y-8">
+        {project.attributes?.img_src && (
+          <div
+            className="bg-white dark:bg-neutral-900 w-full rounded-2xl shadow-lg flex items-center justify-center border border-neutral-200 dark:border-neutral-800"
+            style={{
+              aspectRatio: "2/1",
+              padding: project.attributes.style === "padded" ? "1rem" : 0,
+              backgroundColor: project.attributes.bg || undefined,
+            }}
+          >
+            {project.attributes.style === "padded" ? (
+              <img
+                alt=""
+                src={getImageUrl(
+                  project.attributes.img_src,
+                  project.attributes.img_type
+                )}
+                className="max-w-full max-h-full object-contain"
+              />
+            ) : project.attributes.style === "cover" ? (
+              <img
+                alt=""
+                src={getImageUrl(
+                  project.attributes.img_src,
+                  project.attributes.img_type
+                )}
+                className="w-full h-full rounded-2xl object-cover"
+              />
+            ) : (
+              <img
+                alt=""
+                src={getImageUrl(
+                  project.attributes.img_src,
+                  project.attributes.img_type
+                )}
+                className="w-full h-full rounded-2xl object-cover"
+              />
+            )}
+          </div>
+        )}
+        <header className="space-y-2">
+          <h1
+            className="text-2xl font-medium"
+            dangerouslySetInnerHTML={{
+              __html: marked.parseInline(project.title),
+            }}
+          />
+          <ProjectMetadata item={project} />
+        </header>
+        <div
+          className={proseClassName}
+          dangerouslySetInnerHTML={{ __html: projectContentHtml }}
+        />
+        <NavigationFooter
+          previous={
+            yearNavigation.previous
+              ? {
+                  href: `/projects/${new Date(
+                    yearNavigation.previous.date
+                  ).getUTCFullYear()}/${yearNavigation.previous.slug.replace(
+                    ".md",
+                    " "
+                  )}`,
+                  label: yearNavigation.previous.title,
+                }
+              : undefined
+          }
+          next={
+            yearNavigation.next
+              ? {
+                  href: `/projects/${new Date(
+                    yearNavigation.next.date
+                  ).getUTCFullYear()}/${yearNavigation.next.slug.replace(
+                    ".md",
+                    " "
+                  )}`,
+                  label: yearNavigation.next.title,
+                }
+              : undefined
+          }
+        />
+      </main>
+      <Footer />
+    </Container>
+  );
+}

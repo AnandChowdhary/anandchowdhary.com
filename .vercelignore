@@ -1,0 +1,8 @@
+node_modules/
+scripts/performance/
+docs/performance/*/
+.astro/
+dist/
+.git/
+.env*
+.vercel/
