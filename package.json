@@ -4,22 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
-    "build": "astro build",
-    "start": "node --no-experimental-require-module scripts/serve-built.mjs",
+    "build": "SITE_STATIC_BUILD=1 TZ=UTC astro build && node scripts/finalize-static.mjs",
+    "start": "node scripts/serve-static.mjs",
     "check": "astro check",
     "test": "tsx --test tests/*.test.ts",
     "smoke": "node scripts/smoke.mjs",
     "link-audit": "node scripts/link-audit.mjs",
     "lint": "astro check",
-    "verify:build": "node scripts/verify-built.mjs",
-    "verify:runtime": "node scripts/verify-runtime.mjs"
+    "verify:build": "node scripts/verify-static.mjs"
   },
   "dependencies": {
-    "@astrojs/vercel": "11.0.16",
     "@number-flow/react": "^0.6.2",
     "@sindresorhus/slugify": "^3.0.1",
     "@tabler/icons-react": "^3.49.0",
-    "@vercel/functions": "3.10.3",
     "astro": "7.4.2",
     "countries-and-timezones": "^3.10.0",
     "countries-list": "^3.4.1",
@@ -51,11 +48,6 @@
   },
   "type": "module",
   "overrides": {
-    "@vercel/routing-utils": {
-      "path-to-regexp": "6.3.0"
-    },
-    "@vercel/cli-config": {
-      "zod": "4.6.6"
-    }
+    "zod": "4.6.7"
   }
 }

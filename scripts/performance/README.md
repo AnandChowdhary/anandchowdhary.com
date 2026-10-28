@@ -58,10 +58,9 @@ tool for trusted targets, not an application deployment setting.
 
 ## Visual and interaction checks
 
-Build the app with Node 24 and run `npm start` to serve its actual Vercel bundle
-locally on port 4322. The local preview transforms `/_vercel/image` requests with
-Sharp using the same width/quality contract; Vercel performs those transforms in
-production. This is not proof of CDN cache or production encoder behavior.
+Build the static site with Node 24 and run npm start on port 4322. This serves
+the generated HTML, scripts and build-time WebP images. It does not emulate the
+GitHub Pages CDN or prove deployed compression/cache behavior.
 
 ```sh
 node scripts/performance/visual.mjs --base=http://localhost:4322 --output=docs/performance/my-visual-check
@@ -85,14 +84,7 @@ link audit remains responsible for published URL/status coverage. The lightbox
 interaction check uses the restored original article artwork without interception.
 All 17 podcast images must actually load after scrolling.
 
-The built-function local server (`npm start`, port 4322) negotiates gzip for text
-responses and serves a local Sharp approximation of Vercel image transforms.
-These transport approximations do not reproduce CDN caching, image encoders,
-HTTP protocol or geographic latency. Label such results local diagnostics; use
-an actual deployment for release comparisons.
-
-The local verification server fixes its timezone to UTC to match production date
-formatting. An inherited shell timezone (for example Europe/Amsterdam) can shift
+The static build fixes its timezone to UTC for stable date formatting. An inherited shell timezone (for example Europe/Amsterdam) can shift
 late-night timestamps to a different day and create false visual differences.
 
 Protected previews use `VERCEL_PREVIEW_ORIGIN` and

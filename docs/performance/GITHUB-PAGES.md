@@ -1,9 +1,9 @@
-# GitHub Pages conversion proposal
+# GitHub Pages conversion — approved 2026-10-28
 
-Requested 2026-10-28. The Astro application in PR #304 currently uses server
-output on Vercel; it is not yet a static GitHub Pages artifact. Production still
-runs the original Next.js deployment. No hosting or DNS switch is part of this
-proposal until the static build and deployment have been verified.
+The user approved the conversion and its rebuild/HTML redirect tradeoffs. PR #304
+now uses Astro static output and official Pages artifact deployment. The existing
+custom domain still serves the original Next.js deployment on Vercel until DNS
+cutover. GitHub Pages is enabled for this repository with build_type=workflow.
 
 ## Resulting behavior
 
@@ -21,8 +21,7 @@ Counters continue animating from their build-time values after hydration.
 GitHub Pages has no per-request server, runtime source cache, ISR or Vercel image
 service. Static HTML redirect pages can preserve navigation for known aliases,
 but cannot preserve the original HTTP 307/308 response codes. Unknown URLs use
-the generated 404.html. These behavior changes require the user's preference
-before proceeding with the hosting conversion.
+the generated 404.html. The user accepted these behavior changes before implementation.
 
 ## Implementation
 
@@ -64,3 +63,47 @@ The GitHub Pages API currently returns 404 for this repository. Confirm whether
 Pages needs enabling and whether the connection can manage Pages settings before
 assuming deployment access. Custom-domain DNS changes require the DNS provider's
 access and remain separate from creating the deployment workflow.
+
+## Implemented and verified locally
+
+- 1,511 inventoried paths and 1,512 rendered HTML pages, plus sitemap/LLM files,
+  404.html, original fonts/icons and .nojekyll.
+- 123 original image sources generate static responsive WebP assets; image
+  variants total 14,764,824 bytes. The complete prefixed artifact is about 48 MiB.
+- Both root-domain and /anandchowdhary.com/ builds pass route, asset and original
+  artwork hash verification. HTML links, srcsets, image preloads and redirects
+  support the project prefix; counter/lightbox selection strips it correctly.
+- 801/801 published URLs pass on both builds. Alias destinations are checked
+  through immediate same-origin HTML redirects, and unknown URLs return real 404s.
+- All 15 contracts pass, including fatal mandatory-source errors in static builds.
+  Type checks pass with zero errors, warnings or hints.
+- Browser checks pass on root and project-prefixed builds: no-JS article content,
+  one optimized hero, both animated counters, all 17 podcast images and accessible
+  keyboard/pointer lightbox behavior, with no exceptions.
+- The 48-pair local visual matrix matches dimensions throughout with no browser
+  exceptions. Expected pixel differences include restored original article art
+  (maximum 6.02%), image encoding and counters. See astro-pages-local-parity.
+- The 2017 MD5 article's root /images/... reference now uses a compatibility copy
+  of its byte-identical /images/blog/... original. The provenance manifest records
+  both paths; no replacement artwork was invented.
+- Vercel's adapter, runtime cache use, analytics integration and deployment helper
+  scripts are removed. Astro's optional storage dependency may install unused
+  Vercel SDK tooling during builds; none is deployed in the static artifact.
+- Git deployments are disabled in vercel.json to keep source merging from
+  independently switching the existing Vercel custom domains.
+
+## Publication and domain cutover
+
+The official workflow uses configure-pages@v6, upload-pages-artifact@v5 and
+deploy-pages@v5 (release tags verified), with Node 24 and content-addressed image
+caching. PRs build/check without deploying; main publishes through github-pages.
+The initial public staging URL will be
+https://anandchowdhary.github.io/anandchowdhary.com/ and needs its own deployed
+smoke, URL, browser and performance verification. Local/Vercel numbers do not
+establish Pages performance.
+
+The domain's nameservers are anna.ns.cloudflare.com and jonah.ns.cloudflare.com.
+No DNS-management connection is available in this workspace. Once Pages is
+verified, the owner must update the Cloudflare DNS records for the final custom
+domain switch. No DNS changes have been made. Keep the original Vercel deployment
+available for rollback until the final custom-domain checks pass.

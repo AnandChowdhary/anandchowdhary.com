@@ -1,7 +1,7 @@
 import type { ImgHTMLAttributes } from 'react';
 import { IMAGE_WIDTHS, CARD_SIZES, optimizableImage, optimizedImageUrl } from '@/lib/images';
 
-/** Keep the original element/classes and intrinsic sizing; Vercel resizes the source without cropping. */
+/** Keep the original element/classes and intrinsic sizing; the static build resizes the source without cropping. */
 export function ResponsiveImage({ src, sizes = CARD_SIZES, loading = 'lazy', ...props }: ImgHTMLAttributes<HTMLImageElement>) {
   if (typeof src !== 'string' || !optimizableImage(src)) return <img {...props} src={src} sizes={sizes} loading={loading} />;
   // The decorative hero originals are only 384px wide; don't manufacture larger variants.

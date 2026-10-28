@@ -21,8 +21,8 @@ try {
  assert.ok((await page.$eval('main',el=>el.textContent)).length>2000);
  assert.equal(requests.some(url=>url.includes('/_next/')||url.includes('_rsc=')),false);
  assert.equal(await page.$$eval('main > div.relative > img',images => images.length),1);
- assert.equal(await page.$eval('main > div.relative > img',image=>image.complete&&image.naturalWidth>0),true,'The native Vercel hero image must decode successfully');
- assert.equal(requests.filter(url=>url.includes('blog-images')).length,1);
+ assert.equal(await page.$eval('main > div.relative > img',image=>image.complete&&image.naturalWidth>0),true,'The static optimized hero image must decode successfully');
+ assert.equal(requests.filter(url=>new URL(url).pathname.includes('/_images/')).length,1);
  console.log('PASS article content, one hero image, no Next or RSC requests');
  await page.setJavaScriptEnabled(false);
  await page.reload({waitUntil:'networkidle0'});
@@ -55,7 +55,7 @@ try {
   scrollTo(0,0);
  });
  await page.waitForNetworkIdle({idleTime:500});
- const legacyImages=await page.$$eval('main img[src^="/images/blog/"]',images=>images.map(image=>({src:image.getAttribute('src'),loaded:image.complete&&image.naturalWidth>0})));
+ const legacyImages=await page.$$eval('main img[src*="/images/blog/"]',images=>images.map(image=>({src:image.getAttribute('src'),loaded:image.complete&&image.naturalWidth>0})));
  assert.equal(legacyImages.length,17);
  assert.deepEqual(legacyImages.filter(image=>!image.loaded),[],'Restored article images must load without request interception');
  console.log('PASS all 17 original podcast images load without fixtures');

@@ -3,7 +3,10 @@ import type { Metadata } from '@/lib/metadata';
 import '@/views/globals.css';
 import '@/lib/fonts.css';
 interface Props { metadata: Metadata; pathname: string }
-const { metadata: m, pathname } = Astro.props;
+const { metadata: m } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/,'');
+const requestedPath = Astro.props.pathname.replace(/\/$/,'') || '/';
+const pathname = base && (requestedPath === base || requestedPath.startsWith(base+'/')) ? requestedPath.slice(base.length) || '/' : requestedPath;
 const og = m.openGraph ? { title: m.title, description: m.description, ...m.openGraph } : undefined;
 const twitter = m.twitter;
 const hasLightbox = pathname.startsWith('/blog/') && pathname.split('/').length === 4;

@@ -1,3 +1,10 @@
+# Active PR scope — GitHub Pages
+
+The user approved replacing Vercel hosting with GitHub Pages on 2026-10-28.
+PR #304 now builds a static artifact and uses the official Actions build/publish
+workflow. The earlier Vercel workflow/rehearsal below is historical. See
+../GITHUB-PAGES.md for current implementation and release status.
+
 # Pull request scope — 2026-10-28
 
 This PR publishes the verified Astro migration, including the Node 24

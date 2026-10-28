@@ -1,28 +1,5 @@
-/**
- * Post-deploy smoke test — run against the live site, never a local build.
- *
- * The bug this exists to catch (#301) was invisible to everything that runs
- * before a deploy: `next build` prerendered all 900-odd pages happily, and the
- * pages served fine locally. The route's render only threw inside the Vercel
- * function, which meant every prerendered page kept serving its last good copy
- * while any path the build hadn't seen — every new repo — returned a 500. It
- * went unnoticed for 45 days.
- *
- * So the checks below are the ones that need a real deployment:
- *
- *   1. Sampled pages per section, read from the sitemap so the list can't rot.
- *   2. A nonexistent slug per dynamic route. This is the important one: it's
- *      the only cheap check that forces a *runtime* render, because a slug
- *      that was never built can't be served from the prerender cache. A route
- *      whose render throws answers 500 here while all its real pages look fine.
- *   3. Known slug aliases still redirect (guards the #301 lookups).
- *   4. With --check-freshness (the weekly run only, not right after a deploy,
- *      when everything is legitimately age 0): pages are still revalidating.
- *      Stale-forever pages are what "the render is broken" looks like from the
- *      outside once the prerender cache is warm.
- *
- * Usage: node scripts/smoke.mjs [baseUrl] [--check-freshness]
- */
+/** Deployed/static preview checks: published content, real 404s, exact alias
+ * destinations and (optionally) build timestamp freshness. No runtime ISR is assumed. */
 import { fetchSitemapPaths, mapWithConcurrency, request } from "./http.mjs";
 
 const baseUrl = (
@@ -66,7 +43,7 @@ const SAMPLES_PER_SECTION = 3;
 // run is usually what last warmed these pages: a perfectly healthy page reads
 // as ~7 days old here. Three weeks leaves room for that while still being far
 // below the 45 days #301 reached.
-const MAX_AGE_SECONDS = 21 * 24 * 60 * 60;
+
 
 /** Spreads the picks across each section so samples span different years. */
 function sampleBySection(paths) {
@@ -102,7 +79,7 @@ console.log(`Sitemap: ${sitemapPaths.length} URLs\n`);
 
 console.log("Index pages");
 await mapWithConcurrency(INDEX_PAGES, 6, async (path) => {
-  const { status, error } = await request(baseUrl + path);
+  const { status, error } = await request(baseUrl + path, { redirect: "follow" });
   record(status === 200, path, error ?? `HTTP ${status}`);
 });
 
@@ -112,18 +89,18 @@ const samples = sampleBySection(sitemapPaths);
 // page is itself what triggers Vercel to revalidate it, so a follow-up request
 // would report the fresh copy and hide exactly what we're looking for.
 const sampleResults = await mapWithConcurrency(samples, 6, async (path) => {
-  const { status, age, error } = await request(baseUrl + path);
+  const { status, age, error } = await request(baseUrl + path, { redirect: "follow" });
   const ok = record(status === 200, path, error ?? `HTTP ${status}`);
   return { path, age, ok };
 });
 
-console.log("\nUnknown slugs must 404, not 500 (forces a runtime render)");
+console.log("\nUnknown slugs must return a real 404");
 const year = new Date().getUTCFullYear();
 const canaries = DYNAMIC_SECTIONS.map(
   (section) => `/${section}/${year}/zz-smoke-${Math.random().toString(36).slice(2, 10)}`
 );
 await mapWithConcurrency(canaries, 6, async (path) => {
-  const { status, error } = await request(baseUrl + path);
+  const { status, error } = await request(baseUrl + path, { redirect: "follow" });
   record(
     status === 404,
     path,
@@ -133,25 +110,23 @@ await mapWithConcurrency(canaries, 6, async (path) => {
 
 console.log("\nSlug aliases still redirect");
 await mapWithConcurrency(KNOWN_ALIASES, 6, async ([alias, canonical]) => {
-  const { status, location, error } = await request(baseUrl + alias);
-  const target = location?.replace(/^https?:\/\/[^/]+/, "");
-  const ok = status === 308 && target === canonical;
-  record(
-    ok,
-    alias,
-    ok
-      ? `308 → ${target}`
-      : (error ?? `HTTP ${status}${target ? ` → ${target}` : ""}, want 308 → ${canonical}`)
-  );
+  const { status, url, error } = await request(baseUrl + alias, { redirect: 'follow' });
+  const root = new URL(baseUrl).pathname.replace(/\/$/, '');
+  const final = new URL(url);
+  const target = final.pathname.replace(root && root !== '/' ? root : '__no_prefix__','').replace(/\/$/,'');
+  const ok = status === 200 && final.origin === new URL(baseUrl).origin && target === canonical;
+  record(ok, alias, ok ? `redirect → ${target}` : (error ?? `HTTP ${status} → ${url}, want ${canonical}`));
 });
 
 if (checkFreshness) {
-  console.log(`\nPages still revalidating (age under ${MAX_AGE_SECONDS / 86400} days)`);
-  for (const { path, age, ok } of sampleResults)
-    if (ok) record(age < MAX_AGE_SECONDS, path, `age ${(age / 86400).toFixed(1)}d`);
-} else {
-  notes.push("Freshness check skipped — pass --check-freshness on the weekly run.");
-}
+  const response = await fetch(baseUrl+'/build-info.json', { signal: AbortSignal.timeout(20000) });
+  if (!response.ok) record(false, 'Build freshness', `HTTP ${response.status}`);
+  else {
+    const info = await response.json();
+    const age = (Date.now()-Date.parse(info.builtAt))/1000;
+    record(Number.isFinite(age) && age >= -300 && age < 6*3600, 'Build freshness', `built ${info.builtAt}; age ${(age/3600).toFixed(1)}h (hourly builds may be delayed)`);
+  }
+} else notes.push('Build timestamp freshness skipped; use --check-freshness on the deployed site.');
 
 console.log("");
 for (const note of notes) console.log(`note: ${note}`);

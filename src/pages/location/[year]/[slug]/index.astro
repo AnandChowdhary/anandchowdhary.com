@@ -1,8 +1,11 @@
 ---
+import { pathsFor } from "@/lib/static-paths";
+export const getStaticPaths = () => pathsFor("/location/[year]/[slug]");
 import Document from "@/layouts/Document.astro";
 import { renderPage } from "@/lib/render";
 import * as page from "@/views/location/[year]/[slug]/page.tsx";
 const result = await renderPage(page, Astro.params);
+if (import.meta.env.PROD && result.status >= 400) throw new Error(`Cannot publish ${Astro.url.pathname}: ${result.status}`);
 if (result.location) return Astro.redirect(result.location, result.status as 307 | 308);
 Astro.response.status = result.status;
 if (result.status >= 400) Astro.response.headers.set("Cache-Control", "no-store");

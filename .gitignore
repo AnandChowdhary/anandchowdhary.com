@@ -47,3 +47,8 @@ next-env.d.ts
 # Astro and Vercel build output
 /.astro/
 /dist/
+
+# Content-addressed build-time image cache
+/.cache/
+
+/scripts/performance/node_modules

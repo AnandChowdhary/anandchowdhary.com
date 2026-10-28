@@ -1,3 +1,11 @@
+# Active hosting update — 2026-10-28
+
+The user approved GitHub Pages using official Actions artifact deployment. Follow
+[GITHUB-PAGES.md](GITHUB-PAGES.md) for the current implementation and release
+status. All Vercel performance results below remain historical measurements; do
+not present them as Pages hosting results. Static rebuild and HTML redirect
+behavior supersede the former runtime ISR/status-code release gates.
+
 # Performance work and migration status
 
 The production baseline is complete: 48 Lighthouse runs across six URLs, five

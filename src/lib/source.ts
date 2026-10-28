@@ -1,5 +1,4 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
-import { getCache } from '@vercel/functions';
 
 export interface CachedSource { body: string; fetchedAt: number; contentType: string; etag?: string; lastModified?: string }
 export interface SourceCache {
@@ -17,10 +16,6 @@ const localCache: SourceCache = {
   async get(key) { return localRecords.get(key); },
   async set(key, value) { localRecords.set(key, value); },
 };
-const productionCache: SourceCache = {
-  async get(key) { return await getCache().get(key) as CachedSource | null; },
-  async set(key, value) { await getCache().set(key, value, { ttl: MAX_STALE_MS / 1000 }); },
-};
 interface Context {
   pending: Map<string, Promise<CachedSource>>;
   cache: SourceCache;
@@ -30,7 +25,7 @@ interface Context {
 const contexts = new AsyncLocalStorage<Context>();
 export function withSourceContext<T>(callback: () => T, overrides: Partial<Omit<Context, 'pending'>> = {}): T {
   if (contexts.getStore() && Object.keys(overrides).length === 0) return callback();
-  return contexts.run({ pending: new Map(), cache: process.env.VERCEL ? productionCache : localCache, fetcher: globalThis.fetch, now: Date.now, ...overrides }, callback);
+  return contexts.run({ pending: new Map(), cache: localCache, fetcher: globalThis.fetch, now: Date.now, ...overrides }, callback);
 }
 
 async function load(url: string, ttl: number, context: Context): Promise<CachedSource> {
@@ -84,7 +79,10 @@ export async function fetchSource(url: string, { ttl = 0 }: { ttl?: number } = {
     return new Response(record.body, { headers: { 'Content-Type': record.contentType } });
   } catch (error) {
     // Match fetch semantics so explicitly optional sources can keep their existing fallback.
-    if (error instanceof SourceError) return new Response(null, { status: error.status });
+    if (error instanceof SourceError) {
+      if (process.env.SITE_STATIC_BUILD === '1' && error.status !== 404) throw error;
+      return new Response(null, { status: error.status });
+    }
     throw error;
   }
 }

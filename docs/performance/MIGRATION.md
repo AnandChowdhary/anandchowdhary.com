@@ -1,5 +1,10 @@
 # Next.js → Astro migration
 
+**2026-10-28:** The user superseded the Vercel hosting decision and approved
+GitHub Pages. See [the active static conversion](GITHUB-PAGES.md); runtime ISR,
+source-cache and HTTP redirect requirements below describe the former Vercel
+candidate, not GitHub Pages capabilities.
+
 Status: implemented in the repository root; production promotion remains pending.
 The separate Astro candidate was built, type-checked and exercised against the
 original site before replacing the root app. See [implementation status and

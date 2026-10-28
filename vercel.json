@@ -1,6 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "astro",
-  "buildCommand": "npm run build && npm run verify:build && npm run verify:runtime",
-  "installCommand": "npm ci"
+  "git": { "deploymentEnabled": false }
 }

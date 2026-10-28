@@ -1,4 +1,9 @@
-# Astro migration status — 2026-10-27
+# Astro migration status — 2026-10-28
+
+**Hosting update:** The user approved conversion to GitHub Pages. The active PR
+now builds static HTML and build-time images, with official artifact deployment.
+See [current Pages work](GITHUB-PAGES.md). The Vercel evidence below is historical;
+it does not establish Pages performance or completion of the domain cutover.
 
 The repository root now runs Astro on the Vercel adapter. Production has not been
 deployed or promoted from this workspace. Migration implementation is complete;

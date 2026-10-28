@@ -1,3 +1,15 @@
+# Current static-build dependency assessment — 2026-10-28
+
+The Vercel adapter and direct runtime functions dependency are removed. Astro's
+unstorage optional peer can still install unused Vercel SDK build tooling.
+A same-major Zod override to 4.6.7 patches its collection-validation advisory and
+matches Astro's existing Zod major. No Vercel SDK or node_modules is published
+in the static Pages artifact. Remaining selector-parser and Windows dev-server
+findings concern the build/development toolchain; no blanket force fix is used.
+
+The historical Vercel assessment follows and is superseded where it describes
+removed adapter dependencies or earlier scoped overrides.
+
 # Dependency audit assessment
 
 The initial migration audit reported 10 affected package entries (1 low,

@@ -2,6 +2,7 @@
 // both scripts run straight from a GitHub Actions runner with `node`.
 
 const TIMEOUT_MS = 20_000;
+import { htmlRedirectTarget } from './static-redirect.mjs';
 import { previewFetch as fetch } from './preview-auth.mjs';
 
 /**
@@ -9,7 +10,7 @@ import { previewFetch as fetch } from './preview-auth.mjs';
  * reliably turns up the odd dropped connection that succeeds immediately
  * afterwards, and failing the build on that would train everyone to ignore it.
  */
-export async function request(url, { redirect = "manual" } = {}) {
+export async function request(url, { redirect = "manual", hops = 0 } = {}) {
   let lastError;
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
@@ -17,7 +18,14 @@ export async function request(url, { redirect = "manual" } = {}) {
         redirect,
         signal: AbortSignal.timeout(TIMEOUT_MS),
       });
+      const htmlLocation = response.status === 200 && response.headers.get('content-type')?.includes('text/html')
+        ? htmlRedirectTarget(await response.text(), response.url) : null;
+      if (htmlLocation && redirect === 'follow') {
+        if (hops >= 5) throw new Error('HTML redirect loop');
+        return request(htmlLocation, { redirect, hops: hops + 1 });
+      }
       return {
+        htmlLocation,
         status: response.status,
         location: response.headers.get("location"),
         age: Number(response.headers.get("age") ?? "0"),

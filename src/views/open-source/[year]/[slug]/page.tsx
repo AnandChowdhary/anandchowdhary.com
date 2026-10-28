@@ -1,5 +1,3 @@
-import { ResponsiveImage } from "@/views/components/responsive-image";
-import { ARTICLE_SIZES } from "@/lib/images";
 import {
   extractRepositoryDetails,
   getAllArchiveItems,

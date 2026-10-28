@@ -19,24 +19,24 @@ function fixtures() {
       fetcher:async url=>{
         if(failed)return new Response(null,{status:503});
         if(String(url).endsWith('/blog/api.json'))return Response.json(published?[post]:[]);
-        if(String(url).endsWith('/blog/2026/new-article.md'))return new Response('# New article\n\nNew content without rebuilding.');
+        if(String(url).endsWith('/blog/2026/new-article.md'))return new Response('# New article\n\nNew content in the next static build.');
         throw new Error(`Unexpected network request: ${url}`);
       },
     }),
   };
 }
 
-test('a post absent from the build becomes reachable after feed expiry without changing route files',async()=>{
+test('a refreshed build input discovers a newly published post without changing route templates',async()=>{
   const h=fixtures();
   assert.equal((await h.run(()=>renderPage(article,{year:'2026',slug:'new-article'}))).status,404);
   h.publish();h.setTime(3601000);
   const page=await h.run(()=>renderPage(article,{year:'2026',slug:'new-article'}));
-  assert.equal(page.status,200);assert.match(page.html,/New content without rebuilding/);
+  assert.equal(page.status,200);assert.match(page.html,/New content in the next static build/);
   assert.equal(page.metadata.title,'New article / 2026 / Blog / Anand Chowdhary');
   assert.doesNotMatch(page.html,/_next|__next|self\.__next/);
 });
 
-test('short-slug lookup preserves its 307 redirect and invalid years are real 404 responses',async()=>{
+test('route loaders retain short-slug destinations and reject invalid years',async()=>{
   const h=fixtures();h.publish();
   const result=await h.run(()=>renderPage(year,{year:'new-article'}));
   assert.equal(result.status,307);assert.equal(result.location,'/blog/2026/new-article');
@@ -61,6 +61,14 @@ test('responsive image URLs restrict transforms and preserve formats that need t
   assert.equal(optimizableImage('https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/animated.gif'),false);
   assert.equal(optimizableImage('/anand.jpg'),true);
   const url=new URL(optimizedImageUrl('/anand.jpg',640),'https://anandchowdhary.com');
-  assert.equal(url.pathname,'/_vercel/image');assert.equal(url.searchParams.get('url'),'/anand.jpg');
+  assert.match(url.pathname,/^\/_images\/[a-f0-9]{24}-640-90\.webp$/);
+  assert.throws(()=>optimizedImageUrl('https://example.test/private.png',640),/Unapproved image source/);
   assert.throws(()=>optimizedImageUrl('/anand.jpg',999),/Unsupported image width/);
+});
+
+test('static builds fail on mandatory source errors rather than publishing error HTML',async()=>{
+  const h=fixtures();h.fail();const previous=process.env.SITE_STATIC_BUILD;
+  process.env.SITE_STATIC_BUILD='1';
+  try { await assert.rejects(h.run(()=>renderPage(article,{year:'2026',slug:'new-article'})),/503/); }
+  finally { if(previous===undefined)delete process.env.SITE_STATIC_BUILD;else process.env.SITE_STATIC_BUILD=previous; }
 });

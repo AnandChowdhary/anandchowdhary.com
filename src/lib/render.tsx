@@ -31,6 +31,7 @@ export async function renderPage<P extends Record<string, string>>(page: PageMod
       if (error instanceof RouteResponse) {
         return { status: error.status, location: error.location, metadata: { ...defaults, title: '404: This page could not be found.', robots: 'noindex' }, html: notFoundHtml };
       }
+      if (process.env.SITE_STATIC_BUILD === '1') throw error;
       console.error('Page rendering failed', error);
       return { status: 503, location: undefined, metadata: { ...defaults, title: 'Temporarily unavailable / Anand Chowdhary' }, html: '<main class="p-8 sm:p-20 font-sans"><h1>Temporarily unavailable</h1><p>Please try again shortly.</p></main>' };
     }

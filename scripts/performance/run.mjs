@@ -18,7 +18,7 @@ const options = Object.fromEntries(process.argv.slice(2).map(arg => {
 for (const key of Object.keys(options)) {
   if (!['base', 'output', 'mobile', 'desktop', 'route'].includes(key)) throw new Error(`Unknown option: ${key}`);
 }
-const base = new URL(options.base || 'https://anandchowdhary.com').origin;
+const base = (options.base || 'https://anandchowdhary.com').replace(/\/$/, '');
 const output = path.resolve(options.output || path.join(here, '../../docs/performance', new Date().toISOString().replace(/[:.]/g, '-')));
 const counts = { mobile: Number(options.mobile ?? 5), desktop: Number(options.desktop ?? 3) };
 for (const count of Object.values(counts)) if (!Number.isInteger(count) || count < 0 || count > 20) throw new Error('Run counts must be integers from 0 to 20');
@@ -44,7 +44,7 @@ for (const route of routes) {
   for (let attempt = 1; attempt <= 3; attempt++) {
     const started = performance.now();
     try {
-      const res = await fetch(new URL(route.path, base), { signal: AbortSignal.timeout(30000) });
+      const res = await fetch(new URL(base + route.path), { signal: AbortSignal.timeout(30000) });
       const headersMs = performance.now() - started;
       const body = await res.arrayBuffer();
       manifest.http.push({ route: route.id, attempt, at: new Date().toISOString(), status: res.status, finalUrl: res.url, headersMs, totalMs: performance.now() - started, decodedBodyBytes: body.byteLength, headers: Object.fromEntries([...res.headers].filter(([key])=>key !== 'set-cookie')) });
@@ -81,7 +81,7 @@ for (let repetition = 1; repetition <= Math.max(...Object.values(counts)); repet
         browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-dev-shm-usage', '--remote-debugging-port=0'] });
         const authenticated = await authorizeBrowser(browser, base);
         manifest.chrome = await browser.version();
-        const result = await lighthouse(new URL(route.path, base).href, {
+        const result = await lighthouse(new URL(base + route.path).href, {
           port: Number(new URL(browser.wsEndpoint()).port), logLevel: 'error', output: 'json',
           onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
           maxWaitForLoad: 45000,
