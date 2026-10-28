@@ -1,0 +1,56 @@
+{
+  "budgets": [
+    {
+      "route": "home",
+      "metric": "median LCP <=2500ms",
+      "value": 2035.8274999999999,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "median LCP <=2500ms",
+      "value": 2044.1445000000003,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "median LCP <=2500ms",
+      "value": 1235.942,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "median LCP <=2500ms",
+      "value": 1222.693,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "median LCP <=2500ms",
+      "value": 1376.5845,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "median LCP <=2500ms",
+      "value": 1782.2714999999998,
+      "passed": true
+    },
+    {
+      "metric": "CLS <=0.1 every run",
+      "value": 0.03871853748942007,
+      "passed": true
+    },
+    {
+      "metric": "Project images >=70% lower than initial 7.71MiB baseline",
+      "value": 362480,
+      "reduction": 0.9551637008805528,
+      "passed": true
+    },
+    {
+      "metric": "No RSC requests in candidate samples",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

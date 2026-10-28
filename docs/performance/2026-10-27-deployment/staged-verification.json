@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-27T14:33:17.923Z",
+  "deploymentId": "dpl_GtvrCfeU4whTETEfRTZqr2JLe7rK",
+  "target": "production",
+  "customDomainsPromoted": false,
+  "checks": {
+    "cloudCleanBuild": true,
+    "buildOutputContract": true,
+    "isolatedRuntime": true,
+    "typecheck": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 2
+    },
+    "contracts": {
+      "passed": 13,
+      "failed": 0
+    },
+    "smoke": true,
+    "publishedUrls": {
+      "passed": 801,
+      "failed": 0
+    },
+    "interactions": true,
+    "homeVisual": {
+      "pairs": 8,
+      "maxDifferentPixelsPercent": 0.0632
+    },
+    "releasePerformanceBudgets": true,
+    "runtimeWarningErrorLogRecords": 0,
+    "noRehearsalEndpoint": true
+  },
+  "knownLimitations": [
+    "Protected preview noindex prevents production SEO scoring",
+    "Inherited third-party avatar/contribution image 404s",
+    "CrUX API quota prevents field INP conclusions",
+    "Billed usage/cost not obtained"
+  ],
+  "sourcePublication": {
+    "state": "blocked",
+    "reason": "GitHub OAuth connection lacks workflow scope",
+    "localCommit": "7d3758efad3c7dbefb97329012169a9f73b29350"
+  }
+}

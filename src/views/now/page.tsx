@@ -1,0 +1,64 @@
+import { getAllArchiveItems } from "@/views/api";
+import { ArchiveItemComponent } from "@/views/archive/item";
+import { Container } from "@/views/components/container";
+import { ExternalLink } from "@/views/components/external-link";
+import { Footer } from "@/views/components/footer";
+import { Header } from "@/views/components/header";
+import { NowSection } from "@/views/components/now-section";
+import { buildScreenshotOpenGraphImageUrl } from "@/views/lib/opengraph";
+import type { Metadata } from "@/lib/metadata";
+
+export const metadata: Metadata = {
+  title: "Now / Anand Chowdhary",
+  description:
+    "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands.",
+  openGraph: {
+    images: [
+      {
+        url: buildScreenshotOpenGraphImageUrl("/now"),
+      },
+    ],
+  },
+};
+
+export default async function Now() {
+  const archiveData = await getAllArchiveItems();
+  const recentArchiveItems = archiveData
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 10);
+
+  return (
+    <Container>
+      <Header pathname="/now" />
+      <NowSection />
+      <section className="space-y-4 max-w-lg mx-auto text-sm text-neutral-500 -mt-16">
+        <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
+          /archive
+        </h2>
+        <div className="space-y-4 -mx-1">
+          {recentArchiveItems.map((item) => (
+            <ArchiveItemComponent key={item.url} item={item} />
+          ))}
+        </div>
+        <p className="mt-12">
+          This page is made to answer the question &quot;What are you up to these
+          days?&quot; You can see more /now pages on{" "}
+          <ExternalLink href="https://nownownow.com/">
+            nownownow.com
+          </ExternalLink>
+          .
+        </p>
+        <p className="mt-4">
+          This page was last updated on{" "}
+          {new Date(recentArchiveItems[0].date).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+          .
+        </p>
+      </section>
+      <Footer />
+    </Container>
+  );
+}

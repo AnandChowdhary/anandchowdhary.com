@@ -1,0 +1,1010 @@
+{
+  "startedAt": "2026-10-26T14:10:00.303Z",
+  "base": "http://localhost:4322",
+  "counts": {
+    "mobile": 5,
+    "desktop": 3
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "purpose": "Homepage: shared shell, timeline and counters"
+    },
+    {
+      "id": "blog",
+      "path": "/blog",
+      "purpose": "Blog index: image-rich listing"
+    },
+    {
+      "id": "article-text",
+      "path": "/blog/2026/future-ai-native-work",
+      "purpose": "Text-heavy article: one hero image"
+    },
+    {
+      "id": "article-images",
+      "path": "/blog/2019/state-of-the-podcasts-2019",
+      "purpose": "Image-heavy article: 18 image elements at selection time"
+    },
+    {
+      "id": "projects",
+      "path": "/projects",
+      "purpose": "Project cards and lazy-loaded images"
+    },
+    {
+      "id": "life",
+      "path": "/life",
+      "purpose": "Data-rich dashboard"
+    }
+  ],
+  "sourceCommit": "765268ff107ec4ea90f6dffd1b98bf93f5ad8e1c",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "home",
+      "attempt": 1,
+      "at": "2026-10-26T14:10:00.454Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/",
+      "headersMs": 139.62471199999993,
+      "totalMs": 144.42665899999997,
+      "decodedBodyBytes": 63693,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 2,
+      "at": "2026-10-26T14:10:00.531Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/",
+      "headersMs": 74.00401699999998,
+      "totalMs": 75.77744200000006,
+      "decodedBodyBytes": 63693,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 3,
+      "at": "2026-10-26T14:10:00.599Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/",
+      "headersMs": 66.39569500000005,
+      "totalMs": 68.13021000000003,
+      "decodedBodyBytes": 63693,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 1,
+      "at": "2026-10-26T14:10:00.635Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog",
+      "headersMs": 33.76188400000001,
+      "totalMs": 35.70035999999993,
+      "decodedBodyBytes": 73519,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 2,
+      "at": "2026-10-26T14:10:00.661Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog",
+      "headersMs": 25.396153000000027,
+      "totalMs": 26.71796100000006,
+      "decodedBodyBytes": 73519,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 3,
+      "at": "2026-10-26T14:10:00.687Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog",
+      "headersMs": 24.594319999999925,
+      "totalMs": 25.829595999999924,
+      "decodedBodyBytes": 73519,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 1,
+      "at": "2026-10-26T14:10:00.727Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "headersMs": 38.38960999999995,
+      "totalMs": 39.40980200000001,
+      "decodedBodyBytes": 42821,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 2,
+      "at": "2026-10-26T14:10:00.766Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "headersMs": 38.14872900000012,
+      "totalMs": 39.13145799999995,
+      "decodedBodyBytes": 42821,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 3,
+      "at": "2026-10-26T14:10:00.811Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "headersMs": 43.53290300000003,
+      "totalMs": 44.95853800000009,
+      "decodedBodyBytes": 42821,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 1,
+      "at": "2026-10-26T14:10:00.846Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "headersMs": 33.93393900000001,
+      "totalMs": 34.96219700000006,
+      "decodedBodyBytes": 35301,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 2,
+      "at": "2026-10-26T14:10:00.877Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "headersMs": 30.537755999999945,
+      "totalMs": 31.48294400000009,
+      "decodedBodyBytes": 35301,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 3,
+      "at": "2026-10-26T14:10:00.917Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "headersMs": 38.35777099999996,
+      "totalMs": 40.178525000000036,
+      "decodedBodyBytes": 35301,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 1,
+      "at": "2026-10-26T14:10:00.959Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/projects",
+      "headersMs": 39.91128200000003,
+      "totalMs": 41.56215899999984,
+      "decodedBodyBytes": 137878,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 2,
+      "at": "2026-10-26T14:10:01.013Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/projects",
+      "headersMs": 52.782890999999836,
+      "totalMs": 54.24586299999987,
+      "decodedBodyBytes": 137878,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:00 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 3,
+      "at": "2026-10-26T14:10:01.059Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/projects",
+      "headersMs": 44.403504999999996,
+      "totalMs": 45.87738800000011,
+      "decodedBodyBytes": 137878,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:01 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 1,
+      "at": "2026-10-26T14:10:01.090Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/life",
+      "headersMs": 29.535943999999972,
+      "totalMs": 30.706457999999884,
+      "decodedBodyBytes": 74112,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:01 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 2,
+      "at": "2026-10-26T14:10:01.120Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/life",
+      "headersMs": 28.568289999999934,
+      "totalMs": 29.701213000000052,
+      "decodedBodyBytes": 74112,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:01 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 3,
+      "at": "2026-10-26T14:10:01.150Z",
+      "status": 200,
+      "finalUrl": "http://localhost:4322/life",
+      "headersMs": 29.114180999999917,
+      "totalMs": 30.215021999999863,
+      "decodedBodyBytes": 74112,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html",
+        "date": "Mon, 26 Oct 2026 14:10:01 GMT",
+        "keep-alive": "timeout=5",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "consumer": "projects/583797351490",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "quota_limit_value": "0",
+              "quota_location": "global",
+              "quota_unit": "1/d/{project}",
+              "quota_limit": "defaultPerDayPerProject"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "desktop",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_location": "global",
+              "quota_limit_value": "0",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_unit": "1/d/{project}",
+              "consumer": "projects/583797351490",
+              "quota_metric": "pagespeedonline.googleapis.com/default"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "home-mobile-1",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:03.135Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-1",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:12.235Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-1",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:21.441Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-desktop-1",
+      "route": "blog",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:29.552Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-1",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:37.875Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-1",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:45.283Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-1",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:10:52.966Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-desktop-1",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:11:00.469Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-1",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:11:08.107Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-1",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:11:18.477Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-1",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:11:27.375Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-desktop-1",
+      "route": "life",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-26T14:11:34.864Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-2",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:11:42.548Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-2",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:11:51.196Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-2",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:11:59.967Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-desktop-2",
+      "route": "blog",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:07.872Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-2",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:15.911Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-2",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:23.044Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-2",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:30.489Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-desktop-2",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:37.542Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-2",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:45.002Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-2",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:12:53.351Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-2",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:13:01.770Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-desktop-2",
+      "route": "life",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-26T14:13:08.845Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-3",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:13:16.222Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-desktop-3",
+      "route": "home",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:13:24.940Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-3",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:13:33.439Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-desktop-3",
+      "route": "blog",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:13:41.366Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-3",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:13:49.403Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-3",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:13:56.371Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-3",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:14:03.800Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-desktop-3",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:14:10.938Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-3",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:14:18.272Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-desktop-3",
+      "route": "projects",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:14:26.485Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-3",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:14:34.942Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-desktop-3",
+      "route": "life",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-26T14:14:42.058Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-4",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:14:49.529Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-4",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:14:57.960Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-4",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:15:05.684Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-4",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:15:12.806Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-4",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:15:20.028Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-4",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-26T14:15:28.236Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-5",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:15:35.415Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/",
+      "report": "raw/home-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-5",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:15:44.006Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog",
+      "report": "raw/blog-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-5",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:15:52.081Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-images-mobile-5",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:15:59.362Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/blog/2019/state-of-the-podcasts-2019",
+      "report": "raw/article-images-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "projects-mobile-5",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:16:06.574Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/projects",
+      "report": "raw/projects-mobile-5.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "life-mobile-5",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-26T14:16:14.877Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "http://localhost:4322/life",
+      "report": "raw/life-mobile-5.json.gz",
+      "warnings": []
+    }
+  ],
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-26T14:16:20.571Z"
+}

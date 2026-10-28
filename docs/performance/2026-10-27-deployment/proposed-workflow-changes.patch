@@ -1,0 +1,53 @@
+diff --git a/.github/workflows/check.yml b/.github/workflows/check.yml
+new file mode 100644
+index 0000000..23e7b07
+--- /dev/null
++++ b/.github/workflows/check.yml
+@@ -0,0 +1,25 @@
++name: Build and contracts
++
++on:
++  pull_request:
++  push:
++    branches: [main]
++
++permissions:
++  contents: read
++
++jobs:
++  check:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v7
++      - uses: actions/setup-node@v7
++        with:
++          node-version: 24
++          cache: npm
++      - run: npm ci
++      - run: npm run check
++      - run: npm test
++      - run: npm run build
++      - run: npm run verify:build
++      - run: npm run verify:runtime
+diff --git a/.github/workflows/smoke.yml b/.github/workflows/smoke.yml
+index 296bb29..26b70ca 100644
+--- a/.github/workflows/smoke.yml
++++ b/.github/workflows/smoke.yml
+@@ -1,13 +1,13 @@
+ # Smoke-tests production as soon as Vercel reports a deployment live.
+ #
+ # It has to run against the deployed site rather than a local build: the render
+-# failure in #301 only ever happened inside the Vercel function, so `next build`
+-# and `next start` both stayed green for the 45 days it was broken in
++# failure in #301 only ever happened inside the Vercel function, so local build
++# and server checks both stayed green for the 45 days it was broken in
+ # production. See scripts/smoke.mjs for what that means for the checks.
+ #
+ # Preview deployments are deliberately not covered — they sit behind Vercel
+-# Authentication, and reaching them would mean keeping a protection-bypass
+-# secret around. Production is checked on every merge instead.
++# Authentication. Migration tooling supports privately supplied bypass credentials;
++# this workflow needs no bypass secret and checks the public production domain.
+ name: Smoke test
+ 
+ on:

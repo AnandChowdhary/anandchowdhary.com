@@ -1,0 +1,181 @@
+{
+  "base": "https://anandchowdhary-76078nfnz-anand-chowdharys-projects.vercel.app",
+  "startedAt": "2026-10-27T14:03:22.284Z",
+  "note": "Real Vercel Runtime Cache and real route/ISR; source TTL clock is advanced logically, not by waiting an hour.",
+  "samples": [
+    {
+      "at": "2026-10-27T14:03:22.767Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "absent",
+      "status": 404,
+      "cache": "MISS",
+      "age": "0",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:03:23.881Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "before",
+      "status": 404,
+      "cache": "MISS",
+      "age": "0",
+      "origins": []
+    },
+    {
+      "at": "2026-10-27T14:03:24.248Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "after",
+      "status": 200,
+      "cache": "MISS",
+      "age": "0",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 200
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:03:24.647Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "revalidated",
+      "status": 200,
+      "cache": "MISS",
+      "age": "0",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 304
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:03:24.996Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "stale",
+      "status": 200,
+      "cache": "MISS",
+      "age": "0",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 503
+        },
+        {
+          "source": "feed",
+          "status": 503
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:03:25.502Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "expired",
+      "status": 503,
+      "cache": "MISS",
+      "age": null,
+      "origins": []
+    },
+    {
+      "at": "2026-10-27T14:03:25.846Z",
+      "run": "0571f320-9994-4c5a-aaf6-dc418edca2c6",
+      "stage": "absent",
+      "status": 503,
+      "cache": "MISS",
+      "age": null,
+      "origins": []
+    },
+    {
+      "at": "2026-10-27T14:03:26.198Z",
+      "run": "0571f320-9994-4c5a-aaf6-dc418edca2c6",
+      "stage": "after",
+      "status": 200,
+      "cache": "MISS",
+      "age": "0",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 200
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:03:26.580Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "after",
+      "status": 200,
+      "cache": "HIT",
+      "age": "2",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 200
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:04:26.349Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "after",
+      "status": 200,
+      "cache": "STALE",
+      "age": "61",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 200
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "at": "2026-10-27T14:04:27.458Z",
+      "run": "49dbe89a-dfd3-471a-a62b-50656da7518b",
+      "stage": "after",
+      "status": 200,
+      "cache": "HIT",
+      "age": "0",
+      "origins": [
+        {
+          "source": "feed",
+          "status": 304
+        },
+        {
+          "source": "article",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "backend": "request-context",
+  "passed": true,
+  "finishedAt": "2026-10-27T14:04:27.613Z"
+}

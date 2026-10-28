@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Isolated performance tools and full Lighthouse artifacts (summaries are tracked)
+/scripts/performance/node_modules/
+/docs/performance/*/raw/
+
+# Astro and Vercel build output
+/.astro/
+/dist/
+
+# Content-addressed build-time image cache
+/.cache/
+
+/scripts/performance/node_modules

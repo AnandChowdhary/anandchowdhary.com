@@ -1,0 +1,9 @@
+---
+import Document from '@/layouts/Document.astro';
+import { metadata } from '@/lib/site-metadata';
+import { notFoundHtml } from '@/lib/not-found';
+Astro.response.status = 404;
+---
+<Document metadata={{...metadata, title: '404: This page could not be found.', robots: 'noindex'}} pathname={Astro.url.pathname}>
+  <Fragment set:html={notFoundHtml} />
+</Document>

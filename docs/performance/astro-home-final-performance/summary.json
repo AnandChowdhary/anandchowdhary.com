@@ -1,0 +1,1545 @@
+{
+  "groups": [
+    {
+      "route": "home",
+      "path": "/",
+      "device": "mobile",
+      "metrics": {
+        "performance": {
+          "median": 98,
+          "min": 97,
+          "max": 99,
+          "n": 5
+        },
+        "accessibility": {
+          "median": 100,
+          "min": 100,
+          "max": 100,
+          "n": 5
+        },
+        "bestPractices": {
+          "median": 77,
+          "min": 77,
+          "max": 77,
+          "n": 5
+        },
+        "seo": {
+          "median": 100,
+          "min": 100,
+          "max": 100,
+          "n": 5
+        },
+        "fcpMs": {
+          "median": 1429.294,
+          "min": 1409.1281,
+          "max": 1432.8435,
+          "n": 5
+        },
+        "lcpMs": {
+          "median": 2358.4101250000003,
+          "min": 1957.6507,
+          "max": 2449.6175000000003,
+          "n": 5
+        },
+        "tbtMs": {
+          "median": 13.5,
+          "min": 11.5,
+          "max": 19.5,
+          "n": 5
+        },
+        "cls": {
+          "median": 0,
+          "min": 0,
+          "max": 0,
+          "n": 5
+        },
+        "speedIndexMs": {
+          "median": 1429.294,
+          "min": 1409.1281,
+          "max": 1437.5952554615137,
+          "n": 5
+        },
+        "serverResponseMs": {
+          "median": 181,
+          "min": 92,
+          "max": 197,
+          "n": 5
+        },
+        "observedTtfbMs": {
+          "median": 184.71599999904632,
+          "min": 95.369,
+          "max": 203.891,
+          "n": 5
+        },
+        "imageRequests": {
+          "median": 49,
+          "min": 49,
+          "max": 49,
+          "n": 5
+        },
+        "preloadedImages": {
+          "median": 45,
+          "min": 45,
+          "max": 45,
+          "n": 5
+        },
+        "rscRequests": {
+          "median": 0,
+          "min": 0,
+          "max": 0,
+          "n": 5
+        },
+        "jsExecutionMs": {
+          "median": 170.9840000000003,
+          "min": 165.37600000000018,
+          "max": 182.73600000000005,
+          "n": 5
+        },
+        "mainThreadMs": {
+          "median": 1028.3400000000033,
+          "min": 968.1800000000021,
+          "max": 1261.2320000000025,
+          "n": 5
+        },
+        "longTasks": {
+          "median": 3,
+          "min": 3,
+          "max": 5,
+          "n": 5
+        },
+        "unusedJsBytes": {
+          "median": 37441,
+          "min": 37427,
+          "max": 37557,
+          "n": 5
+        },
+        "totalBytes": {
+          "median": 1374199,
+          "min": 1374110,
+          "max": 1374319,
+          "n": 5
+        },
+        "jsBytes": {
+          "median": 74664,
+          "min": 74664,
+          "max": 74664,
+          "n": 5
+        },
+        "cssBytes": {
+          "median": 10332,
+          "min": 10332,
+          "max": 10332,
+          "n": 5
+        },
+        "htmlBytes": {
+          "median": 12269,
+          "min": 12266,
+          "max": 12271,
+          "n": 5
+        },
+        "imageBytes": {
+          "median": 1224200,
+          "min": 1224109,
+          "max": 1224316,
+          "n": 5
+        },
+        "fontBytes": {
+          "median": 52736,
+          "min": 52736,
+          "max": 52736,
+          "n": 5
+        }
+      }
+    },
+    {
+      "route": "home",
+      "path": "/",
+      "device": "desktop",
+      "metrics": {
+        "performance": {
+          "median": 100,
+          "min": 100,
+          "max": 100,
+          "n": 3
+        },
+        "accessibility": {
+          "median": 100,
+          "min": 100,
+          "max": 100,
+          "n": 3
+        },
+        "bestPractices": {
+          "median": 77,
+          "min": 77,
+          "max": 77,
+          "n": 3
+        },
+        "seo": {
+          "median": 100,
+          "min": 100,
+          "max": 100,
+          "n": 3
+        },
+        "fcpMs": {
+          "median": 342.9406,
+          "min": 339.9192,
+          "max": 351.2729,
+          "n": 3
+        },
+        "lcpMs": {
+          "median": 558.17575,
+          "min": 535.58755,
+          "max": 571.0698,
+          "n": 3
+        },
+        "tbtMs": {
+          "median": 0,
+          "min": 0,
+          "max": 0,
+          "n": 3
+        },
+        "cls": {
+          "median": 0,
+          "min": 0,
+          "max": 0,
+          "n": 3
+        },
+        "speedIndexMs": {
+          "median": 446.60451211742185,
+          "min": 389.51722899909316,
+          "max": 544.803306225298,
+          "n": 3
+        },
+        "serverResponseMs": {
+          "median": 226,
+          "min": 148,
+          "max": 377,
+          "n": 3
+        },
+        "observedTtfbMs": {
+          "median": 229.75399999904633,
+          "min": 153.58500000095367,
+          "max": 380.917,
+          "n": 3
+        },
+        "imageRequests": {
+          "median": 49,
+          "min": 49,
+          "max": 49,
+          "n": 3
+        },
+        "preloadedImages": {
+          "median": 45,
+          "min": 45,
+          "max": 45,
+          "n": 3
+        },
+        "rscRequests": {
+          "median": 0,
+          "min": 0,
+          "max": 0,
+          "n": 3
+        },
+        "jsExecutionMs": {
+          "median": 43.802000000000056,
+          "min": 7.071999999999998,
+          "max": 49.61499999999999,
+          "n": 3
+        },
+        "mainThreadMs": {
+          "median": 320.8470000000007,
+          "min": 315.8159999999992,
+          "max": 329.13099999999974,
+          "n": 3
+        },
+        "longTasks": {
+          "median": 0,
+          "min": 0,
+          "max": 0,
+          "n": 3
+        },
+        "unusedJsBytes": {
+          "median": 37427,
+          "min": 37427,
+          "max": 37427,
+          "n": 3
+        },
+        "totalBytes": {
+          "median": 1374099,
+          "min": 1373951,
+          "max": 1374126,
+          "n": 3
+        },
+        "jsBytes": {
+          "median": 74664,
+          "min": 74664,
+          "max": 74664,
+          "n": 3
+        },
+        "cssBytes": {
+          "median": 10332,
+          "min": 10332,
+          "max": 10332,
+          "n": 3
+        },
+        "htmlBytes": {
+          "median": 12270,
+          "min": 12268,
+          "max": 12271,
+          "n": 3
+        },
+        "imageBytes": {
+          "median": 1224097,
+          "min": 1223948,
+          "max": 1224126,
+          "n": 3
+        },
+        "fontBytes": {
+          "median": 52736,
+          "min": 52736,
+          "max": 52736,
+          "n": 3
+        }
+      }
+    }
+  ],
+  "samples": [
+    {
+      "id": "home-mobile-1",
+      "route": "home",
+      "device": "mobile",
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 1432.8435,
+      "lcpMs": 2183.435,
+      "tbtMs": 13,
+      "cls": 0,
+      "speedIndexMs": 1432.8435,
+      "serverResponseMs": 92,
+      "observedTtfbMs": 95.369,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 366,
+          "bottom": 438,
+          "left": 32,
+          "right": 380,
+          "width": 348,
+          "height": 72
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 165.6520000000002,
+      "mainThreadMs": 1129.3920000000037,
+      "longTasks": 3,
+      "unusedJsBytes": 37441,
+      "totalBytes": 1374198,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12266,
+      "imageBytes": 1224200,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 300,
+          "savingsBytes": 37441
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 302 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,037 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 150 ms"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-desktop-1",
+      "route": "home",
+      "device": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 351.2729,
+      "lcpMs": 571.0698,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 446.60451211742185,
+      "serverResponseMs": 148,
+      "observedTtfbMs": 153.58500000095367,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 390,
+          "bottom": 438,
+          "left": 419,
+          "right": 931,
+          "width": 512,
+          "height": 48
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 43.802000000000056,
+      "mainThreadMs": 315.8159999999992,
+      "longTasks": 0,
+      "unusedJsBytes": 37427,
+      "totalBytes": 1374126,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12268,
+      "imageBytes": 1224126,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 0,
+          "savingsBytes": 37427
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 302 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,047 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-mobile-2",
+      "route": "home",
+      "device": "mobile",
+      "performance": 99,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 1432.6507,
+      "lcpMs": 1957.6507,
+      "tbtMs": 17,
+      "cls": 0,
+      "speedIndexMs": 1437.5952554615137,
+      "serverResponseMs": 115,
+      "observedTtfbMs": 119.29700000095367,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 366,
+          "bottom": 438,
+          "left": 32,
+          "right": 380,
+          "width": 348,
+          "height": 72
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 179.01199999999994,
+      "mainThreadMs": 1261.2320000000025,
+      "longTasks": 3,
+      "unusedJsBytes": 37427,
+      "totalBytes": 1374199,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12269,
+      "imageBytes": 1224198,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 300,
+          "savingsBytes": 37427
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 293 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,037 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 150 ms"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-desktop-2",
+      "route": "home",
+      "device": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 339.9192,
+      "lcpMs": 535.58755,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 389.51722899909316,
+      "serverResponseMs": 226,
+      "observedTtfbMs": 229.75399999904633,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 390,
+          "bottom": 438,
+          "left": 419,
+          "right": 931,
+          "width": 512,
+          "height": 48
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 49.61499999999999,
+      "mainThreadMs": 320.8470000000007,
+      "longTasks": 0,
+      "unusedJsBytes": 37427,
+      "totalBytes": 1374099,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12270,
+      "imageBytes": 1224097,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 30,
+          "savingsBytes": 37427
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 302 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,047 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-mobile-3",
+      "route": "home",
+      "device": "mobile",
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 1412.3249,
+      "lcpMs": 2436.6561250000004,
+      "tbtMs": 11.5,
+      "cls": 0,
+      "speedIndexMs": 1412.3249,
+      "serverResponseMs": 181,
+      "observedTtfbMs": 184.71599999904632,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 366,
+          "bottom": 438,
+          "left": 32,
+          "right": 380,
+          "width": 348,
+          "height": 72
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 170.9840000000003,
+      "mainThreadMs": 1028.3400000000033,
+      "longTasks": 5,
+      "unusedJsBytes": 37557,
+      "totalBytes": 1374319,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12271,
+      "imageBytes": 1224316,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 300,
+          "savingsBytes": 37557
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 293 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,037 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 150 ms"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-desktop-3",
+      "route": "home",
+      "device": "desktop",
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 342.9406,
+      "lcpMs": 558.17575,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 544.803306225298,
+      "serverResponseMs": 377,
+      "observedTtfbMs": 380.917,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 390,
+          "bottom": 438,
+          "left": 419,
+          "right": 931,
+          "width": 512,
+          "height": 48
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 7.071999999999998,
+      "mainThreadMs": 329.13099999999974,
+      "longTasks": 0,
+      "unusedJsBytes": 37427,
+      "totalBytes": 1373951,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12271,
+      "imageBytes": 1223948,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 50,
+          "savingsBytes": 37427
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 302 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,047 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0.5
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-mobile-4",
+      "route": "home",
+      "device": "mobile",
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 1409.1281,
+      "lcpMs": 2358.4101250000003,
+      "tbtMs": 13.5,
+      "cls": 0,
+      "speedIndexMs": 1409.1281,
+      "serverResponseMs": 192,
+      "observedTtfbMs": 195.60499999904633,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 366,
+          "bottom": 438,
+          "left": 32,
+          "right": 380,
+          "width": 348,
+          "height": 72
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 165.37600000000018,
+      "mainThreadMs": 968.1800000000021,
+      "longTasks": 3,
+      "unusedJsBytes": 37441,
+      "totalBytes": 1374308,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12268,
+      "imageBytes": 1224308,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 300,
+          "savingsBytes": 37441
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 293 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,037 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 150 ms"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    },
+    {
+      "id": "home-mobile-5",
+      "route": "home",
+      "device": "mobile",
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "fcpMs": 1429.294,
+      "lcpMs": 2449.6175000000003,
+      "tbtMs": 19.5,
+      "cls": 0,
+      "speedIndexMs": 1429.294,
+      "serverResponseMs": 197,
+      "observedTtfbMs": 203.891,
+      "imageRequests": 49,
+      "preloadedImages": 45,
+      "rscRequests": 0,
+      "lcpElement": {
+        "type": "node",
+        "lhId": "page-0-LI",
+        "path": "1,HTML,1,BODY,45,DIV,1,MAIN,0,SECTION,1,UL,1,LI",
+        "selector": "main.home-main > section.space-y-4 > ul.list-disc > li",
+        "boundingRect": {
+          "top": 366,
+          "bottom": 438,
+          "left": 32,
+          "right": 380,
+          "width": 348,
+          "height": 72
+        },
+        "snippet": "<li>",
+        "nodeLabel": "Previously, founded and sold FirstQuadrant, an AI sales platform for founders a…"
+      },
+      "jsExecutionMs": 182.73600000000005,
+      "mainThreadMs": 990.1400000000027,
+      "longTasks": 4,
+      "unusedJsBytes": 37557,
+      "totalBytes": 1374110,
+      "jsBytes": 74664,
+      "cssBytes": 10332,
+      "htmlBytes": 12269,
+      "imageBytes": 1224109,
+      "fontBytes": 52736,
+      "opportunities": [
+        {
+          "id": "is-on-https",
+          "title": "Does not use HTTPS",
+          "score": 0,
+          "displayValue": "5 insecure requests found"
+        },
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console",
+          "score": 0
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0,
+          "displayValue": "Est savings of 37 KiB",
+          "savingsMs": 300,
+          "savingsBytes": 37557
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "score": 0,
+          "displayValue": "Est savings of 293 KiB"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "displayValue": "Est savings of 1,037 KiB"
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "score": 0,
+          "displayValue": "Est savings of 150 ms"
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+          "statusCode": 404
+        },
+        {
+          "url": "http://localhost:4322/_vercel/insights/script.js",
+          "statusCode": 404
+        }
+      ],
+      "settings": {
+        "output": "json",
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      }
+    }
+  ]
+}

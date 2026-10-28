@@ -1,0 +1,199 @@
+{
+  "startedAt": "2026-10-27T14:27:53.599Z",
+  "base": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app",
+  "counts": {
+    "mobile": 5,
+    "desktop": 3
+  },
+  "routes": [
+    {
+      "id": "article-text",
+      "path": "/blog/2026/future-ai-native-work",
+      "purpose": "Text-heavy article: one hero image"
+    }
+  ],
+  "sourceCommit": "7d3758efad3c7dbefb97329012169a9f73b29350",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "article-text",
+      "attempt": 1,
+      "at": "2026-10-27T14:27:55.511Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "headersMs": 1896.6079559999998,
+      "totalMs": 1903.143356,
+      "decodedBodyBytes": 42316,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue, 27 Oct 2026 14:27:55 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-robots-tag": "noindex",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "pdx1::iad1::mn49s-1793111274026-fb9b8f8759e6"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 2,
+      "at": "2026-10-27T14:27:55.864Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "headersMs": 350.559041,
+      "totalMs": 352.4374149999999,
+      "decodedBodyBytes": 42316,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue, 27 Oct 2026 14:27:55 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-robots-tag": "noindex",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "pdx1::iad1::sw2vd-1793111275851-e08f9a7c6810"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 3,
+      "at": "2026-10-27T14:27:55.913Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "headersMs": 48.29560000000038,
+      "totalMs": 49.713644000000386,
+      "decodedBodyBytes": 42316,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html",
+        "date": "Tue, 27 Oct 2026 14:27:55 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+        "transfer-encoding": "chunked",
+        "x-robots-tag": "noindex",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "pdx1::iad1::mn49s-1793111276202-eb913b6dc8e6"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "skipped": "Protected preview: public field-data service cannot authenticate to this deployment"
+    },
+    {
+      "strategy": "desktop",
+      "skipped": "Protected preview: public field-data service cannot authenticate to this deployment"
+    }
+  ],
+  "runs": [
+    {
+      "id": "article-text-mobile-1",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-27T14:27:57.953Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-1",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-27T14:28:06.362Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-2",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-27T14:28:14.929Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-2",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-27T14:28:22.633Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-3",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-27T14:28:31.072Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-desktop-3",
+      "route": "article-text",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-27T14:28:38.590Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-desktop-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-4",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-27T14:28:46.940Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-4.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "article-text-mobile-5",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-27T14:28:54.438Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary-pkxw7uwdl-anand-chowdharys-projects.vercel.app/blog/2026/future-ai-native-work",
+      "report": "raw/article-text-mobile-5.json.gz",
+      "warnings": []
+    }
+  ],
+  "previewAuthenticated": true,
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-27T14:29:00.461Z"
+}

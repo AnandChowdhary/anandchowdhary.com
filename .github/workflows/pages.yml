@@ -1,0 +1,83 @@
+name: Build and deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [content-published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'production' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  TZ: UTC
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      pages: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/configure-pages@v6
+        id: pages
+        if: github.event_name != 'pull_request'
+      - uses: actions/cache@v6
+        with:
+          path: .cache/static-images
+          key: static-images-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: static-images-${{ runner.os }}-
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path || '/' }}
+      - run: npm run verify:build
+      - name: Verify built routes and browser-independent smoke checks
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path || '/' }}
+        run: |
+          node scripts/serve-static.mjs > /tmp/static-preview.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://localhost:4322/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/smoke.mjs "http://localhost:4322${PAGES_BASE_PATH%/}"
+          node scripts/link-audit.mjs "http://localhost:4322${PAGES_BASE_PATH%/}"
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
+        id: deployment
+      - name: Verify the published artifact
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/smoke.mjs "$SITE_URL" --check-freshness

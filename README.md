@@ -1,194 +1,82 @@
-# 🌟 anandchowdhary.com
+# anandchowdhary.com
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.4-black?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+Anand Chowdhary's personal site, built as static HTML with Astro, TypeScript,
+server-rendered React and Tailwind CSS. GitHub Actions builds and publishes a
+Pages artifact directly using the official Pages actions; no gh-pages branch,
+Next.js, server functions, ISR or runtime image service is required.
 
-Personal website and portfolio of Anand Chowdhary, creative technologist and entrepreneur. Built with Next.js 16, TypeScript, and Tailwind CSS v4.
+The existing JSX, typography, metadata and design are retained. Only the homepage
+counters load React in the browser as they approach the viewport. Articles use a
+small accessible lightbox; normal links provide navigation. Responsive WebP image
+variants are generated during the build with Sharp, preserving SVG/GIF originals.
 
-## 🚀 Features
+## Development and verification
 
-### 📱 Core Sections
+Use Node 24:
 
-- **🏠 Homepage** - Overview with dynamic sections showcasing life events, work, and projects
-- **📝 Blog** - Articles and thoughts organized by year
-- **💼 Projects** - Portfolio of creative and technical projects with tag filtering
-- **🌍 Travel** - Location history and travel experiences
-- **📚 Books** - Reading list and book reviews
-- **🎬 Videos** - Video content collection
-- **📓 Notes** - Quick thoughts and observations
-- **🎯 Now** - Current focus and activities
-- **💻 Open Source** - GitHub repositories and contributions
-- **📰 Press** - Media mentions and coverage
-- **🗓️ Events** - Speaking engagements and appearances
-- **🧬 Life** - Personal milestones and experiences
-- **📦 Archive** - Historical content and past versions
-
-### ⚡ Technical Features
-
-- **🎨 View Transitions** - Smooth page transitions using Next.js experimental view transitions
-- **📊 Analytics** - Vercel Analytics integration for visitor insights
-- **🔢 Number Animations** - Smooth number transitions with @number-flow/react
-- **🌐 Internationalization** - Country and timezone support
-- **📱 Responsive Design** - Mobile-first approach with Tailwind CSS
-- **🎭 Dynamic Content** - API-driven content management
-- **🔍 SEO Optimized** - Metadata and sitemap generation
-
-## 🛠️ Tech Stack
-
-### 🎯 Framework & Language
-
-- **Next.js 16.4** - React framework with App Router
-- **React 19.3** - UI library
-- **TypeScript 6** - Type-safe JavaScript
-
-### 💅 Styling & UI
-
-- **Tailwind CSS v4** - Utility-first CSS framework
-- **@tailwindcss/typography** - Beautiful typographic defaults
-- **@tabler/icons-react** - Icon library
-- **tailwind-scrollbar** - Custom scrollbar styling
-
-### 📝 Content Processing
-
-- **Marked** - Markdown parser
-- **marked-smartypants** - Smart typography for Markdown
-- **@sindresorhus/slugify** - URL slug generation
-
-### 🔧 Utilities
-
-- **countries-list** - Country data and information
-- **countries-and-timezones** - Timezone management
-- **humanize-duration** - Human-readable time durations
-- **rand-seed** - Seeded random number generation
-- **@number-flow/react** - Animated number transitions
-
-### 📊 Analytics & Monitoring
-
-- **@vercel/analytics** - Web analytics
-
-## 🚀 Getting Started
-
-### 📋 Prerequisites
-
-- Node.js 24 LTS (also used by Vercel and the production check workflows)
-- npm or yarn package manager
-
-### 💻 Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/AnandChowdhary/anandchowdhary.com.git
-cd anandchowdhary.com
-```
-
-2. Install dependencies:
-
-```bash
+```sh
 npm ci
-```
-
-3. Run the development server:
-
-```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Astro development on port 4321 |
+| `npm run check` | TypeScript/Astro diagnostics |
+| `npm test` | Source, route, image, redirect and build-failure contracts |
+| `npm run build` | Render all routes and generate optimized static images in dist |
+| `npm run verify:build` | Validate routes, assets, original artwork hashes and Pages size limit |
+| `npm start` | Serve dist on port 4322 for verification |
+| `npm run smoke -- https://example.com` | Published pages, unknown-slug 404s and alias destinations |
+| `npm run link-audit -- https://example.com` | Sitemap plus external archive-feed URL coverage |
 
-## 📦 Available Scripts
+The build runs in UTC. `PAGES_BASE_PATH` supports a project Pages deployment
+such as `/anandchowdhary.com`; leave it unset for the custom domain. The Pages
+workflow obtains this value from configure-pages. The static preview accepts the
+same environment variable when checking a project-prefixed build.
 
-- **`npm run dev`** - Start development server with Turbopack
-- **`npm run build`** - Build for production
-- **`npm run start`** - Start production server
-- **`npm run lint`** - Run ESLint
-- **`npm run smoke`** - Smoke-test production
-- **`npm run link-audit`** - Check every URL in the sitemap and the archive feed
+## Content and deployment
 
-## ✅ Checks against production
+`.github/workflows/pages.yml` builds on PRs and publishes main through the
+`github-pages` environment. It uses configure-pages, upload-pages-artifact and
+deploy-pages, with bounded deployment concurrency. Builds run on main pushes,
+hourly at minute 17, manual workflow_dispatch and a `content-published`
+repository_dispatch. Content repositories can send that event when publishing;
+those outbound integrations are not automatically installed by this repository.
+GitHub scheduled runs may be delayed.
 
-Both scripts run against the **live site**, not a local build, because that's
-the only place some failures show up — see `scripts/smoke.mjs` for the story.
+Pages is configured to publish via Actions. The workflow derives the project or
+custom-domain base from Pages settings. The custom-domain DNS cutover is separate;
+see [Pages implementation/release status](docs/performance/GITHUB-PAGES.md).
+Vercel Git deployments are disabled in vercel.json so merging this hosting change
+does not independently switch the existing production domains on Vercel.
 
-- **Smoke test** (`.github/workflows/smoke.yml`) runs automatically when Vercel
-  reports a production deployment live. It samples a few pages per section from
-  the sitemap, checks the known slug aliases still redirect, and requests a
-  deliberately nonexistent slug under each dynamic route — that last one is the
-  canary, since a slug the build never saw is the only cheap way to force a
-  runtime render and catch a route whose server render is throwing.
-- **Link audit** (`.github/workflows/link-audit.yml`) runs weekly against
-  production, checking every sitemap URL plus every link the external archive
-  feed points back at, and asserts pages are still revalidating.
+Every route is generated from the content feeds, including location, project tags,
+archive years, canonical aliases and known short slugs. A new post appears after
+its next successful build. Mandatory source/render/image failures fail the build,
+leaving the last successful Pages deployment live. No server exists to discover
+unbuilt slugs or refresh source data per request. `build-info.json` records the
+published timestamp; smoke --check-freshness checks that rather than CDN Age.
 
-Preview deployments aren't covered: they sit behind Vercel Authentication, and
-reaching them would mean keeping a protection-bypass secret around. Production
-is checked on every merge instead.
+Known aliases use HTML redirect pages, with visible canonical links, because
+Pages cannot issue the original application's HTTP 307/308 responses. Unknown
+URLs use 404.html. The HTML LLM endpoint is served at /llms/; /llms.txt and
+/sitemap.xml retain their file paths. Vercel Web Analytics is removed with the
+adapter; no replacement tracker is added.
 
-## 📁 Project Structure
+## Structure and evidence
 
-```
-anandchowdhary.com/
-├── app/                    # Next.js App Router
-│   ├── components/         # Reusable React components
-│   ├── blog/              # Blog section pages
-│   ├── projects/          # Projects section with tags
-│   ├── events/            # Events and speaking
-│   ├── books/             # Book reviews and reading list
-│   ├── notes/             # Quick notes and thoughts
-│   ├── open-source/       # GitHub repositories
-│   ├── life/              # Life events and milestones
-│   ├── location/          # Travel and location history
-│   ├── videos/            # Video content
-│   ├── press/             # Media mentions
-│   ├── archive/           # Historical content
-│   ├── api/               # API routes
-│   ├── api.ts             # API utilities
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Homepage
-│   └── globals.css        # Global styles
-├── public/                # Static assets
-├── next.config.ts         # Next.js configuration
-├── tailwind.config.js     # Tailwind CSS configuration
-├── tsconfig.json          # TypeScript configuration
-└── package.json           # Project dependencies
-```
+- `src/pages/`: explicit Astro routes and discovery endpoints.
+- `src/lib/static-paths.ts`: build-time inventory and dynamic-route parameters.
+- `src/lib/render.tsx`: server-render JSX to HTML during builds; no RSC payloads.
+- `src/lib/source.ts`: deduplicated build inputs and optional-source handling.
+- `scripts/finalize-static.mjs`: bounded image generation and project-path rewriting.
+- `scripts/verify-static.mjs`: artifact integrity and route/asset verification.
+- `src/scripts/`: lightbox, visibility loader and counter hydration.
+- `public/fonts/`: original Geist faces and license.
 
-## 🎨 Components Architecture
-
-The site uses a modular component architecture with specialized sections:
-
-- **Timeline Components** - Display various life events (birthday, code, fitness, location, music, sleep, theme)
-- **Section Components** - Reusable sections for different content types (blog, books, projects, etc.)
-- **Navigation Components** - Header, footer, and navigation links
-- **Metadata Components** - Dynamic metadata generation for SEO
-
-## 🔄 API Structure
-
-The project includes API routes for:
-
-- `/api/blog/` - Blog post data
-- `/api/projects/` - Project information and filtering
-
-## 🌐 Deployment
-
-The site is optimized for deployment on Vercel:
-
-```bash
-npm run build
-```
-
-The build process:
-
-1. Compiles TypeScript
-2. Optimizes React components
-3. Generates static pages where possible
-4. Creates optimized production bundle
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+[Performance and migration evidence](docs/performance/STATUS.md) includes historical
+Vercel measurements. They describe that candidate and do not establish Pages
+performance. New Pages measurements must identify their deployment and hosting.
+Raw screenshots and full Lighthouse reports live in ignored raw directories;
+retain them with tracked summaries when sharing measurement evidence.
