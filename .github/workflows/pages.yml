@@ -85,4 +85,4 @@ jobs:
       - name: Verify the published artifact
         env:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: node scripts/smoke.mjs "$SITE_URL" --check-freshness
+        run: node scripts/smoke.mjs "${SITE_URL/http:/https:}" --check-freshness
