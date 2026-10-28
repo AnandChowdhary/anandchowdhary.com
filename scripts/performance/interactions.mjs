@@ -57,6 +57,7 @@ try {
  await page.waitForNetworkIdle({idleTime:500});
  const legacyImages=await page.$$eval('main img[src*="/images/blog/"]',images=>images.map(image=>({src:image.getAttribute('src'),loaded:image.complete&&image.naturalWidth>0})));
  assert.equal(legacyImages.length,17);
+ assert.equal(await page.$$eval('[data-lightbox-ready]',images=>images.every(img=>!!img.getAttribute('alt')?.trim())),true,'Interactive images must have a non-presentational accessible name');
  assert.deepEqual(legacyImages.filter(image=>!image.loaded),[],'Restored article images must load without request interception');
  console.log('PASS all 17 original podcast images load without fixtures');
  await page.waitForSelector('[data-lightbox-ready]',{timeout:15000});

@@ -72,6 +72,13 @@ if (content) {
       img.dataset.lightboxReady = 'true';
       img.style.cursor = 'pointer';
       img.style.transition = 'transform 200ms ease-in-out';
+      // Empty alt implies presentation. Once an image becomes a control, use
+      // its authored heading/caption as its accessible name instead.
+      if (!img.alt.trim()) {
+        const caption = img.closest('h1,h2,h3,h4,h5,h6')?.textContent
+          || img.closest('figure')?.querySelector('figcaption')?.textContent;
+        img.alt = caption?.replace(/\s+/g, ' ').trim() || 'Article image';
+      }
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
       img.setAttribute('aria-label', img.alt ? `Enlarge image: ${img.alt}` : 'Enlarge image');
