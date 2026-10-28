@@ -1,13 +1,13 @@
 # Smoke-tests production as soon as Vercel reports a deployment live.
 #
 # It has to run against the deployed site rather than a local build: the render
-# failure in #301 only ever happened inside the Vercel function, so `next build`
-# and `next start` both stayed green for the 45 days it was broken in
+# failure in #301 only ever happened inside the Vercel function, so local build
+# and server checks both stayed green for the 45 days it was broken in
 # production. See scripts/smoke.mjs for what that means for the checks.
 #
 # Preview deployments are deliberately not covered — they sit behind Vercel
-# Authentication, and reaching them would mean keeping a protection-bypass
-# secret around. Production is checked on every merge instead.
+# Authentication. Migration tooling supports privately supplied bypass credentials;
+# this workflow needs no bypass secret and checks the public production domain.
 name: Smoke test
 
 on:

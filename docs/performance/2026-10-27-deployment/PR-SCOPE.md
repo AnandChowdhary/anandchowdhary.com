@@ -1,21 +1,19 @@
 # Pull request scope — 2026-10-28
 
-This PR publishes the verified Astro migration without changing GitHub Actions
-workflow files. The GitHub connection can publish repository code but lacks the
-workflow permission required to create the proposed build/contracts workflow.
-Existing production smoke and weekly link-audit workflows are preserved unchanged;
-they already use Node 24 on the base revision.
+This PR publishes the verified Astro migration, including the Node 24
+build/contracts workflow. The account owner enabled workflow edits for the
+Nebula GitHub connection after the initial push was rejected.
 
-The exact proposed workflow additions/comment changes are retained in
-`proposed-workflow-changes.patch` for a later authorized update. The new automated
-PR build/contracts job is not active in this PR. Equivalent type checks, all 13
-contracts, clean cloud builds, build-output checks and isolated runtime checks
-passed during the recorded rehearsal. Vercel's configured build command still
-runs output and isolated-runtime guards on every deployment.
+The build/contracts job runs clean installation, type checks, all contract tests,
+production build, emitted-output verification and the isolated packaged-runtime
+check. Existing production smoke and weekly link-audit workflows remain in place;
+the smoke workflow comments now describe the framework-independent checks.
 
-Earlier reports describe the initial push rejection and proposed workflow job.
-This separate branch resolves source publication by omitting workflow mutations;
-it does not change the integration's permissions or use another credential.
-Production promotion remains pending; creating this PR does not merge the source
+The original proposed changes are retained in `proposed-workflow-changes.patch`
+for historical reference; they have now been applied. Earlier reports of the
+workflow permission blocker describe the initial rejected push and are superseded
+by this update. No alternate credential was used.
+
+Production promotion remains pending. Updating this PR does not merge the source
 or switch the public custom domains. See COMPARISON.md and staged-verification.json
 for measured evidence and limitations.

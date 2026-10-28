@@ -185,11 +185,10 @@ no-JS article content, all 17 restored images and lightbox interactions. The clo
 build also passed output verification and the isolated packaged-runtime guard.
 See [rehearsal details](2026-10-27-deployment/REHEARSAL.md).
 
-GitHub rejected the initial branch push because the configured OAuth connection
-lacks the `workflow` scope required to create/update `.github/workflows/check.yml`
-and move existing CI to Node 24. The source is committed locally; no alternate
-credential has been used. The account owner must enable **Settings → Integrations
-→ GitHub → Allow workflow edits** before retrying this push.
+The migration is published in [PR #304](https://github.com/AnandChowdhary/anandchowdhary.com/pull/304).
+The account owner enabled workflow edits on 2026-10-28, resolving the initial
+GitHub OAuth permission blocker. The proposed Node 24 build/contracts workflow
+has now been added to the PR, alongside the retained production smoke/link audit.
 
 ## Remaining release work
 
@@ -199,8 +198,8 @@ desktop/mobile light/dark normal/screenshot modes; dimensions and metadata match
 with at most 0.0632% pixel differences from live counters.
 [Verification record](2026-10-27-deployment/staged-verification.json).
 
-1. Publish the committed source once GitHub workflow access is enabled; run the
-   repository CI and align project framework/Node defaults with Astro/Node 24.
+1. Review PR #304 and its repository CI; align project framework/Node defaults
+   with Astro/Node 24 as part of source cutover.
 2. Switch production atomically using the validated application source, then rerun
    smoke, browser interactions, native image/query/error checks, full inventory,
    crawlability checks and observation through an ISR expiry.
