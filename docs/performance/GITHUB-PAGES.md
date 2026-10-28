@@ -12,7 +12,7 @@ existing CSS, fonts, counters and accessible lightbox remain. A failed content
 fetch or rendering error fails the build, leaving the last successful deployment
 live rather than publishing an incomplete site.
 
-New posts and dashboard data become visible after a successful rebuild. Proposed
+New posts and dashboard data become visible after a successful rebuild. Configured
 triggers are pushes to main, hourly scheduled builds, manual workflow_dispatch,
 and repository_dispatch from content-publishing repositories when available.
 GitHub schedules can be delayed; hourly scheduling is not a publication SLA.
@@ -59,10 +59,8 @@ behavior. No cold-source 503 behavior can be supplied by GitHub Pages. Preserve
 remaining design, metadata, accessibility and transfer budgets; investigate any
 regression using a fresh baseline on comparable measurements.
 
-The GitHub Pages API currently returns 404 for this repository. Confirm whether
-Pages needs enabling and whether the connection can manage Pages settings before
-assuming deployment access. Custom-domain DNS changes require the DNS provider's
-access and remain separate from creating the deployment workflow.
+GitHub Pages is enabled with the Actions source. Custom-domain DNS changes require
+the DNS provider’s access and remain separate from creating the deployment workflow.
 
 ## Implemented and verified locally
 
@@ -97,10 +95,9 @@ access and remain separate from creating the deployment workflow.
 The official workflow uses configure-pages@v6, upload-pages-artifact@v5 and
 deploy-pages@v5 (release tags verified), with Node 24 and content-addressed image
 caching. PRs build/check without deploying; main publishes through github-pages.
-The initial public staging URL will be
-https://anandchowdhary.github.io/anandchowdhary.com/ and needs its own deployed
-smoke, URL, browser and performance verification. Local/Vercel numbers do not
-establish Pages performance.
+The initial public staging URL was
+https://anandchowdhary.github.io/anandchowdhary.com/; its deployed smoke, URL,
+browser and performance verification passed as recorded below.
 
 The domain's nameservers are anna.ns.cloudflare.com and jonah.ns.cloudflare.com.
 No DNS-management connection is available in this workspace. Once Pages is
@@ -131,7 +128,8 @@ script/React bundle. Home/life retain inherited external image failures affectin
 best-practices scores. Field INP and billed build usage remain unknown.
 
 Pages now registers anandchowdhary.com; DNS still points to Vercel. The root-path
-artifact is being staged before the owner makes the Cloudflare changes in
+artifact is published and verified directly at GitHub’s origin (commit
+11f72aa3a833a02db4026d583147ebc1c517806f). The owner must make the Cloudflare changes in
 [DNS-CUTOVER.md](2026-10-28-pages-release/DNS-CUTOVER.md). The project github.io
 URL redirects to the custom domain during this stage, so it is no longer an
 independent preview. Do not mark the overall migration complete until DNS, HTTPS,

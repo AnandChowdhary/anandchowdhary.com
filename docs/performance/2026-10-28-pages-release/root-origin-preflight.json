@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-28T10:41:07.932Z",
+  "originIp": "185.199.108.153",
+  "host": "anandchowdhary.com",
+  "build": {
+    "builtAt": "2026-10-28T10:38:54.134Z",
+    "commit": "11f72aa3a833a02db4026d583147ebc1c517806f",
+    "base": "/",
+    "routes": 1511,
+    "optimizedSources": 123,
+    "imageBytes": 14764824
+  },
+  "checks": {
+    "homeIsAstro": true,
+    "noNext": true,
+    "rootAssetPaths": true,
+    "articleStaticImagePaths": true,
+    "captionFix": true
+  },
+  "tlsVerificationSkippedForOriginPreflight": true,
+  "note": "Direct GitHub IP with custom Host; public DNS still Vercel. This does not establish valid custom-domain HTTPS."
+}

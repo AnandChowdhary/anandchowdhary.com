@@ -24,5 +24,11 @@
     "Initial image-article accessibility was 99; authored-caption naming fixed it and all eight follow-ups score 100.",
     "Home/life best-practices can score 96 from inherited external image failures.",
     "The custom-domain cutover remains pending owner DNS changes and HTTPS verification."
-  ]
+  ],
+  "rootOriginPreflight": {
+    "commit": "11f72aa3a833a02db4026d583147ebc1c517806f",
+    "passed": true,
+    "evidence": "root-origin-preflight.json",
+    "customDomainHttpsVerified": false
+  }
 }

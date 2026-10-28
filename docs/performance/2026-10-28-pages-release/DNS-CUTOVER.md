@@ -2,12 +2,14 @@
 
 The static Pages site passed published-route, browser and release performance
 checks at its GitHub project URL. Pages now has `anandchowdhary.com` registered;
-the root-path artifact is being staged before DNS changes. Project Pages URLs
+the root-path artifact is published and verified directly at GitHub’s origin.
+See root-origin-preflight.json; this probe does not establish valid custom-domain
+HTTPS, which remains pending DNS changes. Project Pages URLs
 redirect to the configured custom domain after this registration.
 
 Cloudflare is authoritative (anna.ns.cloudflare.com, jonah.ns.cloudflare.com),
 but no DNS-management connection is available in this workspace. The owner must
-make these changes in Cloudflare DNS once the root artifact is verified:
+make these changes in Cloudflare DNS:
 
 | Type | Name | Value | Proxy |
 |---|---|---|---|
