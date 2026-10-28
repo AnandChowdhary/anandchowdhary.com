@@ -1,0 +1,21 @@
+{
+  "before": {
+    "builtAt": "2026-10-28T10:14:14.988Z",
+    "commit": "713fa8fff42882f3ed4ba2c7b778db427fd898d6",
+    "base": "/anandchowdhary.com",
+    "routes": 1511,
+    "optimizedSources": 123,
+    "imageBytes": 14764824
+  },
+  "after": {
+    "builtAt": "2026-10-28T10:19:09.412Z",
+    "commit": "968a4cb1e7de3921bc1e98d3f74aee14512b6f81",
+    "base": "/anandchowdhary.com",
+    "routes": 1511,
+    "optimizedSources": 123,
+    "imageBytes": 14764824
+  },
+  "hosting": "GitHub Pages",
+  "url": "https://anandchowdhary.github.io/anandchowdhary.com",
+  "note": "Live feeds and scheduled builds can refresh during measurement; record both artifact timestamps."
+}

@@ -1,0 +1,328 @@
+{
+  "startedAt": "2026-10-28T10:33:45.643Z",
+  "base": "https://anandchowdhary.github.io/anandchowdhary.com",
+  "counts": {
+    "mobile": 5,
+    "desktop": 3
+  },
+  "routes": [
+    {
+      "id": "article-images",
+      "path": "/blog/2019/state-of-the-podcasts-2019",
+      "purpose": "Image-heavy article: 18 image elements at selection time"
+    }
+  ],
+  "sourceCommit": "c1c16b19de06203ba793db4e3ae777319d1c9470",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "article-images",
+      "attempt": 1,
+      "at": "2026-10-28T10:33:45.959Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "headersMs": 299.41924599999993,
+      "totalMs": 305.77822100000003,
+      "decodedBodyBytes": 36821,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8277",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Wed, 28 Oct 2026 10:33:46 GMT",
+        "etag": "W/\"6ae1cf42-8fd5\"",
+        "expires": "Wed, 28 Oct 2026 10:42:56 GMT",
+        "last-modified": "Wed, 28 Oct 2026 10:32:34 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "cc86e6c069e65756baca87fd4f7e56bbaa3f3fdb",
+        "x-github-edge-region": "sea",
+        "x-github-request-id": "91E4:14071F:2D6AFC:3239A7:6AE1CF58",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-bfi-kbfi7400107-BFI",
+        "x-timer": "S1793183626.157922,VS0,VE112"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 2,
+      "at": "2026-10-28T10:33:45.984Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "headersMs": 22.36109799999997,
+      "totalMs": 25.09480599999995,
+      "decodedBodyBytes": 36821,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8277",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Wed, 28 Oct 2026 10:33:46 GMT",
+        "etag": "W/\"6ae1cf42-8fd5\"",
+        "expires": "Wed, 28 Oct 2026 10:42:56 GMT",
+        "last-modified": "Wed, 28 Oct 2026 10:32:34 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "2",
+        "x-fastly-request-id": "2b23de6cfa340e14b873cad4b36b0ee483cf9442",
+        "x-github-edge-region": "sea",
+        "x-github-request-id": "91E4:14071F:2D6AFC:3239A7:6AE1CF58",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-bfi-kbfi7400107-BFI",
+        "x-timer": "S1793183626.300381,VS0,VE1"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 3,
+      "at": "2026-10-28T10:33:46.010Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "headersMs": 23.580569999999966,
+      "totalMs": 25.64956499999994,
+      "decodedBodyBytes": 36821,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8277",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Wed, 28 Oct 2026 10:33:46 GMT",
+        "etag": "W/\"6ae1cf42-8fd5\"",
+        "expires": "Wed, 28 Oct 2026 10:42:56 GMT",
+        "last-modified": "Wed, 28 Oct 2026 10:32:34 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "fcf1a98e0a51b1f7c615d0de688eceb4450a5f5c",
+        "x-github-edge-region": "sea",
+        "x-github-request-id": "91E4:14071F:2D6AFC:3239A7:6AE1CF58",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-bfi-kbfi7400115-BFI",
+        "x-timer": "S1793183626.327221,VS0,VE1"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_limit_value": "0",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "quota_limit": "defaultPerDayPerProject",
+              "consumer": "projects/583797351490",
+              "quota_unit": "1/d/{project}",
+              "quota_location": "global",
+              "service": "pagespeedonline.googleapis.com"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "desktop",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "consumer": "projects/583797351490",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "quota_limit_value": "0",
+              "quota_unit": "1/d/{project}",
+              "quota_location": "global",
+              "service": "pagespeedonline.googleapis.com"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "article-images-mobile-1",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-28T10:33:48.040Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-desktop-1",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 1,
+      "fetchTime": "2026-10-28T10:33:56.903Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-desktop-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-2",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-28T10:34:05.721Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-desktop-2",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 2,
+      "fetchTime": "2026-10-28T10:34:13.787Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-desktop-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-3",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-28T10:34:22.688Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-desktop-3",
+      "route": "article-images",
+      "device": "desktop",
+      "repetition": 3,
+      "fetchTime": "2026-10-28T10:34:31.152Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-desktop-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-4",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 4,
+      "fetchTime": "2026-10-28T10:34:40.020Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-4.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-5",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 5,
+      "fetchTime": "2026-10-28T10:34:48.294Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-5.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.github.io/anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    }
+  ],
+  "previewAuthenticated": false,
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-28T10:34:55.006Z"
+}

@@ -1,5 +1,10 @@
 # Astro migration status — 2026-10-28
 
+**Current release:** GitHub Pages is implemented and its hosted checks pass.
+The custom domain is registered on Pages; Cloudflare DNS and final HTTPS checks
+remain pending. See [Pages release evidence](2026-10-28-pages-release/COMPARISON.md)
+and [DNS cutover instructions](2026-10-28-pages-release/DNS-CUTOVER.md).
+
 **Hosting update:** The user approved conversion to GitHub Pages. The active PR
 now builds static HTML and build-time images, with official artifact deployment.
 See [current Pages work](GITHUB-PAGES.md). The Vercel evidence below is historical;

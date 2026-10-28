@@ -1,0 +1,36 @@
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import path from 'node:path';
+const root=path.resolve('docs/performance');
+const candidateDir=process.argv[2]||'2026-10-28-pages';
+const baselineDir=process.argv[3]||'2026-10-28-production';
+const output=path.join(root,'2026-10-28-pages-release');
+await mkdir(output,{recursive:true});
+const load=async dir=>JSON.parse(await readFile(path.join(root,dir,'summary.json'),'utf8'));
+const original=await load(candidateDir),baseline=await load(baselineDir);
+const followupDir=process.argv[4]||'2026-10-28-pages-article-accessibility';
+const followup=await load(followupDir);
+if(followup.samples.length!==8||followup.samples.some(s=>s.route!=='article-images'))throw Error('Expected eight focused image-article follow-up samples');
+const candidate={groups:[...original.groups.filter(g=>g.route!=='article-images'),...followup.groups],samples:[...original.samples.filter(s=>s.route!=='article-images'),...followup.samples]};
+const median=(group,key)=>group.metrics[key]?.median;
+const format=(v,divisor=1,digits=2)=>v==null?'unknown':(v/divisor).toFixed(digits);
+const budgets=[{metric:'Complete release coverage: 40 original plus 8 focused article samples',passed:candidate.samples.length===48}];
+let text='# GitHub Pages release comparison\n\nThe original Pages matrix contains 48 runs. An empty-alt/lightbox control issue scored 99 accessibility on the image article and was fixed from its authored captions. Eight focused follow-up runs supersede that article group; final budget coverage combines 40 unaffected original runs with those 8 follow-ups, rather than claiming a second complete matrix on one deployment.\n\nBoth sites were measured sequentially from the same sandbox with the pinned Chrome/Lighthouse toolchain: five mobile and three desktop runs per route. Hosting differs (GitHub Pages versus Vercel); these results cannot isolate framework effects. Browser storage is fresh per run, CDN caches are uncontrolled, and content feeds remain live. Individual ranges, failures and timestamps remain in each report. The historical image article now has restored artwork, so its content/assets are intentionally different.\n\n| Route | Device | Next performance | Pages performance | Next LCP s | Pages LCP s | Next image KiB | Pages image KiB |\n|---|---|---:|---:|---:|---:|---:|---:|\n';
+for(const group of candidate.groups){
+ const old=baseline.groups.find(g=>g.route===group.route&&g.device===group.device);
+ if(!old)throw Error(`Missing baseline group: ${group.route}/${group.device}`);
+ text+=`| ${group.path} | ${group.device} | ${format(median(old,'performance'),1,0)} | ${format(median(group,'performance'),1,0)} | ${format(median(old,'lcpMs'),1000)} | ${format(median(group,'lcpMs'),1000)} | ${format(median(old,'imageBytes'),1024,1)} | ${format(median(group,'imageBytes'),1024,1)} |\n`;
+ if(group.device==='mobile')budgets.push({route:group.route,metric:'Mobile median LCP <=2500ms',value:median(group,'lcpMs'),passed:median(group,'lcpMs')<=2500});
+ const key=group.device==='desktop'?'lcpMs':'tbtMs';const before=median(old,key),after=median(group,key);
+ if(after-before>=100&&after>before*1.1)budgets.push({route:group.route,device:group.device,metric:`Investigate ${key} regression`,before,after,passed:false});
+}
+const maxCls=Math.max(...candidate.samples.map(s=>s.cls));budgets.push({metric:'CLS <=0.1 in every sample',value:maxCls,passed:candidate.samples.every(s=>typeof s.cls==='number'&&s.cls<=0.1)});
+const projects=candidate.groups.find(g=>g.route==='projects'&&g.device==='mobile');const imageBytes=median(projects,'imageBytes');
+budgets.push({metric:'Project mobile image bytes >=70% below original 7.71MiB',value:imageBytes,reduction:1-imageBytes/(7.71*1024**2),passed:imageBytes<=7.71*1024**2*0.3});
+budgets.push({metric:'No RSC requests in any candidate sample',passed:candidate.samples.every(s=>s.rscRequests===0)});
+budgets.push({metric:'Article external JS <=30KiB (inline scripts reported separately)',passed:candidate.samples.filter(s=>s.route.startsWith('article-')).every(s=>s.jsBytes<=30*1024)});
+for(const category of ['accessibility','seo'])budgets.push({metric:`${category} 100 in every audited sample`,passed:candidate.samples.every(s=>s[category]===100)});
+text+='\n## Release budget observations\n\n';for(const budget of budgets)text+=`- ${budget.passed?'PASS':'REVIEW'}: ${budget.route?budget.route+' ':''}${budget.metric}${budget.value==null?'':` (${format(budget.value,1,3)})`}.\n`;
+text+='\n## Limits\n\nHome and life retain known third-party image failures and can score 96 for best practices. Scores are not proof of complete accessibility. Public PSI/CrUX quota responses remain in the manifests; lab TBT does not establish field INP. No function/image runtime exists on Pages, but billed build usage/cost is not established here. Scheduled rebuilds can update artifacts during measurements; the candidate deployment record preserves build metadata before and after the run. The custom domain requires a separate DNS/HTTPS cutover and verification.\n';
+await writeFile(path.join(output,'COMPARISON.md'),text);
+await writeFile(path.join(output,'budgets.json'),JSON.stringify({candidateDir,baselineDir,followupDir,budgets,passed:budgets.every(b=>b.passed)},null,2)+'\n');
+if(budgets.some(b=>!b.passed))process.exitCode=1;

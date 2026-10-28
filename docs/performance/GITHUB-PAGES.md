@@ -107,3 +107,32 @@ No DNS-management connection is available in this workspace. Once Pages is
 verified, the owner must update the Cloudflare DNS records for the final custom
 domain switch. No DNS changes have been made. Keep the original Vercel deployment
 available for rollback until the final custom-domain checks pass.
+
+## Published project-site verification
+
+PR #304 is merged. Official artifact deployment and the hourly scheduled workflow
+have succeeded on main. The first run published successfully but its final smoke
+step lacked a checkout; follow-up commits add checkout/Node 24 and explicitly use
+HTTPS for verification. Subsequent build/deploy/smoke runs are green.
+
+The project site passed the live 801-URL audit and complete browser interaction
+checks. A new 48-run Pages matrix and fresh 48-run Next.js baseline are complete.
+The image article's initial accessibility score of 99 exposed interactive images
+with empty alt text. Naming them from authored headings/captions fixes that; all
+eight focused follow-ups score 100. Final budget coverage explicitly combines the
+40 unaffected initial samples and those eight follow-ups.
+
+[The hosted comparison](2026-10-28-pages-release/COMPARISON.md) passes all release
+budgets: mobile median performance 99–100, median LCP 1.21–2.21 seconds, CLS below
+0.1 throughout, no RSC and 95.5% less project image transfer than the initial
+7.71 MiB baseline. Accessibility and SEO are 100 in final audited samples.
+Article inline JavaScript is 1,463 compressed bytes, with no external application
+script/React bundle. Home/life retain inherited external image failures affecting
+best-practices scores. Field INP and billed build usage remain unknown.
+
+Pages now registers anandchowdhary.com; DNS still points to Vercel. The root-path
+artifact is being staged before the owner makes the Cloudflare changes in
+[DNS-CUTOVER.md](2026-10-28-pages-release/DNS-CUTOVER.md). The project github.io
+URL redirects to the custom domain during this stage, so it is no longer an
+independent preview. Do not mark the overall migration complete until DNS, HTTPS,
+custom-domain smoke and the full URL audit pass.

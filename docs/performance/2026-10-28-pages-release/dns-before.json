@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-28T10:33:46.434Z",
+  "results": [
+    {
+      "name": "anandchowdhary.com",
+      "type": "A",
+      "answers": [
+        {
+          "name": "anandchowdhary.com.",
+          "type": 1,
+          "TTL": 300,
+          "data": "216.198.79.1"
+        }
+      ]
+    },
+    {
+      "name": "anandchowdhary.com",
+      "type": "AAAA",
+      "answers": []
+    },
+    {
+      "name": "anandchowdhary.com",
+      "type": "CAA",
+      "answers": []
+    },
+    {
+      "name": "www.anandchowdhary.com",
+      "type": "CNAME",
+      "answers": []
+    }
+  ]
+}

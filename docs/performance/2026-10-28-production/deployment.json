@@ -1,0 +1,6 @@
+{
+  "deploymentId": "dpl_Hp4R8Z5uCBdUWdT1bdUPhnZCC14N",
+  "sourceCommit": "765268ff107ec4ea90f6dffd1b98bf93f5ad8e1c",
+  "hosting": "Vercel",
+  "note": "Original Next.js production, measured sequentially after the Pages candidate. Hosting differs; this is not a framework-only causal experiment."
+}

@@ -1,0 +1,75 @@
+{
+  "candidateDir": "2026-10-28-pages",
+  "baselineDir": "2026-10-28-production",
+  "followupDir": "2026-10-28-pages-article-accessibility",
+  "budgets": [
+    {
+      "metric": "Complete release coverage: 40 original plus 8 focused article samples",
+      "passed": true
+    },
+    {
+      "route": "home",
+      "metric": "Mobile median LCP <=2500ms",
+      "value": 2212.652,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "Mobile median LCP <=2500ms",
+      "value": 2138.7655,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "Mobile median LCP <=2500ms",
+      "value": 1215.144,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "Mobile median LCP <=2500ms",
+      "value": 1445.2575,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "Mobile median LCP <=2500ms",
+      "value": 1995.6490000000001,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "Mobile median LCP <=2500ms",
+      "value": 1208.2005,
+      "passed": true
+    },
+    {
+      "metric": "CLS <=0.1 in every sample",
+      "value": 0.01245076194275209,
+      "passed": true
+    },
+    {
+      "metric": "Project mobile image bytes >=70% below original 7.71MiB",
+      "value": 363269,
+      "reduction": 0.955066106971909,
+      "passed": true
+    },
+    {
+      "metric": "No RSC requests in any candidate sample",
+      "passed": true
+    },
+    {
+      "metric": "Article external JS <=30KiB (inline scripts reported separately)",
+      "passed": true
+    },
+    {
+      "metric": "accessibility 100 in every audited sample",
+      "passed": true
+    },
+    {
+      "metric": "seo 100 in every audited sample",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-28",
+  "sourceCommit": "c1c16b19de06203ba793db4e3ae777319d1c9470",
+  "hosting": "GitHub Pages",
+  "customDomainDnsChanged": false,
+  "checks": {
+    "contractsPassed": 15,
+    "typecheckErrors": 0,
+    "typecheckWarnings": 0,
+    "typecheckHints": 0,
+    "inventoryPaths": 1511,
+    "htmlPages": 1512,
+    "publishedUrlsPassed": 801,
+    "browserInteractions": true,
+    "localVisualPairs": 48,
+    "initialHostedLighthouseRuns": 48,
+    "freshNextBaselineRuns": 48,
+    "articleAccessibilityFollowupRuns": 8,
+    "finalAccessibilityMin": 100,
+    "finalSeoMin": 100,
+    "allReleaseBudgetsPassed": true
+  },
+  "notes": [
+    "Initial image-article accessibility was 99; authored-caption naming fixed it and all eight follow-ups score 100.",
+    "Home/life best-practices can score 96 from inherited external image failures.",
+    "The custom-domain cutover remains pending owner DNS changes and HTTPS verification."
+  ]
+}
