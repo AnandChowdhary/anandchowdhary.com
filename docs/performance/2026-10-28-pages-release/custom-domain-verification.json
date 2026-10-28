@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-28T19:27:23.827Z",
+  "domain": "https://anandchowdhary.com",
+  "tlsVerified": true,
+  "dns": {
+    "apex": [
+      "185.199.108.153",
+      "185.199.110.153",
+      "185.199.111.153",
+      "185.199.109.153"
+    ],
+    "www": [
+      "anandchowdhary.github.io"
+    ]
+  },
+  "build": {
+    "builtAt": "2026-10-28T19:23:11.225Z",
+    "commit": "60924c42755fa5ac2bfe233040e0c0ee2c69583c",
+    "base": "/",
+    "routes": 1511,
+    "optimizedSources": 123,
+    "imageBytes": 14764824
+  },
+  "redirects": {
+    "http://anandchowdhary.com/": {
+      "status": 301,
+      "location": "https://anandchowdhary.com/"
+    },
+    "https://www.anandchowdhary.com/": {
+      "status": 301,
+      "location": "https://anandchowdhary.com/"
+    }
+  },
+  "discovery": {
+    "/sitemap.xml": {
+      "status": 200,
+      "bytes": 93940
+    },
+    "/llms": {
+      "status": 200,
+      "bytes": 107477
+    },
+    "/llms.txt": {
+      "status": 200,
+      "bytes": 46493
+    }
+  },
+  "checks": {
+    "smoke": true,
+    "freshness": true,
+    "publishedUrlsPassed": 801,
+    "browserInteractions": true
+  },
+  "notes": [
+    "No robots.txt exists in the original source or this release; its 404 does not restrict crawling."
+  ],
+  "successfulWorkflow": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/40753589613"
+}

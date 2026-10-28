@@ -1,19 +1,15 @@
 # Astro migration status — 2026-10-28
 
-**Current release:** GitHub Pages is implemented and its hosted checks pass.
-The custom domain is registered on Pages; Cloudflare DNS and final HTTPS checks
-remain pending. See [Pages release evidence](2026-10-28-pages-release/COMPARISON.md)
-and [DNS cutover instructions](2026-10-28-pages-release/DNS-CUTOVER.md).
+**Current release:** The static Astro site is live at https://anandchowdhary.com
+on GitHub Pages using official Actions artifact deployment. DNS, verified HTTPS,
+canonical redirects, freshness smoke, all 801 URLs and browser interactions pass.
+The production Pages workflow is green; the original Vercel deployment is retained
+for rollback. See [current Pages implementation](GITHUB-PAGES.md),
+[hosted performance](2026-10-28-pages-release/COMPARISON.md) and
+[final domain evidence](2026-10-28-pages-release/custom-domain-verification.json).
 
-**Hosting update:** The user approved conversion to GitHub Pages. The active PR
-now builds static HTML and build-time images, with official artifact deployment.
-See [current Pages work](GITHUB-PAGES.md). The Vercel evidence below is historical;
-it does not establish Pages performance or completion of the domain cutover.
-
-The repository root now runs Astro on the Vercel adapter. Production has not been
-deployed or promoted from this workspace. Migration implementation is complete;
-release verification is still in progress. The original Next.js deployment remains
-the visual reference and rollback target.
+The Vercel implementation and evidence below are historical and superseded by
+static Pages output, build-time images and scheduled rebuilds.
 
 ## Implementation
 

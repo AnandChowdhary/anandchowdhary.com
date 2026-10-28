@@ -2,7 +2,7 @@
   "at": "2026-10-28",
   "sourceCommit": "c1c16b19de06203ba793db4e3ae777319d1c9470",
   "hosting": "GitHub Pages",
-  "customDomainDnsChanged": false,
+  "customDomainDnsChanged": true,
   "checks": {
     "contractsPassed": 15,
     "typecheckErrors": 0,
@@ -23,12 +23,14 @@
   "notes": [
     "Initial image-article accessibility was 99; authored-caption naming fixed it and all eight follow-ups score 100.",
     "Home/life best-practices can score 96 from inherited external image failures.",
-    "The custom-domain cutover remains pending owner DNS changes and HTTPS verification."
+    "Custom-domain DNS, verified HTTPS, canonical redirects, smoke, 801-URL audit and browser interactions pass."
   ],
   "rootOriginPreflight": {
     "commit": "11f72aa3a833a02db4026d583147ebc1c517806f",
     "passed": true,
     "evidence": "root-origin-preflight.json",
     "customDomainHttpsVerified": false
-  }
+  },
+  "customDomainHttpsVerified": true,
+  "customDomainEvidence": "custom-domain-verification.json"
 }

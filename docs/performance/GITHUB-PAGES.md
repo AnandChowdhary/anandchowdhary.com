@@ -1,9 +1,7 @@
 # GitHub Pages conversion — approved 2026-10-28
 
 The user approved the conversion and its rebuild/HTML redirect tradeoffs. PR #304
-now uses Astro static output and official Pages artifact deployment. The existing
-custom domain still serves the original Next.js deployment on Vercel until DNS
-cutover. GitHub Pages is enabled for this repository with build_type=workflow.
+now uses Astro static output and official Pages artifact deployment. The custom domain now serves the static Astro site from GitHub Pages. GitHub Pages is enabled for this repository with build_type=workflow.
 
 ## Resulting behavior
 
@@ -134,3 +132,13 @@ artifact is published and verified directly at GitHub’s origin (commit
 URL redirects to the custom domain during this stage, so it is no longer an
 independent preview. Do not mark the overall migration complete until DNS, HTTPS,
 custom-domain smoke and the full URL audit pass.
+
+## Custom-domain release complete
+
+Cloudflare DNS now points to GitHub Pages. Verified HTTPS works for the apex and
+www; HTTPS enforcement is enabled and HTTP/www redirect to the canonical apex.
+The custom domain passes freshness smoke, all 801 URLs, sitemap/LLM discovery and
+browser interaction checks. Official workflow 40753589613 is green. See
+[final domain evidence](2026-10-28-pages-release/custom-domain-verification.json).
+Earlier staging notes above describe the completed preparation. The old Vercel
+deployment remains available for rollback, with Git deployments disabled.

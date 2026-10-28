@@ -1,4 +1,14 @@
-# Custom-domain cutover — owner action required
+# Custom-domain cutover — complete
+
+Completed 2026-10-28: Cloudflare resolves to the four GitHub Pages IPs and www
+resolves to anandchowdhary.github.io. The certificate is approved for both names,
+HTTPS enforcement is enabled, and HTTP/www redirect to https://anandchowdhary.com/.
+All 801 URLs, freshness smoke and browser interactions pass. See
+[custom-domain-verification.json](custom-domain-verification.json) and the
+custom-domain-*.txt evidence. Workflow 40753589613 is green.
+
+The following records and staging notes are retained for reference.
+
 
 The static Pages site passed published-route, browser and release performance
 checks at its GitHub project URL. Pages now has `anandchowdhary.com` registered;
