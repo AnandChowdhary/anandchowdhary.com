@@ -1,16 +1,34 @@
 ---
-import { pathsFor } from "@/lib/static-paths";
-export const getStaticPaths = () => pathsFor("/blog/[year]/[slug]");
-import Document from "@/layouts/Document.astro";
-import { renderPage } from "@/lib/render";
-import * as page from "@/views/blog/[year]/[slug]/page.tsx";
-const result = await renderPage(page, Astro.params);
-if (import.meta.env.PROD && result.status >= 400) throw new Error(`Cannot publish ${Astro.url.pathname}: ${result.status}`);
-if (result.location) return Astro.redirect(result.location, result.status as 307 | 308);
-Astro.response.status = result.status;
-if (result.status >= 400) Astro.response.headers.set("Cache-Control", "no-store");
-if (result.status === 503) Astro.response.headers.set("Retry-After", "60");
+import { pathsFor } from '@/lib/static-paths';
+export const getStaticPaths = () => pathsFor('/blog/[year]/[slug]');
+import Document from '@/layouts/Document.astro';
+import StaticMarkup from '@/components/StaticMarkup.astro';
+import { blogArticle } from '@/lib/blog-article';
+import { Header } from '@/views/components/header';
+import { Footer } from '@/views/components/footer';
+import { NavigationFooter } from '@/views/components/navigation-footer';
+import { BlogMetadata } from '@/views/blog/metadata';
+import { proseClassName } from '@/views/styles';
+import { marked } from 'marked';
+const { year, slug } = Astro.params as { year: string; slug: string };
+const article = await blogArticle(year, slug);
 ---
-<Document metadata={result.metadata} pathname={Astro.url.pathname}>
-  <Fragment set:html={result.html} />
+<Document metadata={article.metadata} pathname={Astro.url.pathname}>
+  <link rel="preload" as="image" imagesrcset={article.srcset} imagesizes={article.sizes} fetchpriority="high" />
+  <div class="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
+    <StaticMarkup component={Header} props={{ pathname: `/blog/${year}` }} />
+    <main class="max-w-2xl mx-auto space-y-8">
+      <div class="relative">
+        <img sizes={article.sizes} width="384" height="256" loading="eager" fetchpriority="high" src={article.hero} srcset={article.srcset} alt="" class="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60" decoding="async" />
+        <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-5xl tracking-widest">{article.post.emoji}</div>
+      </div>
+      <header class="space-y-2">
+        <h1 class="text-2xl font-medium" set:html={marked.parseInline(article.post.title, { async: false })} />
+        <StaticMarkup component={BlogMetadata} props={{ item: article.post, postContentText: article.text }} />
+      </header>
+      <div data-lightbox-content class={proseClassName} set:html={article.html} />
+      <StaticMarkup component={NavigationFooter} props={{ previous: article.previous, next: article.next }} />
+    </main>
+    <StaticMarkup component={Footer} />
+  </div>
 </Document>

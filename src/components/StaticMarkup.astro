@@ -1,0 +1,7 @@
+---
+import { createElement, type ComponentType } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+interface Props { component: ComponentType<any>; props?: Record<string, unknown> }
+const { component, props = {} } = Astro.props;
+---
+<Fragment set:html={renderToStaticMarkup(createElement(component, props))} />

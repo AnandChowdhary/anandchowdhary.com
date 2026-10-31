@@ -1,0 +1,12 @@
+---
+import type { BlogPost } from '@/views/api';
+import Rand from 'rand-seed';
+interface Props { item: BlogPost; size?: 'large' | 'small' }
+const { item, size = 'large' } = Astro.props;
+const large = size === 'large';
+const src = `https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(new Rand(item.slug).next() * 100 + 1)}.png`;
+---
+<div class={`pointer-events-none ${large ? 'aspect-video rounded-lg w-full' : 'aspect-square w-6 h-6 rounded-full'} shadow-sm relative`}>
+  <img src={src} alt="" class={`w-full h-full object-cover ${large ? 'rounded-lg' : 'rounded-full'} dark:brightness-60`} />
+  {large && <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-2xl tracking-widest">{item.emoji}</div>}
+</div>

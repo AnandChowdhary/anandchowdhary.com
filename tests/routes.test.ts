@@ -72,3 +72,24 @@ test('static builds fail on mandatory source errors rather than publishing error
   try { await assert.rejects(h.run(()=>renderPage(article,{year:'2026',slug:'new-article'})),/503/); }
   finally { if(previous===undefined)delete process.env.SITE_STATIC_BUILD;else process.env.SITE_STATIC_BUILD=previous; }
 });
+
+test('native article data preserves metadata, rendered content and one static hero variant', async () => {
+  const { blogArticle } = await import('../src/lib/blog-article');
+  const h = fixtures(); h.publish();
+  const result = await h.run(() => blogArticle('2026', 'new-article'));
+  assert.equal(result.metadata.title, 'New article / 2026 / Blog / Anand Chowdhary');
+  assert.match(result.html, /New content in the next static build/);
+  assert.match(result.hero, /^\/_images\/[a-f0-9]{24}-384-90\.webp$/);
+  assert.equal(result.srcset, `${result.hero} 384w`);
+  assert.equal(result.previous, undefined);
+  assert.equal(result.next, undefined);
+});
+
+test('native article data rejects invalid/missing articles and propagates mandatory source outages', async () => {
+  const { blogArticle } = await import('../src/lib/blog-article');
+  const missing = fixtures();
+  await assert.rejects(() => blogArticle('invalid', 'missing'), (error: any) => error.status === 404);
+  await assert.rejects(() => missing.run(() => blogArticle('2026', 'missing')), (error: any) => error.status === 404);
+  const failed = fixtures(); failed.fail();
+  await assert.rejects(() => failed.run(() => blogArticle('2026', 'new-article')), /503/);
+});

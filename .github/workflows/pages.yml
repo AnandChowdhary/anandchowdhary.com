@@ -50,7 +50,10 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm test
-      - run: npm run build
+      - name: Collect and validate content inputs
+        id: content
+        run: npm run content:snapshot
+      - run: npm run build:render
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path || '/' }}
       - run: npm run verify:build
@@ -67,6 +70,12 @@ jobs:
           done
           node scripts/smoke.mjs "http://localhost:4322${PAGES_BASE_PATH%/}"
           node scripts/link-audit.mjs "http://localhost:4322${PAGES_BASE_PATH%/}"
+      - name: Retain reproducible content inputs
+        uses: actions/upload-artifact@v7
+        with:
+          name: content-inputs-${{ github.run_id }}
+          path: ${{ steps.content.outputs.snapshot }}
+          retention-days: 3
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist

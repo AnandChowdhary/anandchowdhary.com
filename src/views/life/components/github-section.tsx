@@ -17,7 +17,7 @@ export async function GitHubSection() {
             {contributions.days.map((day, index) => (
               <rect key={day.date} x={Math.floor((index + offset) / 7) * 13} y={(index + offset) % 7 * 13}
                 width="10" height="10" rx="2" data-level={day.level}>
-                <title>{day.date}: activity level {day.level} of 4</title>
+                <title>{`${day.date}: activity level ${day.level} of 4`}</title>
               </rect>
             ))}
           </svg>

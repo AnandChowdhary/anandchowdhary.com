@@ -1,0 +1,51 @@
+---
+import type { BlogPost } from '@/views/api';
+import StaticMarkup from './StaticMarkup.astro';
+import BlogThumbnail from './BlogThumbnail.astro';
+import { Header } from '@/views/components/header';
+import { Footer } from '@/views/components/footer';
+import { NavigationFooter } from '@/views/components/navigation-footer';
+import { focusStyles } from '@/views/components/external-link';
+import { marked } from 'marked';
+import { markedSmartypants } from 'marked-smartypants';
+marked.use(markedSmartypants());
+interface Props { posts: BlogPost[]; year?: string; previousYear?: number; nextYear?: number }
+const { posts, year, previousYear, nextYear } = Astro.props;
+const url = (post: BlogPost) => `/blog/${new Date(post.date).getUTCFullYear()}/${post.slug.replace('.md', '')}`;
+const date = (post: BlogPost) => new Date(post.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const inline = (text: string) => marked.parseInline(text, { async: false });
+const mask = 'mask-image:linear-gradient(to right, black 70%, transparent 100%);-webkit-mask-image:linear-gradient(to right, black 70%, transparent 100%)';
+const excerptMask = 'mask-image:linear-gradient(to bottom, black 0%, black 50%, transparent 50%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%);-webkit-mask-image:linear-gradient(to bottom, black 0%, black 50%, transparent 50%, transparent 100%), linear-gradient(to right, black 70%, transparent 100%)';
+---
+<div class="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
+  <StaticMarkup component={Header} props={{ pathname: year ? `/blog/${year}` : '/blog', description: 'Thoughts and insights on technology, entrepreneurship, and building products that matter.', source: 'https://github.com/AnandChowdhary/blog', readme: 'https://anandchowdhary.github.io/blog/README.md', api: 'https://anandchowdhary.github.io/blog/api.json' }} />
+  <main class="max-w-2xl mx-auto space-y-8 md:space-y-4">
+    {posts.length > 3 && <h2 class="text-lg font-medium text-neutral-500">Latest</h2>}
+    {posts.slice(0, 3).map(item => (
+      <article class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 items-center pb-2.5 relative">
+        <BlogThumbnail item={item} />
+        <div class="md:col-span-2">
+          <a href={url(item)} class={`${focusStyles} min-w-0 full-link flex hover:text-neutral-500`}>
+            <div class="w-full" style={mask}><h3 class="truncate text-lg font-medium" set:html={inline(item.title)} /></div>
+          </a>
+          <p class="text-sm text-neutral-500 mt-1 mb-2.5">{date(item)}</p>
+          <p class="line-clamp-2 text-sm text-neutral-500 pointer-events-none" style={excerptMask} set:html={inline(item.excerpt)} />
+        </div>
+      </article>
+    ))}
+    {posts.length > 3 && <div class="space-y-6 pt-8">
+      <h2 class="text-lg font-medium text-neutral-500">More</h2>
+      {posts.slice(3).map(item => (
+        <article class="flex gap-5 relative">
+          <BlogThumbnail item={item} size="small" />
+          <div class="grow flex items-center justify-between gap-8 min-w-0">
+            <a href={url(item)} class={`${focusStyles} min-w-0 full-link flex grow truncate hover:text-neutral-500`} style={mask}><h3 class="truncate" set:html={inline(item.title)} /></a>
+            <p class="text-sm text-neutral-500 shrink-0">{date(item)}</p>
+          </div>
+        </article>
+      ))}
+    </div>}
+    {year && (previousYear || nextYear) && <StaticMarkup component={NavigationFooter} props={{ previous: previousYear ? { href: `/blog/${previousYear}`, label: String(previousYear) } : undefined, next: nextYear ? { href: `/blog/${nextYear}`, label: String(nextYear) } : undefined }} />}
+  </main>
+  <StaticMarkup component={Footer} />
+</div>

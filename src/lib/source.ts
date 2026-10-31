@@ -1,5 +1,6 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { createBuildSourceCache } from './source-cache';
+import { contentSnapshot } from './content-input';
 
 export interface CachedSource { body: string; fetchedAt: number; contentType: string; etag?: string; lastModified?: string }
 export interface SourceCache {
@@ -60,6 +61,7 @@ async function load(url: string, ttl: number, context: Context, optional: boolea
       }
       return record;
     } catch (error) {
+      if ((error as { code?: string }).code === 'CONTENT_SNAPSHOT_MISS') throw error;
       failure = error;
       if (error instanceof SourceError && error.status >= 400 && error.status < 500 && error.status !== 429) break;
     }
@@ -74,6 +76,17 @@ async function load(url: string, ttl: number, context: Context, optional: boolea
 
 /** Returns a new Response per consumer; duplicate reads share the underlying source, never a consumed body. */
 export async function fetchSource(url: string, { ttl = 0, optional = false, validate }: { ttl?: number; optional?: boolean; validate?: (body: string) => boolean } = {}): Promise<Response> {
+  const snapshot = contentSnapshot();
+  if (snapshot?.mode === 'replay') {
+    const response = await snapshot.read(url);
+    if (response.ok && validate && !validate(await response.clone().text())) throw new Error(`Invalid snapshotted source: ${url}`);
+    if (!response.ok && !optional && process.env.SITE_STATIC_BUILD === '1' && response.status !== 404) throw new SourceError(url, response.status);
+    return response;
+  }
+  const finish = async (response: Response) => {
+    if (snapshot?.mode === 'record') await snapshot.record(url, response.clone());
+    return response;
+  };
   const context = contexts.getStore();
   if (!context) return withSourceContext(() => fetchSource(url, { ttl, optional, validate }));
   const key = `${optional}:${ttl}:${url}`;
@@ -81,12 +94,12 @@ export async function fetchSource(url: string, { ttl = 0, optional = false, vali
   if (!pending) { pending = load(url, ttl, context, optional, validate); context.pending.set(key, pending); }
   try {
     const record = await pending;
-    return new Response(record.body, { headers: { 'Content-Type': record.contentType, 'X-Source-Fetched-At': String(record.fetchedAt), 'X-Source-Stale': String(context.now() - record.fetchedAt >= ttl * 1000) } });
+    return finish(new Response(record.body, { headers: { 'Content-Type': record.contentType, 'X-Source-Fetched-At': String(record.fetchedAt), 'X-Source-Stale': String(context.now() - record.fetchedAt >= ttl * 1000) } }));
   } catch (error) {
     // Match fetch semantics so explicitly optional sources can keep their existing fallback.
     if (error instanceof SourceError) {
       if (!optional && process.env.SITE_STATIC_BUILD === '1' && error.status !== 404) throw error;
-      return new Response(null, { status: error.status });
+      return finish(new Response(null, { status: error.status }));
     }
     throw error;
   }
