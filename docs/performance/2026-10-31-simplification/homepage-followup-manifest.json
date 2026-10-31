@@ -1,0 +1,254 @@
+{
+  "startedAt": "2026-10-31T16:06:50.470Z",
+  "base": "https://anandchowdhary.com",
+  "counts": {
+    "mobile": 3,
+    "desktop": 0
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "purpose": "Homepage: shared shell, timeline and counters"
+    }
+  ],
+  "sourceCommit": "0e076b6cb46f718405c8560b90e7124ea67ef760",
+  "node": "v22.23.4",
+  "platform": "linux x64 6.1.155+",
+  "toolchain": {
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "home",
+      "attempt": 1,
+      "at": "2026-10-31T16:06:50.639Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 143.11548400000015,
+      "totalMs": 159.95743800000014,
+      "decodedBodyBytes": 62682,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "11666",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 16:06:50 GMT",
+        "etag": "W/\"6ae61200-f4da\"",
+        "expires": "Sat, 31 Oct 2026 16:16:50 GMT",
+        "last-modified": "Sat, 31 Oct 2026 16:06:24 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-fastly-request-id": "7bb3ad2bcee0f72689dba4c76a1a4c80eaf672b7",
+        "x-github-edge-region": "sea",
+        "x-github-request-id": "DFE8:134A7C:38E5DA:3ED77A:6AE61217",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-bfi-kbfi7400098-BFI",
+        "x-timer": "S1793462811.831520,VS0,VE81"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 2,
+      "at": "2026-10-31T16:06:50.660Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 14.463375999999926,
+      "totalMs": 17.151742999999897,
+      "decodedBodyBytes": 62682,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "11666",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 16:06:50 GMT",
+        "etag": "W/\"6ae61200-f4da\"",
+        "expires": "Sat, 31 Oct 2026 16:16:50 GMT",
+        "last-modified": "Sat, 31 Oct 2026 16:06:24 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "2a88058ad9183490034763128ae6ee51abf16dcb",
+        "x-github-edge-region": "sea",
+        "x-github-request-id": "DFE8:134A7C:38E5DA:3ED77A:6AE61217",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-bfi-kbfi7400098-BFI",
+        "x-timer": "S1793462811.953865,VS0,VE2"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 3,
+      "at": "2026-10-31T16:06:50.672Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 10.27432500000009,
+      "totalMs": 12.577273999999989,
+      "decodedBodyBytes": 62682,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "11666",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sat, 31 Oct 2026 16:06:50 GMT",
+        "etag": "W/\"6ae61200-f4da\"",
+        "expires": "Sat, 31 Oct 2026 16:16:50 GMT",
+        "last-modified": "Sat, 31 Oct 2026 16:06:24 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "2",
+        "x-fastly-request-id": "197527a060a317428ab04bb9ca9cdc5fa8085bb5",
+        "x-github-edge-region": "sea",
+        "x-github-request-id": "DFE8:134A7C:38E5DA:3ED77A:6AE61217",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-bfi-kbfi7400098-BFI",
+        "x-timer": "S1793462811.969653,VS0,VE1"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_limit_value": "0",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "quota_location": "global",
+              "consumer": "projects/583797351490",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_unit": "1/d/{project}"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "desktop",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_metric": "pagespeedonline.googleapis.com/default",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_limit_value": "0",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_unit": "1/d/{project}",
+              "quota_location": "global",
+              "consumer": "projects/583797351490"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "home-mobile-1",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-10-31T16:06:52.833Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-2",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-10-31T16:07:04.387Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "home-mobile-3",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-10-31T16:07:15.080Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-3.json.gz",
+      "warnings": []
+    }
+  ],
+  "previewAuthenticated": false,
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-10-31T16:07:24.061Z"
+}

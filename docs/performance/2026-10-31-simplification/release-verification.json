@@ -25,5 +25,25 @@
   },
   "performanceWorkflow": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41217392406",
   "performanceBudgetsPassed": true,
-  "performanceSamples": 18
+  "performanceSamples": 18,
+  "pressIconFollowup": {
+    "build": {
+      "builtAt": "2026-10-31T16:05:50.513Z",
+      "commit": "0e076b6cb46f718405c8560b90e7124ea67ef760",
+      "base": "/",
+      "routes": 1510,
+      "optimizedSources": 123,
+      "imageBytes": 14764824
+    },
+    "workflow": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41217845682",
+    "mobileSamples": 3,
+    "bestPracticesMin": 100,
+    "accessibilityMin": 100,
+    "seoMin": 100,
+    "performanceMedian": 99,
+    "lcpMsMedian": 2105.1725,
+    "clsMax": 0,
+    "failedRequests": 0,
+    "note": "Focused homepage follow-up on the icon commit, run from Nebula. The initial 18-run full matrix used a GitHub Actions runner; these do not establish a controlled before/after timing comparison."
+  }
 }

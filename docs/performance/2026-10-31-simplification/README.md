@@ -69,3 +69,10 @@ using the authored originals plus official website icons for the broken sources.
 The source images total 84,193 bytes versus 4,856 bytes for the local variants.
 A focused homepage follow-up validates that change separately; the initial full
 matrix is retained rather than claimed as a new full-site run on the icon commit.
+
+The focused follow-up passed all three homepage samples: performance median 99,
+median LCP 2.105s, CLS 0, accessibility/best practices/SEO 100, and no failed
+network requests. See homepage-followup-REPORT.md and release-verification.json.
+The full matrix used a GitHub Actions runner; this focused follow-up used Nebula.
+Do not interpret their timing difference as a controlled before/after experiment.
+The icon release workflow 41217845682 also passed its build/deploy/report jobs.
