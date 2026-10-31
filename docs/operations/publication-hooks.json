@@ -1,0 +1,42 @@
+[
+  {
+    "repository": "blog",
+    "commit": "b76ad47df58d244716295bff2f131bfa5a6482e8",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "location",
+    "commit": "cb69417c47e8f9060bfd44f6699829aadf8771c0",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "books",
+    "commit": "d34b3bdef1c02a75bdda90c414c1539cf7a26c78",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "events",
+    "commit": "60d2ec02733b6703b95b436f4708548a7371d652",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "themes",
+    "commit": "6c302a00f6eee80127934ef0022e97d0d1d5a931",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "versions",
+    "commit": "6beb1903920a6ba887fc8bb5ded1223b91ca2dc1",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "projects",
+    "commit": "3f069d8defe3380d9381f26c9e32803b3a38fe10",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  },
+  {
+    "repository": "featured",
+    "commit": "4583ee5683b1433744311837c53498fcf0aa6b0d",
+    "secretName": "WORKFLOW_DISPATCH_TOKEN"
+  }
+]

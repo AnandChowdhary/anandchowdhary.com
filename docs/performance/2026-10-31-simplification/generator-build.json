@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-31T15:50:02.183Z",
+  "totalMs": 1295.3606960000002,
+  "scope": "Three routes only. Vite + existing build-time React templates; prebuilt image variants reused. Not an end-to-end generator replacement or comparable full-build benchmark.",
+  "results": [
+    {
+      "path": "/blog",
+      "renderMs": 239.24559199999976,
+      "gzipBytes": 9123,
+      "astroGzipBytes": 8891
+    },
+    {
+      "path": "/blog/2026/future-ai-native-work",
+      "renderMs": 100.96026499999971,
+      "gzipBytes": 11000,
+      "astroGzipBytes": 12112
+    },
+    {
+      "path": "/location/2026",
+      "renderMs": 132.32239299999992,
+      "gzipBytes": 6876,
+      "astroGzipBytes": 6640
+    }
+  ]
+}

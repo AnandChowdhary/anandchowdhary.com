@@ -1,4 +1,5 @@
-import { fetchSource as fetch, SourceError } from "@/lib/source";
+import { fetchSource as fetch } from "@/lib/source";
+import { getGitHubContributions } from "@/lib/github-contributions";
 import { prepareLegacyImages } from "@/lib/legacy-images";
 import { type GenericItem } from "@/views/components/generic-section";
 import slugify from "@sindresorhus/slugify";
@@ -156,29 +157,8 @@ export interface Work extends GenericItem {
   url: string;
 }
 
-interface GitHubContributionsResponse {
-  totalContributions?: number;
-}
-
 export async function getGitHubContributionCount(): Promise<number | null> {
-  try {
-    const response = await fetch(
-      "https://github-contributions-api.deno.dev/AnandChowdhary.json",
-      { ttl: 3600 }
-    );
-    if (!response.ok) return null;
-    const data = (await response.json()) as
-      | GitHubContributionsResponse
-      | undefined;
-    if (typeof data?.totalContributions !== "number") return null;
-    return data.totalContributions;
-  } catch (error) {
-    // This optional statistic must not block publishing unrelated site content.
-    // Mandatory content sources retain the static build's strict failure policy.
-    if (!(error instanceof SourceError)) throw error;
-    console.warn("GitHub contributions unavailable; rendering the widget fallback");
-    return null;
-  }
+  return (await getGitHubContributions())?.total ?? null;
 }
 
 export interface ArchiveItem {

@@ -1,0 +1,1397 @@
+{
+  "startedAt": "2026-10-31T15:48:11.361Z",
+  "base": "http://localhost:4330",
+  "reference": "https://anandchowdhary.com",
+  "browser": "Chrome/156.0.8078.47",
+  "scope": "full page",
+  "pixelThreshold": 20,
+  "results": [
+    {
+      "id": "contact-desktop-light-normal",
+      "route": "/contact",
+      "device": "desktop",
+      "theme": "light",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact",
+            "https://anandchowdhary.com/contact/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css",
+            "https://anandchowdhary.com/favicon.ico"
+          ],
+          "file": "raw/contact-desktop-light-normal-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": null,
+          "footer": {
+            "x": 80,
+            "y": 701.609375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 701.609375,
+            "right": 1200,
+            "bottom": 1108.40625,
+            "left": 80
+          },
+          "bodyHeight": 1188,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact",
+            "http://localhost:4330/contact/",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css",
+            "http://localhost:4330/favicon.ico"
+          ],
+          "file": "raw/contact-desktop-light-normal-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": null,
+          "footer": {
+            "x": 80,
+            "y": 701.609375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 701.609375,
+            "right": 1200,
+            "bottom": 1108.40625,
+            "left": 80
+          },
+          "bodyHeight": 1188,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-desktop-light-screenshot",
+      "route": "/contact",
+      "device": "desktop",
+      "theme": "light",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact?screenshot=true",
+            "https://anandchowdhary.com/contact/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-desktop-light-screenshot-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 448.171875,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 448.171875,
+            "right": 1248,
+            "bottom": 854.96875,
+            "left": 32
+          },
+          "bodyHeight": 1000,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact?screenshot=true",
+            "http://localhost:4330/contact/?screenshot=true",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-desktop-light-screenshot-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 448.171875,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 448.171875,
+            "right": 1248,
+            "bottom": 854.96875,
+            "left": 32
+          },
+          "bodyHeight": 1000,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-desktop-dark-normal",
+      "route": "/contact",
+      "device": "desktop",
+      "theme": "dark",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact",
+            "https://anandchowdhary.com/contact/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-desktop-dark-normal-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": null,
+          "footer": {
+            "x": 80,
+            "y": 701.609375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 701.609375,
+            "right": 1200,
+            "bottom": 1108.40625,
+            "left": 80
+          },
+          "bodyHeight": 1188,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact",
+            "http://localhost:4330/contact/",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-desktop-dark-normal-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": null,
+          "footer": {
+            "x": 80,
+            "y": 701.609375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 701.609375,
+            "right": 1200,
+            "bottom": 1108.40625,
+            "left": 80
+          },
+          "bodyHeight": 1188,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-desktop-dark-screenshot",
+      "route": "/contact",
+      "device": "desktop",
+      "theme": "dark",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact?screenshot=true",
+            "https://anandchowdhary.com/contact/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-desktop-dark-screenshot-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 448.171875,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 448.171875,
+            "right": 1248,
+            "bottom": 854.96875,
+            "left": 32
+          },
+          "bodyHeight": 1000,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact?screenshot=true",
+            "http://localhost:4330/contact/?screenshot=true",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-desktop-dark-screenshot-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 448.171875,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 448.171875,
+            "right": 1248,
+            "bottom": 854.96875,
+            "left": 32
+          },
+          "bodyHeight": 1000,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-mobile-light-normal",
+      "route": "/contact",
+      "device": "mobile",
+      "theme": "light",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact",
+            "https://anandchowdhary.com/contact/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-mobile-light-normal-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 753.609375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 753.609375,
+            "right": 358,
+            "bottom": 1256.40625,
+            "left": 32
+          },
+          "bodyHeight": 1336,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact",
+            "http://localhost:4330/contact/",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-mobile-light-normal-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 753.609375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 753.609375,
+            "right": 358,
+            "bottom": 1256.40625,
+            "left": 32
+          },
+          "bodyHeight": 1336,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-mobile-light-screenshot",
+      "route": "/contact",
+      "device": "mobile",
+      "theme": "light",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact?screenshot=true",
+            "https://anandchowdhary.com/contact/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-mobile-light-screenshot-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 548.171875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 548.171875,
+            "right": 358,
+            "bottom": 1050.96875,
+            "left": 32
+          },
+          "bodyHeight": 1131,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact?screenshot=true",
+            "http://localhost:4330/contact/?screenshot=true",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-mobile-light-screenshot-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 548.171875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 548.171875,
+            "right": 358,
+            "bottom": 1050.96875,
+            "left": 32
+          },
+          "bodyHeight": 1131,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-mobile-dark-normal",
+      "route": "/contact",
+      "device": "mobile",
+      "theme": "dark",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact",
+            "https://anandchowdhary.com/contact/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-mobile-dark-normal-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 753.609375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 753.609375,
+            "right": 358,
+            "bottom": 1256.40625,
+            "left": 32
+          },
+          "bodyHeight": 1336,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact",
+            "http://localhost:4330/contact/",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-mobile-dark-normal-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 753.609375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 753.609375,
+            "right": 358,
+            "bottom": 1256.40625,
+            "left": 32
+          },
+          "bodyHeight": 1336,
+          "scripts": []
+        }
+      ]
+    },
+    {
+      "id": "contact-mobile-dark-screenshot",
+      "route": "/contact",
+      "device": "mobile",
+      "theme": "dark",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/contact?screenshot=true",
+            "https://anandchowdhary.com/contact/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/not-found.BPqqQe_G.css"
+          ],
+          "file": "raw/contact-mobile-dark-screenshot-reference.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 548.171875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 548.171875,
+            "right": 358,
+            "bottom": 1050.96875,
+            "left": 32
+          },
+          "bodyHeight": 1131,
+          "scripts": []
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4330/contact?screenshot=true",
+            "http://localhost:4330/contact/?screenshot=true",
+            "http://localhost:4330/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4330/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4330/_astro/site-metadata.CGS75irM.css"
+          ],
+          "file": "raw/contact-mobile-dark-screenshot-candidate.png",
+          "title": "Contact / Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Contact / Anand Chowdhary"
+            ],
+            "og:description": [
+              "Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2Fcontact%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": null,
+          "footer": {
+            "x": 32,
+            "y": 548.171875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 548.171875,
+            "right": 358,
+            "bottom": 1050.96875,
+            "left": 32
+          },
+          "bodyHeight": 1131,
+          "scripts": []
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-31T15:48:40.831Z"
+}

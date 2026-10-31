@@ -11,7 +11,7 @@ export async function PressSection() {
       <div className="flex flex-wrap gap-3 text-xs text-neutral-500">
         {[
           {
-            icon: "https://pbs.twimg.com/profile_images/1711185897415180288/lgwajQTW_400x400.jpg",
+            icon: "/images/press/forbes.png",
             label: "Forbes",
           },
           {

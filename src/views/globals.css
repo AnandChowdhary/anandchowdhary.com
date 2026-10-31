@@ -39,3 +39,16 @@ body {
   top: 0;
   bottom: 0;
 }
+
+.contribution-calendar rect { fill: #ebedf0; }
+.contribution-calendar [data-level="1"] { fill: #9be9a8; }
+.contribution-calendar [data-level="2"] { fill: #40c463; }
+.contribution-calendar [data-level="3"] { fill: #30a14e; }
+.contribution-calendar [data-level="4"] { fill: #216e39; }
+@media (prefers-color-scheme: dark) {
+  .contribution-calendar rect { fill: #161b22; }
+  .contribution-calendar [data-level="1"] { fill: #0e4429; }
+  .contribution-calendar [data-level="2"] { fill: #006d32; }
+  .contribution-calendar [data-level="3"] { fill: #26a641; }
+  .contribution-calendar [data-level="4"] { fill: #39d353; }
+}

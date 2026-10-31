@@ -216,3 +216,14 @@ are recorded in [before.json](2026-10-27-deployment/before.json). The original
 project defaults remain Next.js/Node 22; candidates explicitly use Astro/Node 24.
 Production has not yet been switched. No cost savings or field-metric improvement
 is claimed from these checks.
+
+## Reliability and simplification follow-up — 2026-10-31
+
+Optional-source validation and 24-hour bounded snapshots, the official GitHub
+contribution calendar, local Forbes artwork, publication hooks in eight content
+repositories, deployment incident tracking and weekly performance budgets are
+implemented. Contact now uses native Astro markup for its body. A separate
+three-route generator experiment matches measured rendering but establishes no
+full-build or general payload advantage. See
+[operations](../operations/BUILD-RELIABILITY.md) and
+[experiment evidence](2026-10-31-simplification/README.md).

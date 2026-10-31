@@ -40,6 +40,13 @@ jobs:
           path: .cache/static-images
           key: static-images-${{ runner.os }}-${{ github.run_id }}
           restore-keys: static-images-${{ runner.os }}-
+      - name: Restore optional source snapshots
+        uses: actions/cache@v6
+        if: github.event_name != 'pull_request'
+        with:
+          path: .cache/optional-sources
+          key: optional-sources-v1-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: optional-sources-v1-${{ runner.os }}-
       - run: npm ci
       - run: npm run check
       - run: npm test
@@ -86,3 +93,30 @@ jobs:
         env:
           SITE_URL: ${{ steps.deployment.outputs.page_url }}
         run: node scripts/smoke.mjs "${SITE_URL/http:/https:}" --check-freshness
+
+  report:
+    if: always() && !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Track production deployment failures
+        uses: actions/github-script@v9
+        env:
+          BUILD_RESULT: ${{ needs.build.result }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+        with:
+          script: |
+            const marker = '<!-- pages-production-incident -->';
+            const repo = context.repo;
+            const issues = await github.paginate(github.rest.issues.listForRepo, { ...repo, state: 'open', per_page: 100 });
+            const incident = issues.find(issue => !issue.pull_request && issue.body?.includes(marker) && issue.user?.login === 'github-actions[bot]');
+            const failed = process.env.BUILD_RESULT !== 'success' || process.env.DEPLOY_RESULT !== 'success';
+            const run = `${context.serverUrl}/${repo.owner}/${repo.repo}/actions/runs/${context.runId}`;
+            if (failed && !incident) {
+              await github.rest.issues.create({ ...repo, title: 'Production Pages deployment is failing', body: `${marker}\n\n[Failed workflow](${run}). A failed build leaves the published artifact intact. Inspect the public site and workflow logs before retrying. This issue closes automatically after a successful deployment.` });
+            } else if (!failed && incident) {
+              await github.rest.issues.update({ ...repo, issue_number: incident.number, state: 'closed', state_reason: 'completed' });
+            }
+            await core.summary.addHeading(failed ? 'Deployment failed' : 'Deployment succeeded').addLink('Workflow run', run).write();

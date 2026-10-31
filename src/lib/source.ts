@@ -1,4 +1,5 @@
 import { AsyncLocalStorage } from 'node:async_hooks';
+import { createBuildSourceCache } from './source-cache';
 
 export interface CachedSource { body: string; fetchedAt: number; contentType: string; etag?: string; lastModified?: string }
 export interface SourceCache {
@@ -23,16 +24,18 @@ interface Context {
   now: () => number;
 }
 const contexts = new AsyncLocalStorage<Context>();
+const buildCache = createBuildSourceCache('.cache/optional-sources');
 export function withSourceContext<T>(callback: () => T, overrides: Partial<Omit<Context, 'pending'>> = {}): T {
   if (contexts.getStore() && Object.keys(overrides).length === 0) return callback();
-  return contexts.run({ pending: new Map(), cache: localCache, fetcher: globalThis.fetch, now: Date.now, ...overrides }, callback);
+  return contexts.run({ pending: new Map(), cache: process.env.SITE_STATIC_BUILD === '1' ? buildCache : localCache, fetcher: globalThis.fetch, now: Date.now, ...overrides }, callback);
 }
 
-async function load(url: string, ttl: number, context: Context): Promise<CachedSource> {
-  const key = `source-v1:${url}`;
+async function load(url: string, ttl: number, context: Context, optional: boolean, validate?: (body: string) => boolean): Promise<CachedSource> {
+  const key = `${optional ? 'optional-source-v1' : 'source-v1'}:${url}`;
   let previous: CachedSource | null | undefined;
   try { previous = ttl > 0 ? await context.cache.get(key) : null; }
   catch (error) { console.warn('Source cache read failed; fetching origin', url, error); }
+  if (previous && validate && !validate(previous.body)) previous = null;
   if (previous && context.now() - previous.fetchedAt < ttl * 1000) return previous;
   let failure: unknown;
   for (let attempt = 0; attempt < 2; attempt++) {
@@ -46,6 +49,7 @@ async function load(url: string, ttl: number, context: Context): Promise<CachedS
       else {
         if (!response.ok) throw new SourceError(url, response.status);
         const body = await response.text();
+        if (validate && !validate(body)) throw new SourceError(url, 502);
         const contentType = response.headers.get('content-type') || 'text/plain';
         if (contentType.includes('json')) JSON.parse(body); // Never poison the shared cache with invalid JSON.
         record = { body, fetchedAt: context.now(), contentType, etag: response.headers.get('etag') || undefined, lastModified: response.headers.get('last-modified') || undefined };
@@ -60,7 +64,8 @@ async function load(url: string, ttl: number, context: Context): Promise<CachedS
       if (error instanceof SourceError && error.status >= 400 && error.status < 500 && error.status !== 429) break;
     }
   }
-  if (previous && context.now() - previous.fetchedAt <= MAX_STALE_MS) {
+  if (previous && context.now() - previous.fetchedAt <= MAX_STALE_MS &&
+      (!(failure instanceof SourceError) || failure.status === 429 || failure.status >= 500)) {
     console.warn('Serving last successful source after refresh failure', url, previous.fetchedAt);
     return previous;
   }
@@ -68,19 +73,19 @@ async function load(url: string, ttl: number, context: Context): Promise<CachedS
 }
 
 /** Returns a new Response per consumer; duplicate reads share the underlying source, never a consumed body. */
-export async function fetchSource(url: string, { ttl = 0 }: { ttl?: number } = {}): Promise<Response> {
+export async function fetchSource(url: string, { ttl = 0, optional = false, validate }: { ttl?: number; optional?: boolean; validate?: (body: string) => boolean } = {}): Promise<Response> {
   const context = contexts.getStore();
-  if (!context) return withSourceContext(() => fetchSource(url, { ttl }));
-  const key = `${ttl}:${url}`;
+  if (!context) return withSourceContext(() => fetchSource(url, { ttl, optional, validate }));
+  const key = `${optional}:${ttl}:${url}`;
   let pending = context.pending.get(key);
-  if (!pending) { pending = load(url, ttl, context); context.pending.set(key, pending); }
+  if (!pending) { pending = load(url, ttl, context, optional, validate); context.pending.set(key, pending); }
   try {
     const record = await pending;
-    return new Response(record.body, { headers: { 'Content-Type': record.contentType } });
+    return new Response(record.body, { headers: { 'Content-Type': record.contentType, 'X-Source-Fetched-At': String(record.fetchedAt), 'X-Source-Stale': String(context.now() - record.fetchedAt >= ttl * 1000) } });
   } catch (error) {
     // Match fetch semantics so explicitly optional sources can keep their existing fallback.
     if (error instanceof SourceError) {
-      if (process.env.SITE_STATIC_BUILD === '1' && error.status !== 404) throw error;
+      if (!optional && process.env.SITE_STATIC_BUILD === '1' && error.status !== 404) throw error;
       return new Response(null, { status: error.status });
     }
     throw error;

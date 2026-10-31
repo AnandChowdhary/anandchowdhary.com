@@ -2,7 +2,7 @@ import http from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { gzipSync } from 'node:zlib';
-const root=path.resolve('dist');
+const root=path.resolve(process.env.STATIC_DIR || 'dist');
 const types={'.html':'text/html; charset=utf-8','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2','.ico':'image/x-icon','.json':'application/json'};
 http.createServer(async(req,res)=>{try{
  const url=new URL(req.url,'http://localhost');const base=(process.env.PAGES_BASE_PATH||'/').replace(/\/$/,'');const pathname=base&&url.pathname.startsWith(base+'/')?url.pathname.slice(base.length):url.pathname;const filename=path.resolve(root,'.'+decodeURIComponent(pathname));

@@ -1,0 +1,19 @@
+# Install in a content repository as .github/workflows/rebuild-site.yml.
+# WORKFLOW_DISPATCH_TOKEN must have Actions write access to the website repository.
+name: Rebuild website after publication
+on:
+  page_build:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: notify-website
+  cancel-in-progress: true
+jobs:
+  notify:
+    if: github.event_name == 'workflow_dispatch' || github.event.build.status == 'built'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rebuild the static website
+        env:
+          GH_TOKEN: ${{ secrets.WORKFLOW_DISPATCH_TOKEN }}
+        run: gh workflow run pages.yml --repo AnandChowdhary/anandchowdhary.com --ref main

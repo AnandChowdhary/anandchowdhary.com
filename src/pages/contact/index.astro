@@ -1,14 +1,53 @@
 ---
-import Document from "@/layouts/Document.astro";
-import { renderPage } from "@/lib/render";
-import * as page from "@/views/contact/page.tsx";
-const result = await renderPage(page, Astro.params);
-if (import.meta.env.PROD && result.status >= 400) throw new Error(`Cannot publish ${Astro.url.pathname}: ${result.status}`);
-if (result.location) return Astro.redirect(result.location, result.status as 307 | 308);
-Astro.response.status = result.status;
-if (result.status >= 400) Astro.response.headers.set("Cache-Control", "no-store");
-if (result.status === 503) Astro.response.headers.set("Retry-After", "60");
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import Document from '@/layouts/Document.astro';
+import { Header } from '@/views/components/header';
+import { Footer } from '@/views/components/footer';
+import { focusStyles } from '@/views/components/external-link';
+import { metadata as defaults } from '@/lib/site-metadata';
+import { buildScreenshotOpenGraphImageUrl } from '@/views/lib/opengraph';
+const metadata = {
+  title: 'Contact / Anand Chowdhary',
+  description: 'Get in touch with Anand Chowdhary for speaking engagements, collaborations, or inquiries.',
+  openGraph: { images: [{ url: buildScreenshotOpenGraphImageUrl('/contact') }] },
+};
+import { IconBrandGithub, IconBrandX, IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
+const platforms = [
+  { href: 'https://github.com/AnandChowdhary', label: '@AnandChowdhary on GitHub', icon: IconBrandGithub },
+  { href: 'https://x.com/AnandChowdhary', label: '@AnandChowdhary on X (formerly Twitter)', icon: IconBrandX },
+  { href: 'https://www.linkedin.com/in/AnandChowdhary', label: '/in/AnandChowdhary on LinkedIn', icon: IconBrandLinkedin },
+  { href: 'https://www.instagram.com/anandchowdhary/', label: '@anandchowdhary on Instagram', icon: IconBrandInstagram },
+].map(platform => {
+  const url = new URL(platform.href);
+  url.searchParams.set('utm_source', 'anandchowdhary.com');
+  return { ...platform, href: url.toString(), svg: renderToStaticMarkup(createElement(platform.icon, {
+    className: 'inline-block mr-1 w-4 h-4 align-middle -mt-1', strokeWidth: 1.5,
+  })) };
+});
 ---
-<Document metadata={result.metadata} pathname={Astro.url.pathname}>
-  <Fragment set:html={result.html} />
+<Document metadata={{ ...defaults, ...metadata }} pathname={Astro.url.pathname}>
+  <div class="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
+    <Fragment set:html={renderToStaticMarkup(createElement(Header, { pathname: '/contact' }))} />
+    <div class="max-w-xl mx-auto">
+      <section class="space-y-4">
+        <div class="space-y-5">
+          <p class="text-xl font-medium">Thank you for your interest in getting in touch with me.</p>
+          <p>Please write me an email at mail (at) this domain with what I can help with. I am currently not looking for new opportunities.</p>
+          <p>You can also find me on the following platforms:</p>
+          <ul class="list-disc marker:text-neutral-400 space-y-2">
+            {platforms.map(platform => (
+              <li>
+                <a href={platform.href} target="_blank" rel="noopener noreferrer" class={`hover:text-neutral-400 ${focusStyles} font-semibold`}>
+                  <Fragment set:html={platform.svg} />
+                  <span>{platform.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
+    <Fragment set:html={renderToStaticMarkup(createElement(Footer))} />
+  </div>
 </Document>

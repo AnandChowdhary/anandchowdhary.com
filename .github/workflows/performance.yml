@@ -1,0 +1,37 @@
+name: Production performance
+on:
+  schedule:
+    - cron: '43 8 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: production-performance
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: scripts/performance/package-lock.json
+      - run: npm ci --prefix scripts/performance
+      - name: Measure production sequentially
+        run: node scripts/performance/run.mjs --output=/tmp/site-performance --mobile=3 --desktop=0
+      - if: always()
+        run: node scripts/performance/summarize.mjs /tmp/site-performance
+      - name: Check mobile budgets
+        run: node scripts/performance/check-budgets.mjs /tmp/site-performance
+      - name: Publish report in the workflow summary
+        if: always()
+        run: cat /tmp/site-performance/REPORT.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: production-performance-${{ github.run_id }}
+          path: /tmp/site-performance
+          retention-days: 30
