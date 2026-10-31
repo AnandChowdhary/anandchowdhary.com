@@ -227,3 +227,14 @@ three-route generator experiment matches measured rendering but establishes no
 full-build or general payload advantage. See
 [operations](../operations/BUILD-RELIABILITY.md) and
 [experiment evidence](2026-10-31-simplification/README.md).
+
+
+## Reproducible pipeline and native blog — 2026-10-31
+
+Content collection now seals validated, hash-verified public inputs before an
+offline render. Blog index and canonical articles use native Astro markup.
+The complete 1,510-route generator experiment matches artifact semantics, but
+retains React/Vite and the shared installation. Warm medians: prior Astro 18.82s,
+native blog 16.53s, generator 13.94s. Collection was one shared 40.11s sample.
+Retain Astro; see [benchmark](2026-10-31-pipeline/BENCHMARK.md) and
+[operations](../operations/BUILD-RELIABILITY.md).

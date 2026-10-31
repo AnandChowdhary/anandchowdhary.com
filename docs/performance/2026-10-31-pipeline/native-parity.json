@@ -1,0 +1,19 @@
+{
+  "reference": "/tmp/site-pipeline-baseline/dist",
+  "candidate": "dist",
+  "routes": 1510,
+  "includes404": true,
+  "discoveryFiles": 3,
+  "checks": [
+    "metadata",
+    "visible text",
+    "headings",
+    "links",
+    "image attributes",
+    "redirect destinations",
+    "discovery bytes",
+    "optimized image bytes"
+  ],
+  "passed": true,
+  "mismatches": []
+}

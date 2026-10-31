@@ -1,0 +1,256 @@
+{
+  "startedAt": "2026-10-31T17:24:51.897Z",
+  "baselineCommit": "ead192dcef5e0d78e64881ed6769ee856abb4c63",
+  "candidateCommit": "3648b702b6ce175cf6926b33267d13d6fb6bc8d5",
+  "node": "v24.22.1",
+  "snapshot": {
+    "id": "60f673a6433c26c1be5d6bf7739037a5db300f76c88c0b58fb18631f4d7e1a40",
+    "collectedAt": "2026-10-31T17:17:12.356Z",
+    "inputs": 716,
+    "collectionMs": 40111.661713
+  },
+  "methodology": "Sequential complete artifact builds on one sandbox, fixed inputs and clock, all TCP disabled. One cold image-cache run and three warm image-cache runs per variant, interleaved in fixed order. OS/filesystem caches uncontrolled. Linux RUSAGE_CHILDREN RSS is maximum single-process RSS, not aggregate process-tree memory. Collection is shared, measured once, and not included in render timings.",
+  "runs": [
+    {
+      "id": "astro-react-cold",
+      "variant": "astro-react",
+      "imageCache": "cold",
+      "elapsedSeconds": 37.6839449989493,
+      "userSeconds": 47.130681,
+      "systemSeconds": 4.498005,
+      "maxProcessRssKiB": 825504,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49390478,
+        "htmlBytes": 31558256,
+        "htmlGzipBytes": 5579206,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-native-blog-cold",
+      "variant": "astro-native-blog",
+      "imageCache": "cold",
+      "elapsedSeconds": 35.52952716103755,
+      "userSeconds": 45.869008,
+      "systemSeconds": 4.560543,
+      "maxProcessRssKiB": 838612,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49567217,
+        "htmlBytes": 31734824,
+        "htmlGzipBytes": 5599461,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "custom-generator-cold",
+      "variant": "custom-generator",
+      "imageCache": "cold",
+      "elapsedSeconds": 31.816687529964838,
+      "userSeconds": 40.668206,
+      "systemSeconds": 4.014351,
+      "maxProcessRssKiB": 761796,
+      "artifact": {
+        "files": 1944,
+        "totalBytes": 49850272,
+        "htmlBytes": 32015103,
+        "htmlGzipBytes": 5740176,
+        "cssBytes": 57419,
+        "cssGzipBytes": 10075,
+        "jsBytes": 243912,
+        "jsGzipBytes": 76452,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-react-warm-1",
+      "variant": "astro-react",
+      "imageCache": "warm",
+      "elapsedSeconds": 17.617410427948926,
+      "userSeconds": 17.106101,
+      "systemSeconds": 2.994259,
+      "maxProcessRssKiB": 820264,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49390478,
+        "htmlBytes": 31558256,
+        "htmlGzipBytes": 5579206,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-native-blog-warm-1",
+      "variant": "astro-native-blog",
+      "imageCache": "warm",
+      "elapsedSeconds": 16.000970470020548,
+      "userSeconds": 16.174215,
+      "systemSeconds": 3.181183,
+      "maxProcessRssKiB": 847264,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49567217,
+        "htmlBytes": 31734824,
+        "htmlGzipBytes": 5599461,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "custom-generator-warm-1",
+      "variant": "custom-generator",
+      "imageCache": "warm",
+      "elapsedSeconds": 13.768053848005366,
+      "userSeconds": 12.925494,
+      "systemSeconds": 2.846743,
+      "maxProcessRssKiB": 768956,
+      "artifact": {
+        "files": 1944,
+        "totalBytes": 49850272,
+        "htmlBytes": 32015103,
+        "htmlGzipBytes": 5740176,
+        "cssBytes": 57419,
+        "cssGzipBytes": 10075,
+        "jsBytes": 243912,
+        "jsGzipBytes": 76452,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-react-warm-2",
+      "variant": "astro-react",
+      "imageCache": "warm",
+      "elapsedSeconds": 18.817129200033378,
+      "userSeconds": 17.95456,
+      "systemSeconds": 3.141585,
+      "maxProcessRssKiB": 828524,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49390478,
+        "htmlBytes": 31558256,
+        "htmlGzipBytes": 5579206,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-native-blog-warm-2",
+      "variant": "astro-native-blog",
+      "imageCache": "warm",
+      "elapsedSeconds": 16.531864752992988,
+      "userSeconds": 16.713403,
+      "systemSeconds": 3.339065,
+      "maxProcessRssKiB": 818844,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49567217,
+        "htmlBytes": 31734824,
+        "htmlGzipBytes": 5599461,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "custom-generator-warm-2",
+      "variant": "custom-generator",
+      "imageCache": "warm",
+      "elapsedSeconds": 13.940635321021546,
+      "userSeconds": 13.285059,
+      "systemSeconds": 2.76379,
+      "maxProcessRssKiB": 724708,
+      "artifact": {
+        "files": 1944,
+        "totalBytes": 49850272,
+        "htmlBytes": 32015103,
+        "htmlGzipBytes": 5740176,
+        "cssBytes": 57419,
+        "cssGzipBytes": 10075,
+        "jsBytes": 243912,
+        "jsGzipBytes": 76452,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-react-warm-3",
+      "variant": "astro-react",
+      "imageCache": "warm",
+      "elapsedSeconds": 18.932072276016697,
+      "userSeconds": 18.163431,
+      "systemSeconds": 3.257779,
+      "maxProcessRssKiB": 826356,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49390478,
+        "htmlBytes": 31558256,
+        "htmlGzipBytes": 5579206,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "astro-native-blog-warm-3",
+      "variant": "astro-native-blog",
+      "imageCache": "warm",
+      "elapsedSeconds": 17.296822348958813,
+      "userSeconds": 17.575904,
+      "systemSeconds": 3.577554,
+      "maxProcessRssKiB": 821956,
+      "artifact": {
+        "files": 1942,
+        "totalBytes": 49567217,
+        "htmlBytes": 31734824,
+        "htmlGzipBytes": 5599461,
+        "cssBytes": 57513,
+        "cssGzipBytes": 10239,
+        "jsBytes": 241042,
+        "jsGzipBytes": 75147,
+        "imageBytes": 14764824
+      }
+    },
+    {
+      "id": "custom-generator-warm-3",
+      "variant": "custom-generator",
+      "imageCache": "warm",
+      "elapsedSeconds": 14.22579672903521,
+      "userSeconds": 13.392042,
+      "systemSeconds": 2.898883,
+      "maxProcessRssKiB": 778896,
+      "artifact": {
+        "files": 1944,
+        "totalBytes": 49850272,
+        "htmlBytes": 32015103,
+        "htmlGzipBytes": 5740176,
+        "cssBytes": 57419,
+        "cssGzipBytes": 10075,
+        "jsBytes": 243912,
+        "jsGzipBytes": 76452,
+        "imageBytes": 14764824
+      }
+    }
+  ],
+  "finishedAt": "2026-10-31T17:29:14.549Z"
+}

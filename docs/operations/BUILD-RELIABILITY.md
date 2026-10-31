@@ -74,9 +74,41 @@ retain the measurements. Gates require complete coverage, median performance
 >=95, median LCP <=2.5s, every CLS <=0.1, and accessibility/SEO 100. CDN/network
 variance can cause failures; inspect all samples before changing a budget.
 
+## Reproducible content inputs
+
+`npm run build` collects and validates public content, seals a hash-verified
+snapshot, then renders offline. To run phases separately:
+
+```sh
+npm run content:snapshot
+npm run build:render
+npm run verify:build
+```
+
+Node 24 is required. `.cache/content-snapshot.json` points to the latest local
+snapshot. To reproduce an older build, download its `content-inputs-RUN_ID`
+Actions artifact and set `CONTENT_SNAPSHOT_DIR` to the extracted directory
+containing `manifest.json` before `npm run build:render`. The workflow retains
+these public inputs for three days; retain an artifact separately for longer
+investigations. Snapshots are not committed to the repository.
+
+Replay verifies the manifest and each body hash, freezes the build clock to the
+collection timestamp, and blocks TCP. Missing or corrupt inputs fail rendering,
+even for optional sources; replay cannot silently fetch newer data. Optional
+source fallback is resolved during collection and recorded with its stale state.
+Only approved public HTTPS GET sources are accepted, without queries, cookies or
+authorization. Build provenance includes snapshot ID, collection time and count.
+This reproduces inputs and time; byte-identical toolchain output additionally
+requires the same pinned dependencies, Node version and build environment.
+
+Collection currently walks reference React views to discover and validate their
+inputs and responsive image originals. It publishes no HTML, but remains coupled
+to those views. A declarative source graph is a possible later optimization.
+
 ## Rendering experiment
 
-See [the simplification evidence](../performance/2026-10-31-simplification/README.md).
-Keep Astro until a broader generator experiment establishes a maintenance benefit
-and equivalent route/asset/error handling. The current experiment is not a
-production replacement and does not prove a full-build speedup.
+Blog index and canonical articles now use native Astro bodies, preserving shared
+chrome, aliases and lightbox behavior. The full custom generator remains an
+experiment. It shares React/Vite and the installed dependency graph, and saves
+only 2.6 seconds over native Astro in the controlled warm comparison. Keep Astro;
+see [complete benchmark and limitations](../performance/2026-10-31-pipeline/BENCHMARK.md).
