@@ -11,35 +11,35 @@ export async function PressSection() {
       <div className="flex flex-wrap gap-3 text-xs text-neutral-500">
         {[
           {
-            icon: "/images/press/forbes.png",
+            icon: "/images/press/forbes.webp",
             label: "Forbes",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_400x400.png",
+            icon: "/images/press/techcrunch.webp",
             label: "TechCrunch",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1963012341110538240/UWT1Nr81_400x400.jpg",
+            icon: "/images/press/huffpost.webp",
             label: "HuffPost",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1618839278561398784/2kXt0tLH_400x400.jpg",
+            icon: "/images/press/hindustan-times.webp",
             label: "Hindustan Times",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1306571874000830464/AZtkNMd-_400x400.png",
+            icon: "/images/press/the-next-web.webp",
             label: "The Next Web",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1080202898372362240/akqRGyta_400x400.jpg",
+            icon: "/images/press/css-tricks.webp",
             label: "CSS Tricks",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/731046562848071680/1bYZ7dkg_400x400.jpg",
+            icon: "/images/press/businessworld.webp",
             label: "BusinessWorld",
           },
           {
-            icon: "https://pbs.twimg.com/profile_images/1791535094122831872/eLwYJH7r_400x400.jpg",
+            icon: "/images/press/time-out.webp",
             label: "Time Out",
           },
         ].map(({ icon, label }) => (

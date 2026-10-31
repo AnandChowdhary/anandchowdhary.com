@@ -12,7 +12,7 @@ native Astro markup for its body, sharing the existing header/footer and icons.
 | Life, food, coding, walking, sleep and music datasets used by published pages | Required | Fail rather than replace real measurements with invented zeroes |
 | GitHub contribution count/calendar | Optional, public GitHub calendar | Validate calendar structure before caching; bounded last-good snapshot, then explicit unavailable state |
 | Owned article and responsive image sources | Required | Image processing/source failures fail the build |
-| Decorative external avatars | Browser assets | Local Forbes icon replaces the known broken Twitter URL; other avatars retain their sources |
+| Decorative external avatars | Browser assets | Press icons are local, sized WebP assets; other avatars retain their sources |
 
 `fetchSource(..., { optional: true, ttl: 3600, validate })` is the explicit
 optional-source boundary. The default remains required. Optional snapshots live
@@ -30,9 +30,11 @@ link to the profile. GitHub controls this public HTML format, so parser changes
 remain possible and safely fall back rather than blocking publishing.
 
 The locally rendered calendar uses only validated dates and numeric levels, not
-upstream HTML. It replaces the dead deno.dev JSON/SVG service. The Forbes icon is
-a byte-for-byte copy of https://i.forbesimg.com/48X48-F.png, linked from Forbes'
-official homepage, stored at public/images/press/forbes.png.
+upstream HTML. It replaces the dead deno.dev JSON/SVG service. Forbes and CSS-Tricks icons come from their official homepages; other press
+icons retain the authored image sources. All eight are stored locally as 32px
+WebP assets for their 16px rendered size. Source URLs, hashes and byte counts are
+recorded in [press-assets.json](press-assets.json). This removes two broken
+Twitter URLs and the remaining press-avatar CDN dependency.
 
 ## Publication triggers
 

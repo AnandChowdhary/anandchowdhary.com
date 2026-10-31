@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-31T16:02:59.892Z",
+  "method": "Existing authored avatar sources, with official website icons replacing broken Forbes/CSS-Tricks URLs; Sharp contain at 32x32 (2x rendered size), WebP quality 90.",
+  "records": [
+    {
+      "label": "Forbes",
+      "source": "https://i.forbesimg.com/48X48-F.png",
+      "asset": "/images/press/forbes.webp",
+      "sourceSha256": "da142ece4b3d35d78512f6dd45c398ad19f54080120d7ba1055e9c6b63e82420",
+      "sourceBytes": 924,
+      "assetBytes": 372,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "TechCrunch",
+      "source": "https://pbs.twimg.com/profile_images/1096066608034918401/m8wnTWsX_400x400.png",
+      "asset": "/images/press/techcrunch.webp",
+      "sourceSha256": "e73710d2ae648369a3270269676784b25872e1c333a6c1e52382e34010c5fd25",
+      "sourceBytes": 16905,
+      "assetBytes": 382,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "HuffPost",
+      "source": "https://pbs.twimg.com/profile_images/1963012341110538240/UWT1Nr81_400x400.jpg",
+      "asset": "/images/press/huffpost.webp",
+      "sourceSha256": "27ffe7baa60e51b82b4256c2cddaea962f6120499606ec32f9e13777566cb8d6",
+      "sourceBytes": 5794,
+      "assetBytes": 358,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "Hindustan Times",
+      "source": "https://pbs.twimg.com/profile_images/1618839278561398784/2kXt0tLH_400x400.jpg",
+      "asset": "/images/press/hindustan-times.webp",
+      "sourceSha256": "fe77efd7e3826d8107fb675f44eba75ef8be74a8787e6cde112aeed575f3efd8",
+      "sourceBytes": 17784,
+      "assetBytes": 828,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "The Next Web",
+      "source": "https://pbs.twimg.com/profile_images/1306571874000830464/AZtkNMd-_400x400.png",
+      "asset": "/images/press/the-next-web.webp",
+      "sourceSha256": "e5bf4b172848965c1f27d2b24bd98f768a018d5aa8a6c83d244186e7b60cd757",
+      "sourceBytes": 1187,
+      "assetBytes": 284,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "CSS Tricks",
+      "source": "https://css-tricks.com/wp-content/uploads/2021/07/star-100x100.png",
+      "asset": "/images/press/css-tricks.webp",
+      "sourceSha256": "38420a7ff971cd711c5a9a86e1378c49f19f351792da0ae79316626a4a9849b9",
+      "sourceBytes": 5864,
+      "assetBytes": 1248,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "BusinessWorld",
+      "source": "https://pbs.twimg.com/profile_images/731046562848071680/1bYZ7dkg_400x400.jpg",
+      "asset": "/images/press/businessworld.webp",
+      "sourceSha256": "02086dcdcd768890c18097974729daa52e4853d6dc98c7d46071c9bbb99c3402",
+      "sourceBytes": 18802,
+      "assetBytes": 730,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "label": "Time Out",
+      "source": "https://pbs.twimg.com/profile_images/1791535094122831872/eLwYJH7r_400x400.jpg",
+      "asset": "/images/press/time-out.webp",
+      "sourceSha256": "4439bdfa39c2b2e5634530ff3eab469df5aa1e074cb3d724bcc7ca5b93e3b243",
+      "sourceBytes": 16933,
+      "assetBytes": 654,
+      "width": 32,
+      "height": 32
+    }
+  ]
+}

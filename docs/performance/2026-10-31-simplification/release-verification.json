@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-31T16:00:40.942Z",
+  "build": {
+    "builtAt": "2026-10-31T15:57:21.067Z",
+    "commit": "dd84546ac1a07803caf734153a241d6915895848",
+    "base": "/",
+    "routes": 1510,
+    "optimizedSources": 123,
+    "imageBytes": 14764824
+  },
+  "workflow": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41217162865",
+  "checks": {
+    "contracts": 20,
+    "typeErrors": 0,
+    "typeWarnings": 0,
+    "typeHints": 0,
+    "verifiedRoutes": 1510,
+    "publishedUrlAudit": 801,
+    "productionBrowserInteractions": true,
+    "contactVisualPairs": 8,
+    "generatorVisualPairs": 24,
+    "liveGitHubCalendarDays": 371,
+    "liveForbesLocal": true,
+    "liveSanJoseMerged": true
+  },
+  "performanceWorkflow": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41217392406",
+  "performanceBudgetsPassed": true,
+  "performanceSamples": 18
+}

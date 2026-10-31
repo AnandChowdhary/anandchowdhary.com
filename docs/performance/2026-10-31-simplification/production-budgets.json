@@ -1,0 +1,245 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "route": "home",
+      "metric": "three mobile samples",
+      "passed": true
+    },
+    {
+      "route": "home",
+      "metric": "performance",
+      "value": 100,
+      "limit": 95,
+      "passed": true
+    },
+    {
+      "route": "home",
+      "metric": "lcpMs",
+      "value": 1884.8959999999997,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "route": "home",
+      "metric": "cls",
+      "value": 0,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "route": "home",
+      "metric": "accessibility",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "home",
+      "metric": "seo",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "three mobile samples",
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "performance",
+      "value": 99,
+      "limit": 95,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "lcpMs",
+      "value": 2268.601,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "cls",
+      "value": 0,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "accessibility",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "blog",
+      "metric": "seo",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "three mobile samples",
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "performance",
+      "value": 100,
+      "limit": 95,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "lcpMs",
+      "value": 1230,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "cls",
+      "value": 0,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "accessibility",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "article-text",
+      "metric": "seo",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "three mobile samples",
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "performance",
+      "value": 100,
+      "limit": 95,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "lcpMs",
+      "value": 1278.5735,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "cls",
+      "value": 0,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "accessibility",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "article-images",
+      "metric": "seo",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "three mobile samples",
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "performance",
+      "value": 100,
+      "limit": 95,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "lcpMs",
+      "value": 1427.603,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "cls",
+      "value": 0,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "accessibility",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "projects",
+      "metric": "seo",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "three mobile samples",
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "performance",
+      "value": 100,
+      "limit": 95,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "lcpMs",
+      "value": 1394.365,
+      "limit": 2500,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "cls",
+      "value": 0,
+      "limit": 0.1,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "accessibility",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    },
+    {
+      "route": "life",
+      "metric": "seo",
+      "value": 100,
+      "limit": 100,
+      "passed": true
+    }
+  ]
+}

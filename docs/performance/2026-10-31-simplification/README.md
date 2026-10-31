@@ -50,3 +50,22 @@ code while retaining the same client behavior. Do not migrate all templates base
 on this partial build time. A future decision requires all route families,
 metadata/error parity, a reproducible full build comparison and a clear reason to
 own the additional infrastructure.
+
+## Published performance and release checks
+
+Release workflow 41217162865 passed all 20 contracts, type checks, the full
+1,510-route artifact verification, 801-URL audit and custom-domain freshness smoke.
+Live browser interactions pass. See release-verification.json and
+production-interactions.txt.
+
+The first weekly-performance workflow test (41217392406) passed all 18 mobile
+samples. Median performance was 99–100, median LCP 1.23–2.27s, CLS 0, and all
+accessibility/SEO scores 100. The life page also scored 100 best practices. See
+production-REPORT.md, production-summary.json and production-budgets.json.
+
+That run exposed one more broken CSS-Tricks Twitter avatar on the homepage
+(best practices 96). All eight press icons are now local 32px WebP assets,
+using the authored originals plus official website icons for the broken sources.
+The source images total 84,193 bytes versus 4,856 bytes for the local variants.
+A focused homepage follow-up validates that change separately; the initial full
+matrix is retained rather than claimed as a new full-site run on the icon commit.
