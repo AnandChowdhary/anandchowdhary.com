@@ -1,0 +1,14 @@
+{
+  "snapshot": "912febbe619ae7d757ef305b8643b33ed090d9ae1e264ebab8169e2b0727201b",
+  "inputs": 716,
+  "elapsedMs": 28236.30588,
+  "phases": {
+    "inventoryMs": 537.9630420000001,
+    "routeValidationMs": 24399.085597,
+    "discoveryMs": 28.300547999999253,
+    "imagesMs": 3267.9260460000005
+  },
+  "mode": "record",
+  "records": 593,
+  "networkAttempts": 716
+}

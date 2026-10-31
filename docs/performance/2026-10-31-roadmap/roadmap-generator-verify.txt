@@ -1,0 +1,1 @@
+Verified 1511 routes, discovery/404 files and local assets; 1955 files, 48.2 MiB; no Next/Vercel runtime dependencies.

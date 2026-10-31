@@ -101,3 +101,24 @@ routes and search result destinations; smoke and the 801-URL published inventory
 pass. Existing browser interactions pass image decoding, both animated counters,
 17 restored article images, keyboard/pointer/focus lightbox behavior and no
 exceptions. Root/project search checks pass all scenarios listed above.
+
+## Production release
+
+Commit `42cb70ba31427c3f9479cd77b86b296fdcd85672` deployed successfully in
+[Pages run 41234325454](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41234325454).
+Build, type checks, all 28 tests, offline verification, 801-URL audit, snapshot
+retention, deployment, freshness smoke and incident reporting all succeeded.
+Production search and existing article/counter/lightbox browser suites pass.
+All eight local homepage assets byte-match their committed files on the CDN.
+
+The downloaded production artifact includes `collection-profile.json` and all
+716 input bodies; manifest and body hashes were verified. Its collection took
+28.24s on the Actions runner, with 593 resolved-source writes and 716 network
+attempts. This is a production observation, not a controlled speed comparison.
+See [profile summary](roadmap-production-profile-summary.json),
+[release receipt](roadmap-production-release.json),
+[search checks](roadmap-production-search.txt) and
+[existing interactions](roadmap-production-interactions.txt).
+
+The retained full-generator experiment also passes output verification and the
+new search browser suite; it remains an experiment, not the deployed renderer.

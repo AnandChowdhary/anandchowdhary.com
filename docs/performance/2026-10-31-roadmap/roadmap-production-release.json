@@ -1,0 +1,67 @@
+{
+  "url": "https://anandchowdhary.com",
+  "workflow": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41234325454",
+  "buildInfo": {
+    "contentSnapshot": {
+      "id": "912febbe619ae7d757ef305b8643b33ed090d9ae1e264ebab8169e2b0727201b",
+      "collectedAt": "2026-10-31T19:28:04.531Z",
+      "inputs": 716
+    },
+    "builtAt": "2026-10-31T19:28:04.531Z",
+    "commit": "42cb70ba31427c3f9479cd77b86b296fdcd85672",
+    "base": "/",
+    "routes": 1511,
+    "optimizedSources": 123,
+    "imageBytes": 14764824
+  },
+  "localImages": [
+    {
+      "file": "/images/home/sycamore.webp",
+      "status": 200,
+      "bytes": 624,
+      "sha256": "db6b2773ef3095fdd5ca74ae48c987b3d2080472903ad334a32a18d59fb63d92"
+    },
+    {
+      "file": "/images/home/firstquadrant.webp",
+      "status": 200,
+      "bytes": 312,
+      "sha256": "7b4a5d72411bf8eb6fa573e61a814a9d197640268cb5ea8c64f345f74bccda67"
+    },
+    {
+      "file": "/images/home/y-combinator.webp",
+      "status": 200,
+      "bytes": 428,
+      "sha256": "696e1585d8fcff58cdf4caddbeb4c637661f78969a0bd2f8da044ea7af09b20a"
+    },
+    {
+      "file": "/images/home/github.webp",
+      "status": 200,
+      "bytes": 672,
+      "sha256": "80e4be1fde4afcde7fa181dda2910ae77b12289d19c37c8988864fba6156fbf1"
+    },
+    {
+      "file": "/images/home/pabio-lounge.webp",
+      "status": 200,
+      "bytes": 14756,
+      "sha256": "e8427365a6bb40f81c5fa501a81e4ab739cfcfcee0d542d12c1eed472148f4a7"
+    },
+    {
+      "file": "/images/home/crink-jewel.webp",
+      "status": 200,
+      "bytes": 34168,
+      "sha256": "4cc58efc50168aa6b462bb56e1e05be2ab59c7814ad921cf25c1b3893ddd635a"
+    },
+    {
+      "file": "/images/home/unqueue.webp",
+      "status": 200,
+      "bytes": 5542,
+      "sha256": "ce0def262d9368dc51e1ddf6fdcf1a1249798a1f872f8c9f47ab3ce1dca3f5cc"
+    },
+    {
+      "file": "/images/home/wendy.webp",
+      "status": 200,
+      "bytes": 36850,
+      "sha256": "5db0dc1a96328ac4d7659397c8b3f70542d70eeb23db95e148c3c1fef246561e"
+    }
+  ]
+}
