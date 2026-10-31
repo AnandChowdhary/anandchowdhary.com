@@ -39,21 +39,30 @@ async function replay(url) {
   return new Response([204, 304].includes(record.status) ? null : record.body, { status: record.status, headers: record.headers });
 }
 const pending = new Map();
+const metrics = { calls: 0, network: [], records: 0, recordMs: 0 };
+globalThis[Symbol.for('site.collectionMetrics')] = metrics;
 async function recordedFetch(input, init) {
+  metrics.calls++;
   const url = inputUrl(input, init);
   if (mode === 'replay') return replay(url);
   let promise = pending.get(url);
   if (!promise) {
     promise = (async () => {
       try { const cached = await readInput(directory, url); if (cached.ok || cached.status === 404) return; } catch {}
+      const started = performance.now();
+      let status = 0;
+      let bytes = 0;
       try {
         const response = await networkFetch(input, init);
-        await writeInput(directory, url, response.clone());
+        status = response.status;
+        bytes = (await writeInput(directory, url, response.clone())).bytes;
         if (!response.ok && response.status !== 404) pending.delete(url);
       } catch (error) {
         await writeInput(directory, url, new Response(null, { status: 503 }));
         pending.delete(url);
         throw error;
+      } finally {
+        metrics.network.push({ url, status, bytes, durationMs: performance.now() - started });
       }
     })();
     pending.set(url, promise);
@@ -65,5 +74,10 @@ globalThis.fetch = recordedFetch;
 globalThis[Symbol.for('site.contentSnapshot')] = {
   mode, timestamp, id: manifest.id,
   read: url => replay(inputUrl(url)),
-  record: (url, response) => { if (mode !== 'record') throw new SnapshotError('A sealed snapshot is read-only'); return writeInput(directory, inputUrl(url), response); },
+  record: async (url, response) => {
+    if (mode !== 'record') throw new SnapshotError('A sealed snapshot is read-only');
+    const started = performance.now();
+    try { return await writeInput(directory, inputUrl(url), response); }
+    finally { metrics.records++; metrics.recordMs += performance.now() - started; }
+  },
 };

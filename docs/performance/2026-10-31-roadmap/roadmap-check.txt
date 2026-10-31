@@ -1,0 +1,11 @@
+
+> anandchowdhary-astro@0.1.0 check
+> astro check
+
+20:25:32 [types] Generated 69ms
+20:25:32 [check] Getting diagnostics for Astro files in /workspace...
+Result (201 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+

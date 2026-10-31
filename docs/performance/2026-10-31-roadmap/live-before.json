@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "collectedAt": "2026-10-31T19:15:03.456Z",
+  "elapsedMs": 61258.579338999996,
+  "phases": {
+    "inventoryMs": 8210.610653,
+    "routeValidationMs": 47058.588465,
+    "discoveryMs": 148.63763999999355,
+    "imagesMs": 5780.808582999998
+  },
+  "routes": 1510,
+  "images": 123,
+  "slowestRoutes": [
+    {
+      "route": "/",
+      "durationMs": 6126.599781999999
+    },
+    {
+      "route": "/archive/2007",
+      "durationMs": 1333.1325610000004
+    },
+    {
+      "route": "/archive",
+      "durationMs": 1143.034055
+    },
+    {
+      "route": "/about",
+      "durationMs": 841.8179490000002
+    },
+    {
+      "route": "/open-source/2014/aptitude",
+      "durationMs": 552.1513660000055
+    },
+    {
+      "route": "/open-source/2014/essential-css",
+      "durationMs": 531.3141309999992
+    },
+    {
+      "route": "/open-source/2026/word-clock",
+      "durationMs": 490.7013950000037
+    },
+    {
+      "route": "/open-source/2026/cr",
+      "durationMs": 481.0852709999963
+    },
+    {
+      "route": "/open-source/2019/yoga",
+      "durationMs": 473.0226790000015
+    },
+    {
+      "route": "/open-source/2019/calendar-link",
+      "durationMs": 469.6353159999999
+    },
+    {
+      "route": "/open-source/2020/algolia-crawl",
+      "durationMs": 468.973530999996
+    },
+    {
+      "route": "/open-source/2019/feeedback",
+      "durationMs": 462.2237280000045
+    },
+    {
+      "route": "/open-source/2020/anand-link",
+      "durationMs": 460.06293500000174
+    },
+    {
+      "route": "/open-source/2026/gpu-utils",
+      "durationMs": 460.0358899999992
+    },
+    {
+      "route": "/open-source/2025/mintlify-slack-assistant",
+      "durationMs": 456.81917899999826
+    },
+    {
+      "route": "/open-source/2019/fraud",
+      "durationMs": 455.0023979999969
+    },
+    {
+      "route": "/open-source/2019/auto-i18n",
+      "durationMs": 454.6040079999948
+    },
+    {
+      "route": "/open-source/2026/codex-usage",
+      "durationMs": 448.67296299999725
+    },
+    {
+      "route": "/open-source/2020/rescuetime-slack",
+      "durationMs": 446.7285879999981
+    },
+    {
+      "route": "/open-source/2018/uppload",
+      "durationMs": 442.3522909999956
+    },
+    {
+      "route": "/open-source/2020/puppet",
+      "durationMs": 441.75569299999916
+    },
+    {
+      "route": "/open-source/2019/language-icons",
+      "durationMs": 441.5535319999981
+    },
+    {
+      "route": "/open-source/2026/aagent",
+      "durationMs": 441.5494150000013
+    },
+    {
+      "route": "/open-source/2019/changebar",
+      "durationMs": 438.32246699999814
+    },
+    {
+      "route": "/open-source/2020/unqueue",
+      "durationMs": 438.24895899999683
+    },
+    {
+      "route": "/open-source/2025/continuous-claude",
+      "durationMs": 434.03943900000013
+    },
+    {
+      "route": "/open-source/2019/gitwriter",
+      "durationMs": 432.07736999999906
+    },
+    {
+      "route": "/open-source/2020/unfs",
+      "durationMs": 431.41265199999907
+    },
+    {
+      "route": "/open-source/2020/run-url",
+      "durationMs": 428.78405999999814
+    },
+    {
+      "route": "/open-source/2014/essential.css",
+      "durationMs": 428.6849430000002
+    }
+  ],
+  "network": {
+    "calls": 821,
+    "network": [
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/555-lazy-load/HEAD/README.md",
+        "status": 200,
+        "durationMs": 7034.229858999999
+      },
+      {
+        "url": "https://github.com/users/AnandChowdhary/contributions",
+        "status": 200,
+        "durationMs": 4046.2728929999994
+      },
+      {
+        "url": "https://anandchowdhary.github.io/notes/threads/api.json",
+        "status": 200,
+        "durationMs": 756.0357690000001
+      },
+      {
+        "url": "https://anandchowdhary.github.io/featured/repos.json",
+        "status": 200,
+        "durationMs": 700.3460619999998
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/unqueue/HEAD/README.md",
+        "status": 200,
+        "durationMs": 695.7422860000001
+      },
+      {
+        "url": "https://anandchowdhary.github.io/everything/api.json",
+        "status": 200,
+        "durationMs": 668.221495
+      },
+      {
+        "url": "https://anandchowdhary.github.io/books/api.json",
+        "status": 200,
+        "durationMs": 659.4088529999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/deliverabilityguide.com/HEAD/README.md",
+        "status": 200,
+        "durationMs": 657.0043999999998
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/claude-code-slack-bot/HEAD/README.md",
+        "status": 200,
+        "durationMs": 649.5621350000001
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/yoga/HEAD/README.md",
+        "status": 200,
+        "durationMs": 646.5983729999998
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/carpent/HEAD/README.md",
+        "status": 200,
+        "durationMs": 630.4282029999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/essential.css/HEAD/README.md",
+        "status": 200,
+        "durationMs": 630.1083429999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/mintlify-slack-assistant/HEAD/README.md",
+        "status": 200,
+        "durationMs": 628.6256740000003
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/gpt-search/HEAD/README.md",
+        "status": 200,
+        "durationMs": 626.8067230000001
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/archiver/HEAD/README.md",
+        "status": 200,
+        "durationMs": 626.4881180000002
+      }
+    ],
+    "records": 21184,
+    "recordMs": 1232308.877813001,
+    "attempts": 716,
+    "note": "Slowest 15 attempts; durations include transfer and snapshot write; overlap across concurrent requests."
+  }
+}

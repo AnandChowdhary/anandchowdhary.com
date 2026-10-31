@@ -1,0 +1,51 @@
+
+> anandchowdhary-astro@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ sealed snapshots replay immutable inputs, freeze time, and forbid all TCP/network fallback (259.026367ms)
+✔ snapshot collection rejects credentials, arbitrary origins, and unsupported requests (0.660314ms)
+✔ optional contributions outage does not block static builds; mandatory sources still fail (26.909629ms)
+✔ available calendar retains the real count and validated activity levels (11.47043ms)
+✔ restored article artwork reserves its original aspect ratio and defers offscreen loads (1.519895ms)
+✔ legacy image preparation preserves explicit author sizing/loading and unrelated images (0.149759ms)
+✔ preview credentials reach only the configured origin, including across redirects (46.177506ms)
+Page rendering failed Error: Failed to fetch https://anandchowdhary.github.io/blog/api.json: 503 
+    at fetchJson (/workspace/src/views/api.ts:226:11)
+    at async getAllBlogPosts (/workspace/src/views/api.ts:427:20)
+    at async getBlogPostByYearAndSlug (/workspace/src/views/api.ts:440:20)
+    at async Module.generateMetadata (/workspace/src/views/blog/[year]/[slug]/page.tsx:33:16)
+    at async <anonymous> (/workspace/src/lib/render.tsx:20:43)
+    at async TestContext.<anonymous> (/workspace/tests/routes.test.ts:48:17)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+✔ a refreshed build input discovers a newly published post without changing route templates (76.428438ms)
+✔ route loaders retain short-slug destinations and reject invalid years (1.566107ms)
+✔ a cold upstream failure yields 503, never a misleading missing-post 404 (7.708203ms)
+✔ repository HTML sanitization retains content and rejects executable markup (4.358759ms)
+✔ responsive image URLs restrict transforms and preserve formats that need their original source (2.120691ms)
+✔ static builds fail on mandatory source errors rather than publishing error HTML (0.674625ms)
+✔ native article data preserves metadata, rendered content and one static hero variant (11.148851ms)
+✔ native article data rejects invalid/missing articles and propagates mandatory source outages (1.491491ms)
+✔ search ranks titles, requires every term, folds accents, and filters sections (3.659775ms)
+✔ index includes canonical published article text and omits redirects and chrome (3.679876ms)
+✔ only optional snapshots survive process caches, and corrupt snapshots are ignored (13.213434ms)
+✔ concurrent optional snapshot writes remain atomic (9.496606ms)
+Serving last successful source after refresh failure https://source.test/doc 1000
+Serving last successful source after refresh failure https://source.test/optional 1000
+✔ one collection context records each resolved source once across nested route contexts (48.810879ms)
+✔ a failed snapshot write fails all consumers instead of publishing unrecorded inputs (2.103645ms)
+✔ parallel consumers receive independent bodies and one origin request; fresh data persists between renders (1.080786ms)
+✔ expired source refreshes and handles conditional 304 without losing the cached body (1.018925ms)
+✔ refresh failure can serve a last-good source, but not beyond the 24-hour stale bound (1.866077ms)
+✔ invalid JSON never replaces the shared successful source (0.596355ms)
+✔ optional missing documents retain fetch-style 404 semantics and are never cached (1.371656ms)
+✔ optional validated source uses last-good data for transient outages only, within 24 hours (4.734937ms)
+✔ static aliases resolve only immediate same-origin HTML redirects, including project Pages bases (1.208565ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1444.613065

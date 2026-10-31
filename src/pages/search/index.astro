@@ -1,0 +1,11 @@
+---
+import Document from '@/layouts/Document.astro';
+import { renderPage } from '@/lib/render';
+import * as page from '@/views/search/page';
+const result = await renderPage(page, {});
+if (result.status >= 400) throw new Error(`Cannot publish search: ${result.status}`);
+---
+<Document metadata={result.metadata} pathname={Astro.url.pathname}>
+  <Fragment set:html={result.html} />
+</Document>
+<script>import '@/scripts/search';</script>

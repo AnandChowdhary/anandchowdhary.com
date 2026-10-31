@@ -238,3 +238,14 @@ retains React/Vite and the shared installation. Warm medians: prior Astro 18.82s
 native blog 16.53s, generator 13.94s. Collection was one shared 40.11s sample.
 Retain Astro; see [benchmark](2026-10-31-pipeline/BENCHMARK.md) and
 [operations](../operations/BUILD-RELIABILITY.md).
+
+
+## Publishing and reader experience — 2026-10-31
+
+Collection profiles identify and remove duplicate resolved-source writes; a
+single fixed-input record-path comparison drops from 25.44s to 13.89s with the
+same sealed snapshot ID. `/search` adds on-demand full-text article/project search
+with keyboard access, filters and no-JavaScript browsing. Eight homepage images
+are local WebP assets, and an external-image audit provides the next baseline.
+Notes/life hooks remain dependent on a suitable dispatch credential. See
+[follow-up evidence and remaining roadmap](2026-10-31-roadmap/README.md).

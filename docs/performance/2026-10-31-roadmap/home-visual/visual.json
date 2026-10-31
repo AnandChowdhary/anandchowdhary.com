@@ -1,0 +1,2373 @@
+{
+  "startedAt": "2026-10-31T19:23:37.995Z",
+  "base": "http://localhost:4322",
+  "reference": "https://anandchowdhary.com",
+  "browser": "Chrome/156.0.8078.47",
+  "scope": "full page",
+  "pixelThreshold": 20,
+  "results": [
+    {
+      "id": "home-desktop-light-normal",
+      "route": "/",
+      "device": "desktop",
+      "theme": "light",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.23251937399355876,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js",
+            "https://anandchowdhary.com/favicon.ico"
+          ],
+          "file": "raw/home-desktop-light-normal-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": {
+            "x": 80,
+            "y": 293.609375,
+            "width": 1120,
+            "height": 1575.328125,
+            "top": 293.609375,
+            "right": 1200,
+            "bottom": 1868.9375,
+            "left": 80
+          },
+          "footer": {
+            "x": 80,
+            "y": 1996.9375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 1996.9375,
+            "right": 1200,
+            "bottom": 2403.734375,
+            "left": 80
+          },
+          "bodyHeight": 2484,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js",
+            "http://localhost:4322/favicon.ico"
+          ],
+          "file": "raw/home-desktop-light-normal-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": {
+            "x": 80,
+            "y": 293.609375,
+            "width": 1120,
+            "height": 1575.328125,
+            "top": 293.609375,
+            "right": 1200,
+            "bottom": 1868.9375,
+            "left": 80
+          },
+          "footer": {
+            "x": 80,
+            "y": 1996.9375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 1996.9375,
+            "right": 1200,
+            "bottom": 2403.734375,
+            "left": 80
+          },
+          "bodyHeight": 2484,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-desktop-light-screenshot",
+      "route": "/",
+      "device": "desktop",
+      "theme": "light",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.27657004830917875,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-desktop-light-screenshot-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 1216,
+            "height": 1415.328125,
+            "top": 120.171875,
+            "right": 1248,
+            "bottom": 1535.5,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 1583.5,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 1583.5,
+            "right": 1248,
+            "bottom": 1990.296875,
+            "left": 32
+          },
+          "bodyHeight": 2070,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/?screenshot=true",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-desktop-light-screenshot-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 1216,
+            "height": 1415.328125,
+            "top": 120.171875,
+            "right": 1248,
+            "bottom": 1535.5,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 1583.5,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 1583.5,
+            "right": 1248,
+            "bottom": 1990.296875,
+            "left": 32
+          },
+          "bodyHeight": 2070,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-desktop-dark-normal",
+      "route": "/",
+      "device": "desktop",
+      "theme": "dark",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.23434354871175522,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-desktop-dark-normal-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": {
+            "x": 80,
+            "y": 293.609375,
+            "width": 1120,
+            "height": 1575.328125,
+            "top": 293.609375,
+            "right": 1200,
+            "bottom": 1868.9375,
+            "left": 80
+          },
+          "footer": {
+            "x": 80,
+            "y": 1996.9375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 1996.9375,
+            "right": 1200,
+            "bottom": 2403.734375,
+            "left": 80
+          },
+          "bodyHeight": 2484,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-desktop-dark-normal-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 80,
+            "y": 80,
+            "width": 1120,
+            "height": 85.609375,
+            "top": 80,
+            "right": 1200,
+            "bottom": 165.609375,
+            "left": 80
+          },
+          "main": {
+            "x": 80,
+            "y": 293.609375,
+            "width": 1120,
+            "height": 1575.328125,
+            "top": 293.609375,
+            "right": 1200,
+            "bottom": 1868.9375,
+            "left": 80
+          },
+          "footer": {
+            "x": 80,
+            "y": 1996.9375,
+            "width": 1120,
+            "height": 406.796875,
+            "top": 1996.9375,
+            "right": 1200,
+            "bottom": 2403.734375,
+            "left": 80
+          },
+          "bodyHeight": 2484,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-desktop-dark-screenshot",
+      "route": "/",
+      "device": "desktop",
+      "theme": "dark",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.28423158212560384,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-desktop-dark-screenshot-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 1216,
+            "height": 1415.328125,
+            "top": 120.171875,
+            "right": 1248,
+            "bottom": 1535.5,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 1583.5,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 1583.5,
+            "right": 1248,
+            "bottom": 1990.296875,
+            "left": 32
+          },
+          "bodyHeight": 2070,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/?screenshot=true",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-desktop-dark-screenshot-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 1216,
+            "height": 56.5,
+            "top": 32,
+            "right": 1248,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 1216,
+            "height": 1415.328125,
+            "top": 120.171875,
+            "right": 1248,
+            "bottom": 1535.5,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 1583.5,
+            "width": 1216,
+            "height": 406.796875,
+            "top": 1583.5,
+            "right": 1248,
+            "bottom": 1990.296875,
+            "left": 32
+          },
+          "bodyHeight": 2070,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-mobile-light-normal",
+      "route": "/",
+      "device": "mobile",
+      "theme": "light",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.37285446415693063,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-light-normal-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 245.609375,
+            "width": 326,
+            "height": 3665.875,
+            "top": 245.609375,
+            "right": 358,
+            "bottom": 3911.484375,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 4039.484375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 4039.484375,
+            "right": 358,
+            "bottom": 4542.28125,
+            "left": 32
+          },
+          "bodyHeight": 4622,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-light-normal-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 245.609375,
+            "width": 326,
+            "height": 3665.875,
+            "top": 245.609375,
+            "right": 358,
+            "bottom": 3911.484375,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 4039.484375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 4039.484375,
+            "right": 358,
+            "bottom": 4542.28125,
+            "left": 32
+          },
+          "bodyHeight": 4622,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-mobile-light-screenshot",
+      "route": "/",
+      "device": "mobile",
+      "theme": "light",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.40711226757738384,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-light-screenshot-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 326,
+            "height": 3505.875,
+            "top": 120.171875,
+            "right": 358,
+            "bottom": 3626.046875,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 3674.046875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 3674.046875,
+            "right": 358,
+            "bottom": 4176.84375,
+            "left": 32
+          },
+          "bodyHeight": 4257,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/?screenshot=true",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-light-screenshot-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 326,
+            "height": 3505.875,
+            "top": 120.171875,
+            "right": 358,
+            "bottom": 3626.046875,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 3674.046875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 3674.046875,
+            "right": 358,
+            "bottom": 4176.84375,
+            "left": 32
+          },
+          "bodyHeight": 4257,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-mobile-dark-normal",
+      "route": "/",
+      "device": "mobile",
+      "theme": "dark",
+      "mode": "normal",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.3784020681467674,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-dark-normal-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 245.609375,
+            "width": 326,
+            "height": 3665.875,
+            "top": 245.609375,
+            "right": 358,
+            "bottom": 3911.484375,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 4039.484375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 4039.484375,
+            "right": 358,
+            "bottom": 4542.28125,
+            "left": 32
+          },
+          "bodyHeight": 4622,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-dark-normal-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 85.609375,
+            "top": 32,
+            "right": 358,
+            "bottom": 117.609375,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 245.609375,
+            "width": 326,
+            "height": 3665.875,
+            "top": 245.609375,
+            "right": 358,
+            "bottom": 3911.484375,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 4039.484375,
+            "width": 326,
+            "height": 502.796875,
+            "top": 4039.484375,
+            "right": 358,
+            "bottom": 4542.28125,
+            "left": 32
+          },
+          "bodyHeight": 4622,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home-mobile-dark-screenshot",
+      "route": "/",
+      "device": "mobile",
+      "theme": "dark",
+      "mode": "screenshot",
+      "dimensionsMatch": true,
+      "differentPixelPercent": 0.4105455268245966,
+      "captures": [
+        {
+          "name": "reference",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "https://anandchowdhary.com/?screenshot=true",
+            "https://anandchowdhary.com/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "https://anandchowdhary.com/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "https://anandchowdhary.com/_astro/site-metadata.CGS75irM.css",
+            "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+            "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+            "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+            "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+            "https://anandchowdhary.com/images/press/forbes.webp",
+            "https://anandchowdhary.com/images/press/techcrunch.webp",
+            "https://anandchowdhary.com/images/press/huffpost.webp",
+            "https://anandchowdhary.com/images/press/hindustan-times.webp",
+            "https://anandchowdhary.com/images/press/the-next-web.webp",
+            "https://anandchowdhary.com/images/press/css-tricks.webp",
+            "https://anandchowdhary.com/images/press/businessworld.webp",
+            "https://anandchowdhary.com/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+            "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+            "https://anandchowdhary.com/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-dark-screenshot-reference.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 326,
+            "height": 3505.875,
+            "top": 120.171875,
+            "right": 358,
+            "bottom": 3626.046875,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 3674.046875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 3674.046875,
+            "right": 358,
+            "bottom": 4176.84375,
+            "left": 32
+          },
+          "bodyHeight": 4257,
+          "scripts": [
+            "https://anandchowdhary.com/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        },
+        {
+          "name": "candidate",
+          "status": 200,
+          "errors": [],
+          "requests": [
+            "http://localhost:4322/?screenshot=true",
+            "http://localhost:4322/fonts/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2",
+            "http://localhost:4322/fonts/797e433ab948586e-s.p.1v5bejj26fx9h.woff2",
+            "http://localhost:4322/_astro/site-metadata.CtXI0k2h.css",
+            "http://localhost:4322/images/home/sycamore.webp",
+            "http://localhost:4322/images/home/firstquadrant.webp",
+            "http://localhost:4322/images/home/y-combinator.webp",
+            "http://localhost:4322/images/home/github.webp",
+            "http://localhost:4322/images/press/forbes.webp",
+            "http://localhost:4322/images/press/techcrunch.webp",
+            "http://localhost:4322/images/press/huffpost.webp",
+            "http://localhost:4322/images/press/hindustan-times.webp",
+            "http://localhost:4322/images/press/the-next-web.webp",
+            "http://localhost:4322/images/press/css-tricks.webp",
+            "http://localhost:4322/images/press/businessworld.webp",
+            "http://localhost:4322/images/press/time-out.webp",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/in.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/th.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ph.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/jp.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/nl.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/de.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/it.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/fr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/be.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/my.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gb.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/us.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/tr.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ch.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/cz.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/ae.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/pt.svg",
+            "https://raw.githubusercontent.com/iMuFeng/round-flag-icons/master/flags/gr.svg",
+            "https://books.google.com/books/content?id=VJIrEQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://books.google.com/books/content?id=7_H8AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=ZPD4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=PYvsEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "https://books.google.com/books/content?id=6j6lEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "https://chowdhary.co/avatars/gigacatalyst.png",
+            "https://chowdhary.co/avatars/airweave.jpg",
+            "https://chowdhary.co/avatars/respan.png",
+            "https://chowdhary.co/avatars/sycamore.png",
+            "https://chowdhary.co/avatars/firstquadrant.jpg",
+            "https://chowdhary.co/avatars/commandcode.jpg",
+            "https://chowdhary.co/avatars/paleon.jpg",
+            "https://chowdhary.co/avatars/pabio.jpg",
+            "https://chowdhary.co/avatars/oswald-labs.jpg",
+            "https://chowdhary.co/avatars/ara.png",
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js",
+            "http://localhost:4322/images/home/pabio-lounge.webp",
+            "http://localhost:4322/images/home/crink-jewel.webp",
+            "http://localhost:4322/images/home/unqueue.webp",
+            "http://localhost:4322/images/home/wendy.webp",
+            "http://localhost:4322/_astro/counters.BLBxYtLt.js"
+          ],
+          "file": "raw/home-mobile-dark-screenshot-candidate.png",
+          "title": "Anand Chowdhary",
+          "meta": {
+            "viewport": [
+              "width=device-width, initial-scale=1"
+            ],
+            "description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "author": [
+              "Anand Chowdhary"
+            ],
+            "creator": [
+              "Anand Chowdhary"
+            ],
+            "publisher": [
+              "Anand Chowdhary"
+            ],
+            "og:title": [
+              "Anand Chowdhary"
+            ],
+            "og:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "og:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:image": [
+              "https://v1.screenshot.11ty.dev/https%3A%2F%2Fanandchowdhary.com%2F%3Fscreenshot%3Dtrue/opengraph/"
+            ],
+            "twitter:card": [
+              "summary_large_image"
+            ],
+            "twitter:title": [
+              "Anand Chowdhary"
+            ],
+            "twitter:description": [
+              "Anand Chowdhary is a technology entrepreneur, engineer, and designer from New Delhi, India, living in Utrecht, the Netherlands. He is Head of Product at Sycamore and previously founded FirstQuadrant, an AI sales platform funded by Y Combinator."
+            ],
+            "twitter:creator": [
+              "@AnandChowdhary"
+            ],
+            "twitter:site": [
+              "@AnandChowdhary"
+            ]
+          },
+          "header": {
+            "x": 32,
+            "y": 32,
+            "width": 326,
+            "height": 56.5,
+            "top": 32,
+            "right": 358,
+            "bottom": 88.5,
+            "left": 32
+          },
+          "main": {
+            "x": 32,
+            "y": 120.171875,
+            "width": 326,
+            "height": 3505.875,
+            "top": 120.171875,
+            "right": 358,
+            "bottom": 3626.046875,
+            "left": 32
+          },
+          "footer": {
+            "x": 32,
+            "y": 3674.046875,
+            "width": 326,
+            "height": 502.796875,
+            "top": 3674.046875,
+            "right": 358,
+            "bottom": 4176.84375,
+            "left": 32
+          },
+          "bodyHeight": 4257,
+          "scripts": [
+            "http://localhost:4322/_astro/Document.astro_astro_type_script_index_1_lang.0qOKR4Dm.js"
+          ]
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-31T19:24:13.134Z"
+}

@@ -67,6 +67,7 @@ export default function ArchiveContent({
         description="Everything, everywhere, all at once: A comprehensive archive of all my activities, projects, writing, events, and more, in one place."
       />
       <main className="max-w-2xl mx-auto space-y-12">
+        <p className="text-sm text-neutral-500"><a href="/search" className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4">Search articles and projects</a></p>
         {Object.entries(groupedByYear)
           .sort(([a], [b]) => parseInt(b) - parseInt(a))
           .map(([itemYear, items]) => (

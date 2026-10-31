@@ -14,7 +14,9 @@ export function NowSection() {
           <ExternalLink href="https://sycamore.so" underline={false}>
             <img
               alt="Sycamore logo"
-              src="https://avatars.githubusercontent.com/u/243040279?s=200&v=4"
+              src="/images/home/sycamore.webp"
+              width={18}
+              height={18}
               className="w-4.5 h-4.5 rounded inline-block ml-0.5 mr-1 align-center -translate-y-px"
             />
             <span>Sycamore</span>
@@ -30,7 +32,9 @@ export function NowSection() {
           >
             <img
               alt="FirstQuadrant logo"
-              src="https://avatars.githubusercontent.com/u/122780401?s=48&v=4"
+              src="/images/home/firstquadrant.webp"
+              width={18}
+              height={18}
               className="w-4.5 h-4.5 rounded inline-block ml-0.5 mr-1 align-center -translate-y-px"
             />
             <span>FirstQuadrant</span>
@@ -42,7 +46,9 @@ export function NowSection() {
           >
             <img
               alt="Y Combinator logo"
-              src="https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png"
+              src="/images/home/y-combinator.webp"
+              width={18}
+              height={18}
               className="w-4.5 h-4.5 rounded inline-block ml-0.5 mr-1 align-center -translate-y-px"
             />
             <span>Y Combinator</span>
@@ -58,7 +64,9 @@ export function NowSection() {
           >
             <img
               alt="GitHub logo"
-              src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"
+              src="/images/home/github.webp"
+              width={18}
+              height={18}
               className="w-4.5 h-4.5 rounded inline-block ml-0.5 mr-1 align-center -translate-y-px"
             />
             <span>GitHub Star</span>

@@ -1,8 +1,8 @@
 # Static publishing and source policy
 
 The production site remains static Astro on GitHub Pages. React renders most
-views at build time; it is not an article runtime. The contact page now uses
-native Astro markup for its body, sharing the existing header/footer and icons.
+views at build time; it is not an article runtime. The contact page and blog bodies use native Astro markup, sharing the existing
+header/footer and icons.
 
 ## Source classification
 
@@ -112,3 +112,26 @@ chrome, aliases and lightbox behavior. The full custom generator remains an
 experiment. It shares React/Vite and the installed dependency graph, and saves
 only 2.6 seconds over native Astro in the controlled warm comparison. Keep Astro;
 see [complete benchmark and limitations](../performance/2026-10-31-pipeline/BENCHMARK.md).
+
+
+## Collection diagnostics and search
+
+Collection now shares a source context across route validation and writes each
+resolved source/policy once. Each consumer still receives a fresh Response. A
+failed snapshot write fails the collection. Required inputs refresh in a new
+collection; this does not extend optional cache lifetimes. The local profile is
+`.cache/collection-profile.json` (override with `CONTENT_PROFILE_PATH`); it is also
+copied into the input artifact and summarized in Actions. Phase timings use a
+monotonic clock. Network/record durations overlap under concurrency and must not
+be summed as elapsed time. Profiles include only approved public input URLs.
+
+The finalizer creates `search-index.json` from canonical published blog/project
+HTML. `/search` loads it only after a query. Adding new searchable content types
+requires extending the indexer, UI filters and verification together. Ordinary
+pages do not load search code/index. Local homepage artwork and its source hashes
+are in [home-assets.json](home-assets.json). Run `npm run assets:refresh` explicitly
+to refresh those committed files; builds use them offline. `npm run audit:images`
+inventories external HTML image/background URLs without contacting those hosts.
+
+See [follow-up evidence](../performance/2026-10-31-roadmap/README.md) for timings,
+search behavior, asset inventory and remaining work.

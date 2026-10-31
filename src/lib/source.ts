@@ -20,15 +20,16 @@ const localCache: SourceCache = {
 };
 interface Context {
   pending: Map<string, Promise<CachedSource>>;
+  recorded: Map<string, Promise<unknown>>;
   cache: SourceCache;
   fetcher: typeof globalThis.fetch;
   now: () => number;
 }
 const contexts = new AsyncLocalStorage<Context>();
 const buildCache = createBuildSourceCache('.cache/optional-sources');
-export function withSourceContext<T>(callback: () => T, overrides: Partial<Omit<Context, 'pending'>> = {}): T {
+export function withSourceContext<T>(callback: () => T, overrides: Partial<Omit<Context, 'pending' | 'recorded'>> = {}): T {
   if (contexts.getStore() && Object.keys(overrides).length === 0) return callback();
-  return contexts.run({ pending: new Map(), cache: process.env.SITE_STATIC_BUILD === '1' ? buildCache : localCache, fetcher: globalThis.fetch, now: Date.now, ...overrides }, callback);
+  return contexts.run({ pending: new Map(), recorded: new Map(), cache: process.env.SITE_STATIC_BUILD === '1' ? buildCache : localCache, fetcher: globalThis.fetch, now: Date.now, ...overrides }, callback);
 }
 
 async function load(url: string, ttl: number, context: Context, optional: boolean, validate?: (body: string) => boolean): Promise<CachedSource> {
@@ -83,13 +84,17 @@ export async function fetchSource(url: string, { ttl = 0, optional = false, vali
     if (!response.ok && !optional && process.env.SITE_STATIC_BUILD === '1' && response.status !== 404) throw new SourceError(url, response.status);
     return response;
   }
-  const finish = async (response: Response) => {
-    if (snapshot?.mode === 'record') await snapshot.record(url, response.clone());
-    return response;
-  };
   const context = contexts.getStore();
   if (!context) return withSourceContext(() => fetchSource(url, { ttl, optional, validate }));
   const key = `${optional}:${ttl}:${url}`;
+  const finish = async (response: Response) => {
+    if (snapshot?.mode === 'record') {
+      // Keep a rejected write too: every reader must fail if its input wasn't saved.
+      if (!context.recorded.has(key)) context.recorded.set(key, snapshot.record(url, response.clone()));
+      await context.recorded.get(key);
+    }
+    return response;
+  };
   let pending = context.pending.get(key);
   if (!pending) { pending = load(url, ttl, context, optional, validate); context.pending.set(key, pending); }
   try {

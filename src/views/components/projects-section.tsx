@@ -10,10 +10,10 @@ export async function ProjectsSection() {
     >
       <ul className="grid grid-cols-2 gap-4">
         {[
-          "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
-          "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
-          "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
-          "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+          "/images/home/pabio-lounge.webp",
+          "/images/home/crink-jewel.webp",
+          "/images/home/unqueue.webp",
+          "/images/home/wendy.webp",
         ].map((src) => (
           <li
             key={src}

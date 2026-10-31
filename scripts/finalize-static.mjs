@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
+import { searchDocument } from './content/search-index.mjs';
 const outputDirectory = process.env.STATIC_OUTPUT_DIR || 'dist';
 const imageCacheDirectory = process.env.STATIC_IMAGE_CACHE_DIR || '.cache/static-images';
 sharp.concurrency(1); sharp.cache({ memory: 64 });
@@ -53,11 +54,18 @@ try { const llms=await stat(`${outputDirectory}/llms`); if(llms.isFile()) {
 }}catch(error){if(error.code!=='ENOENT')throw error;}
 const routes=JSON.parse(await readFile('.astro/static-routes.json','utf8'));
 const base = (process.env.PAGES_BASE_PATH || '/').replace(/\/$/, '');
+const searchDocuments = [];
+for (const route of routes.filter(route => /^\/(blog|projects)\/\d{4}\/[^/]+$/.test(route))) {
+ const document = searchDocument(route, await readFile(path.join(outputDirectory, route, 'index.html'), 'utf8'), base);
+ if (document) searchDocuments.push(document);
+}
+await writeFile(`${outputDirectory}/search-index.json`, JSON.stringify({ version: 1, documents: searchDocuments }));
+console.log(`Indexed ${searchDocuments.length} articles and projects for on-demand search`);
 if (base) {
  const prefix = value => value.startsWith('/') && !value.startsWith('//') && value !== base && !value.startsWith(base+'/') ? base+value : value;
  for (const file of (await files(outputDirectory)).filter(f=>f.endsWith('.html'))) {
   let html=await readFile(file,'utf8');
-  html=html.replace(/\b(src|href|poster|action)=(["'])(\/[^"']*)\2/g,(_,key,quote,value)=>`${key}=${quote}${prefix(value)}${quote}`);
+  html=html.replace(/\b(src|href|poster|action|data-index)=(["'])(\/[^"']*)\2/g,(_,key,quote,value)=>`${key}=${quote}${prefix(value)}${quote}`);
   html=html.replace(/\b(srcset|imagesrcset)=(["'])([^"']*)\2/gi,(_,key,quote,value)=>`${key}=${quote}${value.split(',').map(part=>part.replace(/^(\s*)(\/\S+)/,(_,space,url)=>space+prefix(url))).join(',')}${quote}`);
   html=html.replace(/(content=["']\d+;\s*url=)(\/[^"']*)/gi,(_,start,url)=>start+prefix(url));
   await writeFile(file,html);

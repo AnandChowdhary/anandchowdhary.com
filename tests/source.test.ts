@@ -9,6 +9,35 @@ function harness(fetcher: typeof fetch) {
   return { records, setTime(value: number) { now = value; }, request: <T>(fn: () => T) => withSourceContext(fn, { cache, fetcher, now: () => now }) };
 }
 
+test('one collection context records each resolved source once across nested route contexts', async () => {
+  const symbol = Symbol.for('site.contentSnapshot');
+  const globals = globalThis as Record<symbol, unknown>;
+  const original = globals[symbol];
+  let records = 0;
+  let calls = 0;
+  globals[symbol] = { mode: 'record', async record(_url: string, response: Response) { records++; assert.equal(await response.text(), 'content'); } };
+  try {
+    await withSourceContext(async () => {
+      const values = await Promise.all(Array.from({ length: 20 }, () => withSourceContext(async () => (await fetchSource('https://source.test/article')).text())));
+      assert.deepEqual(values, Array(20).fill('content'));
+    }, { fetcher: async () => { calls++; return new Response('content'); } });
+    assert.equal(calls, 1);
+    assert.equal(records, 1);
+  } finally { if (original === undefined) delete globals[symbol]; else globals[symbol] = original; }
+});
+
+test('a failed snapshot write fails all consumers instead of publishing unrecorded inputs', async () => {
+  const symbol = Symbol.for('site.contentSnapshot');
+  const globals = globalThis as Record<symbol, unknown>;
+  const original = globals[symbol];
+  globals[symbol] = { mode: 'record', async record() { throw Error('Disk unavailable'); } };
+  try {
+    await withSourceContext(async () => {
+      for (let i = 0; i < 2; i++) await assert.rejects(() => fetchSource('https://source.test/article'), /Disk unavailable/);
+    }, { fetcher: async () => new Response('content') });
+  } finally { if (original === undefined) delete globals[symbol]; else globals[symbol] = original; }
+});
+
 test('parallel consumers receive independent bodies and one origin request; fresh data persists between renders', async () => {
   let calls=0;
   const h=harness(async () => {calls++; return Response.json({value:1});});

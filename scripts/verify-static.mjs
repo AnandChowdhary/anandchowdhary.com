@@ -9,8 +9,18 @@ assert.equal(Object.keys(lock.packages).some(p=>/(^|\/)node_modules\/(?:next(?:\
 assert.equal(Boolean(lock.packages[''].dependencies['@vercel/functions']),false);
 async function exists(file){try{return(await stat(file)).isFile();}catch{return false;}}
 for(const route of routes){const file=path.join(outputDirectory,route,'index.html');assert.ok(await exists(file),`Missing route: ${route}`);const html=await readFile(file,'utf8');assert.doesNotMatch(html,/(?:src|href)=["'][^"']*(?:\/_next\/|\/_vercel\/image)/,route);assert.doesNotMatch(html,/An error occurred while fetching/);assert.ok(!html.includes('<h1>Temporarily unavailable</h1>'),`Failed render published: ${route}`);}
-for(const file of ['404.html','sitemap.xml','llms/index.html','llms.txt','.nojekyll','build-info.json'])assert.ok(await exists(`${outputDirectory}/${file}`),`Missing ${file}`);
+for(const file of ['404.html','sitemap.xml','llms/index.html','llms.txt','.nojekyll','build-info.json','search-index.json'])assert.ok(await exists(`${outputDirectory}/${file}`),`Missing ${file}`);
 const {base}=JSON.parse(await readFile(`${outputDirectory}/build-info.json`,'utf8'));
+const searchIndex=JSON.parse(await readFile(`${outputDirectory}/search-index.json`,'utf8'));
+assert.equal(searchIndex.version,1);
+assert.ok(searchIndex.documents.length>0,'Empty search index');
+assert.equal(new Set(searchIndex.documents.map(doc=>doc.url)).size,searchIndex.documents.length,'Duplicate search URLs');
+for(const document of searchIndex.documents){
+ const route=base==='/'?document.url:document.url.slice(base.length);
+ if(base!=='/')assert.ok(document.url.startsWith(base+'/'),'Unprefixed search result');
+ assert.ok(/^\/(blog|projects)\/\d{4}\/[^/]+$/.test(route)&&routes.includes(route),'Search result must be a published canonical article/project');
+ assert.ok(await exists(path.join(outputDirectory,route,'index.html')),'Missing search result');
+}
 let bytes=0,files=0;
 async function walk(dir) {
  for (const entry of await readdir(dir,{withFileTypes:true})) {
@@ -19,7 +29,7 @@ async function walk(dir) {
   bytes+=(await stat(file)).size;files++;
   if(!file.endsWith('.html'))continue;
   const html=await readFile(file,'utf8');
-  for(const match of html.matchAll(/\b(src|href|poster|imagesrcset|srcset)=["']([^"']*)["']/gi)) {
+  for(const match of html.matchAll(/\b(src|href|poster|imagesrcset|srcset|data-index)=["']([^"']*)["']/gi)) {
    const key=match[1].toLowerCase();
    const values=key.endsWith('srcset')?match[2].split(',').map(part=>part.trim().split(/\s+/)[0]):[match[2]];
    for(const value of values) {

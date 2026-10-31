@@ -1,0 +1,5 @@
+
+> anandchowdhary-astro@0.1.0 verify:build
+> node scripts/verify-static.mjs
+
+Verified 1511 routes, discovery/404 files and local assets; 1952 files, 47.9 MiB; no Next/Vercel runtime dependencies.

@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "collectedAt": "2026-10-31T19:24:14.886Z",
+  "elapsedMs": 33983.261119,
+  "phases": {
+    "inventoryMs": 784.5650370000001,
+    "routeValidationMs": 29780.132491,
+    "discoveryMs": 53.18030500000168,
+    "imagesMs": 3359.844372000003
+  },
+  "routes": 1511,
+  "images": 123,
+  "slowestRoutes": [
+    {
+      "route": "/",
+      "durationMs": 1053.314677
+    },
+    {
+      "route": "/archive",
+      "durationMs": 449.007347
+    },
+    {
+      "route": "/about",
+      "durationMs": 443.5499870000001
+    },
+    {
+      "route": "/events/2024/ai-community-day",
+      "durationMs": 434.21374899999955
+    },
+    {
+      "route": "/archive/2007",
+      "durationMs": 415.02034000000003
+    },
+    {
+      "route": "/open-source",
+      "durationMs": 275.0283070000005
+    },
+    {
+      "route": "/projects/2012/gsmc",
+      "durationMs": 272.0331609999994
+    },
+    {
+      "route": "/open-source/2014",
+      "durationMs": 269.152307999997
+    },
+    {
+      "route": "/open-source/2018/words",
+      "durationMs": 235.09527900000103
+    },
+    {
+      "route": "/open-source/2018/uppload",
+      "durationMs": 235.08549800000037
+    },
+    {
+      "route": "/open-source/2018/hovercard",
+      "durationMs": 235.07371400000193
+    },
+    {
+      "route": "/events/2018/minet-x-2018",
+      "durationMs": 224.17087900000024
+    },
+    {
+      "route": "/notes/2026/harnessing-an-editor-based-agent",
+      "durationMs": 223.97663100000136
+    },
+    {
+      "route": "/notes/2025",
+      "durationMs": 223.7312469999997
+    },
+    {
+      "route": "/events/2021/ddog-8",
+      "durationMs": 223.6297429999995
+    },
+    {
+      "route": "/events/2026/devworld",
+      "durationMs": 220.73335099999986
+    },
+    {
+      "route": "/notes/2025/airpods-based-head-motion-racing",
+      "durationMs": 219.29195100000106
+    },
+    {
+      "route": "/events/2020/ut-global-entrepreneurship-week",
+      "durationMs": 218.32542000000012
+    },
+    {
+      "route": "/events/2018/nesst-season-2",
+      "durationMs": 216.69206200000008
+    },
+    {
+      "route": "/events/2025/render-atl",
+      "durationMs": 216.67902200000026
+    },
+    {
+      "route": "/events/2021/github-nova",
+      "durationMs": 213.59672500000033
+    },
+    {
+      "route": "/projects/tags/typescript",
+      "durationMs": 213.40355499999714
+    },
+    {
+      "route": "/events/2026/el-nino-ai-meetup",
+      "durationMs": 210.90700300000026
+    },
+    {
+      "route": "/life",
+      "durationMs": 209.99402699999973
+    },
+    {
+      "route": "/open-source/2014/aptitude",
+      "durationMs": 206.90227199999936
+    },
+    {
+      "route": "/notes",
+      "durationMs": 202.0199270000012
+    },
+    {
+      "route": "/notes/2025/footer-badge-nudges-accessibility",
+      "durationMs": 201.70571399999972
+    },
+    {
+      "route": "/blog/2013/design",
+      "durationMs": 201.45133600000008
+    },
+    {
+      "route": "/open-source/2026/aagent",
+      "durationMs": 198.6912889999985
+    },
+    {
+      "route": "/open-source/2025/mintlify-slack-assistant",
+      "durationMs": 198.68715599999996
+    }
+  ],
+  "network": {
+    "calls": 715,
+    "network": [
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/deliverabilityguide.com/HEAD/README.md",
+        "status": 200,
+        "bytes": 83463,
+        "durationMs": 372.9260580000001
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/chat/HEAD/README.md",
+        "status": 200,
+        "bytes": 2574,
+        "durationMs": 352.20657299999993
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/remix-starter/HEAD/README.md",
+        "status": 200,
+        "bytes": 4084,
+        "durationMs": 347.7930870000001
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/hovercard/HEAD/README.md",
+        "status": 200,
+        "bytes": 3797,
+        "durationMs": 341.41204100000016
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/archiver/HEAD/README.md",
+        "status": 200,
+        "bytes": 583,
+        "durationMs": 339.3192969999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/drumpad/HEAD/README.md",
+        "status": 200,
+        "bytes": 3100,
+        "durationMs": 332.041654
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/algolia-crawl/HEAD/README.md",
+        "status": 200,
+        "bytes": 2326,
+        "durationMs": 332.02528099999995
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/events/refs/heads/main/events/2024/ai-community-day.md",
+        "status": 200,
+        "bytes": 1187,
+        "durationMs": 330.99780700000065
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/keeep/HEAD/README.md",
+        "status": 200,
+        "bytes": 455,
+        "durationMs": 329.09544800000003
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/hello-bar/HEAD/README.md",
+        "status": 200,
+        "bytes": 8570,
+        "durationMs": 328.2154959999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/aagent/HEAD/README.md",
+        "status": 200,
+        "bytes": 17064,
+        "durationMs": 327.72176
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/fraud/HEAD/README.md",
+        "status": 200,
+        "bytes": 4518,
+        "durationMs": 327.4806749999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/bookshelf-action/HEAD/README.md",
+        "status": 200,
+        "bytes": 3827,
+        "durationMs": 327.348967
+      },
+      {
+        "url": "https://raw.githubusercontent.com/elninotech/uppload/HEAD/README.md",
+        "status": 200,
+        "bytes": 23193,
+        "durationMs": 322.0186739999999
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AnandChowdhary/claude-code-slack-bot/HEAD/README.md",
+        "status": 200,
+        "bytes": 6068,
+        "durationMs": 321.6083249999999
+      }
+    ],
+    "records": 593,
+    "recordMs": 3280.8495819999944,
+    "attempts": 715,
+    "note": "Slowest 15 attempts; durations include transfer and snapshot write; overlap across concurrent requests."
+  }
+}

@@ -14,7 +14,9 @@
     "verify:build": "node scripts/verify-static.mjs",
     "experiment:generator": "node scripts/build.mjs generator",
     "content:snapshot": "node scripts/build.mjs collect",
-    "build:render": "node scripts/build.mjs render"
+    "build:render": "node scripts/build.mjs render",
+    "audit:images": "node scripts/audit-external-images.mjs",
+    "assets:refresh": "node scripts/refresh-home-images.mjs"
   },
   "dependencies": {
     "@number-flow/react": "^0.6.2",

@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "collectedAt": "2026-10-31T19:15:03.456Z",
+  "elapsedMs": 13889.598714,
+  "phases": {
+    "inventoryMs": 237.28155900000002,
+    "routeValidationMs": 13355.153399,
+    "discoveryMs": 56.27421200000026,
+    "imagesMs": 232.94218100000035
+  },
+  "routes": 1511,
+  "images": 123,
+  "slowestRoutes": [
+    {
+      "route": "/",
+      "durationMs": 492.25650700000006
+    },
+    {
+      "route": "/archive",
+      "durationMs": 301.82782900000007
+    },
+    {
+      "route": "/about",
+      "durationMs": 293.88285900000005
+    },
+    {
+      "route": "/archive/2007",
+      "durationMs": 291.236584
+    },
+    {
+      "route": "/open-source",
+      "durationMs": 228.66987300000073
+    },
+    {
+      "route": "/open-source/2014",
+      "durationMs": 220.9368799999993
+    },
+    {
+      "route": "/open-source/2026/codex-usage",
+      "durationMs": 213.82929899999908
+    },
+    {
+      "route": "/open-source/2026/word-clock",
+      "durationMs": 213.81919000000016
+    },
+    {
+      "route": "/open-source/2026/cr",
+      "durationMs": 213.81822900000043
+    },
+    {
+      "route": "/open-source/2026/gpu-utils",
+      "durationMs": 213.81774699999914
+    },
+    {
+      "route": "/open-source/2026/aagent",
+      "durationMs": 208.29104299999926
+    },
+    {
+      "route": "/open-source/2025/priced-in",
+      "durationMs": 208.27739400000064
+    },
+    {
+      "route": "/open-source/2025/mintlify-slack-assistant",
+      "durationMs": 208.2756449999997
+    },
+    {
+      "route": "/open-source/2014/aptitude",
+      "durationMs": 189.5332159999998
+    },
+    {
+      "route": "/open-source/2019/yoga",
+      "durationMs": 188.99788600000102
+    },
+    {
+      "route": "/open-source/2020/anand-link",
+      "durationMs": 188.98095900000044
+    },
+    {
+      "route": "/open-source/2020/algolia-crawl",
+      "durationMs": 188.97688000000016
+    },
+    {
+      "route": "/open-source/2023/deliverabilityguide-com",
+      "durationMs": 183.6523040000011
+    },
+    {
+      "route": "/open-source/2023/gpt-search",
+      "durationMs": 183.56968899999993
+    },
+    {
+      "route": "/open-source/2014/essential-css",
+      "durationMs": 179.95989599999848
+    },
+    {
+      "route": "/open-source/2018/words",
+      "durationMs": 178.16802000000098
+    },
+    {
+      "route": "/open-source/2018/uppload",
+      "durationMs": 178.1634810000014
+    },
+    {
+      "route": "/open-source/2018/hovercard",
+      "durationMs": 178.16001300000062
+    },
+    {
+      "route": "/open-source/2019/changebar",
+      "durationMs": 173.79926999999952
+    },
+    {
+      "route": "/open-source/2019/analytics-icons",
+      "durationMs": 173.798037999999
+    },
+    {
+      "route": "/open-source/2019/calendar-link",
+      "durationMs": 173.79434500000025
+    },
+    {
+      "route": "/open-source/2019/auto-i18n",
+      "durationMs": 173.7890069999994
+    },
+    {
+      "route": "/open-source/2025/continuous-claude",
+      "durationMs": 167.58837799999856
+    },
+    {
+      "route": "/open-source/2025/claude-code-slack-bot",
+      "durationMs": 167.56516799999918
+    },
+    {
+      "route": "/open-source/2025/chat",
+      "durationMs": 167.5570549999993
+    }
+  ],
+  "network": {
+    "calls": 715,
+    "network": [],
+    "records": 593,
+    "recordMs": 8413.280544000008
+  }
+}

@@ -12,7 +12,7 @@ export function staticInventory(): Promise<string[]> {
     const [links, archive, locations, projects] = await Promise.all([
       generateSitemap(), getAllArchiveItems(), getAllLocations(), getAllProjects(),
     ]);
-    const paths = new Set(['/', '/about','/contact','/mentoring','/now','/archive','/life/food',...sections.map(s=>`/${s}`)]);
+    const paths = new Set(['/', '/about','/contact','/mentoring','/now','/archive','/search','/life/food',...sections.map(s=>`/${s}`)]);
     const add = (url: string) => {
       const parsed = new URL(url, 'https://anandchowdhary.com');
       if (parsed.origin !== 'https://anandchowdhary.com' || parsed.pathname.startsWith('/okrs/')) return;

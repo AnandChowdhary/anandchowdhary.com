@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "collectedAt": "2026-10-31T19:15:03.456Z",
+  "elapsedMs": 25435.258212999997,
+  "phases": {
+    "inventoryMs": 229.60749800000002,
+    "routeValidationMs": 24737.200795,
+    "discoveryMs": 217.16835600000195,
+    "imagesMs": 245.14618100000007
+  },
+  "routes": 1510,
+  "images": 123,
+  "slowestRoutes": [
+    {
+      "route": "/open-source/2026/gpu-utils",
+      "durationMs": 728.2280919999976
+    },
+    {
+      "route": "/open-source/2026/word-clock",
+      "durationMs": 719.0107290000014
+    },
+    {
+      "route": "/open-source/2026/codex-usage",
+      "durationMs": 709.6868800000011
+    },
+    {
+      "route": "/open-source/2026/cr",
+      "durationMs": 664.4613150000005
+    },
+    {
+      "route": "/open-source/2026/aagent",
+      "durationMs": 624.6947400000026
+    },
+    {
+      "route": "/open-source/2020/upptime",
+      "durationMs": 619.9829120000031
+    },
+    {
+      "route": "/open-source/2020/algolia-crawl",
+      "durationMs": 606.1798629999994
+    },
+    {
+      "route": "/open-source/2020/unfs",
+      "durationMs": 600.7039360000017
+    },
+    {
+      "route": "/open-source/2020/twt",
+      "durationMs": 598.7527919999993
+    },
+    {
+      "route": "/open-source/2019/yoga",
+      "durationMs": 597.4450900000011
+    },
+    {
+      "route": "/open-source/2020/unqueue",
+      "durationMs": 594.7293919999975
+    },
+    {
+      "route": "/open-source/2020/anand-link",
+      "durationMs": 590.846454999999
+    },
+    {
+      "route": "/open-source/2020/run-url",
+      "durationMs": 587.2684440000012
+    },
+    {
+      "route": "/open-source/2025/priced-in",
+      "durationMs": 586.980945000003
+    },
+    {
+      "route": "/open-source/2020/firebase-github-backup",
+      "durationMs": 586.0244109999985
+    },
+    {
+      "route": "/open-source/2020/puppet",
+      "durationMs": 583.1571230000009
+    },
+    {
+      "route": "/open-source/2020/gitwords",
+      "durationMs": 577.8197599999985
+    },
+    {
+      "route": "/open-source/2020/update-template",
+      "durationMs": 577.0914370000028
+    },
+    {
+      "route": "/open-source/2020/docs-markdown",
+      "durationMs": 572.4537979999986
+    },
+    {
+      "route": "/open-source/2020/rescuetime-slack",
+      "durationMs": 569.5693949999986
+    },
+    {
+      "route": "/open-source/2020/deploy-pr-action",
+      "durationMs": 569.5165970000016
+    },
+    {
+      "route": "/open-source/2019/changebar",
+      "durationMs": 568.3911619999999
+    },
+    {
+      "route": "/open-source/2022/redirect-russia",
+      "durationMs": 566.1367940000018
+    },
+    {
+      "route": "/",
+      "durationMs": 564.432443
+    },
+    {
+      "route": "/open-source/2020/eject-dependencies",
+      "durationMs": 563.7880870000008
+    },
+    {
+      "route": "/open-source/2022/remix-starter",
+      "durationMs": 562.5329009999987
+    },
+    {
+      "route": "/open-source/2020/citepls",
+      "durationMs": 560.5381959999977
+    },
+    {
+      "route": "/open-source/2020/carpent",
+      "durationMs": 558.6006440000019
+    },
+    {
+      "route": "/open-source/2025/mintlify-slack-assistant",
+      "durationMs": 557.9161759999988
+    },
+    {
+      "route": "/open-source/2019/auto-i18n",
+      "durationMs": 556.064316
+    }
+  ],
+  "network": {
+    "calls": 820,
+    "network": [],
+    "records": 21184,
+    "recordMs": 1729404.5336870002
+  }
+}

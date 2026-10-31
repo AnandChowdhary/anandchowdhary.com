@@ -16,7 +16,7 @@ ${Object.entries(metadata.twitter || {}).map(([key, value]) => meta('twitter:' +
 ${css.map(file => `<link rel="stylesheet" href="${file}">`).join('')}
 <script>if(new URLSearchParams(location.search).get('screenshot')==='true')document.documentElement.dataset.screenshot='true';</script>
 <style>html[data-screenshot='true'] .site-container{padding:2rem;padding-bottom:5rem}html[data-screenshot='true'] .site-container>:not(:last-child){margin-block-end:3rem}html[data-screenshot='true'] .home-main>:not(:last-child){margin-block-end:3rem}html[data-screenshot='true'] .site-container>header{zoom:.66}#image-lightbox::backdrop{background:transparent}@view-transition{navigation:auto}header a[href='/'] svg{view-transition-name:signature}@media(prefers-reduced-motion:reduce){::view-transition-group(*){animation-duration:0s!important}}</style>
-</head><body class="antialiased selection:bg-neutral-500/20">${html}${lightbox ? '<script type="module" src="/assets/lightbox.js"></script>' : ''}${pathname === '/' ? '<script type="module" src="/assets/counters.js"></script>' : ''}</body></html>`;
+</head><body class="antialiased selection:bg-neutral-500/20">${html}${pathname === '/search' ? '<script type="module" src="/assets/search.js"></script>' : ''}${lightbox ? '<script type="module" src="/assets/lightbox.js"></script>' : ''}${pathname === '/' ? '<script type="module" src="/assets/counters.js"></script>' : ''}</body></html>`;
 }
 
 export function redirectDocument(location: string) { return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${escape(location)}"><meta name="robots" content="noindex"><title>Redirecting</title></head><body><a href="${escape(location)}">Continue</a></body></html>`; }

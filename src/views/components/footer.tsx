@@ -43,6 +43,9 @@ export function Footer() {
         <a className={linkStyles} href="/archive">
           Archive
         </a>
+        <a className={linkStyles} href="/search">
+          Search
+        </a>
         <a className={linkStyles} href="/life">
           Life
         </a>

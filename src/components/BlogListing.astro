@@ -20,6 +20,7 @@ const excerptMask = 'mask-image:linear-gradient(to bottom, black 0%, black 50%, 
 <div class="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
   <StaticMarkup component={Header} props={{ pathname: year ? `/blog/${year}` : '/blog', description: 'Thoughts and insights on technology, entrepreneurship, and building products that matter.', source: 'https://github.com/AnandChowdhary/blog', readme: 'https://anandchowdhary.github.io/blog/README.md', api: 'https://anandchowdhary.github.io/blog/api.json' }} />
   <main class="max-w-2xl mx-auto space-y-8 md:space-y-4">
+    <p class="text-sm text-neutral-500"><a href="/search?section=blog" class={`${focusStyles} underline underline-offset-4 hover:text-neutral-600`}>Search articles</a></p>
     {posts.length > 3 && <h2 class="text-lg font-medium text-neutral-500">Latest</h2>}
     {posts.slice(0, 3).map(item => (
       <article class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 items-center pb-2.5 relative">

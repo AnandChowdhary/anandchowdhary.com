@@ -1,0 +1,66 @@
+[
+  {
+    "name": "sycamore",
+    "url": "https://avatars.githubusercontent.com/u/243040279?s=200&v=4",
+    "file": "/images/home/sycamore.webp",
+    "sourceSha256": "5ae5cf170c14412d029be8874913d2998e78a12afd6f22c29154c7d9f7777c04",
+    "bytes": 624,
+    "width": 48
+  },
+  {
+    "name": "firstquadrant",
+    "url": "https://avatars.githubusercontent.com/u/122780401?s=48&v=4",
+    "file": "/images/home/firstquadrant.webp",
+    "sourceSha256": "e2f3db22f5152555554302e9a952122f699caa83126740017ec5f7ede27effa2",
+    "bytes": 312,
+    "width": 48
+  },
+  {
+    "name": "y-combinator",
+    "url": "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_400x400.png",
+    "file": "/images/home/y-combinator.webp",
+    "sourceSha256": "cb48494d82487ac25a4c044a0f21fcf933c3753fa2f504109f74882ce0fcb1e6",
+    "bytes": 428,
+    "width": 48
+  },
+  {
+    "name": "github",
+    "url": "https://avatars.githubusercontent.com/u/9919?s=200&v=4",
+    "file": "/images/home/github.webp",
+    "sourceSha256": "f60840caa89f8406d6c3aefcd6643f76087b065a3afb0760490584da3781e048",
+    "bytes": 672,
+    "width": 48
+  },
+  {
+    "name": "pabio-lounge",
+    "url": "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/pabio-lounge/cover.jpg?maxage%3D1y&w=576&cacheBuster=1697116221667",
+    "file": "/images/home/pabio-lounge.webp",
+    "sourceSha256": "0c78bf7db66894ff8c0c2f6d8949f2a4b38fc7532d7ec9ce76aae6223d6014b1",
+    "bytes": 14756,
+    "width": 576
+  },
+  {
+    "name": "crink-jewel",
+    "url": "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/crink-jewel/crink-jewel_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+    "file": "/images/home/crink-jewel.webp",
+    "sourceSha256": "a0151c9a494621b2c580c0c8b1bcb5f0de6213c2074a5dbe450267090d7cdaa2",
+    "bytes": 34168,
+    "width": 576
+  },
+  {
+    "name": "unqueue",
+    "url": "https://wsrv.nl/?url=https://repository-images.githubusercontent.com/286080143/14b2b180-19f1-11eb-991c-ced0b1719fe9?maxage%3D1y&w=576&h=288&fit=cover&cacheBuster=1697116221667",
+    "file": "/images/home/unqueue.webp",
+    "sourceSha256": "af874ae658e8090541d04a60a4e7c0abc6d8fcedd91ccd79e0ca83e9aeab2661",
+    "bytes": 5542,
+    "width": 576
+  },
+  {
+    "name": "wendy",
+    "url": "https://wsrv.nl/?url=https://raw.githubusercontent.com/AnandChowdhary/projects/main/assets/wendy/wendy_2x.png?maxage%3D1y&w=576&cacheBuster=1697116221667",
+    "file": "/images/home/wendy.webp",
+    "sourceSha256": "d062fd99fa4b9c8b66e84644424175d7fd4513d46047998d9b9aa078796097a3",
+    "bytes": 36850,
+    "width": 576
+  }
+]

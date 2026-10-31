@@ -19,7 +19,7 @@ await build({
   build: {
     outDir: output, emptyOutDir: true, cssCodeSplit: false, copyPublicDir: false,
     rolldownOptions: {
-      input: { styles: path.resolve('experiments/static-generator/styles.ts'), lightbox: path.resolve('src/scripts/lightbox.ts'), counters: path.resolve('src/scripts/counter-loader.ts') },
+      input: { styles: path.resolve('experiments/static-generator/styles.ts'), lightbox: path.resolve('src/scripts/lightbox.ts'), counters: path.resolve('src/scripts/counter-loader.ts'), search: path.resolve('src/scripts/search.ts') },
       output: { entryFileNames: 'assets/[name].js', chunkFileNames: 'assets/[name]-[hash].js', assetFileNames: 'assets/[name][extname]' },
     },
   },
