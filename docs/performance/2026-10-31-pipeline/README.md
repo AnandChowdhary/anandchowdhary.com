@@ -27,3 +27,14 @@ Both native and generator builds pass output verification under
 `/anandchowdhary.com`, plus browser counter hydration, article/no-JavaScript
 content, restored images and keyboard/pointer lightbox checks. The corresponding
 `*-prefix-verify.txt` and `*-prefix-interactions.txt` record those checks.
+
+## Production release
+
+Commit `49e08dcf4ecb0d5620fb90c41e96854ab5bbe078` deployed successfully via
+[Pages run 41225859128](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41225859128).
+Type checks, all 24 tests, offline output verification, the 801-URL audit,
+input artifact retention, deployment and production freshness smoke passed.
+[Public provenance](pipeline-production-build-info.json) records 716 snapshot
+inputs and 1,510 routes. [Public browser checks](pipeline-production-interactions.txt)
+passed article/no-JavaScript content, image decoding, both counter animations,
+17 restored images, lightbox keyboard/pointer/focus behavior and no exceptions.
