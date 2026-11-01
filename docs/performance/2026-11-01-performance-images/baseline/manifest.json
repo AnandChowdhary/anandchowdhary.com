@@ -1,0 +1,1006 @@
+{
+  "startedAt": "2026-11-01T12:27:27.208Z",
+  "base": "https://anandchowdhary.com",
+  "counts": {
+    "mobile": 3,
+    "desktop": 0
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "purpose": "Homepage: shared shell, timeline and counters"
+    },
+    {
+      "id": "blog",
+      "path": "/blog",
+      "purpose": "Blog index: image-rich listing"
+    },
+    {
+      "id": "article-text",
+      "path": "/blog/2026/future-ai-native-work",
+      "purpose": "Text-heavy article: one hero image"
+    },
+    {
+      "id": "article-images",
+      "path": "/blog/2019/state-of-the-podcasts-2019",
+      "purpose": "Image-heavy article: 18 image elements at selection time"
+    },
+    {
+      "id": "projects",
+      "path": "/projects",
+      "purpose": "Project cards and lazy-loaded images"
+    },
+    {
+      "id": "life",
+      "path": "/life",
+      "purpose": "Data-rich dashboard"
+    }
+  ],
+  "sourceCommit": "0b694cf64d436485473ceb3c223e1c3cffdca90c",
+  "node": "v24.22.1",
+  "platform": "linux x64 7.0.0-1017-azure",
+  "toolchain": {
+    "axe-core": "4.14.0",
+    "lighthouse": "13.5.0",
+    "puppeteer": "25.16.0",
+    "sharp": "0.35.5"
+  },
+  "methodology": "Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.",
+  "location": "Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.",
+  "http": [
+    {
+      "route": "home",
+      "attempt": 1,
+      "at": "2026-11-01T12:27:27.297Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 77.87881499999997,
+      "totalMs": 83.33580699999999,
+      "decodedBodyBytes": 62254,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "26",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "11497",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-f32e\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "2425cee5a43bc9612bb1e05041b8021c131b5e04",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "939A:29CC25:2ED9B4B:34895E8:6AE73014",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640043-CHI",
+        "x-timer": "S1793536047.276585,VS0,VE1"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 2,
+      "at": "2026-11-01T12:27:27.303Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 4.603637000000049,
+      "totalMs": 6.205200999999988,
+      "decodedBodyBytes": 62254,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "26",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "11497",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-f32e\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "2",
+        "x-fastly-request-id": "822d391397f24c76590f30a32b00008519e5082b",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "939A:29CC25:2ED9B4B:34895E8:6AE73014",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640043-CHI",
+        "x-timer": "S1793536047.292066,VS0,VE0"
+      }
+    },
+    {
+      "route": "home",
+      "attempt": 3,
+      "at": "2026-11-01T12:27:27.309Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/",
+      "headersMs": 3.5030209999999897,
+      "totalMs": 5.051829999999995,
+      "decodedBodyBytes": 62254,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "26",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "11497",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-f32e\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "3",
+        "x-fastly-request-id": "26adae97dd0d5c1aea2646a3be41157214a3fa20",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "939A:29CC25:2ED9B4B:34895E8:6AE73014",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640043-CHI",
+        "x-timer": "S1793536047.297357,VS0,VE0"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 1,
+      "at": "2026-11-01T12:27:27.362Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/",
+      "headersMs": 51.43860100000006,
+      "totalMs": 53.062040000000025,
+      "decodedBodyBytes": 71053,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "26",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "9817",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-1158d\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "cbde622f3434d7ce91acff8569d08895abaca8fb",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "DB26:1EB163:1981FFD:20B40F8:6AE73015",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640073-CHI",
+        "x-timer": "S1793536047.350423,VS0,VE1"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 2,
+      "at": "2026-11-01T12:27:27.425Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/",
+      "headersMs": 61.61224200000004,
+      "totalMs": 63.23484600000006,
+      "decodedBodyBytes": 71053,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "26",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "9817",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-1158d\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "d2fdf73bb190002089988f23c1be6c1db95a00e1",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "DB26:1EB163:1981FFD:20B40F8:6AE73015",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640021-CHI",
+        "x-timer": "S1793536047.413079,VS0,VE1"
+      }
+    },
+    {
+      "route": "blog",
+      "attempt": 3,
+      "at": "2026-11-01T12:27:27.499Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/",
+      "headersMs": 72.24512499999992,
+      "totalMs": 74.08463599999993,
+      "decodedBodyBytes": 71053,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "26",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "9817",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-1158d\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "1d95dfeeef571202f5eb4d2fae88940d001623d9",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "DB26:1EB163:1981FFD:20B40F8:6AE73015",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640024-CHI",
+        "x-timer": "S1793536047.487353,VS0,VE1"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 1,
+      "at": "2026-11-01T12:27:27.644Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work/",
+      "headersMs": 142.82113100000004,
+      "totalMs": 144.7271770000001,
+      "decodedBodyBytes": 48939,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "12987",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-bf2b\"",
+        "expires": "Sun, 01 Nov 2026 12:37:27 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-fastly-request-id": "67c7e68eff4492f42ad19603ab84954fd8503ff7",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "A614:20F878:3ACCBA8:3FD4027:6AE7302F",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640026-CHI",
+        "x-timer": "S1793536048.586464,VS0,VE47"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 2,
+      "at": "2026-11-01T12:27:27.690Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work/",
+      "headersMs": 44.26595300000008,
+      "totalMs": 45.93275600000004,
+      "decodedBodyBytes": 48939,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "12987",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-bf2b\"",
+        "expires": "Sun, 01 Nov 2026 12:37:27 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "3dd4cf1b2bd969d47402961aecb9b3b410be00fa",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "A614:20F878:3ACCBA8:3FD4027:6AE7302F",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640066-CHI",
+        "x-timer": "S1793536048.676462,VS0,VE1"
+      }
+    },
+    {
+      "route": "article-text",
+      "attempt": 3,
+      "at": "2026-11-01T12:27:27.725Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work/",
+      "headersMs": 33.657921999999985,
+      "totalMs": 35.06615799999997,
+      "decodedBodyBytes": 48939,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "12987",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-bf2b\"",
+        "expires": "Sun, 01 Nov 2026 12:37:27 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "a9032b451fbc711a2c6e42ec4ad8a9ff152cb7c0",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "A614:20F878:3ACCBA8:3FD4027:6AE7302F",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640025-CHI",
+        "x-timer": "S1793536048.714098,VS0,VE1"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 1,
+      "at": "2026-11-01T12:27:27.861Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "headersMs": 134.09655599999996,
+      "totalMs": 135.82058200000006,
+      "decodedBodyBytes": 37496,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8567",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-9278\"",
+        "expires": "Sun, 01 Nov 2026 12:37:27 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-fastly-request-id": "76d23b7d7061704ea71b6668e63f201452ee7e7e",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "0F80:196AAB:1A3F6FF:217143C:6AE7302F",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640044-CHI",
+        "x-timer": "S1793536048.799818,VS0,VE50"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 2,
+      "at": "2026-11-01T12:27:27.900Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "headersMs": 37.967715,
+      "totalMs": 39.13805300000013,
+      "decodedBodyBytes": 37496,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8567",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-9278\"",
+        "expires": "Sun, 01 Nov 2026 12:37:27 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "b66df50276f012922c5d5249fcf24f151de92f2a",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "0F80:196AAB:1A3F6FF:217143C:6AE7302F",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640038-CHI",
+        "x-timer": "S1793536048.888885,VS0,VE1"
+      }
+    },
+    {
+      "route": "article-images",
+      "attempt": 3,
+      "at": "2026-11-01T12:27:28.005Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "headersMs": 103.5220260000001,
+      "totalMs": 104.83071199999995,
+      "decodedBodyBytes": 37496,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8567",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:27 GMT",
+        "etag": "W/\"6ae73011-9278\"",
+        "expires": "Sun, 01 Nov 2026 12:37:27 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "7c60a1ac44a709560430d3091dfc157260114523",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "0F80:196AAB:1A3F6FF:217143C:6AE7302F",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640067-CHI",
+        "x-timer": "S1793536048.994040,VS0,VE1"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 1,
+      "at": "2026-11-01T12:27:28.111Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/projects/",
+      "headersMs": 104.18150300000002,
+      "totalMs": 105.75550399999997,
+      "decodedBodyBytes": 103962,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "27",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "12671",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:28 GMT",
+        "etag": "W/\"6ae73011-1961a\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "02cb1eb32d929f590ee2780dbd1158f62033f508",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "F5EE:84333:1C694EF:2399A93:6AE73015",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640021-CHI",
+        "x-timer": "S1793536048.098563,VS0,VE2"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 2,
+      "at": "2026-11-01T12:27:28.193Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/projects/",
+      "headersMs": 80.16339199999993,
+      "totalMs": 81.80832999999984,
+      "decodedBodyBytes": 103962,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "27",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "12671",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:28 GMT",
+        "etag": "W/\"6ae73011-1961a\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "6511bd0214f6863cb4fddad87e64a1380a1371e6",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "F5EE:84333:1C694EF:2399A93:6AE73015",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640037-CHI",
+        "x-timer": "S1793536048.180521,VS0,VE2"
+      }
+    },
+    {
+      "route": "projects",
+      "attempt": 3,
+      "at": "2026-11-01T12:27:28.221Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/projects/",
+      "headersMs": 26.51116900000011,
+      "totalMs": 27.891841000000113,
+      "decodedBodyBytes": 103962,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "27",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "12671",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:28 GMT",
+        "etag": "W/\"6ae73011-1961a\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "383e6d3905d5d912f2aea38922d6c66d2c9ef09a",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "F5EE:84333:1C694EF:2399A93:6AE73015",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640091-CHI",
+        "x-timer": "S1793536048.208249,VS0,VE2"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 1,
+      "at": "2026-11-01T12:27:28.271Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/life/",
+      "headersMs": 48.06195699999989,
+      "totalMs": 50.60836599999993,
+      "decodedBodyBytes": 118947,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "27",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "13465",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:28 GMT",
+        "etag": "W/\"6ae73011-1d0a3\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "9928ae37d2fb9583312d0acc76ca1a8c6eb02cea",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "45FA:370048:1A378F9:2168FA1:6AE73014",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640057-CHI",
+        "x-timer": "S1793536048.258834,VS0,VE2"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 2,
+      "at": "2026-11-01T12:27:28.335Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/life/",
+      "headersMs": 61.46440099999995,
+      "totalMs": 63.218227999999954,
+      "decodedBodyBytes": 118947,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "27",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "13465",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:28 GMT",
+        "etag": "W/\"6ae73011-1d0a3\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "f30b868a9b359d9d53c4a41a241e43ecafe1f5ce",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "45FA:370048:1A378F9:2168FA1:6AE73014",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640056-CHI",
+        "x-timer": "S1793536048.322713,VS0,VE2"
+      }
+    },
+    {
+      "route": "life",
+      "attempt": 3,
+      "at": "2026-11-01T12:27:28.398Z",
+      "status": 200,
+      "finalUrl": "https://anandchowdhary.com/life/",
+      "headersMs": 61.06525199999987,
+      "totalMs": 62.73394899999994,
+      "decodedBodyBytes": 118947,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "age": "27",
+        "cache-control": "max-age=600",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "13465",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Sun, 01 Nov 2026 12:27:28 GMT",
+        "etag": "W/\"6ae73011-1d0a3\"",
+        "expires": "Sun, 01 Nov 2026 12:37:01 GMT",
+        "last-modified": "Sun, 01 Nov 2026 12:26:57 GMT",
+        "server": "GitHub.com",
+        "vary": "Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "1",
+        "x-fastly-request-id": "464150e66dd806448284195e0a27e34cc4fac8a2",
+        "x-github-edge-region": "iad",
+        "x-github-request-id": "45FA:370048:1A378F9:2168FA1:6AE73014",
+        "x-origin-cache": "HIT",
+        "x-proxy-cache": "MISS",
+        "x-served-by": "cache-chi-kmdw8640050-CHI",
+        "x-timer": "S1793536048.385582,VS0,VE1"
+      }
+    }
+  ],
+  "fieldData": [
+    {
+      "strategy": "mobile",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_limit_value": "0",
+              "consumer": "projects/583797351490",
+              "quota_location": "global",
+              "quota_limit": "defaultPerDayPerProject",
+              "quota_unit": "1/d/{project}",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_metric": "pagespeedonline.googleapis.com/default"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "strategy": "desktop",
+      "status": 429,
+      "error": {
+        "code": 429,
+        "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+        "errors": [
+          {
+            "message": "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'.",
+            "domain": "global",
+            "reason": "rateLimitExceeded"
+          }
+        ],
+        "status": "RESOURCE_EXHAUSTED",
+        "details": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "RATE_LIMIT_EXCEEDED",
+            "domain": "googleapis.com",
+            "metadata": {
+              "quota_location": "global",
+              "quota_limit_value": "0",
+              "quota_unit": "1/d/{project}",
+              "quota_limit": "defaultPerDayPerProject",
+              "consumer": "projects/583797351490",
+              "service": "pagespeedonline.googleapis.com",
+              "quota_metric": "pagespeedonline.googleapis.com/default"
+            }
+          },
+          {
+            "@type": "type.googleapis.com/google.rpc.Help",
+            "links": [
+              {
+                "description": "Request a higher quota limit.",
+                "url": "https://cloud.google.com/docs/quotas/help/request_increase"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "runs": [
+    {
+      "id": "home-mobile-1",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-11-01T12:27:30.679Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-1.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-1",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-11-01T12:27:40.532Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/",
+      "report": "raw/blog-mobile-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog) was redirected to https://anandchowdhary.com/blog/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-text-mobile-1",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-11-01T12:27:49.815Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work/",
+      "report": "raw/article-text-mobile-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog/2026/future-ai-native-work) was redirected to https://anandchowdhary.com/blog/2026/future-ai-native-work/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-1",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-11-01T12:27:57.607Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "projects-mobile-1",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-11-01T12:28:06.612Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects/",
+      "report": "raw/projects-mobile-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/projects) was redirected to https://anandchowdhary.com/projects/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "life-mobile-1",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 1,
+      "fetchTime": "2026-11-01T12:28:16.078Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life/",
+      "report": "raw/life-mobile-1.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/life) was redirected to https://anandchowdhary.com/life/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "home-mobile-2",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-11-01T12:28:23.600Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-2.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-2",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-11-01T12:28:33.189Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/",
+      "report": "raw/blog-mobile-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog) was redirected to https://anandchowdhary.com/blog/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-text-mobile-2",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-11-01T12:28:42.447Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work/",
+      "report": "raw/article-text-mobile-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog/2026/future-ai-native-work) was redirected to https://anandchowdhary.com/blog/2026/future-ai-native-work/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-2",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-11-01T12:28:49.393Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "projects-mobile-2",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-11-01T12:28:57.059Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects/",
+      "report": "raw/projects-mobile-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/projects) was redirected to https://anandchowdhary.com/projects/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "life-mobile-2",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 2,
+      "fetchTime": "2026-11-01T12:29:06.308Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life/",
+      "report": "raw/life-mobile-2.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/life) was redirected to https://anandchowdhary.com/life/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "home-mobile-3",
+      "route": "home",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-11-01T12:29:13.728Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/",
+      "report": "raw/home-mobile-3.json.gz",
+      "warnings": []
+    },
+    {
+      "id": "blog-mobile-3",
+      "route": "blog",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-11-01T12:29:23.084Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/",
+      "report": "raw/blog-mobile-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog) was redirected to https://anandchowdhary.com/blog/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-text-mobile-3",
+      "route": "article-text",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-11-01T12:29:31.945Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2026/future-ai-native-work/",
+      "report": "raw/article-text-mobile-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog/2026/future-ai-native-work) was redirected to https://anandchowdhary.com/blog/2026/future-ai-native-work/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "article-images-mobile-3",
+      "route": "article-images",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-11-01T12:29:38.901Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/",
+      "report": "raw/article-images-mobile-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019) was redirected to https://anandchowdhary.com/blog/2019/state-of-the-podcasts-2019/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "projects-mobile-3",
+      "route": "projects",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-11-01T12:29:46.543Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/projects/",
+      "report": "raw/projects-mobile-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/projects) was redirected to https://anandchowdhary.com/projects/. Try testing the second URL directly."
+      ]
+    },
+    {
+      "id": "life-mobile-3",
+      "route": "life",
+      "device": "mobile",
+      "repetition": 3,
+      "fetchTime": "2026-11-01T12:29:55.681Z",
+      "lighthouseVersion": "13.5.0",
+      "finalDisplayedUrl": "https://anandchowdhary.com/life/",
+      "report": "raw/life-mobile-3.json.gz",
+      "warnings": [
+        "The page may not be loading as expected because your test URL (https://anandchowdhary.com/life) was redirected to https://anandchowdhary.com/life/. Try testing the second URL directly."
+      ]
+    }
+  ],
+  "previewAuthenticated": false,
+  "chrome": "Chrome/156.0.8078.47",
+  "finishedAt": "2026-11-01T12:30:01.513Z"
+}

@@ -33,11 +33,20 @@ const manifest = {
   node: process.version, platform: `${os.platform()} ${os.arch()} ${os.release()}`,
   toolchain: JSON.parse(await readFile(path.join(here, 'package.json'), 'utf8')).dependencies,
   methodology: 'Sequential Lighthouse navigations; fresh Chrome process/profile per run; cold browser storage; simulated default mobile/desktop throttling; production CDN cache uncontrolled.',
-  location: 'Nebula sandbox; physical runner location unverified. See HTTP x-vercel-id for observed CDN routing.',
+  location: process.env.GITHUB_ACTIONS === 'true' ? `GitHub Actions ${process.env.RUNNER_OS || os.platform()} ${process.env.RUNNER_ARCH || os.arch()}; physical runner location unverified.` : 'Local or sandbox runner; physical location unverified.',
   http: [], fieldData: [], runs: [],
   previewAuthenticated: Boolean(process.env.VERCEL_PREVIEW_ORIGIN && process.env.VERCEL_AUTOMATION_BYPASS_SECRET && new URL(process.env.VERCEL_PREVIEW_ORIGIN).origin === base),
 };
 const save = () => writeFile(path.join(output, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+async function observePublication() {
+  try {
+    const response = await fetch(new URL(base + '/build-info.json'), {signal:AbortSignal.timeout(15000)});
+    if (!response.ok) return {status:response.status};
+    const info = await response.json();
+    return {status:response.status,build:{commit:info.commit ?? null,builtAt:info.builtAt ?? null,snapshot:info.contentSnapshot?.id ?? null,base:info.base ?? null}};
+  } catch (error) { return {error:String(error)}; }
+}
+manifest.publicationBefore = await observePublication();
 await save();
 // Repeated GETs observe cache behavior; these are not controlled cold-CDN tests.
 for (const route of routes) {
@@ -104,6 +113,8 @@ for (let repetition = 1; repetition <= Math.max(...Object.values(counts)); repet
     }
   }
 }
+manifest.publicationAfter = await observePublication();
+manifest.publicationUnchanged = manifest.publicationBefore.build && manifest.publicationAfter.build ? JSON.stringify(manifest.publicationBefore.build) === JSON.stringify(manifest.publicationAfter.build) : null;
 manifest.finishedAt = new Date().toISOString();
 await save();
 execFileSync(process.execPath, [path.join(here, 'summarize.mjs'), output], { stdio: 'inherit' });

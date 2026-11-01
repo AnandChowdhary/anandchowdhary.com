@@ -384,5 +384,65 @@
     "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/main/assets/agastya-screen-reader.png",
     "alt": "Agastya Read Aloud highlighting article text with previous, pause, next, and stop controls.",
     "note": "The authored image URL was an article page. Restored from the matching owned article asset."
+  },
+  {
+    "source": "https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main/assets/2022-hourly-time-spent.png",
+    "file": "/images/blog/archive/fd5153bee33d0193.png",
+    "sha256": "fd5153bee33d0193c476ca054a7e465f207f2e82eb6d850ed648e36459a8ad7a",
+    "bytes": 63239,
+    "width": 2006,
+    "height": 462,
+    "articles": [
+      "blog/2022/year-of-relationships/index.html"
+    ],
+    "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/b76ad47df58d244716295bff2f131bfa5a6482e8/assets/2022-hourly-time-spent.png"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main/assets/2022-rescuetime.png",
+    "file": "/images/blog/archive/bceb1655ca7253d7.png",
+    "sha256": "bceb1655ca7253d7b4f555dfe9e29995595a846866e8f55ca390799c2d688dc4",
+    "bytes": 169916,
+    "width": 2008,
+    "height": 622,
+    "articles": [
+      "blog/2022/year-of-relationships/index.html"
+    ],
+    "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/b76ad47df58d244716295bff2f131bfa5a6482e8/assets/2022-rescuetime.png"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main/assets/2022-sleep.png",
+    "file": "/images/blog/archive/3eb091717e072d73.png",
+    "sha256": "3eb091717e072d734005c80cbb9a84693111e708dd7e4cd74f9069a3a06b07ae",
+    "bytes": 290183,
+    "width": 1520,
+    "height": 740,
+    "articles": [
+      "blog/2022/year-of-relationships/index.html"
+    ],
+    "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/b76ad47df58d244716295bff2f131bfa5a6482e8/assets/2022-sleep.png"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main/assets/2022-steps.png",
+    "file": "/images/blog/archive/89a65b7ab54cf9d7.png",
+    "sha256": "89a65b7ab54cf9d7e013c3ab6f435ebe0e2d4051914a6f5f97bca674299b3679",
+    "bytes": 237531,
+    "width": 1520,
+    "height": 740,
+    "articles": [
+      "blog/2022/year-of-relationships/index.html"
+    ],
+    "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/b76ad47df58d244716295bff2f131bfa5a6482e8/assets/2022-steps.png"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/AnandChowdhary/blog/refs/heads/main/assets/year-of-discovery.png",
+    "file": "/images/blog/archive/0c968eac48d0ffb8.png",
+    "sha256": "0c968eac48d0ffb8c3fb58e774171a8b12ae44217b5a898db2baa61d2a2bf5f1",
+    "bytes": 1636568,
+    "width": 1676,
+    "height": 1652,
+    "articles": [
+      "blog/2025/year-of-discovery/index.html"
+    ],
+    "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/b76ad47df58d244716295bff2f131bfa5a6482e8/assets/year-of-discovery.png"
   }
 ]

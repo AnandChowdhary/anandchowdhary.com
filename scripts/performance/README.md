@@ -98,3 +98,9 @@ cookie. No target-page navigation or asset warming precedes the run. The manifes
 records authentication as a boolean and removes Set-Cookie values. Public
 production measurements use the default storage reset. PSI is skipped for a
 protected preview; public API quota errors remain recorded for production.
+
+The harness records `build-info.json` before and after measuring, separately from
+its own source checkout. The report states whether the observed publication
+changed during the run; interpret mixed-publication samples accordingly. If the
+build record is unavailable, deployed identity remains unknown. Runner location
+identifies GitHub Actions when applicable without claiming a physical region.

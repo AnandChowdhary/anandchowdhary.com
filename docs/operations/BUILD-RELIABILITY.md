@@ -193,3 +193,9 @@ requires one main landmark and focusable skip destination on shell pages.
 The selector-parser override in `package.json` fixes the version pinned by
 Tailwind Typography. Remove it when that upstream dependency accepts a patched
 version; keep both root and performance-tool dependency audits clean.
+
+For explicit image availability checks, first generate an inventory with
+`npm run audit:images`, then run `node scripts/check-external-images.mjs INVENTORY OUTPUT HOSTS_COMMA_SEPARATED`. This contacts only selected hosts, decodes bounded
+responses and stores downloaded bodies beside the report for manual preservation.
+It is separate from builds; a nonzero exit means at least one selected source
+needs review. Do not freeze changing badges, maps or covers through this process.

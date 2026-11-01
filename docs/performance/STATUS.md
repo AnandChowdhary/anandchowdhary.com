@@ -265,3 +265,5 @@ root/project browser checks pass. See
 Latest roadmap work: [historical images, artifact recovery and reader tools](2026-11-01-recovery-reader/README.md).
 
 [Dependency maintenance and accessibility](2026-11-01-accessibility/README.md): current follow-up.
+
+[Latest performance baseline and historical-image follow-up](2026-11-01-performance-images/README.md).
