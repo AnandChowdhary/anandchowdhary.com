@@ -25,6 +25,8 @@ export default async function About() {
   return (
     <Container>
       <Header pathname="/about" />
+      <main id="main-content" tabIndex={-1} className="space-y-32">
+      <h1 className="sr-only">About Anand Chowdhary</h1>
       <div className="grid md:grid-cols-2 max-w-3xl mx-auto gap-10">
         <figure className="w-full">
           <img
@@ -34,7 +36,7 @@ export default async function About() {
             height={1317}
             className="w-full bg-white rounded-lg shadow-sm"
           />
-          <figcaption className="text-center text-gray-500 text-xs mt-2 inline-flex items-center justify-center w-full">
+          <figcaption className="text-center text-neutral-500 text-xs mt-2 inline-flex items-center justify-center w-full">
             <span>
               &copy;{" "}
               <a className={focusStyles} href="https://rikkertharink.nl">
@@ -44,7 +46,7 @@ export default async function About() {
             <span
               aria-hidden="true"
               title="Anand smiling with his hands crossed looking to the side"
-              className="bg-gray-200 dark:bg-gray-800 rounded uppercase px-1 ml-2 font-medium cursor-default"
+              className="bg-gray-200 dark:bg-gray-800 text-neutral-700 dark:text-neutral-200 rounded uppercase px-1 ml-2 font-medium cursor-default"
               style={{ fontSize: "80%" }}
             >
               Alt
@@ -258,11 +260,11 @@ export default async function About() {
                     </a>
                   )}
                   {"tag" in about && typeof about.tag === "string" && (
-                    <span className="bg-gray-200 dark:bg-gray-800 text-gray-500 rounded uppercase font-medium text-[70%] px-1 tracking-wider">
+                    <span className="bg-gray-200 dark:bg-gray-800 text-neutral-500 rounded uppercase font-medium text-[70%] px-1 tracking-wider">
                       {about.tag}
                     </span>
                   )}
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-neutral-500">
                     {about.years.length > 1
                       ? about.years.join("–")
                       : `${about.years[0]}–present`}
@@ -285,6 +287,7 @@ export default async function About() {
           ))}
         </ul>
       </div>
+      </main>
       <Footer />
     </Container>
   );

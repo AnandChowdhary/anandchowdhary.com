@@ -10,6 +10,7 @@ export function CodingTimeSection({
     <div>
       <h2 className="font-medium text-xl">Coding time</h2>
       <NavigationLinks
+        label="Coding time sources"
         source="https://github.com/AnandChowdhary/life"
         api="https://anandchowdhary.github.io/life/data/wakatime-time-tracking/summary/days.json"
         readme="https://github.com/AnandChowdhary/life/blob/refs/heads/main/README.md"

@@ -83,6 +83,7 @@ export function LifeEventsSection({
     <>
       <h2 className="font-medium text-xl mb-0">Life events</h2>
       <NavigationLinks
+        label="Life events sources"
         source="https://github.com/AnandChowdhary/everything"
         api="https://anandchowdhary.github.io/everything/data/life-events.json"
         readme="https://github.com/AnandChowdhary/everything/blob/refs/heads/main/README.md"

@@ -11,7 +11,7 @@ export default async function Topics() {
   const topics = publishedTopics(await getAllBlogPosts());
   return <Container>
     <Header pathname="/blog/topics" description="A few starting points for exploring the blog, organized by subject." />
-    <main className="max-w-2xl mx-auto space-y-10">
+    <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-10">
       <h1 className="text-2xl font-medium">Explore by topic</h1>
       {topics.map(topic => <section key={topic.slug} className="space-y-3">
         <h2 className="text-lg font-medium"><a href={`/blog/topics/${topic.slug}`} className={`${focusStyles} underline underline-offset-4`}>{topic.title}</a></h2>

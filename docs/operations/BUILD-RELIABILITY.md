@@ -179,3 +179,17 @@ Long articles receive native TOC anchors and optional reading progress. TOC and
 related-reading navigation are excluded from search text. Reader eligibility is
 1,000 words and three Markdown h2/h3 headings; short or unstructured articles
 load no progress module. Raw HTML headings are not included in the TOC.
+
+## Accessibility regression checks
+
+Run `node scripts/performance/accessibility.mjs BASE_URL OUTPUT_JSON` after
+installing `scripts/performance` dependencies. The weekly Production
+accessibility workflow audits the public site in desktop light and mobile dark,
+checks keyboard skip-link activation and overflow, and retains results for
+30 days. Inspect axe's incomplete rules manually; passing automated checks is
+not a complete accessibility certification. Static build verification separately
+requires one main landmark and focusable skip destination on shell pages.
+
+The selector-parser override in `package.json` fixes the version pinned by
+Tailwind Typography. Remove it when that upstream dependency accepts a patched
+version; keep both root and performance-tool dependency audits clean.

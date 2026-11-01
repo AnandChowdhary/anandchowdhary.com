@@ -13,6 +13,7 @@ export function ThemesSection({ themes }: { themes: ThemeData[] }) {
     <div>
       <h2 className="font-medium text-xl">Themes</h2>
       <NavigationLinks
+        label="Themes sources"
         source="https://github.com/AnandChowdhary/themes"
         api="https://raw.githubusercontent.com/AnandChowdhary/themes/refs/heads/main/api.json"
         readme="https://github.com/AnandChowdhary/themes/blob/refs/heads/main/README.md"

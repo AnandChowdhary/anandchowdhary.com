@@ -36,7 +36,7 @@ const VersionCard = ({ item }: { item: Version }) => (
               "linear-gradient(to right, black 70%, transparent 100%)",
           }}
         >
-          <h3
+          <h2
             className="truncate text-lg font-medium"
             dangerouslySetInnerHTML={{
               __html: marked.parseInline(item.title),
@@ -88,7 +88,8 @@ export default async function VersionContent({
 
 Looking back, I can connect the dots for what I was interested in way back when. In fact, one of my first repositories on GitHub was [my personal website](https://github.com/AnandChowdhary/anandchowdhary.com), where you can see the git history to track each version.`}
       />
-      <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+        <h1 className="sr-only">Versions{year ? ` — ${year}` : ""}</h1>
         {versionDataFiltered.map((item) => (
           <VersionCard key={item.slug} item={item} />
         ))}

@@ -1,0 +1,451 @@
+{
+  "base": "http://localhost:4322",
+  "axeVersion": "4.14.0",
+  "checkedAt": "2026-11-01T11:15:36.731Z",
+  "results": [
+    {
+      "route": "/",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 33,
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 28,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics/ai",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 29,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2026/future-ai-native-work",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 36,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2019/state-of-the-podcasts-2019",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 40,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/projects",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/life",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 35,
+      "violations": [
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/location",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/contact",
+      "mode": "desktop-light",
+      "main": 0,
+      "h1": 0,
+      "overflow": false,
+      "passes": 21,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "nodes": 7
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "bypass",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/search?q=agents",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 40,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/404.html",
+      "mode": "desktop-light",
+      "main": 0,
+      "h1": 1,
+      "overflow": false,
+      "passes": 12,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "nodes": 2
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 33,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 60
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 67
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 28,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 19
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics/ai",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 17
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2026/future-ai-native-work",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 36,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 9
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2019/state-of-the-podcasts-2019",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 40,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 8
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/projects",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 95
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/life",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 0,
+      "overflow": true,
+      "passes": 35,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 103
+        },
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 5
+        }
+      ]
+    },
+    {
+      "route": "/location",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 0,
+      "overflow": false,
+      "passes": 29,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 472
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/contact",
+      "mode": "mobile-dark",
+      "main": 0,
+      "h1": 0,
+      "overflow": false,
+      "passes": 21,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 3
+        },
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "nodes": 7
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "bypass",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/search?q=agents",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "passes": 40,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": 17
+        }
+      ],
+      "incomplete": []
+    },
+    {
+      "route": "/404.html",
+      "mode": "mobile-dark",
+      "main": 0,
+      "h1": 1,
+      "overflow": false,
+      "passes": 12,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "nodes": 1
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "nodes": 2
+        }
+      ],
+      "incomplete": []
+    }
+  ]
+}

@@ -19,6 +19,7 @@ export function LocationSection({
       <h2 className="font-medium text-xl">Location</h2>
       <div className="inline-flex">
         <NavigationLinks
+        label="Location sources"
           source="https://github.com/AnandChowdhary/location"
           readme="https://anandchowdhary.github.io/location/README.md"
           api="https://anandchowdhary.github.io/location/history-countries.json"

@@ -263,3 +263,5 @@ root/project browser checks pass. See
 [release evidence](2026-11-01-topics/README.md).
 
 Latest roadmap work: [historical images, artifact recovery and reader tools](2026-11-01-recovery-reader/README.md).
+
+[Dependency maintenance and accessibility](2026-11-01-accessibility/README.md): current follow-up.

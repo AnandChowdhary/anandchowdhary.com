@@ -1,6 +1,6 @@
 import { createSearch, type SearchDocument } from '@/lib/search';
 
-const root = document.querySelector<HTMLElement>('#site-search');
+const root = document.querySelector<HTMLElement>('[data-site-search]');
 if (root) {
   const form = root.querySelector('form')!;
   const input = root.querySelector<HTMLInputElement>('#search-query')!;

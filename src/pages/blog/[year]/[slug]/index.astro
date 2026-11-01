@@ -19,7 +19,7 @@ const article = await blogArticle(year, slug);
   <link rel="preload" as="image" imagesrcset={article.srcset} imagesizes={article.sizes} fetchpriority="high" />
   <div class="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
     <StaticMarkup component={Header} props={{ pathname: `/blog/${year}` }} />
-    <main class="max-w-2xl mx-auto space-y-8">
+    <main id="main-content" tabindex="-1" class="max-w-2xl mx-auto space-y-8">
       <div class="relative">
         <img sizes={article.sizes} width="384" height="256" loading="eager" fetchpriority="high" src={article.hero} srcset={article.srcset} alt="" class="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60" decoding="async" />
         <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none text-5xl tracking-widest">{article.post.emoji}</div>

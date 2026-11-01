@@ -22,7 +22,8 @@ export default async function Mentoring() {
   return (
     <Container>
       <Header pathname="/mentoring" />
-      <div className="max-w-xl mx-auto">
+      <main id="main-content" tabIndex={-1} className="max-w-xl mx-auto">
+        <h1 className="sr-only">Mentoring</h1>
         <section className="space-y-4">
           <div className="space-y-5">
             <p className="text-xl font-medium">
@@ -81,7 +82,7 @@ export default async function Mentoring() {
             </p>
           </div>
         </section>
-      </div>
+      </main>
       <Footer />
     </Container>
   );

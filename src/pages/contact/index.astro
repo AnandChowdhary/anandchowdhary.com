@@ -29,7 +29,8 @@ const platforms = [
 <Document metadata={{ ...defaults, ...metadata }} pathname={Astro.url.pathname}>
   <div class="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
     <Fragment set:html={renderToStaticMarkup(createElement(Header, { pathname: '/contact' }))} />
-    <div class="max-w-xl mx-auto">
+    <main id="main-content" tabindex="-1" class="max-w-xl mx-auto">
+      <h1 class="sr-only">Contact</h1>
       <section class="space-y-4">
         <div class="space-y-5">
           <p class="text-xl font-medium">Thank you for your interest in getting in touch with me.</p>
@@ -47,7 +48,7 @@ const platforms = [
           </ul>
         </div>
       </section>
-    </div>
+    </main>
     <Fragment set:html={renderToStaticMarkup(createElement(Footer))} />
   </div>
 </Document>

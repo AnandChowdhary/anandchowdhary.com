@@ -101,7 +101,8 @@ export default async function LifeFood() {
         api={FOOD_API_URL}
         readme={FOOD_README_URL}
       />
-      <main className="max-w-2xl mx-auto space-y-12">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-12">
+        <h1 className="sr-only">Food and nutrition</h1>
         {Object.entries(groupedByYear)
           .sort(([a], [b]) => parseInt(b) - parseInt(a))
           .map(([year, nutritionDays]) => {
@@ -137,7 +138,7 @@ export default async function LifeFood() {
                           tabIndex={0}
                           title={title}
                         >
-                          <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-md bg-neutral-950 px-2 py-1 text-xs text-white opacity-0 shadow-lg transition-[opacity,transform] duration-150 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 dark:bg-neutral-100 dark:text-neutral-950">
+                          <div className="mobile-tooltip pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-md bg-neutral-950 px-2 py-1 text-xs text-white opacity-0 shadow-lg transition-[opacity,transform] duration-150 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus:translate-y-0 group-focus:opacity-100 dark:bg-neutral-100 dark:text-neutral-950">
                             <div className="font-medium">
                               {formatNumber(nutrition.kcal)} kcal
                             </div>

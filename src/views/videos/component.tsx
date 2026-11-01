@@ -37,7 +37,7 @@ const VideoCard = ({ item }: { item: Video }) => (
         </div>
       )}
       {item.duration && (
-        <div className="absolute bottom-1 right-1 bg-neutral-800/30 backdrop-blur-sm text-white text-xs px-1 py-0.5 rounded">
+        <div className="absolute bottom-1 right-1 bg-neutral-900 text-white text-xs px-1 py-0.5 rounded">
           {item.duration}
         </div>
       )}
@@ -54,7 +54,7 @@ const VideoCard = ({ item }: { item: Video }) => (
             "linear-gradient(to right, black 70%, transparent 100%)",
         }}
       >
-        <h3
+        <h2
           className="truncate font-medium"
           dangerouslySetInnerHTML={{
             __html: marked.parseInline(item.title),
@@ -91,7 +91,8 @@ export default async function VideosContent({
         pathname={year ? `/videos/${year}` : "/videos"}
         description="A collection of videos featuring my talks, interviews, and appearances discussing technology, accessibility, and entrepreneurship."
       />
-      <main className="max-w-5xl mx-auto space-y-4">
+      <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto space-y-4">
+        <h1 className="sr-only">Videos{year ? ` — ${year}` : ""}</h1>
         <div className="grid grid-cols-3 gap-8">
           {sortedVideos.map((item) => (
             <VideoCard key={item.slug} item={item} />

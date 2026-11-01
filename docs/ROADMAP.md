@@ -21,6 +21,9 @@ to explore content over replacing the build framework.
   a live same-release redeployment, with a temporary freshness window.
 - Native long-article tables of contents and optional reading progress.
 
+- Patched the dependency alerts and added repeatable accessibility checks,
+  keyboard skip links, landmark/heading fixes, dark contrast and mobile life layout fixes.
+
 ## Ongoing and prerequisites
 
 1. Finish notes/life publication hooks after a suitable Actions-write dispatch
@@ -37,4 +40,4 @@ to explore content over replacing the build framework.
 5. Review actual search needs before expanding beyond articles/projects or adding
    fuzzy matching. Current checks establish functionality, not usage demand.
 
-[Latest implementation and validation](performance/2026-11-01-recovery-reader/README.md).
+[Latest implementation and validation](performance/2026-11-01-accessibility/README.md).

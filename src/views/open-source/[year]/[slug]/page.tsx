@@ -102,7 +102,7 @@ export default async function OpenSourceYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/open-source/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         {image ? (
           <img
             src={image}

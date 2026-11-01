@@ -10,6 +10,7 @@ export function SleepSection({
     <div>
       <h2 className="font-medium text-xl">Sleep</h2>
       <NavigationLinks
+        label="Sleep sources"
         source="https://github.com/AnandChowdhary/life"
         api="https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-sleep/summary/days.json"
         readme="https://github.com/AnandChowdhary/life/blob/refs/heads/main/README.md"

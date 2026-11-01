@@ -91,7 +91,8 @@ export default async function PressContent({
         pathname={year ? `/press/${year}` : "/press"}
         description="I've been very fortunate to have been featured in several publications and media outlets for my work. For press enquiries, please reach out to press (at) this domain."
       />
-      <main className="max-w-2xl mx-auto space-y-12">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-12">
+        <h1 className="sr-only">Press{year ? ` — ${year}` : ""}</h1>
         {sortedAwards.length > 0 && (
           <section className="space-y-4">
             <h2 className="text-lg font-medium text-neutral-500">Awards</h2>

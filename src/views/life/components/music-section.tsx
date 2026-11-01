@@ -10,6 +10,7 @@ export function MusicSection({ topArtists }: { topArtists: ArtistData[] }) {
     <div>
       <h2 className="font-medium text-xl">Music</h2>
       <NavigationLinks
+        label="Music sources"
         source="https://github.com/AnandChowdhary/top-artists"
         api="https://raw.githubusercontent.com/AnandChowdhary/top-artists/refs/heads/main/api.json"
         readme="https://github.com/AnandChowdhary/top-artists/blob/refs/heads/main/README.md"

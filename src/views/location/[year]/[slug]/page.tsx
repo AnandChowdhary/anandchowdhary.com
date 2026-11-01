@@ -72,7 +72,7 @@ export default async function LocationYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/location/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           <ResponsiveImage
             sizes={ARTICLE_SIZES}

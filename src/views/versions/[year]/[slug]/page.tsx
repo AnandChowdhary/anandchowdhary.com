@@ -67,7 +67,7 @@ export default async function VersionYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/versions/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           <img
             src={`https://raw.githubusercontent.com/AnandChowdhary/versions/main/assets/${slug}/home.png`}

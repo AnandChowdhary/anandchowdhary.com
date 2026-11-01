@@ -42,6 +42,7 @@ const hasCounters = pathname === '/';
     </script>
   </head>
   <body class="antialiased selection:bg-neutral-500/20">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <slot />
     {hasLightbox && <script>import '@/scripts/lightbox';</script>}
     {hasCounters && <script>import '@/scripts/counter-loader';</script>}

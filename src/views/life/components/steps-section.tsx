@@ -9,6 +9,7 @@ export function StepsSection({
     <div>
       <h2 className="font-medium text-xl">Steps</h2>
       <NavigationLinks
+        label="Steps sources"
         source="https://github.com/AnandChowdhary/life"
         api="https://raw.githubusercontent.com/AnandChowdhary/life/refs/heads/master/data/google-fit-walking/summary/days.json"
         readme="https://github.com/AnandChowdhary/life/blob/refs/heads/main/README.md"

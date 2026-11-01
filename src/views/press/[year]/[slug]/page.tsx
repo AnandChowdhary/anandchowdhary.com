@@ -81,7 +81,7 @@ export default async function PressYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname="/press" />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-4">
           <div className="flex items-center gap-2 text-neutral-500">
             <CategoryIcon size={20} strokeWidth={1.5} />

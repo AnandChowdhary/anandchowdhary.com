@@ -22,7 +22,7 @@ export default async function Topic(props: Props) {
   const topic = await topicData(props);
   return <Container>
     <Header pathname="/blog/topics" description={topic.description} />
-    <main className="max-w-2xl mx-auto space-y-8">
+    <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
       <h1 className="text-2xl font-medium">{topic.title}</h1>
       <p className="text-sm text-neutral-500">A curated reading order. <a className={`${focusStyles} underline`} href="/blog/topics">Explore all topics</a></p>
       <ol className="space-y-6">{topic.posts.map(post => <li key={post.slug}>

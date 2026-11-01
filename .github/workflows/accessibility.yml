@@ -1,0 +1,30 @@
+name: Production accessibility
+on:
+  schedule:
+    - cron: '13 9 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: production-accessibility
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: scripts/performance/package-lock.json
+      - run: npm ci --prefix scripts/performance
+      - name: Audit public pages and keyboard bypass
+        run: node scripts/performance/accessibility.mjs https://anandchowdhary.com /tmp/site-accessibility.json
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: production-accessibility-${{ github.run_id }}
+          path: /tmp/site-accessibility.json
+          retention-days: 30

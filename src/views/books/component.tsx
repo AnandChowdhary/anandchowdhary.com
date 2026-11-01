@@ -53,7 +53,8 @@ export default async function BooksContent({
         readme="https://anandchowdhary.github.io/books/README.md"
         api="https://anandchowdhary.github.io/books/api.json"
       />
-      <main className="max-w-2xl mx-auto space-y-16">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-16">
+        <h1 className="sr-only">Books{year ? ` — ${year}` : ""}</h1>
         {currentlyReading.length > 0 && (
           <section className="space-y-6">
             <h2 className="text-xl font-medium text-neutral-900 dark:text-neutral-100">

@@ -59,3 +59,19 @@ body {
 .reading-progress::-webkit-progress-value { background: #737373; }
 .reading-progress::-moz-progress-bar { background: #737373; }
 [data-article-body] :is(h2, h3)[id] { scroll-margin-top: 1.5rem; }
+
+.skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 100; padding: .75rem 1rem; border-radius: .25rem; background: var(--background); color: var(--foreground); transform: translateY(-200%); }
+.skip-link:focus { transform: none; outline: 2px solid currentColor; outline-offset: 2px; }
+/* Muted copy and hover states must remain readable in both color schemes. */
+@layer utilities {
+  .hover\:text-neutral-400:hover { color: var(--color-neutral-600); }
+  @media (prefers-color-scheme: dark) {
+    .text-neutral-500 { color: var(--color-neutral-400); }
+    .hover\:text-neutral-400:hover, .hover\:text-neutral-500:hover, .hover\:text-neutral-600:hover { color: var(--color-neutral-300); }
+  }
+}
+
+/* Keep chart callouts inside narrow viewports, including while visually hidden. */
+@media (width < 640px) {
+  .mobile-tooltip { position: fixed; inset: auto 1rem 1rem; transform: none; max-width: calc(100vw - 2rem); width: fit-content; margin-inline: auto; white-space: normal; }
+}

@@ -1,0 +1,638 @@
+{
+  "base": "http://localhost:4322",
+  "axeVersion": "4.14.0",
+  "checkedAt": "2026-11-01T11:24:29.391Z",
+  "passed": true,
+  "results": [
+    {
+      "route": "/",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 36,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics/ai",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 31,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2026/future-ai-native-work",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 38,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2019/state-of-the-podcasts-2019",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 41,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/projects",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/books",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 31,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/notes",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/events",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/open-source",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/press",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/themes",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/versions",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 33,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/videos",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 7
+        }
+      ]
+    },
+    {
+      "route": "/archive",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 29,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/about",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 36,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/now",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 35,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/mentoring",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 29,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/life/food",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/life",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 38,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/location",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/contact",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/search?q=agents",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 42,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/404.html",
+      "mode": "desktop-light",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 20,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 36,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/topics/ai",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 31,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2026/future-ai-native-work",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 38,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/blog/2019/state-of-the-podcasts-2019",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 41,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/projects",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/books",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 31,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/notes",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 29,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/events",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/open-source",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/press",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/themes",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/versions",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 33,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/videos",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 7
+        }
+      ]
+    },
+    {
+      "route": "/archive",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 29,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/about",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 36,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/now",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 35,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/mentoring",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 29,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/life/food",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/life",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 38,
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/location",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 32,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/contact",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 30,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/search?q=agents",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 42,
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "route": "/404.html",
+      "mode": "mobile-dark",
+      "main": 1,
+      "h1": 1,
+      "overflow": false,
+      "skipVisible": true,
+      "skipWorks": true,
+      "passes": 20,
+      "violations": [],
+      "incomplete": []
+    }
+  ]
+}

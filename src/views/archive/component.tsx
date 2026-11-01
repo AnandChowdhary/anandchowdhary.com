@@ -66,7 +66,8 @@ export default function ArchiveContent({
         pathname={year ? `/archive/${year}` : "/archive"}
         description="Everything, everywhere, all at once: A comprehensive archive of all my activities, projects, writing, events, and more, in one place."
       />
-      <main className="max-w-2xl mx-auto space-y-12">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-12">
+        <h1 className="sr-only">Archive{year ? ` — ${year}` : ""}</h1>
         <p className="text-sm text-neutral-500"><a href="/search" className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4">Search articles and projects</a></p>
         {Object.entries(groupedByYear)
           .sort(([a], [b]) => parseInt(b) - parseInt(a))
@@ -120,7 +121,7 @@ export default function ArchiveContent({
                         style={{ width: `${(100 / 52).toFixed(2)}%` }}
                       >
                         {hasPassed && hasContributions.length > 0 && (
-                          <div className="absolute left-1/2 top-6 -translate-x-1/2 whitespace-nowrap flex items-center justify-center text-xs pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-100 dark:bg-neutral-900 rounded-full py-1 px-2.5 z-10">
+                          <div className="mobile-tooltip absolute left-1/2 top-6 -translate-x-1/2 whitespace-nowrap flex items-center justify-center text-xs pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-100 dark:bg-neutral-900 rounded-full py-1 px-2.5 z-10">
                             {label} in the week of{" "}
                             {weekStart.toLocaleDateString("en-US", {
                               month: "short",

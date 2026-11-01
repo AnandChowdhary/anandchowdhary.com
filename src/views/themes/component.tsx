@@ -69,7 +69,7 @@ const ThemeCard = ({ item }: { item: Theme }) => (
               "linear-gradient(to right, black 70%, transparent 100%)",
           }}
         >
-          <h3
+          <h2
             className="truncate text-lg font-medium"
             dangerouslySetInnerHTML={{
               __html: marked.parseInline(item.title),
@@ -120,7 +120,8 @@ export default async function ThemesContent({
         readme="https://anandchowdhary.github.io/themes/README.md"
         api="https://anandchowdhary.github.io/themes/api.json"
       />
-      <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+        <h1 className="sr-only">Annual themes{year ? ` — ${year}` : ""}</h1>
         {themesDataFiltered.map((item) => (
           <ThemeCard key={item.slug} item={item} />
         ))}

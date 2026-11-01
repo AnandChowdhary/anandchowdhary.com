@@ -121,7 +121,8 @@ export default async function EventsContent({
         readme="https://anandchowdhary.github.io/events/README.md"
         api="https://anandchowdhary.github.io/events/api.json"
       />
-      <main className="max-w-2xl mx-auto space-y-4">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-4">
+        <h1 className="sr-only">Events{year ? ` — ${year}` : ""}</h1>
         {year ? (
           // Year-specific view: show events grouped by year
           <div className="space-y-8">

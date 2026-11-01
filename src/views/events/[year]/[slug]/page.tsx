@@ -80,7 +80,7 @@ export default async function EventsYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/events/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <div className="relative">
           {event.attributes.coordinates && (
             <img

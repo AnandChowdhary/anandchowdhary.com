@@ -81,7 +81,8 @@ export default function LocationContent({
         readme="https://anandchowdhary.github.io/location/README.md"
         api="https://anandchowdhary.github.io/location/history-countries.json"
       />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
+        <h1 className="sr-only">Location{year ? ` — ${year}` : ""}</h1>
         <section className="space-y-4">
           <h2 className="font-medium text-xl">Current location</h2>
           <div className="flex items-center gap-2">

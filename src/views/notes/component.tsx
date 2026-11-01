@@ -37,7 +37,8 @@ export default async function NotesContent({
         readme="https://anandchowdhary.github.io/notes/README.md"
         api="https://anandchowdhary.github.io/notes/threads/api.json"
       />
-      <main className="max-w-2xl mx-auto">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto">
+        <h1 className="sr-only">Notes{year ? ` — ${year}` : ""}</h1>
         <h2 className="text-lg font-medium text-neutral-500 mb-4">Latest</h2>
         <article
           className="border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 shadow-sm relative overflow-hidden max-h-96"

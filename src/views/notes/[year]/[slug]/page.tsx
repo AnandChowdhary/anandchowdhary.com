@@ -59,7 +59,7 @@ export default async function NoteYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/notes/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-2">
           <h1
             className="text-2xl font-medium"

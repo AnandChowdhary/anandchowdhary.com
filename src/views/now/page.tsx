@@ -30,8 +30,10 @@ export default async function Now() {
   return (
     <Container>
       <Header pathname="/now" />
+      <main id="main-content" tabIndex={-1} className="space-y-16">
+      <h1 className="sr-only">Now</h1>
       <NowSection />
-      <section className="space-y-4 max-w-lg mx-auto text-sm text-neutral-500 -mt-16">
+      <section className="space-y-4 max-w-lg mx-auto text-sm text-neutral-500">
         <h2 className="text-xs uppercase font-medium font-mono tracking-wider text-neutral-500">
           /archive
         </h2>
@@ -58,6 +60,7 @@ export default async function Now() {
           .
         </p>
       </section>
+      </main>
       <Footer />
     </Container>
   );

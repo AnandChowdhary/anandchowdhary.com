@@ -59,7 +59,7 @@ export default async function VideoPage({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/videos/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         {video.img && (
           <div className="relative">
             <img

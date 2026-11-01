@@ -13,7 +13,7 @@ export default async function SearchPage() {
   const [posts, projects] = await Promise.all([getAllBlogPosts(), getAllProjects()]);
   return <div className="site-container font-sans min-h-screen pb-20 gap-16 sm:p-20 p-8 space-y-32">
     <Header pathname="/search" description="Search articles and projects, or browse something recent." />
-    <main className="max-w-2xl mx-auto space-y-8" id="site-search" data-index="/search-index.json">
+    <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8" data-site-search data-index="/search-index.json">
       <h1 className="text-2xl font-medium">Search</h1>
       <form role="search" className="space-y-4" action="/search">
         <label htmlFor="search-query" className="block text-sm font-medium">Search articles and projects</label>

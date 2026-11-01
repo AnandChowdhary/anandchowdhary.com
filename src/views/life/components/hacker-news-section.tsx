@@ -11,6 +11,7 @@ export function HackerNewsSection({
     <div>
       <h2 className="font-medium text-xl">Hacker News</h2>
       <NavigationLinks
+        label="Hacker News sources"
         source="https://github.com/AnandChowdhary/everything"
         api="https://anandchowdhary.github.io/everything/api.json"
         readme="https://github.com/AnandChowdhary/everything/blob/refs/heads/main/README.md"

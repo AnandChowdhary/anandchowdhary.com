@@ -211,7 +211,8 @@ export default async function OpenSourceContent({
         readme="https://anandchowdhary.github.io/featured/README.md"
         api="https://anandchowdhary.github.io/featured/repos.json"
       />
-      <main className="max-w-2xl mx-auto space-y-4">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-4">
+        <h1 className="sr-only">Open source{year ? ` — ${year}` : ""}</h1>
         {year ? (
           <div className="space-y-8">
             {Object.entries(reposDataByYear)

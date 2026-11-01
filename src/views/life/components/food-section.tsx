@@ -39,6 +39,7 @@ export function FoodSection({
     <div>
       <h2 className="font-medium text-xl">Food</h2>
       <NavigationLinks
+        label="Food sources"
         source={FOOD_SOURCE_URL}
         api={FOOD_API_URL}
         readme={FOOD_README_URL}

@@ -71,7 +71,7 @@ const ProjectCard = ({ item, priority = false }: { item: Project; priority?: boo
                 "linear-gradient(to right, black 70%, transparent 100%)",
             }}
           >
-            <h3
+            <h2
               className="truncate text-lg font-medium"
               dangerouslySetInnerHTML={{
                 __html: marked.parseInline(item.title),
@@ -161,7 +161,7 @@ export default async function ProjectContent({
             <h1 className="text-2xl font-medium text-center">{tag}</h1>
           </div>
         )}
-        <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <main id="main-content" tabIndex={-1} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {projectDataFiltered.map((item, index) => (
             <ProjectCard key={item.slug} item={item} priority={index === 0} />
           ))}
@@ -200,7 +200,8 @@ export default async function ProjectContent({
         api="https://anandchowdhary.github.io/projects/api.json"
         description={`Projects I've built over the years, from small experiments to full-scale products for my startups.`}
       />
-      <main className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      <main id="main-content" tabIndex={-1} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <h1 className="sr-only">Projects{year ? ` — ${year}` : ""}</h1>
         {projectDataFiltered.map((item, index) => (
           <ProjectCard key={item.slug} item={item} priority={index === 0} />
         ))}

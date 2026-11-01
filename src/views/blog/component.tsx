@@ -121,7 +121,8 @@ export default async function BlogContent({
         readme="https://anandchowdhary.github.io/blog/README.md"
         api="https://anandchowdhary.github.io/blog/api.json"
       />
-      <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+        <h1 className="sr-only">Blog{year ? ` — ${year}` : ""}</h1>
         <TopicNavigation posts={blogDataFiltered} />
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>

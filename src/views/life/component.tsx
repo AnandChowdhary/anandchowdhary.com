@@ -61,10 +61,11 @@ export default async function LifeContent({
         pathname={year ? `/life/${year}` : "/life"}
         description="I track all my life data on GitHub; here's a summary of my location, music, work, health, and milestones."
       />
-      <main className="max-w-2xl mx-auto space-y-12 br">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-12 br">
+        <h1 className="sr-only">Life{year ? ` — ${year}` : ""}</h1>
         <GitHubSection />
         <LocationSection countriesDataFiltered={countriesDataFiltered} />
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 [&>*]:min-w-0">
           <ThemesSection themes={themes} />
           <HackerNewsSection hackerNewsItems={hackerNewsItems} />
           <CodingTimeSection codingTime={codingTime} />

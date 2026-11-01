@@ -85,7 +85,7 @@ export default async function ProjectYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/projects/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         {project.attributes?.img_src && (
           <div
             className="bg-white dark:bg-neutral-900 w-full rounded-2xl shadow-lg flex items-center justify-center border border-neutral-200 dark:border-neutral-800"

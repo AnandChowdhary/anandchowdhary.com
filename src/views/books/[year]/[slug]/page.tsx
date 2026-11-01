@@ -68,7 +68,7 @@ export default async function BooksYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname={`/books/${year}`} />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
             <div className="aspect-[3/4] rounded-lg shadow-lg relative">

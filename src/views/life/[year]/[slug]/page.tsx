@@ -54,7 +54,7 @@ export default async function LifeYearSlug({ params }: Props) {
   return (
     <Container>
       <Header pathname="/life" />
-      <main className="max-w-2xl mx-auto space-y-8">
+      <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <header className="space-y-4">
           <h1 className="text-2xl font-medium">{lifeEvent.title}</h1>
           <div className="flex items-center gap-1.5 text-sm text-neutral-500">

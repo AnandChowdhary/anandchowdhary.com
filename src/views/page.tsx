@@ -34,7 +34,8 @@ export default async function Home() {
   return (
     <Container>
       <Header pathname="/" />
-      <main className="home-main space-y-32">
+      <main id="main-content" tabIndex={-1} className="home-main space-y-32">
+        <h1 className="sr-only">Anand Chowdhary</h1>
       <NowSection />
       <LifeSection />
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-18 max-w-5xl mx-auto">

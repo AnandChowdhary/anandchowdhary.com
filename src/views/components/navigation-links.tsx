@@ -7,6 +7,7 @@ interface NavigationLinksProps {
   api?: string;
   readme?: string;
   className?: string;
+  label?: string;
 }
 
 export function NavigationLinks({
@@ -14,11 +15,13 @@ export function NavigationLinks({
   api,
   readme,
   className,
+  label = "Source and API",
 }: NavigationLinksProps) {
   if (!source && !api && !readme) return null;
 
   return (
     <nav
+      aria-label={label}
       className={`text-xs text-neutral-500 max-w-md mx-auto mt-4 text-center flex items-center justify-center gap-4 ${className}`}
     >
       {source && <SourceLink href={source} />}

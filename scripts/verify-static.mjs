@@ -29,6 +29,11 @@ async function walk(dir) {
   bytes+=(await stat(file)).size;files++;
   if(!file.endsWith('.html'))continue;
   const html=await readFile(file,'utf8');
+  if (html.includes('class="skip-link"')) {
+   assert.equal([...html.matchAll(/<main\b/g)].length,1,`Expected one main landmark: ${file}`);
+   assert.equal([...html.matchAll(/id="main-content"/g)].length,1,`Expected one skip target: ${file}`);
+   assert.match(html, /<main\b[^>]*id="main-content"[^>]*tabindex="-1"/,`Main must receive skip-link focus: ${file}`);
+  }
   for(const match of html.matchAll(/\b(src|href|poster|imagesrcset|srcset|data-index)=["']([^"']*)["']/gi)) {
    const key=match[1].toLowerCase();
    const values=key.endsWith('srcset')?match[2].split(',').map(part=>part.trim().split(/\s+/)[0]):[match[2]];
