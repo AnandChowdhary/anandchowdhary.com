@@ -77,3 +77,20 @@ this 50-check local summary precedes those changes.
 The final badge retest passes axe on Videos and About in both themes. Video
 contrast incompletes are eliminated; the decorative About badge remains an
 incomplete overlap check despite its explicit palette.
+
+## Public release
+
+- [Pages release 41301852458](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41301852458)
+  passed build/deploy/report and published commit
+  `790676f9cd210d017718ee99b65a952991dffa77`.
+  [Public build record](public-build-info.json).
+- [Production accessibility 41302025460](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41302025460)
+  passed all 50 route/theme checks on the custom domain with the final colors.
+  [Public audit summary](public-audit.json); detailed JSON including incomplete
+  rule nodes is retained in its artifact for 30 days.
+- GitHub marked both alerts as **fixed**, independently of the clean local npm
+  audits. [Alert state record](dependabot-fixed.json).
+
+Next priorities are refreshing production performance measurements against the
+existing budgets and continuing the targeted historical-image audit. Full
+assistive-technology review remains separate from these automated checks.

@@ -1,0 +1,13 @@
+{
+  "contentSnapshot": {
+    "id": "d7c42c121596ec129080a533806f82a15ae5831b54b53ed49e0b07f9da9d536e",
+    "collectedAt": "2026-11-01T11:26:31.624Z",
+    "inputs": 727
+  },
+  "builtAt": "2026-11-01T11:26:31.624Z",
+  "commit": "790676f9cd210d017718ee99b65a952991dffa77",
+  "base": "/",
+  "routes": 1519,
+  "optimizedSources": 134,
+  "imageBytes": 14785286
+}
