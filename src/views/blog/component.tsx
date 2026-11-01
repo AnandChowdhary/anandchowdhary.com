@@ -1,3 +1,5 @@
+import { decorativeImageSource } from "@/lib/decorative-images";
+import { optimizedImageUrl } from '@/lib/images';
 import { type BlogPost } from "@/views/api";
 import { Container } from "@/views/components/container";
 import { focusStyles } from "@/views/components/external-link";
@@ -7,6 +9,7 @@ import { NavigationFooter } from "@/views/components/navigation-footer";
 import { marked } from "marked";
 import { markedSmartypants } from "marked-smartypants";
 import Rand from "rand-seed";
+import { TopicNavigation } from './topics/components';
 
 marked.use(markedSmartypants());
 
@@ -28,9 +31,13 @@ const BlogThumbnail = ({
       } shadow-sm relative`}
     >
       <img
-        src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+        src={optimizedImageUrl(decorativeImageSource(Math.floor(
           new Rand(item.slug).next() * 100 + 1
-        )}.png`}
+        )), 384)}
+        width={384}
+        height={256}
+        loading="lazy"
+        decoding="async"
         alt=""
         className={`w-full h-full object-cover ${
           isLarge ? "rounded-lg" : "rounded-full"
@@ -115,6 +122,7 @@ export default async function BlogContent({
         api="https://anandchowdhary.github.io/blog/api.json"
       />
       <main className="max-w-2xl mx-auto space-y-8 md:space-y-4">
+        <TopicNavigation posts={blogDataFiltered} />
         {blogDataFiltered.length > 3 && (
           <h2 className="text-lg font-medium text-neutral-500">Latest</h2>
         )}

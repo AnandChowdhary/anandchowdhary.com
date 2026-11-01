@@ -1,0 +1,3 @@
+PASS topic navigation and decoded local thumbnails on blog/events/themes/open-source
+PASS topics and curated related reading without JavaScript; no topic client modules
+PASS mobile light/desktop dark layout, unknown topic 404 and no browser exceptions

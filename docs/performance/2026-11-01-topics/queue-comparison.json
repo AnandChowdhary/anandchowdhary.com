@@ -1,0 +1,80 @@
+[
+  {
+    "variant": "batch",
+    "run": 1,
+    "elapsedMs": 10142.181199999999,
+    "phases": {
+      "inventoryMs": 133.55879,
+      "routeValidationMs": 9793.201541,
+      "discoveryMs": 40.35781700000007,
+      "imagesMs": 168.66490400000112
+    },
+    "routes": 1519,
+    "images": 134
+  },
+  {
+    "variant": "pool",
+    "run": 1,
+    "elapsedMs": 10297.493196000001,
+    "phases": {
+      "inventoryMs": 119.346633,
+      "routeValidationMs": 9950.951188000001,
+      "discoveryMs": 53.94904300000053,
+      "imagesMs": 167.88716199999908
+    },
+    "routes": 1519,
+    "images": 134
+  },
+  {
+    "variant": "batch",
+    "run": 2,
+    "elapsedMs": 9853.403915,
+    "phases": {
+      "inventoryMs": 124.08621299999999,
+      "routeValidationMs": 9473.198879,
+      "discoveryMs": 44.16641499999969,
+      "imagesMs": 206.4658959999997
+    },
+    "routes": 1519,
+    "images": 134
+  },
+  {
+    "variant": "pool",
+    "run": 2,
+    "elapsedMs": 10639.44429,
+    "phases": {
+      "inventoryMs": 131.81224100000003,
+      "routeValidationMs": 10273.143624,
+      "discoveryMs": 50.64910600000076,
+      "imagesMs": 178.0222019999983
+    },
+    "routes": 1519,
+    "images": 134
+  },
+  {
+    "variant": "batch",
+    "run": 3,
+    "elapsedMs": 10093.350037,
+    "phases": {
+      "inventoryMs": 124.196506,
+      "routeValidationMs": 9730.266704,
+      "discoveryMs": 43.44651999999951,
+      "imagesMs": 190.1792970000006
+    },
+    "routes": 1519,
+    "images": 134
+  },
+  {
+    "variant": "pool",
+    "run": 3,
+    "elapsedMs": 10654.464791999999,
+    "phases": {
+      "inventoryMs": 124.46985799999999,
+      "routeValidationMs": 10303.95327,
+      "discoveryMs": 42.63313299999936,
+      "imagesMs": 175.31132099999923
+    },
+    "routes": 1519,
+    "images": 134
+  }
+]

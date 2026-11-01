@@ -1,3 +1,4 @@
+import { decorativeImageSource } from "@/lib/decorative-images";
 import { ResponsiveImage } from "@/views/components/responsive-image";
 import { ARTICLE_SIZES } from "@/lib/images";
 import {
@@ -18,6 +19,7 @@ import { markedSmartypants } from "marked-smartypants";
 import type { Metadata } from "@/lib/metadata";
 import { notFound } from "@/lib/navigation";
 import Rand from "rand-seed";
+import { TopicLinks, RelatedReading } from '@/views/blog/topics/components';
 
 marked.use(markedSmartypants());
 
@@ -74,7 +76,7 @@ export default async function BlogYearSlug({ params }: Props) {
             height={256}
             loading="eager"
             fetchPriority="high"
-            src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${rand}.png`}
+            src={decorativeImageSource(rand)}
             alt=""
             className="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60"
           />
@@ -90,6 +92,7 @@ export default async function BlogYearSlug({ params }: Props) {
             }}
           />
           <BlogMetadata item={post} postContentText={postContentText} />
+          <TopicLinks post={post} />
         </header>
         <BlogContentWithLightbox
           html={postContentHtml}
@@ -123,6 +126,7 @@ export default async function BlogYearSlug({ params }: Props) {
               : undefined
           }
         />
+        <RelatedReading post={post} posts={allPosts} />
       </main>
       <Footer />
     </Container>

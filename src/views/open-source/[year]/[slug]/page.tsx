@@ -1,3 +1,6 @@
+import { decorativeImageSource } from "@/lib/decorative-images";
+import { ARTICLE_SIZES } from '@/lib/images';
+import { ResponsiveImage } from '@/views/components/responsive-image';
 import {
   extractRepositoryDetails,
   getAllArchiveItems,
@@ -108,8 +111,13 @@ export default async function OpenSourceYearSlug({ params }: Props) {
           />
         ) : (
           <div className="relative">
-            <img
-              src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${rand}.png`}
+            <ResponsiveImage
+              sizes={ARTICLE_SIZES}
+              width={384}
+              height={256}
+              loading="eager"
+              fetchPriority="high"
+              src={decorativeImageSource(rand)}
               alt=""
               className="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60"
             />

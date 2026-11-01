@@ -249,3 +249,15 @@ with keyboard access, filters and no-JavaScript browsing. Eight homepage images
 are local WebP assets, and an external-image audit provides the next baseline.
 Notes/life hooks remain dependent on a suitable dispatch credential. See
 [follow-up evidence and remaining roadmap](2026-10-31-roadmap/README.md).
+
+
+## Curated discovery and illustration reliability — 2026-11-01
+
+Seven static topic pages cover the 46 current articles; topic links and related
+reading are rendered without hydration. Related links stay outside the search
+index. Listing/decorative open-source artwork now builds into local WebP, removing
+81 unique browser image URLs and fixing the missing `85.png` choice. Three
+production profiles and a six-run scheduler comparison favor retaining the
+existing collector. All 32 tests, 1,519-route verification, 809-URL audit and
+root/project browser checks pass. See
+[release evidence](2026-11-01-topics/README.md).

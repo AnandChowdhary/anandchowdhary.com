@@ -1,3 +1,5 @@
+import { decorativeImageSource } from "@/lib/decorative-images";
+import { optimizedImageUrl } from '@/lib/images';
 import { getAllArchiveItems, type Repository } from "@/views/api";
 import { Container } from "@/views/components/container";
 import { focusStyles } from "@/views/components/external-link";
@@ -80,9 +82,13 @@ const RepoThumbnail = async ({
       } shadow-sm relative`}
     >
       <img
-        src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${Math.floor(
+        src={optimizedImageUrl(decorativeImageSource(Math.floor(
           new Rand(item.slug).next() * 100 + 1
-        )}.png`}
+        )), 384)}
+        width={384}
+        height={256}
+        loading="lazy"
+        decoding="async"
         alt=""
         className={`w-full h-full object-cover ${
           isLarge ? "rounded-lg" : "rounded-full"

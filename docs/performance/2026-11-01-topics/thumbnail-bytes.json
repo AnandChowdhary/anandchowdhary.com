@@ -1,0 +1,576 @@
+{
+  "scope": "Unique decorative images on the four root listing pages; encoded file sizes, not browser transfer. PNG sizes come from the candidate content snapshot, not a historical CDN capture.",
+  "uniqueImages": 81,
+  "knownMissing": 1,
+  "validPngBytes": 5144588,
+  "matchingWebpBytes": 161874,
+  "items": [
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/1.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/1.png",
+      "pngBytes": 67116,
+      "webpBytes": 1672,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/10.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/10.png",
+      "pngBytes": 68550,
+      "webpBytes": 2060,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/100.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/100.png",
+      "pngBytes": 71876,
+      "webpBytes": 2022,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/11.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/11.png",
+      "pngBytes": 55757,
+      "webpBytes": 1576,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/12.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/12.png",
+      "pngBytes": 68180,
+      "webpBytes": 2124,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/13.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/13.png",
+      "pngBytes": 71161,
+      "webpBytes": 2852,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/14.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/14.png",
+      "pngBytes": 59664,
+      "webpBytes": 1838,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/15.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/15.png",
+      "pngBytes": 64811,
+      "webpBytes": 2558,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/16.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/16.png",
+      "pngBytes": 62867,
+      "webpBytes": 1470,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/17.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/17.png",
+      "pngBytes": 65218,
+      "webpBytes": 1632,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/18.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/18.png",
+      "pngBytes": 67565,
+      "webpBytes": 2190,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/19.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/19.png",
+      "pngBytes": 77213,
+      "webpBytes": 2848,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/2.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/2.png",
+      "pngBytes": 63441,
+      "webpBytes": 2186,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/20.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/20.png",
+      "pngBytes": 60592,
+      "webpBytes": 1638,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/21.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/21.png",
+      "pngBytes": 64439,
+      "webpBytes": 2012,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/23.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/23.png",
+      "pngBytes": 62609,
+      "webpBytes": 1720,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/24.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/24.png",
+      "pngBytes": 63848,
+      "webpBytes": 2174,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/25.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/25.png",
+      "pngBytes": 63564,
+      "webpBytes": 2040,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/26.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/26.png",
+      "pngBytes": 62384,
+      "webpBytes": 1622,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/28.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/28.png",
+      "pngBytes": 65077,
+      "webpBytes": 2134,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/29.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/29.png",
+      "pngBytes": 67317,
+      "webpBytes": 1942,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/3.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/3.png",
+      "pngBytes": 65996,
+      "webpBytes": 2626,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/30.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/30.png",
+      "pngBytes": 71530,
+      "webpBytes": 2334,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/32.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/32.png",
+      "pngBytes": 61662,
+      "webpBytes": 1356,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/33.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/33.png",
+      "pngBytes": 52550,
+      "webpBytes": 1846,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/34.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/34.png",
+      "pngBytes": 68922,
+      "webpBytes": 2274,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/37.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/37.png",
+      "pngBytes": 65943,
+      "webpBytes": 3078,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/38.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/38.png",
+      "pngBytes": 73377,
+      "webpBytes": 2014,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/39.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/39.png",
+      "pngBytes": 66350,
+      "webpBytes": 2286,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/4.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/4.png",
+      "pngBytes": 68222,
+      "webpBytes": 1702,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/40.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/40.png",
+      "pngBytes": 60393,
+      "webpBytes": 2226,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/41.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/41.png",
+      "pngBytes": 64819,
+      "webpBytes": 1780,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/42.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/42.png",
+      "pngBytes": 59839,
+      "webpBytes": 2092,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/43.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/43.png",
+      "pngBytes": 60672,
+      "webpBytes": 2908,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/44.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/44.png",
+      "pngBytes": 66794,
+      "webpBytes": 1568,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/45.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/45.png",
+      "pngBytes": 62089,
+      "webpBytes": 1572,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/48.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/48.png",
+      "pngBytes": 68672,
+      "webpBytes": 2348,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/49.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/49.png",
+      "pngBytes": 65793,
+      "webpBytes": 1854,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/5.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/5.png",
+      "pngBytes": 59947,
+      "webpBytes": 2094,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/50.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/50.png",
+      "pngBytes": 65380,
+      "webpBytes": 2256,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/51.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/51.png",
+      "pngBytes": 57462,
+      "webpBytes": 1532,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/52.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/52.png",
+      "pngBytes": 68422,
+      "webpBytes": 2162,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/53.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/53.png",
+      "pngBytes": 67114,
+      "webpBytes": 1706,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/54.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/54.png",
+      "pngBytes": 72970,
+      "webpBytes": 2984,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/55.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/55.png",
+      "pngBytes": 65376,
+      "webpBytes": 1982,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/56.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/56.png",
+      "pngBytes": 55301,
+      "webpBytes": 1588,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/57.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/57.png",
+      "pngBytes": 61865,
+      "webpBytes": 2088,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/59.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/59.png",
+      "pngBytes": 64161,
+      "webpBytes": 1872,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/6.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/6.png",
+      "pngBytes": 60238,
+      "webpBytes": 1696,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/60.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/60.png",
+      "pngBytes": 56430,
+      "webpBytes": 1530,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/64.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/64.png",
+      "pngBytes": 53647,
+      "webpBytes": 2044,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/65.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/65.png",
+      "pngBytes": 61763,
+      "webpBytes": 2048,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/66.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/66.png",
+      "pngBytes": 67496,
+      "webpBytes": 2450,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/67.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/67.png",
+      "pngBytes": 61361,
+      "webpBytes": 2018,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/68.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/68.png",
+      "pngBytes": 67393,
+      "webpBytes": 1606,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/69.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/69.png",
+      "pngBytes": 63234,
+      "webpBytes": 1930,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/7.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/7.png",
+      "pngBytes": 72366,
+      "webpBytes": 2506,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/70.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/70.png",
+      "pngBytes": 61437,
+      "webpBytes": 2114,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/71.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/71.png",
+      "pngBytes": 65089,
+      "webpBytes": 1762,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/75.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/75.png",
+      "pngBytes": 64356,
+      "webpBytes": 2546,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/76.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/76.png",
+      "pngBytes": 63568,
+      "webpBytes": 2282,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/77.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/77.png",
+      "pngBytes": 63089,
+      "webpBytes": 1986,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/78.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/78.png",
+      "pngBytes": 68138,
+      "webpBytes": 2392,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/79.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/79.png",
+      "pngBytes": 60757,
+      "webpBytes": 1586,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/8.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/8.png",
+      "pngBytes": 61708,
+      "webpBytes": 1958,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/80.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/80.png",
+      "pngBytes": 65963,
+      "webpBytes": 1960,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/81.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/81.png",
+      "pngBytes": 62783,
+      "webpBytes": 1616,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/83.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/83.png",
+      "pngBytes": 59936,
+      "webpBytes": 1762,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/84.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/84.png",
+      "pngBytes": 62278,
+      "webpBytes": 1704,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/85.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/84.png",
+      "pngBytes": null,
+      "webpBytes": 1704,
+      "missingOriginal": true
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/86.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/86.png",
+      "pngBytes": 64530,
+      "webpBytes": 1364,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/88.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/88.png",
+      "pngBytes": 61722,
+      "webpBytes": 1696,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/89.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/89.png",
+      "pngBytes": 62355,
+      "webpBytes": 2102,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/91.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/91.png",
+      "pngBytes": 60856,
+      "webpBytes": 1426,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/92.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/92.png",
+      "pngBytes": 66012,
+      "webpBytes": 2440,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/93.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/93.png",
+      "pngBytes": 81242,
+      "webpBytes": 4166,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/94.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/94.png",
+      "pngBytes": 57009,
+      "webpBytes": 1490,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/95.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/95.png",
+      "pngBytes": 57311,
+      "webpBytes": 2084,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/96.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/96.png",
+      "pngBytes": 73437,
+      "webpBytes": 2022,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/97.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/97.png",
+      "pngBytes": 56461,
+      "webpBytes": 1538,
+      "missingOriginal": false
+    },
+    {
+      "original": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/99.png",
+      "selected": "https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/99.png",
+      "pngBytes": 65753,
+      "webpBytes": 1612,
+      "missingOriginal": false
+    }
+  ]
+}

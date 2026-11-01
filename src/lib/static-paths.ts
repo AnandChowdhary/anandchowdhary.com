@@ -48,8 +48,8 @@ export async function pathsFor(pattern: string) {
       if (template[i].startsWith('[')) params[template[i].slice(1,-1)] = parts[i];
       else if (template[i] !== parts[i]) return [];
     }
-    // /projects/tags is an explicit nested route, never a year/slug record.
-    if (params.year === 'tags' || (pattern === '/life/[year]' && params.year === 'food')) return [];
+    // Reserved nested sections are not year/slug records.
+    if (params.year === 'tags' || (pattern.startsWith('/blog/') && params.year === 'topics') || (pattern === '/life/[year]' && params.year === 'food')) return [];
     return [{ params }];
   });
 }

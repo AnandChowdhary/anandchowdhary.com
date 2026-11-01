@@ -1,0 +1,55 @@
+
+> anandchowdhary-astro@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ curated topics have stable unique slugs, article IDs and nonempty reading lists (1.498483ms)
+✔ topic pages retain curated order and omit unpublished/withdrawn articles and empty topics (2.086911ms)
+✔ related reading follows shared topics and editorial order, with no self, draft, duplicate or unrelated links (0.483344ms)
+✔ sealed snapshots replay immutable inputs, freeze time, and forbid all TCP/network fallback (357.724059ms)
+✔ snapshot collection rejects credentials, arbitrary origins, and unsupported requests (0.618086ms)
+✔ seeded illustrations preserve existing choices and avoid the known missing 85.png (2.23219ms)
+✔ optional contributions outage does not block static builds; mandatory sources still fail (26.072323ms)
+✔ available calendar retains the real count and validated activity levels (13.388513ms)
+✔ restored article artwork reserves its original aspect ratio and defers offscreen loads (2.751398ms)
+✔ legacy image preparation preserves explicit author sizing/loading and unrelated images (0.643385ms)
+✔ preview credentials reach only the configured origin, including across redirects (47.365292ms)
+Page rendering failed Error: Failed to fetch https://anandchowdhary.github.io/blog/api.json: 503 
+    at fetchJson (/workspace/src/views/api.ts:226:11)
+    at async getAllBlogPosts (/workspace/src/views/api.ts:427:20)
+    at async getBlogPostByYearAndSlug (/workspace/src/views/api.ts:440:20)
+    at async Module.generateMetadata (/workspace/src/views/blog/[year]/[slug]/page.tsx:35:16)
+    at async <anonymous> (/workspace/src/lib/render.tsx:20:43)
+    at async TestContext.<anonymous> (/workspace/tests/routes.test.ts:48:17)
+    at async Test.run (node:internal/test_runner/test:1409:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+✔ a refreshed build input discovers a newly published post without changing route templates (75.189536ms)
+✔ route loaders retain short-slug destinations and reject invalid years (1.509476ms)
+✔ a cold upstream failure yields 503, never a misleading missing-post 404 (7.328158ms)
+✔ repository HTML sanitization retains content and rejects executable markup (2.995453ms)
+✔ responsive image URLs restrict transforms and preserve formats that need their original source (10.0168ms)
+✔ static builds fail on mandatory source errors rather than publishing error HTML (0.535933ms)
+✔ native article data preserves metadata, rendered content and one static hero variant (13.72507ms)
+✔ native article data rejects invalid/missing articles and propagates mandatory source outages (1.570542ms)
+✔ search ranks titles, requires every term, folds accents, and filters sections (3.25895ms)
+✔ index includes canonical published article text and omits redirects and chrome (3.693521ms)
+✔ only optional snapshots survive process caches, and corrupt snapshots are ignored (12.174409ms)
+✔ concurrent optional snapshot writes remain atomic (5.523721ms)
+Serving last successful source after refresh failure https://source.test/doc 1000
+Serving last successful source after refresh failure https://source.test/optional 1000
+✔ one collection context records each resolved source once across nested route contexts (62.710025ms)
+✔ a failed snapshot write fails all consumers instead of publishing unrecorded inputs (1.297923ms)
+✔ parallel consumers receive independent bodies and one origin request; fresh data persists between renders (3.547482ms)
+✔ expired source refreshes and handles conditional 304 without losing the cached body (1.281565ms)
+✔ refresh failure can serve a last-good source, but not beyond the 24-hour stale bound (1.530129ms)
+✔ invalid JSON never replaces the shared successful source (0.468226ms)
+✔ optional missing documents retain fetch-style 404 semantics and are never cached (0.338399ms)
+✔ optional validated source uses last-good data for transient outages only, within 24 hours (2.054943ms)
+✔ static aliases resolve only immediate same-origin HTML redirects, including project Pages bases (1.365794ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1759.610926

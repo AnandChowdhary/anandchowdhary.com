@@ -2,7 +2,7 @@ import type { Metadata } from '../../src/lib/metadata';
 const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const meta = (name: string, content?: string, property = false) => content ? `<meta ${property ? 'property' : 'name'}="${name}" content="${escape(content)}">` : '';
 export function document(metadata: Metadata, html: string, css: string[], pathname: string) {
-  const lightbox = /^\/blog\/[^/]+\/[^/]+$/.test(pathname);
+  const lightbox = /^\/blog\/\d{4}\/[^/]+$/.test(pathname);
   const og = metadata.openGraph ? { title: metadata.title, description: metadata.description, ...metadata.openGraph } : undefined;
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(metadata.title || '')}</title>
 <meta name="description"${metadata.description === undefined ? '' : ` content="${escape(metadata.description)}"`}>${meta('robots', metadata.robots)}

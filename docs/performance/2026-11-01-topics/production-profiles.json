@@ -1,0 +1,119 @@
+[
+  {
+    "run": "41288581409",
+    "url": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41288581409",
+    "snapshot": "a464721034331ae7833f7fa3141e07f7cf21334007fc5dd8e9e3198f4a3269db",
+    "collectedAt": "2026-11-01T08:22:47.821Z",
+    "elapsedMs": 38241.70998,
+    "phases": {
+      "inventoryMs": 721.281499,
+      "routeValidationMs": 32307.618434000004,
+      "discoveryMs": 53.30808699999761,
+      "imagesMs": 5154.563096999998
+    },
+    "routes": 1511,
+    "images": 123,
+    "sourceRecords": 593,
+    "networkAttempts": 716,
+    "slowestRoutes": [
+      {
+        "route": "/",
+        "durationMs": 4777.289056
+      },
+      {
+        "route": "/archive",
+        "durationMs": 319.51577900000007
+      },
+      {
+        "route": "/events/2018/nesst-season-2",
+        "durationMs": 314.1946740000003
+      },
+      {
+        "route": "/about",
+        "durationMs": 313.7087469999999
+      },
+      {
+        "route": "/archive/2007",
+        "durationMs": 304.0903289999999
+      }
+    ]
+  },
+  {
+    "run": "41284473610",
+    "url": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41284473610",
+    "snapshot": "64c3e5af1b284383d7531091ae498aaa4026ed89718ed33f12fc0bd6c8c5ff38",
+    "collectedAt": "2026-11-01T07:22:00.613Z",
+    "elapsedMs": 28960.500695,
+    "phases": {
+      "inventoryMs": 526.775737,
+      "routeValidationMs": 23572.220383,
+      "discoveryMs": 30.64519200000359,
+      "imagesMs": 4827.603898000001
+    },
+    "routes": 1511,
+    "images": 123,
+    "sourceRecords": 593,
+    "networkAttempts": 715,
+    "slowestRoutes": [
+      {
+        "route": "/",
+        "durationMs": 912.150403
+      },
+      {
+        "route": "/projects",
+        "durationMs": 623.6691739999987
+      },
+      {
+        "route": "/projects/2012",
+        "durationMs": 614.330625999999
+      },
+      {
+        "route": "/projects/tags/vue-js",
+        "durationMs": 320.9197409999979
+      },
+      {
+        "route": "/projects/2016/firangana",
+        "durationMs": 277.2679080000016
+      }
+    ]
+  },
+  {
+    "run": "41281006128",
+    "url": "https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41281006128",
+    "snapshot": "7da519de1bc300cb7d5c61c3b072c25a196629dc672023ed8bec0b5389c6b68f",
+    "collectedAt": "2026-11-01T06:29:19.238Z",
+    "elapsedMs": 34691.837806,
+    "phases": {
+      "inventoryMs": 541.2184619999999,
+      "routeValidationMs": 26989.327799,
+      "discoveryMs": 33.776318000000174,
+      "imagesMs": 7124.777596
+    },
+    "routes": 1511,
+    "images": 123,
+    "sourceRecords": 593,
+    "networkAttempts": 716,
+    "slowestRoutes": [
+      {
+        "route": "/projects",
+        "durationMs": 1775.6870210000016
+      },
+      {
+        "route": "/projects/2012",
+        "durationMs": 1766.7325070000006
+      },
+      {
+        "route": "/",
+        "durationMs": 916.6779540000001
+      },
+      {
+        "route": "/life",
+        "durationMs": 495.0312530000001
+      },
+      {
+        "route": "/life/1997",
+        "durationMs": 471.84429699999964
+      }
+    ]
+  }
+]

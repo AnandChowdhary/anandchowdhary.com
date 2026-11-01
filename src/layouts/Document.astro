@@ -9,7 +9,7 @@ const requestedPath = Astro.props.pathname.replace(/\/$/,'') || '/';
 const pathname = base && (requestedPath === base || requestedPath.startsWith(base+'/')) ? requestedPath.slice(base.length) || '/' : requestedPath;
 const og = m.openGraph ? { title: m.title, description: m.description, ...m.openGraph } : undefined;
 const twitter = m.twitter;
-const hasLightbox = pathname.startsWith('/blog/') && pathname.split('/').length === 4;
+const hasLightbox = /^\/blog\/\d{4}\/[^/]+$/.test(pathname);
 const hasCounters = pathname === '/';
 ---
 <!doctype html>

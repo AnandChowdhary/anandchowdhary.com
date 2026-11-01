@@ -5,7 +5,12 @@ function find(node, predicate) {
   if (predicate(node)) return node;
   for (const child of children(node)) { const found = find(child, predicate); if (found) return found; }
 }
-const text = node => !node ? '' : node.type === 'text' ? node.data : ['script','style','svg','nav','footer'].includes(node.name) || node.attribs?.['aria-hidden'] === 'true' ? '' : children(node).map(text).join(' ');
+function text(node) {
+  if (!node) return '';
+  if (node.type === 'text') return node.data;
+  if (['script','style','svg','nav','footer'].includes(node.name) || node.attribs?.['aria-hidden'] === 'true' || node.attribs && 'data-search-exclude' in node.attribs) return '';
+  return children(node).map(text).join(' ');
+}
 const plain = node => text(node).replace(/\s+/g, ' ').trim();
 
 export function searchDocument(route, html, base = '') {

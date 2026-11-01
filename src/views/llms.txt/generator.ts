@@ -13,6 +13,7 @@ import {
   getVideos,
 } from "@/views/api";
 import type { SitemapEntry } from "@/lib/metadata";
+import { publishedTopics } from '@/lib/blog-topics';
 
 export async function generateSitemap(): Promise<SitemapEntry[]> {
   const [
@@ -42,6 +43,8 @@ export async function generateSitemap(): Promise<SitemapEntry[]> {
   ]);
 
   return [
+    { url: 'https://anandchowdhary.com/blog/topics' },
+    ...publishedTopics(blog).map(topic => ({ url: `https://anandchowdhary.com/blog/topics/${topic.slug}` })),
     { url: "https://anandchowdhary.com" },
     { url: "https://anandchowdhary.com/about" },
     { url: "https://anandchowdhary.com/now" },

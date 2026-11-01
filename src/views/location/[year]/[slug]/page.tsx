@@ -1,3 +1,4 @@
+import { decorativeImageSource } from "@/lib/decorative-images";
 import { ResponsiveImage } from "@/views/components/responsive-image";
 import { ARTICLE_SIZES } from "@/lib/images";
 import { getAllLocations, getLocationByYearAndSlug } from "@/views/api";
@@ -79,7 +80,7 @@ export default async function LocationYearSlug({ params }: Props) {
             height={256}
             loading="eager"
             fetchPriority="high"
-            src={`https://raw.githubusercontent.com/AnandChowdhary/blog-images/refs/heads/main/384x256/${rand}.png`}
+            src={decorativeImageSource(rand)}
             alt=""
             className="w-full h-full max-h-64 object-cover rounded-2xl dark:brightness-60"
           />

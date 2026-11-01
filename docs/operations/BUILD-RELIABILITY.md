@@ -135,3 +135,31 @@ inventories external HTML image/background URLs without contacting those hosts.
 
 See [follow-up evidence](../performance/2026-10-31-roadmap/README.md) for timings,
 search behavior, asset inventory and remaining work.
+
+
+## Curated blog discovery and illustration policy
+
+`src/lib/blog-topics.ts` owns topic titles, stable URL slugs, canonical article IDs
+(`YEAR/slug` without `.md`), and reading order. Add a newly published article to
+appropriate topic lists after editorial review; unassigned articles continue to
+publish and appear in search/chronological listings. Topic pages, recommendations
+and sitemap entries use published data only, so drafts and withdrawn articles do
+not create dead links. Keep topic slugs stable when changing display titles.
+Run a fresh `npm run build` to validate against current content; replaying an old
+snapshot intentionally retains its earlier publication set.
+
+Related reading ranks shared topics, then curated order, and excludes self links
+and duplicate URLs. The section carries `data-search-exclude`; the search indexer
+must keep excluding that markup to avoid cross-article matches. Topic pages have
+no client modules, and lightbox loading is limited to numeric-year blog articles.
+
+Decorative thumbnails and open-source detail fallback artwork use the same
+required-source snapshot/image pipeline as article heroes. There is one explicit
+known source gap: `blog-images/384x256/85.png` does not exist. The shared
+`decorativeImageSource` helper maps 85 to 84 while preserving all other seeds.
+This is an authored illustration choice, not a general network-error fallback;
+other required image failures still stop publication. Changing covers, maps and
+service badges are not frozen by this policy.
+
+See [topic/image release evidence](../performance/2026-11-01-topics/README.md)
+for curation coverage, the illustration inventory and collection observations.

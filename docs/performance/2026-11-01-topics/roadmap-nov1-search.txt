@@ -1,0 +1,4 @@
+PASS search index is not loaded on ordinary pages or before a query
+PASS ranked queries, keyboard focus, shareable URL and reload
+PASS category filtering, Escape, empty query and no-results message
+PASS no-JavaScript browsing, failed-load fallback, retry and no browser exceptions

@@ -9,22 +9,27 @@ to explore content over replacing the build framework.
 - Native Astro contact/blog bodies; full-generator experiment and measurements.
 - Collection profiling and shared source records to reduce repeated disk work.
 - Static article/project search, category filters, keyboard access and browse links.
-- Local press/homepage assets and an external-image inventory command.
+- Seven curated blog topics, static topic pages, and related reading across the
+  46 currently published articles.
+- Local press/homepage assets, snapshot-backed decorative thumbnails and detail
+  artwork, the missing illustration fix, and an external-image inventory command.
 - Publication hooks in eight repositories, hourly fallback, deployment incident
   tracking, scheduled URL/performance checks.
 
-## Next
+## Ongoing and prerequisites
 
-1. Observe production collection profiles across multiple publications. Replace
-   reference-view discovery with an explicit content graph only where the data
-   shows a maintenance/performance benefit.
-2. Finish notes/life publication hooks after a suitable Actions-write dispatch
-   credential is available; keep the hourly fallback until verified.
-3. Use the image audit to prioritize broken or slow sources. Separate changing
-   covers/maps/badges from stable archival artwork before choosing refresh rules.
-4. Curate article topics and related-reading groups, then add static topic pages.
-   Full-text search and chronological article navigation already support discovery.
-5. Review real search needs before expanding beyond articles/projects or adding
-   fuzzy matching. Keep search assets isolated from ordinary page loads.
+1. Finish notes/life publication hooks after a suitable Actions-write dispatch
+   credential is available; keep the hourly fallback until verified. Existing
+   credentials remain unsuitable and no interactive login token is persisted.
+2. Continue observing production collection profiles. Three retained runs took
+   29–38 seconds. A controlled scheduler experiment showed no improvement, so
+   retain the existing collector and defer a handwritten content graph.
+3. Use the image audit to prioritize remaining broken or slow historical sources.
+   Changing covers/maps/badges retain their source policy; stable illustrations
+   now build locally, including the known missing-image replacement.
+4. Maintain topic membership and reading order as articles are published. Keep
+   topic slugs stable and update `src/lib/blog-topics.ts` for editorial changes.
+5. Review actual search needs before expanding beyond articles/projects or adding
+   fuzzy matching. Current checks establish functionality, not usage demand.
 
-[Latest implementation and validation](performance/2026-10-31-roadmap/README.md).
+[Latest implementation and validation](performance/2026-11-01-topics/README.md).

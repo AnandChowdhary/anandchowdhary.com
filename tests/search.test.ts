@@ -17,7 +17,7 @@ test('search ranks titles, requires every term, folds accents, and filters secti
 });
 
 test('index includes canonical published article text and omits redirects and chrome', () => {
-  const html = '<title>Page</title><meta name="description" content="A &amp; B"><header>Other pages</header><main><h1>Café &amp; code</h1><p>Useful text</p><nav>Next article</nav><script>secret</script><svg>icon</svg></main><footer>Other links</footer>';
+  const html = '<title>Page</title><meta name="description" content="A &amp; B"><header>Other pages</header><main><h1>Café &amp; code</h1><p>Useful text</p><nav>Next article</nav><section data-search-exclude><h2>Related reading</h2>Unrelated text</section><script>secret</script><svg>icon</svg></main><footer>Other links</footer>';
   assert.deepEqual(searchDocument('/blog/2026/cafe', html, '/site'), { url: '/site/blog/2026/cafe', section: 'blog', title: 'Café & code', description: 'A & B', text: 'Café & code Useful text' });
   assert.equal(searchDocument('/blog/cafe', html), null);
   assert.equal(searchDocument('/blog/2026/alias', '<meta http-equiv="refresh" content="0;url=/blog/2026/cafe">'), null);
