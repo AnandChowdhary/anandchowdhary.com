@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "sourceRunId": "41292791577",
+  "sourceCommit": "15d602d50a267ab07c59ed34047c02dcbd1faf54",
+  "sourceSnapshot": "0cceccf2a0a32691802b991224ec0feff2b47ed62a2b0cdec780ca49aafd9062",
+  "originalBuiltAt": "2026-11-01T09:22:04.096Z",
+  "recoveredAt": "2026-11-01T10:17:30.328Z",
+  "expiresAt": "2026-11-01T16:17:30.328Z",
+  "contentSha256": "43e44ce08d3e1e3be0faa4fd24bcb18a66475c9e6ae9c1f05c0bd3c76d7c5aa5",
+  "files": 1970,
+  "bytes": 50530072
+}

@@ -17,7 +17,8 @@ to explore content over replacing the build framework.
   tracking, scheduled URL/performance checks.
 
 - Preserved selected historical article images with original hashes and provenance.
-- Retained Pages artifact recovery with rehearsal and a temporary freshness window.
+- Retained Pages artifact recovery, tested with an older-release rehearsal and
+  a live same-release redeployment, with a temporary freshness window.
 - Native long-article tables of contents and optional reading progress.
 
 ## Ongoing and prerequisites

@@ -39,3 +39,24 @@ progress, short-article omission, and decoding all archived images across their
 affected pages. Existing interactions, search and topic suites also pass.
 The same reader/image suite and smoke pass under `/anandchowdhary.com`; prefixed
 static verification passes. Both workflows pass actionlint.
+
+## GitHub Actions and public validation
+
+- [Production release 41296666273](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41296666273)
+  passed and published commit `e04aa9c168af0a0784c7ff66508c4a15b33d1429`.
+- [Older-release rehearsal 41296672699](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41296672699)
+  successfully downloaded, verified and locally smoke-tested source run
+  41292791577. Deployment was skipped. Its
+  [receipt](actions-rehearsal.json) matches the local payload digest.
+- The complete reader/image browser suite passes on the public custom domain;
+  see [public results](public-browser.txt).
+- [Live same-release recovery 41296892226](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41296892226)
+  successfully prepared and deployed the artifact from the new successful
+  production run 41296666273. This exercised real official artifact publishing;
+  production was not intentionally downgraded. Public smoke passed with the
+  expected commit. The [public recovery marker](public-recovery.json) matches
+  that source and retains the original build timestamp.
+- [Return to normal publishing 41296979491](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41296979491)
+  passed build, deploy and incident reporting. Public `recovery.json` returns
+  HTTP 404 again, and expected-commit/freshness smoke passes. The
+  [final build record](final-build-info.json) records the new normal snapshot.
