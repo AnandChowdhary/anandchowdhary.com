@@ -13,7 +13,7 @@
 ✔ restored article artwork reserves its original aspect ratio and defers offscreen loads (2.751398ms)
 ✔ legacy image preparation preserves explicit author sizing/loading and unrelated images (0.643385ms)
 ✔ preview credentials reach only the configured origin, including across redirects (47.365292ms)
-Page rendering failed Error: Failed to fetch https://anandchowdhary.github.io/blog/api.json: 503 
+Page rendering failed Error: Failed to fetch https://anandchowdhary.github.io/blog/api.json: 503
     at fetchJson (/workspace/src/views/api.ts:226:11)
     at async getAllBlogPosts (/workspace/src/views/api.ts:427:20)
     at async getBlogPostByYearAndSlug (/workspace/src/views/api.ts:440:20)

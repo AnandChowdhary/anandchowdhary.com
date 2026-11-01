@@ -22,7 +22,9 @@ All navigation and recommendations are rendered in HTML without hydration.
 Topic pages have their own titles, descriptions, Open Graph and Twitter metadata.
 They load no client modules; the lightbox is restricted to numeric-year article
 routes. Search excludes the related-reading section so recommendations cannot
-make an unrelated article match a query. Search coverage remains articles and
+make an unrelated article match a query. The new index is byte-identical to the
+previous public release across all 90 indexed documents
+([comparison](search-index-comparison.json)). Search coverage remains articles and
 projects; there is no usage evidence warranting fuzzy matching or new content
 types yet.
 
@@ -92,3 +94,20 @@ on 2026-11-01; the previously documented GH_PAT 401/403 limitations remain, and 
 interactive login token was persisted. The hourly fallback continues. Completing
 those hooks requires a new repository secret with Actions write permission to
 the website. No other credential change is required for this release.
+
+## Production release
+
+Commit `521053b3031fe8841f16d17ff7eb8ad1c22e1667` deployed successfully in
+[Pages run 41291959239](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41291959239).
+All build/check/test/audit/deploy/freshness/report steps succeeded. Public browser
+checks pass topics, the repaired open-source illustration, no-JavaScript related
+reading, metadata, responsive layouts, unknown-topic 404s, search, both counters,
+17 restored article images and keyboard/pointer/focus lightbox behavior.
+[Topics](nov1-production-topics.txt), [search](nov1-production-search.txt),
+[existing interactions](nov1-production-interactions.txt).
+
+All 727 retained input bodies and the manifest were hash-verified; the published
+snapshot ID matches the retained artifact. Collection took 34.22s in this Actions
+run, with 593 resolved-source writes and 726 network attempts (one optional input
+was resolved from cache). This is an observation, not a controlled timing claim.
+[Release provenance and profile summary](production-release.json).

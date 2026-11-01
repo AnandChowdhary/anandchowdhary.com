@@ -1,0 +1,9 @@
+{
+  "reference": "public previous release before 521053b deploy",
+  "candidate": "dist/search-index.json",
+  "referenceDocuments": 90,
+  "candidateDocuments": 90,
+  "changedDocuments": [],
+  "bytesIdentical": true,
+  "candidateSha256": "df2efaf2c2ed61937b08800dba473cf755298327259b7daac7ca34f0faa3e6a2"
+}

@@ -1,0 +1,7 @@
+PASS article content, one hero image, no Next or RSC requests
+PASS article readable with JavaScript disabled
+PASS Google Books covers use HTTPS
+PASS screenshot spacing and both animated counters
+PASS all 17 original podcast images load without fixtures
+PASS lightbox keyboard/pointer open, focus trap, Escape/button close, scroll restoration and focus return
+PASS no browser exceptions

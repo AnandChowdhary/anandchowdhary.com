@@ -4,8 +4,7 @@
 
 10:06:04 [types] Generated 65ms
 10:06:04 [check] Getting diagnostics for Astro files in /workspace...
-Result (210 files): 
+Result (210 files):
 - 0 errors
 - 0 warnings
 - 0 hints
-
