@@ -62,3 +62,29 @@ with all 37 historical source records and their original hashes. The reader/imag
 browser suite decodes the new images on affected articles; all 809 audited URLs
 pass. The existing performance report remains readable by the updated summarizer
 and passes unchanged budget checks. Prefixed rendering is verified separately.
+
+## Public release
+
+[Pages release 41307063686](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41307063686)
+passed build, deploy and incident reporting. The public build record identifies
+commit `ad623326343c898b0e560d515b3004e75a01250d` and its 727-input snapshot.
+[Public build record](public-build-info.json). The complete preserved-image and
+reader suite passes on the custom domain, including the new 2022/2025 originals:
+[public browser results](public-browser.txt).
+
+## Final production measurements
+
+[Performance run 41307265168](https://github.com/AnandChowdhary/anandchowdhary.com/actions/runs/41307265168)
+passes all unchanged budgets after deployment. All 18 mobile samples score 100
+for performance; each route's minimum accessibility and SEO score is 100.
+Median LCP ranges from 1.20 to 1.61 seconds; all measured CLS values are zero.
+These small differences from the earlier baseline are not evidence of an
+image-change speed improvement: those five images are on different article
+routes and runner/network variation is uncontrolled.
+
+The corrected harness records **GitHub Actions Linux X64** and observes the
+same deployed commit, built timestamp and content snapshot before and after all
+measurements. [Final report](release/REPORT.md),
+[manifest with publication identity](release/manifest.json),
+[summary](release/summary.json), [budgets](release/budgets.json).
+The raw reports remain in the workflow artifact for 30 days.

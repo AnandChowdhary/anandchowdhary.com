@@ -1,0 +1,2 @@
+PASS static TOC/anchors without JavaScript; reduced-motion reading progress clamps at article end
+PASS short article omits reader tools; all preserved historical images decode on affected articles
