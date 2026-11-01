@@ -11,6 +11,7 @@ import { BlogMetadata } from '@/views/blog/metadata';
 import { proseClassName } from '@/views/styles';
 import { marked } from 'marked';
 import { TopicLinks, RelatedReading } from '@/views/blog/topics/components';
+import { ReadingTools } from '@/views/blog/reading-tools';
 const { year, slug } = Astro.params as { year: string; slug: string };
 const article = await blogArticle(year, slug);
 ---
@@ -28,10 +29,12 @@ const article = await blogArticle(year, slug);
         <StaticMarkup component={BlogMetadata} props={{ item: article.post, postContentText: article.text }} />
         <StaticMarkup component={TopicLinks} props={{ post: article.post }} />
       </header>
-      <div data-lightbox-content class={proseClassName} set:html={article.html} />
+      <StaticMarkup component={ReadingTools} props={{ headings: article.toc }} />
+      <div data-lightbox-content data-article-body class={proseClassName} set:html={article.html} />
       <StaticMarkup component={NavigationFooter} props={{ previous: article.previous, next: article.next }} />
       <StaticMarkup component={RelatedReading} props={{ post: article.post, posts: article.posts }} />
     </main>
     <StaticMarkup component={Footer} />
   </div>
 </Document>
+{article.toc.length > 0 && <script>import '@/scripts/reading-progress';</script>}

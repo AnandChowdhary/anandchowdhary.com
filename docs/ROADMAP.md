@@ -16,6 +16,10 @@ to explore content over replacing the build framework.
 - Publication hooks in eight repositories, hourly fallback, deployment incident
   tracking, scheduled URL/performance checks.
 
+- Preserved selected historical article images with original hashes and provenance.
+- Retained Pages artifact recovery with rehearsal and a temporary freshness window.
+- Native long-article tables of contents and optional reading progress.
+
 ## Ongoing and prerequisites
 
 1. Finish notes/life publication hooks after a suitable Actions-write dispatch
@@ -32,4 +36,4 @@ to explore content over replacing the build framework.
 5. Review actual search needs before expanding beyond articles/projects or adding
    fuzzy matching. Current checks establish functionality, not usage demand.
 
-[Latest implementation and validation](performance/2026-11-01-topics/README.md).
+[Latest implementation and validation](performance/2026-11-01-recovery-reader/README.md).

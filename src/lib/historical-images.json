@@ -1,0 +1,388 @@
+[
+  {
+    "source": "https://miro.medium.com/max/1000/1*aK1kYaBlhEvxySuao7aiyQ.jpeg",
+    "file": "/images/blog/archive/e4af9faee7f68143.jpg",
+    "sha256": "e4af9faee7f68143e912f46eae66aa905867fab955204323f22244911dc33893",
+    "bytes": 68225,
+    "width": 660,
+    "height": 480,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*aK1kYaBlhEvxySuao7aiyQ.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1000/1*5v0PgqARztJVLdR6ndmGhQ.jpeg",
+    "file": "/images/blog/archive/e4af9faee7f68143.jpg",
+    "sha256": "e4af9faee7f68143e912f46eae66aa905867fab955204323f22244911dc33893",
+    "bytes": 68225,
+    "width": 660,
+    "height": 480,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*5v0PgqARztJVLdR6ndmGhQ.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1000/1*B_DZGmDKK1NJZsIfQA44kA.png",
+    "file": "/images/blog/archive/5f70621c43f6033a.png",
+    "sha256": "5f70621c43f6033a0bcddecc971368ef49ecfaa852f08ee369c51467f055e2cf",
+    "bytes": 51999,
+    "width": 532,
+    "height": 494,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*B_DZGmDKK1NJZsIfQA44kA.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1000/1*BU0jRezMpxJ2VtOvJeYYcQ.png",
+    "file": "/images/blog/archive/b83811f2ac151a7a.png",
+    "sha256": "b83811f2ac151a7ae028daa4029fe451ebd51f59d33c076c9ebb835db78b31ff",
+    "bytes": 60643,
+    "width": 516,
+    "height": 699,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*BU0jRezMpxJ2VtOvJeYYcQ.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1000/1*n9gD1L2kaCTzkMGRlNdKlQ.png",
+    "file": "/images/blog/archive/7d19b4594a09a2fd.png",
+    "sha256": "7d19b4594a09a2fdf53fd4fdb842c15234e5c6fde53339aa68c1f9fc2b2fce69",
+    "bytes": 197122,
+    "width": 1000,
+    "height": 691,
+    "articles": [
+      "blog/2018/new-agastya/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*n9gD1L2kaCTzkMGRlNdKlQ.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1000/1*k_wNq_cl2EJixZO9dSesew.jpeg",
+    "file": "/images/blog/archive/fad909b7c8c6befb.jpg",
+    "sha256": "fad909b7c8c6befb648be193d3a3acb94e0925332eedb44818173302f49ba6bb",
+    "bytes": 19054,
+    "width": 768,
+    "height": 270,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*k_wNq_cl2EJixZO9dSesew.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1000/1*tyELu4HS_EPtw02POfNFGw.png",
+    "file": "/images/blog/archive/811726a78f13dc5f.png",
+    "sha256": "811726a78f13dc5f3b2fe6d8e9cbeb0beb03a53b256c5e8e24429c268430b37f",
+    "bytes": 224358,
+    "width": 1000,
+    "height": 691,
+    "articles": [
+      "blog/2018/new-agastya/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1000/1*tyELu4HS_EPtw02POfNFGw.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*-01_rSTOsQs_cqzLeZ_k8w.png",
+    "file": "/images/blog/archive/4083ff1bef1e5865.png",
+    "sha256": "4083ff1bef1e58656e51c77b88a3194b5974d12baa2de1e201938c722dcb7bee",
+    "bytes": 83956,
+    "width": 928,
+    "height": 540,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*-01_rSTOsQs_cqzLeZ_k8w.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*72neu3jzf0cB3Xn7Bql4GA.jpeg",
+    "file": "/images/blog/archive/c56cde600d651a0a.jpg",
+    "sha256": "c56cde600d651a0aaef604c1f973ccd72f37cbb6ed4bec50ab941c52d2ba534b",
+    "bytes": 19032,
+    "width": 1024,
+    "height": 500,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*72neu3jzf0cB3Xn7Bql4GA.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*ENnT0O0eca4gxwDcGEGnug.jpeg",
+    "file": "/images/blog/archive/bf0ca3f9cc819204.jpg",
+    "sha256": "bf0ca3f9cc8192045ae9b3ef59e58d9871551a7df4a1650cab4bb42760059c18",
+    "bytes": 19122,
+    "width": 1024,
+    "height": 500,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*ENnT0O0eca4gxwDcGEGnug.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*gEseasuJO4HtpFfjNM30tw.jpeg",
+    "file": "/images/blog/archive/c640facdcf8595fb.jpg",
+    "sha256": "c640facdcf8595fbc20059d6f13b1f147702156236757afdb1bc66253b4ae42e",
+    "bytes": 26289,
+    "width": 780,
+    "height": 448,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*gEseasuJO4HtpFfjNM30tw.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*HIan5MBhf4ry4UwGglmOHQ.jpeg",
+    "file": "/images/blog/archive/e3bc72f2f8c8011f.jpg",
+    "sha256": "e3bc72f2f8c8011f00394634f09bf001aa5eba7e0d4269d671f14f76a159578b",
+    "bytes": 28801,
+    "width": 1055,
+    "height": 386,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*HIan5MBhf4ry4UwGglmOHQ.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*JE4u2ck3UK4stZtkl58VDA.jpeg",
+    "file": "/images/blog/archive/75a708a0fec740de.jpg",
+    "sha256": "75a708a0fec740debabd465c657c81a00bcc58a15d03f35140ca6752683d17d6",
+    "bytes": 10818,
+    "width": 780,
+    "height": 448,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*JE4u2ck3UK4stZtkl58VDA.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*NYHk1LUpR9lwulHpkVO_Uw.jpeg",
+    "file": "/images/blog/archive/8a5ae79133257325.jpg",
+    "sha256": "8a5ae79133257325d8f9db0f0c99b722cf9c6aacae4d649e59ac4ca8720e6bc1",
+    "bytes": 8901,
+    "width": 780,
+    "height": 448,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*NYHk1LUpR9lwulHpkVO_Uw.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*QOwv0KkBKvht_d6e_5mw4g.png",
+    "file": "/images/blog/archive/05a2044c63f20f21.png",
+    "sha256": "05a2044c63f20f2102f5b2e434baacd8f65f6534010561193a85a39e5fc88b9e",
+    "bytes": 54186,
+    "width": 943,
+    "height": 486,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*QOwv0KkBKvht_d6e_5mw4g.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*Vd1IJFuQJDqyy0jw-0yCnw.png",
+    "file": "/images/blog/archive/827b4d86276e454b.png",
+    "sha256": "827b4d86276e454b52db7c4d93afd90b851a839a9285c8407839bd393a82f68e",
+    "bytes": 48179,
+    "width": 768,
+    "height": 492,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*Vd1IJFuQJDqyy0jw-0yCnw.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/1400/1*vkIDhGxFfggpa8WvvKf4NQ.jpeg",
+    "file": "/images/blog/archive/034ecec3ae87f410.jpg",
+    "sha256": "034ecec3ae87f41018bf33219a37d3caff9efc0a1a3fc2c0fb7c0e4df7aa7d23",
+    "bytes": 13496,
+    "width": 1024,
+    "height": 500,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/1400/1*vkIDhGxFfggpa8WvvKf4NQ.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/2000/1*LPcxUyPqfyS9q6_a8zsTBA.jpeg",
+    "file": "/images/blog/archive/3b44da712f2b8c09.jpg",
+    "sha256": "3b44da712f2b8c09129290e8313eb54058530f045c26350844f37fa65349499b",
+    "bytes": 12211,
+    "width": 1396,
+    "height": 183,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/2000/1*LPcxUyPqfyS9q6_a8zsTBA.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/2000/1*5HBmx0C3uZll2Gp95NbVeg.jpeg",
+    "file": "/images/blog/archive/7e3b82d9c545ca88.jpg",
+    "sha256": "7e3b82d9c545ca88aa1f6d8596085aacf1d72fc634ecc56a229bbfc000e3d808",
+    "bytes": 175915,
+    "width": 1560,
+    "height": 667,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/2000/1*5HBmx0C3uZll2Gp95NbVeg.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/246/0*6HECMzQyvPHfEslK.jpg",
+    "file": "/images/blog/archive/b2f989beeeadd52c.jpg",
+    "sha256": "b2f989beeeadd52c51dedf54623805b586cc27f2abfe738a9c01fe34d4c82885",
+    "bytes": 2728,
+    "width": 123,
+    "height": 179,
+    "articles": [
+      "blog/2015/too-simple-design/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/246/0*6HECMzQyvPHfEslK.jpg"
+  },
+  {
+    "source": "https://miro.medium.com/max/4000/1*_36kYrpeWRMxzL7v0H4fWA.jpeg",
+    "file": "/images/blog/archive/df593467a39d39d9.jpg",
+    "sha256": "df593467a39d39d94c0447a07d9e6f0a331198b877f8734d5158f83f751a70bb",
+    "bytes": 2132,
+    "width": 2000,
+    "height": 100,
+    "articles": [
+      "blog/2015/gaana-identity/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/4000/1*_36kYrpeWRMxzL7v0H4fWA.jpeg"
+  },
+  {
+    "source": "https://miro.medium.com/max/874/1*BB4wunvM4g6nCdOAKnDiCA.png",
+    "file": "/images/blog/archive/290fc4ab170abbb7.png",
+    "sha256": "290fc4ab170abbb719b08ad0b00445823c6551746a0f67994189c961a384d22e",
+    "bytes": 32684,
+    "width": 437,
+    "height": 551,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/874/1*BB4wunvM4g6nCdOAKnDiCA.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/882/1*hb_vRPf5jE6kn-vDW0dKZQ.png",
+    "file": "/images/blog/archive/3ce72a028871f644.png",
+    "sha256": "3ce72a028871f644a0ea00d8ab3de6b210ce29bf3bebb5eaa04b760d623a5334",
+    "bytes": 61143,
+    "width": 441,
+    "height": 820,
+    "articles": [
+      "blog/2019/agastya-4-augmentally/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/882/1*hb_vRPf5jE6kn-vDW0dKZQ.png"
+  },
+  {
+    "source": "https://miro.medium.com/max/900/1*5-WxtNbAf1CHwzY8wL5pyQ.png",
+    "file": "/images/blog/archive/a1e8f79731437c0a.png",
+    "sha256": "a1e8f79731437c0a064252d22b09b8b26bb1a0d8f500d14db14f85a61a0f1ada",
+    "bytes": 265141,
+    "width": 450,
+    "height": 925,
+    "articles": [
+      "blog/2016/saga-music/index.html"
+    ],
+    "retrievedFrom": "https://miro.medium.com/max/900/1*5-WxtNbAf1CHwzY8wL5pyQ.png"
+  },
+  {
+    "source": "https://svbtleusercontent.com/j3wl6dm5l5q_retina.png",
+    "file": "/images/blog/archive/d05567ec50db630b.png",
+    "sha256": "d05567ec50db630bc2fa79ed71e0ac4e131389e6d526110476749170abc9e5f2",
+    "bytes": 488846,
+    "width": 1300,
+    "height": 813,
+    "articles": [
+      "blog/2014/on-operating-systems/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/j3wl6dm5l5q_retina.png"
+  },
+  {
+    "source": "https://svbtleusercontent.com/jysyu4plfooaq_retina.png",
+    "file": "/images/blog/archive/4423252b08e6df65.png",
+    "sha256": "4423252b08e6df65b389d21b25192297e429351b09469e89f35e1cae0ca087c7",
+    "bytes": 28889,
+    "width": 960,
+    "height": 300,
+    "articles": [
+      "blog/2013/internet-org/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/jysyu4plfooaq_retina.png"
+  },
+  {
+    "source": "https://svbtleusercontent.com/mqzaojo6hujo9g_retina.jpg",
+    "file": "/images/blog/archive/e1d3b2b95202c9ea.jpg",
+    "sha256": "e1d3b2b95202c9ea5757e8af41e91c22adc469957a3d01f44276d4c9c316f814",
+    "bytes": 61237,
+    "width": 800,
+    "height": 800,
+    "articles": [
+      "blog/2013/made-with-love-in-india/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/mqzaojo6hujo9g_retina.jpg"
+  },
+  {
+    "source": "https://svbtleusercontent.com/l0rl4tf1v3qfgg_retina.png",
+    "file": "/images/blog/archive/42b30da309023300.png",
+    "sha256": "42b30da309023300ef04c4036235e935cc8c2252aab01297a7a78f94d39ada52",
+    "bytes": 807032,
+    "width": 960,
+    "height": 597,
+    "articles": [
+      "blog/2013/internet-org/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/l0rl4tf1v3qfgg_retina.png"
+  },
+  {
+    "source": "https://svbtleusercontent.com/p8fzyv0ebs3ea_retina.jpg",
+    "file": "/images/blog/archive/e2b088292c992aaf.jpg",
+    "sha256": "e2b088292c992aaf16c20a9578d56faa61626289eef8fef53416056c3b5da6ac",
+    "bytes": 64570,
+    "width": 943,
+    "height": 516,
+    "articles": [
+      "blog/2015/apple-remote/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/p8fzyv0ebs3ea_retina.jpg"
+  },
+  {
+    "source": "https://svbtleusercontent.com/qjieewl9ormgmw_retina.jpg",
+    "file": "/images/blog/archive/2336346c2e70c7b4.jpg",
+    "sha256": "2336346c2e70c7b4e512cb48aad4d5cac9b17fbfaaf020cc73454dd464126179",
+    "bytes": 45120,
+    "width": 350,
+    "height": 308,
+    "articles": [
+      "blog/2015/apple-remote/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/qjieewl9ormgmw_retina.jpg"
+  },
+  {
+    "source": "https://svbtleusercontent.com/vmwxcuzinynrmg_retina.jpg",
+    "file": "/images/blog/archive/a827b022ccb2d622.jpg",
+    "sha256": "a827b022ccb2d62253ad3867eee6aa96f83cc4da51078cbb181ba4ce90ecc145",
+    "bytes": 154413,
+    "width": 960,
+    "height": 1200,
+    "articles": [
+      "blog/2015/apple-remote/index.html"
+    ],
+    "retrievedFrom": "https://svbtleusercontent.com/vmwxcuzinynrmg_retina.jpg"
+  },
+  {
+    "source": "https://blog.oswald.foundation/reading-the-right-way-f5555615ec60",
+    "file": "/images/blog/archive/51c5073c1ca85995.png",
+    "sha256": "51c5073c1ca8599582c82a95840dace33028f0cd014fa69e839efbf049867aad",
+    "bytes": 258340,
+    "width": 1024,
+    "height": 512,
+    "articles": [
+      "blog/2018/agastya-screen-reader/index.html"
+    ],
+    "retrievedFrom": "https://raw.githubusercontent.com/AnandChowdhary/blog/main/assets/agastya-screen-reader.png",
+    "alt": "Agastya Read Aloud highlighting article text with previous, pause, next, and stop controls.",
+    "note": "The authored image URL was an article page. Restored from the matching owned article asset."
+  }
+]

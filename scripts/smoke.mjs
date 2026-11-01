@@ -1,6 +1,7 @@
 /** Deployed/static preview checks: published content, real 404s, exact alias
  * destinations and (optionally) build timestamp freshness. No runtime ISR is assumed. */
 import { fetchSitemapPaths, mapWithConcurrency, request } from "./http.mjs";
+import { publicationFreshness } from './recovery-policy.mjs';
 
 const baseUrl = (
   process.argv.find((arg) => arg.startsWith("http")) ??
@@ -118,13 +119,20 @@ await mapWithConcurrency(KNOWN_ALIASES, 6, async ([alias, canonical]) => {
   record(ok, alias, ok ? `redirect → ${target}` : (error ?? `HTTP ${status} → ${url}, want ${canonical}`));
 });
 
-if (checkFreshness) {
+if (checkFreshness || process.env.SMOKE_EXPECTED_COMMIT) {
   const response = await fetch(baseUrl+'/build-info.json', { signal: AbortSignal.timeout(20000) });
   if (!response.ok) record(false, 'Build freshness', `HTTP ${response.status}`);
   else {
     const info = await response.json();
-    const age = (Date.now()-Date.parse(info.builtAt))/1000;
-    record(Number.isFinite(age) && age >= -300 && age < 6*3600, 'Build freshness', `built ${info.builtAt}; age ${(age/3600).toFixed(1)}h (hourly builds may be delayed)`);
+    if (process.env.SMOKE_EXPECTED_COMMIT) record(info.commit === process.env.SMOKE_EXPECTED_COMMIT, 'Published commit', `${info.commit}; expected ${process.env.SMOKE_EXPECTED_COMMIT}`);
+    if (checkFreshness) {
+      let recovery;
+      if (Date.now() - Date.parse(info.builtAt) >= 6*3600*1000) {
+        try { const response = await fetch(baseUrl+'/recovery.json', {signal:AbortSignal.timeout(20000)}); if (response.ok) recovery = await response.json(); } catch {}
+      }
+      const freshness = publicationFreshness(info, recovery);
+      record(freshness.ok, 'Build freshness', freshness.detail);
+    }
   }
 } else notes.push('Build timestamp freshness skipped; use --check-freshness on the deployed site.');
 

@@ -163,3 +163,19 @@ service badges are not frozen by this policy.
 
 See [topic/image release evidence](../performance/2026-11-01-topics/README.md)
 for curation coverage, the illustration inventory and collection observations.
+
+## Retained artifacts and long articles
+
+Production Pages artifacts are retained for seven days. The
+[Pages recovery runbook](PAGES-RECOVERY.md) covers rehearsal, official artifact
+redeployment and the temporary six-hour recovery freshness window.
+
+Selected historical article images are committed originals with hashes and
+source records in `src/lib/historical-images.json`; rendering rewrites image
+sources without changing article hyperlinks. New stable historical sources can
+be preserved using the same manifest after verifying their bytes and appearance.
+
+Long articles receive native TOC anchors and optional reading progress. TOC and
+related-reading navigation are excluded from search text. Reader eligibility is
+1,000 words and three Markdown h2/h3 headings; short or unstructured articles
+load no progress module. Raw HTML headings are not included in the TOC.

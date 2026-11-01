@@ -19,6 +19,8 @@ import { markedSmartypants } from "marked-smartypants";
 import type { Metadata } from "@/lib/metadata";
 import { notFound } from "@/lib/navigation";
 import Rand from "rand-seed";
+import { renderArticleReading } from '@/lib/article-reading';
+import { ReadingTools } from '@/views/blog/reading-tools';
 import { TopicLinks, RelatedReading } from '@/views/blog/topics/components';
 
 marked.use(markedSmartypants());
@@ -61,7 +63,8 @@ export default async function BlogYearSlug({ params }: Props) {
   const nextPost = allPosts[currentPostIndex + 1];
 
   const postContentText = await getBlogPostContent(year, post.slug);
-  const postContentHtml = await Promise.resolve(marked.parse(postContentText));
+  const reading = await renderArticleReading(postContentText);
+  const postContentHtml = reading.html;
 
   const yearNavigation = { previous: previousPost, next: nextPost };
 
@@ -94,6 +97,7 @@ export default async function BlogYearSlug({ params }: Props) {
           <BlogMetadata item={post} postContentText={postContentText} />
           <TopicLinks post={post} />
         </header>
+        <ReadingTools headings={reading.toc} />
         <BlogContentWithLightbox
           html={postContentHtml}
           className={proseClassName}

@@ -79,6 +79,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          retention-days: 7
 
   deploy:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'

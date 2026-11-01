@@ -261,3 +261,5 @@ production profiles and a six-run scheduler comparison favor retaining the
 existing collector. All 32 tests, 1,519-route verification, 809-URL audit and
 root/project browser checks pass. See
 [release evidence](2026-11-01-topics/README.md).
+
+Latest roadmap work: [historical images, artifact recovery and reader tools](2026-11-01-recovery-reader/README.md).

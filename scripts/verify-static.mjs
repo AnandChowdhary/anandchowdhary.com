@@ -47,4 +47,6 @@ async function walk(dir) {
 await walk(outputDirectory);assert.ok(bytes<1024**3,'GitHub Pages site must stay below 1 GiB');
 const legacy=JSON.parse(await readFile('docs/performance/legacy-assets.json','utf8'));
 for(const asset of legacy.files){const body=await readFile(path.join(outputDirectory,asset.path));assert.equal(createHash('sha1').update(`blob ${body.length}\0`).update(body).digest('hex'),asset.gitBlobSha1,asset.path);}
+const historical=JSON.parse(await readFile('src/lib/historical-images.json','utf8'));
+for(const asset of historical){const body=await readFile(path.join(outputDirectory,asset.file));assert.equal(createHash('sha256').update(body).digest('hex'),asset.sha256,asset.file);}
 console.log(`Verified ${routes.length} routes, discovery/404 files and local assets; ${files} files, ${(bytes/1024**2).toFixed(1)} MiB; no Next/Vercel runtime dependencies.`);
