@@ -27,9 +27,9 @@ export default async function SearchPage() {
           </select>
         </label>
       </form>
-      <p id="search-status" role="status" aria-live="polite" className="text-sm text-neutral-500">Enter a few words to search.</p>
+      <p id="search-status" role="status" aria-live="polite" aria-atomic="true" className="text-sm text-neutral-500">Enter a few words to search.</p>
       <noscript><p>Enable JavaScript to search, or browse the <a href="/archive" className="underline">archive</a>, <a href="/blog" className="underline">blog</a>, and <a href="/projects" className="underline">projects</a>.</p></noscript>
-      <ol id="search-results" className="space-y-6" />
+      <ol aria-label="Search results" id="search-results" className="space-y-6" />
       <div id="search-browse" className="space-y-8">
         {[['Recent articles', 'blog', posts], ['Recent projects', 'projects', projects]].map(([label, section, items]) => <section key={String(section)} className="space-y-4">
           <h2 className="text-lg font-medium">{String(label)}</h2>

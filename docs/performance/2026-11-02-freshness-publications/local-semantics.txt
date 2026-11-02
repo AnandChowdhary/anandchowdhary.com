@@ -1,0 +1,1 @@
+PASS browser accessibility tree: named search, results, atomic status, keyboard results/reset, chart summary and distinct record/refresh dates. Spoken output not tested.

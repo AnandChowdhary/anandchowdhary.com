@@ -28,11 +28,13 @@ to explore content over replacing the build framework.
 - Preserved the final five external blog illustrations; generated canonical blog
   articles now use local image sources under the inventory’s scope.
 
+- Added explicit refresh/source-record dates and browser assistive-semantics checks.
+- Added a VoiceOver manual-review guide; actual spoken review remains outstanding.
+
 ## Ongoing and prerequisites
 
-1. Finish notes/life publication hooks after a suitable Actions-write dispatch
-   credential is available; keep the hourly fallback until verified. Existing
-   credentials remain unsuitable and no interactive login token is persisted.
+1. Verify and observe the ten-minute Notes/Life/Everything publication watcher;
+   it uses the website token for same-repository dispatch. Keep hourly fallback.
 2. Continue observing production collection profiles. Three retained runs took
    29–38 seconds. A controlled scheduler experiment showed no improvement, so
    retain the existing collector and defer a handwritten content graph.
@@ -46,4 +48,4 @@ to explore content over replacing the build framework.
 5. Review actual search needs before expanding beyond articles/projects or adding
    fuzzy matching. Current checks establish functionality, not usage demand.
 
-[Latest implementation and validation](performance/2026-11-01-performance-images/README.md).
+[Latest implementation and validation](performance/2026-11-02-freshness-publications/README.md).

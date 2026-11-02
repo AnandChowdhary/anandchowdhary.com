@@ -54,7 +54,10 @@ publication-to-rebuild path. Manual dispatch tests also passed in all eight repo
 
 Notes' old GH_PAT returned 401, and life's GH_PAT lacked dispatch permission (403).
 Their trial hooks were removed. Notes, life, everything, food and top-artists
-remain covered by hourly website builds. To add event hooks there, provide a
+were initially covered by hourly website builds. Notes, Life and Everything
+now have a [website-side publication watcher](UPSTREAM-PUBLICATIONS.md) using
+same-repository dispatch without a new secret. Food/top-artists retain hourly
+fallback. To add immediate cross-repository event hooks, provide a
 repository secret with Actions write access to this website; do not put tokens in
 source or use a content repository's GITHUB_TOKEN for cross-repository dispatch.
 Hourly GitHub schedules may be delayed, so they are not a publication SLA.

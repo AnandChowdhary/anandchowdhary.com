@@ -1,3 +1,4 @@
+import { DataFreshness, SiteRefresh } from "@/views/components/data-freshness";
 
 import { type Country } from "@/views/api";
 import { Container } from "@/views/components/container";
@@ -83,6 +84,8 @@ export default function LocationContent({
       />
       <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-8">
         <h1 className="sr-only">Location{year ? ` — ${year}` : ""}</h1>
+        <SiteRefresh />
+        <DataFreshness dates={countriesDataFiltered.map(item => item.date)} label="Latest location record" />
         <section className="space-y-4">
           <h2 className="font-medium text-xl">Current location</h2>
           <div className="flex items-center gap-2">

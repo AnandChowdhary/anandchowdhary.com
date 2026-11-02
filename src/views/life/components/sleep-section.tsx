@@ -1,3 +1,4 @@
+import { DataFreshness } from "@/views/components/data-freshness";
 import { NavigationLinks } from "@/views/components/navigation-links";
 import humanizeDuration from "humanize-duration";
 
@@ -9,6 +10,7 @@ export function SleepSection({
   return (
     <div>
       <h2 className="font-medium text-xl">Sleep</h2>
+      <DataFreshness dates={Object.keys(sleepTime)} />
       <NavigationLinks
         label="Sleep sources"
         source="https://github.com/AnandChowdhary/life"

@@ -12,8 +12,8 @@ export async function GitHubSection() {
       {contributions ? (
         <>
           <p className="text-sm text-neutral-500">{contributions.total.toLocaleString('en-US')} contributions in the last year</p>
-          {contributions.stale && <p className="text-xs text-neutral-500">Last updated {new Date(contributions.fetchedAt!).toLocaleDateString('en-US', { timeZone: 'UTC' })}</p>}
-          <svg viewBox={`0 0 ${columns * 13} 91`} role="img" aria-label="GitHub contributions in the last year" className="w-full contribution-calendar">
+          <p className="text-xs text-neutral-500">{contributions.stale ? "Cached activity checked" : "Activity checked"} {new Date(contributions.fetchedAt!).toLocaleDateString('en-US', { timeZone: 'UTC' })}</p>
+          <svg viewBox={`0 0 ${columns * 13} 91`} role="img" aria-label={`${contributions.total.toLocaleString("en-US")} GitHub contributions in the last year; daily activity levels shown in a calendar`} className="w-full contribution-calendar">
             {contributions.days.map((day, index) => (
               <rect key={day.date} x={Math.floor((index + offset) / 7) * 13} y={(index + offset) % 7 * 13}
                 width="10" height="10" rx="2" data-level={day.level}>
