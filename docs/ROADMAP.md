@@ -33,7 +33,7 @@ to explore content over replacing the build framework.
 
 ## Ongoing and prerequisites
 
-1. Verify and observe the ten-minute Notes/Life/Everything publication watcher;
+1. Observe the verified ten-minute Notes/Life/Everything publication watcher;
    it uses the website token for same-repository dispatch. Keep hourly fallback.
 2. Continue observing production collection profiles. Three retained runs took
    29–38 seconds. A controlled scheduler experiment showed no improvement, so
