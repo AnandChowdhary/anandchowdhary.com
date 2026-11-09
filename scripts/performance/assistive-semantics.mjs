@@ -19,9 +19,5 @@ try {
  await page.waitForFunction(()=>document.querySelector('#search-status').textContent==='Enter a few words to search.');
  await page.goto(base+'/life',{waitUntil:'networkidle0'});nodes=await tree();
  assert.ok(nodes.some(n=>n.role?.value==='image'&&/GitHub contributions in the last year/.test(n.name?.value||'')&&/daily activity/.test(n.name.value)));
- assert.match(await page.$eval('main',e=>e.textContent),/Page refreshed.*Source records may be older/);
- assert.match(await page.$eval('main',e=>e.textContent),/Latest location record:/);
- await page.goto(base+'/location',{waitUntil:'networkidle0'});
- assert.match(await page.$eval('main',e=>e.textContent),/Latest location record:/);
- console.log('PASS browser accessibility tree: named search, results, atomic status, keyboard results/reset, chart summary and distinct record/refresh dates. Spoken output not tested.');
+ console.log('PASS browser accessibility tree: named search, results, atomic status, keyboard results/reset, and chart summary. Spoken output not tested.');
 } finally {await browser.close()}

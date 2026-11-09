@@ -1,4 +1,3 @@
-import { DataFreshness } from "@/views/components/data-freshness";
 import { NavigationLinks } from "@/views/components/navigation-links";
 
 export function StepsSection({
@@ -9,7 +8,6 @@ export function StepsSection({
   return (
     <div>
       <h2 className="font-medium text-xl">Steps</h2>
-      <DataFreshness dates={Object.keys(walkingSteps)} />
       <NavigationLinks
         label="Steps sources"
         source="https://github.com/AnandChowdhary/life"

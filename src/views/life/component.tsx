@@ -1,4 +1,3 @@
-import { DataFreshness, SiteRefresh } from "@/views/components/data-freshness";
 import {
   getAllCodingTime,
   getAllDailyNutrition,
@@ -64,8 +63,6 @@ export default async function LifeContent({
       />
       <main id="main-content" tabIndex={-1} className="max-w-2xl mx-auto space-y-12 br">
         <h1 className="sr-only">Life{year ? ` — ${year}` : ""}</h1>
-        <SiteRefresh />
-        <DataFreshness dates={countriesDataFiltered.map(item => item.date)} label="Latest location record" />
         <GitHubSection />
         <LocationSection countriesDataFiltered={countriesDataFiltered} />
         <div className="grid md:grid-cols-2 gap-12 [&>*]:min-w-0">
