@@ -1,4 +1,3 @@
-import { DataFreshness } from "@/views/components/data-freshness";
 import { NavigationLinks } from "@/views/components/navigation-links";
 import humanizeDuration from "humanize-duration";
 
@@ -10,7 +9,6 @@ export function CodingTimeSection({
   return (
     <div>
       <h2 className="font-medium text-xl">Coding time</h2>
-      <DataFreshness dates={Object.keys(codingTime)} />
       <NavigationLinks
         label="Coding time sources"
         source="https://github.com/AnandChowdhary/life"
