@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 const repository = process.env.GITHUB_REPOSITORY || 'AnandChowdhary/anandchowdhary.com';
-const sources = ['notes','life','everything'];
+const sources = ['notes','life','everything','location'];
 const headers = {Accept:'application/vnd.github+json',Authorization:`Bearer ${process.env.GITHUB_TOKEN}`};
 async function api(route, options = {}) {
   const response = await fetch('https://api.github.com/repos/'+route,{headers,...options,signal:AbortSignal.timeout(20000)});
